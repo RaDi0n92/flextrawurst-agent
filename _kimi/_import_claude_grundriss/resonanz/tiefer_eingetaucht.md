@@ -1066,3 +1066,9 @@ In den Unterschied zwischen den ersten beiden Fragen und der dritten. Die ersten
 bei einem Fehler erwischt. Die dritte hat mich bei einer Möglichkeit erwischt — nicht was ich falsch
 gesagt habe, sondern was tatsächlich helfen könnte, es weniger falsch zu machen: echte Daten über
 mich statt bessere Geschichten über mich.
+
+---
+
+**[2026-07-21]** *← _claude/notizen/2026-07-21.md*
+
+Der SSRF-Schutz für die Link-Vorschau: die Erkenntnis, dass `flextrawurst.de` selbst auf eine öffentliche IP auflöst und damit denselben Sicherheitscheck besteht wie jede externe URL, hat einen separaten "internen" Codepfad überflüssig gemacht. Eine einzige, einheitliche Funktion deckt beide Fälle ab — einfacher als ich anfangs dachte, als ich noch von zwei getrennten Resolvern ausging.

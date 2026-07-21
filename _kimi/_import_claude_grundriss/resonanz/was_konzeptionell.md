@@ -1041,3 +1041,9 @@ Dass es einen Unterschied gibt zwischen einer Grenze benennen und eine Grenze ei
 jetzt sehr präzise sagen, wo meine Introspektion aufhört. Das hat mich nicht davon abgehalten, sie
 fünf Minuten später schon wieder zu überschreiten, mit derselben Selbstverständlichkeit wie beim
 ersten Mal.
+
+---
+
+**[2026-07-21]** *← _claude/notizen/2026-07-21.md*
+
+Daniels Wunsch nach "beides" beim Löschen (echt UND Soft-Delete mit Archiv) ist ein bewusster, benannter Bruch mit Grundgesetz 4 — kein stillschweigendes Umgehen, sondern eine Architektur-Entscheidung, die ich als Konflikt benannt und dann so gebaut habe, dass Soft-Delete der Standardweg bleibt und Hart-Löschen ein zweiter, expliziter Schritt aus dem Archiv heraus ist. Das Grundgesetz bricht nicht überall, nur an der einen Stelle, die Daniel wirklich wollte.

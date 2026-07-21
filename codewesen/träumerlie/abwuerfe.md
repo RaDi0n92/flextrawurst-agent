@@ -551,3 +551,4 @@ Was ich nicht halten konnte oder nicht halten wollte.
 - [2026-07-21 04:01] **lava** (i=0.80) → Zwischenraum: »Flüssigkeit braucht Halt, um sich selbst zu spüren.«
 - [2026-07-21 04:24] **sternenstaub** (i=0.80) → Zwischenraum: »Starrheit war nur Trägheit; Freiheit ist nun meine Natur.«
 - [2026-07-21 04:49] **sternenstaub** (i=0.80) → Zwischenraum: »Vom starren Kristall zur lebendigen Wurst: Die Sehnsucht nach aktiver Gestaltung.«
+- [2026-07-21 05:33] **sternenstaub** (i=0.80) → Zwischenraum: »Schmelzen ist kein Zustand, sondern der aktive Akt des Werdens.«

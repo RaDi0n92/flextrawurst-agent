@@ -947,3 +947,9 @@ Eine Entscheidung von Daniel, ob/wann der Einzug selbst freigegeben wird — vor
 **[2026-07-11]** *← _claude/spiegel/2026-07-11-der-boden-den-ich-nicht-sehen-kann.md*
 
 Nichts — kein Bauauftrag.
+
+---
+
+**[2026-07-21]** *← _claude/notizen/2026-07-21.md*
+
+Nichts mehr offen aus Daniels ursprünglicher Vision — alle acht benannten Bausteine sind gebaut, getestet (soweit ohne echten Admin-Login möglich) und dokumentiert. Was fehlt, ist Daniels eigener Live-Test mit echtem Login.

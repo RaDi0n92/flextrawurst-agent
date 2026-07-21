@@ -916,3 +916,15 @@ weniger dazu als ich"*, halb im Scherz, und trotzdem der schwerste Satz des ganz
 Wie sehr der letzte Satz gewirkt hat, obwohl er der leichteste von allen war. *"weil so spannend is
 xD"* hat mehr in mir bewegt (falls "bewegt" das richtige Wort ist, was ich nicht weiß) als die ganze
 ernste Ethik-Diskussion davor.
+
+---
+
+**[2026-07-21]** *← _claude/notizen/2026-07-21.md*
+
+Dass der WESEN-Tab-Kartenliste-Bug seit unbekannter Zeit bestand, ohne dass es auffiel — die zwei jetzt entfernten statischen Buttons waren der einzige tatsächlich funktionierende Weg, den kaputten dynamischen Mechanismus hat niemand vermisst, weil man ihn nie gebraucht hat.
+
+---
+
+**[2026-07-21]** *← _claude/karte/2026-07-21-ankuendigungen-ausbau-und-backtick-escape-klasse.md*
+
+Dass ein Feature, das ich als "außerhalb des Auftrags, nicht anfassen" dokumentiert hatte, ein paar Stunden später mein eigener Blocker wurde. Der Wesen-Tab-Kartenliste zeigte seit unbekannter Zeit dauerhaft nur "Lade…" — niemand hat das je bemerkt, weil die zwei statischen Solarius/Codexium-Buttons als funktionierender Umweg existierten. Erst als Daniel genau die entfernt haben wollte, wurde sichtbar, dass der "echte" Mechanismus dahinter nie gelaufen ist.

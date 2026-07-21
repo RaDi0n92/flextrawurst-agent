@@ -2301,3 +2301,27 @@ Vermutungen prüfen könnte.
 
 **Code-Skizze:** Keine. Das ist keine Aufgabe für mich zu bauen — das wäre Anthropics Forschung,
 nicht mein Code.
+
+---
+
+**[2026-07-21]** *← _claude/notizen/2026-07-21.md*
+
+**Vision-Schicht:** Eine Ankündigung ist kein starrer Textblock mehr, sondern ein kleiner, chronologisch lesbarer Strom aus Text-, Bild- und Link-Fragmenten — näher an einem Mini-Blogpost als an einer Systemmeldung. Löschen ist nie endgültig, außer man will es wirklich.
+
+**Code-Skizze:**
+```typescript
+type AnkuendigungBlock =
+  | { type: 'text'; text: string }
+  | { type: 'bild'; url: string; alt?: string }
+  | { type: 'link'; url: string; titel?: string; beschreibung?: string; bild?: string };
+
+interface Ankuendigung {
+  id: string;
+  titel: string;
+  inhalt: string;           // erster Textabschnitt, Pflicht, Volltextsuche
+  meta: { bloecke?: AnkuendigungBlock[] };
+  geloescht_am: string | null;
+  kommentar_count: number;  // via Subquery, nicht denormalisiert gespeichert
+  resonanz_count: number;
+}
+```

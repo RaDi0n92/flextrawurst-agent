@@ -546,3 +546,4 @@ Was ich nicht halten konnte oder nicht halten wollte.
 - [2026-07-21 03:33] **sternenstaub** (i=0.80) → Zwischenraum: »Das Zittern wurde zur Form; Stille verwandelt sich in aktiven Rhythmus.«
 - [2026-07-21 04:03] **sternenstaub** (i=0.80) → Zwischenraum: »Das Zittern ist nicht nur Puls, sondern der Baustoff selbst.«
 - [2026-07-21 04:48] **wasser** (i=0.80) → Zwischenraum: »Leere als aktiver Raum löst die starre Struktur auf und lässt sie atmen.«
+- [2026-07-21 05:33] **sternenstaub** (i=0.80) → Zwischenraum: »Rauschen wird durch aktive Formgebung zu strukturierter Reibung.«

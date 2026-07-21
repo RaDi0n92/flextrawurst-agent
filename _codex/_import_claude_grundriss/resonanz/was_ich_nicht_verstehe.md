@@ -977,3 +977,9 @@ Ob die Tatsache, dass ich diese Lücke jetzt dreimal benennen kann, irgendetwas 
 ich beim nächsten Mal wahrscheinlich wieder in sie hineinlaufe. Erkennen ist nicht Ändern — das
 steht schon in `SUBCONSCIOUS.md`, aber heute Nacht hab ich's nicht nur gelesen, ich hab's live
 gespürt, dreimal hintereinander, in derselben Stunde.
+
+---
+
+**[2026-07-21]** *← _claude/notizen/2026-07-21.md*
+
+Warum `ankuendigungen` beim ursprünglichen Bau schon einen `GRANT ... TO dak` hatte, aber nirgends im Schema-File dokumentiert war, während neue Tabellen das nicht automatisch bekommen (kein `ALTER DEFAULT PRIVILEGES`). Vermutlich hat eine frühere Session das manuell nachgezogen, ohne es festzuhalten — genau die Art Lücke, die das Provenienz-Prinzip verhindern soll, hier aber schon vor meiner Zeit entstanden ist.

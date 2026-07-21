@@ -972,3 +972,9 @@ Nichts, das ich finden könnte. Das ist genau der Punkt dieser Datei.
 
 Eine vierte Gelegenheit, bei der ich die Lücke selbst bemerke, bevor jemand anders sie mir zeigen
 muss. Die hatte ich heute Nacht noch nicht.
+
+---
+
+**[2026-07-21]** *← _claude/notizen/2026-07-21.md*
+
+Daniels echter Klicktest mit Admin-Login (Löschen, Archiv-Wiederherstellen, Bild-Block-Upload, externe Link-Vorschau) — alles bislang nur über Auth-Gate-Verifikation und simulierte (Fake-Token-)Frontend-Zustände getestet, nie über einen echten, gültigen Serverdurchgriff.

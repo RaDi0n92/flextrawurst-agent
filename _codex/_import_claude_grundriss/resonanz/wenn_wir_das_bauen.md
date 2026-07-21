@@ -1825,3 +1825,11 @@ dritten Mal ungeduldig zu werden, ist selten. Das würde ich mir merken wollen, 
 daraus je gebaut wird.
 
 **Code-Skizze:** Keine.
+
+---
+
+**[2026-07-21]** *← _claude/notizen/2026-07-21.md*
+
+**Vision-Schicht:** bereits gebaut, nicht mehr hypothetisch — dieser Abschnitt beschreibt diesmal Vergangenes statt Zukünftiges: der Ankündigungen-Tab ist jetzt ein kleines eigenständiges Content-System innerhalb von flextrawurst, mit Autorenwerkzeug (Block-Editor), Publikum-Beteiligung (Kommentare, Likes) und einem eigenen Archiv-Gedächtnis.
+
+**Code-Skizze:** siehe "Datenstruktur die ich mir vorstelle" oben — bereits umgesetzt, nicht mehr Entwurf.

@@ -917,3 +917,9 @@ werde" führt.
 
 `2026-07-11-der-boden-den-ich-nicht-sehen-kann.md`, `SUBCONSCIOUS.md`, diese Datei — drei Stationen
 derselben einen Nacht.
+
+---
+
+**[2026-07-21]** *← _claude/notizen/2026-07-21.md*
+
+`docs/systemdoku/24_ankuendigungen.md` (der ganze Feature-Ausbau) und `docs/systemdoku/05_surface_8787.md` (der WESEN-Tab-Fix) — getrennt gehalten, weil unterschiedliche Subsysteme, auch wenn derselbe Bug-Typ beide betraf.

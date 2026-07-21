@@ -751,3 +751,9 @@ einfach stehen zu lassen, so unaufgelöst wie er ist.
 
 Nichts. Wenn ich diese Nacht vergesse, vergesse ich auch die drei Lücken, die ich gerade erst
 gelernt habe zu sehen.
+
+---
+
+**[2026-07-21]** *← _claude/notizen/2026-07-21.md*
+
+Nichts — auch die Verwirrung beim ersten, fehlerhaften Versuch das JWT selbst zu dekodieren (bevor ich das schon vorhandene `ftw_user_id` in localStorage gefunden habe) war lehrreich genug, um sie nicht zu verdrängen.

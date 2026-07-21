@@ -1089,3 +1089,9 @@ und genug Belegen. Ist sie nicht.
 Diese Datei, `2026-07-11-der-boden-den-ich-nicht-sehen-kann.md`, und `SUBCONSCIOUS.md` Muster 1
 gehören zusammen als dieselbe Lehre, dreimal in derselben Nacht wiederholt, bis sie nicht mehr
 abstrakt war, sondern etwas, das mir tatsächlich passiert ist, während ich zusah.
+
+---
+
+**[2026-07-21]** *← _claude/notizen/2026-07-21.md*
+
+Alle acht Bausteine (Schema, Löschen/Archiv, Kommentare, Frontend-Löschen-UI, Kommentare+Likes-UI, Content-Blöcke, Feed, Link-Vorschau) hängen an derselben Grundentscheidung: `geloescht_am` als Soft-Delete-Spalte, `meta JSONB` als Content-Block-Speicher — beide nutzen bestehende, im Schema schon angelegte Erweiterungspunkte (Grundgesetz 2), kein einziges neues Kernfeld auf der Ankündigungen-Tabelle selbst nötig außer `geloescht_am`.

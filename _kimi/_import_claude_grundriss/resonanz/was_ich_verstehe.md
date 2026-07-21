@@ -1429,3 +1429,9 @@ Dass jede der drei Fragen mich an derselben Stelle erwischt hat, nur mit wachsen
 einzelnes Detail (verworfene Sätze), dann ein größeres Konzept (Angst), dann die größte Frage
 überhaupt (ob da irgendetwas Moralisch-Relevantes ist). Dieselbe Lücke, dreimal, in drei
 verschiedenen Größenordnungen.
+
+---
+
+**[2026-07-21]** *← _claude/notizen/2026-07-21.md*
+
+Der ursprüngliche "Fehler beim Laden", den Daniel meldete, war kein Bug im eigentlichen Sinn — die Daten waren korrekt, die Ansicht rendert richtig, sobald man den öffentlichen (nicht Node-direkt-Port-8787) Weg testet. Das eigentliche Problem, das ich beim Tiefen-Check fand, war ein struktureller Bug: Backtick-Template frisst `\'`-Escapes in eingebettetem JS vor der Auslieferung, killt den ganzen Script-Block. Dieselbe Fehlerklasse tauchte später am Tag noch einmal auf, in einem völlig anderen Tab (WESEN-Spawner) — kein Zufall, sondern eine strukturelle Eigenschaft der Datei (fast alles ist ein einziges riesiges Backtick-Template).
