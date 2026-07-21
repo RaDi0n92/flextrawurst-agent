@@ -13504,6 +13504,14 @@ except ImportError as _e:
     import logging as _logging
     _logging.warning(f"events_stream_api nicht geladen: {_e}")
 
+# ── RAG Ring 1 (Wesen-Einzug-Vorbereitung, 2026-07-21) ───────────────────────
+try:
+    from rag_api import rag_router as _rag_router
+    app.include_router(_rag_router)
+except ImportError as _e:
+    import logging as _logging
+    _logging.warning(f"rag_api nicht geladen: {_e}")
+
 
 if __name__ == "__main__":
     import uvicorn
