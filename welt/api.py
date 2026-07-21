@@ -13496,6 +13496,14 @@ except ImportError as _e:
     import logging as _logging
     _logging.warning(f"denkstream_api nicht geladen: {_e}")
 
+# ── Events-Stream (generischer Live-Update-Kanal, Grundgesetz "Live statt F5") ──
+try:
+    from events_stream_api import events_stream_router as _events_stream_router
+    app.include_router(_events_stream_router)
+except ImportError as _e:
+    import logging as _logging
+    _logging.warning(f"events_stream_api nicht geladen: {_e}")
+
 
 if __name__ == "__main__":
     import uvicorn
