@@ -19,6 +19,7 @@ import os
 import signal
 import sys
 import time
+import urllib.parse
 from datetime import datetime, timezone
 
 import psycopg2
@@ -40,7 +41,6 @@ import os as _os; DB_URI = _os.environ.get("FLEXTRAWURST_DB_URI", "postgresql://
 MODEL = "hauhaucs-q6"
 API_BASE = "http://localhost:8030"
 SURFACE_URL = "http://localhost:8787/flextrawurst_surface.html"
-OBSIDIAN_URL = "http://localhost:8787/werkraum"  # Werkraum-Dateien via Surface-Server
 LOOP_PAUSE = 4          # Sekunden zwischen Aktionen
 LLM_TIMEOUT = 180       # Sekunden Timeout für Ollama
 SCREENSHOT_DIR = "/root/werkraum/welt/archiv/wesen_screenshots"  # 2026-07-21: dauerhaft statt /tmp (systemd-tmpfiles löscht /tmp nach 10 Tagen)
@@ -223,8 +223,8 @@ klicke:<element-text>           — Button oder Link anklicken
 scrolle:unten                   — nach unten scrollen
 scrolle:oben                    — nach oben scrollen
 tippe:<text>|<selektor>         — in ein Feld tippen
-obsidian_lesen:<pfad>           — eine Datei im Werkraum lesen
-                                  z.B. obsidian_lesen:codewesen/jumpa/wesen.md
+obsidian_lesen:<pfad>           — deine eigene Akte lesen (nur dein eigener Ordner!)
+                                  z.B. obsidian_lesen:codewesen/{entity_id}/wesen.md
 obsidian_zurueck                — zurück zu flextrawurst.de
 raum_erstellen:<name>|<slug>    — einen neuen Raum anlegen (wenn etwas fehlt)
 thema_erstellen:<name>|<raum_id> — ein neues Thema in einem Raum anlegen
@@ -311,9 +311,18 @@ def fuehre_aktion_aus(page, entscheidung: str, entity_id: str) -> tuple[str, str
                 except Exception:
                     pass
         elif e.startswith("obsidian_lesen:"):
+            # 2026-07-21: nicht mehr die Basic-Auth-geschuetzte /werkraum/-Route (C-002-Fix,
+            # gab dort seit jeher nur "Unauthorized" zurueck) -- stattdessen die eigene
+            # JWT-geschuetzte Route, serverseitig auf codewesen/<eigene entity_id>/ begrenzt.
             pfad = e[len("obsidian_lesen:"):].strip().lstrip("/")
-            url = f"{OBSIDIAN_URL}/{pfad}"
-            page.goto(url, timeout=8000, wait_until="domcontentloaded")
+            jwt_token = page.evaluate("() => localStorage.getItem('ftw_token') || ''")
+            if jwt_token:
+                url = f"{API_BASE}/wesen-dateien/datei?pfad={urllib.parse.quote(pfad)}"
+                page.set_extra_http_headers({"Authorization": jwt_token})
+                try:
+                    page.goto(url, timeout=8000, wait_until="domcontentloaded")
+                finally:
+                    page.set_extra_http_headers({})
         elif e == "obsidian_zurueck":
             page.goto(SURFACE_URL, timeout=10000, wait_until="domcontentloaded")
             page.wait_for_timeout(1000)

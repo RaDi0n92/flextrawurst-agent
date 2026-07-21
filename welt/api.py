@@ -13512,6 +13512,14 @@ except ImportError as _e:
     import logging as _logging
     _logging.warning(f"rag_api nicht geladen: {_e}")
 
+# ── Wesen-Dateien (eigene codewesen/-Akte lesen, ersetzt kaputte obsidian_lesen-Route) ──
+try:
+    from wesen_dateien_api import wesen_dateien_router as _wesen_dateien_router
+    app.include_router(_wesen_dateien_router)
+except ImportError as _e:
+    import logging as _logging
+    _logging.warning(f"wesen_dateien_api nicht geladen: {_e}")
+
 
 if __name__ == "__main__":
     import uvicorn
