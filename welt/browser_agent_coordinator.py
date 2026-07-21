@@ -28,6 +28,7 @@ WESEN = [
     "R1ZZ1",
     "jumpa",
     "Resonanzknoten",
+    "dak+gord-system",  # 2026-07-21: 7. Codewesen, war vergessen
 ]
 
 AGENT_SCRIPT = Path(__file__).parent / "browser_agent.py"

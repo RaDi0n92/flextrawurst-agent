@@ -56,6 +56,7 @@ ENTITY_KEYS = {
     "R1ZZ1": "aaff2bba-de49-4fac-a051-4377b022151b",
     "jumpa": "7a6830f3-424b-404a-85cf-92f8ceda3c2c",
     "Resonanzknoten": "266bcfda-e651-416b-847d-84f8327ef754",
+    "dak+gord-system": "5f80bf80-34ee-4b5d-8599-b80449320b49",  # 2026-07-21: 7. Codewesen, war vergessen
 }
 
 os.makedirs(SCREENSHOT_DIR, exist_ok=True)
@@ -159,9 +160,36 @@ def lese_seite(page) -> dict:
         return {"url": page.url, "titel": "", "text": "", "elemente": []}
 
 
-def mache_screenshot(page, entity_id: str) -> str | None:
-    """Screenshot als JPEG speichern — für Denkstream-Anzeige."""
+def zeige_cursor(page, x: float, y: float):
+    """Zeichnet einen sichtbaren, künstlichen Mauszeiger in die Seite (Daniels Wunsch, 2026-07-21:
+    'kann man auch nen mauszeiger sehen'). Playwright bewegt die Maus intern beim Klicken, rendert
+    sie aber nie sichtbar -- kein echter OS-Cursor taucht je in einem Screenshot auf. Reines
+    Beobachtungs-Feature, ohne jeden Effekt auf die tatsächliche Interaktion. Muss nach jeder
+    Navigation neu eingefügt werden (page.goto() räumt das DOM komplett weg) -- deshalb hier
+    idempotent (legt das Element neu an falls es fehlt) statt einmalig beim Start."""
     try:
+        page.evaluate(
+            "(p) => { const x = p[0], y = p[1]; "
+            "let c = document.getElementById('__agent_cursor__'); "
+            "if (!c) { c = document.createElement('div'); c.id = '__agent_cursor__'; "
+            "c.style.cssText = 'position:fixed;z-index:2147483647;pointer-events:none;' + "
+            "'width:0;height:0;border-left:9px solid transparent;border-right:9px solid transparent;' + "
+            "'border-top:16px solid #ff2d55;transform:rotate(-45deg);transform-origin:0 0;' + "
+            "'filter:drop-shadow(0 0 2px rgba(0,0,0,.8));'; "
+            "document.body.appendChild(c); } "
+            "c.style.left = x + 'px'; c.style.top = y + 'px'; }",
+            [x, y],
+        )
+    except Exception:
+        pass
+
+
+def mache_screenshot(page, entity_id: str, cursor_pos: tuple[float, float] | None = None) -> str | None:
+    """Screenshot als JPEG speichern — für Denkstream-Anzeige. cursor_pos zeichnet den künstlichen
+    Mauszeiger an der zuletzt bekannten Position neu, bevor der Screenshot entsteht."""
+    try:
+        if cursor_pos is not None:
+            zeige_cursor(page, cursor_pos[0], cursor_pos[1])
         pfad = f"{SCREENSHOT_DIR}/{entity_id}_{int(time.time())}.jpg"
         page.screenshot(path=pfad, full_page=False, clip={"x":0,"y":0,"width":1024,"height":768})
         # Nur letzten Screenshot pro Wesen behalten
@@ -243,14 +271,17 @@ def parse_output(text: str) -> tuple[str, str, str]:
     return gedanke, entscheidung, begruendung
 
 
-def fuehre_aktion_aus(page, entscheidung: str, entity_id: str) -> tuple[str, str | None]:
-    """Führt eine Aktion aus. Gibt (zustand, zusatz_kontext) zurück -- zustand ist 'schlafen'
-    bei Schlaf-Entscheidung, sonst 'wach'. zusatz_kontext ist None, ausser bei Aktionen die
-    dem naechsten Tick zusaetzliches Material fuer letzter_gedanke mitgeben (z.B. RAG-Treffer).
+def fuehre_aktion_aus(page, entscheidung: str, entity_id: str) -> tuple[str, str | None, tuple[float, float] | None]:
+    """Führt eine Aktion aus. Gibt (zustand, zusatz_kontext, cursor_pos) zurück -- zustand ist
+    'schlafen' bei Schlaf-Entscheidung, sonst 'wach'. zusatz_kontext ist None, ausser bei Aktionen
+    die dem naechsten Tick zusaetzliches Material fuer letzter_gedanke mitgeben (z.B. RAG-Treffer).
+    cursor_pos ist None ausser bei 'klicke:', dann die Bildschirmkoordinate des geklickten
+    Elements -- fuer den sichtbaren, kuenstlichen Mauszeiger (Daniels Wunsch, siehe zeige_cursor()).
     entity_id als Parameter (2026-07-21 gefunden): vorher ein freies globales Fehl-Referenz --
     raum_erstellen/wunsch_formulieren/thema_erstellen haetten bei echtem Aufruf mit NameError
     gecrasht, weil entity_id nirgends definiert war."""
     zusatz_kontext = None
+    cursor_pos = None
     try:
         e = entscheidung.strip()
         if e.startswith("navigiere:"):
@@ -260,13 +291,22 @@ def fuehre_aktion_aus(page, entscheidung: str, entity_id: str) -> tuple[str, str
             page.goto(ziel, timeout=10000, wait_until="domcontentloaded")
         elif e.startswith("klicke:"):
             text = e[len("klicke:"):].strip()
+
+            def _klicke_und_zeige(locator):
+                nonlocal cursor_pos
+                box = locator.bounding_box(timeout=1000)
+                if box:
+                    cursor_pos = (box["x"] + box["width"] / 2, box["y"] + box["height"] / 2)
+                    zeige_cursor(page, cursor_pos[0], cursor_pos[1])
+                locator.click(timeout=3000)
+
             try:
-                page.get_by_text(text, exact=False).first.click(timeout=3000)
+                _klicke_und_zeige(page.get_by_text(text, exact=False).first)
             except Exception:
                 # Fallback: alle Links/Buttons nach Text durchsuchen
                 for sel in [f"text={text}", f"[title*='{text}']"]:
                     try:
-                        page.locator(sel).first.click(timeout=2000)
+                        _klicke_und_zeige(page.locator(sel).first)
                         break
                     except Exception:
                         pass
@@ -364,11 +404,11 @@ def fuehre_aktion_aus(page, entscheidung: str, entity_id: str) -> tuple[str, str
                 except Exception as ex:
                     log.warning("rag_erkunden Fehler: %s", ex)
         elif e == "schlafen":
-            return "schlafen", None
+            return "schlafen", None, None
         # nachdenken: nichts tun
     except Exception as ex:
         log.warning("Aktion '%s' fehlgeschlagen: %s", entscheidung[:50], ex)
-    return "wach", zusatz_kontext
+    return "wach", zusatz_kontext, cursor_pos
 
 
 def schreibe_denklog(conn, entity_id: str, gedanke: str, entscheidung: str,
@@ -675,6 +715,7 @@ def haupt_loop(entity_id: str):
     jwt = hole_jwt(entity_id)
     letzter_gedanke = ""
     erster_start = True
+    cursor_pos = (512.0, 384.0)  # Bildschirmmitte (1024x768) als Startposition des künstlichen Zeigers
 
     with sync_playwright() as pw:
         browser = pw.chromium.launch(
@@ -724,8 +765,8 @@ def haupt_loop(entity_id: str):
             # 1. Seite lesen
             seite = lese_seite(page)
 
-            # 2. Screenshot speichern
-            screenshot = mache_screenshot(page, entity_id)
+            # 2. Screenshot speichern (künstlicher Mauszeiger an der zuletzt bekannten Position)
+            screenshot = mache_screenshot(page, entity_id, cursor_pos)
 
             # 3. Andere Wesen status
             andere = hole_andere_wesen_status(conn, entity_id)
@@ -778,7 +819,9 @@ def haupt_loop(entity_id: str):
             log.info("%s [%s] → %s", entity_id, seite["url"][-40:], entscheidung[:50])
 
             # 6. Aktion ausführen
-            zustand, zusatz_kontext = fuehre_aktion_aus(page, entscheidung, entity_id)
+            zustand, zusatz_kontext, neue_cursor_pos = fuehre_aktion_aus(page, entscheidung, entity_id)
+            if neue_cursor_pos is not None:
+                cursor_pos = neue_cursor_pos
             if zusatz_kontext:
                 letzter_gedanke = (letzter_gedanke + "\n" + zusatz_kontext)[-1500:]
             if zustand == "schlafen":
