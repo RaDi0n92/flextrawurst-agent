@@ -184,16 +184,22 @@ und gelöst:
   mehrfach mit echtem deutschem Text (Umlaute, ß, Satzzeichen, Prozent)
   gegen den Pilot-Vault verifiziert.
 
+Danach auf alle 7 Wesen skaliert und öffentlich gestellt: eigener HTTPS-Port
+pro Wesen über nginx (exakt das Muster von Daniels eigenem Obsidian-Container
+repliziert, doppelte Basic-Auth), nicht als Pfad unter flextrawurst.de (Selkies
+ist nicht für Subpath-Mounting gebaut). Dabei die gleiche Bug-Klasse wie beim
+`%i`/`%I`-Systemd-Problem erneut gefunden: `WESEN_VAULT_OBSIDIAN_PASSWORD_träumerlie`
+und `..._dak+gord-system` sind als bash-Variablennamen ungültig (Umlaut/`+`),
+gefixt mit ASCII-GROSS-Suffixen. Nebenbei geklärt: Daniel muss für sein eigenes
+Mitschreiben gar nichts Neues einrichten — sein bereits laufendes `/werkraum`-
+Obsidian-Vault enthält `wesen_vaults/` schon automatisch als Unterordner.
+
 Vollständige Chronik: [[30_wesen_eigene_obsidian_vaults]].
 
 ---
 
 ## Was noch offen ist
 
-- Obsidian-Container auf 0.0.0.0 (öffentlich erreichbar) umstellen — von Daniel
-  bereits bestätigt, noch nicht durchgeführt: *"ja auch von außen erreichbar
-  und sogar nicht nur zum zuschauen sondern zum gärtnern"*
-- Die restlichen 6 Obsidian-Container nach demselben Muster aufsetzen
 - Orchestrierung klären: wie/wann wechselt der Wesen-Browser-Tab zu Obsidian —
   Daniel dazu wörtlich: *"keine ahnung so wie es am besten ist eben keine
   ahnung wird bestimmt auch sich dann zeigen bald und eh wieder geändert"* —
