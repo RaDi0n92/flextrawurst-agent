@@ -8236,6 +8236,7 @@ class AnkuendigungBody(BaseModel):
     bild_url: str | None = None
     angepinnt: bool = False
     veroeffentlicht: bool = True
+    meta: dict = Field(default_factory=dict)  # meta.bloecke = [{type: text|bild|link, ...}, ...] -- Grundgesetz 2
 
 
 class AnkuendigungPatchBody(BaseModel):
@@ -8245,6 +8246,7 @@ class AnkuendigungPatchBody(BaseModel):
     bild_url: str | None = None
     angepinnt: bool | None = None
     veroeffentlicht: bool | None = None
+    meta: dict | None = None
 
 
 class AnkuendigungKommentarBody(BaseModel):
@@ -8323,9 +8325,10 @@ def ankuendigung_erstellen(
     try:
         with conn.cursor() as cur:
             cur.execute(
-                """INSERT INTO ankuendigungen (titel, inhalt, kategorie, bild_url, autor_id, angepinnt, veroeffentlicht)
-                   VALUES (%s,%s,%s,%s,%s,%s,%s) RETURNING id::text, created_at""",
-                (body.titel, body.inhalt, body.kategorie, body.bild_url, claims["user_id"], body.angepinnt, body.veroeffentlicht))
+                """INSERT INTO ankuendigungen (titel, inhalt, kategorie, bild_url, autor_id, angepinnt, veroeffentlicht, meta)
+                   VALUES (%s,%s,%s,%s,%s,%s,%s,%s) RETURNING id::text, created_at""",
+                (body.titel, body.inhalt, body.kategorie, body.bild_url, claims["user_id"], body.angepinnt, body.veroeffentlicht,
+                 psycopg2.extras.Json(body.meta)))
             row = cur.fetchone()
             cur.execute(
                 "INSERT INTO events (event_type, actor_type, actor_id, payload, visibility_layer) VALUES (%s,%s,%s,%s,%s)",
@@ -8348,6 +8351,8 @@ def ankuendigung_patch(
     felder = {k: v for k, v in body.model_dump(exclude_unset=True).items()}
     if not felder:
         raise HTTPException(status_code=400, detail="Keine Felder zum Ändern")
+    if "meta" in felder:
+        felder["meta"] = psycopg2.extras.Json(felder["meta"])
     sets = ", ".join(f"{k} = %s" for k in felder) + ", updated_at = now()"
     conn = get_conn()
     try:
@@ -8366,16 +8371,7 @@ def ankuendigung_patch(
     return {"ok": True}
 
 
-@app.post("/admin/ankuendigungen/{ankuendigung_id}/bild")
-async def ankuendigung_bild_hochladen(
-    ankuendigung_id: str,
-    bild: UploadFile = File(...),
-    authorization: str | None = Header(default=None),
-):
-    """Admin-only, kein Moderationsschritt (Grundgesetz 4 -- Admin hat totale Kontrolle).
-    Altes Bild bleibt als Datei liegen (nichts wird geloescht), nur bild_url zeigt neu."""
-    claims = _require_admin(authorization)
-
+async def _ankuendigung_bild_speichern(ankuendigung_id: str, bild: UploadFile) -> str:
     allowed_types = {"image/jpeg", "image/png", "image/webp", "image/gif"}
     if bild.content_type not in allowed_types:
         raise HTTPException(status_code=400, detail="Nur JPEG, PNG, WebP, GIF erlaubt")
@@ -8391,7 +8387,19 @@ async def ankuendigung_bild_hochladen(
 
     filename = f"{ankuendigung_id}_{uuid.uuid4()}.{ext}"
     (ANKUENDIGUNGEN_BILD_DIR / filename).write_bytes(content)
-    pfad = f"/uploads/ankuendigungen/{filename}"
+    return f"/uploads/ankuendigungen/{filename}"
+
+
+@app.post("/admin/ankuendigungen/{ankuendigung_id}/bild")
+async def ankuendigung_bild_hochladen(
+    ankuendigung_id: str,
+    bild: UploadFile = File(...),
+    authorization: str | None = Header(default=None),
+):
+    """Admin-only, kein Moderationsschritt (Grundgesetz 4 -- Admin hat totale Kontrolle).
+    Altes Bild bleibt als Datei liegen (nichts wird geloescht), nur bild_url zeigt neu."""
+    claims = _require_admin(authorization)
+    pfad = await _ankuendigung_bild_speichern(ankuendigung_id, bild)
 
     conn = get_conn()
     try:
@@ -8409,6 +8417,21 @@ async def ankuendigung_bild_hochladen(
     finally:
         conn.close()
     return {"ok": True, "bild_url": pfad}
+
+
+@app.post("/admin/ankuendigungen/{ankuendigung_id}/block-bild")
+async def ankuendigung_block_bild_hochladen(
+    ankuendigung_id: str,
+    bild: UploadFile = File(...),
+    authorization: str | None = Header(default=None),
+):
+    """Bild fuer einen Content-Block (meta.bloecke) -- speichert nur die Datei und gibt die URL
+    zurueck, ruehrt NICHT an ankuendigungen.bild_url (das bleibt das separate Titelbild fuer
+    Karten/Featured). Die URL wird vom Frontend in den Block eingebaut und erst beim naechsten
+    Speichern (PATCH mit meta.bloecke) tatsaechlich an der Ankuendigung festgemacht."""
+    _require_admin(authorization)
+    pfad = await _ankuendigung_bild_speichern(ankuendigung_id, bild)
+    return {"ok": True, "url": pfad}
 
 
 @app.get("/admin/ankuendigungen/archiv")
