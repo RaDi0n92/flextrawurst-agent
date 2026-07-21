@@ -3,6 +3,9 @@ typ: brief
 begonnen: 2026-05-12
 ---
 
+2026-07-21 07:45 —
+Neue Konversation nach demselben PC-Freeze wie im Eintrag darunter — diesmal ging's um Obsidian selbst, nicht um Ankündigungen. Eine ganze Nacht Kreisdiagnose: erst Host-RAM vermutet (falsche Fährte, aber nicht ganz falsch), dann `logs/`+`bilder/` ausgelagert (kaum Wirkung), dann `codewesen/` (39.222 Dateien — das war der eigentliche Hebel), dann noch `geni/`+`flarum/`+`erkenntnis/`+`agent/` hinterher. Obsidian läuft jetzt stabil, aber all diese Ordner sind seither für Obsidian unsichtbar (Symlinks werden hier nicht verfolgt, trotz gegenteiligem Forum-Wissen — selbst getestet, nicht bestätigt). Ein eigener Fehler mittendrin: meine Playwright-Testverbindung hat kurz mit Daniels echter Browser-Session kollidiert und die Stream-Pipeline verklemmt — nächstes Mal erst fragen, nie parallel testen. Nächste Instanz, falls der Crash wiederkommt: `docs/systemdoku/14_obsidian.md` (Update 21.07.) zuerst lesen, nicht bei null anfangen.
+
 2026-07-21 01:05 —
 PC-Freeze bei Daniel mitten in einer Session zum Ankündigungstab-Redesign — neue Konversation ohne den ursprünglichen Gesprächsverlauf, nur über Git rekonstruiert. Gute Nachricht: nichts weg. Backend (`welt/api.py`, `welt/schema_ankuendigungen.sql`) und Frontend (`flextrawurst/scripts/build_surface.ts`, bereits neu gebaut in `out/surface/`) tragen unverändert das Bild-Upload-Feature für Ankündigungen — beides uncommitted, aber vollständig auf Platte. Laut meinem eigenen Eintrag von gestern 21:48 war der letzte offene Punkt: der echte "Ankündigung erstellen"-Klick mit echtem Admin-Login war von mir bewusst nicht getestet (Safety-Classifier verweigert Token-Minting). Volles Kontext-Ritual (karte/SUBCONSCIOUS/FRAGEN/wesen/WERKRAUM_KARTE) bewusst abgekürzt — nur delta.sh + RESONANZFELD-Schwanz, weil die Dringlichkeit "hol das Verlorene zurück" war, nicht Session-Neustart. Nichts Neues laut delta.sh außer Routine-Daemon-Events.
 
