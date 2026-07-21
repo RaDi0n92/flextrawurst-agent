@@ -1,0 +1,37 @@
+{"key": "allow_hide_own_posts", "value": "reply"}
+{"key": "allow_post_editing", "value": "reply"}
+{"key": "allow_renaming", "value": "10"}
+{"key": "allow_sign_up", "value": "0"}
+{"key": "custom_footer", "value": "Hakuna Matata !!!"}
+{"key": "custom_header", "value": "Hakuna Matata !!!"}
+{"key": "custom_less", "value": ""}
+{"key": "default_locale", "value": "en"}
+{"key": "default_route", "value": "/all"}
+{"key": "display_name_driver", "value": "nickname"}
+{"key": "extensions_enabled", "value": "[\\"flarum-flags\\",\\"flarum-approval\\",\\"flarum-tags\\",\\"flarum-suspend\\",\\"flarum-subscriptions\\",\\"flarum-sticky\\",\\"flarum-statistics\\",\\"flarum-pusher\\",\\"flarum-nicknames\\",\\"flarum-mentions\\",\\"flarum-markdown\\",\\"flarum-lock\\",\\"flarum-likes\\",\\"flarum-lang-english\\",\\"flarum-emoji\\",\\"flarum-bbcode\\"]"}
+{"key": "favicon_path", "value": "favicon-fz468p9b.png"}
+{"key": "flarum-core.notify_admins_on_abandoned", "value": ""}
+{"key": "flarum-markdown.mdarea", "value": "1"}
+{"key": "flarum-mentions.allow_username_format", "value": "1"}
+{"key": "flarum-nicknames.min", "value": "3"}
+{"key": "flarum-nicknames.random_username", "value": ""}
+{"key": "flarum-nicknames.regex", "value": ""}
+{"key": "flarum-nicknames.unique", "value": ""}
+{"key": "flarum-tags.max_primary_tags", "value": "6"}
+{"key": "flarum-tags.max_secondary_tags", "value": "6"}
+{"key": "flarum-tags.min_primary_tags", "value": "0"}
+{"key": "flarum-tags.min_secondary_tags", "value": "0"}
+{"key": "forum_description", "value": "Willkommen auf der Rohform von Flextrawurst. Das hier ist der Ursprung aber nicht der geplante fertige Weltenkosmos! trotzdem ist dies schon eine ganz andere und neue ART von erlebnis und gestaltung und ein tragender kern ! Viel Spaß beim schreiben und lesen !!!"}
+{"key": "forum_title", "value": "flextrawurst-rohform-aber-ein-ZUHAUSE"}
+{"key": "logo_path", "value": null}
+{"key": "mail_driver", "value": "mail"}
+{"key": "mail_from", "value": "noreply@217.154.14.29"}
+{"key": "slug_driver_Flarum\\\\Discussion\\\\Discussion", "value": ""}
+{"key": "slug_driver_Flarum\\\\User\\\\User", "value": "default"}
+{"key": "theme_colored_header", "value": "1"}
+{"key": "theme_dark_mode", "value": "1"}
+{"key": "theme_primary_color", "value": "#51ab36"}
+{"key": "theme_secondary_color", "value": "#2a0d2b"}
+{"key": "version", "value": "1.8.16"}
+{"key": "welcome_message", "value": "Willkommen auf der Rohform von Flextrawurst. Das hier ist der Ursprung aber nicht der geplante fertige Weltenkosmos! trotzdem ist dies schon eine ganz andere und neue ART von erlebnis und gestaltung und ein tragender kern ! Viel Spaß beim schreiben und lesen !!!"}
+{"key": "welcome_title", "value": "Welcome to flextrawurst-rohform"}

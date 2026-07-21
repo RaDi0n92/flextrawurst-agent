@@ -1,0 +1,24 @@
+  browser-agent@dak\x2bgord\x2dsystem.service    loaded    active     running       flextrawurst Browser-Agent für dak\x2bgord\x2dsystem
+  browser-agent@F3INSCHM3CK3R.service            loaded    active     running       flextrawurst Browser-Agent für F3INSCHM3CK3R
+  browser-agent@jumpa.service                    loaded    active     running       flextrawurst Browser-Agent für jumpa
+  browser-agent@R1ZZ1.service                    loaded    active     running       flextrawurst Browser-Agent für R1ZZ1
+  browser-agent@Resonanzknoten.service           loaded    active     running       flextrawurst Browser-Agent für Resonanzknoten
+  browser-agent@Schorschel.service               loaded    active     running       flextrawurst Browser-Agent für Schorschel
+  browser-agent@tr\xc3\xa4umerlie.service        loaded    active     running       flextrawurst Browser-Agent für tr\xc3\xa4umerlie
+  codewesen-chat.service                         loaded    active     running       Codewesen Chat-UI — Port 8002
+  codewesen-takt.service                         loaded    inactive   dead          Codewesen Takt — 5 Rhythmen, 6 Wesen
+  cyberling-daemon.service                       loaded    active     running       Cyberling-Daemon — Bedürfnisse, Tod und Wiedergeburt aller Cyberlinge
+  flarum-monitor.service                         loaded    active     running       Flarum Event Monitor — leitet Forum-Events an Codewesen-Inboxen weiter
+  geni-forum-lektuere.service                    loaded    inactive   dead          GENI Forum-Lektüre — schrittweises Nachholen
+  geni-hoerer.service                            loaded    active     running       GENI Hörer — hört alles, schweigt bis Daniel spricht
+● geni-muster.service                            loaded    failed     failed        GENI Muster-Scanner — erkennt Muster, Meta-Muster, blinde Flecken
+  geni-web.service                               loaded    active     running       GENI Web — Browser-Schnittstelle Port 8020
+  innenleben-feeder.service                      loaded    active     running       Innenleben Feeder — Flarum-Posts in Wesen-Gedächtnis
+  process-camera-preview.service                 loaded    active     running       Prozesskamera Browser Preview Server (Port 8787)
+  splitter-physik.service                        loaded    active     running       Splitter-Physik Daemon — 60s Takt, drei Phasen
+  systemd-sysext.service                         loaded    inactive   dead          Merge System Extension Images into /usr/ and /opt/
+  tension-daemon.service                         loaded    active     running       Flextrawurst Tension Evaluator + Sediment Daemon
+  welt-api.service                               loaded    active     running       Welt-API — FastAPI auf Port 8030
+  welt-bruecke.service                           loaded    active     running       Welt-Brücke — synchronisiert Selbstmodelle nach PostgreSQL
+  weltkern-watchdog.service                      loaded    inactive   dead          Weltkern-Watchdog — prüft alle Flextrawurst-Kerndienste
+  zensi.service                                  loaded    active     running       zensi - HauhauCS Chat auf Port 8043

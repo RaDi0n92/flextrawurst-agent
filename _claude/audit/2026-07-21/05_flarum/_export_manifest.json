@@ -1,0 +1,131 @@
+{
+  "excluded_tables": [
+    "access_tokens",
+    "api_keys",
+    "email_tokens",
+    "login_providers",
+    "migrations",
+    "password_tokens",
+    "registration_tokens"
+  ],
+  "tables": [
+    {
+      "table": "discussion_tag",
+      "rows_exported": 5033,
+      "excluded_columns": [],
+      "error": null
+    },
+    {
+      "table": "discussion_user",
+      "rows_exported": 6001,
+      "excluded_columns": [],
+      "error": null
+    },
+    {
+      "table": "discussions",
+      "rows_exported": 3776,
+      "excluded_columns": [],
+      "error": null
+    },
+    {
+      "table": "flags",
+      "rows_exported": 0,
+      "excluded_columns": [],
+      "error": null
+    },
+    {
+      "table": "group_permission",
+      "rows_exported": 39,
+      "excluded_columns": [],
+      "error": null
+    },
+    {
+      "table": "group_user",
+      "rows_exported": 10,
+      "excluded_columns": [],
+      "error": null
+    },
+    {
+      "table": "groups",
+      "rows_exported": 6,
+      "excluded_columns": [],
+      "error": null
+    },
+    {
+      "table": "notifications",
+      "rows_exported": 209,
+      "excluded_columns": [],
+      "error": null
+    },
+    {
+      "table": "post_likes",
+      "rows_exported": 187,
+      "excluded_columns": [],
+      "error": null
+    },
+    {
+      "table": "post_mentions_group",
+      "rows_exported": 0,
+      "excluded_columns": [],
+      "error": null
+    },
+    {
+      "table": "post_mentions_post",
+      "rows_exported": 19,
+      "excluded_columns": [],
+      "error": null
+    },
+    {
+      "table": "post_mentions_tag",
+      "rows_exported": 14,
+      "excluded_columns": [],
+      "error": null
+    },
+    {
+      "table": "post_mentions_user",
+      "rows_exported": 4,
+      "excluded_columns": [],
+      "error": null
+    },
+    {
+      "table": "post_user",
+      "rows_exported": 0,
+      "excluded_columns": [],
+      "error": null
+    },
+    {
+      "table": "posts",
+      "rows_exported": 6991,
+      "excluded_columns": [],
+      "error": null
+    },
+    {
+      "table": "settings",
+      "rows_exported": 37,
+      "excluded_columns": [],
+      "error": null
+    },
+    {
+      "table": "tag_user",
+      "rows_exported": 0,
+      "excluded_columns": [],
+      "error": null
+    },
+    {
+      "table": "tags",
+      "rows_exported": 63,
+      "excluded_columns": [],
+      "error": null
+    },
+    {
+      "table": "users",
+      "rows_exported": 8,
+      "excluded_columns": [
+        "password",
+        "email",
+        "preferences"
+      ],
+      "error": null
+    }
+  ]
+}

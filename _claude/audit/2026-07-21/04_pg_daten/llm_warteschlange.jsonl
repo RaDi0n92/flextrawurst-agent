@@ -1,0 +1,5 @@
+{"id":105492,"server":"hintergrund","prioritaet":1,"rufer":"pid=1337122 wait=150 hold=220 browser_agent:dak+gord-system:tick","angefragt_um":"2026-07-21T18:59:39.031575+00:00","slot_bis":null}
+{"id":105490,"server":"hintergrund","prioritaet":1,"rufer":"pid=1337125 wait=150 hold=220 browser_agent:träumerlie:tick","angefragt_um":"2026-07-21T18:58:42.320986+00:00","slot_bis":"2026-07-21T19:03:47.479777+00:00"}
+{"id":105493,"server":"hintergrund","prioritaet":1,"rufer":"pid=1337121 wait=150 hold=220 browser_agent:Resonanzknoten:tick","angefragt_um":"2026-07-21T19:00:11.313653+00:00","slot_bis":null}
+{"id":105491,"server":"hintergrund","prioritaet":1,"rufer":"pid=1666502 wait=150 hold=220 browser_agent:Schorschel:tick","angefragt_um":"2026-07-21T18:59:14.158328+00:00","slot_bis":"2026-07-21T19:04:43.367839+00:00"}
+{"id":105494,"server":"hintergrund","prioritaet":1,"rufer":"pid=1672693 wait=150 hold=220 browser_agent:jumpa:tick","angefragt_um":"2026-07-21T19:01:06.78637+00:00","slot_bis":null}
