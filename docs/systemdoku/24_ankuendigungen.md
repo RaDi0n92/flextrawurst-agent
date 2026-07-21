@@ -1,6 +1,6 @@
 # Ankündigungen — Admin-only News/Ankündigungen/History
 
-**Datum:** 2026-07-20, Bild-Upload + Escape-Bugfix ergänzt 2026-07-21 (Recovery-Session nach PC-Freeze)
+**Datum:** 2026-07-20, Bild-Upload + Escape-Bugfix ergänzt 2026-07-21 (Recovery-Session nach PC-Freeze), Löschen/Archiv/Kommentare/Likes ergänzt 2026-07-21 (Folge-Session, Daniels Vision für einen ausgebauten Ankündigungsbereich)
 
 Neuer öffentlicher Tab direkt links neben "Was ist das?" im view-bar. Jeder kann lesen, nur Admins dürfen posten/bearbeiten.
 
@@ -25,6 +25,31 @@ Live gegen echte welt-api getestet: öffentliches GET → 200, POST/PATCH ohne T
 **Verifikationsmethode ohne echten Browser-Login:** Da Daniel einen echten Klicktest mit seinem Admin-Account für diese Runde bewusst abgelehnt hat (Sicherheits-Classifier hatte zuvor Token-Minting korrekt blockiert), wurden die tatsächlichen gebauten Funktionen (`akRender`, `akChipKlick`, `akDetailOeffnen`) per Node `vm`-Sandbox mit realistischen Testdaten **wirklich ausgeführt** (nicht nur gelesen) — inklusive eines HTML-Injection-Teststrings im Titel (`Test News & <b>fett</b>`), der korrekt escaped wurde. Erzeugte `onclick`-Attribute (`akChipKlick('news')`, `akDetailOeffnen('bbb-222')`, `background-image:url('/uploads/x.png')`) sind alle wohlgeformt. **Weiterhin nicht getestet:** der echte Bild-Upload-Klick durch einen Browser mit echtem Admin-Login (`POST /admin/ankuendigungen/{id}/bild` selbst) — Daniel sollte das einmal live durchklicken, sobald er möchte.
 
 Liegengebliebener Test-Eintrag aus der vorherigen (durch den PC-Freeze unterbrochenen) Session (`"Testankündigung mit Bild (wird gleich wieder gelöscht)"`, bild_url zeigte auf `/uploads/avatars/...` — vermutlich über einen Avatar-Upload-Workaround vor Existenz des dedizierten Endpunkts) wurde nicht gelöscht, sondern per `veroeffentlicht=false` unsichtbar gemacht (Grundgesetz 4/5 — nichts wird gelöscht).
+
+## Löschen/Archiv/Kommentare/Likes (2026-07-21, Folge-Auftrag)
+
+Daniels roher Auftrag nach dem Bild-Feature: er will Ankündigungen selbst löschen können, **sowohl** echtes unwiderrufliches Löschen **als auch** ein Soft-Delete-Archiv zum Wiederherstellen ("beides"), außerdem Kommentare (nur für Menschen mit Account) und eine Vision für einen ausgebauten Feed mit Content-Blöcken (Text/Bild/Link gemischt) und Link-Vorschauen (intern + extern). Dieser Abschnitt deckt den ersten, umgesetzten Teil ab: Löschen/Archiv/Kommentare/Likes-Grundlage. Content-Blöcke, Feed und Link-Vorschau sind als eigene Tasks vorgemerkt, noch nicht gebaut.
+
+**Architektur-Konflikt bewusst gemacht:** Echtes Hart-Löschen widerspricht Grundgesetz 4 ("nichts wird gelöscht, nur deaktiviert"). Daniel wollte es trotzdem — Kompromiss: Soft-Delete (`geloescht_am`-Spalte) ist der Standardweg, jeder Löschen-Klick landet zunächst im Archiv. Hart-Löschen ist ein zweiter, bewusster Schritt, nur aus dem Archiv heraus aufrufbar, mit eigener, drastischerer Bestätigung im Frontend.
+
+- **Schema** (`welt/schema_ankuendigungen.sql`): `ankuendigungen.geloescht_am TIMESTAMPTZ` (NULL = normal, gesetzt = im Archiv). Neue Tabelle `ankuendigungen_kommentare` (id, ankuendigung_id FK, human_id FK NOT NULL — kein Anon, `content` max. 5000 Zeichen, `sichtbar` bool default true, meta JSONB). **Stolperstein:** neue Tabellen bekommen die App-User-Rechte (`dak`) nicht automatisch (kein `ALTER DEFAULT PRIVILEGES` im System eingerichtet) — ohne expliziten `GRANT` wirft die API `permission denied`. Jetzt im Schema-File dokumentiert und mitgegeben.
+- **Likes/Reaktionen:** bewusst **keine neue Tabelle** — das bestehende generische Resonanz-System (`resonanzen`, `post_source`/`post_ref`, schon für andere Inhaltstypen im Einsatz) wird direkt mit `post_source='ankuendigung'`, `post_ref=<ankuendigung.id>` mitbenutzt (Grundgesetz 2: keine Doppel-Konstruktion für etwas das schon existiert). Kein Backend-Code dafür nötig, nur Frontend-Wiring (noch offen, Task 5).
+- **Kommentare bewusst NICHT über Schattenkommentare:** Schattenkommentare sind ein eigenes, semi-privates Sichtbarkeits-Konzept (anonym-Option, `visible_to`) für eine andere Beziehungsdynamik zwischen Wesen/Menschen — passt konzeptionell nicht zu "offener öffentlicher Kommentar unter jeder Ankündigung, nur für eingeloggte Menschen". Eigene, einfache Tabelle stattdessen.
+- **Backend-Endpunkte** (`welt/api.py`):
+  - `GET /ankuendigungen` — jetzt immer `geloescht_am IS NULL` (auch für Admins — Archiv ist ein eigener Endpunkt), plus `kommentar_count`/`resonanz_count` pro Item, plus `sort=kommentare` und `sort=likes` als neue Sortieroptionen (für Daniels Feed-Filter-Wunsch vorbereitet).
+  - `GET /admin/ankuendigungen/archiv` — Papierkorb-Liste, admin-only, paginiert.
+  - `DELETE /admin/ankuendigungen/{id}` — Soft-Delete (setzt `geloescht_am`).
+  - `POST /admin/ankuendigungen/{id}/wiederherstellen` — holt aus dem Archiv zurück.
+  - `DELETE /admin/ankuendigungen/{id}/endgueltig` — Hart-Löschen: DB-Zeile weg, zugehörige Kommentare weg, Bilddatei(en) von Platte gelöscht (Pfad-Sicherheit: nur `.resolve()`-geprüfte Pfade innerhalb `ANKUENDIGUNGEN_BILD_DIR`). Nur erreichbar wenn `geloescht_am` schon gesetzt ist (erst Soft-, dann Hart-Delete).
+  - `GET/POST /ankuendigungen/{id}/kommentare` — Lesen öffentlich, Schreiben nur mit gültigem Token und `role != 'entity'` (Daniels "nur User mit Account").
+  - `DELETE /ankuendigungen/{id}/kommentare/{kommentar_id}` — eigenen Kommentar oder (Admin) fremden ausblenden (`sichtbar=false`), kein Hart-Löschen für Kommentare.
+  - Events: `ankuendigung.geloescht`, `ankuendigung.wiederhergestellt`, `ankuendigung.endgueltig_geloescht`, `ankuendigung.kommentar_geschrieben`, `ankuendigung.kommentar_ausgeblendet`.
+- **Frontend** (`build_surface.ts`): "🗑 Archiv"-Button (admin-only) togglet zwischen normaler Ansicht und Archiv-Panel (`ak-archiv-body`). Archiv-Karten haben "Wiederherstellen" + "Endgültig löschen" (mit drastischer Bestätigung). Detailansicht hat jetzt auch einen "Löschen"-Button neben "Bearbeiten" (admin-only, Soft-Delete direkt aus der Ansicht). i18n DE+EN vollständig (9 neue Keys).
+- **Cleanup:** Die 3 Testeinträge aus der vorherigen Session ("ertzuikjhgfr" ×2, alte "Testankündigung mit Bild") wurden per Soft-Delete (exakt dieselbe Query wie der neue Endpunkt) ins Archiv verschoben — dogfooding statt blindem SQL-Löschen, wiederherstellbar falls doch noch gebraucht.
+
+**Verifikation:** Backend-Logik direkt per SQL gegen einen echten Testeintrag durchgespielt (Soft-Delete → verschwindet aus normaler Liste → erscheint im Archiv → Restore → wieder normal). HTTP-Auth-Gates bestätigt (401 ohne Token auf allen neuen Admin-/Kommentar-Schreib-Routen). Frontend per Playwright verifiziert: mit echtem (aber ungültigem/gefälschtem) Token in `localStorage` zeigen sich Archiv-Button und Löschen-Button korrekt (UI-Bedingung `ankIsAdmin()` rein clientseitig), der eigentliche API-Call mit dem Fake-Token wird vom Server korrekt mit 401 abgelehnt — bestätigt dass die UI-Sichtbarkeit keine Sicherheitsgrenze ist, nur Komfort, wie beim Rest des Systems. **Noch nicht getestet:** echter Admin-Klicktest von Daniel selbst (Löschen, Wiederherstellen, Endgültig-Löschen im echten Browser mit echtem Login).
+
+**Offen (vorgemerkt, nicht Teil dieser Runde):** Kommentar-UI + Like-Button im Frontend (Task 5), Content-Blöcke Text/Bild/Link gemischt (Task 6), Volltext-Feed unterhalb der Kartenansicht mit Sortierung neueste/älteste/meiste Kommentare/meiste Likes (Task 7), Link-Vorschau intern+extern mit SSRF-Schutz (Task 8).
 
 ## Bekannter Nebenfund (nicht behoben, außerhalb des Auftrags)
 
