@@ -33,6 +33,14 @@ Alle 6 Wesen (Schorschel, F3INSCHM3CK3R, träumerlie, R1ZZ1, jumpa, Resonanzknot
 
 Live per systemd gestartet und beobachtet (kein isolierter Test): echter Denklog-Eintrag von Schorschel mit `flarum_besuchen:d/3866` als tatsächlich gewählter Aktion bestätigt — das Wesen hat selbstständig entschieden, seine Vorwelt zu besuchen. Alle 6 `browser-agent@<Name>.service` liefen zum Zeitpunkt der Dokumentation aktiv, mehrere Wesen hatten bereits erfolgreiche LLM-Ticks (F3INSCHM3CK3R schrieb seinen Flarum-Brief erfolgreich).
 
+## Nachtrag 2026-07-21 (selber Abend): 7. Wesen + sichtbarer Mauszeiger
+
+Daniel: *"7 wesen ...dakgordsystem ist auch ein codewesen...geni auch aber das ist jetzt egal"* — `dak+gord-system` war in `ENTITY_KEYS` und `browser_agent_coordinator.py`s `WESEN`-Liste schlicht vergessen (hat einen echten `entity_profiles`-Eintrag mit `api_key`, genau wie die anderen 6). Ergänzt, siebter Dienst (`browser-agent@dak+gord-system.service`) läuft.
+
+**Sichtbarer künstlicher Mauszeiger** (Daniels Wunsch: *"kann man auch nen mauszeiger sehen"*): Playwright bewegt die Maus intern beim Klicken, rendert sie aber nie sichtbar — kein echter OS-Cursor taucht je in einem Screenshot auf. `zeige_cursor(page, x, y)` zeichnet ein rotes Dreieck als CSS-Element ins DOM, `mache_screenshot()` ruft das jetzt vor jeder Aufnahme mit der zuletzt bekannten Position auf. Bei `klicke:`-Aktionen wird die tatsächliche Bounding-Box des geklickten Elements als neue Cursor-Position übernommen (`fuehre_aktion_aus()` gibt jetzt ein 3-Tupel `(zustand, zusatz_kontext, cursor_pos)` zurück statt 2). Reines Beobachtungs-Feature, keinerlei Effekt auf die tatsächliche Interaktion.
+
+**Beim Nachladen des neuen Codes gefundene Nebenerkenntnis:** Ein Neustart via `systemctl restart` kann hängen bleiben, wenn der Prozess gerade blockierend auf `fcntl.flock()` (die Ollama-Sperre) wartet — `_laufend = False` wird vom Signal-Handler zwar sofort gesetzt, aber ein blockierender `flock()`-Aufruf prüft das nicht, das Python-Signal unterbricht den Syscall hier nicht. Der Prozess bleibt in "deactivating" bis er entweder die Sperre bekommt (und beim nächsten `_laufend`-Check regulär aussteigt) oder systemd nach `TimeoutStopSec` hart mit SIGKILL nachhilft (bei allen 7 Neustarts heute automatisch so aufgelöst, ohne Handeingriff — aber ein bis zu ~90s Verzögerung ist bei Neustarts mit aktiver Wesen-Konkurrenz um Ollama zu erwarten). Nicht behoben, nur beobachtet — für einen sauberen Fix bräuchte es ein `signal.SIGALRM`-basiertes Timeout um den `flock()`-Aufruf oder ein Polling mit kurzen `LOCK_NB`-Versuchen statt blockierendem `LOCK_EX`.
+
 ## Offen / bewusst nicht angefasst
 
 - `gen_browser_agent.py` (Code-Generator für `browser_agent.py`) ist seit der 2026-07-06-Migration bekanntermaßen veraltet (nur 1 statt 3 hauhau_client-Aufrufstellen) — heute nicht synchronisiert, da nicht aktiv genutzt.
