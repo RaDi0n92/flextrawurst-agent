@@ -91,6 +91,28 @@ Daniel: *"ja innenleben feeder fixen pls"*, später zum Scheduler-Bypass-Fund: *
 
 **Update 2026-07-21, später am Tag: Root-Partition dadurch komplett volltgelaufen.** `/root/geni_gedaechtnis/knoten/` (122G) hat zusammen mit anderem Wachstum die 929G-Root-Partition auf 0 Byte frei gebracht — Bash-Tool, Memory-Writes und Stop-Hooks fielen reihenweise mit ENOSPC aus, auch nach Neustart der Claude-Code-Session zunächst weiter, weil selbst ein leeres `mkdir` kein Byte mehr fand. Daniel hat von Hand wieder Platz geschaffen (`.claude/file-history` + `.claude/backups` aus einer anderen Session heraus gelöscht) — danach 382G frei (59%), Inodes unauffällig (27%). `geni_gedaechtnis/rauschen/` selbst ist mit 3.9G klein — der Verdacht ist, dass das Rauschen nicht dort landet, sondern direkt in `knoten/` vermischt mit echten Knoten. `/root/werkraum_git` (46G, aktiver GIT_DIR von `/root/werkraum`) und `/usr/share/ollama` (111G, 12 aktiv referenzierte Modelle inkl. `gemma4` — laut Daniel nur deaktiviert, nicht gelöscht) wurden geprüft und sind **kein** Aufräum-Kandidat. Daniels Entscheidung: die beiden offenen Fragen oben bleiben unbeantwortet, "nicht jetzt" — kein Auftrag, bald mal angehen.
 
+## Zweiter Auslöser derselben Root-Partition-Krise (2026-07-21, Claude-Code-Session): llama-server-Log-Flut
+
+Unabhängig vom `geni_gedaechtnis`-Wachstum oben kam am selben Tag ein zweiter, akuterer Auslöser hinzu — in einer separaten Claude-Code-Session per SSH-Terminal untersucht (nicht GLM/Werkraum-Session).
+
+**Befund:** `llama-hauhaucs-hintergrund.service` (PID 881054, Port 11436) hing seit **1 Tag 6h 27min** in einer Log-Schleife: `/var/log/syslog` wuchs auf **387GB** (von "vor 10 Minuten noch nicht mal 200GB" laut Daniel — also sehr schneller Endspurt kurz vor dem Vollauf). Journal-Auszug bestätigte über 7,2 Mio. Log-Zeilen an einem einzigen Tag für diesen Unit, verteilt über mehrere verschiedene Tasks (nicht nur den zuletzt beobachteten) — also ein wiederkehrendes Muster, kein Einzelfall.
+
+**Root Cause:** bekannter Upstream-Bug in `llama.cpp` — Context-Checkpoint-Invalidierung bei Qwen/SWA-Modellen im Zusammenspiel mit `--ctx-checkpoints`, siehe [Issue #24587](https://github.com/ggml-org/llama.cpp/issues/24587), [#24055](https://github.com/ggml-org/llama.cpp/issues/24055), [#22746](https://github.com/ggml-org/llama.cpp/issues/22746), [#20176](https://github.com/ggml-org/llama.cpp/issues/20176). Die `hauhaucs-q6`-Instanz lief mit `--ctx-checkpoints 64` auf Qwen3.6-35B — genau die fehleranfällige Kombination. Jede Invalidierung loggte erneut den vollen Prompt-Cache-Status (`srv update:`-Dump aller aktiven Slots), was bei diesem Bug in eine praktisch endlose Wiederholung geriet.
+
+**Soforthilfe:**
+1. `truncate -s 0 /var/log/syslog` — sofortiger Platz zurück (rsyslogd hielt die Datei offen, `rm` hätte nicht sofort geholfen).
+2. `systemctl restart llama-hauhaucs-hintergrund.service` — hing zunächst selbst (SIGTERM ohne Reaktion), `kill -9` auf die alte PID aus einem zweiten Terminal hat den Restart entblockt.
+
+**Dauerhafte Fixes (alle live, Backups in `/root/system-backups/`):**
+1. `/etc/logrotate.d/rsyslog`: `size 1G` ergänzt (zusätzlich zu `weekly`) — einzelne Logdatei kann nicht mehr unbegrenzt wachsen.
+2. Neuer `logrotate-hourly.timer`/`.service` (eigenständig, bestehender `logrotate.timer` bleibt unverändert) — prüft stündlich statt nur täglich, damit die `size`-Regel überhaupt greift bevor die Platte vollläuft. Getestet: Rotation lief sauber durch.
+3. `llama-hauhaucs-hintergrund.service.d/override.conf`: `--log-verbosity 2` ergänzt (Default war 3/info) — Info-Level-Spam (`print_timing`, `srv update`) fällt weg, Warnungen/Fehler bleiben sichtbar. Gemessene Wirkung: Log-Wachstum von ~4,7MB/s auf ~62 Bytes/s (Faktor ~75.000).
+4. `--ctx-checkpoints 64` → `0` (Checkpoints deaktiviert) — Invalidierungs-Loop-Meldungen von praktisch dauerhaft auf 1× in 6 Minuten. Kein Geschwindigkeitsverlust beobachtet (61,7 Tok/s Prompt-Verarbeitung, 19,4 Tok/s Generierung laut `/metrics` nach dem Fix — gesunde Werte). Checkpoints brachten bei diesem Workload (viele verschiedene Prompts unterschiedlicher Wesen ohne gemeinsamen Anfang) ohnehin praktisch nie einen Cache-Treffer.
+
+**Verbleibt bewusst unverändert:** Die `forcing full prompt re-processing due to lack of cache data`-Warnung bleibt bestehen (~1× pro Task) — das ist kein Bug, sondern ehrliche Beschreibung des normalen Betriebs bei diesem Workload-Muster, nicht behebbar durch Flags.
+
+**Zusammenhang mit dem `geni_gedaechtnis`-Befund oben:** Beide Ursachen haben vermutlich gemeinsam zum kompletten Vollauf beigetragen — `geni_gedaechtnis/knoten/` (122G, langsames Dauerwachstum) plus diese akute 387G-Flut innerhalb weniger Stunden. Die 122G-Frage von oben (Wachstumsrate gewollt? Kaltstart-Scan?) bleibt weiterhin offen und ist durch diese Session nicht beantwortet.
+
 ## Status-Übersicht am Ende dieser Session
 
 | Dienst | Status | Grund |
