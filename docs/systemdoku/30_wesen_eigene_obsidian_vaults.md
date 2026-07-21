@@ -260,6 +260,44 @@ insgesamt, ~644MB RAM) läuft die ganze Zeit parallel zum neuen
 die Liste erstmal nur benannt haben, Entscheidung über Pausieren/Umbau folgt
 separat.
 
+## Nachtrag 2026-07-21 (später): LLM-Slot-Kontention war der Grund für "SCREENS steht fest"
+
+Daniel bemerkte, dass alle SCREENS-Tabs auf der Startseite stehen bleiben und die
+Wesen "nicht wirklich denken". Live-Diagnose per `llm_warteschlange`-Tabelle: zu
+jedem Zeitpunkt standen gleichzeitig 6× `reaktion` (aus dem oben beschriebenen
+Altsystem), `engagement`, `batch_generator`, `lg_daemon` **und** alle 7
+`browser_agent:*:tick`-Anfragen in derselben `hintergrund`-Warteschlange — grob
+15–16 Verbraucher für nur 2 Slots. Ergebnis: `browser_agent.py` (max_wartezeit=150s
+pro Tick) verlor die Warteschlangen-Reihenfolge fast immer und fiel auf den
+`nachdenken`-Fallback zurück, ohne je eine echte Aktion auszuführen — die Wesen
+blieben exakt auf der Seite stehen, auf der ihr letzter erfolgreicher Tick sie
+zurückließ. `--parallel` selbst war *nicht* das Problem (2 ist der getestete,
+harte Zielwert — `--parallel 3` verursacht einen 37x-Einbruch, siehe
+`12_ollama_gemma4.md`), sondern schlicht zu viele gleichzeitige Verbraucher auf
+zu wenigen Slots.
+
+**Daniels Entscheidung:** das alte 21(23)-Dienste-System pausieren, nicht den
+Browser-Agent-Takt strecken. Umgesetzt: alle `codewesen-*.service` außer
+`codewesen-chat.service` (nutzt einen separaten LLM-Pool, kein Teil der
+Kontention, bleibt als interaktive Chat-UI aktiv) und `flarum-monitor.service`
+(reine Event-Weiterleitung MySQL→Inbox, keine LLM-Nutzung) mit `systemctl stop`
+angehalten — bewusst *stop*, nicht *disable*, bleibt also reversibel und käme
+bei einem Reboot zurück, falls das nicht gewollt ist. Queue direkt danach
+verifiziert: nur noch die 4 aktiven `browser_agent:*:tick`-Einträge, keine
+Alt-System-Prozesse mehr.
+
+## Nachtrag 2026-07-21 (später): Firewall-Lücke bei den 7 Vault-Ports geschlossen
+
+nginx war für alle 7 Wesen-Vaults korrekt konfiguriert (Schorschel auf 8445, die
+übrigen 6 auf 8450–8455, per `ss -tlnp` bestätigt lauschend), aber `ufw` hatte
+diese Ports nie freigegeben — nur 8433, 8443, 8444, 8446–8449 waren offen, von
+denen keiner zu einem echten Vault passt. Reines Setup-Versäumnis von der
+Vault-Nacht. Daniel hatte die Ports bereits manuell bei Strato (Provider-Firewall)
+freigegeben, die lokale `ufw`-Lücke war der verbleibende Blocker. Mit
+`ufw allow <port>/tcp` für 8445 und 8450–8455 geschlossen (v4+v6), live verifiziert
+(`curl https://217.154.14.29:8445/` liefert jetzt `401` statt Timeout — Basic-Auth
+greift wie vorgesehen, kein offenes Scheunentor).
+
 ## Nachtrag 2026-07-21: AUGE-Button — rrweb-Wiedergabe im Surface fertig
 
 Im SCREENS-Modal (`build_surface.ts`) neuer Toggle-Button "◉ AUGE" neben dem
