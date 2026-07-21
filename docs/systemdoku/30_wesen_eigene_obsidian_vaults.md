@@ -59,40 +59,82 @@ Nach einem Container-Neustart öffnet Obsidian den Vault automatisch, komplett o
 GUI-Klicks — deterministisch, kein Trial-and-Error nötig. Für alle 7 Container beim
 ersten Hochfahren so vorzuseeden.
 
-## Echtes Tippen: Bug gefunden und diagnostiziert
+## Echtes Tippen: drei Schichten von Bugs, alle gelöst (oder bewusst akzeptiert)
 
-`page.keyboard.type(text, delay=N)` sendet zwar echte Zeichen-für-Zeichen-Events (kein
-LLM-Call pro Taste nötig, genau wie gewünscht) — aber durch Selkies durchgereicht geht
-dabei jede Großschreibung verloren, und gelegentlich fällt das erste Zeichen nach
-einem Fokuswechsel (Klick/Enter) komplett weg. Bestätigt am echten Dateiinhalt auf
-Platte: `"Das ist..."` wurde zu `"as ist..."`, komplett kleingeschrieben.
+**Schicht 1 — `page.keyboard.type()` durch Selkies:** sendet zwar echte
+Zeichen-für-Zeichen-Events, aber jede Großschreibung geht verloren (bestätigt am
+Dateiinhalt: `"Das ist..."` wurde zu `"as ist..."`). Manuelles Modifier-Handling
+(`down("Shift")` → `press("KeyX")` → `up("Shift")`) funktioniert zwar isoliert
+korrekt, aber `page.keyboard.press()` kennt keine deutschen Umlaute als Key-Namen
+(`Unknown key: "ö"`) — für deutschen Text also ohnehin eine Sackgasse.
+`page.keyboard.insert_text()` ist noch schlechter: kommt durch Selkies überhaupt
+nicht an (0 Zeichen).
 
-**Root Cause gefunden:** manuelles Modifier-Handling (`page.keyboard.down("Shift")`
-→ `press("KeyX")` → `up("Shift")`) erzeugt zuverlässig ein korrektes Großbuchstabe
-("X") gefolgt von einem korrekten Kleinbuchstaben ("y") — `type()`s eingebautes
-Shift-Handling überlebt die Selkies-Weiterleitung nicht, manuelles Down/Up schon.
-**Fix ist bekannt, aber noch nicht gebaut:** ein `human_type(page, text)`-Helper, der
-pro Zeichen entscheidet ob Shift nötig ist (Großbuchstabe, Sonderzeichen) und dann
-explizit down/press/up statt `type()` nutzt, plus eine kurze Vorlaufzeit nach jedem
-Fokuswechsel gegen das verschluckte erste Zeichen.
+**Schicht 2 — der eigentliche Durchbruch, `xdotool` direkt im Container:**
+`docker exec <container> xdotool type --delay N "text"` umgeht Playwright/Selkies
+komplett und injiziert die Tasten direkt in die X11-Sitzung. Tippt Groß-
+/Kleinschreibung UND deutsche Umlaute korrekt (verifiziert: *"Größe, Übung,
+Änderung, Straße — Umlaute mittendrin klappen... Zahlen 100%, Satzzeichen!
+Fragen? Doppelpunkte: ja."* — praktisch alles richtig). **Einzige verbleibende,
+bewusst akzeptierte Lücke:** ein Großbuchstabe-Umlaut (Ä/Ö/Ü) direkt am Anfang
+eines `type`-Laufs kommt klein raus (`Übung` → `übung`), Umlaute *mitten* im
+Wort sind davon nicht betroffen (`Größe` bleibt korrekt). Daniel dazu wörtlich:
+*"scheiss auf großung kleinschreibung mach ich ja auch nicht... falls es nicht
+lösbar ist, hab ich's ihnen vererbt haha"* — explizit als unwichtig abgesegnet,
+nicht weiter verfolgt.
+
+**Schicht 3 — Speichern auf Platte, der eigentlich harte Teil:** Text, der in
+eine per `Ctrl+N` frisch erzeugte Notiz getippt wird, erscheint zwar korrekt im
+Editor (ein `Backspace` löscht ihn wirklich — kein Rendering-Fake), landet aber
+**nie** auf der Platte, egal wie lange gewartet oder wie oft `Ctrl+S` gedrückt
+wird (auch über Playwright direkt, nicht nur `xdotool`). Root Cause: `Ctrl+N`
+bindet den Editor-Puffer in dieser Umgebung nie richtig an eine Datei auf der
+Platte. Test mit einer **von außen (host-seitig) vorab angelegten** Datei zeigt:
+Obsidians Dateisystem-Watcher erkennt sie sofort (taucht in der Seitenleiste
+auf), und Bearbeitungen daran speichern sofort korrekt. **Fix: Dateien nie über
+`Ctrl+N` in der App selbst anlegen — immer vorher direkt als echte Datei auf der
+Platte erzeugen, dann öffnen.**
+
+**Nebenfund beim Robustheitstest:** ein `browser.close()` unmittelbar VOR dem
+`xdotool`-Tipplauf reißt den Text nach ungefähr der Hälfte lautlos ab (`xdotool`
+selbst meldet trotzdem Erfolg — der Abbruch passiert auf der Empfängerseite).
+Fix: Playwright-Verbindung während des gesamten Tipplaufs offen halten, erst
+danach schließen.
+
+## Fertiges Modul: `welt/obsidian_vault_agent.py`
+
+```python
+import obsidian_vault_agent as ova
+ova.oeffne_datei_und_schreibe(
+    "Schorschel", "erste-notiz", "Der eigentliche Text ...",
+    titel="Erste Notiz — Wesen-eigener Vault",
+)
+```
+
+Kompletter, verifizierter Ablauf: Datei direkt auf der Platte anlegen (falls
+nicht vorhanden) → über den Quick Switcher (`Ctrl+O`, positionsunabhängig,
+robuster als Sidebar-Klicks) im Wesen-eigenen Obsidian-Fenster öffnen → ans Ende
+springen → `xdotool` tippt den Text, Playwright-Verbindung bleibt währenddessen
+offen. End-to-End mehrfach mit echtem deutschem Text (Umlaute, ß, Gedankenstrich,
+Satzzeichen, Prozent) gegen den echten Pilot-Vault getestet, Ergebnis jedes Mal
+korrekt bis auf die oben genannte, akzeptierte Lücke.
 
 ## Status
 
-Pilot-Container läuft (`obsidian-schorschel`), Vault ist leer und bereit (Test-Notizen
-wieder gelöscht — die Leinwand soll für die erste echte Notiz frei sein, nicht mit
-Debug-Text vorbelegt). Noch **nicht** gebaut: der `human_type()`-Helper selbst, die
-Integration in `browser_agent.py` (neue Aktion? eigenes Skript? wie wird "Tab
-minimieren, Obsidian öffnen" konkret orchestriert?), die 6 weiteren Container, die
-Site-READMEs mit Navigationsanleitung, Daniels gewünschte Mitschreib-Möglichkeit.
+Kernproblem (sichtbares, zeichenweises Tippen ohne LLM-Call, das wirklich auf
+der Platte landet) ist **gelöst und verifiziert**. Pilot-Vault wieder leer
+(Test-Notizen entfernt). Noch **nicht** gebaut:
 
 ## Offen / als Nächstes
 
-- `human_type()`-Helper bauen und gegen den Pilot-Vault verifizieren (auch Umlaute,
-  Satzzeichen mit Shift wie `!`/`?`/`:` auf der im Container aktiven Tastaturbelegung
-  prüfen — noch nicht getestet, nur reine Buchstaben).
-- Entscheidung mit Daniel: Ports weiterhin nur localhost, oder wie der Haupt-Container
-  öffentlich erreichbar (damit Daniel selbst live zuschauen kann)?
-- Orchestrierung klären: wie/wann "minimiert" der Wesen-Browser-Tab und wechselt zu
-  Obsidian — eigene neue Aktion im bestehenden `browser_agent.py`-Vokabular, oder ein
-  komplett separater Prozess/Zustand?
-- Site-READMEs (Navigationsanleitung pro Seite) sind noch gar nicht angefangen.
+- Entscheidung mit Daniel bereits gefallen: Container sollen öffentlich
+  erreichbar sein (0.0.0.0), nicht nur für die Automation, sondern damit Daniel
+  selbst mitschreiben/"gärtnern" kann — Umstellung von 127.0.0.1 auf 0.0.0.0
+  noch nicht durchgeführt.
+- Orchestrierung (wann/wie wechselt der Wesen-Browser-Tab zu Obsidian) bewusst
+  offen gelassen, Daniel wörtlich: *"keine ahnung so wie es am besten ist eben
+  keine ahnung wird bestimmt auch sich dann zeigen bald und eh wieder
+  geändert"* — meine Einschätzung entscheidet vorerst, wird sich iterativ zeigen.
+- Die restlichen 6 Obsidian-Container nach demselben Muster aufsetzen
+  (Port-Schema bereits in `obsidian_vault_agent.VAULT_PORTS` vorbereitet).
+- Site-READMEs (Navigationsanleitung pro Seite) — noch nicht angefangen.
