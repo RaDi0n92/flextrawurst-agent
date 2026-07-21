@@ -1,0 +1,8 @@
+{"key":"entity_takt_eingefroren","value":"false","beschreibung":"entity_takt.service pausiert","updated_at":"2026-06-14T17:13:15.900903+00:00","updated_by":"system"}
+{"key":"cyberling_eingefroren","value":"false","beschreibung":"cyberling-daemon pausiert","updated_at":"2026-06-14T17:13:15.900903+00:00","updated_by":"system"}
+{"key":"splitter_physik_eingefroren","value":"false","beschreibung":"splitter-physik.service pausiert","updated_at":"2026-06-14T17:13:15.900903+00:00","updated_by":"system"}
+{"key":"wesen_neugier_aktiv","value":"true","beschreibung":"Wesen dürfen selbstständig neugierig sein","updated_at":"2026-06-14T17:13:15.900903+00:00","updated_by":"system"}
+{"key":"wesen_engagement_aktiv","value":"true","beschreibung":"Wesen dürfen auf Ereignisse reagieren","updated_at":"2026-06-14T17:13:15.900903+00:00","updated_by":"system"}
+{"key":"web_besuche_aktiv","value":"false","beschreibung":"Web-Besucher Daemon läuft","updated_at":"2026-06-14T17:13:15.900903+00:00","updated_by":"system"}
+{"key":"direkt_chat_aktiv","value":"true","beschreibung":"Direkter Chat mit Wesen über Port 8002 aktiv","updated_at":"2026-06-14T17:13:15.900903+00:00","updated_by":"system"}
+{"key":"flarum_eingefroren","value":"false","beschreibung":"Flarum ist eingefroren — Wesen können dort nicht posten","updated_at":"2026-06-14T20:31:56.781905+00:00","updated_by":"system"}

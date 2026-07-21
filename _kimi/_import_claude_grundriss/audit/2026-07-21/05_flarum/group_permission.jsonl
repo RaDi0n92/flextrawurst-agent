@@ -1,0 +1,39 @@
+{"group_id": 2, "created_at": null, "permission": "viewForum"}
+{"group_id": 3, "created_at": "2026-04-19 06:32:12.000000", "permission": "discussion.flagPosts"}
+{"group_id": 3, "created_at": "2026-04-19 06:32:13.000000", "permission": "discussion.likePosts"}
+{"group_id": 3, "created_at": "2026-04-19 06:46:49.000000", "permission": "discussion.rename"}
+{"group_id": 3, "created_at": null, "permission": "discussion.reply"}
+{"group_id": 3, "created_at": "2026-04-19 06:32:12.000000", "permission": "discussion.replyWithoutApproval"}
+{"group_id": 3, "created_at": "2026-04-19 06:32:12.000000", "permission": "discussion.startWithoutApproval"}
+{"group_id": 3, "created_at": null, "permission": "searchUsers"}
+{"group_id": 3, "created_at": null, "permission": "startDiscussion"}
+{"group_id": 3, "created_at": "2026-04-19 06:55:56.000000", "permission": "user.editOwnNickname"}
+{"group_id": 4, "created_at": "2026-04-19 06:46:12.000000", "permission": "bypassTagCounts"}
+{"group_id": 4, "created_at": "2026-04-19 06:46:14.000000", "permission": "createAccessToken"}
+{"group_id": 4, "created_at": "2026-04-19 06:32:12.000000", "permission": "discussion.approvePosts"}
+{"group_id": 4, "created_at": "2026-04-19 06:47:23.000000", "permission": "discussion.delete"}
+{"group_id": 4, "created_at": "2026-04-19 06:47:19.000000", "permission": "discussion.deletePosts"}
+{"group_id": 4, "created_at": null, "permission": "discussion.editPosts"}
+{"group_id": 4, "created_at": null, "permission": "discussion.hide"}
+{"group_id": 4, "created_at": null, "permission": "discussion.hidePosts"}
+{"group_id": 4, "created_at": "2026-04-19 06:32:13.000000", "permission": "discussion.lock"}
+{"group_id": 4, "created_at": "2026-04-19 06:48:07.000000", "permission": "discussion.sticky"}
+{"group_id": 4, "created_at": "2026-04-19 06:48:05.000000", "permission": "discussion.tag"}
+{"group_id": 4, "created_at": "2026-04-19 06:32:12.000000", "permission": "discussion.viewFlags"}
+{"group_id": 4, "created_at": null, "permission": "discussion.viewIpsPosts"}
+{"group_id": 4, "created_at": "2026-04-19 06:46:16.000000", "permission": "mentionGroups"}
+{"group_id": 4, "created_at": "2026-04-19 06:47:40.000000", "permission": "moderateAccessTokens"}
+{"group_id": 4, "created_at": "2026-04-19 06:47:51.000000", "permission": "postWithoutThrottle"}
+{"group_id": 4, "created_at": "2026-04-19 06:47:31.000000", "permission": "user.edit"}
+{"group_id": 4, "created_at": "2026-04-19 06:47:20.000000", "permission": "user.editCredentials"}
+{"group_id": 4, "created_at": "2026-04-19 06:32:12.000000", "permission": "user.suspend"}
+{"group_id": 4, "created_at": "2026-04-19 06:45:27.000000", "permission": "user.viewLastSeenAt"}
+{"group_id": 5, "created_at": "2026-04-19 14:15:00.000000", "permission": "discussion.reply"}
+{"group_id": 5, "created_at": "2026-04-19 14:15:00.000000", "permission": "discussion.replyWithoutApproval"}
+{"group_id": 5, "created_at": "2026-04-19 06:48:07.000000", "permission": "discussion.sticky"}
+{"group_id": 5, "created_at": "2026-04-19 06:48:05.000000", "permission": "discussion.tag"}
+{"group_id": 5, "created_at": "2026-04-19 06:47:51.000000", "permission": "postWithoutThrottle"}
+{"group_id": 5, "created_at": "2026-04-19 14:15:00.000000", "permission": "startDiscussion"}
+{"group_id": 5, "created_at": "2026-04-19 14:15:00.000000", "permission": "startDiscussionWithoutApproval"}
+{"group_id": 5, "created_at": "2026-04-19 06:45:27.000000", "permission": "user.viewLastSeenAt"}
+{"group_id": 6, "created_at": "2026-04-19 06:45:27.000000", "permission": "user.viewLastSeenAt"}

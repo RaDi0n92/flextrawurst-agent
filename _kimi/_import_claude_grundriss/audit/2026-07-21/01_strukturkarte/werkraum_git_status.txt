@@ -1,0 +1,83 @@
+=== /root/werkraum Git-Status ===
+On branch main
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	modified:   .obsidian/workspace.json
+	modified:   _claude/RESONANZFELD.md
+	modified:   _claude/_import_codex_grundriss/RESONANZFELD.md
+	modified:   _claude/_import_kimi_grundriss/RESONANZFELD.md
+	modified:   _claude/abwuerfe.md
+	modified:   _claude/tools/.letzter_zwischenraum_scan
+	modified:   _codex/RESONANZFELD.md
+	modified:   _codex/_import_claude_grundriss/RESONANZFELD.md
+	modified:   _codex/_import_claude_grundriss/abwuerfe.md
+	modified:   _codex/_import_claude_grundriss/tools/.letzter_zwischenraum_scan
+	modified:   _codex/_import_kimi_grundriss/RESONANZFELD.md
+	modified:   _kimi/RESONANZFELD.md
+	modified:   _kimi/_import_claude_grundriss/RESONANZFELD.md
+	modified:   _kimi/_import_claude_grundriss/abwuerfe.md
+	modified:   _kimi/_import_claude_grundriss/tools/.letzter_zwischenraum_scan
+	modified:   _kimi/_import_codex_grundriss/RESONANZFELD.md
+	modified:   innenleben/chroma_db/chroma.sqlite3
+	modified:   innenleben/feeder_state.json
+	modified:   innenleben/selbstmodelle/emotional_history_F3INSCHM3CK3R.jsonl
+	modified:   innenleben/selbstmodelle/emotional_history_Schorschel.jsonl
+	modified:   innenleben/selbstmodelle/self_model_R1ZZ1.json
+	modified:   innenleben/selbstmodelle/self_model_Resonanzknoten.json
+	modified:   innenleben/selbstmodelle/self_model_jumpa.json
+	modified:   obsidian_vault/.obsidian/workspace.json
+	modified:   uploads/claude_voice.mp3
+	modified:   uploads/claude_voice.txt
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	_claude/audit/
+	_kimi/_import_claude_grundriss/audit/
+	innenleben/chroma_db/1a174387-320b-4f05-8731-237cfd649dc9/
+	innenleben/chroma_db/4fd9901d-e8e2-4db2-96c1-6f6f0ef0437a/
+	innenleben/chroma_db/b1e02201-3a7d-4380-8753-5acfa2fc69f1/
+	innenleben/selbstmodelle/emotional_history_R1ZZ1.jsonl
+	innenleben/selbstmodelle/emotional_history_Resonanzknoten.jsonl
+	innenleben/selbstmodelle/emotional_history_jumpa.jsonl
+	innenleben/selbstmodelle/integrator_log_R1ZZ1.jsonl
+	innenleben/selbstmodelle/integrator_log_Resonanzknoten.jsonl
+	innenleben/selbstmodelle/integrator_log_jumpa.jsonl
+	innenleben/selbstmodelle/self_model_history_R1ZZ1.jsonl
+	innenleben/selbstmodelle/self_model_history_Resonanzknoten.jsonl
+	innenleben/selbstmodelle/self_model_history_jumpa.jsonl
+
+no changes added to commit (use "git add" and/or "git commit -a")
+=== /root/werkraum Git-Log letzte 30 ===
+0e4131a42 backup: vor hoerer.py IGNORE_PATHS-Fix (flarum-Redundanz)
+6182f098e fix: innenleben/nodes.py — hauhau_client-Aufruf durch LLMSlot-Scheduler abgesichert
+c82eb4afd backup: vor innenleben/nodes.py Scheduler-Fix
+c0477d66a backup: vor innenleben-feeder Passwort-Fix
+57e6a6170 docs: LLM-Slot-Kontention diagnostiziert+behoben (Altsystem pausiert), Vault-Firewall-Lücke geschlossen
+9169b9ed6 docs: Notiz Teil 4 — Code-Export für ChatGPT (Secrets-Redaktion, Pfad-Korrektur)
+47df698e8 docs: Röntgenblick-Overlay fertig — Architektur-Entscheidung + 2 gefundene Bugs dokumentiert
+1d08720cb feat: Röntgenblick-Overlay Backend — melde_fokus() + SSE-Stream
+3946ee0bd feat: entity_fokus_events Tabelle für Röntgenblick-Overlay
+34acccbc2 docs: einzugsampel v2/v3 Auth-Fix im Sichtbarkeits-Audit nachgetragen
+0b382a831 fix: /admin/einzugsampel v2+v3 mit _require_admin() abgesichert
+a119a478f backup: vor einzugsampel v2/v3 Auth-Fix
+7659f7433 docs: AUGE-Button (rrweb-Wiedergabe) im Surface fertig dokumentiert
+030242276 feat: rrweb-Live-Spiegel (Menschen-Auge-Ebene, Grundgesetz 1) — Recording-Seite fertig und verifiziert
+2ef1fffa7 fix: idle-in-transaction Bug in hole_andere_wesen_status + ist_schlaf_faellig
+c08840fb1 docs: obsidian_schreiben-Orchestrierung + Vault-READMEs dokumentiert
+d850d0cc6 feat: obsidian_schreiben-Aktion + Vault-READMEs — Orchestrierung mit Daniel bestätigt
+5dd098c0c docs: Tagesbericht nachgezogen — Zugang, Orchestrierung, Vorfilter-Idee (Daniels Korrektur: doku lief nicht mehr mit)
+4e07bece4 docs: Tagesbericht — alle 7 Obsidian-Vaults skaliert und öffentlich, Punkt aus Offenes entfernt
+13a5aba48 docs: alle 7 Wesen-Obsidian-Vaults skaliert + öffentlich, Daniels eigener Zugriff geklärt
+8bb19956b fix: obsidian_vault_agent.py auf alle 7 Wesen skaliert, ASCII-sichere Env-Var-Namen
+8b3326bd9 docs: Tagesbericht aktualisiert — Tipp/Speicher-Bug vollständig gelöst statt nur diagnostiziert
+2581ab71d feat: obsidian_vault_agent.py — echtes, zeichenweises Tippen ohne LLM-Call, verifiziert
+905bd5d5f docs: Tagesbericht 2026-07-21 — Ankündigungen, Live-Update-Kanal, Wesen-Einzug, llm_scheduler, Archiv-Auftrag, Obsidian-Vault-Pilot
+c77120537 docs+infra: Pilot Wesen-eigener Obsidian-Vault (Schorschel) — Container, Zugriffsweg, Tipp-Bug diagnostiziert
+e02835c7e docs: Nachtrag Archiv-Auftrag + obsidian_lesen-Fix + Live-Ansicht (2026-07-21)
+b8b1d0f14 feat: wesen.screenshot Live-Event + Fix wesen.schlaeft-Event-Bug
+16f43d8f7 fix: obsidian_lesen ersetzt kaputte /werkraum/-Route durch eigene JWT-Route
+7e2b109cc fix: Wesen-Screenshots dauerhaft archivieren statt /tmp (Archäologie-Auftrag Daniel 2026-07-21)
+293b7c81a docs: Nachtrag --parallel 2 Umsetzung + llm_scheduler-Migration abgeschlossen
+=== /root/werkraum Branch ===
+main

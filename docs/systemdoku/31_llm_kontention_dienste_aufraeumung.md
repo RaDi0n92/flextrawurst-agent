@@ -89,6 +89,8 @@ Daniel: *"ja innenleben feeder fixen pls"*, später zum Scheduler-Bypass-Fund: *
 1. Ist die Wachstumsrate (~900k Dateien/Tag) so gewollt, oder erzeugt irgendwo ein Bug unkontrolliert Knoten?
 2. Soll der erste (potenziell sehr lange) Kaltstart-Scan bewusst/gedrosselt gestartet werden, bevor der Timer wieder aktiviert wird?
 
+**Update 2026-07-21, später am Tag: Root-Partition dadurch komplett volltgelaufen.** `/root/geni_gedaechtnis/knoten/` (122G) hat zusammen mit anderem Wachstum die 929G-Root-Partition auf 0 Byte frei gebracht — Bash-Tool, Memory-Writes und Stop-Hooks fielen reihenweise mit ENOSPC aus, auch nach Neustart der Claude-Code-Session zunächst weiter, weil selbst ein leeres `mkdir` kein Byte mehr fand. Daniel hat von Hand wieder Platz geschaffen (`.claude/file-history` + `.claude/backups` aus einer anderen Session heraus gelöscht) — danach 382G frei (59%), Inodes unauffällig (27%). `geni_gedaechtnis/rauschen/` selbst ist mit 3.9G klein — der Verdacht ist, dass das Rauschen nicht dort landet, sondern direkt in `knoten/` vermischt mit echten Knoten. `/root/werkraum_git` (46G, aktiver GIT_DIR von `/root/werkraum`) und `/usr/share/ollama` (111G, 12 aktiv referenzierte Modelle inkl. `gemma4` — laut Daniel nur deaktiviert, nicht gelöscht) wurden geprüft und sind **kein** Aufräum-Kandidat. Daniels Entscheidung: die beiden offenen Fragen oben bleiben unbeantwortet, "nicht jetzt" — kein Auftrag, bald mal angehen.
+
 ## Status-Übersicht am Ende dieser Session
 
 | Dienst | Status | Grund |

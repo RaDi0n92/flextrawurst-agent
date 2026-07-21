@@ -1,0 +1,30 @@
+NEXT                             LEFT LAST                                     PASSED UNIT                            ACTIVATES
+Tue 2026-07-21 21:10:00 CEST      54s Tue 2026-07-21 21:00:00 CEST           9min ago sysstat-collect.timer           sysstat-collect.service
+Tue 2026-07-21 21:13:08 CEST  4min 2s Tue 2026-07-21 21:03:08 CEST           5min ago weltkern-watchdog.timer         weltkern-watchdog.service
+Tue 2026-07-21 21:19:08 CEST    10min Tue 2026-07-21 20:34:08 CEST          34min ago geni-forum-lektuere.timer       geni-forum-lektuere.service
+Tue 2026-07-21 21:23:17 CEST    14min Tue 2026-07-21 20:25:31 CEST          43min ago fwupd-refresh.timer             fwupd-refresh.service
+Tue 2026-07-21 21:28:18 CEST    19min Tue 2026-07-21 20:58:18 CEST          10min ago claude-resonanzfeld-build.timer claude-resonanzfeld-build.service
+Tue 2026-07-21 21:28:18 CEST    19min Tue 2026-07-21 20:58:18 CEST          10min ago codex-resonanzfeld-build.timer  codex-resonanzfeld-build.service
+Tue 2026-07-21 21:28:18 CEST    19min Tue 2026-07-21 20:58:18 CEST          10min ago kimi-resonanzfeld-build.timer   kimi-resonanzfeld-build.service
+Tue 2026-07-21 21:39:00 CEST    29min Tue 2026-07-21 21:09:00 CEST             5s ago phpsessionclean.timer           phpsessionclean.service
+Tue 2026-07-21 22:00:00 CEST    50min -                                             - logrotate-hourly.timer          logrotate-hourly.service
+Wed 2026-07-22 00:00:00 CEST 2h 50min Tue 2026-07-21 00:00:00 CEST            21h ago dpkg-db-backup.timer            dpkg-db-backup.service
+Wed 2026-07-22 00:00:00 CEST 2h 50min Tue 2026-07-21 00:00:00 CEST            21h ago logrotate.timer                 logrotate.service
+Wed 2026-07-22 00:07:00 CEST 2h 57min Tue 2026-07-21 00:07:00 CEST            21h ago sysstat-summary.timer           sysstat-summary.service
+Wed 2026-07-22 02:13:25 CEST  5h 4min Tue 2026-07-21 05:13:17 CEST            15h ago man-db.timer                    man-db.service
+Wed 2026-07-22 06:33:59 CEST       9h Tue 2026-07-21 06:49:04 CEST            14h ago apt-daily-upgrade.timer         apt-daily-upgrade.service
+Wed 2026-07-22 08:58:43 CEST      11h Tue 2026-07-21 14:42:44 CEST             6h ago motd-news.timer                 motd-news.service
+Wed 2026-07-22 09:36:15 CEST      12h Tue 2026-07-21 19:03:43 CEST        2h 5min ago apt-daily.timer                 apt-daily.service
+Wed 2026-07-22 09:39:24 CEST      12h Tue 2026-07-21 13:03:38 CEST             8h ago certbot.timer                   certbot.service
+Wed 2026-07-22 14:59:40 CEST      17h Tue 2026-07-21 14:59:40 CEST             6h ago update-notifier-download.timer  update-notifier-download.service
+Wed 2026-07-22 15:09:19 CEST      18h Tue 2026-07-21 15:09:19 CEST       5h 59min ago systemd-tmpfiles-clean.timer    systemd-tmpfiles-clean.service
+Sun 2026-07-26 03:10:10 CEST   4 days Sun 2026-07-19 03:10:03 CEST         2 days ago e2scrub_all.timer               e2scrub_all.service
+Mon 2026-07-27 01:14:16 CEST   5 days Mon 2026-07-20 00:58:54 CEST      1 day 20h ago fstrim.timer                    fstrim.service
+Tue 2026-07-28 19:58:46 CEST   6 days Mon 2026-07-20 07:51:36 CEST      1 day 13h ago update-notifier-motd.timer      update-notifier-motd.service
+-                                   - -                                             - apport-autoreport.timer         apport-autoreport.service
+-                                   - Tue 2026-07-07 18:50:40 CEST 2 weeks 0 days ago geni-muster.timer               geni-muster.service
+-                                   - -                                             - snapd.snap-repair.timer         snapd.snap-repair.service
+-                                   - -                                             - ua-timer.timer                  ua-timer.service
+-                                   - Tue 2026-07-21 21:08:18 CEST            47s ago werkraum-graph-update.timer     werkraum-graph-update.service
+
+27 timers listed.

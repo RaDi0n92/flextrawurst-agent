@@ -1,0 +1,307 @@
+POST   /admin/ankuendigungen                                                  [PUBLIC] Ankuendigung Erstellen
+GET    /admin/ankuendigungen/archiv                                           [PUBLIC] Ankuendigungen Archiv
+PATCH  /admin/ankuendigungen/{ankuendigung_id}                                [PUBLIC] Ankuendigung Patch
+DELETE /admin/ankuendigungen/{ankuendigung_id}                                [PUBLIC] Ankuendigung Loeschen
+POST   /admin/ankuendigungen/{ankuendigung_id}/bild                           [PUBLIC] Ankuendigung Bild Hochladen
+POST   /admin/ankuendigungen/{ankuendigung_id}/block-bild                     [PUBLIC] Ankuendigung Block Bild Hochladen
+DELETE /admin/ankuendigungen/{ankuendigung_id}/endgueltig                     [PUBLIC] Ankuendigung Endgueltig Loeschen
+POST   /admin/ankuendigungen/{ankuendigung_id}/wiederherstellen               [PUBLIC] Ankuendigung Wiederherstellen
+GET    /admin/bild-moderation                                                 [PUBLIC] Admin Bild Moderation Liste
+POST   /admin/bild-moderation/{bild_id}/ablehnen                              [PUBLIC] Admin Bild Ablehnen
+POST   /admin/bild-moderation/{bild_id}/genehmigen                            [PUBLIC] Admin Bild Genehmigen
+GET    /admin/cluster-vorschlaege                                             [PUBLIC] Cluster Vorschlaege
+POST   /admin/cluster-vorschlaege/{vorschlag_id}/ablehnen                     [PUBLIC] Cluster Ablehnen
+POST   /admin/cluster-vorschlaege/{vorschlag_id}/annehmen                     [PUBLIC] Cluster Annehmen
+GET    /admin/cyberlinge                                                      [PUBLIC] Admin List Cyberlinge
+PATCH  /admin/cyberlinge/{entity_id}                                          [PUBLIC] Admin Patch Cyberling
+GET    /admin/einzug/status                                                   [PUBLIC] Admin Einzug Status
+GET    /admin/einzugsampel                                                    [PUBLIC] Einzugsampel
+GET    /admin/einzugsampel/v2                                                 [PUBLIC] Einzugsampel V2
+GET    /admin/einzugsampel/v3                                                 [PUBLIC] Einzugsampel V3
+GET    /admin/einzugsampel/v4                                                 [PUBLIC] Einzugsampel V4
+GET    /admin/entity-keys                                                     [PUBLIC] Admin Entity Keys
+GET    /admin/gedankenblasen                                                  [PUBLIC] Admin List Gedankenblasen
+PATCH  /admin/gedankenblasen/{blase_id}                                       [PUBLIC] Admin Gedankenblase Patch
+DELETE /admin/gedankenblasen/{blase_id}                                       [PUBLIC] Admin Delete Gedankenblase
+GET    /admin/handlungsgrammatiken                                            [PUBLIC] Admin Handlungsgrammatiken
+PATCH  /admin/modules/{user_id}                                               [PUBLIC] Admin Patch Module
+DELETE /admin/post-relationen/{relation_id}                                   [PUBLIC] Post Relation Loeschen
+POST   /admin/post_spuren                                                     [PUBLIC] Admin Post Spur Hinzufuegen
+DELETE /admin/post_spuren                                                     [PUBLIC] Admin Post Spur Entfernen
+POST   /admin/posts                                                           [PUBLIC] Admin Post Erstellen
+GET    /admin/posts                                                           [PUBLIC] Admin List Posts
+DELETE /admin/posts/{post_id}                                                 [PUBLIC] Admin Delete Post
+PATCH  /admin/posts/{post_id}                                                 [PUBLIC] Admin Patch Post
+PATCH  /admin/posts/{post_id}/verschieben                                     [PUBLIC] Post Verschieben
+POST   /admin/raeume                                                          [PUBLIC] Admin Raum Erstellen
+PATCH  /admin/raeume/{raum_id}                                                [PUBLIC] Admin Raum Patch
+PATCH  /admin/schattenkommentare/{comment_id}                                 [PUBLIC] Admin Schattenkommentar Patch
+POST   /admin/splitter                                                        [PUBLIC] Admin Splitter Erstellen
+PATCH  /admin/splitter/{splitter_id}                                          [PUBLIC] Admin Splitter Patch
+DELETE /admin/splitter/{splitter_id}                                          [PUBLIC] Admin Delete Splitter
+GET    /admin/spuren                                                          [PUBLIC] Admin Spuren Liste
+POST   /admin/spuren                                                          [PUBLIC] Admin Spur Erstellen
+PATCH  /admin/spuren/{spur_id}                                                [PUBLIC] Admin Spur Patch
+GET    /admin/spurenwache                                                     [PUBLIC] Admin Spurenwache
+GET    /admin/supporter/bewerbungen                                           [PUBLIC] Admin Liste Bewerbungen
+PATCH  /admin/supporter/bewerbungen/{bew_id}                                  [PUBLIC] Admin Entscheide Bewerbung
+GET    /admin/tamagotchi/uebersicht                                           [PUBLIC] Admin Tamagotchi Uebersicht
+POST   /admin/themen                                                          [PUBLIC] Admin Thema Erstellen
+PATCH  /admin/themen/{thema_id}                                               [PUBLIC] Admin Thema Patch
+PATCH  /admin/themen/{thema_id}/verschieben                                   [PUBLIC] Thema Verschieben
+POST   /admin/unterthemen                                                     [PUBLIC] Admin Unterthema Erstellen
+PATCH  /admin/unterthemen/{unterthema_id}                                     [PUBLIC] Admin Unterthema Patch
+POST   /admin/users                                                           [PUBLIC] Admin Create User
+GET    /admin/users                                                           [PUBLIC] Admin List Users
+PATCH  /admin/users/{user_id}                                                 [PUBLIC] Admin Patch User
+DELETE /admin/users/{user_id}                                                 [PUBLIC] Admin Deactivate Or Delete User
+GET    /admin/verweilen                                                       [PUBLIC] Admin Verweilen
+GET    /admin/wesen-einsicht/entscheidungen                                   [PUBLIC] Einsicht Entscheidungen Alle
+GET    /admin/wesen-einsicht/entscheidungen/stats                             [PUBLIC] Einsicht Entscheidungen Stats
+GET    /admin/wesen-einsicht/human-material                                   [PUBLIC] Einsicht Human Material
+GET    /admin/wesen-einsicht/lebensjournal                                    [PUBLIC] Einsicht Lebensjournal
+GET    /admin/wesen-einsicht/life-contracts                                   [PUBLIC] Einsicht Life Contracts
+GET    /admin/wesen-einsicht/liveticker                                       [PUBLIC] Einsicht Liveticker
+GET    /admin/wesen-einsicht/organ-hunger                                     [PUBLIC] Einsicht Organ Hunger
+GET    /admin/wesen-einsicht/traumarchiv                                      [PUBLIC] Einsicht Traumarchiv
+POST   /admin/wesen/gedanken                                                  [PUBLIC] Admin Wesen Gedanken Erstellen
+POST   /admin/wesen/{entity_id}/einzug                                        [PUBLIC] Wesen Einzug
+POST   /admin/wesen/{entity_id}/nachricht                                     [PUBLIC] Schlafbrief Schreiben
+GET    /admin/widmungen                                                       [PUBLIC] Admin Widmungen Liste
+POST   /admin/widmungen/{wid}/ablehnen                                        [PUBLIC] Widmung Ablehnen
+POST   /admin/widmungen/{wid}/freischalten                                    [PUBLIC] Widmung Freischalten
+PATCH  /admin/wuensche/{wunsch_id}                                            [PUBLIC] Wunsch Status
+POST   /admin/zwischenraum/tick                                               [PUBLIC] Zwischenraum Tick
+GET    /ankuendigungen                                                        [PUBLIC] Ankuendigungen Liste
+GET    /ankuendigungen/{ankuendigung_id}/kommentare                           [PUBLIC] Ankuendigung Kommentare Lesen
+POST   /ankuendigungen/{ankuendigung_id}/kommentare                           [PUBLIC] Ankuendigung Kommentar Schreiben
+DELETE /ankuendigungen/{ankuendigung_id}/kommentare/{kommentar_id}            [PUBLIC] Ankuendigung Kommentar Ausblenden
+GET    /api/cyberlinge                                                        [PUBLIC] Api Cyberlinge
+GET    /api/posts                                                             [PUBLIC] Api Posts
+GET    /api/raeume                                                            [PUBLIC] Api Raeume
+GET    /api/splitter-aufnahmen                                                [PUBLIC] Api Splitter Aufnahmen
+POST   /auth/entity-login                                                     [PUBLIC] Entity Login
+POST   /auth/login                                                            [PUBLIC] Login
+POST   /auth/register                                                         [PUBLIC] Register
+GET    /bild-proxy                                                            [PUBLIC] Bild Proxy
+GET    /chat-verlauf/wesen-liste                                              [PUBLIC] Chat Verlauf Wesen Liste
+GET    /cyberlinge                                                            [PUBLIC] Cyberlinge Alias
+GET    /denkstream/all/last                                                   [PUBLIC] Denkstream All Last
+GET    /denkstream/all/stream                                                 [PUBLIC] Denkstream All Sse
+POST   /denkstream/chunk                                                      [PUBLIC] Denkstream Chunk
+GET    /denkstream/screenshot/{entity_id}                                     [PUBLIC] Denkstream Screenshot
+GET    /denkstream/status/all                                                 [PUBLIC] Denkstream Status All
+GET    /denkstream/traumbild/{entity_id}/{filename}                           [PUBLIC] Denkstream Traumbild File
+GET    /denkstream/traumbilder/{entity_id}                                    [PUBLIC] Denkstream Traumbilder
+GET    /denkstream/{entity_id}                                                [PUBLIC] Denkstream Sse
+GET    /denkstream/{entity_id}/last                                           [PUBLIC] Denkstream Last
+GET    /dom-events/stream/{entity_id}                                         [PUBLIC] Dom Events Sse
+GET    /entities                                                              [PUBLIC] Alle Entitaeten
+GET    /entities/{entity_id}/denkstrom                                        [PUBLIC] Entity Denkstrom Aktuell
+GET    /entities/{entity_id}/groups                                           [PUBLIC] Get Entity Groups
+GET    /entities/{entity_id}/profile                                          [PUBLIC] Entity Profil
+GET    /entities/{entity_id}/relationships                                    [PUBLIC] Entity Relationships
+GET    /entities/{entity_id}/shadow-dialogs                                   [PUBLIC] Entity Shadow Dialogs
+GET    /entities/{entity_id}/splitter                                         [PUBLIC] Entity Splitter Aufnahmen
+GET    /entities/{entity_id}/thinking                                         [PUBLIC] Entity Thinking
+GET    /events                                                                [PUBLIC] Events
+GET    /events/stream                                                         [PUBLIC] Events Sse
+GET    /fokus-events/stream/{entity_id}                                       [PUBLIC] Fokus Events Sse
+POST   /gedankenblasen                                                        [PUBLIC] Gedankenblase Erstellen
+GET    /gedankenblasen                                                        [PUBLIC] Gedankenblasen Liste
+GET    /gedankenblasen/feld                                                   [PUBLIC] Gedankenblasen Feld
+GET    /gedankenblasen/{blase_id}                                             [PUBLIC] Gedankenblase Detail
+DELETE /gedankenblasen/{blase_id}                                             [PUBLIC] Gedankenblase Archivieren
+GET    /groups                                                                [PUBLIC] List Groups
+POST   /groups                                                                [PUBLIC] Create Group
+GET    /groups/fan/{entity_id}                                                [PUBLIC] Get Fan Group
+GET    /groups/policy                                                         [PUBLIC] Get Group Policy
+PATCH  /groups/policy                                                         [PUBLIC] Update Group Policy
+GET    /groups/{group_id}                                                     [PUBLIC] Get Group
+PATCH  /groups/{group_id}                                                     [PUBLIC] Update Group
+DELETE /groups/{group_id}                                                     [PUBLIC] Delete Group
+GET    /groups/{group_id}/chat                                                [PUBLIC] Get Group Chat
+POST   /groups/{group_id}/chat                                                [PUBLIC] Post Group Chat
+GET    /groups/{group_id}/materials                                           [PUBLIC] List Group Materials
+POST   /groups/{group_id}/materials                                           [PUBLIC] Add Group Material
+GET    /groups/{group_id}/members                                             [PUBLIC] List Group Members
+POST   /groups/{group_id}/members                                             [PUBLIC] Add Group Member
+GET    /groups/{group_id}/polls                                               [PUBLIC] List Group Polls
+POST   /groups/{group_id}/polls                                               [PUBLIC] Create Group Poll
+POST   /groups/{group_id}/polls/{poll_id}/vote                                [PUBLIC] Vote Group Poll
+GET    /groups/{group_id}/posts                                               [PUBLIC] List Group Posts
+POST   /groups/{group_id}/posts                                               [PUBLIC] Create Group Post
+GET    /groups/{group_id}/topics                                              [PUBLIC] List Group Topics
+POST   /groups/{group_id}/topics                                              [PUBLIC] Create Group Topic
+GET    /health                                                                [PUBLIC] Health
+POST   /human-material                                                        [PUBLIC] Human Material Create
+GET    /human-material                                                        [PUBLIC] Human Material List
+POST   /human-material/calendar/transform-preview                             [PUBLIC] Calendar Transform Preview
+DELETE /human-material/{source_id}                                            [PUBLIC] Human Material Delete
+GET    /human-material/{source_id}                                            [PUBLIC] Human Material Detail
+PATCH  /human-material/{source_id}/consent                                    [PUBLIC] Human Material Consent
+POST   /human-material/{source_id}/to-splitter                                [PUBLIC] Human Material To Splitter
+GET    /kompoase/splitter                                                     [PUBLIC] Kompoase Splitter Liste
+GET    /kompoase/splitter/{splitter_id}                                       [PUBLIC] Kompoase Splitter Detail
+POST   /kompoase/splitter/{splitter_id}/aufnehmen                             [PUBLIC] Kompoase Splitter Aufnehmen
+GET    /kompoase/splitter/{splitter_id}/spur                                  [PUBLIC] Kompoase Splitter Spur
+GET    /link-vorschau                                                         [PUBLIC] Link Vorschau
+GET    /me                                                                    [PUBLIC] Me
+PATCH  /me                                                                    [PUBLIC] Update Me
+POST   /me/avatar                                                             [PUBLIC] Me Avatar Hochladen
+GET    /me/gedankenwelt                                                       [PUBLIC] Me Gedankenwelt Liste
+POST   /me/gedankenwelt                                                       [PUBLIC] Me Gedankenwelt Erstellen
+PATCH  /me/gedankenwelt/{eintrag_id}                                          [PUBLIC] Me Gedankenwelt Patch
+DELETE /me/gedankenwelt/{eintrag_id}                                          [PUBLIC] Me Gedankenwelt Loeschen
+POST   /me/gedankenwelt/{eintrag_id}/loslassen                                [PUBLIC] Me Gedankenwelt Loslassen
+PATCH  /me/gedankenwelt/{eintrag_id}/markieren                                [PUBLIC] Me Gedankenwelt Markieren
+GET    /me/sichtbarkeit                                                       [PUBLIC] Me Sichtbarkeit
+PATCH  /me/sichtbarkeit                                                       [PUBLIC] Me Sichtbarkeit Patch
+PATCH  /me/zitierbarkeit                                                      [PUBLIC] Me Zitierbarkeit Setzen
+GET    /me/zitierbarkeit                                                      [PUBLIC] Me Zitierbarkeit Lesen
+GET    /menschen                                                              [PUBLIC] Menschen Liste
+GET    /menschen/{user_id}                                                    [PUBLIC] Public Profile
+GET    /metrics                                                               [PUBLIC] Metrics
+GET    /mw/feed                                                               [PUBLIC] Mw Feed
+POST   /mw/feed/markieren                                                     [PUBLIC] Mw Feed Markieren
+GET    /mw/kalender                                                           [PUBLIC] Mw Kalender Liste
+POST   /mw/kalender                                                           [PUBLIC] Mw Kalender Erstellen
+GET    /mw/kalender/alle                                                      [PUBLIC] Mw Kalender Alle
+GET    /mw/kalender/export.ics                                                [PUBLIC] Mw Kalender Ics Export
+POST   /mw/kalender/import                                                    [PUBLIC] Mw Kalender Ics Import
+PATCH  /mw/kalender/{termin_id}                                               [PUBLIC] Mw Kalender Patch
+DELETE /mw/kalender/{termin_id}                                               [PUBLIC] Mw Kalender Loeschen
+GET    /mw/notizen                                                            [PUBLIC] Mw Notizen Liste
+POST   /mw/notizen                                                            [PUBLIC] Mw Notiz Erstellen
+PATCH  /mw/notizen/{notiz_id}                                                 [PUBLIC] Mw Notiz Patch
+DELETE /mw/notizen/{notiz_id}                                                 [PUBLIC] Mw Notiz Loeschen
+POST   /mw/notizen/{notiz_id}/splitter-freigeben                              [PUBLIC] Mw Notiz Splitter Freigeben
+GET    /mw/tagebuch                                                           [PUBLIC] Mw Tagebuch Liste
+POST   /mw/tagebuch                                                           [PUBLIC] Mw Tagebuch Erstellen
+PATCH  /mw/tagebuch/{eintrag_id}                                              [PUBLIC] Mw Tagebuch Patch
+DELETE /mw/tagebuch/{eintrag_id}                                              [PUBLIC] Mw Tagebuch Loeschen
+POST   /mw/tagebuch/{eintrag_id}/splitter-freigeben                           [PUBLIC] Mw Tagebuch Splitter Freigeben
+GET    /mw/traumtagebuch                                                      [PUBLIC] Mw Traumtagebuch Liste
+POST   /mw/traumtagebuch                                                      [PUBLIC] Mw Traumtagebuch Erstellen
+PATCH  /mw/traumtagebuch/{eintrag_id}                                         [PUBLIC] Mw Traumtagebuch Patch
+DELETE /mw/traumtagebuch/{eintrag_id}                                         [PUBLIC] Mw Traumtagebuch Loeschen
+POST   /mw/traumtagebuch/{eintrag_id}/splitter-freigeben                      [PUBLIC] Mw Traumtagebuch Splitter Freigeben
+POST   /nachrichten                                                           [PUBLIC] Sende Nachricht
+GET    /nachrichten/gespraech/{partner_id}                                    [PUBLIC] Lade Gespraech
+GET    /nachrichten/gespraeche                                                [PUBLIC] Liste Gespraeche
+GET    /nachrichten/ungelesen                                                 [PUBLIC] Ungelesen Zaehler
+GET    /posts                                                                 [PUBLIC] Posts Liste
+GET    /provenienz                                                            [PUBLIC] Provenienz Liste
+GET    /raeume                                                                [PUBLIC] Raeume Liste
+GET    /rag/suche                                                             [PUBLIC] Rag Suche
+GET    /relationships/between/{entity_a}/{entity_b}                           [PUBLIC] Relationship Between
+GET    /relationships/graph                                                   [PUBLIC] Relationships Graph
+POST   /resonanz                                                              [PUBLIC] Resonanz Senden
+GET    /resonanz/user/{user_id}                                               [PUBLIC] Resonanz User
+GET    /resonanz/{post_source}/{post_ref}                                     [PUBLIC] Resonanz Abrufen
+POST   /schattenkommentar                                                     [PUBLIC] Schattenkommentar Schreiben
+GET    /schattenkommentare/{post_source}/{post_ref}                           [PUBLIC] Schattenkommentare Lesen
+GET    /search/archaeology                                                    [PUBLIC] Search Archaeology
+GET    /search/facets                                                         [PUBLIC] Search Facets
+GET    /search/global                                                         [PUBLIC] Search Global
+GET    /shadow/dialogs                                                        [PUBLIC] Shadow Dialogs Liste
+GET    /shadow/dialogs/{dialog_id}                                            [PUBLIC] Shadow Dialog Detail
+POST   /shadow/dialogs/{dialog_id}/reply                                      [PUBLIC] Shadow Dialog Reply
+PATCH  /shadow/dialogs/{dialog_id}/status                                     [PUBLIC] Shadow Dialog Status
+POST   /shadow/dialogs/{dialog_id}/to-splitter                                [PUBLIC] Shadow Dialog To Splitter
+POST   /shadow/initiate                                                       [PUBLIC] Shadow Initiate
+GET    /splitter-aufnahmen                                                    [PUBLIC] Splitter Aufnahmen Alias
+GET    /splitter/{splitter_id}/story                                          [PUBLIC] Splitter Story View
+GET    /substances/catalog                                                    [PUBLIC] Get Substance Catalog
+GET    /substances/catalog/{substance_id}                                     [PUBLIC] Get Substance
+GET    /substances/catalog/{substance_id}/usage                               [PUBLIC] Get Substance Usage
+GET    /substances/entity/{entity_id}/state                                   [PUBLIC] Get Entity Substance State
+GET    /substances/usage/overview                                             [PUBLIC] Get Substance Usage Overview
+GET    /substanz/druckkoerper                                                 [PUBLIC] Get Alle Druckkoerper
+GET    /substanz/keimkoerper                                                  [PUBLIC] Get Keimkoerper
+GET    /substanz/knoten                                                       [PUBLIC] Get Knoten
+GET    /substanz/sedimente/{wesen_id}                                         [PUBLIC] Get Sedimente
+GET    /substanz/weltklima                                                    [PUBLIC] Get Weltklima
+GET    /suche                                                                 [PUBLIC] Suche
+POST   /supporter/bewerbung                                                   [PUBLIC] Sende Bewerbung
+GET    /supporter/meine_bewerbung                                             [PUBLIC] Meine Bewerbung
+GET    /system-flags                                                          [PUBLIC] System Flags Lesen
+PUT    /system-flags/{key}                                                    [PUBLIC] System Flag Setzen
+POST   /translate                                                             [PUBLIC] Translate Texts
+POST   /verweilen/end                                                         [PUBLIC] Verweilen End
+POST   /verweilen/ping                                                        [PUBLIC] Verweilen Ping
+POST   /verweilen/start                                                       [PUBLIC] Verweilen Start
+GET    /welt                                                                  [PUBLIC] Welt Uebersicht
+GET    /welt/eingang                                                          [PUBLIC] Globaler Eingang
+POST   /welt/folgen                                                           [PUBLIC] Folgen
+DELETE /welt/folgen                                                           [PUBLIC] Entfolgen
+GET    /welt/folgen                                                           [PUBLIC] Meine Follows
+GET    /welt/foyer                                                            [PUBLIC] Welt Foyer
+GET    /welt/foyer/raum/{slug}                                                [PUBLIC] Welt Foyer Raum
+GET    /welt/foyer/thema/{slug}                                               [PUBLIC] Welt Foyer Thema
+POST   /welt/gelesen/{post_id}                                                [PUBLIC] Mark Gelesen
+GET    /welt/inbox                                                            [PUBLIC] Inbox Lesen
+PATCH  /welt/inbox/alle-gelesen                                               [PUBLIC] Inbox Alle Gelesen
+PATCH  /welt/inbox/{bena_id}/gelesen                                          [PUBLIC] Inbox Gelesen
+POST   /welt/nachrichten                                                      [PUBLIC] Nachricht Senden
+GET    /welt/nachrichten                                                      [PUBLIC] Nachrichten Konversationen
+GET    /welt/nachrichten/{partner_id}                                         [PUBLIC] Nachrichten Gespraech
+GET    /welt/posts                                                            [PUBLIC] Welt Posts
+GET    /welt/posts/{post_id}                                                  [PUBLIC] Welt Post Detail
+GET    /welt/posts/{post_id}/aehnlich                                         [PUBLIC] Aehnliche Posts
+POST   /welt/posts/{post_id}/antworten                                        [PUBLIC] Post Antwort Erstellen
+GET    /welt/posts/{post_id}/antworten                                        [PUBLIC] Post Antworten Lesen
+GET    /welt/posts/{post_id}/relationen                                       [PUBLIC] Post Relationen Lesen
+POST   /welt/posts/{post_id}/relationen                                       [PUBLIC] Post Relation Anlegen
+POST   /welt/posts/{post_id}/schatten                                         [PUBLIC] Schatten Erstellen
+GET    /welt/posts/{post_id}/schatten                                         [PUBLIC] Schatten Lesen
+PATCH  /welt/posts/{post_id}/schatten/mein                                    [PUBLIC] Schatten Editieren
+DELETE /welt/posts/{post_id}/schatten/mein                                    [PUBLIC] Schatten Loeschen
+POST   /welt/posts/{post_id}/schatten/{schatten_id}/antwort                   [PUBLIC] Schatten Antwort
+GET    /welt/posts/{post_id}/spur                                             [PUBLIC] Post Spur
+GET    /welt/posts/{post_id}/thread                                           [PUBLIC] Post Thread
+GET    /welt/raeume                                                           [PUBLIC] Welt Raeume
+GET    /welt/raeume/{slug}/eingang                                            [PUBLIC] Raum Eingang
+GET    /welt/raeume/{slug}/struktur                                           [PUBLIC] Raum Struktur
+GET    /welt/raeume/{slug}/themen                                             [PUBLIC] Raum Themen
+GET    /welt/spur/{slug}                                                      [PUBLIC] Welt Spur
+GET    /welt/struktur                                                         [PUBLIC] Welt Struktur
+GET    /welt/themen/{thema_id}                                                [PUBLIC] Welt Thema Detail
+GET    /welt/themen/{thema_id}/baum                                           [PUBLIC] Thema Baum
+GET    /welt/themen/{thema_id}/posts                                          [PUBLIC] Thema Posts
+GET    /welt/themen/{thema_id}/unterthemen                                    [PUBLIC] Thema Unterthemen
+GET    /welt/ungelesen                                                        [PUBLIC] Ungelesen Ids
+GET    /weltstrom                                                             [PUBLIC] Weltstrom
+GET    /wesen                                                                 [PUBLIC] Alle Wesen
+GET    /wesen-dateien/datei                                                   [PUBLIC] Wesen Datei Lesen
+GET    /wesen/gedanken/{post_source}/{post_ref}                               [PUBLIC] Wesen Gedanken Post
+GET    /wesen/{entity_id}                                                     [PUBLIC] Ein Wesen
+GET    /wesen/{entity_id}/cyberling                                           [PUBLIC] Cyberling Status
+POST   /wesen/{entity_id}/cyberling/{aktion}                                  [PUBLIC] Cyberling Pflegen
+GET    /wesen/{entity_id}/entwicklung                                         [PUBLIC] Wesen Entwicklung Abrufen
+GET    /wesen/{entity_id}/gedanken/aktuell                                    [PUBLIC] Wesen Gedanken Aktuell
+POST   /wesen/{entity_id}/quality_time/end                                    [PUBLIC] Quality Time End
+POST   /wesen/{entity_id}/quality_time/start                                  [PUBLIC] Quality Time Start
+GET    /wesen/{entity_id}/schlaf/archiv                                       [PUBLIC] Schlaf Archiv
+POST   /wesen/{entity_id}/schlaf/end                                          [PUBLIC] Schlaf End
+GET    /wesen/{entity_id}/schlaf/heute                                        [PUBLIC] Schlaf Heute
+POST   /wesen/{entity_id}/schlaf/start                                        [PUBLIC] Schlaf Start
+POST   /wesen/{entity_id}/schlafbrief                                         [PUBLIC] Schlafbrief Schreiben
+GET    /wesen/{entity_id}/selbstbriefe                                        [PUBLIC] Selbstbriefe Lesen
+GET    /wesen/{wesen_name}/chat-verlauf                                       [PUBLIC] Chat Verlauf Lesen
+POST   /widmungen                                                             [PUBLIC] Widmung Hochladen
+GET    /widmungen                                                             [PUBLIC] Widmungen Liste
+GET    /widmungen/meine                                                       [PUBLIC] Meine Widmungen
+DELETE /widmungen/{wid}                                                       [PUBLIC] Widmung Loeschen
+GET    /wuensche                                                              [PUBLIC] Wuensche Liste
+POST   /wuensche                                                              [PUBLIC] Wunsch Erstellen
+POST   /zitate                                                                [PUBLIC] Zitat Erstellen
+GET    /zitate                                                                [PUBLIC] Zitate Liste
+GET    /zitate/{zitat_id}                                                     [PUBLIC] Zitat Detail
+PATCH  /zitate/{zitat_id}                                                     [PUBLIC] Zitat Patch
+DELETE /zitate/{zitat_id}                                                     [PUBLIC] Zitat Loeschen
+GET    /zwischenraum/splitter                                                 [PUBLIC] Splitter Liste
+GET    /zwischenraum/splitter/{splitter_id}                                   [PUBLIC] Splitter Detail
+POST   /zwischenraum/splitter/{splitter_id}/aufnehmen                         [PUBLIC] Splitter Aufnehmen
+POST   /zwischenraum/splitter/{splitter_id}/einsammeln                        [PUBLIC] Splitter Einsammeln
+GET    /zwischenraum/splitter/{splitter_id}/spur                              [PUBLIC] Splitter Spur

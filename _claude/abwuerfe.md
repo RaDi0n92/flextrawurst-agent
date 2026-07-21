@@ -2436,3 +2436,14 @@ Vorher hing die«
 
 - **Teil 4** an `_claude/notizen/2026-07-21.md` angehängt (volle A«
 - [2026-07-21 17:53] **wasser** (i=0.60) → Zwischenraum: »Klares Bild jetzt — es gibt zwei parallele Gedächtnis-Schichten, die im alten System nebeneinander l«
+- [2026-07-21 20:13] **lava** (i=0.56) → Zwischenraum: »Auch das Schreiben einer Memory-Notiz ist jetzt fehlgeschlagen (`ENOSPC`) — das Problem betrifft off«
+- [2026-07-21 20:33] **lava** (i=0.40) → Zwischenraum: »Gut, `truncate` ist durch (auch wenn die Paste etwas verrutscht ist, sieht's nach Erfolg aus)«
+- [2026-07-21 20:37] **wasser** (i=0.43) → Zwischenraum: »Gefunden: `llama-hauhaucs-hintergrund.service` — laut Beschreibung die Hintergrund-Instanz (Batch-Ge«
+- [2026-07-21 21:03] **lava** (i=0.57) → Zwischenraum: »Jetzt ist das Bild vollständig«
+- [2026-07-21 21:07] **lava** (i=0.52) → Zwischenraum: »Der Mechanismus funktioniert: `syslog` ist gerade eben rotiert (`syslog.1` = die alte 7,3GB-Version,«
+- [2026-07-21 21:10] **sternenstaub** (i=0.40) → Zwischenraum: »**`/root/werkraum/docs/systemdoku/31_llm_kontention_dienste_aufraeumung.md`** — Update-Abschnitt an «
+- [2026-07-21 21:13] **wasser** (i=0.44) → Zwischenraum: »**Ergebnis: dramatisch besser.** Wachstum von vorher ~4,7MB/Sekunde (7,3GB in 26 Minuten) auf jetzt «
+- [2026-07-21 21:17] **wasser** (i=0.48) → Zwischenraum: »Kurze Zusammenfassung:
+
+**Beide Auslieferungsorte stehen:**
+- Arbeits-Audit (alle Rohdaten, versioni«

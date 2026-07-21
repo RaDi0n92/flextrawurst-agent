@@ -1,0 +1,591 @@
+{
+  "excluded_tables": [
+    "checkpoint_blobs",
+    "checkpoint_migrations",
+    "checkpoint_writes",
+    "checkpoints"
+  ],
+  "tables": [
+    {
+      "table": "ankuendigungen",
+      "rows_exported": 1,
+      "excluded_columns": [],
+      "error": null
+    },
+    {
+      "table": "ankuendigungen_kommentare",
+      "rows_exported": 0,
+      "excluded_columns": [],
+      "error": null
+    },
+    {
+      "table": "benachrichtigungen",
+      "rows_exported": 2,
+      "excluded_columns": [],
+      "error": null
+    },
+    {
+      "table": "bild_moderation",
+      "rows_exported": 1,
+      "excluded_columns": [],
+      "error": null
+    },
+    {
+      "table": "blase_verwendungen",
+      "rows_exported": 0,
+      "excluded_columns": [],
+      "error": null
+    },
+    {
+      "table": "cyberlinge",
+      "rows_exported": 8,
+      "excluded_columns": [],
+      "error": null
+    },
+    {
+      "table": "dienst_konfiguration",
+      "rows_exported": 8,
+      "excluded_columns": [],
+      "error": null
+    },
+    {
+      "table": "entity_activity",
+      "rows_exported": 6,
+      "excluded_columns": [],
+      "error": null
+    },
+    {
+      "table": "entity_denkstream",
+      "rows_exported": 30722,
+      "excluded_columns": [],
+      "error": null
+    },
+    {
+      "table": "entity_dom_events",
+      "rows_exported": 18359,
+      "excluded_columns": [],
+      "error": null
+    },
+    {
+      "table": "entity_fokus_events",
+      "rows_exported": 10,
+      "excluded_columns": [],
+      "error": null
+    },
+    {
+      "table": "entity_profiles",
+      "rows_exported": 7,
+      "excluded_columns": [],
+      "error": null
+    },
+    {
+      "table": "entity_relationships",
+      "rows_exported": 10,
+      "excluded_columns": [],
+      "error": null
+    },
+    {
+      "table": "entity_screenshots",
+      "rows_exported": 0,
+      "excluded_columns": [],
+      "error": null
+    },
+    {
+      "table": "entity_selfmodel_entries",
+      "rows_exported": 0,
+      "excluded_columns": [],
+      "error": null
+    },
+    {
+      "table": "entity_slots",
+      "rows_exported": 8,
+      "excluded_columns": [],
+      "error": null
+    },
+    {
+      "table": "entity_states",
+      "rows_exported": 7,
+      "excluded_columns": [],
+      "error": null
+    },
+    {
+      "table": "entity_substance_state",
+      "rows_exported": 0,
+      "excluded_columns": [],
+      "error": null
+    },
+    {
+      "table": "entity_substance_use",
+      "rows_exported": 0,
+      "excluded_columns": [],
+      "error": null
+    },
+    {
+      "table": "entity_thinking_log",
+      "rows_exported": 3258,
+      "excluded_columns": [],
+      "error": null
+    },
+    {
+      "table": "entity_wuensche",
+      "rows_exported": 0,
+      "excluded_columns": [],
+      "error": null
+    },
+    {
+      "table": "events",
+      "rows_exported": 211123,
+      "excluded_columns": [],
+      "error": null
+    },
+    {
+      "table": "flarum_stopp_protokoll",
+      "rows_exported": 1061,
+      "excluded_columns": [],
+      "error": null
+    },
+    {
+      "table": "follows",
+      "rows_exported": 3,
+      "excluded_columns": [],
+      "error": null
+    },
+    {
+      "table": "ftw_posts",
+      "rows_exported": 46,
+      "excluded_columns": [],
+      "error": null
+    },
+    {
+      "table": "gedankenblasen",
+      "rows_exported": 0,
+      "excluded_columns": [],
+      "error": null
+    },
+    {
+      "table": "gedankenwelt_eintraege",
+      "rows_exported": 1,
+      "excluded_columns": [],
+      "error": null
+    },
+    {
+      "table": "group_chat_messages",
+      "rows_exported": 11,
+      "excluded_columns": [],
+      "error": null
+    },
+    {
+      "table": "group_creation_policy",
+      "rows_exported": 1,
+      "excluded_columns": [],
+      "error": null
+    },
+    {
+      "table": "group_material_links",
+      "rows_exported": 0,
+      "excluded_columns": [],
+      "error": null
+    },
+    {
+      "table": "group_memberships",
+      "rows_exported": 0,
+      "excluded_columns": [],
+      "error": null
+    },
+    {
+      "table": "group_poll_votes",
+      "rows_exported": 0,
+      "excluded_columns": [],
+      "error": null
+    },
+    {
+      "table": "group_polls",
+      "rows_exported": 6,
+      "excluded_columns": [],
+      "error": null
+    },
+    {
+      "table": "group_posts",
+      "rows_exported": 8,
+      "excluded_columns": [],
+      "error": null
+    },
+    {
+      "table": "group_topics",
+      "rows_exported": 6,
+      "excluded_columns": [],
+      "error": null
+    },
+    {
+      "table": "groups",
+      "rows_exported": 6,
+      "excluded_columns": [],
+      "error": null
+    },
+    {
+      "table": "human_material_sources",
+      "rows_exported": 0,
+      "excluded_columns": [],
+      "error": null
+    },
+    {
+      "table": "human_material_to_splitter",
+      "rows_exported": 0,
+      "excluded_columns": [],
+      "error": null
+    },
+    {
+      "table": "human_profiles",
+      "rows_exported": 9,
+      "excluded_columns": [],
+      "error": null
+    },
+    {
+      "table": "human_users",
+      "rows_exported": 9,
+      "excluded_columns": [
+        "password_hash",
+        "email"
+      ],
+      "error": null
+    },
+    {
+      "table": "keimkoerper",
+      "rows_exported": 0,
+      "excluded_columns": [],
+      "error": null
+    },
+    {
+      "table": "llm_warteschlange",
+      "rows_exported": 5,
+      "excluded_columns": [],
+      "error": null
+    },
+    {
+      "table": "mw_kalender",
+      "rows_exported": 5,
+      "excluded_columns": [],
+      "error": null
+    },
+    {
+      "table": "mw_notizen",
+      "rows_exported": 0,
+      "excluded_columns": [],
+      "error": null
+    },
+    {
+      "table": "mw_tagebuch",
+      "rows_exported": 0,
+      "excluded_columns": [],
+      "error": null
+    },
+    {
+      "table": "mw_traumtagebuch",
+      "rows_exported": 0,
+      "excluded_columns": [],
+      "error": null
+    },
+    {
+      "table": "nachrichten",
+      "rows_exported": 12,
+      "excluded_columns": [],
+      "error": null
+    },
+    {
+      "table": "nutzer_sichtbarkeit",
+      "rows_exported": 1,
+      "excluded_columns": [],
+      "error": null
+    },
+    {
+      "table": "post_reads",
+      "rows_exported": 21,
+      "excluded_columns": [],
+      "error": null
+    },
+    {
+      "table": "post_relationen",
+      "rows_exported": 0,
+      "excluded_columns": [],
+      "error": null
+    },
+    {
+      "table": "post_similarity",
+      "rows_exported": 1035,
+      "excluded_columns": [],
+      "error": null
+    },
+    {
+      "table": "post_spuren",
+      "rows_exported": 21,
+      "excluded_columns": [],
+      "error": null
+    },
+    {
+      "table": "profil_gestaltung",
+      "rows_exported": 0,
+      "excluded_columns": [],
+      "error": null
+    },
+    {
+      "table": "raeume",
+      "rows_exported": 10,
+      "excluded_columns": [],
+      "error": null
+    },
+    {
+      "table": "rag_embeddings",
+      "rows_exported": 7741,
+      "excluded_columns": [],
+      "error": null
+    },
+    {
+      "table": "rag_retrieval_results",
+      "rows_exported": 142,
+      "excluded_columns": [],
+      "error": null
+    },
+    {
+      "table": "rag_retrieval_runs",
+      "rows_exported": 23,
+      "excluded_columns": [],
+      "error": null
+    },
+    {
+      "table": "rag_source_chunks",
+      "rows_exported": 7741,
+      "excluded_columns": [],
+      "error": null
+    },
+    {
+      "table": "rag_source_objects",
+      "rows_exported": 3943,
+      "excluded_columns": [],
+      "error": null
+    },
+    {
+      "table": "resonanz_emoji_counts",
+      "rows_exported": 96,
+      "excluded_columns": [],
+      "error": null
+    },
+    {
+      "table": "resonanzen",
+      "rows_exported": 32,
+      "excluded_columns": [],
+      "error": null
+    },
+    {
+      "table": "schatten_antworten",
+      "rows_exported": 0,
+      "excluded_columns": [],
+      "error": null
+    },
+    {
+      "table": "schattenkommentare",
+      "rows_exported": 19,
+      "excluded_columns": [],
+      "error": null
+    },
+    {
+      "table": "schlafbriefe",
+      "rows_exported": 11917,
+      "excluded_columns": [],
+      "error": null
+    },
+    {
+      "table": "sleep_phases",
+      "rows_exported": 0,
+      "excluded_columns": [],
+      "error": null
+    },
+    {
+      "table": "splitter",
+      "rows_exported": 5265,
+      "excluded_columns": [],
+      "error": null
+    },
+    {
+      "table": "splitter_aufnahmen",
+      "rows_exported": 0,
+      "excluded_columns": [],
+      "error": null
+    },
+    {
+      "table": "splitter_knoten",
+      "rows_exported": 0,
+      "excluded_columns": [],
+      "error": null
+    },
+    {
+      "table": "splitter_verbindungen",
+      "rows_exported": 25012,
+      "excluded_columns": [],
+      "error": null
+    },
+    {
+      "table": "spuren",
+      "rows_exported": 6,
+      "excluded_columns": [],
+      "error": null
+    },
+    {
+      "table": "substance_catalog",
+      "rows_exported": 7,
+      "excluded_columns": [],
+      "error": null
+    },
+    {
+      "table": "substance_events",
+      "rows_exported": 0,
+      "excluded_columns": [],
+      "error": null
+    },
+    {
+      "table": "substance_sediments",
+      "rows_exported": 160553,
+      "excluded_columns": [],
+      "error": null
+    },
+    {
+      "table": "supporter_bewerbungen",
+      "rows_exported": 0,
+      "excluded_columns": [],
+      "error": null
+    },
+    {
+      "table": "system_flags",
+      "rows_exported": 8,
+      "excluded_columns": [],
+      "error": null
+    },
+    {
+      "table": "thema_cluster_vorschlaege",
+      "rows_exported": 0,
+      "excluded_columns": [],
+      "error": null
+    },
+    {
+      "table": "thema_similarity",
+      "rows_exported": 0,
+      "excluded_columns": [],
+      "error": null
+    },
+    {
+      "table": "themen",
+      "rows_exported": 1,
+      "excluded_columns": [],
+      "error": null
+    },
+    {
+      "table": "translations",
+      "rows_exported": 1046,
+      "excluded_columns": [],
+      "error": null
+    },
+    {
+      "table": "traumkandidaten_events",
+      "rows_exported": 0,
+      "excluded_columns": [],
+      "error": null
+    },
+    {
+      "table": "traumkandidaten_log",
+      "rows_exported": 0,
+      "excluded_columns": [],
+      "error": null
+    },
+    {
+      "table": "traumspuren",
+      "rows_exported": 1,
+      "excluded_columns": [],
+      "error": null
+    },
+    {
+      "table": "traumszenarien",
+      "rows_exported": 0,
+      "excluded_columns": [],
+      "error": null
+    },
+    {
+      "table": "traumtagebuch",
+      "rows_exported": 0,
+      "excluded_columns": [],
+      "error": null
+    },
+    {
+      "table": "unterthemen",
+      "rows_exported": 0,
+      "excluded_columns": [],
+      "error": null
+    },
+    {
+      "table": "user_modules",
+      "rows_exported": 30,
+      "excluded_columns": [],
+      "error": null
+    },
+    {
+      "table": "users",
+      "rows_exported": 0,
+      "excluded_columns": [
+        "password"
+      ],
+      "error": null
+    },
+    {
+      "table": "verweilen",
+      "rows_exported": 1,
+      "excluded_columns": [],
+      "error": null
+    },
+    {
+      "table": "wesen_chat_verlauf",
+      "rows_exported": 769,
+      "excluded_columns": [],
+      "error": null
+    },
+    {
+      "table": "wesen_eigene_dienste",
+      "rows_exported": 0,
+      "excluded_columns": [],
+      "error": null
+    },
+    {
+      "table": "wesen_entwicklung",
+      "rows_exported": 7,
+      "excluded_columns": [],
+      "error": null
+    },
+    {
+      "table": "wesen_fuersorge",
+      "rows_exported": 158,
+      "excluded_columns": [],
+      "error": null
+    },
+    {
+      "table": "wesen_gedanken",
+      "rows_exported": 1,
+      "excluded_columns": [],
+      "error": null
+    },
+    {
+      "table": "wesen_web_besuche",
+      "rows_exported": 0,
+      "excluded_columns": [],
+      "error": null
+    },
+    {
+      "table": "widmungen",
+      "rows_exported": 1,
+      "excluded_columns": [],
+      "error": null
+    },
+    {
+      "table": "zitate",
+      "rows_exported": 0,
+      "excluded_columns": [],
+      "error": null
+    }
+  ]
+}

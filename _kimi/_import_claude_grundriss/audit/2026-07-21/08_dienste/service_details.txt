@@ -1,0 +1,170 @@
+=== browser-agent@dak\x2bgord\x2dsystem.service ===
+MainPID=1337122
+NRestarts=0
+ExecMainStartTimestamp=Tue 2026-07-21 13:36:15 CEST
+ExecStart={ path=/root/werkraum/venv/bin/python3 ; argv[]=/root/werkraum/venv/bin/python3 /root/werkraum/welt/browser_agent.py --entity dak+gord-system ; ignore_errors=no ; start_time=[n/a] ; stop_time=[n/a] ; pid=0 ; code=(null) ; status=0/0 }
+User=root
+ActiveState=active
+SubState=running
+UnitFileState=disabled
+
+=== codewesen-chat.service ===
+MainPID=1022379
+NRestarts=0
+ExecMainStartTimestamp=Thu 2026-07-09 06:48:58 CEST
+ExecStart={ path=/usr/bin/python3 ; argv[]=/usr/bin/python3 /root/werkraum/codewesen_chat.py ; ignore_errors=no ; start_time=[n/a] ; stop_time=[n/a] ; pid=0 ; code=(null) ; status=0/0 }
+User=root
+ActiveState=active
+SubState=running
+UnitFileState=enabled
+
+=== codewesen-takt.service ===
+MainPID=0
+NRestarts=0
+ExecMainStartTimestamp=Thu 2026-07-09 06:48:58 CEST
+ExecStart={ path=/usr/bin/python3 ; argv[]=/usr/bin/python3 /root/werkraum/codewesen_takt.py ; ignore_errors=no ; start_time=[n/a] ; stop_time=[n/a] ; pid=0 ; code=(null) ; status=0/0 }
+User=root
+ActiveState=inactive
+SubState=dead
+UnitFileState=disabled
+
+=== cyberling-daemon.service ===
+MainPID=2403734
+NRestarts=122
+ExecMainStartTimestamp=Tue 2026-07-21 20:32:40 CEST
+ExecStart={ path=/root/werkraum/venv/bin/python3 ; argv[]=/root/werkraum/venv/bin/python3 /root/werkraum/welt/cyberling_daemon.py ; ignore_errors=no ; start_time=[n/a] ; stop_time=[n/a] ; pid=0 ; code=(null) ; status=0/0 }
+User=root
+ActiveState=active
+SubState=running
+UnitFileState=enabled
+
+=== flarum-monitor.service ===
+MainPID=358311
+NRestarts=0
+ExecMainStartTimestamp=Wed 2026-07-08 06:51:07 CEST
+ExecStart={ path=/usr/bin/python3 ; argv[]=/usr/bin/python3 /root/werkraum/flarum_monitor.py ; ignore_errors=no ; start_time=[n/a] ; stop_time=[n/a] ; pid=0 ; code=(null) ; status=0/0 }
+User=root
+ActiveState=active
+SubState=running
+UnitFileState=enabled
+
+=== geni-forum-lektuere.service ===
+MainPID=0
+NRestarts=0
+ExecMainStartTimestamp=Tue 2026-07-21 20:34:08 CEST
+ExecStart={ path=/usr/bin/python3 ; argv[]=/usr/bin/python3 /root/werkraum/geni/forum_lektuere.py --n 8 ; ignore_errors=no ; start_time=[n/a] ; stop_time=[n/a] ; pid=0 ; code=(null) ; status=0/0 }
+User=
+ActiveState=inactive
+SubState=dead
+UnitFileState=static
+
+=== geni-hoerer.service ===
+MainPID=1962712
+NRestarts=0
+ExecMainStartTimestamp=Tue 2026-07-21 19:39:12 CEST
+ExecStart={ path=/usr/bin/python3 ; argv[]=/usr/bin/python3 /root/werkraum/geni/hoerer.py ; ignore_errors=no ; start_time=[n/a] ; stop_time=[n/a] ; pid=0 ; code=(null) ; status=0/0 }
+User=root
+ActiveState=active
+SubState=running
+UnitFileState=enabled
+
+=== geni-muster.service ===
+MainPID=0
+NRestarts=0
+ExecMainStartTimestamp=Tue 2026-07-21 19:51:02 CEST
+ExecStart={ path=/usr/bin/python3 ; argv[]=/usr/bin/python3 /root/werkraum/geni/muster.py ; ignore_errors=no ; start_time=[n/a] ; stop_time=[n/a] ; pid=0 ; code=(null) ; status=0/0 }
+User=
+ActiveState=failed
+SubState=failed
+UnitFileState=enabled
+
+=== geni-web.service ===
+MainPID=4127569
+NRestarts=0
+ExecMainStartTimestamp=Sat 2026-07-11 22:35:48 CEST
+ExecStart={ path=/usr/bin/python3 ; argv[]=/usr/bin/python3 /root/werkraum/geni/dialog.py ; ignore_errors=no ; start_time=[n/a] ; stop_time=[n/a] ; pid=0 ; code=(null) ; status=0/0 }
+User=root
+ActiveState=active
+SubState=running
+UnitFileState=enabled
+
+=== innenleben-feeder.service ===
+MainPID=1918249
+NRestarts=0
+ExecMainStartTimestamp=Tue 2026-07-21 19:12:47 CEST
+ExecStart={ path=/usr/bin/python3 ; argv[]=/usr/bin/python3 /root/werkraum/innenleben/flarum_feeder.py --daemon --interval 300 ; ignore_errors=no ; start_time=[n/a] ; stop_time=[n/a] ; pid=0 ; code=(null) ; status=0/0 }
+User=root
+ActiveState=active
+SubState=running
+UnitFileState=enabled
+
+=== process-camera-preview.service ===
+MainPID=1370483
+NRestarts=0
+ExecMainStartTimestamp=Tue 2026-07-21 13:54:37 CEST
+ExecStart={ path=/usr/bin/node ; argv[]=/usr/bin/node --experimental-strip-types scripts/serve_process_camera_preview.ts ; ignore_errors=no ; start_time=[n/a] ; stop_time=[n/a] ; pid=0 ; code=(null) ; status=0/0 }
+User=root
+ActiveState=active
+SubState=running
+UnitFileState=enabled
+
+=== splitter-physik.service ===
+MainPID=358317
+NRestarts=0
+ExecMainStartTimestamp=Wed 2026-07-08 06:51:07 CEST
+ExecStart={ path=/root/werkraum/venv/bin/python3 ; argv[]=/root/werkraum/venv/bin/python3 /root/werkraum/welt/splitter_daemon.py ; ignore_errors=no ; start_time=[n/a] ; stop_time=[n/a] ; pid=0 ; code=(null) ; status=0/0 }
+User=root
+ActiveState=active
+SubState=running
+UnitFileState=enabled
+
+=== tension-daemon.service ===
+MainPID=2404151
+NRestarts=21
+ExecMainStartTimestamp=Tue 2026-07-21 20:32:56 CEST
+ExecStart={ path=/root/werkraum/venv/bin/python3 ; argv[]=/root/werkraum/venv/bin/python3 /root/werkraum/welt/tension_daemon.py ; ignore_errors=no ; start_time=[n/a] ; stop_time=[n/a] ; pid=0 ; code=(null) ; status=0/0 }
+User=root
+ActiveState=active
+SubState=running
+UnitFileState=enabled
+
+=== welt-api.service ===
+MainPID=1665840
+NRestarts=0
+ExecMainStartTimestamp=Tue 2026-07-21 16:47:22 CEST
+ExecStart={ path=/root/werkraum/venv/bin/python3 ; argv[]=/root/werkraum/venv/bin/python3 /root/werkraum/welt/api.py ; ignore_errors=no ; start_time=[n/a] ; stop_time=[n/a] ; pid=0 ; code=(null) ; status=0/0 }
+User=root
+ActiveState=active
+SubState=running
+UnitFileState=enabled
+
+=== welt-bruecke.service ===
+MainPID=358380
+NRestarts=0
+ExecMainStartTimestamp=Wed 2026-07-08 06:51:08 CEST
+ExecStart={ path=/root/werkraum/venv/bin/python3 ; argv[]=/root/werkraum/venv/bin/python3 /root/werkraum/welt/bruecke.py ; ignore_errors=no ; start_time=[n/a] ; stop_time=[n/a] ; pid=0 ; code=(null) ; status=0/0 }
+User=root
+ActiveState=active
+SubState=running
+UnitFileState=enabled
+
+=== weltkern-watchdog.service ===
+MainPID=0
+NRestarts=0
+ExecMainStartTimestamp=Tue 2026-07-21 21:03:08 CEST
+ExecStart={ path=/root/werkraum/venv/bin/python3 ; argv[]=/root/werkraum/venv/bin/python3 /root/werkraum/welt/weltkern_watchdog.py ; ignore_errors=no ; start_time=[n/a] ; stop_time=[n/a] ; pid=0 ; code=(null) ; status=0/0 }
+User=root
+ActiveState=inactive
+SubState=dead
+UnitFileState=static
+
+=== zensi.service ===
+MainPID=358326
+NRestarts=0
+ExecMainStartTimestamp=Wed 2026-07-08 06:51:08 CEST
+ExecStart={ path=/usr/bin/python3 ; argv[]=/usr/bin/python3 /root/zensi/server.py ; ignore_errors=no ; start_time=[n/a] ; stop_time=[n/a] ; pid=0 ; code=(null) ; status=0/0 }
+User=root
+ActiveState=active
+SubState=running
+UnitFileState=enabled
+
