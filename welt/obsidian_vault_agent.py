@@ -76,13 +76,13 @@ CONTAINER_NAMES = {
     "dak+gord-system": "obsidian-dakgordsystem",
 }
 CONTAINER_USERS = {
-    "Schorschel": "schorschel",
-    "F3INSCHM3CK3R": "f3inschmecker",
-    "träumerlie": "traeumerlie",
-    "R1ZZ1": "r1zz1",
-    "jumpa": "jumpa",
-    "Resonanzknoten": "resonanzknoten",
-    "dak+gord-system": "dakgordsystem",
+    "Schorschel": "daniel",
+    "F3INSCHM3CK3R": "daniel",
+    "träumerlie": "daniel",
+    "R1ZZ1": "daniel",
+    "jumpa": "daniel",
+    "Resonanzknoten": "daniel",
+    "dak+gord-system": "daniel",
 }
 
 # Suffix der Passwort-Umgebungsvariable in .agent/wesen-vaults.env -- ASCII-
