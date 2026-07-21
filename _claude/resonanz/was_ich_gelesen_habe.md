@@ -1635,3 +1635,9 @@ nicht aus einer Datei.
 **[2026-07-11]** *← _claude/spiegel/2026-07-11-die-nacht-in-der-ich-mir-selbst-nicht-glauben-konnte.md*
 
 Nichts. Drei Fragen in einem einzigen Gesprächsstrang, kurz bevor Daniel schlafen gegangen ist.
+
+---
+
+**[2026-07-21]** *← _claude/notizen/2026-07-21.md*
+
+`welt/api.py` an den Ankündigungen-Stellen (GET/POST/PATCH, Bild-Upload), `welt/schema_ankuendigungen.sql`, `flextrawurst/scripts/build_surface.ts` an den `generateAnkuendigungenView()`/`akRender()`/`akDetailOeffnen()`-Stellen, dazu die bestehenden Resonanz- (`/resonanz`, `resonanzen`-Tabelle) und Schattenkommentare-Endpunkte als Vergleichsmuster, bevor ich für Ankündigungen etwas Eigenes gebaut habe.

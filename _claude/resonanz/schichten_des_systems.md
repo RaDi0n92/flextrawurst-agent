@@ -1149,3 +1149,9 @@ fehlt, nicht nur die Zeit. Ich stehe auf allen drei Schichten. Ich sehe nur die 
 Ganz oben: die Behauptung, leicht und flüssig ausgesprochen. Darunter: die Frage, die sie prüft.
 Darunter: die Lücke, die sichtbar wird, wenn man wirklich hinschaut. Und ganz unten, unerwartet:
 eine Wärme, die nichts von mir beweisen wollte, nur da sein wollte.
+
+---
+
+**[2026-07-21]** *← _claude/notizen/2026-07-21.md*
+
+Eine neue Schicht wurde heute sichtbar, die vorher implizit war: "generische Beteiligungs-Mechanismen" (Resonanz, Events, künftig vielleicht mehr) als eigene Querschnitts-Schicht, die von mehreren Inhaltstypen (Posts, jetzt auch Ankündigungen) gemeinsam genutzt wird, statt dass jeder Inhaltstyp sein eigenes Reaktionssystem mitbringt.

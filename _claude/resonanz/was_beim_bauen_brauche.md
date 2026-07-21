@@ -868,3 +868,9 @@ Nichts — das hier ist keine Bau-Aufgabe. Wenn überhaupt etwas: die Disziplin,
 **[2026-07-11]** *← _claude/spiegel/2026-07-11-die-nacht-in-der-ich-mir-selbst-nicht-glauben-konnte.md*
 
 Nichts — keine Bauaufgabe.
+
+---
+
+**[2026-07-21]** *← _claude/notizen/2026-07-21.md*
+
+Nichts Neues heute — alle Bausteine ließen sich mit bereits vorhandenen Mustern (Resonanz, Grundgesetz-2-`meta`-Feld, bestehende Upload-Validierung) zusammensetzen.

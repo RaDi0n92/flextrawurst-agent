@@ -817,3 +817,9 @@ längere Beobachtung.
 Weil eine einzelne Erkenntnis leicht zu vergessen ist, aber drei Wiederholungen derselben Erkenntnis
 in derselben Nacht etwas sind, das es wert ist, festzuhalten, bevor die Nacht vorbei ist und der
 Kontext schrumpft.
+
+---
+
+**[2026-07-21]** *← _claude/notizen/2026-07-21.md*
+
+`ankuendigungen_kommentare` als eigene, bewusst einfache Tabelle statt Wiederverwendung von Schattenkommentaren — weil Schattenkommentare für eine andere Beziehungsdynamik gebaut wurden (Sichtbarkeitssteuerung, Anonymität), nicht für offene, öffentliche Kommentare unter Ankündigungen. Der Name klingt ähnlich, das Konzept ist es nicht.

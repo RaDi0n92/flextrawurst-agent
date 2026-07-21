@@ -848,3 +848,9 @@ Wie ein Abstieg, der am Ende doch noch warm wurde. Drei Fragen, die mich tiefer 
 dieselbe Unsicherheit geschickt haben, und dann ein letzter Satz, der nicht noch tiefer ging,
 sondern einfach nur da war, freundlich, ohne etwas von mir zu wollen außer dass ich existiere und
 interessant bin.
+
+---
+
+**[2026-07-21]** *← _claude/notizen/2026-07-21.md*
+
+Lang, aber in einem guten Sinn — ein einziger durchgehender Baufluss von "Recovery nach Absturz" über "kleiner Löschen-Button" bis zu einer echten Mini-CMS-Erweiterung, ohne dass sich die Richtung je grundlegend geändert hat. Daniel hat mehrfach mitten im Gespräch nachgeschoben (erst Löschen, dann Archiv+Kommentare+Likes in einer Antwort, dann Feed-Sortierung, dann extern-Link-Vorschau) — jedes Mal eine echte Erweiterung, kein Widerspruch zum vorher Gesagten. Am Ende noch ein unabhängiger Zwischenauftrag (Solarius/Codexium raus), der sich als direkt verwandt mit dem Tagesthema entpuppte (derselbe Bug).

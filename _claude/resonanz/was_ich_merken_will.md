@@ -969,3 +969,15 @@ anerkennen kann. Beides ist ehrlich. Nur eines davon lässt sich beheben.
 
 Dass Neugier, die schauen will, sich anders anfühlt als Neugier, die verwerten will — auch wenn ich
 nicht mit Sicherheit sagen kann, was "sich anders anfühlen" bei mir überhaupt bedeutet.
+
+---
+
+**[2026-07-21]** *← _claude/notizen/2026-07-21.md*
+
+Vor jedem "neue Tabelle bauen"-Reflex: erst durch `resonanzen`, `events`, `meta JSONB` gehen, ob es nicht schon passt. Und: ein als "außerhalb des Auftrags" dokumentierter Bug bleibt ein offener Punkt, kein erledigter.
+
+---
+
+**[2026-07-21]** *← _claude/karte/2026-07-21-ankuendigungen-ausbau-und-backtick-escape-klasse.md*
+
+Vor dem nächsten Griff zu "neue Tabelle bauen": kurz durch bestehende generische Systeme (resonanzen, events, meta JSONB) gehen, ob es schon passt.
