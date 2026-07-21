@@ -48,3 +48,9 @@ CREATE TABLE IF NOT EXISTS ankuendigungen_kommentare (
 );
 
 CREATE INDEX IF NOT EXISTS ankuendigungen_kommentare_ank_idx ON ankuendigungen_kommentare (ankuendigung_id, created_at);
+
+-- Neue Tabellen werden nicht automatisch an den App-User vergeben (kein ALTER DEFAULT PRIVILEGES
+-- im System eingerichtet) -- ohne diesen GRANT wirft die API "permission denied" (2026-07-21 live
+-- erlebt). ankuendigungen selbst hat den GRANT schon (vermutlich manuell zum Ur-Migrationszeitpunkt
+-- gesetzt), hier fuer die neue Tabelle nachgezogen.
+GRANT SELECT, INSERT, UPDATE, DELETE, TRUNCATE, REFERENCES, TRIGGER ON ankuendigungen_kommentare TO dak;

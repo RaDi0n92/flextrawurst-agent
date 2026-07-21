@@ -8247,6 +8247,18 @@ class AnkuendigungPatchBody(BaseModel):
     veroeffentlicht: bool | None = None
 
 
+class AnkuendigungKommentarBody(BaseModel):
+    content: str = Field(max_length=5000)
+
+
+_ANKUENDIGUNGEN_SORT_SPALTEN = {
+    "created_at": "a.created_at",
+    "titel": "a.titel",
+    "kommentare": "kommentar_count",
+    "likes": "resonanz_count",
+}
+
+
 @app.get("/ankuendigungen")
 def ankuendigungen_liste(
     kategorie: str | None = Query(default=None),
@@ -8257,32 +8269,39 @@ def ankuendigungen_liste(
     order: str = Query(default="desc"),
     authorization: str | None = Header(default=None),
 ):
-    """Öffentlich lesbar. Admins sehen zusätzlich unveröffentlichte Entwürfe."""
+    """Öffentlich lesbar. Admins sehen zusätzlich unveröffentlichte Entwürfe.
+    Weiche geloescht (geloescht_am gesetzt) sind hier IMMER raus, auch fuer Admins --
+    die liegen im separaten Archiv-Endpunkt (Grundgesetz 4: nichts weg, nur versteckt)."""
     admin = _is_admin(authorization)
-    if sort not in ("created_at", "titel"):
-        sort = "created_at"
+    sort_spalte = _ANKUENDIGUNGEN_SORT_SPALTEN.get(sort, "a.created_at")
     if order not in ("asc", "desc"):
         order = "desc"
-    where = [] if admin else ["veroeffentlicht = true"]
+    where = ["a.geloescht_am IS NULL"]
+    if not admin:
+        where.append("a.veroeffentlicht = true")
     params = []
     if kategorie:
-        where.append("kategorie = %s")
+        where.append("a.kategorie = %s")
         params.append(kategorie)
     if search:
-        where.append("to_tsvector('german', titel || ' ' || inhalt) @@ plainto_tsquery('german', %s)")
+        where.append("to_tsvector('german', a.titel || ' ' || a.inhalt) @@ plainto_tsquery('german', %s)")
         params.append(search)
-    clause = "WHERE " + " AND ".join(where) if where else ""
+    clause = "WHERE " + " AND ".join(where)
     conn = get_conn()
     try:
         with conn.cursor() as cur:
-            cur.execute(f"SELECT COUNT(*) AS n FROM ankuendigungen {clause}", params)
+            cur.execute(f"SELECT COUNT(*) AS n FROM ankuendigungen a {clause}", params)
             total = cur.fetchone()["n"]
             cur.execute(
                 f"""SELECT a.id::text, a.titel, a.inhalt, a.kategorie, a.bild_url, a.angepinnt, a.veroeffentlicht,
-                           a.created_at, a.updated_at, a.meta, u.display_name AS autor_name
+                           a.created_at, a.updated_at, a.meta, u.display_name AS autor_name,
+                           (SELECT COUNT(*) FROM ankuendigungen_kommentare k
+                             WHERE k.ankuendigung_id = a.id AND k.sichtbar = true) AS kommentar_count,
+                           (SELECT COUNT(*) FROM resonanzen r
+                             WHERE r.post_source = 'ankuendigung' AND r.post_ref = a.id::text) AS resonanz_count
                     FROM ankuendigungen a JOIN human_users u ON u.id = a.autor_id
                     {clause}
-                    ORDER BY a.angepinnt DESC, a.{sort} {order}
+                    ORDER BY a.angepinnt DESC, {sort_spalte} {order}
                     LIMIT %s OFFSET %s""",
                 params + [limit, offset])
             items = [dict(r) for r in cur.fetchall()]
@@ -8390,6 +8409,229 @@ async def ankuendigung_bild_hochladen(
     finally:
         conn.close()
     return {"ok": True, "bild_url": pfad}
+
+
+@app.get("/admin/ankuendigungen/archiv")
+def ankuendigungen_archiv(
+    limit: int = Query(default=30, ge=1, le=200),
+    offset: int = Query(default=0, ge=0),
+    authorization: str | None = Header(default=None),
+):
+    """Papierkorb: nur weich geloeschte Ankuendigungen (geloescht_am gesetzt).
+    Admin-only, damit Wiederherstellen/Endgueltig-Loeschen moeglich ist (Grundgesetz 4)."""
+    _require_admin(authorization)
+    conn = get_conn()
+    try:
+        with conn.cursor() as cur:
+            cur.execute("SELECT COUNT(*) AS n FROM ankuendigungen WHERE geloescht_am IS NOT NULL")
+            total = cur.fetchone()["n"]
+            cur.execute(
+                """SELECT a.id::text, a.titel, a.inhalt, a.kategorie, a.bild_url, a.angepinnt,
+                          a.veroeffentlicht, a.created_at, a.updated_at, a.geloescht_am, a.meta,
+                          u.display_name AS autor_name
+                   FROM ankuendigungen a JOIN human_users u ON u.id = a.autor_id
+                   WHERE a.geloescht_am IS NOT NULL
+                   ORDER BY a.geloescht_am DESC
+                   LIMIT %s OFFSET %s""",
+                (limit, offset))
+            items = [dict(r) for r in cur.fetchall()]
+    finally:
+        conn.close()
+    for it in items:
+        for feld in ("created_at", "updated_at", "geloescht_am"):
+            it[feld] = it[feld].isoformat() if it[feld] else None
+    return {"total": total, "offset": offset, "limit": limit, "ankuendigungen": items}
+
+
+@app.delete("/admin/ankuendigungen/{ankuendigung_id}")
+def ankuendigung_loeschen(
+    ankuendigung_id: str,
+    authorization: str | None = Header(default=None),
+):
+    """Soft-Delete (Standardweg): wandert ins Archiv, ueberall sonst weg. Wiederherstellbar."""
+    claims = _require_admin(authorization)
+    conn = get_conn()
+    try:
+        with conn.cursor() as cur:
+            cur.execute(
+                "UPDATE ankuendigungen SET geloescht_am = now(), updated_at = now() "
+                "WHERE id = %s::uuid AND geloescht_am IS NULL RETURNING id",
+                (ankuendigung_id,))
+            if not cur.fetchone():
+                raise HTTPException(status_code=404, detail="Ankündigung nicht gefunden (oder schon gelöscht)")
+            cur.execute(
+                "INSERT INTO events (event_type, actor_type, actor_id, payload) VALUES (%s,%s,%s,%s)",
+                ("ankuendigung.geloescht", "human", str(claims["user_id"]),
+                 json.dumps({"ankuendigung_id": ankuendigung_id})))
+        conn.commit()
+    finally:
+        conn.close()
+    return {"ok": True}
+
+
+@app.post("/admin/ankuendigungen/{ankuendigung_id}/wiederherstellen")
+def ankuendigung_wiederherstellen(
+    ankuendigung_id: str,
+    authorization: str | None = Header(default=None),
+):
+    claims = _require_admin(authorization)
+    conn = get_conn()
+    try:
+        with conn.cursor() as cur:
+            cur.execute(
+                "UPDATE ankuendigungen SET geloescht_am = NULL, updated_at = now() "
+                "WHERE id = %s::uuid AND geloescht_am IS NOT NULL RETURNING id",
+                (ankuendigung_id,))
+            if not cur.fetchone():
+                raise HTTPException(status_code=404, detail="Ankündigung nicht im Archiv gefunden")
+            cur.execute(
+                "INSERT INTO events (event_type, actor_type, actor_id, payload) VALUES (%s,%s,%s,%s)",
+                ("ankuendigung.wiederhergestellt", "human", str(claims["user_id"]),
+                 json.dumps({"ankuendigung_id": ankuendigung_id})))
+        conn.commit()
+    finally:
+        conn.close()
+    return {"ok": True}
+
+
+@app.delete("/admin/ankuendigungen/{ankuendigung_id}/endgueltig")
+def ankuendigung_endgueltig_loeschen(
+    ankuendigung_id: str,
+    authorization: str | None = Header(default=None),
+):
+    """Echtes, unwiederbringliches Loeschen -- Daniels expliziter Wunsch, bewusster Bruch mit
+    Grundgesetz 4 nur fuer diesen einen Pfad. Nur aus dem Archiv heraus aufrufbar (erst Soft-Delete,
+    dann hier bestaetigen) -- kein direkter Hart-Loesch-Weg von der normalen Ansicht aus."""
+    claims = _require_admin(authorization)
+    conn = get_conn()
+    try:
+        with conn.cursor() as cur:
+            cur.execute(
+                "SELECT bild_url, meta FROM ankuendigungen WHERE id = %s::uuid AND geloescht_am IS NOT NULL",
+                (ankuendigung_id,))
+            row = cur.fetchone()
+            if not row:
+                raise HTTPException(status_code=404, detail="Nur aus dem Archiv heraus endgültig löschbar")
+            cur.execute("DELETE FROM ankuendigungen_kommentare WHERE ankuendigung_id = %s::uuid", (ankuendigung_id,))
+            cur.execute("DELETE FROM ankuendigungen WHERE id = %s::uuid", (ankuendigung_id,))
+            cur.execute(
+                "INSERT INTO events (event_type, actor_type, actor_id, payload) VALUES (%s,%s,%s,%s)",
+                ("ankuendigung.endgueltig_geloescht", "human", str(claims["user_id"]),
+                 json.dumps({"ankuendigung_id": ankuendigung_id})))
+        conn.commit()
+    finally:
+        conn.close()
+
+    bild_pfade = []
+    if row["bild_url"]:
+        bild_pfade.append(row["bild_url"])
+    for block in (row["meta"] or {}).get("bloecke", []):
+        if block.get("type") == "bild" and block.get("url"):
+            bild_pfade.append(block["url"])
+    for pfad in bild_pfade:
+        if not pfad.startswith("/uploads/ankuendigungen/"):
+            continue
+        datei = (ANKUENDIGUNGEN_BILD_DIR / Path(pfad).name).resolve()
+        if datei.is_relative_to(ANKUENDIGUNGEN_BILD_DIR.resolve()) and datei.exists():
+            datei.unlink()
+    return {"ok": True}
+
+
+# ---------------------------------------------------------------------------
+# Ankündigungen — Kommentare (öffentlich lesbar, schreiben nur eingeloggte Menschen)
+# ---------------------------------------------------------------------------
+
+@app.get("/ankuendigungen/{ankuendigung_id}/kommentare")
+def ankuendigung_kommentare_lesen(
+    ankuendigung_id: str,
+    limit: int = Query(default=100, ge=1, le=500),
+    offset: int = Query(default=0, ge=0),
+):
+    conn = get_conn()
+    try:
+        with conn.cursor() as cur:
+            cur.execute("SELECT COUNT(*) AS n FROM ankuendigungen_kommentare WHERE ankuendigung_id = %s::uuid AND sichtbar = true", (ankuendigung_id,))
+            total = cur.fetchone()["n"]
+            cur.execute(
+                """SELECT k.id::text, k.human_id::text, k.content, k.created_at, k.updated_at,
+                          u.display_name AS autor_name
+                   FROM ankuendigungen_kommentare k JOIN human_users u ON u.id = k.human_id
+                   WHERE k.ankuendigung_id = %s::uuid AND k.sichtbar = true
+                   ORDER BY k.created_at ASC
+                   LIMIT %s OFFSET %s""",
+                (ankuendigung_id, limit, offset))
+            items = [dict(r) for r in cur.fetchall()]
+    finally:
+        conn.close()
+    for it in items:
+        it["created_at"] = it["created_at"].isoformat() if it["created_at"] else None
+        it["updated_at"] = it["updated_at"].isoformat() if it["updated_at"] else None
+    return {"total": total, "kommentare": items}
+
+
+@app.post("/ankuendigungen/{ankuendigung_id}/kommentare", status_code=201)
+def ankuendigung_kommentar_schreiben(
+    ankuendigung_id: str,
+    body: AnkuendigungKommentarBody,
+    authorization: str | None = Header(default=None),
+):
+    claims = _require_auth(authorization)
+    if claims.get("role") == "entity":
+        raise HTTPException(status_code=403, detail="Kommentare nur für Menschen mit Account")
+    if not body.content.strip():
+        raise HTTPException(status_code=400, detail="Leerer Kommentar")
+    conn = get_conn()
+    try:
+        with conn.cursor() as cur:
+            cur.execute("SELECT id FROM ankuendigungen WHERE id = %s::uuid AND geloescht_am IS NULL", (ankuendigung_id,))
+            if not cur.fetchone():
+                raise HTTPException(status_code=404, detail="Ankündigung nicht gefunden")
+            cur.execute(
+                """INSERT INTO ankuendigungen_kommentare (ankuendigung_id, human_id, content)
+                   VALUES (%s::uuid, %s::uuid, %s) RETURNING id::text, created_at""",
+                (ankuendigung_id, claims["user_id"], body.content.strip()))
+            row = cur.fetchone()
+            cur.execute(
+                "INSERT INTO events (event_type, actor_type, actor_id, payload) VALUES (%s,%s,%s,%s)",
+                ("ankuendigung.kommentar_geschrieben", "human", str(claims["user_id"]),
+                 json.dumps({"ankuendigung_id": ankuendigung_id, "kommentar_id": row["id"]})))
+        conn.commit()
+    finally:
+        conn.close()
+    return {"id": row["id"], "created_at": row["created_at"].isoformat()}
+
+
+@app.delete("/ankuendigungen/{ankuendigung_id}/kommentare/{kommentar_id}")
+def ankuendigung_kommentar_ausblenden(
+    ankuendigung_id: str,
+    kommentar_id: str,
+    authorization: str | None = Header(default=None),
+):
+    """Eigenen Kommentar ausblenden, oder Admin blendet fremden aus -- kein Hart-Loeschen
+    fuer Kommentare (Grundgesetz 4), anders als bei Ankuendigungen selbst wo Daniel es explizit wollte."""
+    claims = _require_auth(authorization)
+    conn = get_conn()
+    try:
+        with conn.cursor() as cur:
+            cur.execute(
+                "SELECT human_id FROM ankuendigungen_kommentare WHERE id = %s::uuid AND ankuendigung_id = %s::uuid",
+                (kommentar_id, ankuendigung_id))
+            row = cur.fetchone()
+            if not row:
+                raise HTTPException(status_code=404, detail="Kommentar nicht gefunden")
+            if str(row["human_id"]) != str(claims["user_id"]) and claims.get("role") != "admin":
+                raise HTTPException(status_code=403, detail="nicht dein Kommentar")
+            cur.execute(
+                "UPDATE ankuendigungen_kommentare SET sichtbar = false, updated_at = now() WHERE id = %s::uuid",
+                (kommentar_id,))
+            cur.execute(
+                "INSERT INTO events (event_type, actor_type, actor_id, payload) VALUES (%s,%s,%s,%s)",
+                ("ankuendigung.kommentar_ausgeblendet", "human", str(claims["user_id"]),
+                 json.dumps({"ankuendigung_id": ankuendigung_id, "kommentar_id": kommentar_id})))
+        conn.commit()
+    finally:
+        conn.close()
+    return {"ok": True}
 
 
 # ===========================================================================
