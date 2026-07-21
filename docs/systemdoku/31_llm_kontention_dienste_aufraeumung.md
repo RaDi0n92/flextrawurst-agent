@@ -91,6 +91,23 @@ Daniel: *"ja innenleben feeder fixen pls"*, später zum Scheduler-Bypass-Fund: *
 
 **Update 2026-07-21, später am Tag: Root-Partition dadurch komplett volltgelaufen.** `/root/geni_gedaechtnis/knoten/` (122G) hat zusammen mit anderem Wachstum die 929G-Root-Partition auf 0 Byte frei gebracht — Bash-Tool, Memory-Writes und Stop-Hooks fielen reihenweise mit ENOSPC aus, auch nach Neustart der Claude-Code-Session zunächst weiter, weil selbst ein leeres `mkdir` kein Byte mehr fand. Daniel hat von Hand wieder Platz geschaffen (`.claude/file-history` + `.claude/backups` aus einer anderen Session heraus gelöscht) — danach 382G frei (59%), Inodes unauffällig (27%). `geni_gedaechtnis/rauschen/` selbst ist mit 3.9G klein — der Verdacht ist, dass das Rauschen nicht dort landet, sondern direkt in `knoten/` vermischt mit echten Knoten. `/root/werkraum_git` (46G, aktiver GIT_DIR von `/root/werkraum`) und `/usr/share/ollama` (111G, 12 aktiv referenzierte Modelle inkl. `gemma4` — laut Daniel nur deaktiviert, nicht gelöscht) wurden geprüft und sind **kein** Aufräum-Kandidat. Daniels Entscheidung: die beiden offenen Fragen oben bleiben unbeantwortet, "nicht jetzt" — kein Auftrag, bald mal angehen.
 
+## Update 2026-07-21, noch später: beide offenen Fragen beantwortet + Fix (separate Claude-Code-Session)
+
+Direkt im Anschluss an den `llama-server`-Log-Flut-Fix (siehe Abschnitt oben) auf Daniels Wort "dann jetzt angehen" untersucht.
+
+**Frage 1 (Wachstumsrate gewollt oder Bug?) — bereits vor dieser Session beantwortet, hier nur verifiziert:** Zwischen den beiden obigen Updates hat jemand (Daniel selbst, Zeitstempel passt zu `hoerer.py`-Dateiänderung und `geni-hoerer.service`-Neustart um 19:39) bereits den echten Bug gefunden und gefixt: `flarum_sync.py` (Cron alle 5min) schrieb den kompletten Markdown-Spiegel (~3850 Dateien) bei jedem Lauf unbedingt neu, ohne Diff-Check — `geni-hoerer.py`s Dateisystem-Watcher verewigte jede dieser Neuschreibungen als "geänderter Knoten", obwohl dieselben Flarum-Daten bereits redundant über `flarum_abfragen()` in den Graphen kommen. Fix: `/root/werkraum/flarum` zu `IGNORE_PATHS` in `hoerer.py` hinzugefügt (siehe Kommentar dort, Zeilen 54-59). **Live verifiziert per Counter-Messung** (`geni/gedaechtnis/_counter.json`, `knoten_max_id`, 90s-Fenster): Wachstum von ~900k/Tag auf **~7.680/Tag** (Faktor ~117) — sieht jetzt nach organischem, echtem Wachstum aus, kein weiterer Handlungsbedarf.
+
+**Frage 2 (Kaltstart-Scan) — untersucht, Ursache gefunden, gefixt:** `geni-muster.service` war heute bereits zweimal (19:42, 19:51) manuell gestartet und nach 7-8 Minuten per `SIGTERM` abgebrochen worden (zweiter Versuch: 3,0G Memory-Peak, 1,5G Swap-Peak — vermutlich der Auslöser für die inzwischen existierenden `MemoryMax=1G`/`MemorySwapMax=512M`-Limits in `geni-muster.service.d/`). Beide Abbrüche brachten **keinerlei dauerhaften Fortschritt** — Root Cause: `lade_alle_knoten()` in `muster.py` speicherte den Scan-Cache (`_scan_cache.json`) nur ganz am Ende des kompletten Durchlaufs über alle 1000 Shards. Bei 31,5+ Mio. Dateien, die beim allerersten Lauf einmal `stat()`et werden müssen, ist ein einziger ununterbrochener Durchlauf (~2-3h bei beobachteter Rate) unrealistisch, sobald irgendwer/-was den Prozess vorher beendet.
+
+**Fix:** Zwischenspeichern alle 20s (`CHECKPOINT_INTERVALL_SEK`) statt nur am Ende, geprüft nach jedem abgeschlossenen Shard (`time.monotonic()`-Vergleich). Backup vor der Änderung: `/root/system-backups/muster.py.bak-vor-inkrementelles-checkpointing-2026-07-21` (kein Git-Schutz — `geni/` ist komplett `.gitignore`t, vermutlich wegen genau dieser Millionen-Dateien-Problematik).
+
+**Verifiziert mit zwei überwachten 100s-Testläufen** (`systemd-run` mit denselben Limits wie die echte Service-Unit):
+- Lauf 1: 0 → 473.760 verarbeitete Dateien, `_scan_cache.json` zum ersten Mal überhaupt erfolgreich geschrieben (97MB).
+- Lauf 2: 473.760 → 694.850 (kumulativ, nicht zurückgesetzt) — bestätigt, dass Fortschritt über Interrupts hinweg erhalten bleibt.
+- Beide Läufe stabil, keine Abstürze, Ressourcen-Limits griffen sauber.
+
+`geni-muster.timer` daraufhin wieder aktiviert (`systemctl enable --now`, war seit 07-07 tot) — läuft jetzt automatisch alle 2h weiter, Kaltstart verteilt sich über mehrere Zyklen (~30,9 Mio. Dateien verbleibend bei Reaktivierung, grobe Restlaufzeit 2-3h verteilt).
+
 ## Zweiter Auslöser derselben Root-Partition-Krise (2026-07-21, Claude-Code-Session): llama-server-Log-Flut
 
 Unabhängig vom `geni_gedaechtnis`-Wachstum oben kam am selben Tag ein zweiter, akuterer Auslöser hinzu — in einer separaten Claude-Code-Session per SSH-Terminal untersucht (nicht GLM/Werkraum-Session).
