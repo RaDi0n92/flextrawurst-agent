@@ -1,9 +1,11 @@
 #!/usr/bin/env python3
 """Welt-API: FastAPI auf Port 8030."""
 
+import ipaddress
 import json
 import math as _math
 import shutil
+import socket
 import urllib.parse
 import urllib.request
 import uuid
@@ -13,6 +15,7 @@ from typing import Any
 
 import psycopg2
 import psycopg2.extras
+import requests
 from fastapi import Body, FastAPI, File, Form, Header, HTTPException, Query, UploadFile
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse, Response
@@ -8432,6 +8435,112 @@ async def ankuendigung_block_bild_hochladen(
     _require_admin(authorization)
     pfad = await _ankuendigung_bild_speichern(ankuendigung_id, bild)
     return {"ok": True, "url": pfad}
+
+
+# ---------------------------------------------------------------------------
+# Link-Vorschau (intern + extern) fuer Ankuendigungs-Content-Bloecke
+# ---------------------------------------------------------------------------
+
+_LINK_VORSCHAU_MAX_BYTES = 2 * 1024 * 1024
+_LINK_VORSCHAU_TIMEOUT = 5
+
+
+def _ip_ist_oeffentlich(ip_str: str) -> bool:
+    try:
+        ip = ipaddress.ip_address(ip_str)
+    except ValueError:
+        return False
+    return not (ip.is_private or ip.is_loopback or ip.is_link_local or ip.is_reserved
+                or ip.is_multicast or ip.is_unspecified)
+
+
+def _hostname_ist_sicher(hostname: str) -> bool:
+    """SSRF-Schutz: loest den Hostnamen auf und prueft ALLE zurueckgegebenen IPs.
+    Bewusste Einschraenkung: kleines TOCTOU-Fenster zwischen diesem Check und dem
+    tatsaechlichen requests.get() (kein DNS-Pinning) -- akzeptiert, weil dieser
+    Endpunkt admin-only ist und keine breite Angriffsflaeche bietet."""
+    try:
+        infos = socket.getaddrinfo(hostname, None)
+    except socket.gaierror:
+        return False
+    return bool(infos) and all(_ip_ist_oeffentlich(info[4][0]) for info in infos)
+
+
+def _html_meta_extrahieren(html: str, key: str, attr: str = "property") -> str | None:
+    pattern = (
+        rf'<meta[^>]+{attr}=["\']' + _re.escape(key) + r'["\'][^>]*content=["\']([^"\']*)["\']'
+        r'|<meta[^>]+content=["\']([^"\']*)["\'][^>]*' + rf'{attr}=["\']' + _re.escape(key) + r'["\']'
+    )
+    m = _re.search(pattern, html, _re.I)
+    if not m:
+        return None
+    wert = (m.group(1) or m.group(2) or "").strip()
+    return wert or None
+
+
+def _link_vorschau_fetch(url: str) -> dict:
+    aktuelle_url = url
+    r = None
+    for _ in range(4):  # Erstaufruf + max. 3 Redirects
+        p = urllib.parse.urlparse(aktuelle_url)
+        if p.scheme not in ("http", "https") or not p.hostname:
+            raise HTTPException(status_code=400, detail="Ungültige URL")
+        if not _hostname_ist_sicher(p.hostname):
+            raise HTTPException(status_code=400, detail="URL zeigt auf eine nicht erlaubte Adresse")
+        try:
+            r = requests.get(aktuelle_url, timeout=_LINK_VORSCHAU_TIMEOUT, allow_redirects=False,
+                              headers={"User-Agent": "flextrawurst-link-vorschau/1.0"}, stream=True)
+        except requests.RequestException:
+            raise HTTPException(status_code=400, detail="URL nicht erreichbar")
+        if r.status_code in (301, 302, 303, 307, 308) and "location" in r.headers:
+            aktuelle_url = urllib.parse.urljoin(aktuelle_url, r.headers["location"])
+            continue
+        break
+    else:
+        raise HTTPException(status_code=400, detail="Zu viele Weiterleitungen")
+
+    if not (200 <= r.status_code < 300):
+        raise HTTPException(status_code=400, detail=f"URL antwortet mit {r.status_code}")
+    if "text/html" not in r.headers.get("content-type", ""):
+        raise HTTPException(status_code=400, detail="Keine HTML-Seite")
+
+    chunks, total = [], 0
+    for chunk in r.iter_content(8192):
+        total += len(chunk)
+        if total > _LINK_VORSCHAU_MAX_BYTES:
+            break
+        chunks.append(chunk)
+    html = b"".join(chunks).decode("utf-8", errors="ignore")
+
+    titel = _html_meta_extrahieren(html, "og:title")
+    if not titel:
+        tm = _re.search(r"<title[^>]*>([^<]*)</title>", html, _re.I)
+        titel = tm.group(1).strip() if tm else None
+    beschreibung = _html_meta_extrahieren(html, "og:description") or _html_meta_extrahieren(html, "description", attr="name")
+    bild = _html_meta_extrahieren(html, "og:image")
+    if bild:
+        bild = urllib.parse.urljoin(aktuelle_url, bild)
+
+    return {
+        "url": aktuelle_url,
+        "titel": (titel or "")[:300] or None,
+        "beschreibung": (beschreibung or "")[:500] or None,
+        "bild": bild,
+    }
+
+
+@app.get("/link-vorschau")
+def link_vorschau(
+    url: str = Query(...),
+    authorization: str | None = Header(default=None),
+):
+    """Serverseitiger Link-Vorschau-Fetch fuer Ankuendigungs-Content-Bloecke (intern + extern,
+    Daniels Wunsch 'auch für die Sachen auf flextrawurst'). SSRF-geschuetzt: nur http/https,
+    Hostname-Aufloesung gegen private/loopback/link-local IPs geprueft (auch bei Redirects,
+    max. 3 Hops), 5s Timeout, max. 2MB Antwortgroesse. Admin-only, weil aktuell nur der
+    Ankuendigungs-Block-Editor das aufruft."""
+    _require_admin(authorization)
+    return _link_vorschau_fetch(url)
 
 
 @app.get("/admin/ankuendigungen/archiv")
