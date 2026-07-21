@@ -304,4 +304,39 @@ Das ist vermutlich eine echte Race Condition zwischen der massiven parallelen Da
 
 ---
 
+## Update 2026-07-21 — Schwarzer Bildschirm #3: Rückfall, echte Ursache war Dateianzahl (nicht Bytegröße)
+
+Nach einem PC-Freeze bei Daniel (Reparatur an Obsidian lief bereits) erneuter Blackscreen, diesmal mit echten OOM-Crashes im Log (`Mark-Compact ... allocation failure; GC in old space requested`, Renderer-Prozess verschwindet spurlos, kein Crashpad-Dump) — also derselbe Krankheitstyp wie am 20.07., nicht die harmlosere "Nachtrag"-Race-Condition.
+
+**Websuche zur Einordnung bestätigt zwei Dinge, die hier schon empirisch galten:**
+- Der ~3,6-4GB-Deckel ist V8/Electron-architektonisch (Pointer Compression, siehe [electronjs.org/blog/v8-memory-cage](https://www.electronjs.org/blog/v8-memory-cage)) — **kein Runtime-Flag kann das ändern**, `--max-old-space-size` über 4096 hinaus ist wirkungslos für diesen Ceiling. Bestätigt per eigenem Test: mit `--max-old-space-size=500` crasht der Renderer exakt bei 501.7MB (Flag greift), mit 4096/10240 crasht er trotzdem bei ~3600-3690MB (Flag greift nicht mehr, weil die Architektur-Grenze vorher kommt).
+- Obsidians "Excluded files" verhindert laut Obsidian-Forum nur UI/Suche, nicht den rohen Dateisystem-Scan — deckt sich exakt mit dem 20.07.-Befund.
+
+**Root-Cause-Korrektur gegenüber der ersten Vermutung:** Zuerst wurde Host-RAM-Druck vermutet (freies RAM korrelierte zufällig mit der Crash-Schwelle). Auch `llama-hauhaucs-hintergrund.service` lief seit der Regressionsnacht 07./08.07. mit `--cache-ram 0` statt `12288` (siehe [[12_ollama_gemma4]]) — wieder auf den Zielwert gesetzt, brachte aber keine Obsidian-Besserung (war ein echter, aber unabhängiger Bug).
+
+**Tatsächlicher Reparaturweg — sukzessives Auslagern, nach demselben Muster wie am 20.07. (physisch raus + Symlink zurück, nicht nur `userIgnoreFilters`):**
+
+| Ordner | Größe | Dateien | Wirkung |
+|---|---|---|---|
+| `logs/` | 352MB | 29 | kaum messbar (Crash-Schwelle 3578→3632MB) |
+| `bilder/` | 568MB | ~300 | kaum messbar |
+| `codewesen/` | (klein) | **39.222** | **behoben** — Renderer stabil, echte Farben im Screenshot |
+
+**Damit belegt, was die Zahlen schon nahelegten:** Der entscheidende Faktor ist die **Dateianzahl**, nicht die Bytegröße — 920MB an großen Binärdateien (logs+bilder) bewegten die Crash-Schwelle kaum, aber 39.222 zusätzliche Dateien (codewesen/) haben den Unterschied zwischen Crash und stabilem Rendern gemacht. Das passt zum früheren `node_modules`-Test (20.336 Dateien) in derselben Nacht, der ebenfalls half, bevor die eigentliche Ursache klar war.
+
+**Technik bei git-getrackten Ordnern (`bilder/`, `codewesen/`):** `git mv` scheidet aus, weil das Repo-Root (`/root/werkraum/`) identisch mit dem Vault-Root ist — jedes Ziel innerhalb des Repos bliebe im Scan-Pfad. Stattdessen: `git rm -r --cached <ordner>` (Historie bleibt in alten Commits erhalten, künftige Änderungen werden nicht mehr getrackt) + `<ordner>/` in `.gitignore` + physisches `mv` nach `/root/werkraum_<name>` + `ln -s` zurück an den alten Pfad, **ohne Lücke zwischen `mv` und `ln -s`** (bei einem früheren Test in derselben Nacht ohne sofortigen Symlink hatte ein laufender Dienst in der Lücke eine neue, leere Verzeichnisstruktur an der alten Stelle angelegt — Merge-Aufwand hinterher).
+
+**Neue Auslagerungen, alle mit laufenden Diensten geprüft, kein Ausfall:**
+```bash
+/root/werkraum/logs      -> /root/werkraum_logs       (14 Dienste referenzieren, u.a. welt-api, welt-bruecke)
+/root/werkraum/bilder    -> /root/werkraum_bilder     (bilder-galerie.service)
+/root/werkraum/codewesen -> /root/werkraum_codewesen  (13 codewesen-*/reaktion@*-Dienste, cyberling-daemon)
+```
+
+**Noch nicht angefasst:** `tools/sd_cpp` (137MB, 7 git-getrackte Dateien) — kleiner Kandidat, nach dem codewesen-Fix nicht mehr nötig gewesen, offen für später falls erneut Probleme auftreten.
+
+**Wichtigste Lehre:** Bei der Suche nach der Ursache eines Vault-OOM-Crashes zuerst die Dateianzahl pro Ordner prüfen (`find <ordner> -type f | wc -l`), nicht nur die Bytegröße (`du -sh`) — ein Ordner mit vielen kleinen Dateien kann schädlicher sein als ein Ordner mit wenigen großen Binärdateien. Und: bei git-getrackten Ordnern, die aus einem Vault-Repo ausgelagert werden müssen, ist `git rm --cached` + `.gitignore` + physisches `mv` + `ln -s` der Weg, nicht `git mv` (das Ziel bliebe im selben Scan-Baum).
+
+---
+
 *Weiter: [[15_vision]] | [[16_was_fehlt_und_was_koennte_sein]]*
