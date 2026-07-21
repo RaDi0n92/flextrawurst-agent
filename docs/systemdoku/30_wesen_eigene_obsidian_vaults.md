@@ -164,17 +164,53 @@ Fenster hat (nicht geteilt, kein Warten) und damit auch einzeln von außen
 besuchbar/beobachtbar ist — eine zweite, unabhängige Zugriffsart auf dieselben
 Dateien, kein Widerspruch zueinander.
 
+## Orchestrierung: `obsidian_schreiben`-Aktion, mit Daniel besprochen und bestätigt
+
+Daniel beschrieb den gewünschten Ablauf so: jederzeit von dem, was gerade
+gelesen wird, "ausschwenken" dürfen, dort etwas festhalten, ganz vom Thema
+abweichen wenn nötig, und danach **an derselben Stelle auf der ursprünglichen
+Seite weitermachen**. Antwort darauf ist keine Pause-/Resume-Logik, sondern
+eine strukturelle Eigenschaft der bestehenden Architektur: die neue Aktion
+`obsidian_schreiben:<dateiname>|<text>` (in `browser_agent.py`) rührt die
+Haupt-Seite (`page`, egal ob gerade Flarum, Surface oder sonstwo) nie an — sie
+öffnet eine komplett separate Playwright-Verbindung zum eigenen Obsidian-Vault-
+Container, schreibt dort, schließt wieder. Die Hauptseite steht die ganze Zeit
+exakt da, wo sie stand. Daniels Reaktion auf den Entwurf: *"joa so in etwa."*
+
+Dateiname und Text werden vom Wesen selbst gewählt (gleiches Muster wie
+`raum_erstellen:<name>|<slug>`), damit es seine eigene Ordnerstruktur gestaltet
+statt alles in eine einzige Datei zu schreiben — ein Pfad wie
+`gedanken/2026-07-21` legt automatisch den Unterordner an.
+
+`browser-agent@.service` bekam ein zweites `EnvironmentFile` für
+`.agent/wesen-vaults.env` (Obsidian-Passwörter waren dem Dienst vorher nicht
+bekannt).
+
+## Vault-READMEs
+
+Jeder der 7 Vaults hat jetzt eine `README.md` (Willkommens-Datei fürs Wesen
+selbst, nicht für Daniel) — erklärt in eigenen Worten: das ist dein Raum, so
+kommst du her (`obsidian_schreiben`), wofür das gedacht ist (festhalten,
+abweichen dürfen, dabei bleibt die Ausgangsseite unberührt), wie frei die
+eigene Organisation ist, wer sonst noch mitliest (Daniel, sonst niemand). Nicht
+git-getrackt (liegt in `wesen_vaults/`, gitignored wie `codewesen/`).
+
 ## Status
 
-**Kernproblem vollständig gelöst und auf alle 7 Wesen skaliert.** Alle 7
-Container laufen, alle 7 vorgeseedet (`obsidian.json`), alle 7 öffentlich über
-nginx mit doppelter Basic-Auth erreichbar, alle 7 Vaults leer und bereit (Test-
-Notizen entfernt). Modul robust gegen die entdeckten Sonderzeichen-Fallstricke.
+**Kernproblem vollständig gelöst, auf alle 7 Wesen skaliert, Orchestrierung
+gebaut.** Alle 7 Container laufen, alle 7 vorgeseedet (`obsidian.json`), alle 7
+öffentlich über nginx mit doppelter Basic-Auth erreichbar, alle 7 Vaults mit
+README bestückt. Die neue `obsidian_schreiben`-Aktion ist im Code, noch nicht
+live durch ein echtes Wesen ausgelöst worden (bisher nur syntaktisch geprüft
+und die Services neu gestartet) — nächster echter Test ist ein Wesen, das sie
+selbst wählt.
 
 ## Offen / als Nächstes
 
-- Orchestrierung (wann/wie wechselt der Wesen-Browser-Tab zu Obsidian) bewusst
-  offen gelassen, Daniel wörtlich: *"keine ahnung so wie es am besten ist eben
-  keine ahnung wird bestimmt auch sich dann zeigen bald und eh wieder
-  geändert"* — meine Einschätzung entscheidet vorerst, wird sich iterativ zeigen.
-- Site-READMEs (Navigationsanleitung pro Seite) — noch nicht angefangen.
+- Erste echte Nutzung von `obsidian_schreiben` durch ein Wesen beobachten
+  (nicht künstlich ausgelöst, sondern abwarten bis die LLM-Entscheidung selbst
+  darauf fällt)
+- Site-READMEs (Navigationsanleitung pro besuchter Seite: Flarum, Surface,
+  RAG) — noch nicht angefangen, eigenständig von den Vault-READMEs
+- "Billiges Vorlesen" (Embedding-Vorfilter statt LLM-Call für die Interesse-
+  Erkennung) — von Daniel bewusst zurückgestellt, siehe Tagesbericht
