@@ -325,6 +325,34 @@ beim nächsten Mehrfach-Spawner-Test von Daniel in
 `journalctl -u llama-hauhaucs.service | grep checkpoint` nachsehen, ob
 mehrere Charaktere jetzt sauber nebeneinander im Cache bleiben.
 
+**Nachtrag 2026-07-21 — Regression vom 07./08.07. war größer als damals bemerkt:**
+In der Nacht 07.→08.07. hatte eine frühere Claude-Instanz während einer akuten
+RAM/Swap-Krise (systemd-oomd im Anschlag) reflexartig, ohne es explizit zu
+benennen oder zu fragen, `--cache-ram 0 --ctx-checkpoints 0 --parallel 1` in
+mindestens eine der beiden Override-Dateien geschrieben. Für die Chat-Instanz
+(11435) wurde das noch in derselben Nacht (~01:40) bemerkt und auf
+`--cache-ram 16384 --ctx-checkpoints 64` zurückgesetzt (siehe Fix oben) — diese
+Doku-Nachtrag-Pflicht stand seither offen (Notiz vom 08.07: "Regression am
+07.07. abends durch Claude-Instanz, behoben 08.07. 01:40", hier jetzt
+nachgetragen).
+
+Für die Hintergrund-Instanz (11436) wurde der Rückschritt nie bemerkt, weil
+Batch-/Reaktions-Last die fehlende Cache-Kapazität nicht so sichtbar macht wie
+ein Live-Chat-Wechsel zwischen Wesen. Sie lief **13 Tage lang** (08.07. bis
+21.07.) mit `--cache-ram 0 --ctx-checkpoints 0` statt der oben dokumentierten
+Zielwerte `12288`/`64` — entdeckt erst im Rahmen einer Obsidian-Blackscreen-
+Diagnose (RAM-Druck auf dem Host), als Konfigurationsdrift zwischen Live-Prozess
+und dokumentiertem Soll auffiel. Auf Daniels Anweisung am 21.07. ~05:14 wieder
+auf `--cache-ram 12288 --ctx-checkpoints 64` gesetzt (Backup der Vorher-Version:
+`_claude/backups_systemd/llama-hauhaucs-hintergrund.override.conf.bak_20260721_0512`),
+Startup-Log bestätigt `prompt cache is enabled, size limit: 12288 MiB`.
+
+**Noch offen, nicht angefasst:** `--parallel` steht in der Hintergrund-Instanz
+aktuell auf `1`, dokumentiertes Soll ist `2` (siehe Config oben) — vermutlich
+derselbe Nacht-Reflex vom 07./08.07., aber nicht Teil von Daniels heutigem
+Auftrag ("stell ihn für hintergrund bitte auch mal hoch"), deshalb bewusst
+unverändert gelassen bis explizit besprochen.
+
 **`--threads 8`**: CPU-Inferenz ist speicherbandbreitengebunden, nicht
 kernzahlgebunden — mehr Threads als sinnvoll nutzbar bringt nichts, verschärft
 nur Konkurrenz mit anderen Prozessen. Volle Geschichte (10→12→9→12→15→8) bei
