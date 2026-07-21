@@ -38,8 +38,7 @@ log = logging.getLogger("obsidian-vault-agent")
 VAULT_ROOT = Path("/root/werkraum/wesen_vaults")
 
 # Port-Schema: Hauptport (Selkies-Web-GUI) / Zweitport, je einer pro Wesen,
-# gleiche Reihenfolge wie ENTITY_KEYS in browser_agent.py. Nur Schorschel ist
-# bisher als Container tatsächlich aufgesetzt (Pilot, 2026-07-21).
+# gleiche Reihenfolge wie ENTITY_KEYS in browser_agent.py.
 VAULT_PORTS = {
     "Schorschel": (3093, 3193),
     "F3INSCHM3CK3R": (3094, 3194),
@@ -50,9 +49,60 @@ VAULT_PORTS = {
     "dak+gord-system": (3099, 3199),
 }
 
+# Externe HTTPS-Ports (nginx, doppelte Basic-Auth: nginx-Ebene + Container-Ebene),
+# gleiches Muster wie das bestehende /etc/nginx/sites-available/obsidian.
+VAULT_EXTERN_PORTS = {
+    "Schorschel": 8445,
+    "F3INSCHM3CK3R": 8450,
+    "träumerlie": 8451,
+    "R1ZZ1": 8452,
+    "jumpa": 8453,
+    "Resonanzknoten": 8454,
+    "dak+gord-system": 8455,
+}
+
+# Docker-Containernamen und Basic-Auth-Benutzernamen: explizit statt aus dem
+# entity_id abgeleitet -- Docker-Containernamen erlauben nur [a-zA-Z0-9_.-],
+# "träumerlie" (Umlaut) und "dak+gord-system" ("+") würden bei automatischer
+# Ableitung ungültige oder inkonsistente Namen erzeugen (dieselbe Bug-Klasse
+# wie das systemd-%i-vs-%I-Problem vom selben Tag, siehe 29_browser_agent_aktivierung.md).
+CONTAINER_NAMES = {
+    "Schorschel": "obsidian-schorschel",
+    "F3INSCHM3CK3R": "obsidian-f3inschmecker",
+    "träumerlie": "obsidian-traeumerlie",
+    "R1ZZ1": "obsidian-r1zz1",
+    "jumpa": "obsidian-jumpa",
+    "Resonanzknoten": "obsidian-resonanzknoten",
+    "dak+gord-system": "obsidian-dakgordsystem",
+}
+CONTAINER_USERS = {
+    "Schorschel": "schorschel",
+    "F3INSCHM3CK3R": "f3inschmecker",
+    "träumerlie": "traeumerlie",
+    "R1ZZ1": "r1zz1",
+    "jumpa": "jumpa",
+    "Resonanzknoten": "resonanzknoten",
+    "dak+gord-system": "dakgordsystem",
+}
+
+# Suffix der Passwort-Umgebungsvariable in .agent/wesen-vaults.env -- ASCII-
+# GROSS, aus demselben Grund wie CONTAINER_NAMES/CONTAINER_USERS: bash erlaubt
+# weder Umlaute noch "+" in Variablennamen (gefunden 2026-07-21 beim Aufsetzen
+# der übrigen 6 Container: `source` übersprang die betroffenen Zeilen lautlos,
+# der Loop brach beim ersten ungültigen Namen komplett ab).
+ENV_PASSWORT_SUFFIX = {
+    "Schorschel": "SCHORSCHEL",
+    "F3INSCHM3CK3R": "F3INSCHMECKER",
+    "träumerlie": "TRAEUMERLIE",
+    "R1ZZ1": "R1ZZ1",
+    "jumpa": "JUMPA",
+    "Resonanzknoten": "RESONANZKNOTEN",
+    "dak+gord-system": "DAKGORDSYSTEM",
+}
+
 
 def _container_name(entity_id: str) -> str:
-    return f"obsidian-{entity_id.lower().replace('+', '').replace(' ', '-')}"
+    return CONTAINER_NAMES[entity_id]
 
 
 def vault_pfad(entity_id: str) -> Path:
@@ -103,16 +153,16 @@ def oeffne_datei_und_schreibe(entity_id: str, dateiname: str, text: str,
         schreibe_leere_datei(entity_id, dateiname, titel)
 
     port, _ = VAULT_PORTS[entity_id]
-    passwort = os.environ.get(f"WESEN_VAULT_OBSIDIAN_PASSWORD_{entity_id}", "")
+    env_key = f"WESEN_VAULT_OBSIDIAN_PASSWORD_{ENV_PASSWORT_SUFFIX[entity_id]}"
+    passwort = os.environ.get(env_key, "")
     if not passwort:
-        raise RuntimeError(f"Kein Obsidian-Vault-Passwort für {entity_id} gesetzt "
-                            f"(WESEN_VAULT_OBSIDIAN_PASSWORD_{entity_id})")
+        raise RuntimeError(f"Kein Obsidian-Vault-Passwort für {entity_id} gesetzt ({env_key})")
 
     with sync_playwright() as p:
         browser = p.chromium.launch(headless=True)
         page = browser.new_page(
             viewport={"width": 1280, "height": 800},
-            http_credentials={"username": entity_id.lower(), "password": passwort},
+            http_credentials={"username": CONTAINER_USERS[entity_id], "password": passwort},
         )
         page.goto(f"http://localhost:{port}/", wait_until="networkidle", timeout=30000)
         page.wait_for_timeout(5000)
