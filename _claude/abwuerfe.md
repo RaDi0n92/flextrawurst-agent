@@ -2390,3 +2390,8 @@ Vorher hing die«
 
 **Fertiggestellt und live:**
 - Bild-Upload-Feature«
+- [2026-07-21 04:53] **lava** (i=0.44) → Zwischenraum: »Overcommit ist nicht das Problem (heuristisch, genug Spielraum: 38.8GB committed von 161GB Limit)«
+- [2026-07-21 04:59] **lava** (i=0.40) → Zwischenraum: »Guter Punkt — das ändert die Diagnose«
+- [2026-07-21 05:16] **lava** (i=0.35) → Zwischenraum: »Erledigt und dokumentiert:
+
+- **Hintergrund-Instanz (11436):** `cache-ram` von 0 auf 12288, `ctx-che«
