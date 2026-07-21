@@ -27,6 +27,22 @@ MODEL = "hauhaucs-q6"
 MAX_TAGE_EVENTS = 30   # max Events für Traum-Kontext
 LLM_TIMEOUT = 240
 
+import contextlib
+import fcntl
+OLLAMA_LOCK_PATH = "/tmp/ollama_browser_lock"  # dieselbe Sperre wie browser_agent.py (2026-07-21)
+
+
+@contextlib.contextmanager
+def ollama_lock():
+    """Sequenzielle LLM-Zugriffssperre, geteilt mit browser_agent.py — Traumgenerierung
+    laeuft aus schlafe() heraus waehrend andere Wesen wach ticken koennten."""
+    with open(OLLAMA_LOCK_PATH, "w") as f:
+        fcntl.flock(f, fcntl.LOCK_EX)
+        try:
+            yield
+        finally:
+            fcntl.flock(f, fcntl.LOCK_UN)
+
 
 def get_conn():
     return psycopg2.connect(DB_URI, cursor_factory=psycopg2.extras.RealDictCursor)
@@ -184,14 +200,15 @@ def generiere_traum(entity_id: str, laufend_check=None) -> str:
         prompt = baue_traum_prompt(entity_id, erinnerungen)
         try:
             seq = 1
-            for chunk in hauhau_client.chat_stream(
-                prompt, think=False, temperature=0.85, top_p=0.92, top_k=50,
-                repeat_penalty=1.1, timeout=LLM_TIMEOUT,
-            ):
-                if laufend_check is not None and not laufend_check():
-                    break
-                traumtext += chunk
-                schreibe_denkstream_chunk(conn, entity_id, stream_id, chunk, seq, False)
+            with ollama_lock():
+                for chunk in hauhau_client.chat_stream(
+                    prompt, think=False, temperature=0.85, top_p=0.92, top_k=50,
+                    repeat_penalty=1.1, timeout=LLM_TIMEOUT,
+                ):
+                    if laufend_check is not None and not laufend_check():
+                        break
+                    traumtext += chunk
+                    schreibe_denkstream_chunk(conn, entity_id, stream_id, chunk, seq, False)
                 seq += 1
             schreibe_denkstream_chunk(conn, entity_id, stream_id, "", seq, True)
 

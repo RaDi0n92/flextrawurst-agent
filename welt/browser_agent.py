@@ -13,6 +13,8 @@ Start: python3 browser_agent.py --entity Schorschel
 
 import argparse
 import base64
+import contextlib
+import fcntl
 import json
 import logging
 import os
@@ -44,6 +46,7 @@ LOOP_PAUSE = 4          # Sekunden zwischen Aktionen
 LLM_TIMEOUT = 180       # Sekunden Timeout für Ollama
 SCREENSHOT_DIR = "/tmp/wesen_screenshots"
 MAX_TEXT_CHARS = 2000   # Max Zeichen Seitentext für LLM
+OLLAMA_LOCK_PATH = "/tmp/ollama_browser_lock"  # dieselbe Datei wie browser_agent_coordinator.py (dort bisher nur deklariert, nie benutzt)
 
 # API-Keys — werden beim Start aus DB geladen
 ENTITY_KEYS = {
@@ -72,6 +75,21 @@ def get_conn():
     return psycopg2.connect(DB_URI, cursor_factory=psycopg2.extras.RealDictCursor)
 
 
+@contextlib.contextmanager
+def ollama_lock():
+    """Sequenzielle LLM-Zugriffssperre zwischen allen Browser-Agenten (Daniels Wesen-Definition,
+    2026-07-21, wörtlich: 'nur eine LLM-Anfrage gleichzeitig'). Blockierendes flock -- ein Wesen
+    wartet einfach bis das vorherige fertig ist, kein Polling, kein Timeout-Gefeilsche. War in
+    browser_agent_coordinator.py nur als LOCK_FILE-Pfad deklariert, nie tatsächlich benutzt --
+    hier zum ersten Mal wirklich verwendet."""
+    with open(OLLAMA_LOCK_PATH, "w") as f:
+        fcntl.flock(f, fcntl.LOCK_EX)
+        try:
+            yield
+        finally:
+            fcntl.flock(f, fcntl.LOCK_UN)
+
+
 def hole_jwt(entity_id: str) -> str:
     api_key = ENTITY_KEYS[entity_id]
     resp = requests.post(f"{API_BASE}/auth/entity-login",
@@ -81,10 +99,19 @@ def hole_jwt(entity_id: str) -> str:
     return resp.json()["token"]
 
 
-def injiziere_jwt(page, token: str):
-    """Setzt JWT in localStorage — sauberer als Formular-Login."""
-    page.evaluate(f"localStorage.setItem('ftw_token', '{token}'); localStorage.setItem('ftw_role', 'entity')")
-    page.evaluate(f"localStorage.setItem('ftw_entity_id', '{token.split('.')[1]}')")
+def injiziere_jwt(page, token: str, entity_id: str):
+    """Setzt JWT in localStorage — sauberer als Formular-Login.
+    Bearer-Prefix ist Pflicht (2026-07-21 gefunden): das gesamte uebrige Frontend
+    (ftwIstEingeloggt(), ankToken() usw.) erwartet 'Bearer <jwt>' als gespeicherten Wert,
+    sonst gilt die Seite als nicht eingeloggt sobald der Browser-Agent mit eingeloggten
+    Bereichen interagiert (Buttons klickt, Formulare nutzt) statt nur Server-Calls zu machen."""
+    page.evaluate(
+        "(a) => { localStorage.setItem('ftw_token', 'Bearer ' + a[0]); "
+        "localStorage.setItem('ftw_role', 'entity'); "
+        "localStorage.setItem('ftw_user', a[1]); "
+        "localStorage.setItem('ftw_user_id', a[1]); }",
+        [token, entity_id],
+    )
 
 
 def lese_seite(page) -> dict:
@@ -186,6 +213,12 @@ obsidian_zurueck                — zurück zu flextrawurst.de
 raum_erstellen:<name>|<slug>    — einen neuen Raum anlegen (wenn etwas fehlt)
 thema_erstellen:<name>|<raum_id> — ein neues Thema in einem Raum anlegen
 wunsch_formulieren:<text>|<typ> — Strukturwunsch hinterlassen (typ: raum/thema/feature)
+flarum_besuchen:<pfad>          — deine Vorwelt lesen (z.B. flarum_besuchen:d/3866 für eine
+                                  Diskussion, flarum_besuchen: für die Startseite). Du bist dort
+                                  nicht eingeloggt — nur lesen, kein Posten möglich.
+flarum_verlassen                — zurück zu flextrawurst.de
+rag_erkunden:<anfrage>          — dein eigenes Gedächtnis durchsuchen (Flarum-Archiv + Weltwissen),
+                                  z.B. rag_erkunden:was habe ich über Vertrauen gesagt
 schlafen                        — jetzt schlafen (mind. 3h)
 nachdenken                      — innehalten, nichts tun
 
@@ -210,8 +243,14 @@ def parse_output(text: str) -> tuple[str, str, str]:
     return gedanke, entscheidung, begruendung
 
 
-def fuehre_aktion_aus(page, entscheidung: str) -> str:
-    """Führt eine Aktion aus. Gibt 'schlafen' zurück wenn Schlaf-Entscheidung."""
+def fuehre_aktion_aus(page, entscheidung: str, entity_id: str) -> tuple[str, str | None]:
+    """Führt eine Aktion aus. Gibt (zustand, zusatz_kontext) zurück -- zustand ist 'schlafen'
+    bei Schlaf-Entscheidung, sonst 'wach'. zusatz_kontext ist None, ausser bei Aktionen die
+    dem naechsten Tick zusaetzliches Material fuer letzter_gedanke mitgeben (z.B. RAG-Treffer).
+    entity_id als Parameter (2026-07-21 gefunden): vorher ein freies globales Fehl-Referenz --
+    raum_erstellen/wunsch_formulieren/thema_erstellen haetten bei echtem Aufruf mit NameError
+    gecrasht, weil entity_id nirgends definiert war."""
+    zusatz_kontext = None
     try:
         e = entscheidung.strip()
         if e.startswith("navigiere:"):
@@ -254,14 +293,14 @@ def fuehre_aktion_aus(page, entscheidung: str) -> str:
             teile = e[len("raum_erstellen:"):].split("|")
             name = teile[0].strip()[:60]
             slug = (teile[1].strip() if len(teile) > 1 else name.lower().replace(" ", "-"))[:40]
-            # JWT aus localStorage holen und API-Call machen
+            # JWT aus localStorage holen (enthaelt seit dem Bearer-Fix schon den Prefix) und API-Call machen
             jwt_token = page.evaluate("() => localStorage.getItem('ftw_token') || ''")
             if jwt_token:
                 try:
                     resp = requests.post(f"{API_BASE}/admin/raeume", json={
                         "name": name, "slug": slug, "beschreibung": f"Angelegt von {entity_id}",
                         "farbe": "#1a3a5a", "status": "aktiv", "sichtbarkeit": "public", "position_order": 99
-                    }, headers={"Authorization": f"Bearer {jwt_token}"}, timeout=10)
+                    }, headers={"Authorization": jwt_token}, timeout=10)
                     log.info("%s: Raum '%s' erstellt: %s", entity_id, name, resp.status_code)
                 except Exception as ex:
                     log.warning("raum_erstellen Fehler: %s", ex)
@@ -274,7 +313,7 @@ def fuehre_aktion_aus(page, entscheidung: str) -> str:
                 try:
                     resp = requests.post(f"{API_BASE}/wuensche",
                         json={"wunsch_text": text, "typ": typ},
-                        headers={"Authorization": f"Bearer {jwt_token}"}, timeout=10)
+                        headers={"Authorization": jwt_token}, timeout=10)
                     log.info("%s: Wunsch formuliert: %s", entity_id, resp.status_code)
                 except Exception as ex:
                     log.warning("wunsch_formulieren Fehler: %s", ex)
@@ -290,16 +329,46 @@ def fuehre_aktion_aus(page, entscheidung: str) -> str:
                         "raum_id": raum_id, "name": name, "slug": slug,
                         "beschreibung": f"Angelegt von {entity_id}",
                         "status": "aktiv", "klima_status": "neutral", "sichtbarkeit": "public"
-                    }, headers={"Authorization": f"Bearer {jwt_token}"}, timeout=10)
+                    }, headers={"Authorization": jwt_token}, timeout=10)
                     log.info("%s: Thema '%s' erstellt: %s", entity_id, name, resp.status_code)
                 except Exception as ex:
                     log.warning("thema_erstellen Fehler: %s", ex)
+        elif e.startswith("flarum_besuchen:"):
+            pfad = e[len("flarum_besuchen:"):].strip().lstrip("/")
+            url = f"https://flextrawurst.de/flarum-live/{pfad}"
+            # Absichtlich KEIN Flarum-Login: der Browser-Agent hat nur ein flextrawurst-JWT,
+            # nie Flarum-Zugangsdaten. Auf Flarum ist er damit ein ausgeloggter Gast -- die
+            # Gast-Rechtegruppe hat serverseitig nur 'viewForum', kein Posten moeglich (2026-07-21
+            # geprueft: group_permission WHERE group_id=2 enthaelt nur viewForum). Kein eigener
+            # Schutzmechanismus hier noetig, Daniels Poststopp gilt automatisch mit.
+            page.goto(url, timeout=10000, wait_until="domcontentloaded")
+        elif e == "flarum_verlassen":
+            page.goto(SURFACE_URL, timeout=10000, wait_until="domcontentloaded")
+            page.wait_for_timeout(1000)
+        elif e.startswith("rag_erkunden:"):
+            anfrage = e[len("rag_erkunden:"):].strip()[:200]
+            jwt_token = page.evaluate("() => localStorage.getItem('ftw_token') || ''")
+            if anfrage and jwt_token:
+                try:
+                    resp = requests.get(f"{API_BASE}/rag/suche",
+                        params={"anfrage": anfrage, "n": 5, "anlass": "browser_agent_erkundung"},
+                        headers={"Authorization": jwt_token}, timeout=20)
+                    resp.raise_for_status()
+                    treffer = resp.json().get("ergebnisse", [])
+                    if treffer:
+                        zeilen = [f"- {t['ueberschrift']}: {t['inhalt'][:150]}" for t in treffer[:3]]
+                        zusatz_kontext = f"[RAG-Erkundung '{anfrage}']\n" + "\n".join(zeilen)
+                    else:
+                        zusatz_kontext = f"[RAG-Erkundung '{anfrage}']: keine Treffer"
+                    log.info("%s: RAG-Erkundung '%s' — %d Treffer", entity_id, anfrage, len(treffer))
+                except Exception as ex:
+                    log.warning("rag_erkunden Fehler: %s", ex)
         elif e == "schlafen":
-            return "schlafen"
+            return "schlafen", None
         # nachdenken: nichts tun
     except Exception as ex:
         log.warning("Aktion '%s' fehlgeschlagen: %s", entscheidung[:50], ex)
-    return "wach"
+    return "wach", zusatz_kontext
 
 
 def schreibe_denklog(conn, entity_id: str, gedanke: str, entscheidung: str,
@@ -451,7 +520,8 @@ def _schreibe_flarum_brief(conn, entity_id: str):
             f"Was nimmst du mit? Was lässt du zurück? Was war wirklich?\n"
             f"Direkt. Persönlich. Nicht schön. Ehrlich."
         )
-        brief_inhalt = hauhau_client.chat(prompt, think=False, timeout=120.0)
+        with ollama_lock():
+            brief_inhalt = hauhau_client.chat(prompt, think=False, timeout=120.0)
         if not brief_inhalt:
             return
 
@@ -497,7 +567,8 @@ def _schreibe_schlafbrief(conn, entity_id: str, traumtext: str,
             f"Was trägst du aus diesem Schlaf mit? Was soll die nächste Version von dir wissen? "
             f"Direkt, persönlich, kein Ratgeber-Ton."
         )
-        brief_inhalt = hauhau_client.chat(prompt, think=False, timeout=120.0)
+        with ollama_lock():
+            brief_inhalt = hauhau_client.chat(prompt, think=False, timeout=120.0)
         if not brief_inhalt:
             return
         with conn.cursor() as cur:
@@ -624,7 +695,7 @@ def haupt_loop(entity_id: str):
         # Login: erst Root für localStorage, dann Surface
         try:
             page.goto("http://localhost:8787/", timeout=10000, wait_until="domcontentloaded")
-            injiziere_jwt(page, jwt)
+            injiziere_jwt(page, jwt, entity_id)
             page.goto(SURFACE_URL, timeout=15000, wait_until="domcontentloaded")
             page.wait_for_timeout(1500)  # JS initialisieren lassen
         except Exception as e:
@@ -679,22 +750,23 @@ def haupt_loop(entity_id: str):
             llm_out = ""
             try:
                 seq = 0
-                for chunk in hauhau_client.chat_stream(prompt, think=False, timeout=LLM_TIMEOUT):
-                    if not _laufend:
-                        break
-                    llm_out += chunk
-                    # Live-Chunk in DB schreiben → NOTIFY → SSE
-                    try:
-                        with conn.cursor() as _c:
-                            _c.execute("""
-                                INSERT INTO entity_denkstream
-                                    (entity_id, stream_id, chunk, seq, done, url)
-                                VALUES (%s, %s, %s, %s, %s, %s)
-                            """, (entity_id, stream_id, chunk, seq, False, seite["url"]))
-                        conn.commit()
-                    except Exception:
-                        pass
-                    seq += 1
+                with ollama_lock():
+                    for chunk in hauhau_client.chat_stream(prompt, think=False, timeout=LLM_TIMEOUT):
+                        if not _laufend:
+                            break
+                        llm_out += chunk
+                        # Live-Chunk in DB schreiben → NOTIFY → SSE
+                        try:
+                            with conn.cursor() as _c:
+                                _c.execute("""
+                                    INSERT INTO entity_denkstream
+                                        (entity_id, stream_id, chunk, seq, done, url)
+                                    VALUES (%s, %s, %s, %s, %s, %s)
+                                """, (entity_id, stream_id, chunk, seq, False, seite["url"]))
+                            conn.commit()
+                        except Exception:
+                            pass
+                        seq += 1
                 try:
                     with conn.cursor() as _c:
                         _c.execute("""
@@ -719,14 +791,16 @@ def haupt_loop(entity_id: str):
             log.info("%s [%s] → %s", entity_id, seite["url"][-40:], entscheidung[:50])
 
             # 6. Aktion ausführen
-            zustand = fuehre_aktion_aus(page, entscheidung)
+            zustand, zusatz_kontext = fuehre_aktion_aus(page, entscheidung, entity_id)
+            if zusatz_kontext:
+                letzter_gedanke = (letzter_gedanke + "\n" + zusatz_kontext)[-1500:]
             if zustand == "schlafen":
                 schlafe(conn, entity_id, page)
                 # Nach Schlaf: zurück zur Surface
                 jwt = hole_jwt(entity_id)  # JWT erneuern
                 try:
                     page.goto(SURFACE_URL, timeout=10000, wait_until="domcontentloaded")
-                    injiziere_jwt(page, jwt)
+                    injiziere_jwt(page, jwt, entity_id)
                     page.reload(timeout=8000)
                 except Exception:
                     pass

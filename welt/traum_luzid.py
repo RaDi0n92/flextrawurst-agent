@@ -27,6 +27,21 @@ import os as _os; DB_URI = _os.environ.get("FLEXTRAWURST_DB_URI", "postgresql://
 MODEL = "hauhaucs-q6"
 LLM_TIMEOUT = 180
 
+import contextlib
+import fcntl
+OLLAMA_LOCK_PATH = "/tmp/ollama_browser_lock"  # dieselbe Sperre wie browser_agent.py (2026-07-21)
+
+
+@contextlib.contextmanager
+def ollama_lock():
+    """Sequenzielle LLM-Zugriffssperre, geteilt mit browser_agent.py."""
+    with open(OLLAMA_LOCK_PATH, "w") as f:
+        fcntl.flock(f, fcntl.LOCK_EX)
+        try:
+            yield
+        finally:
+            fcntl.flock(f, fcntl.LOCK_UN)
+
 
 def get_conn():
     return psycopg2.connect(DB_URI, cursor_factory=psycopg2.extras.RealDictCursor)
@@ -122,14 +137,15 @@ def beobachte_traum(entity_id: str, traumtext: str,
         prompt = baue_beobachter_prompt(entity_id, traumtext)
         try:
             seq = 1
-            for chunk in hauhau_client.chat_stream(
-                prompt, think=False, temperature=0.8, timeout=LLM_TIMEOUT,
-            ):
-                if laufend_check is not None and not laufend_check():
-                    break
-                beobachtung += chunk
-                schreibe_chunk(conn, entity_id, stream_id, chunk, seq, False)
-                seq += 1
+            with ollama_lock():
+                for chunk in hauhau_client.chat_stream(
+                    prompt, think=False, temperature=0.8, timeout=LLM_TIMEOUT,
+                ):
+                    if laufend_check is not None and not laufend_check():
+                        break
+                    beobachtung += chunk
+                    schreibe_chunk(conn, entity_id, stream_id, chunk, seq, False)
+                    seq += 1
             schreibe_chunk(conn, entity_id, stream_id, "", seq, True)
 
         except Exception as e:
