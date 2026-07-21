@@ -189,6 +189,25 @@ def mache_screenshot(page, entity_id: str, cursor_pos: tuple[float, float] | Non
         return None
 
 
+def melde_screenshot(conn, entity_id: str):
+    """Schreibt ein wesen.screenshot-Event -> Grundgesetz-8-Live-Kanal (NOTIFY 'events_stream')
+    -> SCREENS-Tab kann das eine betroffene Wesen sofort neu laden statt zu pollen.
+    Bewusst kein payload (actor_id reicht, siehe migration_events_stream.sql-Nachtrag 2026-07-21)."""
+    try:
+        with conn.cursor() as cur:
+            cur.execute("""
+                INSERT INTO events (event_type, actor_type, actor_id, payload)
+                VALUES ('wesen.screenshot', 'entity', %s, '{}'::jsonb)
+            """, (entity_id,))
+        conn.commit()
+    except Exception as e:
+        log.warning("wesen.screenshot Event fehlgeschlagen: %s", e)
+        try:
+            conn.rollback()
+        except Exception:
+            pass
+
+
 def baue_prompt(entity_id: str, seite: dict, letzter_gedanke: str,
                 andere_wesen: list[dict]) -> str:
     """Baut den LLM-Prompt — kompakt, unter 2500 Zeichen."""
@@ -651,11 +670,16 @@ def schlafe(conn, entity_id: str, page):
     try:
         with conn.cursor() as cur:
             cur.execute("""
-                INSERT INTO events (event_type, entity_id, payload, created_at)
-                VALUES ('wesen.schlaeft', %s, %s, NOW())
+                INSERT INTO events (event_type, actor_type, actor_id, payload, created_at)
+                VALUES ('wesen.schlaeft', 'entity', %s, %s, NOW())
             """, (entity_id, psycopg2.extras.Json({"dauer_sekunden": schlafdauer})))
         conn.commit()
     except Exception as e:
+        # 2026-07-21: hier stand vorher eine nicht-existente Spalte "entity_id" statt
+        # actor_type/actor_id -- jeder Aufruf ist seit Einfuehrung dieses Codes an genau
+        # dieser Stelle mit UndefinedColumn gescheitert, still verschluckt vom except.
+        # wesen.schlaeft-Events wurden dadurch nie tatsaechlich geschrieben. Gefunden beim
+        # Bauen der Live-Ansicht (gleiches INSERT-Muster), nicht separat gesucht.
         log.warning("Event schreiben fehlgeschlagen: %s", e)
 
     # Browser-Tab auf Schlaf-Seite
@@ -768,6 +792,7 @@ def haupt_loop(entity_id: str):
 
             # 2. Screenshot speichern (künstlicher Mauszeiger an der zuletzt bekannten Position)
             screenshot = mache_screenshot(page, entity_id, cursor_pos)
+            melde_screenshot(conn, entity_id)
 
             # 3. Andere Wesen status
             andere = hole_andere_wesen_status(conn, entity_id)
@@ -827,6 +852,15 @@ def haupt_loop(entity_id: str):
                 cursor_pos = neue_cursor_pos
             if zusatz_kontext:
                 letzter_gedanke = (letzter_gedanke + "\n" + zusatz_kontext)[-1500:]
+
+            # 7. Zweiter Screenshot direkt NACH der Aktion (2026-07-21, Daniels Live-Ansicht-Auftrag):
+            # der erste Screenshot in Schritt 2 zeigt den Zustand VOR der LLM-Entscheidung dieses
+            # Ticks. Erst hier, nach navigiere/klicke/scrolle, ist der eigentliche visuelle Effekt
+            # der Aktion sichtbar -- und genau der ist es, was live beobachtbar sein soll.
+            if zustand != "schlafen" and entscheidung not in ("nachdenken",):
+                mache_screenshot(page, entity_id, cursor_pos)
+                melde_screenshot(conn, entity_id)
+
             if zustand == "schlafen":
                 schlafe(conn, entity_id, page)
                 # Nach Schlaf: zurück zur Surface

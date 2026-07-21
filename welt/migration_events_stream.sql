@@ -5,7 +5,9 @@
 -- trg_notify_denkstream-Muster (migration_denkstream.sql).
 --
 -- Bewusst MINIMALES Payload im Broadcast: nur event_type, created_at und ein paar
--- kuratierte, unsensible Routing-Hinweise (ankuendigung_id, post_ref, post_source).
+-- kuratierte, unsensible Routing-Hinweise (ankuendigung_id, post_ref, post_source,
+-- seit 2026-07-21 auch actor_id -- fuer wesen.*-Events wie wesen.screenshot, damit
+-- das Frontend weiss WELCHES Wesen sich geaendert hat, ohne den vollen payload zu tragen).
 -- KEIN Kommentar-Text, keine Emoji-Reaktion, kein voller payload -- die eigentlichen
 -- Daten holt sich das Frontend weiterhin ueber die normalen, auth-geprueften
 -- REST-Endpunkte. Der Stream ist nur ein Signal "hier hat sich was getan",
@@ -18,6 +20,7 @@ BEGIN
         json_build_object(
             'event_type',       NEW.event_type,
             'created_at',       NEW.created_at,
+            'actor_id',         NEW.actor_id,
             'ankuendigung_id',  NEW.payload->>'ankuendigung_id',
             'post_ref',         NEW.payload->>'post_ref',
             'post_source',      NEW.payload->>'post_source'
