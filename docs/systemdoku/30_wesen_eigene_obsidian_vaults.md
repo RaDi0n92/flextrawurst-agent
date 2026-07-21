@@ -260,9 +260,33 @@ insgesamt, ~644MB RAM) läuft die ganze Zeit parallel zum neuen
 die Liste erstmal nur benannt haben, Entscheidung über Pausieren/Umbau folgt
 separat.
 
+## Nachtrag 2026-07-21: AUGE-Button — rrweb-Wiedergabe im Surface fertig
+
+Im SCREENS-Modal (`build_surface.ts`) neuer Toggle-Button "◉ AUGE" neben dem
+Deep-Link-Button: schaltet vom Screenshot-Bild auf einen echten
+`rrweb.Replayer` im Live-Modus um, verbunden mit `/api/dom-events/stream/{id}`.
+Bundle als `public/rrweb.js` self-hosted, dafür musste
+`getContentType()` in `serve_process_camera_preview.ts` erweitert werden (war
+auf `.html`/`.json` begrenzt, `.js` kam nie durch den ersten Gate-Check, obwohl
+der `public/`-Fallback-Code es korrekt ausgeliefert hätte — eng gefasst nur für
+`/rrweb.js`, keine generelle Öffnung).
+
+Vorab an einer Kopie der echten gespeicherten Events (nicht live) verifiziert:
+der Player baut die tatsächliche flextrawurst-Startseite (Logo, Kreise,
+Schriftzug) korrekt aus reinem Code nach — kein Bild beteiligt. End-to-End im
+Surface bestätigt: SSE-Verbindung baut sich sauber auf, keine Fehler im
+Kernpfad. Ein einzelner erwarteter, nicht blockierender 404 (`/flarum-live/`)
+kommt daher, dass rrweb beim Nachbau eine referenzierte Ressource über den
+*aktuellen* statt den ursprünglichen Origin lädt — bekanntes rrweb-Verhalten,
+kein Fehler in unserem Code. Die AUGE-Fläche bleibt leer, solange das
+betrachtete Wesen gerade nicht navigiert (kein neues FullSnapshot) — das ist
+korrektes, kein fehlerhaftes Verhalten.
+
 ## Offen / als Nächstes
 
-- rrweb-Wiedergabe-Seite (rrweb-player im Surface) + Röntgenblick-Overlay
+- Röntgenblick-Overlay (welches Element die KI gerade betrachtet, mit
+  Denkblase aus `entity_denkstream`) — von Daniel bestätigt gewünscht, noch
+  nicht gebaut
 - Erste echte Nutzung von `obsidian_schreiben` durch ein Wesen beobachten
   (nicht künstlich ausgelöst, sondern abwarten bis die LLM-Entscheidung selbst
   darauf fällt)
