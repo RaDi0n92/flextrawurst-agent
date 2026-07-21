@@ -19,6 +19,7 @@ import requests
 
 sys.path.insert(0, "/root/werkraum")
 import hauhau_client
+import llm_scheduler as sched
 
 log = logging.getLogger("traum-generator")
 
@@ -26,22 +27,6 @@ import os as _os; DB_URI = _os.environ.get("FLEXTRAWURST_DB_URI", "postgresql://
 MODEL = "hauhaucs-q6"
 MAX_TAGE_EVENTS = 30   # max Events für Traum-Kontext
 LLM_TIMEOUT = 240
-
-import contextlib
-import fcntl
-OLLAMA_LOCK_PATH = "/tmp/ollama_browser_lock"  # dieselbe Sperre wie browser_agent.py (2026-07-21)
-
-
-@contextlib.contextmanager
-def ollama_lock():
-    """Sequenzielle LLM-Zugriffssperre, geteilt mit browser_agent.py — Traumgenerierung
-    laeuft aus schlafe() heraus waehrend andere Wesen wach ticken koennten."""
-    with open(OLLAMA_LOCK_PATH, "w") as f:
-        fcntl.flock(f, fcntl.LOCK_EX)
-        try:
-            yield
-        finally:
-            fcntl.flock(f, fcntl.LOCK_UN)
 
 
 def get_conn():
@@ -200,7 +185,9 @@ def generiere_traum(entity_id: str, laufend_check=None) -> str:
         prompt = baue_traum_prompt(entity_id, erinnerungen)
         try:
             seq = 1
-            with ollama_lock():
+            with sched.LLMSlot(server="hintergrund", prioritaet=sched.PRIO_NIEDRIG,
+                                rufer=f"traum_generator:{entity_id}", max_wartezeit=150,
+                                max_haltezeit=LLM_TIMEOUT + 40):
                 for chunk in hauhau_client.chat_stream(
                     prompt, think=False, temperature=0.85, top_p=0.92, top_k=50,
                     repeat_penalty=1.1, timeout=LLM_TIMEOUT,

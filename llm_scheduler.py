@@ -60,7 +60,7 @@ DB_URI = _load_db_uri()
 
 PRIO_HOCH, PRIO_NORMAL, PRIO_NIEDRIG = 0, 1, 2
 
-N_SLOTS = {"hintergrund": 1, "chat": 1}
+N_SLOTS = {"hintergrund": 2, "chat": 1}  # 2026-07-21: Hintergrund-Instanz auf getesteten --parallel 2 Zielwert zurückgesetzt (siehe docs/systemdoku/12_ollama_gemma4.md)
 
 POLL_INTERVALL_SEK = 1.0
 STALE_WARTER_SEK = 100

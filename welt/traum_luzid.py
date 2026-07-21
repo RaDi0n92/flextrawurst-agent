@@ -20,27 +20,13 @@ import requests
 
 sys.path.insert(0, "/root/werkraum")
 import hauhau_client
+import llm_scheduler as sched
 
 log = logging.getLogger("traum-luzid")
 
 import os as _os; DB_URI = _os.environ.get("FLEXTRAWURST_DB_URI", "postgresql://dak:dakpass@localhost:5432/flextrawurst")
 MODEL = "hauhaucs-q6"
 LLM_TIMEOUT = 180
-
-import contextlib
-import fcntl
-OLLAMA_LOCK_PATH = "/tmp/ollama_browser_lock"  # dieselbe Sperre wie browser_agent.py (2026-07-21)
-
-
-@contextlib.contextmanager
-def ollama_lock():
-    """Sequenzielle LLM-Zugriffssperre, geteilt mit browser_agent.py."""
-    with open(OLLAMA_LOCK_PATH, "w") as f:
-        fcntl.flock(f, fcntl.LOCK_EX)
-        try:
-            yield
-        finally:
-            fcntl.flock(f, fcntl.LOCK_UN)
 
 
 def get_conn():
@@ -137,7 +123,9 @@ def beobachte_traum(entity_id: str, traumtext: str,
         prompt = baue_beobachter_prompt(entity_id, traumtext)
         try:
             seq = 1
-            with ollama_lock():
+            with sched.LLMSlot(server="hintergrund", prioritaet=sched.PRIO_NIEDRIG,
+                                rufer=f"traum_luzid:{entity_id}", max_wartezeit=150,
+                                max_haltezeit=LLM_TIMEOUT + 40):
                 for chunk in hauhau_client.chat_stream(
                     prompt, think=False, temperature=0.8, timeout=LLM_TIMEOUT,
                 ):

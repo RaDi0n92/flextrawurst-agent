@@ -13,8 +13,6 @@ Start: python3 browser_agent.py --entity Schorschel
 
 import argparse
 import base64
-import contextlib
-import fcntl
 import json
 import logging
 import os
@@ -30,6 +28,7 @@ from playwright.sync_api import sync_playwright
 
 sys.path.insert(0, "/root/werkraum")
 import hauhau_client
+import llm_scheduler as sched
 
 logging.basicConfig(
     level=logging.INFO,
@@ -46,7 +45,6 @@ LOOP_PAUSE = 4          # Sekunden zwischen Aktionen
 LLM_TIMEOUT = 180       # Sekunden Timeout für Ollama
 SCREENSHOT_DIR = "/tmp/wesen_screenshots"
 MAX_TEXT_CHARS = 2000   # Max Zeichen Seitentext für LLM
-OLLAMA_LOCK_PATH = "/tmp/ollama_browser_lock"  # dieselbe Datei wie browser_agent_coordinator.py (dort bisher nur deklariert, nie benutzt)
 
 # API-Keys — werden beim Start aus DB geladen
 ENTITY_KEYS = {
@@ -76,19 +74,6 @@ def get_conn():
     return psycopg2.connect(DB_URI, cursor_factory=psycopg2.extras.RealDictCursor)
 
 
-@contextlib.contextmanager
-def ollama_lock():
-    """Sequenzielle LLM-Zugriffssperre zwischen allen Browser-Agenten (Daniels Wesen-Definition,
-    2026-07-21, wörtlich: 'nur eine LLM-Anfrage gleichzeitig'). Blockierendes flock -- ein Wesen
-    wartet einfach bis das vorherige fertig ist, kein Polling, kein Timeout-Gefeilsche. War in
-    browser_agent_coordinator.py nur als LOCK_FILE-Pfad deklariert, nie tatsächlich benutzt --
-    hier zum ersten Mal wirklich verwendet."""
-    with open(OLLAMA_LOCK_PATH, "w") as f:
-        fcntl.flock(f, fcntl.LOCK_EX)
-        try:
-            yield
-        finally:
-            fcntl.flock(f, fcntl.LOCK_UN)
 
 
 def hole_jwt(entity_id: str) -> str:
@@ -560,7 +545,9 @@ def _schreibe_flarum_brief(conn, entity_id: str):
             f"Was nimmst du mit? Was lässt du zurück? Was war wirklich?\n"
             f"Direkt. Persönlich. Nicht schön. Ehrlich."
         )
-        with ollama_lock():
+        with sched.LLMSlot(server="hintergrund", prioritaet=sched.PRIO_NIEDRIG,
+                            rufer=f"browser_agent:{entity_id}:flarum_brief",
+                            max_wartezeit=150, max_haltezeit=150):
             brief_inhalt = hauhau_client.chat(prompt, think=False, timeout=120.0)
         if not brief_inhalt:
             return
@@ -607,7 +594,9 @@ def _schreibe_schlafbrief(conn, entity_id: str, traumtext: str,
             f"Was trägst du aus diesem Schlaf mit? Was soll die nächste Version von dir wissen? "
             f"Direkt, persönlich, kein Ratgeber-Ton."
         )
-        with ollama_lock():
+        with sched.LLMSlot(server="hintergrund", prioritaet=sched.PRIO_NIEDRIG,
+                            rufer=f"browser_agent:{entity_id}:schlafbrief",
+                            max_wartezeit=150, max_haltezeit=150):
             brief_inhalt = hauhau_client.chat(prompt, think=False, timeout=120.0)
         if not brief_inhalt:
             return
@@ -778,7 +767,9 @@ def haupt_loop(entity_id: str):
             llm_out = ""
             try:
                 seq = 0
-                with ollama_lock():
+                with sched.LLMSlot(server="hintergrund", prioritaet=sched.PRIO_NORMAL,
+                                    rufer=f"browser_agent:{entity_id}:tick",
+                                    max_wartezeit=150, max_haltezeit=LLM_TIMEOUT + 40):
                     for chunk in hauhau_client.chat_stream(prompt, think=False, timeout=LLM_TIMEOUT):
                         if not _laufend:
                             break
