@@ -12,6 +12,7 @@ Läuft einmalig oder als Daemon (--daemon --interval 300).
 import argparse
 import json
 import logging
+import os
 import sys
 import time
 from datetime import datetime, timezone
@@ -38,7 +39,7 @@ log = logging.getLogger("feeder")
 
 DB_CONFIG = {
     "host": "localhost", "port": 3306, "db": "flarum",
-    "user": "flarum", "password": "Flarum2024!Secure",
+    "user": "flarum", "password": os.environ.get("FLARUM_DB_PASSWORD", ""),
     "charset": "utf8mb4", "autocommit": True,
 }
 
