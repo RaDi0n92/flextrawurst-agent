@@ -45,6 +45,7 @@ Vollständige technische und konzeptionelle Dokumentation des flextrawurst-Syste
 | [[24_dienste_provenienz_protokoll]] | Provenienz-Protokoll Stufe 1: echte Git-Historie + Docstring + Live-Status für 13 Wesen/Flarum-Dienste — korrigiert veraltete INAKTIV-Labels in 09 |
 | [[27_dienste_provenienz_protokoll_stufe2]] | Provenienz-Protokoll Stufe 2: 19 weitere Skript-Einträge (33 Units) — codewesen_agent.py (7 Instanzen, neuer Fund), welt/-Kern, GENI, dak+gord, Claude-Kimi-Codex-Sync. Deckt auf: geni-muster.timer seit 2026-07-07 tot (Crash, nicht bewusst deaktiviert) |
 | [[28_live_update_kanal]] | Live-Update-Kanal (Grundgesetz 8 "Live statt F5") — events-Tabelle → PostgreSQL NOTIFY → SSE → Frontend, erster Anschluss: Ankündigungen |
+| [[29_browser_agent_aktivierung]] | Browser-Agent aktiviert — alle 6 Wesen mit eigenem virtuellen Browser, echte Flarum-Inspektion, RAG-Erkundung, 6 vorher nie gefundene Bugs behoben, sequenzielle LLM-Sperre erstmals wirklich implementiert |
 | [[10_dakgord]] | dak+gord-system — vollständige Dokumentation |
 | [[11_geni]] | GENI — Gedächtnis-Wesen, vollständige Dokumentation |
 
