@@ -262,6 +262,8 @@ separat.
 
 ## Nachtrag 2026-07-21 (später): LLM-Slot-Kontention war der Grund für "SCREENS steht fest"
 
+**Vollständige Fortsetzung dieses Themas (weitere gefundene Hintergrunddienste bei dak+gord/GENI, innenleben-feeder-Fix, geni-muster-Problem) in [[31_llm_kontention_dienste_aufraeumung]].**
+
 Daniel bemerkte, dass alle SCREENS-Tabs auf der Startseite stehen bleiben und die
 Wesen "nicht wirklich denken". Live-Diagnose per `llm_warteschlange`-Tabelle: zu
 jedem Zeitpunkt standen gleichzeitig 6× `reaktion` (aus dem oben beschriebenen

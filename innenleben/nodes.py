@@ -17,6 +17,7 @@ import httpx
 
 sys.path.insert(0, "/root/werkraum")
 import hauhau_client
+import llm_scheduler as sched
 
 import emotion_bewerter
 import selbstmodell
@@ -51,7 +52,9 @@ def _collection(entity_id: str):
 
 def _llm(prompt: str, num_predict: int = 600) -> str:
     try:
-        return hauhau_client.chat(prompt, think=False, max_tokens=num_predict, temperature=0.7, timeout=120.0).strip()
+        with sched.LLMSlot(server="hintergrund", prioritaet=sched.PRIO_NIEDRIG,
+                            rufer="innenleben:reflection", max_wartezeit=150, max_haltezeit=150):
+            return hauhau_client.chat(prompt, think=False, max_tokens=num_predict, temperature=0.7, timeout=120.0).strip()
     except Exception as e:
         log.warning(f"LLM-Fehler: {e}")
         return ""

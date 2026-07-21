@@ -75,6 +75,8 @@ Vollständige technische und konzeptionelle Dokumentation des flextrawurst-Syste
 | [[16_was_fehlt_und_was_koennte_sein]] | Offene Bauschritte, Ideen, was noch gebaut werden könnte |
 | [[25_dreileib_kapseln]] | Dreileib-Kapseln — Architektur-Vision (2026-07-10): jedes Weltobjekt mit Codewesen-/Menschen-/Organ-Leib, Rot-Block-Kontextschutz. Reine Vision, nichts gebaut |
 | [[26_dom_agenten_brainstorm]] | DOM-Agenten-Brainstorm (2026-07-10): X-Ray-Overlay, Geist-Modus, Substanz-Infekt u.a. — reine Inspiration, gegen echte DB-Zahlen geprüft, kein Bauauftrag |
+| [[30_wesen_eigene_obsidian_vaults]] | Wesen-eigene Obsidian-Vaults (2026-07-21): 7 Container, rrweb Aufnahme+Wiedergabe, Röntgenblick-Overlay |
+| [[31_llm_kontention_dienste_aufraeumung]] | LLM-Slot-Kontention + Dienste-Aufräumung (2026-07-21): 22 Alt-Dienste pausiert/disabled, Firewall-Fix, innenleben-feeder repariert, geni-muster-31,5-Mio-Dateien-Problem offen |
 
 ---
 
