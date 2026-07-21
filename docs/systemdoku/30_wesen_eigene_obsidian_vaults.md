@@ -282,11 +282,61 @@ kein Fehler in unserem Code. Die AUGE-Fläche bleibt leer, solange das
 betrachtete Wesen gerade nicht navigiert (kein neues FullSnapshot) — das ist
 korrektes, kein fehlerhaftes Verhalten.
 
+## Nachtrag 2026-07-21: Röntgenblick-Overlay fertig
+
+Ursprünglich in Grundgesetz 1 / `dreiergespann_dom_theorie.md` als Menschen-Auge-Ebene
+skizziert, von Daniel bestätigt, aber laut vorigem Nachtrag noch nicht gebaut — jetzt fertig.
+
+**Architektur-Entscheidung (mit Daniel abgestimmt, nicht allein getroffen):** Es gab keine
+Datenquelle für "welches Element betrachtet das Wesen gerade" — `entity_dom_events` ist
+reiner passiver rrweb-Rohstrom (9211 von 9277 Events waren Mutation-Events, nur 17
+MouseInteraction, weil der Agent per Playwright-Locator statt echter Mausbewegung klickt).
+Zur Wahl standen: (a) `browser_agent.py` instrumentieren, oder (b) aus dem rrweb-Rohstrom
+raten. Daniel entschied (a).
+
+**Umsetzung:**
+- Neue Tabelle `entity_fokus_events` (`migration_fokus_events.sql`) — kuratierter Gegenpart
+  zu `entity_dom_events`, Payload (Selektor, Text, Bounding-Box) klein genug fürs komplette
+  NOTIFY, kein SELECT-Roundtrip nötig (anders als bei den rrweb-FullSnapshots).
+- `browser_agent.py`: neue Funktion `melde_fokus()`, aufgerufen aus `fuehre_aktion_aus()`
+  bei `klicke:`/`tippe:`/`navigiere:` — genau an der Stelle, wo `_klicke_und_zeige()` den
+  Playwright-Locator vor dem Klick auflöst (dort war die Bounding-Box ohnehin schon
+  berechnet, für den künstlichen Cursor). `fuehre_aktion_aus()` bekommt dafür `conn` jetzt
+  optional durchgereicht. `gen_browser_agent.py` (der alte Generator-Stub, zuletzt 06.07.
+  angefasst) bewusst nicht mitgezogen — ist seit Wochen von direkten `browser_agent.py`-
+  Edits abgehängt (Obsidian, Screenshot-Event, idle-Fix nie zurückportiert).
+- Neuer SSE-Endpunkt `GET /fokus-events/stream/{entity_id}` (`fokus_events_api.py`,
+  identisches Muster wie `dom_events_api.py`/`denkstream_api.py`), in `api.py` registriert.
+- Frontend (`build_surface.ts`): zweiter EventSource parallel zum bestehenden rrweb-DOM-
+  Strom, nur aktiv während AUGE läuft. Zeichnet einen neon-grünen Rahmen um die Bounding-Box
+  (Skalierung live aus der `.replayer-wrapper`-Transform-Matrix berechnet, robust gegen
+  rrwebs eigene Skalierungslogik) plus eine Denkblase mit Aktion+Element-Text und dem
+  aktuellsten `entity_denkstream`-Chunk (6s Anzeigedauer). i18n-Keys `roentgen.klickt/
+  tippt/navigiert` DE+EN ergänzt.
+
+**Echter Bug beim Bauen gefunden und gefixt:** Der erste Build hatte einen kaputten Regex
+(`/matrix(([^,]+),/` statt `/matrix\(([^,]+),/`) — die TS-Quelle embedded das komplette
+Surface-Skript in einem Template-Literal, das unbekannte Escapes wie `\(` stillschweigend
+zum bloßen `(` kollabiert (Konvention im ganzen File: `\\s`, `\\(` im Quelltext für ein
+einzelnes `\` im Output). Der kaputte Regex crashte beim Laden das komplette Script-Tag,
+wodurch auch `scvOpen` & Co. verschwanden — im Playwright-Test sofort sichtbar
+(`ReferenceError`), nach Fix behoben.
+
+**Zweiter Fund beim Testen:** `localhost:8787` direkt (ohne nginx davor) puffert `/api/*`
+im Node-Preview-Server komplett bis zum Verbindungsende (`serve_process_camera_preview.ts`,
+generischer Proxy sammelt Chunks bis `gr.on("end")`) — für SSE bedeutet das: nie. Die
+Live-Verifikation muss über den echten nginx-Weg laufen (`location /api/ { proxy_pass
+http://localhost:8030/; }`, ohne diese Pufferung, `X-Accel-Buffering: no` im Response-Header
+der FastAPI-Endpunkte steuert das). Das erklärt vermutlich auch, warum frühere lokale
+Preview-Tests von dom-events/denkstream nie einen echten Streaming-Fehler gezeigt hätten,
+selbst wenn einer bestünde — nur der Weg über die echte Domain ist aussagekräftig.
+
+End-to-End mit Playwright gegen `https://flextrawurst.de` verifiziert: DB-Insert →
+NOTIFY → SSE → Rahmen+Blase erscheinen korrekt positioniert und gestylt, kein
+Regressionsschaden am bestehenden AUGE-Feature (Screenshot-Vergleich vorher/nachher).
+
 ## Offen / als Nächstes
 
-- Röntgenblick-Overlay (welches Element die KI gerade betrachtet, mit
-  Denkblase aus `entity_denkstream`) — von Daniel bestätigt gewünscht, noch
-  nicht gebaut
 - Erste echte Nutzung von `obsidian_schreiben` durch ein Wesen beobachten
   (nicht künstlich ausgelöst, sondern abwarten bis die LLM-Entscheidung selbst
   darauf fällt)
