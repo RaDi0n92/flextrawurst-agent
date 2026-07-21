@@ -59,6 +59,10 @@ tools/models/
 
 # Semantische-Suche-Index (regenerierbares Chroma-Binaerformat, kein Inhalt)
 _claude/semantik_index/
+
+# Wesen-Archiv (Screenshots etc., 2026-07-21 aus /tmp verschoben — dauerhaft auf
+# Disk gehalten, aber binär/wachsend, gehört nicht in die Git-Historie)
+welt/archiv/
 bilder/
 codewesen/
 geni/

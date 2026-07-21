@@ -43,7 +43,7 @@ SURFACE_URL = "http://localhost:8787/flextrawurst_surface.html"
 OBSIDIAN_URL = "http://localhost:8787/werkraum"  # Werkraum-Dateien via Surface-Server
 LOOP_PAUSE = 4          # Sekunden zwischen Aktionen
 LLM_TIMEOUT = 180       # Sekunden Timeout für Ollama
-SCREENSHOT_DIR = "/tmp/wesen_screenshots"
+SCREENSHOT_DIR = "/root/werkraum/welt/archiv/wesen_screenshots"  # 2026-07-21: dauerhaft statt /tmp (systemd-tmpfiles löscht /tmp nach 10 Tagen)
 MAX_TEXT_CHARS = 2000   # Max Zeichen Seitentext für LLM
 
 # API-Keys — werden beim Start aus DB geladen
@@ -177,10 +177,13 @@ def mache_screenshot(page, entity_id: str, cursor_pos: tuple[float, float] | Non
             zeige_cursor(page, cursor_pos[0], cursor_pos[1])
         pfad = f"{SCREENSHOT_DIR}/{entity_id}_{int(time.time())}.jpg"
         page.screenshot(path=pfad, full_page=False, clip={"x":0,"y":0,"width":1024,"height":768})
-        # Nur letzten Screenshot pro Wesen behalten
+        # _aktuell.jpg bleibt zusätzlich für die Live-Vorschau (denkstream_api.py) erhalten,
+        # aber in entity_thinking_log wird ab jetzt der eindeutige pfad gespeichert (2026-07-21:
+        # vorher wurde hier aktuell zurückgegeben — jede historische Zeile zeigte damit auf das
+        # jeweils zuletzt überschriebene Bild, nie auf das Bild vom eigenen Tick).
         aktuell = f"{SCREENSHOT_DIR}/{entity_id}_aktuell.jpg"
         page.screenshot(path=aktuell, full_page=False, clip={"x":0,"y":0,"width":1024,"height":768})
-        return aktuell
+        return pfad
     except Exception as e:
         log.warning("Screenshot fehlgeschlagen: %s", e)
         return None
@@ -195,7 +198,7 @@ def baue_prompt(entity_id: str, seite: dict, letzter_gedanke: str,
         for w in andere_wesen[:4]:
             url = (w.get("url") or "").replace("http://localhost:8787", "")[:35]
             gedanke = (w.get("gedanke") or "")[:40]
-            shot = f"/tmp/wesen_screenshots/{w['entity_id']}_aktuell.jpg"
+            shot = f"{SCREENSHOT_DIR}/{w['entity_id']}_aktuell.jpg"
             hat_screenshot = "📷" if __import__("os").path.exists(shot) else ""
             zeilen.append(f"- {w['entity_id']} {hat_screenshot}: {url} ({gedanke})")
         andere_info = "\nANDERE WESEN GERADE (sichtbar für dich):\n" + "\n".join(zeilen)

@@ -30,6 +30,8 @@ log = logging.getLogger("denkstream")
 
 import os as _os; DB_URI = _os.environ.get("FLEXTRAWURST_DB_URI", "postgresql://dak:dakpass@localhost:5432/flextrawurst")
 
+SCREENSHOT_DIR = "/root/werkraum/welt/archiv/wesen_screenshots"  # 2026-07-21: dauerhaft statt /tmp, siehe browser_agent.py
+
 # Interner Producer-Token (C-011): nur authentisierte Browser-Agent-Daemons dürfen
 # Chunks schreiben. Ohne gesetzten Token ist der Schreib-Endpunkt fail-closed gesperrt.
 _INTERNAL_TOKEN = _os.environ.get("DENKSTREAM_INTERNAL_TOKEN", "")
@@ -159,7 +161,7 @@ def denkstream_traumbild_file(entity_id: str, filename: str):
 def denkstream_screenshot(entity_id: str):
     """Aktueller Screenshot eines Wesens als JPEG."""
     import os
-    pfad = f"/tmp/wesen_screenshots/{entity_id}_aktuell.jpg"
+    pfad = f"{SCREENSHOT_DIR}/{entity_id}_aktuell.jpg"
     if not os.path.exists(pfad):
         raise HTTPException(status_code=404, detail="Kein Screenshot vorhanden")
     with open(pfad, "rb") as f:
@@ -195,7 +197,7 @@ def denkstream_status_all():
     result = []
     for r in rows:
         entity_id = r["entity_id"]
-        shot_path = f"/tmp/wesen_screenshots/{entity_id}_aktuell.jpg"
+        shot_path = f"{SCREENSHOT_DIR}/{entity_id}_aktuell.jpg"
         r["screenshot_url"] = (
             f"/api/denkstream/screenshot/{entity_id}"
             if os.path.exists(shot_path) else None
