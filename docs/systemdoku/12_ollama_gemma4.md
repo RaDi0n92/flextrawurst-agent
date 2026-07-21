@@ -572,4 +572,16 @@ Kurzdokumentation pro migrierter Datei: `_claude/konzepte/*.md`.
 
 ---
 
+## Nachtrag 2026-07-21: Hintergrund-Instanz zurück auf --parallel 2, altes ollama_lock() ersetzt
+
+Daniels Anstoß, wörtlich: *"ich will das zusätzliche reflexmodell und die eine anfrageregel aufweichen am besten dann"* — er wollte, dass mehrere Wesen gleichzeitig reagieren können, nicht länger strikt nacheinander. Nach Ressourcen-Check (PSS statt RSS, siehe [[29_browser_agent_aktivierung]]) und Rückfrage stellte sich heraus: das separate Reflexmodell (gemma4 e2b) war nie wirklich schnell — Daniels Wort dazu: *"da hat chatten und das lesen und reagieren genau so lange gedauert wie bei dem hauhau"*. Also verworfen, stattdessen die bestehende Chat-Instanz (Port 11435) gestoppt (unnötig, da direktes Wesen-Chatten selten geworden ist) und die Hintergrund-Instanz (Port 11436) von `--parallel 1` auf `--parallel 2` hochgesetzt — der bereits am 2026-07-06 hier dokumentierte, getestete sichere Zielwert (`--parallel 3` verursachte einen 37x-Einbruch, siehe oben "Speculative Decoding"-Abschnitt-Nachbarschaft bzw. MoE-Architektur-Begründung). `--parallel 1` war selbst eine ungewollte Regression aus einer früheren RAM-Krisen-Notreaktion, keine bewusste Dauer-Einstellung.
+
+Beim Umsetzen entdeckt: `welt/browser_agent.py`, `welt/traum_generator.py` und `welt/traum_luzid.py` benutzten noch ein selbstgebautes `fcntl`-basiertes `ollama_lock()` — genau das Muster, das `llm_scheduler.py` (Prioritätswarteschlange über `llm_warteschlange`-Tabelle, mit Timeout und Selbstheilung) bereits ersetzen sollte, aber für diese drei Aufrufer nie umgestellt wurde. Alle drei jetzt auf `sched.LLMSlot(server="hintergrund", ...)` umgestellt, `N_SLOTS["hintergrund"]` in `llm_scheduler.py` auf 2 gesetzt.
+
+Verifiziert nach Neustart aller 7 `browser-agent@*`-Services: `/slots`-Endpunkt der llama-server-Instanz zeigt 2 echte Slots, `llm_warteschlange` verarbeitet Wartende korrekt, keine Tracebacks in den Logs, alle 7 Entitäten ticken wieder frisch. Swap sank dabei zusätzlich von ~25GB auf ~7GB (Nebeneffekt des gestoppten Chat-Modells, nicht das eigentliche Ziel — das eigentliche Ziel war freie CPU-Kerne, nicht RAM).
+
+**Eigener Fehler dabei, zur eigenen Erinnerung:** beim Neustart-Loop einen Wesen-Namen mit Sonderzeichen (`dak+gord-system`) falsch für systemctl maskiert — dadurch entstand kurzzeitig eine zweite, ungültige systemd-Unit-Instanz (`browser-agent@dak\x2bgord-system.service`, ohne `\x2d` für den Bindestrich), die in einer Crash-Restart-Schleife hing, weil `%I` sie zu einem ungültigen Pfad `dak+gord/system` entpackte. Sauber gestoppt, kein Datenverlust, aber ein Beleg dafür wie fehleranfällig systemd-Escaping bei Namen mit mehreren Sonderzeichen ist — siehe `browser-agent@.service`s `%I`-vs-`%i`-Nachtrag in [[29_browser_agent_aktivierung]].
+
+---
+
 *Weiter: [[13_langgraph]] | [[14_obsidian]]*
