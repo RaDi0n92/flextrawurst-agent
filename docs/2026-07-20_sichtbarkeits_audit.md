@@ -30,9 +30,13 @@ Sieben Routen unter `/admin/...` hatten **trotz Pfad-Präfix keine tatsächliche
 
 **Fix:** `_require_admin(authorization)` in allen sieben Funktionen ergänzt (Commit `49fd93d24`). Live verifiziert nach Neustart von `welt-api.service` (mit Daniels Freigabe) — alle sieben liefern jetzt `401` ohne Token, unveränderte `200` für tatsächlich öffentliche Routen (`/welt/struktur` als Gegenprobe).
 
-## Offener Punkt — bewusst nicht angefasst, braucht Daniel-Entscheidung
+## Offener Punkt vom 20.07. — inzwischen entschieden und gefixt (21.07.)
 
-`/admin/einzugsampel`, `/admin/einzugsampel/v2`, `/admin/einzugsampel/v3` sind ebenfalls ohne Auth-Prüfung öffentlich abrufbar. Anders als bei den sieben oben ist hier die Faktenlage unklar: Das Frontend (`flextrawurst_surface.html` Zeile ~9350) versucht zuerst `/admin/einzugsampel/v4` mit Auth-Header und würde bei `403` bewusst auf `v3` **ohne** Auth-Header zurückfallen — das deutet auf eine ursprünglich *geplante* öffentlich/admin-Zweiteilung hin (öffentliche Kurzfassung + admin-Vollversion). Nur: **`v4` existiert im Backend gar nicht** (404, nicht 403) — die Fallback-Logik greift also nie wie gedacht, und v2/v3 sind faktisch die einzigen, vollständig offenen Versionen. Ob das absichtlich so bleiben soll (Reifegrad-Status ist ohnehin kein Geheimnis) oder ob v4 noch gebaut und v2/v3 dahinter verriegelt werden sollen, ist eine Entscheidung für dich, keine, die ich einfach treffen wollte.
+`/admin/einzugsampel`, `/admin/einzugsampel/v2`, `/admin/einzugsampel/v3` waren ebenfalls ohne Auth-Prüfung öffentlich abrufbar. Anders als bei den sieben oben war hier die Faktenlage unklar: Das Frontend (`flextrawurst_surface.html` Zeile ~9350) versucht zuerst `/admin/einzugsampel/v4` mit Auth-Header und würde bei `403` bewusst auf `v3` **ohne** Auth-Header zurückfallen — das deutet auf eine ursprünglich *geplante* öffentlich/admin-Zweiteilung hin (öffentliche Kurzfassung + admin-Vollversion). Am 20.07. existierte `v4` im Backend noch gar nicht (404, nicht 403).
+
+**Update 21.07.:** Daniel hat entschieden: Option 1 — Auth direkt auf v2/v3, wie bei den sieben bereits gefixten Routen (nicht Option "erst v4 bauen"). `_require_admin(authorization)` in `einzugsampel_v2` und `einzugsampel_v3` ergänzt (`welt/api.py`, Commit `0b382a831`). Bei v2 dabei toten Code entfernt (`is_admin` wurde berechnet, aber nie geprüft — reine Kosmetik). Live verifiziert nach Neustart von `welt-api.service` (mit Daniels Freigabe): beide liefern jetzt `401` ohne Token. `v1` (`/admin/einzugsampel` ohne Suffix) bleibt bewusst unverändert öffentlich (`200`) — war nicht Teil des Auftrags.
+
+Nebenfund beim Fix: `/admin/einzugsampel/v4` existiert inzwischen doch im Backend, in `welt/groups_api.py:951`, mit funktionierendem `_is_admin`-Gate (403 statt 404). Der am 20.07. beschriebene Fallback-Mechanismus im Frontend könnte also inzwischen tatsächlich greifen — noch nicht geprüft, ob das Frontend v4 wirklich zuerst anspricht und ob v2/v3 dadurch überhaupt noch aufgerufen werden. Offen für einen späteren Blick, kein aktueller Blocker mehr.
 
 ## Grobe Landkarte nach Bereich (Auszug, vollständig in `/tmp/audit_summary.txt`)
 
