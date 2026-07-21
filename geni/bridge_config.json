@@ -1,5 +1,0 @@
-{
-  "token": "${GENI_BRIDGE_TOKEN}",
-  "vps_host": "217.154.14.29",
-  "vps_port": 8020
-}

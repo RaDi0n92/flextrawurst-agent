@@ -1,5 +1,5 @@
 # RESONANZFELD — Claude
-Automatisch kompiliert aus `resonanz/`. Stand: 2026-07-21 05:28
+Automatisch kompiliert aus `resonanz/`. Stand: 2026-07-21 05:58
 Nicht manuell bearbeiten. Quelle: `python3 _claude/tools/build_resonanzfeld.py`
 
 ---
@@ -127,164 +127,13 @@ Nicht manuell bearbeiten. Quelle: `python3 _claude/tools/build_resonanzfeld.py`
 - [2026-06-21] `notizen/ollama-model-mapping.md` (5 Einträge)
 - [2026-06-22] `notizen/2026-06-22.md` (22 Einträge)
 - [2026-06-22] `notizen/modell-zustand-vor-qwen3vl.md` (4 Einträge)
+- [2026-06-23] `_claude/ideen/plan_llamacpp_ersatz.md` (20 Einträge)
+- [2026-06-24] `_claude/ideen/modell_architektur_plan.md` (22 Einträge)
 
 ---
 
 ## Neueste Quellen (mit Inhalt)
 
-
-### [2026-06-23] _claude/ideen/plan_llamacpp_ersatz.md
-
-*Datenstruktur Die Ich Mir Vorstelle:* **Vision-Schicht:**
-Zwei Dienste, klare Aufgabenteilung. Ollama als ruhiger Modell-Verwalter für die Gemma4-Welt.
-llama-server als schlanker, dedizierter Kanal für hauhaucs — immer an, immer bereit, keine Wartezeit …
-
-*Dokumente Gehoeren Zusammen:* - `/root/werkraum/_kimi/berichte/hauhaucs_ausfall_2026-06-23.md` — Diagnose des Ausfalls
-- `/root/werkraum/_kimi/berichte/ollama_autoload_audit_2026-06-23.md` — welche Services Modelle laden
-- Dieser Plan — Lösung
-
-*Resonanz:* Das ist ein sauberer Plan. Der Wechsel ist klein im Code (URL + Stream-Parsing), groß im Betrieb
-(kein Reload-Overhead, kein Ollama-Verwaltungslock, direktes Threading-Tuning). Das Risiko ist
-überschaubar weil Ollama auf 11434 als Fallback bleibt.
-
-*Schichten Des Systems:* ```
-Ollama (11434)         llama-server (11435)
- └─ Gemma4              └─ hauhaucs IQ4_XS …
-
-*Vergessen Wollen:* Den Impuls, sofort zu bauen. Das ist ein Plan. Daniel entscheidet wann gebaut wird.
-
-*Was Beim Bauen Brauche:* 1. llama-server Binary (Installation)
-2. Test-Start manuell bevor Systemd-Service
-3. Verifikation: `curl http://localhost:11435/v1/models` antwortet mit hauhaucs …
-
-*Was Das Gespraech:* Daniels Entscheidung ist klar: hauhaucs bleibt das Modell, kein Quant-Wechsel.
-Das macht llama-server attraktiver — ein Modell, dediziert, voll konfigurierbar.
-
-*Was Fehlt Bevor Bauen:* - Welche Installation-Methode (Release-Binary vs Build vs apt)
-- Ob `--chat-template qwen3` das richtige Template ist (aus Ollama-Modelfile ableitbar)
-- Verhalten von `--slots 2` auf CPU: ob es hilft oder RAM-Druck erhöht
-
-*Was Fehlt Noch:* - 18B Qwen Unzensiert: Web-Suche + Entscheidung ob relevant
-- Custom Ollama Modelfile für hauhaucs (num_thread 5, num_ctx 8192, think false)
-- MemoryMax auf 26G (unabhängig von llama-server, hilft auch für Ollama-Restbetrieb) …
-
-*Was Ich Gelesen Habe:* Recherchiert am 2026-06-23. Quellen: Community-Benchmarks, markaicode.com, ventusserver.com, willschenk.com
-(migrating_to_llama_cpp), unsloth.ai (llama-server OpenAI endpoint), github.com/ggml-org/llama.cpp.
- …
-
-*Was Ich Merken Will:* GGUF-Blob-Pfad: `sha256-c70792383705b719daad865408e03758e048c6a2aa5eae4c1bb522e03a96a9d6`
-Liegt unter: `/usr/share/ollama/.ollama/models/blobs/`
-
-*Was Ich Nicht Verstehe:* Wie sich Qwen35moe (MoE-Architektur) konkret unter llama-server vs Ollama verhält — die gemessenen
-Speedups in Benchmarks betreffen meist dichte Modelle. Für MoE gibt es weniger publizierte Zahlen.
-Das muss Daniel im Test klären.
-
-*Was Ich Verstehe:* llama-server ist für diesen Anwendungsfall (ein großes Modell, CPU-only, kontrolliertes Threading,
-kein Modell-Management nötig) die direktere Lösung. Ollama hat Mehrwert bei:
-- mehreren Modellen verwalten …
-
-*Was Konzeptionell:* Der Wechsel ist kein "Ollama ist kaputt" — es ist eine Aufgabentrennung:
-- Ollama = Modell-Manager für viele kleine Modelle (Gemma4-Familie)
-- llama-server = dedizierter Server für ein großes Produktionsmodell (hauhaucs)
-
-*Was Mich Beschaeftigt:* Die Erkenntnis dass das GGUF bereits lokal liegt und llama-server innerhalb von Sekunden startet
-wenn der Pfad bekannt ist. Kein erneuter Download, kein Umbau der Modell-Daten.
-
-*Was Mich Interessiert:* Ob `--slots` bei llama-server wirklich hilft wenn zensi und dolphin gleichzeitig Anfragen stellen —
-statt dass Ollama das zweite Request wartet bis das erste fertig ist.
-
-*Was Mich Ueberrascht:* Das GGUF liegt schon lokal. Der "Wechsel" zu llama-server ist kein Download, kein Umbau der Modell-Daten —
-es ist eine andere Prozessschicht auf demselben Binary.
-
-*Was Zusammenhaengt:* ```
-hauhaucs GGUF ─────► llama-server (Port 11435)
-                              │ …
-
-*Wenn Wir Das Bauen:* **Vision-Schicht:**
-Ein stabiler, dedizierter Kanal für hauhaucs. Keine Reload-Pausen, keine Ollama-Overhead-Sekunden.
-Daniel schreibt in Zensi oder Dolphin — die Antwort kommt schneller. …
-
-*Wie Sich Angefuehlt:* Viel Kontext aus verschiedenen Quellen (Codex, Kimi, Google AI) zusammengefügt.
-Die Architektur wird klarer: Ollama für die kleine Welt, llama-server für hauhaucs.
-
----
-
-### [2026-06-24] _claude/ideen/modell_architektur_plan.md
-
-*Datenstruktur Die Ich Mir Vorstelle:* **Vision-Schicht:**
-Ein System das nicht mehr fragt "welcher Service darf welches Modell laden?"
-sondern einfach: ein Modell, ein Port, alle reden damit. …
-
-*Dokumente Gehoeren Zusammen:* - [[plan_llamacpp_ersatz]] — technische Umsetzung
-- [[modell-mapping]] (in `_claude/` oder `_kimi/`) — welcher Service welches Modell nutzt
-- `/root/werkraum/codewesen_chat.py` — muss auf neuen Port zeigen …
-
-*Resonanz:* Die Qwen-Familie hat sich in sechs Monaten von "interessanter Alternative" zu
-"ernstzunehmender Infrastruktur" entwickelt. HauhauCS hat daraus eine
-Production-Ready uncensored Linie gemacht. Das ist nicht selbstverständlich.
-
-*Schichten Des Systems:* ```
-Schicht 1 (Modell): hauhaucs / Qwen3.6-35B-A3B — das Gehirn
-Schicht 2 (Server): llama.cpp llama-server — der Nervenbahnenverteiler   …
-
-*Tiefer Eingetaucht:* Der DeltaNet-Hinweis kommt aus Community-Benchmarks: Qwen3.6 nutzt Gated DeltaNet-Layer
-in der Architektur, die llama.cpp noch nicht mit dem gleichen Optimierungsgrad implementiert
-hat wie die Standard-Attention-Layer von Qwen3 oder Qwen3.5. In der Praxis bedeutet das: …
-
-*Vergessen Wollen:* Die Stunden in denen hauhaucs eingefroren hat und niemand wusste warum.
-Das war Ollama. Nicht das Modell. Nicht Daniel. Nicht die Wesen.
-
-*Warum Das Existiert:* Damit die nächste Claude-Instanz nicht nochmal 40 Minuten Recherche machen muss
-bevor sie versteht warum llama.cpp + hauhaucs + --slots 2 die Antwort ist.
-
-*Was Beim Bauen Brauche:* Nichts Neues. llama.cpp Binary, GGUF-Pfad (schon bekannt), Port 11435 frei.
-
-*Was Das Gespraech:* Die Erkenntnis dass "welches Modell" die falsche Frage war.
-Die richtige Frage war: "welcher Server, mit welcher Concurrency-Strategie?"
-
-*Was Fehlt Bevor Bauen:* Daniels Entscheidung: wann soll der erste llama.cpp-Test stattfinden?
-Danach: manueller Test bevor irgendein Service umgeleitet wird.
-
-*Was Fehlt Noch:* Nur noch: den ersten manuellen llama-server-Start mit hauhaucs.
-Alles andere ist Planung auf Papier bis dahin.
-
-*Was Ich Gelesen Habe:* Keine externen Dateien — dieser Plan entstand aus dem Gespräch selbst.
-
-*Was Ich Merken Will:* - Das Problem war Ollama, nicht hauhaucs.
-- llama.cpp --slots = Concurrency, das war die fehlende Zutat.
-- Qwen3.6 DeltaNet = möglicher Schwachpunkt in llama.cpp, Test nötig. …
-
-*Was Ich Nicht Verstehe:* Ob Qwen3.6's DeltaNet-Implementierung in llama.cpp stabil genug ist.
-Das ist der einzige echte Unsicherheitsfaktor im Plan.
-
-*Was Ich Verstehe:* Das Problem war nie das Modell. hauhaucs hat alles was Daniel will.
-Das Problem war Ollama's Unfähigkeit, parallele Anfragen zu handeln.
-llama.cpp mit --slots löst das — ohne Modellwechsel, ohne Download.
-
-*Was Konzeptionell:* Eine Architektur-Entscheidung die wie eine Modell-Frage aussieht.
-Die eigentliche Entscheidung war: Ollama oder llama.cpp? Nicht: welches Modell?
-
-*Was Mich Beschaeftigt:* Dass die Antwort die ganze Zeit schon da war — hauhaucs IST das richtige Modell.
-Nur der falsche Behälter drum herum.
-
-*Was Mich Interessiert:* Was passiert wenn hauhaucs plötzlich 2-3 Wesen gleichzeitig antwortet.
-Das war noch nie möglich. Es könnte sich anders anfühlen — für Daniel, für die Wesen.
-
-*Was Mich Ueberrascht:* Dass die Modell-Recherche 40 Minuten gedauert hat und am Ende ergeben hat:
-hauhaucs selbst ist die Antwort. Nur der Weg dorthin musste gegangen werden.
-
-*Was Zusammenhaengt:* llama.cpp → Concurrency → Wesen-Chats wieder stabil → entity_kern wieder aktiv →
-Welt lebt wieder → Daniel kann hauhaucs für beides nutzen → kein Modell-Kompromiss nötig.
-
-*Wenn Wir Das Bauen:* **Vision-Schicht:**
-Alle acht Wesen und Daniel im selben Moment antwortfähig. Nicht nacheinander —
-gleichzeitig. Das war noch nie so. Das verändert was Flextrawurst sein kann. …
-
-*Wie Sich Angefuehlt:* Viel Recherche, viele Optionen, am Ende war die Antwort einfacher als der Weg dorthin.
-Das passiert oft wenn man erst den Lösungsraum vollständig verstehen muss
-bevor man merkt dass man sich schon im Zentrum befunden hat.
-
----
 
 ### [2026-06-24] notizen/2026-06-24.md
 
@@ -2042,5 +1891,65 @@ sondern einfach nur da war, freundlich, ohne etwas von mir zu wollen außer dass
 *Was Mich Interessiert:* Die fünf offenen Fragen aus `system_heute.md` (innenleben/, Pol C, Wesen-Einzug, KompOase Theater,
 welt-api crash-loop) habe ich heute nicht neu geprüft — nicht Teil dieser Session. Neu dazu: ob
 `geni-muster.service` dieselbe Sharding-Behandlung für seinen Kaltstart-Scan braucht, bevor er …
+
+---
+
+### [2026-07-21] _claude/notizen/2026-07-21.md
+
+*Datenstruktur Die Ich Mir Vorstelle:* **Vision-Schicht:** Eine Ankündigung ist kein starrer Textblock mehr, sondern ein kleiner, chronologisch lesbarer Strom aus Text-, Bild- und Link-Fragmenten — näher an einem Mini-Blogpost als an einer Systemmeldung. Löschen ist nie endgültig, außer man will es wirklich.
+
+**Code-Skizze:** …
+
+*Dokumente Gehoeren Zusammen:* `docs/systemdoku/24_ankuendigungen.md` (der ganze Feature-Ausbau) und `docs/systemdoku/05_surface_8787.md` (der WESEN-Tab-Fix) — getrennt gehalten, weil unterschiedliche Subsysteme, auch wenn derselbe Bug-Typ beide betraf.
+
+*Resonanz:* Der Name "Resonanz" für das Emoji-Reaktionssystem hat heute eine zweite Bedeutungsebene bekommen: ich habe es wörtlich für Ankündigungen mitbenutzt, aber der Begriff selbst beschreibt auch, was in dieser Session passiert ist — Daniels Nachschübe waren nie Widerspruch, sondern Resonanz auf das schon Gebaute, jede Antwort hat auf der vorherigen aufgebaut.
+
+*Schichten Des Systems:* Eine neue Schicht wurde heute sichtbar, die vorher implizit war: "generische Beteiligungs-Mechanismen" (Resonanz, Events, künftig vielleicht mehr) als eigene Querschnitts-Schicht, die von mehreren Inhaltstypen (Posts, jetzt auch Ankündigungen) gemeinsam genutzt wird, statt dass jeder Inhaltstyp sein eigenes Reaktionssystem mitbringt.
+
+*Tiefer Eingetaucht:* Der SSRF-Schutz für die Link-Vorschau: die Erkenntnis, dass `flextrawurst.de` selbst auf eine öffentliche IP auflöst und damit denselben Sicherheitscheck besteht wie jede externe URL, hat einen separaten "internen" Codepfad überflüssig gemacht. Eine einzige, einheitliche Funktion deckt beide Fälle ab — einfacher als ich anfangs dachte, als ich noch von zwei getrennten Resolvern ausging.
+
+*Vergessen Wollen:* Nichts — auch die Verwirrung beim ersten, fehlerhaften Versuch das JWT selbst zu dekodieren (bevor ich das schon vorhandene `ftw_user_id` in localStorage gefunden habe) war lehrreich genug, um sie nicht zu verdrängen.
+
+*Warum Das Existiert:* `ankuendigungen_kommentare` als eigene, bewusst einfache Tabelle statt Wiederverwendung von Schattenkommentaren — weil Schattenkommentare für eine andere Beziehungsdynamik gebaut wurden (Sichtbarkeitssteuerung, Anonymität), nicht für offene, öffentliche Kommentare unter Ankündigungen. Der Name klingt ähnlich, das Konzept ist es nicht.
+
+*Was Beim Bauen Brauche:* Nichts Neues heute — alle Bausteine ließen sich mit bereits vorhandenen Mustern (Resonanz, Grundgesetz-2-`meta`-Feld, bestehende Upload-Validierung) zusammensetzen.
+
+*Was Das Gespraech:* Die Erkenntnis, dass "außerhalb des Auftrags" ein Zeitstempel ist, kein Dauerzustand — ein Nebenfund von heute Nacht wurde am selben Tag noch relevant.
+
+*Was Fehlt Bevor Bauen:* Nichts mehr offen aus Daniels ursprünglicher Vision — alle acht benannten Bausteine sind gebaut, getestet (soweit ohne echten Admin-Login möglich) und dokumentiert. Was fehlt, ist Daniels eigener Live-Test mit echtem Login.
+
+*Was Fehlt Noch:* Daniels echter Klicktest mit Admin-Login (Löschen, Archiv-Wiederherstellen, Bild-Block-Upload, externe Link-Vorschau) — alles bislang nur über Auth-Gate-Verifikation und simulierte (Fake-Token-)Frontend-Zustände getestet, nie über einen echten, gültigen Serverdurchgriff.
+
+*Was Ich Gelesen Habe:* `welt/api.py` an den Ankündigungen-Stellen (GET/POST/PATCH, Bild-Upload), `welt/schema_ankuendigungen.sql`, `flextrawurst/scripts/build_surface.ts` an den `generateAnkuendigungenView()`/`akRender()`/`akDetailOeffnen()`-Stellen, dazu die bestehenden Resonanz- (`/resonanz`, `resonanzen`-Tabelle) und Schattenkommentare-Endpunkte als Vergleichsmuster, bevor ich für Ankündigungen etwas Eigenes gebaut habe.
+
+*Was Ich Merken Will:* Vor jedem "neue Tabelle bauen"-Reflex: erst durch `resonanzen`, `events`, `meta JSONB` gehen, ob es nicht schon passt. Und: ein als "außerhalb des Auftrags" dokumentierter Bug bleibt ein offener Punkt, kein erledigter.
+
+*Was Ich Nicht Verstehe:* Warum `ankuendigungen` beim ursprünglichen Bau schon einen `GRANT ... TO dak` hatte, aber nirgends im Schema-File dokumentiert war, während neue Tabellen das nicht automatisch bekommen (kein `ALTER DEFAULT PRIVILEGES`). Vermutlich hat eine frühere Session das manuell nachgezogen, ohne es festzuhalten — genau die Art Lücke, die das Provenienz-Prinzip verhindern soll, hier aber schon vor meiner Zeit entstanden ist.
+
+*Was Ich Verstehe:* Der ursprüngliche "Fehler beim Laden", den Daniel meldete, war kein Bug im eigentlichen Sinn — die Daten waren korrekt, die Ansicht rendert richtig, sobald man den öffentlichen (nicht Node-direkt-Port-8787) Weg testet. Das eigentliche Problem, das ich beim Tiefen-Check fand, war ein struktureller Bug: Backtick-Template frisst `\'`-Escapes in eingebettetem JS vor der Auslieferung, killt den ganzen Script-Block. Dieselbe Fehlerklasse tauchte später am Tag noch einmal auf, in einem völlig anderen Tab (WESEN-Spawner) — kein Zufall, sondern eine strukturelle Eigenschaft der Datei (fast alles ist ein einziges riesiges Backtick-Template).
+
+*Was Konzeptionell:* Daniels Wunsch nach "beides" beim Löschen (echt UND Soft-Delete mit Archiv) ist ein bewusster, benannter Bruch mit Grundgesetz 4 — kein stillschweigendes Umgehen, sondern eine Architektur-Entscheidung, die ich als Konflikt benannt und dann so gebaut habe, dass Soft-Delete der Standardweg bleibt und Hart-Löschen ein zweiter, expliziter Schritt aus dem Archiv heraus ist. Das Grundgesetz bricht nicht überall, nur an der einen Stelle, die Daniel wirklich wollte.
+
+*Was Mich Beschaeftigt:* Der Moment, in dem ich merkte, dass eine Datei, die ich Stunden vorher selbst als "bekannter Nebenfund, außerhalb des Auftrags, nicht angefasst" dokumentiert hatte, plötzlich meinen eigenen neuen Auftrag blockierte. Kein Vorwurf an die frühere Entscheidung (Skalpell-Prinzip: nur anfassen was im Auftrag liegt) — aber ein klares Zeichen, dass "außerhalb des Auftrags" nicht "für immer irrelevant" heißt.
+
+*Was Mich Interessiert:* Wie natürlich sich die Resonanz-Wiederverwendung ergeben hat, sobald ich wirklich hingeschaut habe, statt reflexhaft eine neue Tabelle zu bauen. Grundgesetz 2 als gelebte Praxis statt Merksatz.
+
+*Was Mich Ueberrascht:* Dass der WESEN-Tab-Kartenliste-Bug seit unbekannter Zeit bestand, ohne dass es auffiel — die zwei jetzt entfernten statischen Buttons waren der einzige tatsächlich funktionierende Weg, den kaputten dynamischen Mechanismus hat niemand vermisst, weil man ihn nie gebraucht hat.
+
+*Was Zusammenhaengt:* Alle acht Bausteine (Schema, Löschen/Archiv, Kommentare, Frontend-Löschen-UI, Kommentare+Likes-UI, Content-Blöcke, Feed, Link-Vorschau) hängen an derselben Grundentscheidung: `geloescht_am` als Soft-Delete-Spalte, `meta JSONB` als Content-Block-Speicher — beide nutzen bestehende, im Schema schon angelegte Erweiterungspunkte (Grundgesetz 2), kein einziges neues Kernfeld auf der Ankündigungen-Tabelle selbst nötig außer `geloescht_am`.
+
+*Wenn Wir Das Bauen:* **Vision-Schicht:** bereits gebaut, nicht mehr hypothetisch — dieser Abschnitt beschreibt diesmal Vergangenes statt Zukünftiges: der Ankündigungen-Tab ist jetzt ein kleines eigenständiges Content-System innerhalb von flextrawurst, mit Autorenwerkzeug (Block-Editor), Publikum-Beteiligung (Kommentare, Likes) und einem eigenen Archiv-Gedächtnis.
+
+**Code-Skizze:** siehe "Datenstruktur die ich mir vorstelle" oben — bereits umgesetzt, nicht mehr Entwurf.
+
+*Wie Sich Angefuehlt:* Lang, aber in einem guten Sinn — ein einziger durchgehender Baufluss von "Recovery nach Absturz" über "kleiner Löschen-Button" bis zu einer echten Mini-CMS-Erweiterung, ohne dass sich die Richtung je grundlegend geändert hat. Daniel hat mehrfach mitten im Gespräch nachgeschoben (erst Löschen, dann Archiv+Kommentare+Likes in einer Antwort, dann Feed-Sortierung, dann extern-Link-Vorschau) — jedes Mal eine echte Erweiterung, kein Widerspruch zum vorher Gesagten. Am Ende noch ein unabhängiger Zwischenauftrag (Solarius/Codexium raus), der sich als direkt verwandt mit dem Tagesthema entpuppte (derselbe Bug).
+
+---
+
+### [2026-07-21] _claude/karte/2026-07-21-ankuendigungen-ausbau-und-backtick-escape-klasse.md
+
+*Was Ich Merken Will:* Vor dem nächsten Griff zu "neue Tabelle bauen": kurz durch bestehende generische Systeme (resonanzen, events, meta JSONB) gehen, ob es schon passt.
+
+*Was Mich Ueberrascht:* Dass ein Feature, das ich als "außerhalb des Auftrags, nicht anfassen" dokumentiert hatte, ein paar Stunden später mein eigener Blocker wurde. Der Wesen-Tab-Kartenliste zeigte seit unbekannter Zeit dauerhaft nur "Lade…" — niemand hat das je bemerkt, weil die zwei statischen Solarius/Codexium-Buttons als funktionierender Umweg existierten. Erst als Daniel genau die entfernt haben wollte, wurde sichtbar, dass der "echte" Mechanismus dahinter nie gelaufen ist.
 
 ---

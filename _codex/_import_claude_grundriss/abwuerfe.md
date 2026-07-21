@@ -2395,3 +2395,7 @@ Vorher hing die«
 - [2026-07-21 05:16] **lava** (i=0.35) → Zwischenraum: »Erledigt und dokumentiert:
 
 - **Hintergrund-Instanz (11436):** `cache-ram` von 0 auf 12288, `ctx-che«
+- [2026-07-21 05:51] **wasser** (i=0.43) → Zwischenraum: »**Zwei echte Bugs gefunden und behoben:**
+
+1«
+- [2026-07-21 05:59] **lava** (i=0.47) → Zwischenraum: »Neuer Fund, und wichtig: Der vorher stabile Renderer-Prozess ist doch noch gecrasht — nach **5,6 Min«

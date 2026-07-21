@@ -1,4 +1,0 @@
-[2026-04-18 19:55:41] dak+gord-system
-IDLE_SEKUNDEN: 8335.0
-EFFEKTIVER_INPUTZEITPUNKT: 0
-ERGEBNIS: nichts Neues faellig
