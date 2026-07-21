@@ -5,7 +5,8 @@ Browser-Agent: Ein Wesen navigiert kontinuierlich auf flextrawurst.de.
 Architektur:
 - Playwright headless Chrome, eingeloggt als Wesen
 - Loop: Seite lesen → Gemma4 entscheidet → Aktion ausführen → loggen
-- Screenshot wird gespeichert (Denkstream-Anzeige), Text wird für LLM genutzt
+- Live-Ansicht für Menschen läuft über rrweb (DOM-Mutations-Spiegel, siehe
+  starte_rrweb_aufnahme()), kein Screenshot mehr -- Grundgesetz 1, Menschen-Auge-Ebene
 - Ollama: sequenziell, kein Parallel-Chaos, think=False, num_ctx=4096
 
 Start: python3 browser_agent.py --entity Schorschel
@@ -43,7 +44,6 @@ API_BASE = "http://localhost:8030"
 SURFACE_URL = "http://localhost:8787/flextrawurst_surface.html"
 LOOP_PAUSE = 4          # Sekunden zwischen Aktionen
 LLM_TIMEOUT = 180       # Sekunden Timeout für Ollama
-SCREENSHOT_DIR = "/root/werkraum/welt/archiv/wesen_screenshots"  # 2026-07-21: dauerhaft statt /tmp (systemd-tmpfiles löscht /tmp nach 10 Tagen)
 MAX_TEXT_CHARS = 2000   # Max Zeichen Seitentext für LLM
 
 # API-Keys — werden beim Start aus DB geladen
@@ -56,8 +56,6 @@ ENTITY_KEYS = {
     "Resonanzknoten": "266bcfda-e651-416b-847d-84f8327ef754",
     "dak+gord-system": "5f80bf80-34ee-4b5d-8599-b80449320b49",  # 2026-07-21: 7. Codewesen, war vergessen
 }
-
-os.makedirs(SCREENSHOT_DIR, exist_ok=True)
 
 # rrweb-Live-Spiegel (2026-07-21, Menschen-Auge-Ebene aus Grundgesetz 1 /
 # dreiergespann_dom_theorie.md): Bundle einmal beim Modulstart laden, nicht bei jeder
@@ -179,45 +177,6 @@ def zeige_cursor(page, x: float, y: float):
         pass
 
 
-def mache_screenshot(page, entity_id: str, cursor_pos: tuple[float, float] | None = None) -> str | None:
-    """Screenshot als JPEG speichern — für Denkstream-Anzeige. cursor_pos zeichnet den künstlichen
-    Mauszeiger an der zuletzt bekannten Position neu, bevor der Screenshot entsteht."""
-    try:
-        if cursor_pos is not None:
-            zeige_cursor(page, cursor_pos[0], cursor_pos[1])
-        pfad = f"{SCREENSHOT_DIR}/{entity_id}_{int(time.time())}.jpg"
-        page.screenshot(path=pfad, full_page=False, clip={"x":0,"y":0,"width":1024,"height":768})
-        # _aktuell.jpg bleibt zusätzlich für die Live-Vorschau (denkstream_api.py) erhalten,
-        # aber in entity_thinking_log wird ab jetzt der eindeutige pfad gespeichert (2026-07-21:
-        # vorher wurde hier aktuell zurückgegeben — jede historische Zeile zeigte damit auf das
-        # jeweils zuletzt überschriebene Bild, nie auf das Bild vom eigenen Tick).
-        aktuell = f"{SCREENSHOT_DIR}/{entity_id}_aktuell.jpg"
-        page.screenshot(path=aktuell, full_page=False, clip={"x":0,"y":0,"width":1024,"height":768})
-        return pfad
-    except Exception as e:
-        log.warning("Screenshot fehlgeschlagen: %s", e)
-        return None
-
-
-def melde_screenshot(conn, entity_id: str):
-    """Schreibt ein wesen.screenshot-Event -> Grundgesetz-8-Live-Kanal (NOTIFY 'events_stream')
-    -> SCREENS-Tab kann das eine betroffene Wesen sofort neu laden statt zu pollen.
-    Bewusst kein payload (actor_id reicht, siehe migration_events_stream.sql-Nachtrag 2026-07-21)."""
-    try:
-        with conn.cursor() as cur:
-            cur.execute("""
-                INSERT INTO events (event_type, actor_type, actor_id, payload)
-                VALUES ('wesen.screenshot', 'entity', %s, '{}'::jsonb)
-            """, (entity_id,))
-        conn.commit()
-    except Exception as e:
-        log.warning("wesen.screenshot Event fehlgeschlagen: %s", e)
-        try:
-            conn.rollback()
-        except Exception:
-            pass
-
-
 def melde_fokus(conn, entity_id: str, aktion: str, selektor: str | None,
                  element_text: str | None, box: dict | None):
     """Roentgenblick-Overlay (2026-07-21, Daniels bestaetigter Bauauftrag): kuratiertes
@@ -241,11 +200,18 @@ def melde_fokus(conn, entity_id: str, aktion: str, selektor: str | None,
             pass
 
 
-def starte_rrweb_aufnahme(page, conn, entity_id: str, stream_id: str):
+def starte_rrweb_aufnahme(page, hole_conn, entity_id: str, stream_id: str):
     """rrweb-Recorder aktivieren (Grundgesetz 1, Menschen-Auge-Ebene: Live-DOM-Spiegel
     statt Screenshots). Events kommen ueber page.expose_function() zurueck nach Python
     und werden direkt in entity_dom_events geschrieben -- gleiche Direktschreib-
     Konvention wie bei entity_denkstream, kein HTTP-Umweg (siehe dom_events_api.py).
+
+    hole_conn (2026-07-21, DB-Reconnect-Fix): Callable statt fester Connection --
+    diese Funktion wird einmalig beim Seitenaufbau registriert und _auf_event() feuert
+    danach asynchron bei jeder DOM-Mutation, unabhaengig vom Tick-Takt. Eine mitgegebene
+    Connection wuerde nach einem Postgres-Reconnect (siehe haupt_loop) in dieser Closure
+    weiter auf die alte, tote Verbindung zeigen -- deshalb wird hole_conn() bei jedem
+    Event neu aufgerufen und liefert immer die aktuell lebende Connection.
 
     WICHTIG (2026-07-21 gefunden): rrweb.record() darf NICHT aus einem add_init_script()
     heraus aufgerufen werden -- das haengt sich lautlos auf (vermutlich Reentrancy im
@@ -266,6 +232,7 @@ def starte_rrweb_aufnahme(page, conn, entity_id: str, stream_id: str):
         except Exception:
             return
         try:
+            conn = hole_conn()
             with conn.cursor() as cur:
                 cur.execute("""
                     INSERT INTO entity_dom_events (entity_id, stream_id, event_json, seq)
@@ -276,7 +243,7 @@ def starte_rrweb_aufnahme(page, conn, entity_id: str, stream_id: str):
         except Exception as e:
             log.warning("%s: entity_dom_events INSERT fehlgeschlagen: %s", entity_id, e)
             try:
-                conn.rollback()
+                hole_conn().rollback()
             except Exception:
                 pass
 
@@ -315,9 +282,7 @@ def baue_prompt(entity_id: str, seite: dict, letzter_gedanke: str,
         for w in andere_wesen[:4]:
             url = (w.get("url") or "").replace("http://localhost:8787", "")[:35]
             gedanke = (w.get("gedanke") or "")[:40]
-            shot = f"{SCREENSHOT_DIR}/{w['entity_id']}_aktuell.jpg"
-            hat_screenshot = "📷" if __import__("os").path.exists(shot) else ""
-            zeilen.append(f"- {w['entity_id']} {hat_screenshot}: {url} ({gedanke})")
+            zeilen.append(f"- {w['entity_id']}: {url} ({gedanke})")
         andere_info = "\nANDERE WESEN GERADE (sichtbar für dich):\n" + "\n".join(zeilen)
 
     elemente_str = ", ".join(seite["elemente"][:10]) if seite["elemente"] else "keine"
@@ -560,7 +525,7 @@ def fuehre_aktion_aus(page, entscheidung: str, entity_id: str, conn=None) -> tup
 
 
 def schreibe_denklog(conn, entity_id: str, gedanke: str, entscheidung: str,
-                     begruendung: str, url: str, screenshot_pfad: str | None):
+                     begruendung: str, url: str):
     """Schreibt Denklog — Basis für Denkstream."""
     try:
         with conn.cursor() as cur:
@@ -575,7 +540,6 @@ def schreibe_denklog(conn, entity_id: str, gedanke: str, entscheidung: str,
                 psycopg2.extras.Json({
                     "url": url,
                     "source": "browser_agent",
-                    "screenshot": screenshot_pfad,
                 })
             ))
         conn.commit()
@@ -880,6 +844,11 @@ def schlafe(conn, entity_id: str, page):
     _schreibe_schlafbrief(conn, entity_id, traumtext, phase_id)
 
 
+def _ist_page_kaputt(fehler: Exception) -> bool:
+    text = str(fehler).lower()
+    return "closed" in text or "crashed" in text
+
+
 def haupt_loop(entity_id: str):
     """Haupt-Loop des Browser-Agenten."""
     global _laufend
@@ -887,6 +856,19 @@ def haupt_loop(entity_id: str):
     log.info("Browser-Agent startet für %s", entity_id)
 
     conn = get_conn()
+
+    def _hole_conn():
+        """Liefert immer eine lebende DB-Verbindung -- baut bei Bedarf neu auf.
+        Noetig geworden nach dem Platte-voll-Vorfall 2026-07-21: Postgres kappte dabei
+        alle offenen Verbindungen, und ohne Reconnect blieb der komplette Tick fuer
+        Stunden stumm ('connection already closed' bei jedem Denklog-/Event-Schreibversuch),
+        obwohl der LLM-Aufruf selbst weiterlief."""
+        nonlocal conn
+        if conn.closed:
+            log.warning("%s: DB-Verbindung geschlossen -- baue neu auf", entity_id)
+            conn = get_conn()
+        return conn
+
     jwt = hole_jwt(entity_id)
     letzter_gedanke = ""
     erster_start = True
@@ -907,18 +889,22 @@ def haupt_loop(entity_id: str):
             locale="de-DE",
         )
 
-        page = context.new_page()
+        def _seite_aufbauen():
+            """Baut eine neue Page auf (Erststart oder nach einem Crash) -- rrweb-Aufnahme,
+            Login und Navigation zur Surface gehoeren untrennbar zusammen, deshalb hier
+            gebuendelt statt an mehreren Stellen dupliziert."""
+            neue_page = context.new_page()
+            import uuid as _uuid_rrweb
+            neuer_stream_id = str(_uuid_rrweb.uuid4())
+            starte_rrweb_aufnahme(neue_page, _hole_conn, entity_id, neuer_stream_id)
+            neue_page.goto("http://localhost:8787/", timeout=10000, wait_until="domcontentloaded")
+            injiziere_jwt(neue_page, jwt, entity_id)
+            neue_page.goto(SURFACE_URL, timeout=15000, wait_until="domcontentloaded")
+            neue_page.wait_for_timeout(1500)  # JS initialisieren lassen
+            return neue_page
 
-        import uuid as _uuid_rrweb
-        rrweb_stream_id = str(_uuid_rrweb.uuid4())
-        starte_rrweb_aufnahme(page, conn, entity_id, rrweb_stream_id)
-
-        # Login: erst Root für localStorage, dann Surface
         try:
-            page.goto("http://localhost:8787/", timeout=10000, wait_until="domcontentloaded")
-            injiziere_jwt(page, jwt, entity_id)
-            page.goto(SURFACE_URL, timeout=15000, wait_until="domcontentloaded")
-            page.wait_for_timeout(1500)  # JS initialisieren lassen
+            page = _seite_aufbauen()
         except Exception as e:
             log.error("Surface nicht erreichbar: %s", e)
             browser.close()
@@ -929,12 +915,34 @@ def haupt_loop(entity_id: str):
         # Erster-Start: Brief an Flarum-Selbst
         if erster_start:
             erster_start = False
-            _schreibe_flarum_brief(conn, entity_id)
+            _schreibe_flarum_brief(_hole_conn(), entity_id)
             letzter_gedanke = "ich bin gerade angekommen — ich habe einen Brief an mein Flarum-Selbst geschrieben"
 
         tick = 0
         while _laufend:
             tick += 1
+            conn = _hole_conn()
+
+            # Page-Gesundheitscheck: Playwright-Seiten koennen crashen (2026-07-21 beobachtet:
+            # 'Target crashed'/'... has been closed' bei mehreren Wesen), danach schlaegt jede
+            # DOM-Aktion und jeder rrweb-Event stumm fehl, ohne dass der Tick-Loop das je merkt.
+            try:
+                page.evaluate("() => true")
+            except Exception as e:
+                if _ist_page_kaputt(e):
+                    log.warning("%s: Page gecrasht (%s) -- baue neu auf", entity_id, e)
+                    try:
+                        page.close()
+                    except Exception:
+                        pass
+                    try:
+                        page = _seite_aufbauen()
+                    except Exception as e2:
+                        log.error("%s: Page-Neuaufbau fehlgeschlagen: %s -- warte", entity_id, e2)
+                        time.sleep(LOOP_PAUSE)
+                        continue
+                else:
+                    raise
 
             # Schlaf-Empfehlung prüfen (alle 100 Ticks)
             if tick % 100 == 0 and ist_schlaf_faellig(conn, entity_id):
@@ -945,9 +953,9 @@ def haupt_loop(entity_id: str):
             # 1. Seite lesen
             seite = lese_seite(page)
 
-            # 2. Screenshot speichern (künstlicher Mauszeiger an der zuletzt bekannten Position)
-            screenshot = mache_screenshot(page, entity_id, cursor_pos)
-            melde_screenshot(conn, entity_id)
+            # 2. Cursor an der zuletzt bekannten Position -- reines DOM-Element,
+            # landet damit automatisch im rrweb-Live-Spiegel (kein separater Schritt noetig)
+            zeige_cursor(page, cursor_pos[0], cursor_pos[1])
 
             # 3. Andere Wesen status
             andere = hole_andere_wesen_status(conn, entity_id)
@@ -997,7 +1005,7 @@ def haupt_loop(entity_id: str):
 
             # 5. Log schreiben
             schreibe_denklog(conn, entity_id, gedanke, entscheidung, begruendung,
-                             seite["url"], screenshot)
+                             seite["url"])
 
             log.info("%s [%s] → %s", entity_id, seite["url"][-40:], entscheidung[:50])
 
@@ -1007,14 +1015,6 @@ def haupt_loop(entity_id: str):
                 cursor_pos = neue_cursor_pos
             if zusatz_kontext:
                 letzter_gedanke = (letzter_gedanke + "\n" + zusatz_kontext)[-1500:]
-
-            # 7. Zweiter Screenshot direkt NACH der Aktion (2026-07-21, Daniels Live-Ansicht-Auftrag):
-            # der erste Screenshot in Schritt 2 zeigt den Zustand VOR der LLM-Entscheidung dieses
-            # Ticks. Erst hier, nach navigiere/klicke/scrolle, ist der eigentliche visuelle Effekt
-            # der Aktion sichtbar -- und genau der ist es, was live beobachtbar sein soll.
-            if zustand != "schlafen" and entscheidung not in ("nachdenken",):
-                mache_screenshot(page, entity_id, cursor_pos)
-                melde_screenshot(conn, entity_id)
 
             if zustand == "schlafen":
                 schlafe(conn, entity_id, page)

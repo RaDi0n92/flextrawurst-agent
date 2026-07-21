@@ -7,8 +7,11 @@ Endpunkte:
   GET /denkstream/{entity_id}      — SSE-Stream eines Wesens (öffentlich)
   GET /denkstream/all              — SSE-Stream aller Wesen (öffentlich)
   GET /denkstream/{entity_id}/last — letzte 20 Einträge (öffentlich)
-  GET /denkstream/screenshot/{id}  — aktueller Screenshot als JPEG
   POST /denkstream/chunk           — Browser-Agent schreibt Chunk (intern)
+
+Live-Bildanzeige laeuft seit 2026-07-21 ausschliesslich ueber rrweb (dom_events_api.py,
+Grundgesetz 1 Menschen-Auge-Ebene) -- kein Screenshot-Endpunkt mehr, siehe
+docs/systemdoku fuer die Begruendung (Nutzer: "wir sind doch weg von vision und screenshots").
 """
 
 import json
@@ -29,8 +32,6 @@ from pydantic import BaseModel, Field
 log = logging.getLogger("denkstream")
 
 import os as _os; DB_URI = _os.environ.get("FLEXTRAWURST_DB_URI", "postgresql://dak:dakpass@localhost:5432/flextrawurst")
-
-SCREENSHOT_DIR = "/root/werkraum/welt/archiv/wesen_screenshots"  # 2026-07-21: dauerhaft statt /tmp, siehe browser_agent.py
 
 # Interner Producer-Token (C-011): nur authentisierte Browser-Agent-Daemons dürfen
 # Chunks schreiben. Ohne gesetzten Token ist der Schreib-Endpunkt fail-closed gesperrt.
@@ -89,8 +90,7 @@ def denkstream_last(entity_id: str, limit: int = 20):
         with conn.cursor() as cur:
             cur.execute("""
                 SELECT entity_id, gedanke, entscheidung, begruendung,
-                       tick_at, meta->>'url' AS url,
-                       meta->>'screenshot' AS screenshot
+                       tick_at, meta->>'url' AS url
                 FROM entity_thinking_log
                 WHERE entity_id = %s
                   AND meta->>'source' = 'browser_agent'
@@ -157,22 +157,9 @@ def denkstream_traumbild_file(entity_id: str, filename: str):
                     headers={"Cache-Control": "public, max-age=3600"})
 
 
-@denkstream_router.get("/screenshot/{entity_id}")
-def denkstream_screenshot(entity_id: str):
-    """Aktueller Screenshot eines Wesens als JPEG."""
-    import os
-    pfad = f"{SCREENSHOT_DIR}/{entity_id}_aktuell.jpg"
-    if not os.path.exists(pfad):
-        raise HTTPException(status_code=404, detail="Kein Screenshot vorhanden")
-    with open(pfad, "rb") as f:
-        data = f.read()
-    return Response(content=data, media_type="image/jpeg",
-                    headers={"Cache-Control": "no-cache, max-age=0"})
-
-
 @denkstream_router.get("/status/all")
 def denkstream_status_all():
-    """Aktueller Browser-Status aller Wesen — URL + letzter Gedanke + Screenshot-URL."""
+    """Aktueller Browser-Status aller Wesen — URL + letzter Gedanke."""
     conn = get_conn()
     try:
         with conn.cursor() as cur:
@@ -182,8 +169,7 @@ def denkstream_status_all():
                     gedanke,
                     entscheidung,
                     tick_at,
-                    meta->>'url' AS url,
-                    meta->>'screenshot' AS screenshot
+                    meta->>'url' AS url
                 FROM entity_thinking_log
                 WHERE meta->>'source' = 'browser_agent'
                   AND tick_at > NOW() - INTERVAL '15 minutes'
@@ -192,18 +178,7 @@ def denkstream_status_all():
             rows = [dict(r) for r in cur.fetchall()]
     finally:
         conn.close()
-    # Screenshot-URL hinzufügen
-    import os
-    result = []
-    for r in rows:
-        entity_id = r["entity_id"]
-        shot_path = f"{SCREENSHOT_DIR}/{entity_id}_aktuell.jpg"
-        r["screenshot_url"] = (
-            f"/api/denkstream/screenshot/{entity_id}"
-            if os.path.exists(shot_path) else None
-        )
-        result.append(r)
-    return {"status": result, "count": len(result)}
+    return {"status": rows, "count": len(rows)}
 
 
 def _pg_listen_sse(channel: str, entity_filter: str | None) -> AsyncGenerator:

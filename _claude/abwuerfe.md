@@ -2463,3 +2463,11 @@ Vorher hing die«
 | # | Was | Freigegeben |
 |---|-----|-------------|
 | 1 | Syslog-Reste v«
+- [2026-07-22 00:31] **wasser** (i=0.63) → Zwischenraum: »Korrektur nötig — und diesmal fällt sie zugunsten von "doch eher ein echter Mensch" aus, nicht Bot:
+«
+- [2026-07-22 00:38] **wasser** (i=0.48) → Zwischenraum: »Technisch gesehen: **nein, das geht nicht** — wenn die Internetverbindung wirklich komplett getrennt«
+- [2026-07-22 00:42] **wasser** (i=0.55) → Zwischenraum: »Wichtiger Punkt dabei: Es kommt nicht darauf an, ob *irgendein* Gerät von dir online war, sondern **«
+- [2026-07-22 00:46] **wasser** (i=0.47) → Zwischenraum: »Das passt tatsächlich sehr sauber mit den Daten zusammen — schau dir das an:
+
+Aus meiner Stunden/Tag«
+- [2026-07-22 00:47] **wasser** (i=0.44) → Zwischenraum: »Okay, das schließt die Lücke ziemlich gut — 26 Stunden Dauer-Online deckt sich fast exakt mit dem Be«
