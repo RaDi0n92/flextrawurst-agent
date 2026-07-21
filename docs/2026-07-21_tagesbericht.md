@@ -196,15 +196,44 @@ Obsidian-Vault enthält `wesen_vaults/` schon automatisch als Unterordner.
 
 Vollständige Chronik: [[30_wesen_eigene_obsidian_vaults]].
 
+**Zugang für Daniel geklärt:** je Wesen eine öffentliche URL (217.154.14.29:8445/
+8450–8455), äußere Ebene sein normales Werkraum-Login, innere Ebene die
+generierten Passwörter aus `.agent/wesen-vaults.env` (bewusst nicht im Chat
+oder in Doku ausgeschrieben — Secrets bleiben in der env-Datei).
+
+**Orchestrierung besprochen und von Daniel bestätigt** ("joa so in etwa"): eine
+neue Aktion `obsidian_schreiben:<dateiname>|<text>` rührt die Haupt-Browser-
+Seite (Flarum/Surface) nie an — technisch zwei komplett getrennte Sitzungen
+(unterschiedliche Container/Ports). Dadurch löst sich Daniels Wunsch
+*"jederzeit ausschwenken... und danach an derselben Stelle weitermachen"* von
+selbst, ganz ohne eigenen Pause-/Resume-Mechanismus: die Hauptseite steht die
+ganze Zeit exakt da, wo sie stand, weil sie beim Obsidian-Schreiben schlicht
+nie berührt wird. Dateiname *und* Text vom Wesen selbst gewählt (wie bei
+`raum_erstellen:<name>|<slug>`), damit es seine eigene Ordnerstruktur gestaltet
+statt alles in eine Datei zu werfen. Noch nicht implementiert.
+
+**Parkiert für später — "billiges Vorlesen".** Daniels Wunsch: eine Art
+internes, laufendes Lesen, das nichts kostet (kein LLM-Call), und erst wenn
+etwas "interessant" ist, steigt ein echter (teurer) LLM-Tick ein. Technisch
+naheliegend mit der bestehenden RAG-Infrastruktur vom Vormittag: bge-m3-
+Embeddings berechnen ist ungleich billiger als eine LLM-Generierung (keine
+Denkarbeit, nur eine einzelne Vektor-Kodierung) — Ähnlichkeit neuer Inhalte
+gegen die eigenen bisherigen Interessen des Wesens vergleichen, nur bei
+ausreichender Nähe einen echten Tick auslösen. Bewusst zurückgestellt, bis
+Orchestrierung + Vault-READMEs fertig sind.
+
 ---
 
 ## Was noch offen ist
 
-- Orchestrierung klären: wie/wann wechselt der Wesen-Browser-Tab zu Obsidian —
-  Daniel dazu wörtlich: *"keine ahnung so wie es am besten ist eben keine
-  ahnung wird bestimmt auch sich dann zeigen bald und eh wieder geändert"* —
-  bewusst offen gelassen, meine Einschätzung entscheidet vorerst
-- Site-READMEs mit Navigationsanleitung pro Seite — noch nicht angefangen
+- `obsidian_schreiben:<dateiname>|<text>`-Aktion in `browser_agent.py` bauen
+  (Design bereits mit Daniel besprochen und bestätigt, siehe TEIL 6)
+- Vault-READMEs schreiben — mindestens eine Datei innerhalb jedes Wesen-eigenen
+  Obsidian-Vaults, die erklärt: eigener Raum, jederzeit ausschwenken dürfen,
+  eigene Ordner/Dateien anlegen, danach geht's an der ursprünglichen Stelle weiter
+- Site-READMEs mit Navigationsanleitung pro besuchter Seite (Flarum, Surface,
+  RAG) — noch nicht angefangen
+- "Billiges Vorlesen" (Embedding-Vorfilter statt LLM-Call) — bewusst zurückgestellt
 - Das Flarum-Einfrieren-Verhalten (TEIL 5, Nebenbefund) — eigenes, noch nicht
   angegangenes Thema
 
