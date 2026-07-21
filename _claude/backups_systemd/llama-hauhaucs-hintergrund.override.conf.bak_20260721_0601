@@ -1,0 +1,21 @@
+[Service]
+ExecStart=
+ExecStart=/usr/local/bin/llama-server \
+  --model /root/werkraum/tools/models/hauhaucs_q6/Qwen3.6-35B-A3B-Uncensored-HauhauCS-Aggressive-Q6_K_P.gguf \
+  --alias hauhaucs-q6 \
+  --ctx-size 66666 \
+  --threads 5 \
+  --host 127.0.0.1 \
+  --port 11436 \
+  --parallel 1 \
+  --flash-attn on \
+  --mlock \
+  --jinja \
+  --metrics \
+  --cache-type-k q8_0 \
+  --cache-type-v q8_0 \
+  --cache-ram 12288 \
+  --ctx-checkpoints 64 \
+  --cpu-range 10-14 \
+  --cpu-range-batch 10-14 \
+  --cpu-strict 1

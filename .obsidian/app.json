@@ -5,7 +5,6 @@
     "geni",
     "erkenntnis",
     "node_modules",
-    "agent",
     "innenleben",
     "logs",
     "backups",
@@ -19,6 +18,7 @@
     "mdfürvps",
     "Meine-Textsammlung-erfahrun-frh-mit-ai",
     "tools",
-    "homepage-von-kimiweb-desing"
+    "homepage-von-kimiweb-desing",
+    "agent"
   ]
 }

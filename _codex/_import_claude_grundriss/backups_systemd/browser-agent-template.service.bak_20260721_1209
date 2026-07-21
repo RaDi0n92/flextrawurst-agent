@@ -1,0 +1,19 @@
+[Unit]
+Description=flextrawurst Browser-Agent für %i
+After=network.target welt-api.service ollama.service
+Wants=welt-api.service
+
+[Service]
+Type=simple
+User=root
+WorkingDirectory=/root/werkraum/welt
+EnvironmentFile=/root/werkraum/.agent/flextrawurst-db.env
+ExecStart=/root/werkraum/venv/bin/python3 /root/werkraum/welt/browser_agent.py --entity %I
+Restart=on-failure
+RestartSec=30
+StandardOutput=append:/root/werkraum/logs/browser-agent-%I.log
+StandardError=append:/root/werkraum/logs/browser-agent-%I.log
+Environment=DISPLAY=:99
+
+[Install]
+WantedBy=multi-user.target

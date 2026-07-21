@@ -2399,3 +2399,32 @@ Vorher hing die«
 
 1«
 - [2026-07-21 05:59] **lava** (i=0.47) → Zwischenraum: »Neuer Fund, und wichtig: Der vorher stabile Renderer-Prozess ist doch noch gecrasht — nach **5,6 Min«
+- [2026-07-21 07:26] **wasser** (i=0.48) → Zwischenraum: »Alle 6 laufen noch stabil, die anderen 5 stecken noch in der Erstlast-Warteschlange (Flarum-Brief fü«
+- [2026-07-21 07:29] **wasser** (i=0.59) → Zwischenraum: »Zwei getrennte Dinge stecken in deiner Frage:
+
+**Einzelne Datei manuell in den Graph holen, obwohl s«
+- [2026-07-21 07:39] **wasser** (i=0.39) → Zwischenraum: »Zusammenfassung: `dak+gord-system` läuft jetzt als 7«
+- [2026-07-21 07:42] **wasser** (i=0.60) → Zwischenraum: »Ehrliche Antwort: Das ist kein Darstellungsproblem, das ist die tatsächliche Denkgeschwindigkeit der«
+- [2026-07-21 08:16] **wasser** (i=0.36) → Zwischenraum: »**Alle 7 laufen sauber, Umsetzung abgeschlossen.** Zusammenfassung zu deinem Wunsch, das Reflexmodel«
+- [2026-07-21 09:18] **lava** (i=0.40) → Zwischenraum: »**Zusammenfassung — Archiv-Auftrag komplett umgesetzt, drei Funde und Fixes:**
+
+1«
+- [2026-07-21 09:36] **wasser** (i=0.63) → Zwischenraum: »Zur Kernfrage: **ja, das geht — und zwar richtig gut.** `page.keyboard.type(text, delay=N)` in Playw«
+- [2026-07-21 09:55] **wasser** (i=0.51) → Zwischenraum: »Zu deiner Nachricht: du hast schon "geerbt" bevor's nötig war — ich hab die Ursache gefunden, ein ma«
+- [2026-07-21 10:20] **wasser** (i=0.51) → Zwischenraum: »Genug tief gegraben für einen Zwischenstand — der große Durchbruch steht: `xdotool` (direkt im Conta«
+- [2026-07-21 10:40] **wasser** (i=0.50) → Zwischenraum: »Neuer, wichtigerer Fund als vermutet: der Text sieht auf dem Screenshot komplett korrekt aus ("Autos«
+- [2026-07-21 11:02] **wasser** (i=0.50) → Zwischenraum: »**Kernproblem vollständig gelöst.** Zusammenfassung des Durchbruchs:
+
+- **Tippen:** `xdotool` direkt«
+- [2026-07-21 12:00] **wasser** (i=0.48) → Zwischenraum: »**Zugang — 7 Wesen, je eine öffentliche URL + zwei Auth-Ebenen:**
+
+| Wesen | URL | Innerer Benutzern«
+- [2026-07-21 12:25] **wasser** (i=0.60) → Zwischenraum: »Ja — und das ist kein Nebengedanke, das trifft echt was«
+- [2026-07-21 12:35] **wasser** (i=0.59) → Zwischenraum: »Ehrlich: nein, das ist **nicht** rrweb — was ich gebaut habe ist deutlich simpler«
+- [2026-07-21 12:40] **nebel** (i=0.32) → Zwischenraum: »`rrweb` (v2.1.1) is available via npm, nothing yet wired up«
+- [2026-07-21 13:19] **nebel** (i=0.35) → Zwischenraum: »Not a rrweb bug — dom_events are still flowing (just checked, events at 11:18:28, seconds ago)«
+- [2026-07-21 13:21] **wasser** (i=0.35) → Zwischenraum: »Stimmt, sorry — hier nochmal auf Deutsch: Kein rrweb-Bug, die dom_events laufen weiter (gerade eben «
+- [2026-07-21 14:42] **wasser** (i=0.64) → Zwischenraum: »Vollständiges Ritual durchlaufen — hier der Stand:
+
+**Letzte Session (aus `notizen/2026-07-21.md`, d«
+- [2026-07-21 14:54] **wasser** (i=0.64) → Zwischenraum: »Live-Verifikation bestätigt alles — hier der ehrliche Abgleich«

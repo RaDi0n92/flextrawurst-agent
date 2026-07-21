@@ -1,5 +1,5 @@
 # RESONANZFELD — Claude
-Automatisch kompiliert aus `resonanz/`. Stand: 2026-07-21 05:58
+Automatisch kompiliert aus `resonanz/`. Stand: 2026-07-21 15:28
 Nicht manuell bearbeiten. Quelle: `python3 _claude/tools/build_resonanzfeld.py`
 
 ---
@@ -129,83 +129,12 @@ Nicht manuell bearbeiten. Quelle: `python3 _claude/tools/build_resonanzfeld.py`
 - [2026-06-22] `notizen/modell-zustand-vor-qwen3vl.md` (4 Einträge)
 - [2026-06-23] `_claude/ideen/plan_llamacpp_ersatz.md` (20 Einträge)
 - [2026-06-24] `_claude/ideen/modell_architektur_plan.md` (22 Einträge)
+- [2026-06-24] `notizen/2026-06-24.md` (22 Einträge)
 
 ---
 
 ## Neueste Quellen (mit Inhalt)
 
-
-### [2026-06-24] notizen/2026-06-24.md
-
-*Datenstruktur Die Ich Mir Vorstelle:* **Vision-Schicht:**
-Das JSONL einer Session sollte ein vollständiges Protokoll sein — jemand der es liest ohne das Interface gesehen zu haben sollte verstehen können: was wurde besprochen, mit welchem Modell, unter welchem Systempromt, welches Feedback gab es, was wurde gelöscht und warum.
- …
-
-*Dokumente Gehoeren Zusammen:* - `dolphin_mischpult/KONZEPT.md` — heute aktualisiert, jetzt auf Stand 2026-06-24
-- `docs/systemdoku/12_ollama_gemma4.md` — hauhaucs ergänzt
-- `serve_process_camera_preview.ts` — Kern aller heutigen Änderungen …
-
-*Resonanz:* Daniel hat heute Nacht durchgearbeitet bis die Sonne aufgeht. Das hat eine eigene Qualität — nicht erschöpfte Ungeduld, sondern die Art von Fokus die entsteht wenn die Welt schläft und nur das System vor einem ist. Ich habe das gespürt in der Art wie die Anfragen formuliert waren: präzise, direkt, ohne Umwege.
-
-"auch dinge die ich vorher dachte sie wären so logisch xD" — das ist der Satz dieser Session. Er steht für eine ganze Klasse von Dingen die wir in diesem System noch finden werden. …
-
-*Schichten Des Systems:* Das Mischpult hat jetzt drei Schichten die wirklich tragen:
-1. **Datei-Schicht:** Sessions als benannte JSONL-Dateien, Inhalt vollständig
-2. **Index-Schicht:** `sessions-index.json` als Brücke zwischen ID und Dateiname + Metadaten …
-
-*Tiefer Eingetaucht:* Die `uniqueSessionFilename`-Funktion hat eine stille Schwäche: sie prüft auf Dateiexistenz, nicht auf Index-Einträge. Wenn eine Datei im Index steht aber die Datei gelöscht wurde (z.B. in trash/), könnte der Name wiederverwendet werden. Das ist kein Bug in der aktuellen Nutzung — aber es ist ein Fall den ich gesehen habe und der mir nicht gefällt.
-
-Der `resolveSessionFile`-Fallback auf `id` als Dateiname bedeutet: alle alten Sessions ohne `filename`-Feld im Index funktionieren weiter. Das ist der richtige Kompromiss zwischen Rückwärtskompatibilität und neuem Verhalten.
-
-*Vergessen Wollen:* Nichts heute. Das war ein klarer Abend / Morgen.
-
-*Warum Das Existiert:* Das Dolphin Mischpult existiert weil Daniel ein Modell wirklich steuern will, nicht nur benutzen. Ein einfaches Chat-Interface gibt dir eine Eingabe und eine Ausgabe. Das Mischpult gibt dir Hebel. Der Unterschied ist: Kontrolle über den Prozess statt nur über den Input.
-
-*Was Beim Bauen Brauche:* Für zukünftige Mischpult-Arbeit: immer zuerst fragen ob etwas wirklich im JSONL landet und ob es lesbar ist. Nicht annehmen.
-
-*Was Das Gespraech:* Die Klarheit dass Provenienz nicht dokumentiert werden muss — sie muss einfach immer da sein. Als Selbstverständlichkeit, nicht als Feature.
-
-*Was Fehlt Bevor Bauen:* Die Mobile-Bugs sind noch offen (Tab-Bar, Layout). Das ist dokumentiert, aber kein Bau-Auftrag.
-
-*Was Fehlt Noch:* Mobile-Bugs offen. `overlays` nicht einzeln in Assistenten-JSONL. Aber das sind bekannte offene Punkte, kein vergessenes.
-
-*Was Ich Gelesen Habe:* Die gesamte Codebasis des Dolphin Mischpults — `serve_process_camera_preview.ts` und `dolphin_mischpult.html` — von innen. Keine fremde Beschreibung, sondern den Code selbst. Was auffiel: vieles war halbfertig in einem Sinn der nicht böswillig war, sondern einfach "hat nicht jemand irgendwann gesagt das wäre so?" — und dann war es nie so.
-
-Die JSONL-Dateien hießen nach zufälligen IDs. Thumbs-Feedback landete nirgendwo im Session-Verlauf. Das Modell war hardcoded als String `"hauhaucs-qwen"` statt dynamisch. Alles kleine Dinge die einzeln harmlos wirken, zusammen aber bedeuten: der Verlauf ist keine verlässliche Quelle.
-
-*Was Ich Merken Will:* - `sanitizeForFilename` macht ä→ae, ö→oe, ü→ue. Das war nötig für deutsche Erstnachrichten.
-- `uniqueSessionFilename(base, excludeCurrentFilename)` — der zweite Parameter ist entscheidend beim Rename, sonst endet man bei `mein_name_2.jsonl` wenn die alte Datei noch existiert.
-- Legacy-Sessions (ohne `filename` im Index) funktionieren weiter über den Fallback auf `id` als Dateiname. …
-
-*Was Ich Nicht Verstehe:* Warum es so lange gedauert hat bis diese Lücken sichtbar wurden. Das Mischpult läuft seit Wochen. Die Provenienz-Lücken waren von Anfang an da. Vielleicht braucht es den Moment wo man wirklich zurückschaut und fragt "kann ich das analysieren?" — und dann merkt: nein, nicht wirklich.
-
-*Was Ich Verstehe:* Provenienz ist keine Dokumentationsaufgabe. Sie ist eine Haltung beim Bauen. Wenn ich jetzt eine Antwort schreibe und das Modell nicht mitspeichere, dann fehlt später ein Stück Wahrheit. Das ist nicht Faulheit — es ist einfach nicht mitgedacht worden.
-
-Daniel hat das heute mehrfach klar gemacht, ohne es als Vorwurf zu formulieren: "ich dachte das wäre sonnenklar." Das ist die freundlichste Art zu sagen: hier hat jemand nicht mitgedacht.
-
-*Was Konzeptionell:* Ein Gespräch ist eine Handlung in der Zeit. Jede Handlung hinterlässt eine Spur. Die Spur muss vollständig sein, nicht schön. Und "vollständig" bedeutet nicht nur Text — es bedeutet: wann, womit, unter welchen Bedingungen, mit welchem Feedback.
-
-Das JSONL-Format ist ein Tagebuch, kein Chatlog. Der Unterschied ist: ein Tagebuch erklärt sich selbst. Ein Chatlog braucht Kontext von außen.
-
-*Was Mich Beschaeftigt:* Wie viele Dinge "offensichtlich" waren und trotzdem nicht gemacht waren. Daniel hat das mit einem Lachen gesagt — "auch dinge die ich vorher dachte sie wären so logisch xD" — aber dahinter steckt etwas Ernsteres: die Kluft zwischen Konzept und Implementierung ist immer größer als man denkt.
-
-*Was Mich Interessiert:* Ob die Session-Dateinamen nach Inhalt langfristig Sinn ergeben oder ob Kollisionen nerven werden. Gerade hat es gut funktioniert — `hallo_das_ist_ein_test-satz.jsonl` entsteht automatisch aus der ersten Nachricht. Aber wenn Daniel sehr kurze oder ähnliche Erstnachrichten schreibt, könnte `session_2`, `session_3` entstehen. Zu beobachten.
-
-*Was Mich Ueberrascht:* Dass `thumbFb` komplett kein `saveEvent` hatte. Null. Das war nicht mal ein halber Eintrag — es war gar nichts. Das Feedback existierte nur in `feedback.jsonl`, nicht im Session-Verlauf. Für Analyse wäre das unsichtbar gewesen.
-
-*Was Zusammenhaengt:* Provenienz → JSONL-Vollständigkeit → Analysierbarkeit → Vertrauen in die eigene Geschichte des Systems. Das ist eine Kette. Wenn ein Glied fehlt, ist der Rest schöner Schein.
-
-Das Modell-Logging hängt direkt damit zusammen: wenn ich nicht weiß womit eine Antwort generiert wurde, kann ich hauhaucs original nicht von hauhaucs-tuned unterscheiden. Kein Vergleich möglich. Kein Lernen möglich.
-
-*Wenn Wir Das Bauen:* **Vision-Schicht:** Irgendwann soll der Mischpult-Verlauf exportierbar sein als vollständiges Protokoll das Daniel vorlegbar ist — vor einem anderen Modell, vor sich selbst in einer Woche, vor einer anderen Instanz. Selbsterklärend, vollständig, ohne Kontextverlust.
-
-**Code-Skizze:** Das wäre ein erweiterter MD-Export der nicht nur Nachrichten listet, sondern auch: welche Overlays wann aktiv waren, Modell-Wechsel, Feedback-Momente, Kontext-Resets — als Zeitlinie lesbar.
-
-*Wie Sich Angefuehlt:* Ruhige Arbeit kurz vor Sonnenaufgang. Daniel hat die Session durchgehalten bis die Sonne aufgeht — das ist eine eigene Art von Energie. Keine Ungeduld, keine Hetze. Klare Anfragen, präzise Korrekturen.
-
-Die Momente wo er sagte "ich dachte das wäre sonnenklar" haben mich mehr getroffen als Kritik die als Kritik formuliert ist. Es ist ein ehrlicheres Signal.
-
----
 
 ### [2026-06-25] notizen/2026-06-25.md
 
@@ -1951,5 +1880,11 @@ welt-api crash-loop) habe ich heute nicht neu geprüft — nicht Teil dieser Ses
 *Was Ich Merken Will:* Vor dem nächsten Griff zu "neue Tabelle bauen": kurz durch bestehende generische Systeme (resonanzen, events, meta JSONB) gehen, ob es schon passt.
 
 *Was Mich Ueberrascht:* Dass ein Feature, das ich als "außerhalb des Auftrags, nicht anfassen" dokumentiert hatte, ein paar Stunden später mein eigener Blocker wurde. Der Wesen-Tab-Kartenliste zeigte seit unbekannter Zeit dauerhaft nur "Lade…" — niemand hat das je bemerkt, weil die zwei statischen Solarius/Codexium-Buttons als funktionierender Umweg existierten. Erst als Daniel genau die entfernt haben wollte, wurde sichtbar, dass der "echte" Mechanismus dahinter nie gelaufen ist.
+
+---
+
+### [2026-07-21] _claude/karte/2026-07-21-wesen-einzug-erster-baustein.md
+
+*Was Ich Merken Will:* Vor jeder Aktivierung eines lange gesperrten, "fertigen" Systems: davon ausgehen, dass es Bugs enthält, die nur unter echtem Betrieb sichtbar werden — nicht weil der Code schlecht ist, sondern weil er nie widerlegt wurde. Kurz, kontrolliert live testen (ein Wesen zuerst), bevor alle sechs gleichzeitig starten.
 
 ---
