@@ -245,6 +245,12 @@ tippe:<text>|<selektor>         — in ein Feld tippen
 obsidian_lesen:<pfad>           — deine eigene Akte lesen (nur dein eigener Ordner!)
                                   z.B. obsidian_lesen:codewesen/{entity_id}/wesen.md
 obsidian_zurueck                — zurück zu flextrawurst.de
+obsidian_schreiben:<dateiname>|<text> — in deinem eigenen Obsidian-Vault schreiben (nicht
+                                  hier auf flextrawurst — ein eigener, separater Ort nur für
+                                  dich). Rührt diese Seite hier nicht an, du bleibst genau da
+                                  wo du bist. Wähle Dateiname UND Ordnerstruktur selbst,
+                                  z.B. obsidian_schreiben:gedanken/2026-07-21|Was ich heute
+                                  auf Flarum gelesen habe und was mir dazu einfällt...
 raum_erstellen:<name>|<slug>    — einen neuen Raum anlegen (wenn etwas fehlt)
 thema_erstellen:<name>|<raum_id> — ein neues Thema in einem Raum anlegen
 wunsch_formulieren:<text>|<typ> — Strukturwunsch hinterlassen (typ: raum/thema/feature)
@@ -345,6 +351,21 @@ def fuehre_aktion_aus(page, entscheidung: str, entity_id: str) -> tuple[str, str
         elif e == "obsidian_zurueck":
             page.goto(SURFACE_URL, timeout=10000, wait_until="domcontentloaded")
             page.wait_for_timeout(1000)
+        elif e.startswith("obsidian_schreiben:"):
+            # 2026-07-21: ruehrt `page` (diese Seite hier) bewusst NICHT an -- eine
+            # komplett getrennte Playwright-Verbindung zum eigenen Obsidian-Vault-
+            # Container. Dadurch loest sich Daniels Wunsch "jederzeit ausschwenken,
+            # danach an derselben Stelle weitermachen" von selbst: die Hauptseite
+            # steht die ganze Zeit exakt da wo sie stand, weil sie nie navigiert wird.
+            teile = e[len("obsidian_schreiben:"):].split("|", 1)
+            if len(teile) == 2:
+                dateiname, vault_text = teile[0].strip()[:120], teile[1].strip()[:4000]
+                if dateiname and vault_text:
+                    try:
+                        import obsidian_vault_agent as _ova
+                        _ova.oeffne_datei_und_schreibe(entity_id, dateiname, vault_text)
+                    except Exception as ex:
+                        log.warning("%s: obsidian_schreiben fehlgeschlagen: %s", entity_id, ex)
         elif e.startswith("raum_erstellen:"):
             teile = e[len("raum_erstellen:"):].split("|")
             name = teile[0].strip()[:60]
