@@ -11837,13 +11837,7 @@ def entity_shadow_dialogs(
 @app.get("/admin/einzugsampel/v2")
 def einzugsampel_v2(authorization: str | None = Header(default=None)):
     """Erweiterte Einzugsampel mit 9 Kategorien: Weltbereitschaft vor Einzug."""
-    is_admin = False
-    try:
-        if authorization:
-            claims = verify_token(authorization.removeprefix("Bearer "))
-            is_admin = claims.get("role") == "admin"
-    except Exception:
-        pass
+    _require_admin(authorization)
 
     import subprocess, os, json as _json
 
@@ -12037,6 +12031,8 @@ def einzugsampel_v3(authorization: str | None = Header(default=None)):
     """Reifeampel v3: unterscheidet Blocker-Klassen A–E.
     A=Technisch, B=Sicherheit/Rechte, C=Weltlogik, D=Bewusst blockiert, E=Offen/Design.
     """
+    _require_admin(authorization)
+
     import os, json as _json, subprocess
 
     def check(name: str, klasse: str, ok: bool, wert: str, note: str | None = None,
