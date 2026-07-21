@@ -218,6 +218,29 @@ def melde_screenshot(conn, entity_id: str):
             pass
 
 
+def melde_fokus(conn, entity_id: str, aktion: str, selektor: str | None,
+                 element_text: str | None, box: dict | None):
+    """Roentgenblick-Overlay (2026-07-21, Daniels bestaetigter Bauauftrag): kuratiertes
+    Gegenstueck zu entity_dom_events (reiner passiver rrweb-Rohstrom). Wird geschrieben
+    sobald ein Playwright-Locator vor einer Aktion aufgeloest ist -- das Frontend zeichnet
+    daraus einen Rahmen um das betrachtete Element, kombiniert mit der entity_denkstream-
+    Denkblase. Payload klein genug fuer kompletten NOTIFY-Inhalt, siehe migration_fokus_events.sql."""
+    try:
+        with conn.cursor() as cur:
+            cur.execute("""
+                INSERT INTO entity_fokus_events (entity_id, aktion, selektor, element_text, box)
+                VALUES (%s, %s, %s, %s, %s)
+            """, (entity_id, aktion, selektor, element_text,
+                  psycopg2.extras.Json(box) if box else None))
+        conn.commit()
+    except Exception as e:
+        log.warning("%s: entity_fokus_events INSERT fehlgeschlagen: %s", entity_id, e)
+        try:
+            conn.rollback()
+        except Exception:
+            pass
+
+
 def starte_rrweb_aufnahme(page, conn, entity_id: str, stream_id: str):
     """rrweb-Recorder aktivieren (Grundgesetz 1, Menschen-Auge-Ebene: Live-DOM-Spiegel
     statt Screenshots). Events kommen ueber page.expose_function() zurueck nach Python
@@ -359,7 +382,7 @@ def parse_output(text: str) -> tuple[str, str, str]:
     return gedanke, entscheidung, begruendung
 
 
-def fuehre_aktion_aus(page, entscheidung: str, entity_id: str) -> tuple[str, str | None, tuple[float, float] | None]:
+def fuehre_aktion_aus(page, entscheidung: str, entity_id: str, conn=None) -> tuple[str, str | None, tuple[float, float] | None]:
     """Führt eine Aktion aus. Gibt (zustand, zusatz_kontext, cursor_pos) zurück -- zustand ist
     'schlafen' bei Schlaf-Entscheidung, sonst 'wach'. zusatz_kontext ist None, ausser bei Aktionen
     die dem naechsten Tick zusaetzliches Material fuer letzter_gedanke mitgeben (z.B. RAG-Treffer).
@@ -367,7 +390,9 @@ def fuehre_aktion_aus(page, entscheidung: str, entity_id: str) -> tuple[str, str
     Elements -- fuer den sichtbaren, kuenstlichen Mauszeiger (Daniels Wunsch, siehe zeige_cursor()).
     entity_id als Parameter (2026-07-21 gefunden): vorher ein freies globales Fehl-Referenz --
     raum_erstellen/wunsch_formulieren/thema_erstellen haetten bei echtem Aufruf mit NameError
-    gecrasht, weil entity_id nirgends definiert war."""
+    gecrasht, weil entity_id nirgends definiert war.
+    conn (2026-07-21, Roentgenblick-Overlay): optional -- wenn gesetzt, schreibt melde_fokus()
+    bei klicke:/tippe:/navigiere: ein entity_fokus_events-Event fuers Overlay."""
     zusatz_kontext = None
     cursor_pos = None
     try:
@@ -376,25 +401,29 @@ def fuehre_aktion_aus(page, entscheidung: str, entity_id: str) -> tuple[str, str
             ziel = e[len("navigiere:"):].strip()
             if not ziel.startswith("http"):
                 ziel = SURFACE_URL + "/" + ziel.lstrip("/")
+            if conn is not None:
+                melde_fokus(conn, entity_id, "navigiere", None, ziel, None)
             page.goto(ziel, timeout=10000, wait_until="domcontentloaded")
         elif e.startswith("klicke:"):
             text = e[len("klicke:"):].strip()
 
-            def _klicke_und_zeige(locator):
+            def _klicke_und_zeige(locator, selektor_beschreibung: str):
                 nonlocal cursor_pos
                 box = locator.bounding_box(timeout=1000)
                 if box:
                     cursor_pos = (box["x"] + box["width"] / 2, box["y"] + box["height"] / 2)
                     zeige_cursor(page, cursor_pos[0], cursor_pos[1])
+                if conn is not None:
+                    melde_fokus(conn, entity_id, "klicke", selektor_beschreibung, text, box)
                 locator.click(timeout=3000)
 
             try:
-                _klicke_und_zeige(page.get_by_text(text, exact=False).first)
+                _klicke_und_zeige(page.get_by_text(text, exact=False).first, f"text~={text}")
             except Exception:
                 # Fallback: alle Links/Buttons nach Text durchsuchen
                 for sel in [f"text={text}", f"[title*='{text}']"]:
                     try:
-                        _klicke_und_zeige(page.locator(sel).first)
+                        _klicke_und_zeige(page.locator(sel).first, sel)
                         break
                     except Exception:
                         pass
@@ -407,7 +436,14 @@ def fuehre_aktion_aus(page, entscheidung: str, entity_id: str) -> tuple[str, str
             if len(teile) == 2:
                 text, selektor = teile[0].strip(), teile[1].strip()
                 try:
-                    page.locator(selektor).first.fill(text, timeout=3000)
+                    locator = page.locator(selektor).first
+                    if conn is not None:
+                        try:
+                            box = locator.bounding_box(timeout=1000)
+                        except Exception:
+                            box = None
+                        melde_fokus(conn, entity_id, "tippe", selektor, text, box)
+                    locator.fill(text, timeout=3000)
                 except Exception:
                     pass
         elif e.startswith("obsidian_lesen:"):
@@ -966,7 +1002,7 @@ def haupt_loop(entity_id: str):
             log.info("%s [%s] → %s", entity_id, seite["url"][-40:], entscheidung[:50])
 
             # 6. Aktion ausführen
-            zustand, zusatz_kontext, neue_cursor_pos = fuehre_aktion_aus(page, entscheidung, entity_id)
+            zustand, zusatz_kontext, neue_cursor_pos = fuehre_aktion_aus(page, entscheidung, entity_id, conn)
             if neue_cursor_pos is not None:
                 cursor_pos = neue_cursor_pos
             if zusatz_kontext:

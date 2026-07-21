@@ -13524,6 +13524,14 @@ except ImportError as _e:
     import logging as _logging
     _logging.warning(f"dom_events_api nicht geladen: {_e}")
 
+# ── Fokus-Events (Röntgenblick-Overlay, 2026-07-21) ──────────────────────────
+try:
+    from fokus_events_api import fokus_events_router as _fokus_events_router
+    app.include_router(_fokus_events_router)
+except ImportError as _e:
+    import logging as _logging
+    _logging.warning(f"fokus_events_api nicht geladen: {_e}")
+
 
 if __name__ == "__main__":
     import uvicorn
