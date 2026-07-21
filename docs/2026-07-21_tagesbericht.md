@@ -1,6 +1,6 @@
 # 2026-07-21 — Tagesbericht
 **Datum:** 2026-07-21
-**Stand:** Wesen-Einzug-Baustein 1 (Browser-Agent) aktiv, Live-Ansicht steht, Wesen-eigene Obsidian-Vaults im Pilot (Tipp-Bug diagnostiziert und größtenteils gelöst)
+**Stand:** Wesen-Einzug-Baustein 1 (Browser-Agent) aktiv, Live-Ansicht steht, Wesen-eigene Obsidian-Vaults im Pilot — echtes zeichenweises Tippen ohne LLM-Call fertig gebaut und verifiziert (`welt/obsidian_vault_agent.py`)
 
 ---
 
@@ -170,10 +170,19 @@ und gelöst:
   (visuell bestätigt: "Hallo, ich bin Schörschel! Ärger? Übung macht den
   Meister: 100%." — nur "Ärger"/"Übung" verloren zunächst ihre Anfangsgroßschreibung,
   per explizitem `xdotool key shift+adiaeresis` ebenfalls gelöst).
-- Kleinerer, noch offener Nachfolge-Bug: das Sichern auf Platte nach dem Tippen
-  ist noch nicht zuverlässig (Fenster-Fokus-Ziel bei `ctrl+s` trifft nicht
-  immer zuverlässig das richtige Fenster) — Kernproblem (korrektes Tippen)
-  gelöst, dieser Rand-Fall wird als Nächstes angegangen.
+- **Speichern-Bug aufgeklärt (war größer als vermutet, dann vollständig gelöst).**
+  Nicht Fenster-Fokus beim `ctrl+s` — der eigentliche Grund: eine per `Ctrl+N`
+  in Obsidian selbst frisch erzeugte Notiz bindet ihren Editor-Puffer nie an
+  eine echte Datei (Text erscheint korrekt im Editor, ein `Backspace` löscht
+  ihn wirklich, aber er landet nie auf Platte, egal wie lange gewartet wird).
+  Fix: Dateien immer vorher direkt auf der Platte anlegen (Obsidians
+  Dateisystem-Watcher erkennt sie sofort), nie über `Ctrl+N`. Nebenfund: ein
+  `browser.close()` unmittelbar vor dem Tipplauf reißt den Text nach der
+  Hälfte lautlos ab — Playwright-Verbindung muss während des Tippens offen
+  bleiben. Fertiges, getestetes Modul: `welt/obsidian_vault_agent.py`
+  (`oeffne_datei_und_schreibe(entity_id, dateiname, text, titel=...)`),
+  mehrfach mit echtem deutschem Text (Umlaute, ß, Satzzeichen, Prozent)
+  gegen den Pilot-Vault verifiziert.
 
 Vollständige Chronik: [[30_wesen_eigene_obsidian_vaults]].
 
@@ -181,9 +190,9 @@ Vollständige Chronik: [[30_wesen_eigene_obsidian_vaults]].
 
 ## Was noch offen ist
 
-- Speicher-Fokus-Bug beim Obsidian-Vault-Tippen robust machen
-- Obsidian-Container auf 0.0.0.0 (öffentlich erreichbar) umstellen, wie vom
-  Haupt-Container gewohnt
+- Obsidian-Container auf 0.0.0.0 (öffentlich erreichbar) umstellen — von Daniel
+  bereits bestätigt, noch nicht durchgeführt: *"ja auch von außen erreichbar
+  und sogar nicht nur zum zuschauen sondern zum gärtnern"*
 - Die restlichen 6 Obsidian-Container nach demselben Muster aufsetzen
 - Orchestrierung klären: wie/wann wechselt der Wesen-Browser-Tab zu Obsidian —
   Daniel dazu wörtlich: *"keine ahnung so wie es am besten ist eben keine
