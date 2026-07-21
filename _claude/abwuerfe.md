@@ -2447,3 +2447,4 @@ Vorher hing die«
 
 **Beide Auslieferungsorte stehen:**
 - Arbeits-Audit (alle Rohdaten, versioni«
+- [2026-07-21 22:25] **lava** (i=0.39) → Zwischenraum: »Korrigiert und neu verpackt«

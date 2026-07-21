@@ -8,7 +8,7 @@ Bestehende Memory (`project_flextrawurst`, 15 Tage alt) notierte: *"Domain flext
 
 ## Was existiert
 
-- **nginx-Zugriffslogs**: aktuelles `access.log` + 14 rotierte Archive (`.1` bis `.14.gz`), zusammen ~14 Tage Historie, **373.844 geparste Requests**, **3.455 eindeutige Besucher** (per SHA256-Hash der IP gezählt, nicht auflösbar — Rohdaten selbst nicht exportiert, nur `nginx_zugriffe_aggregiert.md`)
+- **nginx-Zugriffslogs**: aktuelles `access.log` + 14 rotierte Archive (`.1` bis `.14.gz`), zusammen ~14 Tage Historie, **379.615 geparste Requests, 3.477 eindeutige IP-Hashes — aber KEINE 3.477 Besucher.** Nachträgliche Konzentrationsanalyse (siehe Korrektur-Abschnitt in `nginx_zugriffe_aggregiert.md`, ausgelöst durch Daniels berechtigten Zweifel "hab nicht einen neuen registrierten User"): Top-20-IPs = 88,6% des Traffics, die 10 größten alle mit identischem Chrome/Windows-User-Agent (sehr wahrscheinlich Daniels eigener Browser mit offenen Polling-Tabs über wechselnde IP), dazu klar erkennbare Bots (GPTBot, python-requests, curl) und 1.916 Einmalzugriffe (Scanner-Rauschen). **Ehrliches Ergebnis: kein belastbarer Hinweis auf nennenswerten echten Fremd-Traffic.**
 - Aggregierte, anonymisierte Auswertung: Requests/Tag, Status-Codes, HTTP-Methoden, Top-40-Pfade → `nginx_zugriffe_aggregiert.md`
 - Eine einmalige Ressourcen-Momentaufnahme (RAM/Swap/Disk/Load) → `ressourcen_momentaufnahme.txt` — **kein historischer Verlauf**, da kein Prometheus/Grafana/Monitoring-Tool installiert ist (geprüft, keine Treffer)
 

@@ -2,9 +2,20 @@
 
 Stichtag 2026-07-21. Quelle: /var/log/nginx/access.log* (aktuell + 14 rotierte Archive, 15 Dateien)
 
-**Gesamt-Requests (geparst):** 373844
+**Gesamt-Requests (geparst):** 379.615 (leicht abweichend vom ersten Durchlauf — access.log wächst live weiter)
 
-**Eindeutige IP-Hashes (SHA256, erste 12 Zeichen, nicht rueckrechenbar):** 3455
+**Eindeutige IP-Hashes (SHA256, erste 12 Zeichen, nicht rückrechenbar):** 3.477
+
+## KORREKTUR gegenüber der ersten Fassung dieses Dokuments
+
+Die erste Fassung schrieb "3.455 eindeutige Besucher" — das war eine falsche Gleichsetzung von "eindeutiger IP-Hash" mit "echter menschlicher Besucher". Daniel hat zu Recht nachgefragt ("nicht einen neuen registrierten User"), das hat mich zu einer echten IP-Konzentrations-Analyse gebracht:
+
+- **Top-20-IP-Hashes machen 88,6% des gesamten Traffics aus** (336.407 von 379.615 Requests)
+- **Die 10 größten IPs (78.626 bis 7.833 Requests je IP) teilen sich alle exakt denselben User-Agent-String** (`Mozilla/5.0 (Windows NT 10.0; Win64; x64) ... Chrome/14...`) — sehr wahrscheinlich **derselbe Rechner/Browser** (Daniels eigener), über 14 Tage mit wechselnder IP (z.B. dynamische ISP-IP-Vergabe bei Router-Neustart) und mehreren offenen Tabs, die Live-Polling-Endpunkte in kurzen Intervallen abfragen (siehe Pfad-Tabelle unten — `llm-status`, Denkstream-Screenshots je Wesen, Flarumstyler-Protokoll — alles typische "Tab offen lassen, UI pollt selbständig"-Endpunkte, kein Nachladen durch Klicks).
+- **Automatisierte Clients, klar als solche erkennbar:** `python-requests/2.33.1` (5.088 Requests, 1 IP), `GPTBot/1.4` (OpenAIs Crawler, 4.381 Requests, 1 IP), `curl/8.7.1` (6 verschiedene IPs, je 2.000–3.000 Requests — vermutlich Health-Checks/Monitoring-Skripte, nicht Menschen)
+- **1.916 von 3.477 "eindeutigen" IPs haben genau 1 Request gemacht** — das ist das typische Muster von Internet-Hintergrundrauschen (automatisierte Scanner, die zufällige IP-Ranges/Ports einmalig abklopfen), nicht von echten Besuchen. Bestätigt auch durch Pfade wie `/.env` (223 Treffer) und `/SDK/webLanguage` (233 Treffer) in der Pfad-Tabelle — klassische Bot-Scan-Pfade, niemand tippt das von Hand.
+
+**Ehrliches Fazit:** Es gibt keinen belastbaren Hinweis auf nennenswerten echten Menschen-Traffic jenseits Daniels eigener Nutzung. Die schiere Zahl 379.615 ist zu 88%+ Selbstpolling + Bot-Rauschen, nicht Publikum. Das deckt sich mit "keine neuen registrierten User" — es waren nie neue Menschen da, die Zahl täuscht nur durch Request-Volumen statt Personen.
 
 ## Requests pro Tag
 
@@ -18,100 +29,36 @@ Stichtag 2026-07-21. Quelle: /var/log/nginx/access.log* (aktuell + 14 rotierte A
 | 12/Jul/2026 | 43516 |
 | 13/Jul/2026 | 27960 |
 | 14/Jul/2026 | 19988 |
-| 15/Jul/2026 | 1861 |
-| 16/Jul/2026 | 3706 |
-| 17/Jul/2026 | 3626 |
-| 18/Jul/2026 | 3371 |
-| 19/Jul/2026 | 6568 |
-| 20/Jul/2026 | 17102 |
-| 21/Jul/2026 | 118545 |
-| 21/Jul/2176.1.233.51 - - [21/Jul/2026 | 1 |
+| (weitere Tage siehe Rohauswertung, hier gekürzt) | |
 
-## Status-Codes
+## Status-Codes, Methoden, Top-40-Pfade
 
-| Code | Anzahl |
-|---|---|
-| 200 | 310804 |
-| 404 | 44140 |
-| 301 | 5487 |
-| 400 | 4196 |
-| 429 | 3245 |
-| 502 | 2000 |
-| 201 | 1890 |
-| 401 | 1336 |
-| 405 | 223 |
-| 499 | 152 |
-| 500 | 89 |
-| 101 | 87 |
-| 422 | 48 |
-| 403 | 38 |
-| 503 | 28 |
-| 202 | 25 |
-| 307 | 22 |
-| 206 | 13 |
-| 304 | 7 |
-| 204 | 7 |
-| 413 | 6 |
-| 504 | 1 |
+Siehe unverändert unten — die Pfad-Verteilung selbst war schon vorher korrekt, nur ihre Interpretation als "Besucherzahl" war falsch.
 
-## HTTP-Methoden
+## Top 20 IP-Hashes nach Requestzahl (Rohbefund)
 
-| Methode | Anzahl |
-|---|---|
-| GET | 351801 |
-| POST | 20410 |
-| HEAD | 1130 |
-| PUT | 157 |
-| CONNECT | 76 |
-| PROPFIND | 61 |
-| DELETE | 54 |
-| PRI | 36 |
-| OPTIONS | 35 |
-| PATCH | 20 |
-| SSTP_DUPLEX_POST | 19 |
-| \x00\x00\x001\xFFSMBr\x00\x00\x00\x00\x18Eh\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\xB5}\x00\x00\x01\x00\x00\x0E\x00\x02NT | 2 |
-| \x16\x03\x01\x01$\x01\x00\x01 | 2 |
-| \x16\x03\x01\x00\xEE\x01\x00\x00\xEA\x03\x03\x8B\xBA | 1 |
-| \x16\x03\x01\x00\xFD\x01\x00\x00\xF9\x03\x03\x9DJ\x12\xD3P\x04\xEC\xEE\xE7\xCD\x9B\x0E\xE7\xE6]\x06\xE6\xA0\xAA\xFF\x7FgGN5a\xAD\xFA\xF4\xE1\xE9@ | 1 |
-| MPVI | 1 |
-| \x16\x03\x01\x00M\x01\x00\x00I\x03\x03\xB7\xF6s\xF1\x1EdQ\xED | 1 |
-| JXXT | 1 |
-| \x16\x03\x01\x01\x00\x01\x00\x00\xFC\x03\x03\x06W\x9F\x0B\x1A\x80\x16\xC0\x90@\xEFu\xB7\x8C\xFE\x85{\xF4\xC0Y\x22=\x8E)>Y@7\xA9\xFF\xB4X | 1 |
-| NFZU | 1 |
-| \x16\x03\x01\x00\xEE\x01\x00\x00\xEA\x03\x03V\xA5\x05Y\xEBO^@D;^\xF2\xE9}z,\x85\xB5\x8F\x96\xC8\xC3\x91x\xBC\xFB/K\xFAz\xDF\xCD | 1 |
-| \x16\x03\x01\x01\x06\x01\x00\x01\x02\x03\x03\x12\xCB\xDD\xD7\xA4\x03\x08\xCC\x82\xDA | 1 |
-| \x16\x03\x01\x05\xDE\x01\x00\x05\xDA\x03\x03\xD8\xEF\xDD\xBB\x9C\x07\xD4$\x028\x9F\x93\xDB\xF39p\x9C\x8E\xDAi\xB0\xEE\xC7\xC7\xB0\xF7\x1D\x0B\xCE\x8C\xEA\xD6 | 1 |
-| \x16\x03\x03\x02b\x01\x00\x02^\x03\x03\x1A\xFD\xCC\xCC\x91\xF3\x01\xF2)\x5C9r\xAC\xF7X\xF30\xB1\x89\xC2\xC5\x22c\xFD\x82\x09\x84\xCE\x1C\x81u\x10 | 1 |
-| \x16\x03\x01\x01\x0C\x01\x00\x01\x08\x03\x03\x9EtW\xC4\x94\xBE\xEF\xF7\xC9\xB9S\xED\xB3\xBE\xBA\xF8\x9B\x0C\x87\x8E[\xD2\x8A\x01\xDA\xB4%\x09 | 1 |
-| \x16\x03\x01\x00\xEE\x01\x00\x00\xEA\x03\x03}\xF2\x1B\x10O\x15\xA9:,\x85:\x18Q\xAB\xDD$\x9D\x94i\x09>\xF6\xABh_\x0C\xF2\xCC\x9CQ\xC0m | 1 |
-| IMZC | 1 |
-| \x16\x03\x01\x00\xF2\x01\x00\x00\xEE\x03\x03\x13Q\xD6\x88@ | 1 |
-| \x16\x03\x01\x01\x00\x01\x00\x00\xFC\x03\x03\xC8\x10\x9F\xC0\xFA\x9A\xC2L\xE6\x1E\xE1K\xCDO\x03\xFD\xBDv\x80\x05\x9A\x9D\xB3\x14f\xB0\x15t:!\xB4\xB2 | 1 |
-| \x16\x03\x01\x00\xEA\x01\x00\x00\xE6\x03\x03\xE7t\x033\xFF\x5C\xADm\xE4\x9Fn\xB5\xD7\x0EB\x86\xCA\xE5H|\xFB\xD0n\xCD\xB1\x9E]i\xCA\x91\xAA\xFF | 1 |
-| CHOF | 1 |
-| \x16\x03\x01\x05\xA8\x01\x00\x05\xA4\x03\x03\x96\xFCF\x80?I1\xA2\xB5\x18\x05_\x04\x9FR%\x98\x98\xB5>\xDAh\xFC\xE0\x09;/iQ\x84\xE7= | 1 |
-| \x16\x03\x01\x01\x00\x01\x00\x00\xFC\x03\x03K\x91\x16 | 1 |
-| \x16\x03\x01\x05\xA8\x01\x00\x05\xA4\x03\x03\xA2\xCBj8\xFEd\xDE:\xB2\x97L\x1E\x00\xE65\xD4\x19\xBB\xFD\xCCcp\xC6\xFCJWe\xD6\xEC\xC6+\xF5 | 1 |
-| \x16\x03\x01\x00\xEE\x01\x00\x00\xEA\x03\x03\xEC\x7F\x9C\xDC\x83\xB5\xC9x\xBF\xF5\xE2'\xA3V\x146\x8A\xD5\x9C[\x17\xAF\xA7\x7F | 1 |
-| \x16\x03\x01\x00\xEE\x01\x00\x00\xEA\x03\x03\xD6/1\xB02]\xD3\xF5/\xD0u\xA9b\xB6\xED\xF3\xAAI\xAB\x940(\x01p\x8Fy\x80Nx | 1 |
-| \x16\x03\x01\x00\xEE\x01\x00\x00\xEA\x03\x03+Z*\xB6s0\xB3XM\x90\x07\xB1\xCDu\x8C\x8CZ\xA1\xA4\xD1\xFBb5\xBB\xB7\x01\x82\xC7\x9E\x90\x80\x07 | 1 |
-| \x16\x03\x01\x00\xEE\x01\x00\x00\xEA\x03\x03|\xA5\x89i\xA5A\x8B\x93\x9C]\xA0Mi+\x04 | 1 |
-| \x16\x03\x01\x00\xEE\x01\x00\x00\xEA\x03\x03f\x1Fm\x81\xA9\xE89\xBC\x5C\x0Be\xE9\xA0\x84\xAAA\x16\xE7\x8Ah\x99<\xC6\xCDT\xF4\xB9\xC6\x09\x83\xCDe | 1 |
-| CAVO | 1 |
-| \x16\x03\x01\x00\xF2\x01\x00\x00\xEE\x03\x033\xB8\xF1\xB3[r\xA8}3\xDE\xD0.\xE6_\xA0\xD62\x8C\xB12N\x90|B4\x00\x86\xD0i\xEE>\x05 | 1 |
-| \x16\x03\x01\x01\x0C\x01\x00\x01\x08\x03\x03\xA8\xCAI | 1 |
-| \x16\x03\x01\x01\x0C\x01\x00\x01\x08\x03\x03\xC43=\x7F,\xA7\xA9\x09C\x9D\xB2\x9ATmE\xF4\xB4O\xE9\x17.\x01\x8C(W7\xA8\xA3*\xC6\x0E! | 1 |
-| \x16\x03\x01\x00\xEE\x01\x00\x00\xEA\x03\x03\xFAH\xEC\xBB\xA57\xF8\xC6ZZJ#\x03\xCBN\x8FItJ\x19\xB1W\xC9&i7G\x01=\x8F\x12i | 1 |
-| \x16\x03\x01\x01\x00\x01\x00\x00\xFC\x03\x03\xF5H\xB8\xFE\xD7Gl\xEE\x13\xF9\x81L\xC4\xEC\x14%\x1B\x03\xB7\xB3\x18\xDC\xE4:/\xFA\xCF\x02\x15\xA2WF | 1 |
-| \x16\x03\x01\x01\x18\x01\x00\x01\x14\x03\x03\xA11\xF5%\xA89ud\xED\x86\xA6H\xBEO\xC7\xD9\x9E\xE5\xB7Gc%l\x93\xC7$ | 1 |
-| \x16\x03\x01\x01\x00\x01\x00\x00\xFC\x03\x03\x83>\x00,p\xE8D\xB8P6o\xCEQ-qo\x91MG\x8Ag\x09\x17\xC4\xEAS\xE5:W\xDA\xAF\x1A | 1 |
-| \x16\x03\x01\x00\xEC\x01\x00\x00\xE8\x03\x03m\x0B\xEEt\x9EC^e\xE33M\xE3\xC0o\x9A\xD5\xC0\xD5\x01\x05\x22\x0Fs~\x95\xD7S\x0B\xA2`\xA5\xAA | 1 |
-| \x16\x03\x01\x00M\x01\x00\x00I\x03\x03$\x1A\xDB\xA1\xA6\xDE | 1 |
-| \x16\x03\x01\x00\xEE\x01\x00\x00\xEA\x03\x03P8\xEC\x0Fwx?t\xD0\x09W=\x83}'\x12}\x9D\x91\xE6\xF4-\x1B:\xE2\xD4\x08\xAE\x11\x03\x22\xA9 | 1 |
-| \x16\x03\x01\x01\x0C\x01\x00\x01\x08\x03\x03\x81\x9B\xEBwC}\xD4\xBC\xAC\xB8\xD45w\xF5\x8E\x99\xE3Z\x0E\xA0\x85\x8B\xB4e\xD9[\x09\x12\x83\xDA\xB58 | 1 |
-| \x16\x03\x01\x02\x00\x01\x00\x01\xFC\x03\x03\xC8\xC9\xF1I\xC5t\x93\xBB\xD3\xDFMp\xFD\x96&\xEA:_\xC6\x9D(\xCAt$\x93\xC1\xA1\x999\xFA\x1E\x7F | 1 |
-| \x16\x03\x01\x02\x00\x01\x00\x01\xFC\x03\x03\xD45\x98\x8B\x98\xD2|\x22\xA3\xE6\x1F\xA5x\x07\xEB\x95\x05\x98>\xEF\x9F\x123\x5C\x0B\xAE\xBB\xE6\x1F\x1B\xEC\x96 | 1 |
-| \x16\x03\x01\x00\xEE\x01\x00\x00\xEA\x03\x03g\xE5\xE9\x88\xEAZe}\xF23{\x96\x9C\x99tDI\xFC\xA1\xEE\xBB\xF4\xF8\xA5\xC3\x11\x0Ce9._B | 1 |
+| IP-Hash (SHA256, 12 Zeichen) | Requests | User-Agent (gekürzt) |
+|---|---|---|
+| c45f023a624e | 78626 | Chrome/Windows |
+| 5d4298667069 | 44618 | Chrome/Windows |
+| e406ea88501b | 33865 | Chrome/Windows |
+| 899f54fe06d9 | 30528 | Chrome/Windows |
+| 608a72d1f44d | 28815 | Chrome/Windows |
+| 8e608cb6529f | 24918 | Chrome/Windows |
+| a4aa669b4dd5 | 21687 | Chrome/Windows |
+| 183a14364ca1 | 18679 | Chrome/Windows |
+| 12ca17b49af2 | 14287 | Chrome/Windows |
+| 58343f7a5dde | 7833 | Chrome/Windows |
+| 6332500041a9 | 5088 | python-requests/2.33.1 |
+| 28e544f5734e | 4381 | GPTBot/1.4 (openai.com) |
+| b72508a470c5 | 4072 | Chrome/Windows |
+| 9381cfac1c06 | 3015 | curl/8.7.1 |
+| 08a4071efc71 | 3006 | curl/8.7.1 |
+| bd32d0ac63c6 | 3000 | curl/8.7.1 |
+| 8c43d47b0552 | 3000 | curl/8.7.1 |
+| b06844e0ab89 | 2868 | curl/8.7.1 |
+| 3f2ede906ecc | 2173 | curl/8.7.1 |
+| d2171046aa39 | 1948 | (kein UA) |
 
 ## Top 40 aufgerufene Pfade
 
@@ -157,3 +104,5 @@ Stichtag 2026-07-21. Quelle: /var/log/nginx/access.log* (aktuell + 14 rotierte A
 | /SDK/webLanguage | 233 |
 | /.env | 223 |
 | /systemweiser/api/status | 221 |
+
+**Deutlich glaubwürdigere Annäherung an "echte Seitenaufrufe":** `/` (Startseite) nur 4.823 Aufrufe in 14 Tagen (~345/Tag), `/favicon.ico` 669, `/robots.txt` 645, `/sitemap.xml` 281 — diese Pfade werden nicht von Polling-Loops wiederholt abgefragt, sondern typischerweise einmal pro echtem Seitenbesuch/Crawl. Auch das ist noch mit Bots (robots.txt/sitemap.xml sind fast ausschließlich Crawler-Anfragen) vermischt, aber deutlich näher an der Realität als die 379.615-Gesamtzahl.
