@@ -59,6 +59,16 @@ ENTITY_KEYS = {
 
 os.makedirs(SCREENSHOT_DIR, exist_ok=True)
 
+# rrweb-Live-Spiegel (2026-07-21, Menschen-Auge-Ebene aus Grundgesetz 1 /
+# dreiergespann_dom_theorie.md): Bundle einmal beim Modulstart laden, nicht bei jeder
+# Navigation neu von der Platte lesen.
+RRWEB_RECORD_PFAD = "/root/werkraum/welt/rrweb_assets/rrweb-record.js"
+try:
+    with open(RRWEB_RECORD_PFAD, encoding="utf-8") as _f:
+        _RRWEB_RECORD_JS = _f.read()
+except OSError:
+    _RRWEB_RECORD_JS = ""
+
 _laufend = True
 
 def _signal_handler(sig, frame):
@@ -206,6 +216,71 @@ def melde_screenshot(conn, entity_id: str):
             conn.rollback()
         except Exception:
             pass
+
+
+def starte_rrweb_aufnahme(page, conn, entity_id: str, stream_id: str):
+    """rrweb-Recorder aktivieren (Grundgesetz 1, Menschen-Auge-Ebene: Live-DOM-Spiegel
+    statt Screenshots). Events kommen ueber page.expose_function() zurueck nach Python
+    und werden direkt in entity_dom_events geschrieben -- gleiche Direktschreib-
+    Konvention wie bei entity_denkstream, kein HTTP-Umweg (siehe dom_events_api.py).
+
+    WICHTIG (2026-07-21 gefunden): rrweb.record() darf NICHT aus einem add_init_script()
+    heraus aufgerufen werden -- das haengt sich lautlos auf (vermutlich Reentrancy im
+    CDP-Kanal waehrend der fruehen Dokument-Erzeugung). Bundle selbst darf per
+    add_init_script geladen werden (nur Deklaration, kein Aufruf), record() muss danach
+    per page.evaluate() gestartet werden -- hier ueber den 'load'-Event bei jeder
+    Navigation neu ausgeloest, damit kein bestehender Aufruf-Ort (page.goto) angefasst
+    werden muss."""
+    if not _RRWEB_RECORD_JS:
+        log.warning("%s: rrweb-record.js nicht gefunden, kein Live-Spiegel", entity_id)
+        return
+
+    _seq = [0]
+
+    def _auf_event(event_json_str: str):
+        try:
+            event = json.loads(event_json_str)
+        except Exception:
+            return
+        try:
+            with conn.cursor() as cur:
+                cur.execute("""
+                    INSERT INTO entity_dom_events (entity_id, stream_id, event_json, seq)
+                    VALUES (%s, %s, %s, %s)
+                """, (entity_id, stream_id, psycopg2.extras.Json(event), _seq[0]))
+            conn.commit()
+            _seq[0] += 1
+        except Exception as e:
+            log.warning("%s: entity_dom_events INSERT fehlgeschlagen: %s", entity_id, e)
+            try:
+                conn.rollback()
+            except Exception:
+                pass
+
+    try:
+        page.context.expose_function("__ftwSendDomEvent", _auf_event)
+    except Exception:
+        pass  # bereits registriert (z.B. nach Reconnect) -- kein Neustart noetig
+
+    page.context.add_init_script(script=_RRWEB_RECORD_JS + "\nwindow.__ftwRrwebRunning = false;")
+
+    def _bei_load():
+        try:
+            page.evaluate("""
+                (function() {
+                    if (window.__ftwRrwebRunning) return;
+                    window.__ftwRrwebRunning = true;
+                    window.rrweb.record({
+                        emit(event) {
+                            try { window.__ftwSendDomEvent(JSON.stringify(event)); } catch (e) {}
+                        }
+                    });
+                })();
+            """)
+        except Exception as e:
+            log.warning("%s: rrweb-Start fehlgeschlagen: %s", entity_id, e)
+
+    page.on("load", lambda: _bei_load())
 
 
 def baue_prompt(entity_id: str, seite: dict, letzter_gedanke: str,
@@ -490,8 +565,18 @@ def hole_andere_wesen_status(conn, eigene_id: str) -> list[dict]:
                     AND tick_at > NOW() - INTERVAL '10 minutes'
                 ORDER BY entity_id, tick_at DESC
             """, (eigene_id,))
-            return [dict(r) for r in cur.fetchall()]
+            ergebnis = [dict(r) for r in cur.fetchall()]
+        conn.commit()  # 2026-07-21: ohne Commit blieb die Transaktion "idle in transaction"
+        # offen -- diese Abfrage laeuft frueh im Tick, VOR dem LLM-Aufruf, der durch die
+        # Warteschlange minutenlang dauern kann. Gefunden per pg_stat_activity: mehrere
+        # Verbindungen bis zu 4+ Minuten "idle in transaction", moegliche Mitursache fuer
+        # den beobachteten SSE-Hang bei welt-api (denkstream/all/stream reagierte nicht).
+        return ergebnis
     except Exception:
+        try:
+            conn.rollback()
+        except Exception:
+            pass
         return []
 
 
@@ -500,6 +585,7 @@ def ist_schlaf_faellig(conn, entity_id: str) -> bool:
     Bedingungen: 6+ Stunden wach ODER Gesamtschlaf in 24h < 6h.
     Verhindert: zu kurze Wachphasen (< 30 min), zu viel Schlaf (> 9h/24h).
     """
+    ergebnis = False
     try:
         with conn.cursor() as cur:
             # Letzter Schlaf-Ende
@@ -522,9 +608,8 @@ def ist_schlaf_faellig(conn, entity_id: str) -> bool:
             """, (entity_id,))
             total = cur.fetchone()["total_schlaf"] or 0
             if total >= 9 * 3600:
-                return False  # Genug geschlafen in 24h
-
-            if not row:
+                ergebnis = False  # Genug geschlafen in 24h
+            elif not row:
                 # Noch nie geschlafen — nach 8h Aktivität empfehlen
                 cur.execute("""
                     SELECT MIN(tick_at) AS erster FROM entity_thinking_log
@@ -532,29 +617,37 @@ def ist_schlaf_faellig(conn, entity_id: str) -> bool:
                 """, (entity_id,))
                 r = cur.fetchone()
                 if not r or not r["erster"]:
-                    return False
-                erster = r["erster"]
-                if erster.tzinfo is None:
-                    erster = erster.replace(tzinfo=timezone.utc)
-                return (now - erster).total_seconds() > 8 * 3600
+                    ergebnis = False
+                else:
+                    erster = r["erster"]
+                    if erster.tzinfo is None:
+                        erster = erster.replace(tzinfo=timezone.utc)
+                    ergebnis = (now - erster).total_seconds() > 8 * 3600
+            else:
+                letzter_schlaf_start = row["started_at"]
+                letzter_schlaf_ende = row["ended_at"]
 
-            letzter_schlaf_start = row["started_at"]
-            letzter_schlaf_ende = row["ended_at"]
+                if letzter_schlaf_start.tzinfo is None:
+                    letzter_schlaf_start = letzter_schlaf_start.replace(tzinfo=timezone.utc)
 
-            if letzter_schlaf_start.tzinfo is None:
-                letzter_schlaf_start = letzter_schlaf_start.replace(tzinfo=timezone.utc)
-
-            # Mindest-Wachzeit nach letztem Schlaf: 30 Minuten
-            referenz = letzter_schlaf_ende or letzter_schlaf_start
-            if referenz.tzinfo is None:
-                referenz = referenz.replace(tzinfo=timezone.utc)
-            wach_seit = (now - referenz).total_seconds()
-            if wach_seit < 1800:
-                return False  # Noch keine 30 min wach
-
-            # Nach 6h Wachzeit: schlafen empfehlen
-            return wach_seit > 6 * 3600
+                # Mindest-Wachzeit nach letztem Schlaf: 30 Minuten
+                referenz = letzter_schlaf_ende or letzter_schlaf_start
+                if referenz.tzinfo is None:
+                    referenz = referenz.replace(tzinfo=timezone.utc)
+                wach_seit = (now - referenz).total_seconds()
+                if wach_seit < 1800:
+                    ergebnis = False  # Noch keine 30 min wach
+                else:
+                    # Nach 6h Wachzeit: schlafen empfehlen
+                    ergebnis = wach_seit > 6 * 3600
+        conn.commit()  # 2026-07-21: siehe hole_andere_wesen_status -- gleicher Bug,
+        # mehrere frueher Returns liessen die Transaktion offen ("idle in transaction")
+        return ergebnis
     except Exception:
+        try:
+            conn.rollback()
+        except Exception:
+            pass
         return False
 
 
@@ -777,7 +870,12 @@ def haupt_loop(entity_id: str):
             viewport={"width": 1024, "height": 768},
             locale="de-DE",
         )
+
         page = context.new_page()
+
+        import uuid as _uuid_rrweb
+        rrweb_stream_id = str(_uuid_rrweb.uuid4())
+        starte_rrweb_aufnahme(page, conn, entity_id, rrweb_stream_id)
 
         # Login: erst Root für localStorage, dann Surface
         try:
