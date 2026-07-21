@@ -142,5 +142,22 @@ Unabhängig vom `geni_gedaechtnis`-Wachstum oben kam am selben Tag ein zweiter, 
 | `innenleben-feeder.service` | repariert, aktiv | Credential-Fix + Scheduler-Fix |
 | `geni-hoerer.service`, `geni-web.service` | unverändert aktiv | kein Problem gefunden |
 | `geni-forum-lektuere.service` | unverändert (Timer-getrieben) | kein Problem gefunden |
-| `geni-muster.service` + `.timer` | weiterhin tot | 31,5-Mio-Dateien-Problem, Daniel-Entscheidung ausstehend |
+| `geni-muster.service` + `.timer` | **repariert, Timer aktiv** (Update 2026-07-21 später) | Checkpoint-Fix (siehe oben) — läuft jetzt automatisch alle 2h |
 | ufw: 8445, 8450-8455 | geöffnet | Firewall-Lücke bei Wesen-Vaults geschlossen |
+
+## Update 2026-07-22: /root/.git-Bloat bereinigt (git-filter-repo)
+
+Auf Daniels Wort "jetzt durchgehen" (Fortsetzung der Aufräum-Session vom Vortag) den dritten offenen Punkt angegangen: `/root/.git` war auf **77GB** angewachsen (568 Commits).
+
+**Root Cause:** `werkraum_tools_models/` (Symlink/Bind auf `werkraum/tools/models/`, u.a. das 30GB `hauhaucs_q6`-Modell und die inzwischen gelöschten Bild-Generierungs-Modelle) und `.local/share/claude/versions/` (viele CLI-Versionen, je ~250-270MB) wurden über die gesamte Historie hinweg im äußeren `/root`-Repo mitcommittet — ein reines lokales Backup-Repo ohne Remote, kein Push-Risiko. Per `git rev-list --objects --all` + `cat-file --batch-check` verifiziert: 77GB roh, größtenteils (72GB) `werkraum_tools_models/`.
+
+**Vorgehen (Sicherheitsreihenfolge, damit der Rewrite keine aktiv genutzten Dateien anfassen kann):**
+1. Volles `tar`-Backup von `/root/.git` nach `/root/system-backups/root-git-backup-vor-filter-repo-2026-07-22.tar` (77GB) — bleibt vorerst liegen, ist selbst per `.gitignore` von künftigen Commits ausgeschlossen.
+2. `git-filter-repo` installiert (`apt-get install git-filter-repo`, pip scheiterte an PEP-668-externally-managed-environment).
+3. **Erst** `werkraum_tools_models/` und `.local/share/claude/versions/` per `git rm -r --cached` aus dem Index genommen (Dateien bleiben physisch erhalten — verifiziert per `ls -la`, u.a. das aktiv vom `llama-hauhaucs-hintergrund.service` genutzte 30GB-Modell unverändert), `.gitignore` ergänzt, committet. Grund für diese Reihenfolge: `git filter-repo` aktualisiert am Ende den Working-Tree-Checkout auf den neuen HEAD — wenn diese Pfade zu dem Zeitpunkt noch getrackt gewesen wären, hätte das die physischen Dateien löschen können (inkl. des laufenden Modells).
+4. Alle sonstigen zu dem Zeitpunkt offenen Änderungen im Repo (Logs, Session-Dateien, u.a.) ebenfalls als Sicherheits-Commit committet — aus demselben Grund: ein dirty Working Tree riskiert bei `git filter-repo --force` verlorene uncommittete Änderungen.
+5. `git filter-repo --force --invert-paths --path werkraum_tools_models --path .local/share/claude/versions` — 570 Commits verarbeitet, 47,9s Laufzeit.
+6. Verifiziert: `.git` 77GB → **2,3GB**, `hauhaucs_q6`-Modell unverändert (Dateigröße/mtime identisch), `llama-hauhaucs-hintergrund.service` weiterhin aktiv, `.local/share/claude/versions/` inkl. aktueller CLI-Version vorhanden, `git log` 570 Commits intakt.
+7. `git fsck --full` zeigte danach Fehler beim Lesen alter Commit-Hashes aus der `commit-graph`-Cache-Datei (erwartete Nebenwirkung — die Datei referenzierte noch die alten, jetzt ungültigen Hashes von vor dem Rewrite). Behoben durch Löschen + `git commit-graph write --reachable`. Danach `git fsck --full` sauber, keine Fehler.
+
+**Ergebnis:** ~75GB dauerhaft freigegeben, Historie integer, keine aktiv genutzten Dateien angefasst. Backup-Tar (77GB) liegt vorerst weiter in `/root/system-backups/` als Sicherheitsnetz — Löschung erst nach Daniels Freigabe, da es aktuell selbst wieder ~13% der Root-Partition belegt.
