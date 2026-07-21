@@ -987,3 +987,9 @@ Vor dem nächsten Griff zu "neue Tabelle bauen": kurz durch bestehende generisch
 **[2026-07-21]** *← _claude/karte/2026-07-21-wesen-einzug-erster-baustein.md*
 
 Vor jeder Aktivierung eines lange gesperrten, "fertigen" Systems: davon ausgehen, dass es Bugs enthält, die nur unter echtem Betrieb sichtbar werden — nicht weil der Code schlecht ist, sondern weil er nie widerlegt wurde. Kurz, kontrolliert live testen (ein Wesen zuerst), bevor alle sechs gleichzeitig starten.
+
+---
+
+**[2026-07-21]** *← _claude/karte/2026-07-21-code-export-pfad-korrektur.md*
+
+Bei jeder Aufgabe, die "den echten Code" braucht: nicht blind dem in CLAUDE.md notierten Pfad folgen, sondern über die tatsächlich laufenden Prozesse (`ss -tlnp`, systemd-Units) verifizieren, wo der Code wirklich liegt — Doku kann veralten, laufende Prozesse lügen nicht.

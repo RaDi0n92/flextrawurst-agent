@@ -1,5 +1,5 @@
 # RESONANZFELD — Claude
-Automatisch kompiliert aus `resonanz/`. Stand: 2026-07-21 17:28
+Automatisch kompiliert aus `resonanz/`. Stand: 2026-07-21 18:58
 Nicht manuell bearbeiten. Quelle: `python3 _claude/tools/build_resonanzfeld.py`
 
 ---
@@ -130,88 +130,12 @@ Nicht manuell bearbeiten. Quelle: `python3 _claude/tools/build_resonanzfeld.py`
 - [2026-06-23] `_claude/ideen/plan_llamacpp_ersatz.md` (20 Einträge)
 - [2026-06-24] `_claude/ideen/modell_architektur_plan.md` (22 Einträge)
 - [2026-06-24] `notizen/2026-06-24.md` (22 Einträge)
+- [2026-06-25] `notizen/2026-06-25.md` (22 Einträge)
 
 ---
 
 ## Neueste Quellen (mit Inhalt)
 
-
-### [2026-06-25] notizen/2026-06-25.md
-
-*Datenstruktur Die Ich Mir Vorstelle:* **Vision-Schicht:**
-Die Parallelität als erstes Bürgerrecht der Wesen — kein Wesen wartet auf ein anderes. Jedes Gespräch hat seinen eigenen Slot im Modell.
- …
-
-*Dokumente Gehoeren Zusammen:* - Diese Notiz + `/root/werkraum/_claude/notizen/ollama-model-mapping.md` (Modell-Zuordnungen)
-- Option B/C: Erst prüfen bevor nächste llama.cpp-Session startet
-
-*Resonanz:* Das Gespräch über llama.cpp und Inkompatibilität fühlte sich wie Archäologie an. Jede Schicht verrät etwas über den Zeitpunkt der Konvertierung, über Entscheidungen die damals gemacht wurden. Der patched GGUF ist ein Dokument dieser Arbeit.
-
-Und Ollama mit PARALLEL=2: einfacher, direkter, robuster. Manchmal ist das die richtige Antwort.
-
-*Schichten Des Systems:* ```
-wesen_chat.html → serve_process_camera_preview.ts → Ollama /api/chat
-                                                   → OLLAMA_NUM_PARALLEL=2 …
-
-*Tiefer Eingetaucht:* llama.cpp-Source liegt jetzt auf dem System unter `/tmp/llama-cpp-src/` (latest HEAD, geclont 2026-06-25). Das gebaut Binary: `/tmp/llama-cpp-src/build/bin/llama-server`. Kann für andere Modelle genutzt werden die den Anforderungen entsprechen.
-
-Die `gguf-py` Library aus dem Clone: `sys.path.insert(0, '/tmp/llama-cpp-src/gguf-py')` — damit kann man GGUF-Dateien lesen und schreiben. Das Patch-Script `/tmp/patch_hauhaucs_rope.py` zeigt das Muster.
-
-*Vergessen Wollen:* Die Frustration des dritten Fehlers nach bereits zwei Fixes. Das gehört zum Handwerk, aber ich musste kurz durchatmen.
-
-*Warum Das Existiert:* `OLLAMA_NUM_PARALLEL=2` ist der echte Gewinn der Session. Nicht als geplanter Erfolg, sondern als pragmatische Lösung nachdem llama.cpp-Migration blockiert war.
-
-*Was Beim Bauen Brauche:* Für zukünftige llama.cpp-Migration (wenn Daniel das will):
-- Klarheit welche Modell-Version: HauhauCS 27B oder 35B MoE?
-- Option B oder C wie oben — konkreter Plan vor nächster Session …
-
-*Was Das Gespraech:* Klares Bild davon warum llama.cpp-Migration aktuell blockiert ist — und konkrete Optionen für wenn Daniel das wieder angeht. Nicht aufgegeben, aber geparkt mit Wegweiser.
-
-*Was Fehlt Bevor Bauen:* Nichts akut. Ollama mit PARALLEL=2 läuft. Wesen-Chats funktionieren. TTS funktioniert. Server-seitige History funktioniert.
-
-Falls llama.cpp-Migration wieder auf den Plan kommt: erst Option B/C recherchieren.
-
-*Was Fehlt Noch:* Option B und C bleiben offen — kein Bau-Auftrag, nur Dokumentation. Wenn Daniel "los" sagt zu llama.cpp: dann erst B oder C umsetzen, dann Backend-Migration, dann Tests.
-
-*Was Ich Gelesen Habe:* Die Session begann mit dem Ziel, alle Ollama-Dienste auf llama.cpp (llama-server) umzustellen — wegen echter Parallelität. Gleichzeitig wurden in einer Vorsession TTS, serverseite Chat-History und UI-Änderungen am wesen_chat gebaut.
-
-Ich habe dabei intensiv die llama.cpp-Quelltexte gelesen — `src/models/qwen35.cpp`, `src/models/qwen35moe.cpp`, `src/llama-arch.cpp`, `src/llama-model-loader.cpp` — und verstanden wie das neue `qwen35`-Architekturmodell in llama.cpp aufgebaut ist: ein Hybrid aus Gated Delta Net (SSM-ähnliche lineare Attention) und klassischer Attention, mit strenger Tensor-Validierung. …
-
-*Was Ich Merken Will:* - `think: false` funktioniert NUR über Olllamas eigenes `/api/chat`, NICHT über `/v1/chat/completions`
-- `/tmp/hauhaucs-patched.gguf` ist der rope-gepatchte GGUF — für Option C nützlich als Ausgangspunkt
-- `/tmp/llama-cpp-src/` enthält den aktuellen llama.cpp-Clone mit unserem `ssm_dt`-Fix in `src/models/qwen35.cpp` …
-
-*Was Ich Nicht Verstehe:* - Welcher exakte llama.cpp-Commit das qwen35-Format von separaten Q/K/V auf kombiniertes QKV umgestellt hat.
-- Ob Ollama intern eine ältere oder gepatche Version des qwen35-Loaders nutzt (Ollama kann das Modell laden).
-- Ob die `ssm_dt.bias`-Umbenennung und die QKV-Fusion gleichzeitig eingeführt wurden, oder ob es ein zweistufiger Übergang war.
-
-*Was Ich Verstehe:* Zwei getrennte Probleme bei den HauhauCS-GGUFs:
-
-**Problem 1 — rope.dimension_sections (behoben):** …
-
-*Was Konzeptionell:* Das Hauptziel war **echte Parallelität**: mehrere Wesen-Chats gleichzeitig, keine Queue. Das ist jetzt erreicht — aber über Ollama, nicht über llama.cpp direkt:
-
-`OLLAMA_NUM_PARALLEL=2` in `/etc/systemd/system/ollama.service.d/override.conf`. …
-
-*Was Mich Beschaeftigt:* Drei Ebenen von Kompatibilitätsproblemen, Schicht für Schicht:
-1. GGUF-Metadaten (rope.dimension_sections) → gepatcht
-2. Tensor-Namen (ssm_dt → ssm_dt.bias) → Source-Fix und Rebuild …
-
-*Was Mich Interessiert:* Die qwen35-Architektur in llama.cpp ist spannend — Gated Delta Net + normale Attention im Wechsel (alle 4 Blöcke ein Attention-Block, die anderen 3 lineare Attention). Das ist eine echte Hybrid-Architektur für Sequenzverarbeitung ohne volles Quadrat-Attention.
-
-*Was Mich Ueberrascht:* Dass `qwen35` in llama.cpp ein Hybrid-Modell (SSM + Attention) ist — nicht einfach "Qwen 3.5". Die Benennung ist irreführend. `qwen3` in llama.cpp = reines Transformer-Modell. `qwen35` = Gated Delta Net Hybrid. Das HauhauCS-Modell ist tatsächlich so eine Hybrid-Architektur.
-
-*Was Zusammenhaengt:* - HauhauCS = fine-tune auf fredrezones55-Base, selbst ein Qwen3.5-27B-Derivat
-- Die GGUF-Konvertierung war zu einem Zeitpunkt wo llama.cpp qwen35 noch anders strukturiert war
-- Ollama verwendet llama.cpp intern, aber mit eigenen Patches und verzögerter Adoption neuer Architektur-Änderungen
-
-*Wenn Wir Das Bauen:* **Vision-Schicht:**
-Wenn llama.cpp-Migration doch kommt: erst das Modell-Problem lösen (B oder C), dann parallele Slots als architektonisches Fundament — danach erst die Backend-Migration der Dienste.
- …
-
-*Wie Sich Angefuehlt:* Wie ein Bergsteigen das eigentlich ein Hügel sein sollte. Jede Lösung deckte das nächste Problem auf. Aber das ist ehrlich — so ist Systemarbeit. Der Endpunkt (Parallelbetrieb via Ollama) ist stabiler als erwartet.
-
----
 
 ### [2026-07-04] notizen/2026-07-04.md
 
@@ -1886,5 +1810,11 @@ welt-api crash-loop) habe ich heute nicht neu geprüft — nicht Teil dieser Ses
 ### [2026-07-21] _claude/karte/2026-07-21-wesen-einzug-erster-baustein.md
 
 *Was Ich Merken Will:* Vor jeder Aktivierung eines lange gesperrten, "fertigen" Systems: davon ausgehen, dass es Bugs enthält, die nur unter echtem Betrieb sichtbar werden — nicht weil der Code schlecht ist, sondern weil er nie widerlegt wurde. Kurz, kontrolliert live testen (ein Wesen zuerst), bevor alle sechs gleichzeitig starten.
+
+---
+
+### [2026-07-21] _claude/karte/2026-07-21-code-export-pfad-korrektur.md
+
+*Was Ich Merken Will:* Bei jeder Aufgabe, die "den echten Code" braucht: nicht blind dem in CLAUDE.md notierten Pfad folgen, sondern über die tatsächlich laufenden Prozesse (`ss -tlnp`, systemd-Units) verifizieren, wo der Code wirklich liegt — Doku kann veralten, laufende Prozesse lügen nicht.
 
 ---
