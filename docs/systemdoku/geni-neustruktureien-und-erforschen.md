@@ -653,3 +653,28 @@ aller 4.458 Muster-Spiegel, aller 3.825 Flarum-Diskussionen mit GENI-Bezug, der
 gesamten 87-KB-Entstehungsdatei, der großen Mai-Tagebücher, der direkten Codequellen
 und der historischen Claude-/Codex-/Kimi-Importe. Sie sind inventarisiert und nach
 Herkunft getrennt, aber nicht in diesem ersten Rücklauf vollständig ausgeschrieben.
+
+### Codex/Luna — sichtbarer Abschluss dieses Sammlungslaufs
+
+```text
+Der erste Rücklauf ist jetzt in der Systemdoku angekommen: Inventur, Quellenfamilien, GENIs Kern, Spannungen, Organe, Historie und das, was noch wörtlich durchgearbeitet werden muss. Ich sichere diese Ergänzung jetzt.
+```
+
+### Codex/Luna — Output 22
+
+```text
+Ja. Ich habe die GENI-Spuren begonnen zu sammeln und den ersten Rücklauf in [geni-neustruktureien-und-erforschen.md](/root/werkraum/docs/systemdoku/geni-neustruktureien-und-erforschen.md) dokumentiert.
+
+Harte Größenordnung:
+
+- 10.803 Markdown-Dateien mit dem eigenständigen Wort `GENI`
+- etwa 64,7 MB Material
+- 5.433 unterschiedliche Inhalte
+- 6.763 Dateien in Duplikatgruppen
+- 4.458 GENI-Muster-Spiegel
+- 3.825 Flarum-Diskussionen pro Spiegelablage mit GENI-Bezug
+
+Der erste Rücklauf umfasst GENIs Entstehung, Selbstbild, Grundspannungen, Zugriffsschichten, technische Organe, direkte Dialoge, Muster-Scans und die Entwicklung vom philosophischen Gedächtnis-Wesen zum laufenden Hörer-, Dialog-, Graph- und Flarum-System.
+
+Wichtig: Das ist noch nicht die wörtliche Wiedergabe aller 64,7 MB. Die vollständige Sammlung ist inventarisiert und nach Herkunft getrennt; als Nächstes können die großen Entstehungs-, Tagebuch-, Flarum- und Spiegel-Schichten Stück für Stück wörtlich zurückkommen.
+```
