@@ -46,6 +46,14 @@ LOOP_PAUSE = 4          # Sekunden zwischen Aktionen
 LLM_TIMEOUT = 180       # Sekunden Timeout für Ollama
 MAX_TEXT_CHARS = 2000   # Max Zeichen Seitentext für LLM
 
+# Mechanische Bewegung ohne LLM-Call (2026-07-22, Daniels Auftrag -- Pilot nur Schorschel,
+# siehe _claude/ideen/wesen_dauerhafte_handlungsfaehigkeit_und_einsichtsnebenscreen.md).
+# Grund: bisher macht JEDER Tick (alle LOOP_PAUSE=4s) einen echten LLM-Call -- Hauptursache
+# der dokumentierten LLM-Slot-Kontention bei 7 gleichzeitigen Wesen. Verhaeltnis 1:3 ist eine
+# erste, nicht kalibrierte Annahme -- erst beobachten wie es sich anfuehlt, dann justieren.
+MECHANISCH_AKTIVE_WESEN = {"Schorschel"}
+MECHANISCHE_SCHRITTE_PRO_ENTSCHEIDUNG = 3
+
 # API-Keys — werden beim Start aus DB geladen
 ENTITY_KEYS = {
     "Schorschel": "58cd9f4a-5bad-4981-bb1f-6a0cffcc0b99",
@@ -354,6 +362,26 @@ def parse_output(text: str) -> tuple[str, str, str]:
     entscheidung = zeilen.get("ENTSCHEIDUNG", "nachdenken")
     begruendung = zeilen.get("BEGRÜNDUNG", "")
     return gedanke, entscheidung, begruendung
+
+
+def waehle_mechanische_aktion(seite: dict) -> str:
+    """Rein mechanische Aktionswahl, KEIN LLM-Call -- Pilot fuer 'dauerhafte
+    Handlungsfaehigkeit' (Daniels Auftrag 2026-07-22, vorerst nur Schorschel, siehe
+    MECHANISCH_AKTIVE_WESEN). Bewusst simpel: gewichteter Zufall zwischen Scrollen und
+    Klicken auf ein sichtbares, klickbares Element aus der bereits von lese_seite()
+    gelesenen Liste. Kein Interessens-Abgleich hier -- das ist Aufgabe von 'billigem
+    Vorlesen' (vorlese_daemon.py), diese Funktion kennt nur was auf dem Bildschirm steht,
+    nicht was das Wesen interessiert. Gibt einen String im bestehenden ENTSCHEIDUNG-Format
+    zurueck, damit fuehre_aktion_aus() unveraendert wiederverwendet werden kann."""
+    import random
+    elemente = seite.get("elemente") or []
+    wuerfel = random.random()
+    if elemente and wuerfel < 0.35:
+        return f"klicke:{random.choice(elemente)}"
+    elif wuerfel < 0.75:
+        return "scrolle:unten"
+    else:
+        return "scrolle:oben"
 
 
 def fuehre_aktion_aus(page, entscheidung: str, entity_id: str, conn=None) -> tuple[str, str | None, tuple[float, float] | None]:
@@ -1010,6 +1038,23 @@ def haupt_loop(entity_id: str):
             # 2. Cursor an der zuletzt bekannten Position -- reines DOM-Element,
             # landet damit automatisch im rrweb-Live-Spiegel (kein separater Schritt noetig)
             zeige_cursor(page, cursor_pos[0], cursor_pos[1])
+
+            # 2b. Mechanischer Zwischenschritt (2026-07-22, Pilot nur Schorschel): kein
+            # LLM-Call, kein Denklog-Eintrag, kein Vorlese-Abgleich -- die echte LLM-
+            # Entscheidung kommt nur an jedem MECHANISCHE_SCHRITTE_PRO_ENTSCHEIDUNG-ten Tick.
+            # Andere 6 Wesen unveraendert (mechanisch_aktiv bleibt False fuer sie).
+            mechanisch_aktiv = entity_id in MECHANISCH_AKTIVE_WESEN
+            ist_llm_tick = (not mechanisch_aktiv) or (tick % MECHANISCHE_SCHRITTE_PRO_ENTSCHEIDUNG == 0)
+            if not ist_llm_tick:
+                aktion = waehle_mechanische_aktion(seite)
+                _zustand, _, neue_cursor_pos = fuehre_aktion_aus(page, aktion, entity_id, conn)
+                if neue_cursor_pos is not None:
+                    cursor_pos = neue_cursor_pos
+                log.info("%s [mechanisch %d/%d] → %s", entity_id,
+                         tick % MECHANISCHE_SCHRITTE_PRO_ENTSCHEIDUNG,
+                         MECHANISCHE_SCHRITTE_PRO_ENTSCHEIDUNG, aktion)
+                time.sleep(LOOP_PAUSE)
+                continue
 
             # 3. Andere Wesen status + billiges Vorlesen (guenstige Funde seit letztem Tick)
             andere = hole_andere_wesen_status(conn, entity_id)
