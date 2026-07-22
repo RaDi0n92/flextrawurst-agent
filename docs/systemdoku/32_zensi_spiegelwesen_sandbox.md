@@ -82,6 +82,13 @@ Sie kann die Klonstruktur jedes Wesens (6 namelessAI-Entitäten, `dak+gord-syste
   - **Schichten-Toggles (👁️ / 🙈):** Ermöglicht das gezielte Deaktivieren / Ausblenden einzelner Schichten (z. B. Flarum RAG oder Postgres-Sedimente) aus dem Kontext.
   - **Direct Edit:** Inhalt jedes Bausteins kann direkt in der UI manipuliert werden.
 
+### 6. Zensi Obsidian Vault, Chat File-Reading & Outputsystem Exporter
+- **Vault-Pfad:** `/root/zensi/obsidian_vault/` (eigenständiger Obsidian-Vault inkl. `.obsidian/app.json`).
+- **Aktives Chat File-Reading:** Reicht Daniel im Chat eine Datei oder Notiz rein (z. B. `[[2026-07-22_drei_fundstücke_dreiergespann_zensi_sterben.md]]` oder `Lies datei: xyz.md`), sucht Zensi automatisch im Zensi-Vault und allen Werkraum-Spiegelordnern (`_gemini/`, `_codex/`, `_claude/`, `wissen/`), liest den Inhalt live aus und speist ihn als `=== 📖 VOM MENSCHEN REINGEREICHTE OBSIDIAN-DATEI ===` in den LLM-Kontext ein.
+- **Wesen Outputsystem Exporter:** Fordert Daniel ein Wesen auf, etwas in eine Markdown-Datei zu schreiben (oder nutzt das Wesen den Marker `[[SCHREIBE_DATEI: dateiname.md | inhalt]]`), speichert Zensi die Datei automatisch unter:
+  `/root/zensi/obsidian_vault/outputsystem/<wesen_id>/<aktive_version_oder_geist>/<YYYY-MM-DD_HH-MM-SS>_<dateiname>.md`
+  mit vollständigem Obsidian Frontmatter (Datum, Autor-Wesen, Modus, Version/Geist, Pfad).
+
 ---
 
 ## Status & Verifikation
@@ -92,4 +99,5 @@ Sie kann die Klonstruktur jedes Wesens (6 namelessAI-Entitäten, `dak+gord-syste
 - POST `/zensi/api/spiegeln` verifiziert (lädt z.B. Resonanzknoten mit echtem Systemprompt & `wesen.md`)
 - REST-APIs für Aufgaben-Engine (`/zensi/api/aufgaben/start`, `/zensi/api/aufgaben/tick`, `/zensi/api/aufgaben/liste`) live verifiziert.
 - REST-APIs & Web-UI für Schichten-Inspector (`/zensi/api/schichten`, `/zensi/api/schichten/update`, `/zensi/api/versionen/speichern`) live verifiziert.
+- Zensi Obsidian Vault, Chat File-Reading & `outputsystem/` Exporter live verifiziert.
 
