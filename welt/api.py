@@ -6578,6 +6578,46 @@ def entity_thinking(entity_id: str, limit: int = Query(default=10, le=50)):
         conn.close()
 
 
+@app.get("/entities/{entity_id}/linsen")
+def entity_linsen_status(entity_id: str, fenster: int = Query(default=50, le=200)):
+    """2026-07-22 (Sieben-Linsen-Koerper, siehe _claude/ideen/sieben_linsen_koerper_kreatur.md):
+    reale, bereits vorhandene entscheidung-Praefixe aus entity_thinking_log gebuendelt pro
+    Linse -- kein neuer Datenerzeuger, nur eine Aggregation. Vault=obsidian_*, RAG/Flarum=
+    rag_erkund*+flarum_besuchen, DOM=klicke/tippe/navigiere/scrolle (der Koerper selbst
+    bewegt sich ja schon dafuer, hier nur als Zaehler mitgeliefert). Gedaechtnis-Tiefe =
+    Gesamtzahl aller bisherigen Ticks (waechst nur, kein erfundener Wert). Gegenwart-Anteil
+    = Anteil reiner DOM-Aktionen ohne Vault/RAG/Flarum-Bezug am Fenster -- je hoeher, desto
+    mehr Hier-und-Jetzt statt Erinnerung/Vault. Sozial-Linse bewusst NICHT hier: die noetigen
+    Daten (andere-Wesen-Sichtbarkeit, Resonanzen) leben in anderen Tabellen, eigener
+    Nachtrag noetig falls gewuenscht -- nicht miterfunden."""
+    conn = get_conn()
+    try:
+        with conn.cursor() as cur:
+            cur.execute("""
+                SELECT entscheidung FROM entity_thinking_log
+                WHERE entity_id = %s ORDER BY tick_at DESC LIMIT %s
+            """, (entity_id, fenster))
+            entscheidungen = [r["entscheidung"] or "" for r in cur.fetchall()]
+            cur.execute("SELECT COUNT(*) AS n FROM entity_thinking_log WHERE entity_id = %s", (entity_id,))
+            gedaechtnis_tiefe = cur.fetchone()["n"]
+        vault = sum(1 for e in entscheidungen if e.startswith("obsidian_"))
+        rag_flarum = sum(1 for e in entscheidungen if e.startswith("rag_erkund") or e.startswith("flarum_besuchen"))
+        dom = sum(1 for e in entscheidungen if e.startswith(("klicke", "tippe", "navigiere", "scrolle")))
+        gesamt_bewertet = vault + rag_flarum + dom
+        gegenwart_anteil = (dom / gesamt_bewertet) if gesamt_bewertet else 0.0
+        return {
+            "entity_id": entity_id,
+            "fenster": len(entscheidungen),
+            "vault": vault,
+            "rag_flarum": rag_flarum,
+            "dom": dom,
+            "gedaechtnis_tiefe": gedaechtnis_tiefe,
+            "gegenwart_anteil": round(gegenwart_anteil, 3),
+        }
+    finally:
+        conn.close()
+
+
 @app.get("/entities/{entity_id}/denkstrom")
 def entity_denkstrom_aktuell(entity_id: str):
     """Gibt den aktuellen Denkstrom-Buffer zurück (polling-basiert)."""

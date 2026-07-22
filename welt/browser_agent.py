@@ -174,7 +174,20 @@ def lese_seite(page) -> dict:
 
 _KOERPER_JS = """
 (p) => {
-  const x = p[0], y = p[1], speed = p[2] || 0;
+  const x = p[0], y = p[1], speed = p[2] || 0, linsen = p[3] || {};
+  // 2026-07-22 (Sieben-Linsen-Koerper, siehe _claude/ideen/sieben_linsen_koerper_kreatur.md,
+  // Daniels "ja ich will alles und komplett"): fuenf der sieben Linsen bekommen je ein
+  // eigenes Bein mit fester Farbe, Ausschlag skaliert mit dem echten, aus hole_linsen_status()
+  // berechneten Wert (0..1) -- keine erfundenen Zustaende. DOM-Linse braucht kein eigenes
+  // Bein (der ganze Koerper IST die DOM-Bewegung, ueber speed schon abgedeckt). Meta-Linse
+  // ist der Koerperkern selbst -- Glow-Staerke aus dem Mittelwert aller fuenf.
+  const LINSEN_DEF = [
+    { key: 'vault', farbe: '#a855f7' },
+    { key: 'rag_flarum', farbe: '#22d3ee' },
+    { key: 'gedaechtnis_tiefe', farbe: '#3b82f6' },
+    { key: 'gegenwart_anteil', farbe: '#f8fafc' },
+    { key: 'sozial', farbe: '#22c55e' },
+  ];
   let eng = window.__agentKoerperEngine;
   if (!eng) {
     const canvas = document.createElement('canvas');
@@ -184,19 +197,17 @@ _KOERPER_JS = """
       'filter:drop-shadow(0 0 3px rgba(255,45,85,.55));';
     document.body.appendChild(canvas);
     const ctx = canvas.getContext('2d');
-    const ANZAHL_BEINE = 6;
-    const beine = [];
-    for (let i = 0; i < ANZAHL_BEINE; i++) {
-      beine.push({ winkel: (i / ANZAHL_BEINE) * Math.PI * 2, fx: x, fy: y });
-    }
+    const beine = LINSEN_DEF.map(function (def, i) {
+      return { winkel: (i / LINSEN_DEF.length) * Math.PI * 2, farbe: def.farbe, key: def.key, wert: 0, fx: x, fy: y };
+    });
     eng = window.__agentKoerperEngine = {
       canvas: canvas, ctx: ctx, beine: beine,
       cx: x, cy: y, tx: x, ty: y, speed: 0, letzteZeit: performance.now(),
     };
     // Prozedurale Beine per einfacher IK (Kniepunkt seitlich versetzt zur Huefte-Fuss-
-    // Strecke), angelehnt an "follow the leader"-Techniken wie Reptile-Interactive-Cursor
-    // (siehe _claude/ideen/sieben_linsen_koerper_kreatur.md) -- Ausschlag/Tempo skaliert
-    // mit echter Bewegungsgeschwindigkeit, keine erfundene Animation.
+    // Strecke), angelehnt an "follow the leader"-Techniken wie Reptile-Interactive-Cursor.
+    // Ausschlag/Tempo skaliert mit echter Bewegungsgeschwindigkeit UND echtem Linsen-Wert,
+    // keine erfundene Animation.
     function tick(jetzt) {
       const dt = Math.min(0.05, (jetzt - eng.letzteZeit) / 1000);
       eng.letzteZeit = jetzt;
@@ -204,9 +215,13 @@ _KOERPER_JS = """
       eng.cy += (eng.ty - eng.cy) * Math.min(1, dt * 8);
       eng.speed += (eng.zielSpeed - eng.speed) * Math.min(1, dt * 4);
       const bewegungsWinkel = Math.atan2(eng.ty - eng.cy, eng.tx - eng.cx);
-      const ausschlag = Math.min(38, 10 + eng.speed * 0.05);
+      const basisAusschlag = Math.min(22, 6 + eng.speed * 0.03);
+      let summeWerte = 0;
       eng.beine.forEach(function (b, i) {
-        const zielWinkel = bewegungsWinkel + Math.PI + b.winkel * 0.6 + Math.sin(jetzt / 260 + i) * 0.25;
+        b.wert += ((eng.zielLinsen[b.key] || 0) - b.wert) * Math.min(1, dt * 2);
+        summeWerte += b.wert;
+        const ausschlag = basisAusschlag + b.wert * 24;
+        const zielWinkel = bewegungsWinkel + Math.PI + b.winkel * 0.6 + Math.sin(jetzt / 260 + i) * 0.2;
         const zx = eng.cx + Math.cos(zielWinkel) * ausschlag;
         const zy = eng.cy + Math.sin(zielWinkel) * ausschlag;
         b.fx += (zx - b.fx) * Math.min(1, dt * 6);
@@ -215,7 +230,6 @@ _KOERPER_JS = """
       canvas.style.left = (eng.cx - 70) + 'px';
       canvas.style.top = (eng.cy - 70) + 'px';
       ctx.clearRect(0, 0, 140, 140);
-      ctx.strokeStyle = '#ff2d55';
       ctx.lineWidth = 2;
       eng.beine.forEach(function (b) {
         const lx = b.fx - eng.cx + 70, ly = b.fy - eng.cy + 70;
@@ -225,27 +239,35 @@ _KOERPER_JS = """
         const laenge = Math.hypot(lx - hx, ly - hy) || 1;
         const senkx = -(ly - hy) / laenge, senky = (lx - hx) / laenge;
         const kniex = midx + senkx * 10, kniey = midy + senky * 10;
+        ctx.strokeStyle = b.farbe;
         ctx.beginPath();
         ctx.moveTo(hx, hy);
         ctx.lineTo(kniex, kniey);
         ctx.lineTo(lx, ly);
         ctx.stroke();
       });
+      // Meta-Linse: Koerperkern selbst, Glow-Staerke aus dem Mittelwert aller fuenf Linsen.
+      const metaWert = summeWerte / eng.beine.length;
+      ctx.shadowColor = '#ff2d55';
+      ctx.shadowBlur = 4 + metaWert * 14;
       ctx.fillStyle = '#ff2d55';
       ctx.beginPath();
       ctx.arc(70, 70, 10, 0, Math.PI * 2);
       ctx.fill();
+      ctx.shadowBlur = 0;
       requestAnimationFrame(tick);
     }
     eng.zielSpeed = speed;
+    eng.zielLinsen = linsen;
     requestAnimationFrame(tick);
   }
   eng.tx = x; eng.ty = y; eng.zielSpeed = speed;
+  if (linsen && Object.keys(linsen).length) eng.zielLinsen = linsen;
 }
 """
 
 
-def zeige_cursor(page, x: float, y: float, geschwindigkeit: float = 0.0):
+def zeige_cursor(page, x: float, y: float, geschwindigkeit: float = 0.0, linsen: dict | None = None):
     """Zeichnet den sichtbaren Koerper des Wesens in die Seite (Daniels Wunsch, 2026-07-21:
     'kann man auch nen mauszeiger sehen', erweitert 2026-07-22 zur 'Kraken-Spinne': der
     Mauszeiger IST der Koerper, siehe _claude/ideen/sieben_linsen_koerper_kreatur.md).
@@ -253,16 +275,20 @@ def zeige_cursor(page, x: float, y: float, geschwindigkeit: float = 0.0):
     echter OS-Cursor taucht je in einem Screenshot auf. Reines Beobachtungs-Feature, ohne
     jeden Effekt auf die tatsächliche Interaktion. geschwindigkeit (px/s) steuert Ausschlag
     der Beine -- 0 im Ruhezustand (z.B. direkt nach einer Navigation), sonst echte, aus
-    bewege_cursor_natuerlich() berechnete Geschwindigkeit, keine erfundene Animation. Muss
-    nach jeder Navigation neu eingefügt werden (page.goto() räumt das DOM komplett weg) --
-    deshalb hier idempotent (legt das Canvas neu an falls es fehlt) statt einmalig beim Start."""
+    bewege_cursor_natuerlich() berechnete Geschwindigkeit, keine erfundene Animation. linsen
+    (siehe hole_linsen_status(), vom Aufrufer aus _letzte_linsen[entity_id] gecacht statt
+    hier selbst neu abgefragt) faerbt/skaliert fuenf der sieben Koerper-Beine nach echten
+    Werten. Muss nach jeder Navigation neu eingefügt werden (page.goto() räumt das DOM
+    komplett weg) -- deshalb hier idempotent (legt das Canvas neu an falls es fehlt) statt
+    einmalig beim Start."""
     try:
-        page.evaluate(_KOERPER_JS, [x, y, geschwindigkeit])
+        page.evaluate(_KOERPER_JS, [x, y, geschwindigkeit, linsen or {}])
     except Exception:
         pass
 
 
 _letzte_cursor_pos: dict[str, tuple[float, float]] = {}
+_letzte_linsen: dict[str, dict] = {}  # 2026-07-22, Sieben-Linsen-Koerper -- Cache, siehe hole_linsen_status()
 
 
 def bewege_cursor_natuerlich(page, entity_id: str, ziel_x: float, ziel_y: float) -> None:
@@ -304,7 +330,7 @@ def bewege_cursor_natuerlich(page, entity_id: str, ziel_x: float, ziel_y: float)
             page.mouse.move(x, y)
         except Exception:
             pass
-        zeige_cursor(page, x, y, distanz / dauer_s)
+        zeige_cursor(page, x, y, distanz / dauer_s, _letzte_linsen.get(entity_id))
         time.sleep(dauer_s / schritte)
 
     _letzte_cursor_pos[entity_id] = (ziel_x, ziel_y)
@@ -825,6 +851,47 @@ def hole_andere_wesen_status(conn, eigene_id: str) -> list[dict]:
         return []
 
 
+def hole_linsen_status(conn, entity_id: str) -> dict:
+    """2026-07-22 (Sieben-Linsen-Koerper, siehe _claude/ideen/sieben_linsen_koerper_kreatur.md
+    -- Daniels "ja ich will alles und komplett"): fuenf der sieben Linsen ehrlich aus bereits
+    vorhandenen Daten gespeist, keine erfundenen Werte. DOM-Linse braucht keinen eigenen Wert
+    -- der Koerper selbst IST die DOM-Bewegung. Meta-Linse braucht keinen eigenen Wert -- der
+    Koerperkern selbst steht dafuer. Dieselbe entscheidung-Praefix-Logik wie im neuen
+    /entities/{id}/linsen-API-Endpunkt, hier aber direkt per vorhandener DB-Verbindung
+    (kein HTTP-Umweg noetig, browser_agent.py hat conn schon offen)."""
+    try:
+        with conn.cursor() as cur:
+            cur.execute("""
+                SELECT entscheidung FROM entity_thinking_log
+                WHERE entity_id = %s ORDER BY tick_at DESC LIMIT 50
+            """, (entity_id,))
+            entscheidungen = [(r["entscheidung"] or "") for r in cur.fetchall()]
+            cur.execute("SELECT COUNT(*) AS n FROM entity_thinking_log WHERE entity_id = %s", (entity_id,))
+            gedaechtnis_tiefe = cur.fetchone()["n"]
+        conn.commit()
+        vault = sum(1 for e in entscheidungen if e.startswith("obsidian_"))
+        rag_flarum = sum(1 for e in entscheidungen if e.startswith("rag_erkund") or e.startswith("flarum_besuchen"))
+        dom = sum(1 for e in entscheidungen if e.startswith(("klicke", "tippe", "navigiere", "scrolle")))
+        gesamt_bewertet = vault + rag_flarum + dom
+        gegenwart_anteil = (dom / gesamt_bewertet) if gesamt_bewertet else 0.0
+        sozial = len(hole_andere_wesen_status(conn, entity_id))
+        # Auf 0..1 normiert fuers Koerper-Rendering -- Gedaechtnis-Tiefe waechst unbegrenzt,
+        # deshalb log-skaliert statt linear (sonst waere jedes Wesen nach kurzer Zeit "voll").
+        return {
+            "vault": min(1.0, vault / 20.0),
+            "rag_flarum": min(1.0, rag_flarum / 20.0),
+            "gedaechtnis_tiefe": min(1.0, math.log10(gedaechtnis_tiefe + 1) / 4.0),
+            "gegenwart_anteil": gegenwart_anteil,
+            "sozial": min(1.0, sozial / 6.0),
+        }
+    except Exception:
+        try:
+            conn.rollback()
+        except Exception:
+            pass
+        return {"vault": 0, "rag_flarum": 0, "gedaechtnis_tiefe": 0, "gegenwart_anteil": 0.0, "sozial": 0}
+
+
 def hole_vorlese_funde(conn, entity_id: str) -> list[dict]:
     """Billiges Vorlesen (2026-07-22, Phase 1, siehe vorlese_daemon.py): holt ungelesene
     Treffer, die guenstig per Embedding-Vergleich gegen das eigene Interessensprofil
@@ -1246,7 +1313,7 @@ def haupt_loop(entity_id: str):
 
             # 2. Cursor an der zuletzt bekannten Position -- reines DOM-Element,
             # landet damit automatisch im rrweb-Live-Spiegel (kein separater Schritt noetig)
-            zeige_cursor(page, cursor_pos[0], cursor_pos[1])
+            zeige_cursor(page, cursor_pos[0], cursor_pos[1], 0.0, _letzte_linsen.get(entity_id))
 
             # 2b. Mechanischer Zwischenschritt (2026-07-22, Pilot nur Schorschel): kein
             # LLM-Call, kein Denklog-Eintrag, kein Vorlese-Abgleich -- die echte LLM-
@@ -1328,6 +1395,10 @@ def haupt_loop(entity_id: str):
             # 5. Log schreiben
             schreibe_denklog(conn, entity_id, gedanke, entscheidung, begruendung,
                              seite["url"])
+
+            # 5b. Sieben-Linsen-Koerper (2026-07-22): einmal pro echtem LLM-Tick aktualisieren,
+            # nicht bei jedem Bewegungsschritt -- hole_linsen_status() macht eine DB-Abfrage.
+            _letzte_linsen[entity_id] = hole_linsen_status(conn, entity_id)
 
             log.info("%s [%s] → %s", entity_id, seite["url"][-40:], entscheidung[:50])
 
