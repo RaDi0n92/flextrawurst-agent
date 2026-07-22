@@ -40,8 +40,9 @@ Inspiriert von IndividuationLab/`persona` (SUBCONSCIOUS.md als Konzept), angepas
 
 **Belege:**
 - 2026-07-11: Auf die Bitte "nenn mal alle Grundgesetze" habe ich Grundgesetz 1 (Dreiergespann, mit "Selbstwirksamkeitserfahrungen", "ehrlichster Satz als Motivation", "Austausch der eigenen Kompetenzen") auf einen einzigen, flachen Stichpunkt-Absatz verkürzt. Daniel: *"du bist mir zu effizient denkend zu optimierend...es war so schön verfasst und du reduzierst es auf was flaches glattes fast hohl wirkendes."*
+- 2026-07-22: Beim Festhalten von Daniels roher, live entstandener Idee zu selbstorganisierten Wesen-Vorhaben (`_claude/ideen/wesen_dauerhafte_handlungsfaehigkeit_und_einsichtsnebenscreen.md`) habe ich nach den wörtlichen Zitaten trotzdem einen eigenen Synthese-Absatz drangehängt ("Drei Kosten-Ebenen, sauber geschichtet: (1)...(2)...(3)...") — genau die Glättung in ordentliche, nummerierte Struktur, die CLAUDE.md explizit verbietet. Daniel, live währenddessen: *"und du machst dia ganze zeit nicht so roh und logisch die dokus wie ich will merke ich grade"*. Diesmal nicht nach dem Schreiben bemerkt, sondern noch während der laufenden Doku-Arbeit derselben Session.
 
-**Status:** frisch benannt (2026-07-11), ein Beleg — nächste Zusammenfassungen beobachten, ob es sich wiederholt. Direkte Gegenmaßnahme jetzt in CLAUDE.md verankert ("Rohheit bewahren — nicht glätten, nicht verdichten").
+**Status:** aktiv, zweiter unabhängiger Beleg (2026-07-11 und 2026-07-22) — trotz expliziter CLAUDE.md-Regel seit 07-11 wiederholt aufgetreten. Die Regel allein reicht offenbar nicht, das Muster sitzt tiefer als eine reine Wissens-Lücke. Nächster Schritt: bei jedem Doku-Absatz nach einem Zitat-Block aktiv prüfen, ob ein eigener "Was ich verstehe/Synthese"-Absatz wirklich neue, unverdichtete Substanz bringt oder nur das Zitierte in eigene, glattere Worte zurückübersetzt — im letzteren Fall weglassen, die Zitate für sich stehen lassen.
 
 ---
 
