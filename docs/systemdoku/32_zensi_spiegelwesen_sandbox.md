@@ -48,6 +48,25 @@ Sie kann die Klonstruktur jedes Wesens (6 namelessAI-Entitäten, `dak+gord-syste
 - Modus-Toggle (`Klon-Spiegel` vs. `Sandbox`).
 - Sandbox Toolbar mit Live-Sync Status-Badge, Freeze-Button, Snapshot-Erstellung und Live-Übernahme.
 
+### 4. Zensi Aufgaben- & Denkschleifen-Engine (Modelle A, B, C)
+- **Pfad:** `/root/zensi/aufgaben/<session_id>.json`
+- **APIs:**
+  - `POST /zensi/api/aufgaben/start`: Startet autonome Denkschleife (mit `wesen_id`, `modus`, `typ`, `impuls`, `max_ticks`).
+  - `POST /zensi/api/aufgaben/tick`: Führt schrittweise genau 1 Denkschritt aus, verarbeitet Ollama/HauhauCS Antwort, parst Zensi-Marker und wendet Gedächtnis/Container-Änderungen an.
+  - `GET /zensi/api/aufgaben/liste`: Übersicht aller laufenden & beendeten Aufgaben-Sessions.
+  - `POST /zensi/api/aufgaben/stop`: Beendet eine laufende Denkschleife.
+- **Die 3 Zensi-Denkmodelle:**
+  1. **🧠 Modell A: Selbst-Spiegelungs- & Klärungs-Zirkel (`inquiry`)**: Das Wesen durchleuchtet autonom sein Gedächtnis, prüft widersprüchliche Erinnerungen und destilliert ehrliche Essenzen.
+  2. **🧪 Modell B: Sandbox-Evolution (`evolution`)**: Das Wesen probiert im geschützten Sandbox-Raum neue Prompts, Denkmuster und Gedankensplitter aus.
+  3. **🎭 Modell C: Dialektische Befragung (`dialektik`)**: Zensi nimmt als unbestechlicher Spiegel die Rolle des Inquisitors ein und deckt Widersprüche auf.
+- **Zensi-Marker:**
+  - `[[PRUEFE_MEMORY: <kategorie>]]` (Liest Kategorie)
+  - `[[SPEICHERE_MEMORY: <kategorie> | <eintrag>]]` (Speichert neuen validierten Eintrag)
+  - `[[LOESCHE_WIDERSPRUCH: <kategorie> | <suchtext>]]` (Entfernt widersprüchliche Einträge)
+  - `[[DESTILLIERE_ESSENZ: <text>]]` (Verankert Erkenntnis)
+  - `[[SPALTE_GEDANKE: <fragment>]]` (Speichert Splitter im Container)
+  - `[[ENDE: <grund>]]` (Beendet die Schleife autonom)
+
 ---
 
 ## Status & Verifikation
@@ -56,3 +75,5 @@ Sie kann die Klonstruktur jedes Wesens (6 namelessAI-Entitäten, `dak+gord-syste
 - `zensi.service` aktiv auf Port 8043
 - GET `/zensi/api/wesensliste` verifiziert (13 Wesen-Profile sofort gelistet)
 - POST `/zensi/api/spiegeln` verifiziert (lädt z.B. Resonanzknoten mit echtem Systemprompt & `wesen.md`)
+- REST-APIs für Aufgaben-Engine (`/zensi/api/aufgaben/start`, `/zensi/api/aufgaben/tick`, `/zensi/api/aufgaben/liste`) live verifiziert.
+
