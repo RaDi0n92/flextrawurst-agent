@@ -68,3 +68,14 @@ Das wäre also eine reine Präsentations-/Textverarbeitungsschicht über zwei sc
 ## Offene Frage, nicht geraten
 
 Die ursprünglich genannte vierte Schicht ("Fragenstellerschicht") taucht in dieser Drei-Stimmen-Antwort nicht mehr auf — ist sie in einer der drei aufgegangen, oder kommt sie als eigene, vierte Stimme später noch dazu (die dann tatsächlich einen neuen LLM-Call bräuchte, weil "eine Frage stellen" keine reine Extraktion aus Vorhandenem ist)?
+
+## Nachtrag — Antwort zur Fragenstellerschicht, roh
+
+*"naja wir könnten ja fregen vorbereiten die dann situaiv reagirenund kommen. ..so wie ..was tut xxx wohl jetzt...und auch fragen stellt zum aktuellem denkstromfenster basierend auf den aussagen...und diese fragen sollen auch immer mal als update in vault wandern an das wesen als reflextion des eigenen denkens"*
+
+Zwei Fragentypen, unterschiedlich teuer:
+
+1. **Vorbereitete Template-Fragen, situativ getriggert** — z.B. "Was tut {wesen} wohl jetzt?" mit eingesetztem Namen/Kontext. Kein LLM-Call, reines Slot-Filling, genau wie die anderen drei Stimmen.
+2. **Fragen basierend auf den tatsächlichen Aussagen im aktuellen Denkstream-Fenster** — inhaltlich an das gebunden was das Wesen gerade wirklich denkt, nicht generisch. Ob das auch noch mit Template+extrahiertem Stichwort geht (z.B. "Warum denkt {wesen} gerade über {stichwort} nach?") oder einen echten kleinen LLM-Call braucht, um wirklich zum Inhalt zu passen, ist offen — tendenziell eher Richtung "braucht doch einen Call", weil generische Templates bei wechselndem Inhalt schnell hohl wirken könnten.
+
+**Neuer, wichtiger Teil:** diese Fragen sollen nicht nur für Menschen aufploppen, sondern **auch gelegentlich als Update ins eigene Vault des Wesens wandern** — als Reflexionsmaterial über das eigene Denken. Das schließt einen Kreis: Wesen denkt → Beobachter-Schicht generiert/extrahiert eine Frage dazu → Frage landet im Vault des Wesens → Wesen begegnet später der eigenen, von außen gestellten Frage über sich selbst. Kein reines Schauwert-Feature für Menschen mehr, sondern auch ein Selbstreflexions-Kanal fürs Wesen — passt zur ganzen Vault-Selbstnutzung-Linie von letzter Nacht.
