@@ -160,4 +160,27 @@ Auf Daniels Wort "jetzt durchgehen" (Fortsetzung der Aufräum-Session vom Vortag
 6. Verifiziert: `.git` 77GB → **2,3GB**, `hauhaucs_q6`-Modell unverändert (Dateigröße/mtime identisch), `llama-hauhaucs-hintergrund.service` weiterhin aktiv, `.local/share/claude/versions/` inkl. aktueller CLI-Version vorhanden, `git log` 570 Commits intakt.
 7. `git fsck --full` zeigte danach Fehler beim Lesen alter Commit-Hashes aus der `commit-graph`-Cache-Datei (erwartete Nebenwirkung — die Datei referenzierte noch die alten, jetzt ungültigen Hashes von vor dem Rewrite). Behoben durch Löschen + `git commit-graph write --reachable`. Danach `git fsck --full` sauber, keine Fehler.
 
-**Ergebnis:** ~75GB dauerhaft freigegeben, Historie integer, keine aktiv genutzten Dateien angefasst. Backup-Tar (77GB) liegt vorerst weiter in `/root/system-backups/` als Sicherheitsnetz — Löschung erst nach Daniels Freigabe, da es aktuell selbst wieder ~13% der Root-Partition belegt.
+**Ergebnis:** ~75GB dauerhaft freigegeben, Historie integer, keine aktiv genutzten Dateien angefasst. Backup-Tar nach Daniels Freigabe ("za backuptar ja weg") gelöscht — Stand danach: 490G belegt / 440G frei (53%).
+
+## Update 2026-07-22, Fortsetzung: `werkraum_git` (46GB) — gleiches Bloat-Muster, ebenfalls bereinigt
+
+Daniel fragte nach, warum trotz aller Aufräumarbeit insgesamt 490G belegt waren (zum Vergleich: alter VPS hatte nur ~190G, davon max. die Hälfte genutzt). Volle Aufschlüsselung per `du -x --max-depth=1 -h /` + `/root`:
+
+| Bereich | Größe | Einordnung |
+|---|---|---|
+| Swap (`/swapfile`, `/swapfile2`, `/swapfile3`) | 124G | aktiv genutzt (25G real belegt von 122G), `swapfile3` (111G) kam erst mit dem RAM-Upgrade am 09.07. dazu |
+| `/usr/share/ollama` | 111-123G | Ollama-Modelle inkl. `gemma4`, bewusst behalten |
+| `/root/geni_gedaechtnis` | 126G | bekannte Altlast (siehe oben) — Wachstumsrate seit dem Flarum-Fix gedrosselt, aber die historisch aufgehäuften 126G selbst noch nicht bereinigt, weiterhin offen |
+| `/root/werkraum_git` | 46G | → dieser Abschnitt |
+| `/root/werkraum_tools_models` | 30G | aktives `hauhaucs_q6`-Modell, korrekt |
+| Rest (`.cache`, `.npm`, `.git`, Arbeitskopien) | ~20G | normale Dev-Caches, unauffällig |
+
+**`werkraum_git` (das eigentliche `GIT_DIR` des werkraum-Submodule-Repos, referenziert per `.git`-Datei `gitdir: /root/werkraum_git`) zeigte exakt dasselbe Bloat-Muster wie `/root/.git` oben** — verifiziert per `git rev-list --objects --all` + `cat-file --batch-check`: 47,7GB reine Alt-Historie unter `tools/models/*` (Flux, Pony, RealVisXL, JuggernautXL, PhotoMaker, SDXL/Flux-Shared — dieselben Modelle wie beim `/root`-Fix, nur diesmal aus der Zeit *bevor* `tools/models` zum Symlink auf `/root/werkraum_tools_models` umgestellt wurde). `innenleben/`-Objekte (3,6GB, 484 Objekte, u.a. mehrfach committete `chroma.sqlite3`) bewusst **nicht** angefasst — Grundgesetz 7 verbietet Änderungen an `innenleben/` ohne Erlaubnis, auch reine Historie fällt darunter.
+
+**Wichtiger Unterschied zu `/root`:** Dieses Repo hat ein Remote (`origin` → `github.com/RaDi0n92/flextrawurst-agent.git`). Vor dem Rewrite per `git ls-remote origin` geprüft: Remote-`main`-HEAD und lokaler `main`-HEAD haben **keine gemeinsame Historie** (`git cat-file -t` auf den Remote-Commit-Hash schlägt lokal fehl) — das Remote ist ein entkoppelter Platzhalter, nie echt synchronisiert. Ein Rewrite gefährdet dadurch nichts real Gepushtes.
+
+**Vorgehen (identisch zum `/root`-Fix, aber ohne den `git rm --cached`-Zwischenschritt):** `tools/models` war im aktuellen HEAD bereits nur noch ein Symlink (27 Byte, kein echter Binärinhalt) — die riskante Working-Tree-Kollision aus dem `/root`-Fall entfällt dadurch von selbst. Trotzdem sicherheitshalber genauso: (1) alle offenen Änderungen committet, (2) volles `tar`-Backup von `/root/werkraum_git` (46G) nach `/root/system-backups/`, (3) `git filter-repo --force --invert-paths --path-glob 'tools/models/*'` (gezielt nur Inhalte *unter* `tools/models/`, der Symlink-Eintrag selbst bleibt unangetastet), (4) verifiziert: Symlink korrekt, `hauhaucs_q6` unverändert, Dienst aktiv, `git log` 1217 Commits intakt, `git fsck --full` sauber (nach demselben `commit-graph`-Rebuild wie beim `/root`-Fix), (5) Backup-Tar nach erfolgreicher Verifikation gelöscht.
+
+**Ergebnis:** `werkraum_git` 46GB → **899MB**. Gesamtstand danach: 445G belegt / 485G frei (48%).
+
+**Verbleibend offen:** `geni_gedaechtnis` (126G, größter Einzelposten) — Bereinigung der historischen Altlast bewusst nicht angegangen, kein Auftrag dafür in dieser Session.
