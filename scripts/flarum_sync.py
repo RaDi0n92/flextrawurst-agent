@@ -4,6 +4,18 @@ Flarum → Obsidian Vault Sync
 Exportiert Flarum komplett als verlinktes Markdown-Netz.
 Vault: /root/werkraum/flarum/
 Sync: alle 5 Minuten via cron
+
+Wasserzeichen-Inkrementell (2026-07-22, siehe
+docs/systemdoku/31_llm_kontention_dienste_aufraeumung.md): frueher scannte
+sync_diskussionen() bei jedem Lauf ALLE Diskussionen + pro Diskussion einen
+eigenen Posts-Query (N+1) -- bei organischem Wachstum (~41 Diskussionen/Tag)
+wurde das von Lauf zu Lauf teurer, dasselbe Grundmuster wie der
+geni-muster.service-Haenger vom selben Tag. Jetzt: STATE_FILE merkt sich
+`letzter_post_id`/`letzter_edit_zeitpunkt`, jeder Lauf verarbeitet nur
+Diskussionen mit neuen ODER editierten Posts seit dem letzten Lauf (Batch-Query
+statt N+1). ACHTUNG: Diskussions-Statusaenderungen OHNE neuen/editierten Post
+(z.B. nur hidden_at gesetzt) loesen damit KEINEN Resync aus -- bewusster
+Scope-Schnitt, kein vollstaendiger Änderungs-Tracker.
 """
 
 import json
@@ -18,6 +30,23 @@ import pymysql
 DB   = dict(host="localhost", user="flarum", password=os.environ.get("FLARUM_DB_PASSWORD", ""),
             database="flarum", charset="utf8mb4")
 VAULT = Path("/root/werkraum/flarum")
+STATE_FILE = VAULT / "_sync_state.json"
+
+STATE_DEFAULT = {"letzter_post_id": 0, "letzter_edit_zeitpunkt": None}
+
+
+def load_state() -> dict:
+    if STATE_FILE.exists():
+        try:
+            return {**STATE_DEFAULT, **json.loads(STATE_FILE.read_text())}
+        except Exception:
+            pass
+    return dict(STATE_DEFAULT)
+
+
+def save_state(state: dict):
+    VAULT.mkdir(exist_ok=True)
+    STATE_FILE.write_text(json.dumps(state, indent=2, default=str), encoding="utf-8")
 
 
 # ── Hilfsfunktionen ───────────────────────────────────────────────────────────
@@ -209,7 +238,10 @@ tags: [forum/nutzer, forum/{typ_tag}]
 
 # ── Diskussionen ──────────────────────────────────────────────────────────────
 
-def sync_diskussionen(cur, tags_map: dict):
+def sync_diskussionen(cur, tags_map: dict, changed_ids: set[int] | None):
+    """changed_ids: Diskussions-IDs mit neuen/editierten Posts seit dem letzten
+    Lauf (Batch-Query statt N+1). None = Bootstrap (kein State vorhanden) --
+    dann alles neu schreiben, wie frueher."""
     cur.execute("""
         SELECT d.id, d.title, d.slug, d.created_at, d.last_posted_at,
                d.comment_count, u.username as autor, d.user_id
@@ -221,26 +253,52 @@ def sync_diskussionen(cur, tags_map: dict):
     out = VAULT / "diskussionen"
     out.mkdir(exist_ok=True)
 
+    zu_schreiben = diskussionen if changed_ids is None else [
+        d for d in diskussionen if d["id"] in changed_ids
+    ]
+
+    posts_je_disk: dict[int, list] = {}
+    tags_je_disk: dict[int, list] = {}
+    if zu_schreiben:
+        ids = tuple(d["id"] for d in zu_schreiben)
+        platzhalter = ",".join(["%s"] * len(ids))
+        cur.execute(f"""
+            SELECT p.discussion_id, p.number, p.created_at, u.username, p.content
+            FROM posts p
+            LEFT JOIN users u ON u.id = p.user_id
+            WHERE p.discussion_id IN ({platzhalter}) AND p.type = 'comment'
+            ORDER BY p.discussion_id, p.number ASC
+        """, ids)
+        for row in cur.fetchall():
+            posts_je_disk.setdefault(row["discussion_id"], []).append(row)
+
+        cur.execute(f"""
+            SELECT dt.discussion_id, t.id, t.name, t.slug FROM discussion_tag dt
+            JOIN tags t ON t.id = dt.tag_id
+            WHERE dt.discussion_id IN ({platzhalter})
+        """, ids)
+        for row in cur.fetchall():
+            tags_je_disk.setdefault(row["discussion_id"], []).append(row)
+
     index_lines = ["# Diskussionen\n",
                    "| Titel | Autor | Posts | Zuletzt |",
                    "|-------|-------|-------|---------|"]
 
     for d in diskussionen:
-        cur.execute("""
-            SELECT p.number, p.created_at, u.username, p.content
-            FROM posts p
-            LEFT JOIN users u ON u.id = p.user_id
-            WHERE p.discussion_id = %s AND p.type = 'comment'
-            ORDER BY p.number ASC
-        """, (d["id"],))
-        posts = cur.fetchall()
+        if changed_ids is not None and d["id"] not in changed_ids:
+            # Datei unveraendert seit letztem Lauf -- Index-Zeile trotzdem
+            # noetig (zeigt komplette Historie), aber kein Neuschreiben.
+            fname = f"{d['id']:04d}_{slug(d['title'])}.md"
+            index_lines.append(
+                f"| [[diskussionen/{fname[:-3]}\\|{d['title'][:50]}]] "
+                f"| [[../nutzer/{d['autor']}\\|{d['autor']}]] "
+                f"| {d['comment_count']} "
+                f"| {ts(d['last_posted_at'])} |"
+            )
+            continue
 
-        cur.execute("""
-            SELECT t.id, t.name, t.slug FROM discussion_tag dt
-            JOIN tags t ON t.id = dt.tag_id
-            WHERE dt.discussion_id = %s
-        """, (d["id"],))
-        tags = cur.fetchall()
+        posts = posts_je_disk.get(d["id"], [])
+        tags  = tags_je_disk.get(d["id"], [])
 
         tag_links    = " | ".join(f"[[../tags/{t['slug']}\\|{t['name']}]]" for t in tags)
         obs_tags     = ["forum/diskussion"] + [f"forum/{tag_slug(t['name'])}" for t in tags]
@@ -456,20 +514,58 @@ tags: [forum/index]
     (VAULT / "INDEX.md").write_text(content, encoding="utf-8")
 
 
+def ermittle_geaenderte_diskussionen(cur, state: dict) -> tuple[set[int] | None, int, str | None]:
+    """Liefert (changed_ids, neuer_post_id_watermark, neuer_edit_watermark).
+    changed_ids=None bedeutet Bootstrap (kein vorheriger State) -- dann
+    verarbeitet sync_diskussionen() wie frueher alles."""
+    letzter_id = state.get("letzter_post_id", 0)
+
+    cur.execute("SELECT COALESCE(MAX(id), 0) AS m FROM posts")
+    neuer_id_watermark = cur.fetchone()["m"]
+    cur.execute("SELECT MAX(edited_at) AS m FROM posts WHERE edited_at IS NOT NULL")
+    neuer_edit_watermark = cur.fetchone()["m"]
+
+    if letzter_id == 0:
+        return None, neuer_id_watermark, neuer_edit_watermark
+
+    letzter_edit = state.get("letzter_edit_zeitpunkt")
+    if letzter_edit:
+        cur.execute("""
+            SELECT DISTINCT discussion_id FROM posts
+            WHERE type='comment' AND (id > %s OR (edited_at IS NOT NULL AND edited_at > %s))
+        """, (letzter_id, letzter_edit))
+    else:
+        cur.execute("""
+            SELECT DISTINCT discussion_id FROM posts
+            WHERE type='comment' AND id > %s
+        """, (letzter_id,))
+    changed_ids = {row["discussion_id"] for row in cur.fetchall()}
+    return changed_ids, neuer_id_watermark, neuer_edit_watermark
+
+
 # ── Hauptprogramm ─────────────────────────────────────────────────────────────
 
 def main():
+    state = load_state()
     conn = pymysql.connect(**DB, cursorclass=pymysql.cursors.DictCursor)
     try:
         with conn.cursor() as cur:
             print(f"Sync gestartet: {datetime.now().strftime('%H:%M:%S')}")
+            changed_ids, neuer_id_wm, neuer_edit_wm = ermittle_geaenderte_diskussionen(cur, state)
+            if changed_ids is None:
+                print("Bootstrap (kein State) -- verarbeite alle Diskussionen.")
+            else:
+                print(f"{len(changed_ids)} Diskussion(en) mit neuen/editierten Posts seit letztem Lauf.")
             tags_map = sync_tags(cur)
             sync_nutzer(cur)
-            sync_diskussionen(cur, tags_map)
+            sync_diskussionen(cur, tags_map, changed_ids)
             sync_aktuell(cur)
             sync_offen(cur)
             sync_index(cur)
             print("Sync abgeschlossen.")
+        state["letzter_post_id"] = neuer_id_wm
+        state["letzter_edit_zeitpunkt"] = neuer_edit_wm
+        save_state(state)
     finally:
         conn.close()
 
