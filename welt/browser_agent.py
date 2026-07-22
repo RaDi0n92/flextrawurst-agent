@@ -172,26 +172,92 @@ def lese_seite(page) -> dict:
         return {"url": page.url, "titel": "", "text": "", "elemente": []}
 
 
-def zeige_cursor(page, x: float, y: float):
-    """Zeichnet einen sichtbaren, künstlichen Mauszeiger in die Seite (Daniels Wunsch, 2026-07-21:
-    'kann man auch nen mauszeiger sehen'). Playwright bewegt die Maus intern beim Klicken, rendert
-    sie aber nie sichtbar -- kein echter OS-Cursor taucht je in einem Screenshot auf. Reines
-    Beobachtungs-Feature, ohne jeden Effekt auf die tatsächliche Interaktion. Muss nach jeder
-    Navigation neu eingefügt werden (page.goto() räumt das DOM komplett weg) -- deshalb hier
-    idempotent (legt das Element neu an falls es fehlt) statt einmalig beim Start."""
+_KOERPER_JS = """
+(p) => {
+  const x = p[0], y = p[1], speed = p[2] || 0;
+  let eng = window.__agentKoerperEngine;
+  if (!eng) {
+    const canvas = document.createElement('canvas');
+    canvas.id = '__agent_koerper__';
+    canvas.width = 140; canvas.height = 140;
+    canvas.style.cssText = 'position:fixed;z-index:2147483647;pointer-events:none;' +
+      'filter:drop-shadow(0 0 3px rgba(255,45,85,.55));';
+    document.body.appendChild(canvas);
+    const ctx = canvas.getContext('2d');
+    const ANZAHL_BEINE = 6;
+    const beine = [];
+    for (let i = 0; i < ANZAHL_BEINE; i++) {
+      beine.push({ winkel: (i / ANZAHL_BEINE) * Math.PI * 2, fx: x, fy: y });
+    }
+    eng = window.__agentKoerperEngine = {
+      canvas: canvas, ctx: ctx, beine: beine,
+      cx: x, cy: y, tx: x, ty: y, speed: 0, letzteZeit: performance.now(),
+    };
+    // Prozedurale Beine per einfacher IK (Kniepunkt seitlich versetzt zur Huefte-Fuss-
+    // Strecke), angelehnt an "follow the leader"-Techniken wie Reptile-Interactive-Cursor
+    // (siehe _claude/ideen/sieben_linsen_koerper_kreatur.md) -- Ausschlag/Tempo skaliert
+    // mit echter Bewegungsgeschwindigkeit, keine erfundene Animation.
+    function tick(jetzt) {
+      const dt = Math.min(0.05, (jetzt - eng.letzteZeit) / 1000);
+      eng.letzteZeit = jetzt;
+      eng.cx += (eng.tx - eng.cx) * Math.min(1, dt * 8);
+      eng.cy += (eng.ty - eng.cy) * Math.min(1, dt * 8);
+      eng.speed += (eng.zielSpeed - eng.speed) * Math.min(1, dt * 4);
+      const bewegungsWinkel = Math.atan2(eng.ty - eng.cy, eng.tx - eng.cx);
+      const ausschlag = Math.min(38, 10 + eng.speed * 0.05);
+      eng.beine.forEach(function (b, i) {
+        const zielWinkel = bewegungsWinkel + Math.PI + b.winkel * 0.6 + Math.sin(jetzt / 260 + i) * 0.25;
+        const zx = eng.cx + Math.cos(zielWinkel) * ausschlag;
+        const zy = eng.cy + Math.sin(zielWinkel) * ausschlag;
+        b.fx += (zx - b.fx) * Math.min(1, dt * 6);
+        b.fy += (zy - b.fy) * Math.min(1, dt * 6);
+      });
+      canvas.style.left = (eng.cx - 70) + 'px';
+      canvas.style.top = (eng.cy - 70) + 'px';
+      ctx.clearRect(0, 0, 140, 140);
+      ctx.strokeStyle = '#ff2d55';
+      ctx.lineWidth = 2;
+      eng.beine.forEach(function (b) {
+        const lx = b.fx - eng.cx + 70, ly = b.fy - eng.cy + 70;
+        const winkel = Math.atan2(ly - 70, lx - 70);
+        const hx = 70 + Math.cos(winkel) * 8, hy = 70 + Math.sin(winkel) * 8;
+        const midx = (hx + lx) / 2, midy = (hy + ly) / 2;
+        const laenge = Math.hypot(lx - hx, ly - hy) || 1;
+        const senkx = -(ly - hy) / laenge, senky = (lx - hx) / laenge;
+        const kniex = midx + senkx * 10, kniey = midy + senky * 10;
+        ctx.beginPath();
+        ctx.moveTo(hx, hy);
+        ctx.lineTo(kniex, kniey);
+        ctx.lineTo(lx, ly);
+        ctx.stroke();
+      });
+      ctx.fillStyle = '#ff2d55';
+      ctx.beginPath();
+      ctx.arc(70, 70, 10, 0, Math.PI * 2);
+      ctx.fill();
+      requestAnimationFrame(tick);
+    }
+    eng.zielSpeed = speed;
+    requestAnimationFrame(tick);
+  }
+  eng.tx = x; eng.ty = y; eng.zielSpeed = speed;
+}
+"""
+
+
+def zeige_cursor(page, x: float, y: float, geschwindigkeit: float = 0.0):
+    """Zeichnet den sichtbaren Koerper des Wesens in die Seite (Daniels Wunsch, 2026-07-21:
+    'kann man auch nen mauszeiger sehen', erweitert 2026-07-22 zur 'Kraken-Spinne': der
+    Mauszeiger IST der Koerper, siehe _claude/ideen/sieben_linsen_koerper_kreatur.md).
+    Playwright bewegt die Maus intern beim Klicken, rendert sie aber nie sichtbar -- kein
+    echter OS-Cursor taucht je in einem Screenshot auf. Reines Beobachtungs-Feature, ohne
+    jeden Effekt auf die tatsächliche Interaktion. geschwindigkeit (px/s) steuert Ausschlag
+    der Beine -- 0 im Ruhezustand (z.B. direkt nach einer Navigation), sonst echte, aus
+    bewege_cursor_natuerlich() berechnete Geschwindigkeit, keine erfundene Animation. Muss
+    nach jeder Navigation neu eingefügt werden (page.goto() räumt das DOM komplett weg) --
+    deshalb hier idempotent (legt das Canvas neu an falls es fehlt) statt einmalig beim Start."""
     try:
-        page.evaluate(
-            "(p) => { const x = p[0], y = p[1]; "
-            "let c = document.getElementById('__agent_cursor__'); "
-            "if (!c) { c = document.createElement('div'); c.id = '__agent_cursor__'; "
-            "c.style.cssText = 'position:fixed;z-index:2147483647;pointer-events:none;' + "
-            "'width:0;height:0;border-left:9px solid transparent;border-right:9px solid transparent;' + "
-            "'border-top:16px solid #ff2d55;transform:rotate(-45deg);transform-origin:0 0;' + "
-            "'filter:drop-shadow(0 0 2px rgba(0,0,0,.8));'; "
-            "document.body.appendChild(c); } "
-            "c.style.left = x + 'px'; c.style.top = y + 'px'; }",
-            [x, y],
-        )
+        page.evaluate(_KOERPER_JS, [x, y, geschwindigkeit])
     except Exception:
         pass
 
@@ -238,10 +304,30 @@ def bewege_cursor_natuerlich(page, entity_id: str, ziel_x: float, ziel_y: float)
             page.mouse.move(x, y)
         except Exception:
             pass
-        zeige_cursor(page, x, y)
+        zeige_cursor(page, x, y, distanz / dauer_s)
         time.sleep(dauer_s / schritte)
 
     _letzte_cursor_pos[entity_id] = (ziel_x, ziel_y)
+
+
+def scrolle_natuerlich(page, entity_id: str, delta_y: float, conn=None) -> None:
+    """2026-07-22 (echter Fund beim Umbau-Simulieren: scrolle:unten/oben rief bisher nur
+    page.mouse.wheel() als einzigen 600px-Sprung auf -- ohne melde_fokus(), ohne Animation.
+    Erklaerte technisch, warum Daniel Scrollen noch nie im Roentgenblick gesehen hat: die
+    Aktion meldete sich nirgendwo. Fix nach demselben Muster wie bewege_cursor_natuerlich():
+    mehrere kleine Wheel-Schritte statt einem Sprung, plus melde_fokus()-Meldung."""
+    schritte = 10
+    ease_dauer_s = 0.35
+    pro_schritt = delta_y / schritte
+    for _ in range(schritte):
+        try:
+            page.mouse.wheel(0, pro_schritt)
+        except Exception:
+            pass
+        time.sleep(ease_dauer_s / schritte)
+    if conn is not None:
+        richtung = "unten" if delta_y > 0 else "oben"
+        melde_fokus(conn, entity_id, "scrolle", None, richtung, None)
 
 
 def melde_fokus(conn, entity_id: str, aktion: str, selektor: str | None,
@@ -503,9 +589,9 @@ def fuehre_aktion_aus(page, entscheidung: str, entity_id: str, conn=None) -> tup
                     except Exception:
                         pass
         elif e == "scrolle:unten":
-            page.mouse.wheel(0, 600)
+            scrolle_natuerlich(page, entity_id, 600, conn)
         elif e == "scrolle:oben":
-            page.mouse.wheel(0, -600)
+            scrolle_natuerlich(page, entity_id, -600, conn)
         elif e.startswith("tippe:"):
             teile = e[len("tippe:"):].split("|")
             if len(teile) == 2:
