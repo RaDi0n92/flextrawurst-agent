@@ -391,3 +391,25 @@ Daniel: *"ja gut und wir nutzen alles davon und wollen es haben und gleich direk
 Committed: `29cfb1e97` (flextrawurst: Kachel-Expression + Scroll-Erzähler-Text), `f421071de` (werkraum: Scroll-Fix + IK-Körper). Alle 7 browser-agent-Services neu gestartet.
 
 Direkt danach kam die Kraken-Körper-Idee ("mega idee") und daraus die Sieben-Linsen-Idee — beide jetzt in eigener Datei, siehe `_claude/ideen/sieben_linsen_koerper_kreatur.md`.
+
+## Nachtrag — "aiinfluenza" identifiziert und gebaut: Substanz-Infekt
+
+Daniel: *"doch auch alles was wir davor über diese aiinfluenza und so in die dokus geschrieben haben pluss deinen allerersten researbericht aus dem web ..das wollen wir auch alles genau so haben und bauen"*. "aiinfluenza" als **Substanz-Infekt** identifiziert (`docs/systemdoku/26_dom_agenten_brainstorm.md`, Ebene 3, Idee 2 — Substanz-Deformation eines Wesens schlägt sichtbar aufs Frontend durch). Kurz meine Interpretation genannt, keine Korrektur gekommen, gebaut.
+
+**Umgesetzt:** `_subInfektAbfrage()`/`_subInfektStarte()` in `build_surface.ts` — nutzt den schon vorhandenen Endpunkt `/api/substanz/sedimente/{id}` (kein neuer Backend-Code nötig), zeigt einen farbigen Overlay auf `.scv-screen`, Deckkraft aus `confidence`, Farbe aus `substance_suspect` (fünf reale Werte in der DB: nebel/krone/asche/hunger/blitz). Polling alle 60s (bewusst kein Live-NOTIFY, `substance_sediments` hat keinen Event-Spiegel — wäre ein eigener Architektur-Schritt).
+
+**Nebenfund beim Bauen:** `_erlZeigeKlickRipple` nutzte denselben `querySelector('#scv-card-'+id+' ...')`-Aufbau, der bei `dak+gord-system` (Entity-ID mit `+`) nie ein Element fand, weil `+` in CSS ein Kombinator ist, kein literales Zeichen — der Ripple ist für dieses eine Wesen seit seiner Einführung nie erschienen. Mitgefixt (gleiche `getElementById`+`querySelector('.scv-screen')`-Technik an beiden Stellen).
+
+Live per Playwright verifiziert: Schorschel → `scv-infekt-nebel`/0.85, F3INSCHM3CK3R → `scv-infekt-asche`/0.85, `dak+gord-system` korrekt 0 (echte Datenabwesenheit per DB-Query bestätigt: 0 Zeilen in `substance_sediments` für diese Entity). Committed `75aa3f53c`.
+
+**Noch offen aus der ursprünglichen Brainstorm-Idee:** "heilbar nur durch echte menschliche Resonanz-Handlung" — das Heilen selbst ist nicht gebaut, nur die sichtbare Infektion aus echten Daten. Würde vermutlich `resonanzen` mit einem neuen `post_source='wesen_heilung'` nutzen (generisch, kein neuer Mechanismus) — aber das war in Daniels ursprünglichem Brainstorm-Zitat selbst schon vage ("o.ä."), deshalb nicht einfach mit erfunden, sondern hier als offene Frage benannt statt stillschweigend entschieden.
+
+## Nachtrag — Stand zum "allerersten Rechercheberich aus dem Web" (Neuro-sama/Talker-Reasoner/Juice)
+
+Daniel wollte auch das genau so haben. Ehrlicher Abgleich, was davon inzwischen schon gebaut ist, statt einfach zu behaupten "erledigt":
+
+- **Talker-Reasoner-Split:** die praktische Umsetzung (Reasoner bleibt der lange LLM-Call, Talker löst die beschlossene Aktion in echte Zwischenschritte auf statt Instant-Sprung) ist für Maus UND jetzt auch Scroll gebaut. Ein formal getrennter, eigenständig laufender Talker-Prozess (im Sinne eines zweiten, unabhängigen Loops) ist NICHT gebaut — bisher reicht die Auflösung der bestehenden Aktion in Teilschritte, ohne eigenen Prozess.
+- **Neuro-sama (parallele Teilsysteme → ein zentrales Gehirn):** eher eine architektonische Bestätigung als ein einzelnes Feature — bei uns durch Denkstream (Gehirn) + Fokus-Events (Wahrnehmung) + Mausbewegung/Scroll (Handlung) als getrennte, parallel laufende Datenströme bereits im Kern vorhanden, nicht als benanntes "Neuro-sama-Modul" gebaut.
+- **Juice/Game Feel:** Klick-Ripple (gebaut), Kachel-Zustands-Puls (gebaut heute), jetzt zusätzlich Substanz-Infekt (auch ein Juice-Layer, auch heute gebaut). Nicht gebaut: Partikel, Screen-Shake (ergibt bei einer kleinen Kachel wenig Sinn), Sound — keiner davon war von Daniel konkret verlangt, deshalb nicht einfach erfunden.
+
+Wenn aus diesem ersten Bericht noch etwas Konkretes fehlt, das Daniel gebaut haben will: bitte benennen statt dass ich es errate.
