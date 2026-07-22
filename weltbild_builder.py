@@ -35,6 +35,20 @@ BASE        = Path("/root/werkraum/codewesen")
 OLLAMA_MOD  = "hauhaucs-q6"
 CHAT_FLAG   = Path("/tmp/dak_gord_chat_aktiv")
 
+# Harte Obergrenze (2026-07-22, siehe docs/systemdoku/31_llm_kontention_dienste_aufraeumung.md):
+# baue_forum_kompakt() war urspruenglich fuer ~89 Diskussionen (~4000 Tokens)
+# gebaut, ohne Limit -- bei 3776+ organisch gewachsenen Diskussionen zuletzt
+# ~285.731 Tokens (Faktor 70), derselbe "waechst-mit-Systemaktivitaet"-Fehler
+# wie muster.py und flarum_sync.py am selben Tag. ACHTUNG Verhaltensaenderung,
+# nicht nur Performance: die "Fast vergessen"-Rubrik im Prompt unten braucht
+# eigentlich auch sehr alte Diskussionen -- mit diesem Cap sehen Codewesen nur
+# noch die aktivsten MAX_DISKUSSIONEN_IM_KOMPAKT, wirklich uralte, nie wieder
+# beruehrte Themen fallen aus dem Weltbild heraus. Bewusster, sichtbarer
+# (nicht stillschweigender) Kompromiss -- kein Auftrag, das differenzierter
+# zu loesen (z.B. eigene "uralt aber relevant"-Auswahl), nur Daniel entscheidet
+# das, falls die Rubrik das je wirklich braucht.
+MAX_DISKUSSIONEN_IM_KOMPAKT = 200
+
 INTERVALL   = 60 * 60      # alle 60 Minuten
 PAUSE_WESEN = 10           # Sekunden zwischen Wesen-Calls
 
@@ -149,7 +163,15 @@ def baue_forum_kompakt() -> str:
             return datetime.min
     eintraege.sort(key=sort_key, reverse=True)
 
-    zeilen = [f"FORUM-STAND: {jetzt.strftime('%Y-%m-%d %H:%M')} UTC | {len(eintraege)} Diskussionen\n"]
+    gesamt = len(eintraege)
+    gekuerzt = gesamt > MAX_DISKUSSIONEN_IM_KOMPAKT
+    if gekuerzt:
+        eintraege = eintraege[:MAX_DISKUSSIONEN_IM_KOMPAKT]
+
+    stand_zeile = f"FORUM-STAND: {jetzt.strftime('%Y-%m-%d %H:%M')} UTC | {gesamt} Diskussionen gesamt"
+    if gekuerzt:
+        stand_zeile += f", die {MAX_DISKUSSIONEN_IM_KOMPAKT} aktivsten gezeigt (aeltere ausgeblendet)"
+    zeilen = [stand_zeile + "\n"]
 
     for e in eintraege:
         # Alter berechnen
