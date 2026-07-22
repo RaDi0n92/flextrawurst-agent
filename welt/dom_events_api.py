@@ -16,7 +16,6 @@ Endpunkte:
 
 import asyncio
 import json
-import select as sel
 
 import psycopg2
 import psycopg2.extras
@@ -54,10 +53,6 @@ def _pg_listen_dom_events_sse(entity_id: str):
         # LISTEN-Verbindung oben.
         read_conn.set_isolation_level(psycopg2.extensions.ISOLATION_LEVEL_AUTOCOMMIT)
 
-        def _poll_once():
-            readable, _, _ = sel.select([conn], [], [], 0.5)
-            return bool(readable)
-
         def _hole_event(event_id: str):
             with read_conn.cursor() as c:
                 c.execute("SELECT event_json FROM entity_dom_events WHERE id = %s", (event_id,))
@@ -83,7 +78,7 @@ def _pg_listen_dom_events_sse(entity_id: str):
                             AND created_at <= (SELECT created_at FROM letzter_snapshot)
                         ORDER BY created_at DESC LIMIT 1
                     )
-                    SELECT event_json FROM entity_dom_events
+                    SELECT id, event_json FROM entity_dom_events
                     WHERE entity_id = %s
                         AND created_at >= COALESCE(
                             (SELECT created_at FROM meta_davor),
@@ -91,11 +86,47 @@ def _pg_listen_dom_events_sse(entity_id: str):
                         )
                     ORDER BY created_at ASC
                 """, (entity_id, entity_id, entity_id))
-                return [r["event_json"] for r in c.fetchall()]
+                # 2026-07-22 (Daniel live gefunden per Konsolen-Log: wiederholte rrweb-
+                # Warnungen "[replayer] Node with id 'X' not found"): das LISTEN lief schon
+                # VOR dieser Backlog-Query, Notifies fuer Zeilen, die WAEHREND der Query
+                # eingefuegt wurden, landen dadurch in BEIDEM -- im Backlog-Ergebnis UND
+                # nochmal live ueber die Notify-Queue. rrweb bekommt dieselbe Mutation
+                # dadurch zweimal, verwirft die zweite lautlos als "Node nicht gefunden"
+                # (der Knoten wurde ja schon beim ersten Mal hinzugefuegt/entfernt) --
+                # nachfolgende, WIRKLICH neue Mutationen koennen dadurch kaskadierend
+                # falsch aufgesetzt werden. Fix: die IDs aller Backlog-Zeilen zurueckgeben,
+                # damit der Aufrufer identische Notifies aus der Live-Queue verwerfen kann.
+                rows = c.fetchall()
+                return [str(r["id"]) for r in rows], [r["event_json"] for r in rows]
 
         loop = asyncio.get_running_loop()
+        # 2026-07-22 gefunden (nach ausfuehrlicher Playwright-Reproduktion des Live-Delivery-
+        # Problems, siehe erlebnisschicht-Ideendatei "zweiter Nachtrag"): die bisherige Schleife
+        # belegte JEDE offene SSE-Verbindung alle 0.5s aufs Neue einen Slot im geteilten
+        # Default-Threadpool (loop.run_in_executor(None, _poll_once)) -- nur fuer die reine
+        # Pruefung "ist etwas da". Bei mehreren gleichzeitig offenen Verbindungen (7 Kacheln +
+        # Modal + Testverbindungen) konkurrierten diese Dauerpoll-Tasks um den Threadpool,
+        # echte Event-Zustellung wurde dadurch verzoegert/unregelmaessig -- reproduziert: gleicher
+        # Code lieferte auf einer isolierten Testseite zuverlaessig, in der vollen Produktions-
+        # seite mit paralleler Verbindung nicht. Fix: die Postgres-LISTEN-Verbindung wird direkt
+        # per loop.add_reader() an die Event-Loop gehaengt (psycopg2-Standardmuster fuer async
+        # Notifications) -- die Loop selbst weckt den Callback, sobald am Socket wirklich Daten
+        # anliegen, kein Dauerpolling-Thread mehr noetig. Threadpool wird nur noch fuer die
+        # eigentlichen (selteneren) Event-Fetches gebraucht.
+        notify_queue: asyncio.Queue = asyncio.Queue()
+
+        def _bei_lesbar():
+            try:
+                conn.poll()
+            except Exception:
+                return
+            while conn.notifies:
+                notify_queue.put_nowait(conn.notifies.pop(0))
+
+        loop.add_reader(conn.fileno(), _bei_lesbar)
         try:
-            backlog = await loop.run_in_executor(None, _hole_backlog)
+            bekannte_ids, backlog = await loop.run_in_executor(None, _hole_backlog)
+            bekannte_ids = set(bekannte_ids)
             for event in backlog:
                 yield f"data: {json.dumps(event)}\n\n"
             # 2026-07-22 (per Playwright-Repro verifiziert, siehe build_surface.ts-Kommentar
@@ -108,30 +139,27 @@ def _pg_listen_dom_events_sse(entity_id: str):
             # replayer.pause(totalTime) synchron ans Ende vorspulen und danach erst live schalten.
             yield f"data: {json.dumps({'backlog_done': True})}\n\n"
 
-            heartbeat = 0
             while True:
-                ready = await loop.run_in_executor(None, _poll_once)
-                if ready:
-                    conn.poll()
-                    while conn.notifies:
-                        notify = conn.notifies.pop(0)
-                        try:
-                            meta = json.loads(notify.payload)
-                        except Exception:
-                            continue
-                        if meta.get("entity_id") != entity_id:
-                            continue
-                        event = await loop.run_in_executor(None, _hole_event, meta["id"])
-                        if event is None:
-                            continue
-                        yield f"data: {json.dumps(event)}\n\n"
-                        heartbeat = 0
-                else:
-                    heartbeat += 1
-                    if heartbeat >= 60:
-                        yield f": heartbeat\n\n"
-                        heartbeat = 0
+                try:
+                    notify = await asyncio.wait_for(notify_queue.get(), timeout=30)
+                except asyncio.TimeoutError:
+                    yield f": heartbeat\n\n"
+                    continue
+                try:
+                    meta = json.loads(notify.payload)
+                except Exception:
+                    continue
+                if meta.get("entity_id") != entity_id:
+                    continue
+                if meta["id"] in bekannte_ids:
+                    continue  # bereits im Backlog enthalten -- siehe Kommentar bei _hole_backlog
+                bekannte_ids.add(meta["id"])
+                event = await loop.run_in_executor(None, _hole_event, meta["id"])
+                if event is None:
+                    continue
+                yield f"data: {json.dumps(event)}\n\n"
         finally:
+            loop.remove_reader(conn.fileno())
             cur.close()
             conn.close()
             read_conn.close()
@@ -164,10 +192,6 @@ def _pg_listen_dom_events_alle_sse():
         # LISTEN-Verbindung oben.
         read_conn.set_isolation_level(psycopg2.extensions.ISOLATION_LEVEL_AUTOCOMMIT)
 
-        def _poll_once():
-            readable, _, _ = sel.select([conn], [], [], 0.5)
-            return bool(readable)
-
         def _hole_event(event_id: str):
             with read_conn.cursor() as c:
                 c.execute("SELECT event_json FROM entity_dom_events WHERE id = %s", (event_id,))
@@ -182,6 +206,7 @@ def _pg_listen_dom_events_alle_sse():
                 """)
                 entity_ids = [r["entity_id"] for r in c.fetchall()]
             ergebnis = []
+            bekannte_ids = set()
             for eid in entity_ids:
                 with read_conn.cursor() as c:
                     c.execute("""
@@ -195,7 +220,7 @@ def _pg_listen_dom_events_alle_sse():
                                 AND created_at <= (SELECT created_at FROM letzter_snapshot)
                             ORDER BY created_at DESC LIMIT 1
                         )
-                        SELECT event_json FROM entity_dom_events
+                        SELECT id, event_json FROM entity_dom_events
                         WHERE entity_id = %s
                             AND created_at >= COALESCE(
                                 (SELECT created_at FROM meta_davor),
@@ -205,42 +230,53 @@ def _pg_listen_dom_events_alle_sse():
                     """, (eid, eid, eid))
                     for r in c.fetchall():
                         ergebnis.append({"entity_id": eid, "event": r["event_json"]})
+                        bekannte_ids.add(str(r["id"]))
                 # Marker direkt nach dem Backlog-Block DIESES Wesens (siehe Kommentar in
                 # _pg_listen_dom_events_sse oben -- gleicher Grund, hier pro Wesen einzeln,
                 # da alle 7 sich diese eine Verbindung teilen). In dieselbe {entity_id,event}-
                 # Huelle gepackt wie jede andere Nachricht dieses Endpunkts, sonst liest der
                 # Client (der immer data.event auswertet) den Marker als event=undefined.
                 ergebnis.append({"entity_id": eid, "event": {"backlog_done": True}})
-            return ergebnis
+            return bekannte_ids, ergebnis
 
         loop = asyncio.get_running_loop()
+        # Gleicher Fix wie in _pg_listen_dom_events_sse oben (dort ausfuehrlich begruendet):
+        # kein Dauerpolling-Thread mehr, die LISTEN-Verbindung haengt direkt an der Event-Loop.
+        notify_queue: asyncio.Queue = asyncio.Queue()
+
+        def _bei_lesbar():
+            try:
+                conn.poll()
+            except Exception:
+                return
+            while conn.notifies:
+                notify_queue.put_nowait(conn.notifies.pop(0))
+
+        loop.add_reader(conn.fileno(), _bei_lesbar)
         try:
-            backlog = await loop.run_in_executor(None, _hole_backlog_alle)
+            bekannte_ids, backlog = await loop.run_in_executor(None, _hole_backlog_alle)
             for item in backlog:
                 yield f"data: {json.dumps(item)}\n\n"
 
-            heartbeat = 0
             while True:
-                ready = await loop.run_in_executor(None, _poll_once)
-                if ready:
-                    conn.poll()
-                    while conn.notifies:
-                        notify = conn.notifies.pop(0)
-                        try:
-                            meta = json.loads(notify.payload)
-                        except Exception:
-                            continue
-                        event = await loop.run_in_executor(None, _hole_event, meta["id"])
-                        if event is None:
-                            continue
-                        yield f"data: {json.dumps({'entity_id': meta.get('entity_id'), 'event': event})}\n\n"
-                        heartbeat = 0
-                else:
-                    heartbeat += 1
-                    if heartbeat >= 60:
-                        yield f": heartbeat\n\n"
-                        heartbeat = 0
+                try:
+                    notify = await asyncio.wait_for(notify_queue.get(), timeout=30)
+                except asyncio.TimeoutError:
+                    yield f": heartbeat\n\n"
+                    continue
+                try:
+                    meta = json.loads(notify.payload)
+                except Exception:
+                    continue
+                if meta["id"] in bekannte_ids:
+                    continue  # bereits im Backlog enthalten -- siehe Kommentar bei _hole_backlog_alle
+                bekannte_ids.add(meta["id"])
+                event = await loop.run_in_executor(None, _hole_event, meta["id"])
+                if event is None:
+                    continue
+                yield f"data: {json.dumps({'entity_id': meta.get('entity_id'), 'event': event})}\n\n"
         finally:
+            loop.remove_reader(conn.fileno())
             cur.close()
             conn.close()
             read_conn.close()
