@@ -39,15 +39,22 @@ CHAT_FLAG   = Path("/tmp/dak_gord_chat_aktiv")
 # baue_forum_kompakt() war urspruenglich fuer ~89 Diskussionen (~4000 Tokens)
 # gebaut, ohne Limit -- bei 3776+ organisch gewachsenen Diskussionen zuletzt
 # ~285.731 Tokens (Faktor 70), derselbe "waechst-mit-Systemaktivitaet"-Fehler
-# wie muster.py und flarum_sync.py am selben Tag. ACHTUNG Verhaltensaenderung,
-# nicht nur Performance: die "Fast vergessen"-Rubrik im Prompt unten braucht
-# eigentlich auch sehr alte Diskussionen -- mit diesem Cap sehen Codewesen nur
-# noch die aktivsten MAX_DISKUSSIONEN_IM_KOMPAKT, wirklich uralte, nie wieder
-# beruehrte Themen fallen aus dem Weltbild heraus. Bewusster, sichtbarer
-# (nicht stillschweigender) Kompromiss -- kein Auftrag, das differenzierter
-# zu loesen (z.B. eigene "uralt aber relevant"-Auswahl), nur Daniel entscheidet
-# das, falls die Rubrik das je wirklich braucht.
-MAX_DISKUSSIONEN_IM_KOMPAKT = 200
+# wie muster.py und flarum_sync.py am selben Tag.
+#
+# Erste Version (nur "aktivste N") wurde von Daniel korrigiert: reine Recency
+# wirft alte, aber inhaltlich bedeutende Diskussionen raus -- "nur weil etwas
+# alt ist kann es trotzdem bedeutend sein". Jetzt vier Auswahl-Kriterien statt
+# einem, dedupliziert kombiniert:
+#   1. Aktivste (letzter Post zuerst)              -- "was passiert gerade"
+#   2. Meiste Posts                                 -- substantiell, viel Resonanz
+#   3. Wenigste Posts (>=1)                         -- einzelne Gedanken ohne Echo,
+#                                                        evtl. uebersehen statt unwichtig
+#   4. Thematisch am seltensten getaggt             -- inhaltlich individuell/untypisch,
+#                                                        nicht nur eine von vielen aehnlichen
+MAX_AKTIVSTE       = 100
+MAX_MEISTE_POSTS   = 40
+MAX_WENIGSTE_POSTS = 30
+MAX_SELTENE_THEMEN = 30
 
 INTERVALL   = 60 * 60      # alle 60 Minuten
 PAUSE_WESEN = 10           # Sekunden zwischen Wesen-Calls
@@ -83,14 +90,16 @@ CODEWESEN_USERNAMES = {
 
 # ── Vault lesen — kein LLM ────────────────────────────────────────────────────
 
-def _parse_frontmatter(text: str) -> dict:
+def _frontmatter_body(text: str) -> str:
     if not text.startswith("---"):
-        return {}
+        return ""
     end = text.find("---", 3)
-    if end == -1:
-        return {}
+    return text[3:end] if end != -1 else ""
+
+
+def _parse_frontmatter(text: str) -> dict:
     fm = {}
-    for line in text[3:end].splitlines():
+    for line in _frontmatter_body(text).splitlines():
         if ":" in line:
             k, _, v = line.partition(":")
             fm[k.strip()] = v.strip().strip('"')
@@ -119,6 +128,23 @@ def _letzter_autor_aus_text(text: str) -> str:
     return matches[-1].group(1) if matches else "?"
 
 
+# Generische Tags die jede Diskussion traegt (siehe scripts/flarum_sync.py
+# obs_tags) -- fuer die Themen-Seltenheit unbrauchbar, jede Diskussion haette
+# sonst denselben "seltenen" Tag.
+_GENERISCHE_TAGS = {"diskussion"}
+
+
+def _parse_tags(frontmatter_body: str) -> list[str]:
+    """Liest `tags: [forum/a, forum/b]` aus dem Frontmatter-Rumpf (wie ihn
+    _parse_frontmatter() via text[3:end] auch nutzt), ohne `forum/`-Praefix
+    und ohne generische Tags."""
+    m = re.search(r"^tags:\s*\[(.*?)\]\s*$", frontmatter_body, re.MULTILINE)
+    if not m:
+        return []
+    roh = [t.strip().removeprefix("forum/") for t in m.group(1).split(",")]
+    return [t for t in roh if t and t not in _GENERISCHE_TAGS]
+
+
 def baue_forum_kompakt() -> str:
     """
     Liest alle Diskussionen aus dem Vault und baut eine kompakte Übersicht.
@@ -132,8 +158,8 @@ def baue_forum_kompakt() -> str:
     dateien = sorted(disk_dir.glob("*.md"), key=lambda f: f.name)
     dateien = [f for f in dateien if f.name != "INDEX.md"]
 
-    # Sortieren nach letzter Aktivität (neueste zuletzt → älteste zuerst für "vergessen")
     eintraege = []
+    tag_haeufigkeit: dict[str, int] = {}
     for datei in dateien:
         text = datei.read_text(encoding="utf-8", errors="replace")
         fm   = _parse_frontmatter(text)
@@ -141,37 +167,73 @@ def baue_forum_kompakt() -> str:
             continue
         erster, letzter = _erster_und_letzter_post(text)
         letzter_autor   = _letzter_autor_aus_text(text)
+        tags = _parse_tags(_frontmatter_body(text))
+        for t in tags:
+            tag_haeufigkeit[t] = tag_haeufigkeit.get(t, 0) + 1
+        try:
+            posts_n = int(fm.get("posts", 0))
+        except (TypeError, ValueError):
+            posts_n = 0
         eintraege.append({
             "id":           fm.get("id", "?"),
             "titel":        fm.get("titel", "?"),
             "autor":        fm.get("autor", "?"),
             "posts":        fm.get("posts", "?"),
+            "posts_n":      posts_n,
             "erstellt":     fm.get("erstellt", "?"),
             "letzter_post": fm.get("letzter_post", "?"),
             "letzter_autor": letzter_autor,
             "erster":       erster,
             "letzter":      letzter,
+            "tags":         tags,
             "ist_codewesen": fm.get("autor", "") in CODEWESEN_USERNAMES or fm.get("autor", "").startswith("namelessAI"),
             "letzter_ist_cw": letzter_autor in CODEWESEN_USERNAMES or letzter_autor.startswith("namelessAI"),
         })
 
-    # Sortieren: neueste zuerst
-    def sort_key(e):
+    # Seltenheit je Diskussion: Haeufigkeit ihres selteneren Tags (kleiner =
+    # untypischer/individueller). Ohne Tags gilt sie als "nicht besonders selten"
+    # (unendlich), nicht als "am seltensten" -- sonst wuerden ungetaggte
+    # Diskussionen die Rubrik dominieren, ohne inhaltlichen Grund.
+    for e in eintraege:
+        e["seltenheit"] = min((tag_haeufigkeit[t] for t in e["tags"]), default=float("inf"))
+
+    def alter_sort_key(e):
         try:
             return datetime.strptime(e["letzter_post"], "%Y-%m-%d %H:%M")
         except Exception:
             return datetime.min
-    eintraege.sort(key=sort_key, reverse=True)
 
     gesamt = len(eintraege)
-    gekuerzt = gesamt > MAX_DISKUSSIONEN_IM_KOMPAKT
-    if gekuerzt:
-        eintraege = eintraege[:MAX_DISKUSSIONEN_IM_KOMPAKT]
+
+    aktivste  = sorted(eintraege, key=alter_sort_key, reverse=True)[:MAX_AKTIVSTE]
+    ausgewaehlt = {id(e): e for e in aktivste}
+
+    rest = [e for e in eintraege if id(e) not in ausgewaehlt]
+    meiste_posts = sorted(rest, key=lambda e: e["posts_n"], reverse=True)[:MAX_MEISTE_POSTS]
+    ausgewaehlt.update({id(e): e for e in meiste_posts})
+
+    rest = [e for e in eintraege if id(e) not in ausgewaehlt]
+    wenigste_posts = sorted((e for e in rest if e["posts_n"] >= 1), key=lambda e: e["posts_n"])[:MAX_WENIGSTE_POSTS]
+    ausgewaehlt.update({id(e): e for e in wenigste_posts})
+
+    rest = [e for e in eintraege if id(e) not in ausgewaehlt]
+    seltene_themen = sorted((e for e in rest if e["seltenheit"] != float("inf")),
+                            key=lambda e: e["seltenheit"])[:MAX_SELTENE_THEMEN]
+    ausgewaehlt.update({id(e): e for e in seltene_themen})
+
+    eintraege_gezeigt = sorted(ausgewaehlt.values(), key=alter_sort_key, reverse=True)
+    gekuerzt = len(eintraege_gezeigt) < gesamt
 
     stand_zeile = f"FORUM-STAND: {jetzt.strftime('%Y-%m-%d %H:%M')} UTC | {gesamt} Diskussionen gesamt"
     if gekuerzt:
-        stand_zeile += f", die {MAX_DISKUSSIONEN_IM_KOMPAKT} aktivsten gezeigt (aeltere ausgeblendet)"
+        stand_zeile += (
+            f", {len(eintraege_gezeigt)} gezeigt "
+            f"(aktivste {len(aktivste)} + postreichste {len(meiste_posts)} "
+            f"+ postaermste {len(wenigste_posts)} + thematisch seltenste {len(seltene_themen)}, "
+            f"Rest ausgeblendet)"
+        )
     zeilen = [stand_zeile + "\n"]
+    eintraege = eintraege_gezeigt
 
     for e in eintraege:
         # Alter berechnen
