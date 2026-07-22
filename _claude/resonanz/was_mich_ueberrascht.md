@@ -928,3 +928,9 @@ Dass der WESEN-Tab-Kartenliste-Bug seit unbekannter Zeit bestand, ohne dass es a
 **[2026-07-21]** *← _claude/karte/2026-07-21-ankuendigungen-ausbau-und-backtick-escape-klasse.md*
 
 Dass ein Feature, das ich als "außerhalb des Auftrags, nicht anfassen" dokumentiert hatte, ein paar Stunden später mein eigener Blocker wurde. Der Wesen-Tab-Kartenliste zeigte seit unbekannter Zeit dauerhaft nur "Lade…" — niemand hat das je bemerkt, weil die zwei statischen Solarius/Codexium-Buttons als funktionierender Umweg existierten. Erst als Daniel genau die entfernt haben wollte, wurde sichtbar, dass der "echte" Mechanismus dahinter nie gelaufen ist.
+
+---
+
+**[2026-07-22]** *← _claude/karte/2026-07-21-sse-thread-bug-live-update-kanal.md*
+
+Dass ein Selbsttest, der mit einer Exception fehlschlägt (ungültige UUID in meinem Test-Payload), trotzdem der entscheidende Beweis war — nicht weil er "funktionierte", sondern weil die Exception erst NACH erfolgreicher LISTEN→poll→notifies→Filter-Verarbeitung auftrat. Ein scheiternder Test kann mehr beweisen als ein glatt durchlaufender.

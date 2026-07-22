@@ -28,15 +28,20 @@ fokus_events_router = APIRouter(prefix="/fokus-events", tags=["fokus_events"])
 
 
 def _pg_listen_fokus_events_sse(entity_id: str):
-    conn = psycopg2.connect(DB_URI)
-    conn.set_isolation_level(psycopg2.extensions.ISOLATION_LEVEL_AUTOCOMMIT)
-    cur = conn.cursor()
-    cur.execute("LISTEN entity_fokus_events")
-
-    def _poll_once():
-        return bool(sel.select([conn], [], [], 0.5))
-
+    # 2026-07-21 gefunden (siehe dom_events_api.py fuer die volle Herleitung): Verbindungsaufbau
+    # muss innerhalb von gen() passieren, sonst laeuft er im anyio-Worker-Thread der
+    # synchronen Routen-Funktion waehrend Polling/Notifies auf dem Event-Loop-Thread
+    # laufen -- reale NOTIFYs von browser_agent.py kamen dadurch nie an.
     async def gen():
+        conn = psycopg2.connect(DB_URI)
+        conn.set_isolation_level(psycopg2.extensions.ISOLATION_LEVEL_AUTOCOMMIT)
+        cur = conn.cursor()
+        cur.execute("LISTEN entity_fokus_events")
+
+        def _poll_once():
+            readable, _, _ = sel.select([conn], [], [], 0.5)
+            return bool(readable)
+
         loop = asyncio.get_running_loop()
         try:
             heartbeat = 0
@@ -67,7 +72,7 @@ def _pg_listen_fokus_events_sse(entity_id: str):
 
 
 @fokus_events_router.get("/stream/{entity_id}")
-def fokus_events_sse(entity_id: str = Path(..., max_length=64)):
+async def fokus_events_sse(entity_id: str = Path(..., max_length=64)):
     """Live-SSE-Stream der Fokus-Events eines Wesens — öffentlich, kein Auth
     (dieselbe Sichtbarkeit wie Denkstream/DOM-Events: kein privater Inhalt,
     nur die öffentliche Browser-Aktivität eines Wesens)."""

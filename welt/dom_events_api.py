@@ -30,23 +30,33 @@ dom_events_router = APIRouter(prefix="/dom-events", tags=["dom_events"])
 
 
 def _pg_listen_dom_events_sse(entity_id: str):
-    conn = psycopg2.connect(DB_URI)
-    conn.set_isolation_level(psycopg2.extensions.ISOLATION_LEVEL_AUTOCOMMIT)
-    cur = conn.cursor()
-    cur.execute("LISTEN entity_dom_events")
-
-    read_conn = psycopg2.connect(DB_URI, cursor_factory=psycopg2.extras.RealDictCursor)
-
-    def _poll_once():
-        return bool(sel.select([conn], [], [], 0.5))
-
-    def _hole_event(event_id: str):
-        with read_conn.cursor() as c:
-            c.execute("SELECT event_json FROM entity_dom_events WHERE id = %s", (event_id,))
-            row = c.fetchone()
-            return row["event_json"] if row else None
-
+    # 2026-07-21 gefunden: Verbindungsaufbau (psycopg2.connect) lief vorher in der
+    # SYNCHRONEN Routen-Funktion, die FastAPI ueber einen anyio-Worker-Thread ausfuehrt --
+    # das gesamte LISTEN/poll()/notifies-Handling danach lief aber auf dem Event-Loop-
+    # Thread der async gen()-Funktion. Reale NOTIFYs von browser_agent.py (separater
+    # Prozess) kamen dadurch nie an, obwohl ein unabhaengiges Test-Script mit exakt
+    # derselben LISTEN/poll-Logik auf EINEM durchgehenden Thread sie zuverlaessig
+    # empfangen hat -- per Selbsttest (pg_notify direkt aus dem gleichen Prozess)
+    # bestaetigt funktionierte NUR die unmittelbare Eigen-Benachrichtigung, nie eine von
+    # aussen. Fix: Verbindungsaufbau UND das gesamte Polling passieren jetzt konsequent
+    # innerhalb der async gen()-Funktion selbst, auf dem Event-Loop-Thread.
     async def gen():
+        conn = psycopg2.connect(DB_URI)
+        conn.set_isolation_level(psycopg2.extensions.ISOLATION_LEVEL_AUTOCOMMIT)
+        cur = conn.cursor()
+        cur.execute("LISTEN entity_dom_events")
+        read_conn = psycopg2.connect(DB_URI, cursor_factory=psycopg2.extras.RealDictCursor)
+
+        def _poll_once():
+            readable, _, _ = sel.select([conn], [], [], 0.5)
+            return bool(readable)
+
+        def _hole_event(event_id: str):
+            with read_conn.cursor() as c:
+                c.execute("SELECT event_json FROM entity_dom_events WHERE id = %s", (event_id,))
+                row = c.fetchone()
+                return row["event_json"] if row else None
+
         loop = asyncio.get_running_loop()
         try:
             heartbeat = 0
@@ -81,10 +91,12 @@ def _pg_listen_dom_events_sse(entity_id: str):
 
 
 @dom_events_router.get("/stream/{entity_id}")
-def dom_events_sse(entity_id: str = Path(..., max_length=64)):
+async def dom_events_sse(entity_id: str = Path(..., max_length=64)):
     """Live-SSE-Stream der rrweb-DOM-Events eines Wesens — oeffentlich, kein Auth
     (dieselbe Sichtbarkeit wie der bestehende Denkstream: kein privater Inhalt,
-    nur die oeffentliche Browser-Aktivitaet eines Wesens)."""
+    nur die oeffentliche Browser-Aktivitaet eines Wesens).
+    2026-07-21: async statt sync def -- vermeidet den anyio-Worker-Thread-Sprung,
+    siehe Kommentar in _pg_listen_dom_events_sse."""
     return StreamingResponse(
         _pg_listen_dom_events_sse(entity_id),
         media_type="text/event-stream",

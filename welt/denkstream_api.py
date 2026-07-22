@@ -182,16 +182,23 @@ def denkstream_status_all():
 
 
 def _pg_listen_sse(channel: str, entity_filter: str | None) -> AsyncGenerator:
-    """Generator: PostgreSQL LISTEN → SSE-Chunks."""
-    conn = psycopg2.connect(DB_URI)
-    conn.set_isolation_level(psycopg2.extensions.ISOLATION_LEVEL_AUTOCOMMIT)
-    cur = conn.cursor()
-    cur.execute(f"LISTEN {channel}")
-
-    def _poll_once():
-        return bool(sel.select([conn], [], [], 0.5))
-
+    """Generator: PostgreSQL LISTEN → SSE-Chunks.
+    2026-07-21 gefunden (siehe dom_events_api.py fuer die volle Herleitung): Verbindungsaufbau
+    lief vorher in der SYNCHRONEN Routen-Funktion (anyio-Worker-Thread), Polling/Notifies-
+    Verarbeitung aber im Event-Loop-Thread der async gen()-Funktion -- reale NOTIFYs von
+    anderen Prozessen kamen dadurch nie zuverlaessig an. Fix: alles innerhalb von gen()."""
     async def gen():
+        conn = psycopg2.connect(DB_URI)
+        conn.set_isolation_level(psycopg2.extensions.ISOLATION_LEVEL_AUTOCOMMIT)
+        cur = conn.cursor()
+        cur.execute(f"LISTEN {channel}")
+
+        def _poll_once():
+            # 2026-07-21 gefunden: bool(select.select(...)) ist IMMER True, da select()
+            # immer ein 3-Tupel zurueckgibt -- der Heartbeat-Zweig unten war toter Code.
+            readable, _, _ = sel.select([conn], [], [], 0.5)
+            return bool(readable)
+
         loop = asyncio.get_running_loop()
         try:
             heartbeat = 0
@@ -223,7 +230,7 @@ def _pg_listen_sse(channel: str, entity_filter: str | None) -> AsyncGenerator:
 
 
 @denkstream_router.get("/{entity_id}")
-def denkstream_sse(entity_id: str):
+async def denkstream_sse(entity_id: str):
     """Live-SSE-Stream des Denkens eines Wesens — öffentlich, kein Auth."""
     return StreamingResponse(
         _pg_listen_sse("entity_denkstream", entity_id),
@@ -237,7 +244,7 @@ def denkstream_sse(entity_id: str):
 
 
 @denkstream_router.get("/all/stream")
-def denkstream_all_sse():
+async def denkstream_all_sse():
     """Live-SSE-Stream aller Wesen — öffentlich."""
     return StreamingResponse(
         _pg_listen_sse("entity_denkstream", None),

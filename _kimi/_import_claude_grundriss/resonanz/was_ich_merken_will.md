@@ -993,3 +993,9 @@ Vor jeder Aktivierung eines lange gesperrten, "fertigen" Systems: davon ausgehen
 **[2026-07-21]** *← _claude/karte/2026-07-21-code-export-pfad-korrektur.md*
 
 Bei jeder Aufgabe, die "den echten Code" braucht: nicht blind dem in CLAUDE.md notierten Pfad folgen, sondern über die tatsächlich laufenden Prozesse (`ss -tlnp`, systemd-Units) verifizieren, wo der Code wirklich liegt — Doku kann veralten, laufende Prozesse lügen nicht.
+
+---
+
+**[2026-07-22]** *← _claude/karte/2026-07-21-sse-thread-bug-live-update-kanal.md*
+
+Bei jedem neuen FastAPI-SSE/Streaming-Endpunkt zuerst prüfen: ist die Routen-Funktion `async def`? Falls sie `psycopg2`/DB-Verbindungen für LISTEN/NOTIFY nutzt und `def` (sync) ist, ist das ein sofortiges Verdachtsmoment für genau diesen Bug.

@@ -32,16 +32,24 @@ events_stream_router = APIRouter(prefix="/events", tags=["events_stream"])
 
 def _pg_listen_events_sse(praefix: str | None) -> AsyncGenerator:
     """Generator: PostgreSQL LISTEN auf 'events_stream' -> SSE-Chunks.
-    Analog zu denkstream_api._pg_listen_sse, hier generisch fuer alle Event-Typen."""
-    conn = psycopg2.connect(DB_URI)
-    conn.set_isolation_level(psycopg2.extensions.ISOLATION_LEVEL_AUTOCOMMIT)
-    cur = conn.cursor()
-    cur.execute("LISTEN events_stream")
-
-    def _poll_once():
-        return bool(sel.select([conn], [], [], 0.5))
-
+    Analog zu denkstream_api._pg_listen_sse, hier generisch fuer alle Event-Typen.
+    2026-07-21 gefunden (siehe dom_events_api.py fuer die volle Herleitung): Verbindungsaufbau
+    muss innerhalb von gen() passieren, sonst laeuft er im anyio-Worker-Thread der
+    synchronen Routen-Funktion waehrend Polling/Notifies auf dem Event-Loop-Thread laufen --
+    reale NOTIFYs aus anderen Prozessen kamen dadurch nie zuverlaessig an. Betraf damit
+    potenziell Grundgesetz 8 ("Live statt F5") systemweit, nicht nur einen einzelnen Tab."""
     async def gen():
+        conn = psycopg2.connect(DB_URI)
+        conn.set_isolation_level(psycopg2.extensions.ISOLATION_LEVEL_AUTOCOMMIT)
+        cur = conn.cursor()
+        cur.execute("LISTEN events_stream")
+
+        def _poll_once():
+            # 2026-07-21 gefunden: bool(select.select(...)) ist IMMER True, da select()
+            # immer ein 3-Tupel zurueckgibt -- der Heartbeat-Zweig unten war toter Code.
+            readable, _, _ = sel.select([conn], [], [], 0.5)
+            return bool(readable)
+
         loop = asyncio.get_running_loop()
         try:
             heartbeat = 0
@@ -72,7 +80,7 @@ def _pg_listen_events_sse(praefix: str | None) -> AsyncGenerator:
 
 
 @events_stream_router.get("/stream")
-def events_sse(praefix: str | None = Query(default=None, max_length=64)):
+async def events_sse(praefix: str | None = Query(default=None, max_length=64)):
     """Live-SSE-Stream aller Events (optional gefiltert nach event_type-Praefix) — oeffentlich, kein Auth.
     Traegt niemals sensible Inhalte, nur ein Neulade-Signal (siehe Moduldoku)."""
     return StreamingResponse(
