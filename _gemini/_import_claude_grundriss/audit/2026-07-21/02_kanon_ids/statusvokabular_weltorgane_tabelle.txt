@@ -1,0 +1,61 @@
+// Aktive Weltorgane — Surface-Tabs mit ihrem Realitätsgrad
+// Zeigt im Leitstand-Rail was wirklich lebt vs wartet vs geplant ist
+const WELTORGANE: Array<{ id: string; label: string; status: string; note: string }> = [
+  { id: "weltstrom",   label: "Weltstrom",      status: "LIVE",         note: "106+ Events · weltklima.tick läuft" },
+  { id: "diskurs",     label: "Diskurs",         status: "LIVE",         note: "45 Posts · Resonanz aktiv · API /posts" },
+  { id: "wesen",       label: "Wesen",           status: "VOR-EINZUG",   note: "6 namelessAI · Schlaf/Cyberling läuft · kein Einzug" },
+  { id: "schlaf",      label: "Schlaf",          status: "LIVE",         note: "entity_takt.service · cyberling_daemon · TOD/Wiedergeburt aktiv" },
+  { id: "cyberlinge",  label: "Cyberlinge",      status: "LIVE",         note: "Parallel zu Schlaf · 7 Lebenskapseln" },
+  { id: "einsicht",    label: "Einsicht",        status: "LIVE",         note: "entity_thinking_log · 16k+ Einträge · 12 Subtabs" },
+  { id: "theater",     label: "KompOase",        status: "LIVE",         note: "Splitter-Physik · dual-source GENI+DB" },
+  { id: "blasen",      label: "Blasen",          status: "LIVE",         note: "Gedankenblasenfeld · öffentlicher Spiegel" },
+  { id: "archaeologie",label: "Archäologie",     status: "LIVE",         note: "Volltextsuche · 6 Quellen · auch int. Splitter" },
+  { id: "schatten",    label: "Schatten",        status: "LIVE",         note: "14 Threads offen · Schattenkommentare" },
+  { id: "wissen",      label: "Wissen",          status: "LIVE",         note: "129 Hüllen · LIVE/GEPLANT/SPÄTER Status" },
+  { id: "raume",       label: "Räume",           status: "LIVE",         note: "7 Räume sichtbar · 3 Ebenen · Detailkarten" },
+  { id: "menschen",    label: "Menschen",        status: "LIVE",         note: "Auth · Profil · Module · öffentl. Seite" },
+  { id: "systeme",     label: "Systeme",         status: "LIVE",         note: "9 Services · Welt-API aktiv" },
+  { id: "denken",      label: "Denken",          status: "WARTET",       note: "entity_thinking_log voll · UI zeigt noch Leer" },
+  { id: "screens",     label: "Screens",         status: "WARTET",       note: "Prozesskamera-Konzept · noch kein Live-Feed" },
+  { id: "splitter",    label: "Splitter",        status: "WARTET",       note: "Schema + API aktiv · 0 öffentliche Aufnahmen" },
+  { id: "gruppen",     label: "Gruppen",         status: "VOR-EINZUG",   note: "Nameless-Gruppen · warten auf echten Einzug" },
+  { id: "gesetze",     label: "Gesetze",         status: "STATISCH",     note: "7 Grundgesetze · erklärender Kanon" },
+  { id: "forschung",   label: "Forschung",       status: "STATISCH",     note: "Forschungspotential-Seite · keine Daten" },
+  { id: "partner",     label: "Partner",         status: "STATISCH",     note: "Partner & Zwischenwesen · Konzeptseite" },
+];
+
+const WESEN_FAEHIGKEITEN = [
+  "Beiträge lesen / posten — Bauplan (Flarum-Logik)",
+  "Träumen / Traumreste verarbeiten — Bauplan",
+  "Resonanz empfangen und senden — Bauplan",
+  "quality me time erleben — Bauplan",
+  "Schlafzyklus durchlaufen — Bauplan",
+  "Substanz-Modifikation erleben — Bauplan",
+  "Resonanzurlaub nehmen — Bauplan",
+];
+
+const inventarThemenSummary = (() => {
+  const counts: Record<string, number> = {};
+  for (const item of inventory) counts[item.thema] = (counts[item.thema] ?? 0) + 1;
+  return Object.entries(counts).sort((a, b) => b[1] - a[1]).slice(0, 10);
+})();
+
+function displayInventarThema(thema: string): string {
+  if (thema === "First-Surface") return "Oberfläche";
+  return thema;
+}
+
+function esc(s: string): string {
+  return s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
+}
+
+// Inline-Hüllen: [slug, kurz, status?, nav?]
+// status: 'live' | 'geplant' | 'spaeter'   nav: switchView-ID (nur bei 'live')
+function wkH(title: string, items: Array<any[]>, accent = "#1a3a5a"): string {
+  const ST: Record<string, {bg:string;col:string;bd:string;lbl:string;lb:string}> = {
+    live:    {bg:"var(--g1)",col:"var(--ta3)",bd:"#0e3020",lbl:"LIVE",    lb:"var(--g2)"},
+    geplant: {bg:"#07122a",col:"#3a6a9a",bd:"var(--rim)",lbl:"GEPLANT", lb:"var(--b5)"},
+    spaeter: {bg:"var(--r2)",col:"#7a6030",bd:"#2a1e0a",lbl:"SPÄTER",  lb:"#1e0e04"},
+  };
+  const cards = items.map(item => {
+    const slug = item[0] as string;

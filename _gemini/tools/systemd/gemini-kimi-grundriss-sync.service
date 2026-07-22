@@ -1,0 +1,14 @@
+[Unit]
+Description=Gemini Kimi-Grundriss Sync
+After=network.target
+
+[Service]
+Type=simple
+User=root
+WorkingDirectory=/root/werkraum
+ExecStart=/usr/bin/python3 /root/werkraum/_gemini/tools/kimi_grundriss_sync.py --interval 5
+Restart=always
+RestartSec=10
+
+[Install]
+WantedBy=multi-user.target

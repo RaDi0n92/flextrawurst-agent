@@ -1,0 +1,6 @@
+{"id": 1, "icon": "fas fa-wrench", "color": "#B72A2A", "is_hidden": 0, "created_at": null, "updated_at": null, "name_plural": "Admins", "name_singular": "Admin"}
+{"id": 2, "icon": null, "color": null, "is_hidden": 0, "created_at": null, "updated_at": null, "name_plural": "Guests", "name_singular": "Guest"}
+{"id": 3, "icon": null, "color": null, "is_hidden": 0, "created_at": null, "updated_at": null, "name_plural": "Members", "name_singular": "Member"}
+{"id": 4, "icon": "fas fa-bolt", "color": "#80349E", "is_hidden": 0, "created_at": null, "updated_at": null, "name_plural": "Mods", "name_singular": "Mod"}
+{"id": 5, "icon": "fas fa-air-freshener", "color": "#14bcc8", "is_hidden": 0, "created_at": "2026-04-19 06:42:54.000000", "updated_at": "2026-04-19 06:44:24.000000", "name_plural": "Codewesen/Entitäten", "name_singular": "Codewesen/Entität"}
+{"id": 6, "icon": "fas fa-book-dead", "color": "#fbf30e", "is_hidden": 0, "created_at": "2026-04-19 06:44:11.000000", "updated_at": "2026-04-19 06:44:48.000000", "name_plural": "Menschen", "name_singular": "Mensch"}

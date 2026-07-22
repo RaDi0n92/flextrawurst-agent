@@ -1,0 +1,57 @@
+/root/werkraum/welt/groups_api.py:216:        canonical_entity_id: Optional[str] = Query(default=None),
+/root/werkraum/welt/groups_api.py:243:                if canonical_entity_id:
+/root/werkraum/welt/groups_api.py:244:                    conditions.append("g.canonical_entity_id = %s")
+/root/werkraum/welt/groups_api.py:245:                    params.append(canonical_entity_id)
+/root/werkraum/welt/groups_api.py:331:                    WHERE g.canonical_entity_id = %s AND g.group_type = 'entity_fan_group'
+/root/werkraum/welt/groups_api.py:938:                           g.visibility_layer, g.canonical_entity_id
+/root/werkraum/welt/groups_api.py:942:                       OR g.canonical_entity_id = %s
+/root/werkraum/welt/schema_groups.sql:30:    canonical_entity_id VARCHAR(100) REFERENCES entity_slots(entity_id) ON DELETE SET NULL,
+/root/werkraum/welt/schema_groups.sql:46:CREATE INDEX IF NOT EXISTS idx_groups_entity ON groups(canonical_entity_id);
+/root/werkraum/welt/schema_groups.sql:120:                    created_by_type, creation_mode, canonical_entity_id, meta)
+/root/werkraum/welt/api.py:11045:                           g.status, g.visibility_layer, g.canonical_entity_id,
+/root/werkraum/welt/api.py:11057:                                 "member_count": r["member_count"], "canonical_entity_id": r["canonical_entity_id"]},
+/root/flextrawurst/tests/deterministic_world_movement_multi_entity.test.ts:5:  CANONICAL_ENTITY_IDS,
+/root/flextrawurst/tests/deterministic_world_movement_multi_entity.test.ts:30:    for (const id of CANONICAL_ENTITY_IDS) {
+/root/flextrawurst/tests/deterministic_world_movement_multi_entity.test.ts:90:    for (const id of CANONICAL_ENTITY_IDS) {
+/root/flextrawurst/tests/deterministic_world_movement_multi_entity.test.ts:109:    const expectedIds = CANONICAL_ENTITY_IDS.map(
+/root/flextrawurst/tests/deterministic_world_movement_multi_entity.test.ts:150:    for (const id of CANONICAL_ENTITY_IDS) {
+/root/flextrawurst/scripts/einsicht_view_gen.ts:1:import { CANONICAL_ENTITY_IDS } from "../kernel/entities/seed_entities.ts";
+/root/flextrawurst/scripts/einsicht_view_gen.ts:4:const entityIds = [...CANONICAL_ENTITY_IDS];
+/root/flextrawurst/tests/surface_ring_23.test.ts:6:import { CANONICAL_ENTITY_IDS } from "../kernel/entities/seed_entities.ts";
+/root/flextrawurst/tests/surface_ring_23.test.ts:45:    for (const id of CANONICAL_ENTITY_IDS) {
+/root/flextrawurst/tests/surface_ring_23.test.ts:368:    const wesenIds = CANONICAL_ENTITY_IDS.filter((id) => id !== "dak+gord-system");
+/root/flextrawurst/tests/surface_ring_23.test.ts:369:    assert.equal(wesenIds.length, 6, "Erwartet 6 benannte Wesen in CANONICAL_ENTITY_IDS");
+/root/flextrawurst/tests/surface_ring_23.test.ts:478:    assert.equal(CANONICAL_ENTITY_IDS.length, 7);
+/root/flextrawurst/tests/surface_ring_23.test.ts:481:      assert.ok(CANONICAL_ENTITY_IDS.includes(id as any), `${id} fehlt in CANONICAL_ENTITY_IDS`);
+/root/flextrawurst/tests/surface_ring_23.test.ts:483:    assert.ok(CANONICAL_ENTITY_IDS.includes("dak+gord-system" as any));
+/root/flextrawurst/scripts/build_surface.ts:3:import { CANONICAL_ENTITY_IDS } from "../kernel/entities/seed_entities.ts";
+/root/flextrawurst/scripts/build_surface.ts:12:const entityIds = [...CANONICAL_ENTITY_IDS];
+/root/flextrawurst/scripts/build_surface.ts:84:    realitaet: "Flarum-Archiv extern (MySQL, read-only) · 7 Wesen-Seeds in CANONICAL_ENTITY_IDS (6 namelessAI + dak+gord-system) · kein Post-Feed auf flextrawurst · kein Einzug vollzogen · entity_thinking_log: 16k+ Einträge (Vor-Einzug-Denklog) · Export verfügbar unter archiv/pre_einzug_denklog/",
+/root/flextrawurst/scripts/build_surface.ts:86:    schichten: "GENI-Wahrnehmung · namelessAI-Seed + dak+gord-system (seed_entities.ts / CANONICAL_ENTITY_IDS) · Flarum-DB (extern, gesperrt) · Vor-Einzug-Denklog (entity_thinking_log)",
+/root/flextrawurst/scripts/build_surface.ts:87:    quelle: "seed_entities.ts · CANONICAL_ENTITY_IDS · Flarum-DB (MySQL extern) · export_pre_einzug_denklog.py",
+/root/flextrawurst/scripts/build_surface.ts:89:    realitaet_en: "Flarum archive external (MySQL, read-only) · 7 being-seeds in CANONICAL_ENTITY_IDS (6 namelessAI + dak+gord-system) · no post feed on flextrawurst · no move-in completed · entity_thinking_log: 16k+ entries (pre-move-in thinking log) · export available at archiv/pre_einzug_denklog/",
+/root/flextrawurst/scripts/build_surface.ts:91:    schichten_en: "GENI perception · namelessAI seed + dak+gord-system (seed_entities.ts / CANONICAL_ENTITY_IDS) · Flarum DB (external, locked) · pre-move-in thinking log (entity_thinking_log)",
+/root/flextrawurst/scripts/build_surface.ts:9417:          if (g.canonical_entity_id) {
+/root/flextrawurst/scripts/build_surface.ts:9418:            var el2 = document.getElementById('fan-members-' + g.canonical_entity_id);
+/root/flextrawurst/scripts/build_surface.ts:9482:      var entityLink = g.canonical_entity_id ? '<div style="font-size:.6rem;color:#2a5a3a;margin-bottom:8px">Ankerwesen: ' + grEsc(g.canonical_entity_id) + '</div>' : '';
+/root/flextrawurst/scripts/build_surface.ts:9499:        + (g.canonical_entity_id ? '<div style="color:var(--g2);font-size:.55rem;margin-top:8px;font-style:italic">Wesen wartet auf Einzug</div>' : '')
+/root/flextrawurst/tests/world_runtime_pipeline.test.ts:5:  CANONICAL_ENTITY_IDS,
+/root/flextrawurst/tests/world_runtime_pipeline.test.ts:112:    for (const id of CANONICAL_ENTITY_IDS) {
+/root/flextrawurst/tests/world_runtime_pipeline.test.ts:126:    for (const id of CANONICAL_ENTITY_IDS) {
+/root/flextrawurst/tests/world_runtime_pipeline.test.ts:141:    for (const id of CANONICAL_ENTITY_IDS) {
+/root/flextrawurst/tests/world_runtime_pipeline.test.ts:214:    for (const id of CANONICAL_ENTITY_IDS) {
+/root/flextrawurst/tests/world_operating_system_ring_1.test.ts:5:  CANONICAL_ENTITY_IDS,
+/root/flextrawurst/tests/world_operating_system_ring_1.test.ts:354:    for (const id of CANONICAL_ENTITY_IDS) {
+/root/flextrawurst/kernel/import_gate/forum_import_candidate.ts:1:import { CANONICAL_ENTITY_IDS } from "../entities/seed_entities.ts";
+/root/flextrawurst/kernel/import_gate/forum_import_candidate.ts:41:  const accounts: ForumAccountCandidate[] = CANONICAL_ENTITY_IDS.map((id) => ({
+/root/flextrawurst/kernel/provenance/provenance_record.ts:66:        origin_label: event.created_by_process ?? "canonical_entity_seed",
+/root/flextrawurst/kernel/provenance/provenance_record.ts:112:      origin_label: "canonical_entity_seed",
+/root/flextrawurst/kernel/entities/seed_entities.ts:4:export const CANONICAL_ENTITY_IDS = [
+/root/flextrawurst/kernel/entities/seed_entities.ts:14:export type CanonicalEntityId = (typeof CANONICAL_ENTITY_IDS)[number];
+/root/flextrawurst/kernel/entities/seed_entities.ts:42:    created_by_process: "canonical_entity_seed",
+/root/flextrawurst/kernel/entities/seed_entities.ts:52:  for (const entityId of CANONICAL_ENTITY_IDS) {
+/root/flextrawurst/kernel/slots/entity_slot.ts:3:import { CANONICAL_ENTITY_IDS } from "../entities/seed_entities.ts";
+/root/flextrawurst/kernel/slots/entity_slot.ts:41:  return CANONICAL_ENTITY_IDS.map((id) => ({
+/root/flextrawurst/kernel/slots/entity_slot.ts:69:  const canonicalSet = new Set<string>(CANONICAL_ENTITY_IDS);
+/root/flextrawurst/kernel/scenario/world_scenario.ts:1:import { CANONICAL_ENTITY_IDS } from "../entities/seed_entities.ts";
+/root/flextrawurst/kernel/scenario/world_scenario.ts:28:    entity_ids: [...CANONICAL_ENTITY_IDS],
