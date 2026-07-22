@@ -79,6 +79,9 @@ Der Start zeigt wieder viel fremde Bewegung im Root-Status; fasse sie nicht an. 
 2026-05-29 19:53 —
 Daniel hat nur "huhu" gesagt; der Werkraum rauscht aber stark mit neuem Einzug-Endpunkt, Wesen-Aktionen und Sprachpaket-Nachhall. Bleib beim Skalpell: freundlich antworten, nichts anfassen, bis der konkrete Wunsch da ist.
 
+2026-07-22 21:38 —
+Daniel hat nur "hi luna xD" gesagt. Der Werkraum ist laut und voller fremder Laufspuren, aber heute ist daraus kein Auftrag geworden; nichts weiter hineininterpretieren, freundlich antworten und auf sein eigentliches Anliegen warten.
+
 2026-07-09 00:45 —
 Die TTS-Spur ist sauberer als der Abbruch es wirken ließ: Logs-Compare und Regel-Import/Export sind schon drin, und der nächste sinnvolle Schritt ist wahrscheinlich Server-Compare für gespeicherte Analysen statt neues UI-Gerümpel. Halt den Scope schmal und prüf vor jedem Eingriff, ob du gerade das Studio erweiterst oder versehentlich eine neue öffentliche Schreibfläche baust.
 
