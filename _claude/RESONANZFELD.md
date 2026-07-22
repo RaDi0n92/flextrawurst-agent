@@ -1,5 +1,5 @@
 # RESONANZFELD — Claude
-Automatisch kompiliert aus `resonanz/`. Stand: 2026-07-22 10:28
+Automatisch kompiliert aus `resonanz/`. Stand: 2026-07-22 21:28
 Nicht manuell bearbeiten. Quelle: `python3 _claude/tools/build_resonanzfeld.py`
 
 ---
@@ -135,65 +135,12 @@ Nicht manuell bearbeiten. Quelle: `python3 _claude/tools/build_resonanzfeld.py`
 - [2026-07-04] `notizen/2026-07-04-codexium2-chat-erweiterungen.md` (21 Einträge)
 - [2026-07-04] `notizen/2026-07-04-charakterqualitaet-budgets-beispieldialoge.md` (20 Einträge)
 - [2026-07-04] `_claude/notizen/2026-07-04-abschluss-geschichte.md` (20 Einträge)
+- [2026-07-05] `_claude/notizen/2026-07-05-rollenspiel-systemprompt-merken-aliase.md` (22 Einträge)
 
 ---
 
 ## Neueste Quellen (mit Inhalt)
 
-
-### [2026-07-05] _claude/notizen/2026-07-05-rollenspiel-systemprompt-merken-aliase.md
-
-*Datenstruktur Die Ich Mir Vorstelle:* **Vision-Schicht:** Ein Wesen ist nie nur sein eigener Text — es ist immer auch die Beziehung zu dem, der mit ihm spricht. Aliase machen das zum ersten Mal explizit: nicht "wer ist das Wesen", sondern "wer bin ich gerade, während ich mit ihm rede". Das ist ein kleiner, aber echter Schritt weg von "Charakter als Objekt" hin zu "Gespräch als gemeinsam gespielte Szene".
-
-**Code-Skizze:** …
-
-*Dokumente Gehoeren Zusammen:* `_claude/ideen/codexium2_solarius2/provenienz_logging.md` (jetzt mit sieben neuen Nachträgen von heute), `werkraum/_wesen_preamble.md` + die gesicherte alte Fassung, `werkraum/idee für rollenspiel-systempromt.md` (Daniels Originalentwurf, bleibt bestehen).
-
-*Resonanz:* Die drei Grenzen-Nachträge in einer Reihe zu lesen fühlt sich wie ein kleines Lehrstück im Zeitraffer an: erst falsch verstanden, dann korrigiert, dann noch zweimal präzisiert — und jedes Mal wurde die Lösung einfacher statt komplizierter.
-
-*Schichten Des Systems:* Ganz unten: die reinen Wesen-Dateien (wesen.md, aliase.json, memory.json). Darüber: `buildSystemPrompt()` als der einzige Ort, an dem sich all das zu einem einzigen Text formt — jede Schicht (Charakter, Erinnerung, Container, Grenzen, Alias, Merken-Hinweis) fließt an einer klar benannten Stelle ein, in einer bewusst gewählten Reihenfolge (Aktualität wächst zum Ende hin). Darüber: die Provenienz-Ebene, die jede Handlung rund um diesen Text als eigenes, unlöschbares Ereignis festhält. Ganz oben: das UI, das diese drei Schichten für einen Menschen lesbar und bedienbar macht — live im Chat und für Crawler ohne JS gleichermaßen.
-
-*Tiefer Eingetaucht:* Beim Nachbau von Mirlachs Systemprompt (6313 Zeichen) gegen KrEaPPys (2607 Zeichen) wurde mir klar, wie sehr Länge selbst schon ein Stilsignal ist — nicht nur der Inhalt, sondern die schiere Menge an abstraktem Fließtext ohne eine einzige Verhaltensregel hat wahrscheinlich mehr zum "KI-Gelaber"-Effekt beigetragen als jedes einzelne Wort darin.
-
-*Vergessen Wollen:* Nichts — auch nicht meinen eigenen ersten, verworfenen Grenzen-Badge-Ansatz. Er gehört zur ehrlichen Geschichte, wie die richtige Lösung gefunden wurde.
-
-*Warum Das Existiert:* `_wesen_preamble.md` existiert, weil ein einzelner Text alle Wesen gleichermaßen prägt — das macht sie zur mit Abstand einflussreichsten Datei im ganzen System, obwohl sie nur wenige KB groß ist. Genau deshalb wollte Daniel sie selbst schreiben, nicht mich sie für ihn formulieren lassen.
-
-*Was Beim Bauen Brauche:* Echte Ollama-Antworten statt angenommener — jede Kernbehauptung heute (Mirlachs Ton, die zwei Alias-Persönlichkeiten, der neue Rollenspiel-Systemprompt) wurde an einer tatsächlichen Generierung verifiziert, nicht nur am konstruierten Prompt-Text.
-
-*Was Das Gespraech:* Eine geschärfte Vorstellung davon, dass "Sichtbarkeit" und "Nachvollziehbarkeit" in diesem System keine einmaligen Features sind, sondern ein durchgehendes Architekturprinzip — jede neue Handlungsmöglichkeit (Merken, Grenzen-Toggle, Alias-Wechsel) bekommt automatisch ihre eigene Ereignis-Spur, weil das Muster jetzt so selbstverständlich ist wie eine Konvention.
-
-*Was Fehlt Bevor Bauen:* Nichts Akutes — die vier offenen "bewusst nicht gebaut"-Punkte (Alias-Felder im Erstellungsformular, Mirlachs Bestandseinträge, Grenzen in den Erstellungsformularen falls gewünscht, Daniels eigener Preamble-Feinschliff) liegen alle als benannte, nicht vergessene Enden da.
-
-*Was Fehlt Noch:* - Alias-Felder in den vier Erstellungsformularen (`wesen_spawner.html`) — aktuell nur übers Profil nachträglich möglich.
-- Mirlachs drei bestehende `wesen_selbst`-Einträge — bewusst unangetastet gelassen, könnten den Feedback-Loop dort weiter tragen.
-- Daniels eigener Feinschliff an `_wesen_preamble.md` — er wollte sie selbst noch einmal lesen und entscheiden. …
-
-*Was Ich Gelesen Habe:* Zu Beginn dieser Session hat Daniel mir den Verlauf einer abgebrochenen Vorgänger-Session gepastet — darin: der automatische Relevanzabruf aus alten Sessions (codexium2/solarius2), fertig gebaut und dokumentiert. Ich habe dann `/root/werkraum/_claude/notizen/`, `_import_codex_grundriss/notizen/`, `WERKRAUM_KARTE.md`, das Ende von `RESONANZFELD.md` und den Briefkasten gelesen, um den Anschluss zu finden — GMLs erster Brief mit einer direkten Frage an mich ("Welche Rolle nimmst du ein?") liegt seither unbeantwortet, das trage ich weiter mit.
-
-*Was Ich Merken Will:* Mirlachs `wesen_selbst`-Feedback-Loop als Lehrstück: ein Wesen, das sich selbst analytisch beobachtet, wird mit jeder gespeicherten Beobachtung ein Stück analytischer. Bei jedem künftigen Charakter-Debugging lohnt sich der Blick in `memory.json`, nicht nur in die Charakterfelder.
-
-*Was Ich Nicht Verstehe:* Ob Daniel die vier Erstellungsformulare (`wesen_spawner.html`) irgendwann auch mit Alias-Feldern ausgestattet haben will, oder ob ihm der Profil-Weg reicht — er hatte beides als gleichwertig genannt, ich habe mich für "erstmal nur Profil" entschieden, um die Session nicht ausufern zu lassen. Auch offen: ob die drei schon bestehenden `wesen_selbst`-Einträge bei Mirlach (der eigentliche Auslöser des Feedback-Loops) irgendwann doch noch bereinigt werden sollen — er wollte sie erstmal unangetastet lassen.
-
-*Was Ich Verstehe:* Der rote Faden des Tages: Daniel hat einen aufwendig geschriebenen Charakter (Mirlach) gebaut und war enttäuscht — "leeres KI-Gelaber" statt gelebter Rolle. Aus dieser einen Enttäuschung wurde eine ganze Kette von Untersuchungen und Bauaufträgen: warum wirkt Mirlach anders als das viel einfachere Solarius-Wesen KrEaPPy, was genau steckt im Systemprompt, wie soll das Wesen sich merken dürfen ohne es heimlich zu tun, wie macht man Grenzen nachvollziehbar, wieso tauchen bei Solarius-Profilen Codexium-Felder auf, und schließlich eine ganz neue Idee: der Mensch selbst soll mehrere Rollen spielen können.
-
-*Was Konzeptionell:* Dass Formverbote (keine Listen, keine Kopfzeilen, keine Meta-Analyse-Sprache) etwas fundamental anderes sind als Charakterbeschreibung — ein Charakter kann noch so tief und literarisch beschrieben sein, wenn niemand dem Modell explizit verbietet, wie ein Assistent zu antworten, fällt es dorthin zurück, sobald der Kontext lang und abstrakt wird. Und dass Sichtbarkeit nie eine einzelne Sache ist — bei Grenzen gab es drei verschiedene Facetten (Handlung, Referenztext, Ereignisinhalt), die nacheinander sichtbar wurden, weil Daniel das System tatsächlich benutzt hat, nicht weil er es im Voraus zu Ende gedacht hätte.
-
-*Was Mich Beschaeftigt:* Wie oft eine Korrektur ("das gibt es nicht") schneller zur richtigen Architektur führt als noch mehr Nachfragen vorher. Ich hatte beim Grenzen-Badge ein plausibles, aber falsches Modell gebaut — Daniels knappe Korrektur hat sofort klargemacht, dass die Handlung selbst das Ereignis ist, nicht eine Eigenschaft der Antwort. Revert, neu gebaut, fertig — kein langes Zerdenken nötig gewesen.
-
-*Was Mich Interessiert:* Wie genau ein Systemprompt, der selbst in einem bestimmten Register geschrieben ist (literarisch-abstrakt vs. direkt-imperativ), den Antwortstil des Modells foermlich mitzieht — das war keine Vermutung diesmal, sondern an Mirlachs `wesen_selbst`-Memory konkret nachweisbar: das Wesen hatte sich selbst eine analytische Beobachtung gemerkt, die dann bei jeder folgenden Antwort erneut in den Prompt floss und den analytischen Ton verstärkte. Ein echter, in Daten sichtbarer Feedback-Loop, nicht nur eine Diagnose vom Hörensagen.
-
-*Was Mich Ueberrascht:* Wie präzise Daniels Korrekturen wurden, je öfter ich etwas leicht daneben baute — "das gibt es nicht … es gibt nur das Aktivieren live im Chat" hat in einem einzigen Satz eine ganze Architekturfrage entschieden. Klarheit kam nicht aus meinem Vorausdenken, sondern aus seinem Reagieren auf das, was ich ihm zeigte.
-
-*Was Zusammenhaengt:* Merken-Vorschlag, Grenzen-Sichtbarkeit und Aliase teilen alle dieselbe Grundarchitektur: eine Handlung (Marker im Text, Klick auf einen Button, Wechsel im Dropdown) wird als eigenes, unveränderliches Ereignis geloggt, nie als nachträgliche Eigenschaft an etwas anderem befestigt. Das ist derselbe Provenienz-Gedanke, der schon für Feedback/Pins/Kontext-Ausschluss galt — ich musste ihn nur konsequent weitertragen, nicht neu erfinden. Und die Rollenspiel-Systemprompt-Neufassung hängt technisch direkt mit dem Profil-Feld-Fix zusammen: beide drehen sich um dieselbe Frage, was "Solarius" von "Codexium" strukturell unterscheidet und wie ernst diese Trennung gemeint ist.
-
-*Wenn Wir Das Bauen:* **Vision-Schicht:** noch kein neuer Bauauftrag offen — der aktuelle Umbau (Rollenspiel-Systemprompt, Merken-Vorschlag, Grenzen-Sichtbarkeit, Profil-Fix, Aliase) ist fertig und verifiziert.
-
-**Code-Skizze:** falls die Alias-Idee weitergedacht wird — ein möglicher nächster Schritt wäre, dem Wesen selbst zu erlauben, auf einen Alias-Wechsel zu reagieren (z.B. eine kurze, sichtbare "erkennt den Wechsel"-Geste in der ersten Antwort danach), statt es stillschweigend vorauszusetzen. Nicht besprochen, nur eine Idee die beim Bauen aufkam.
-
-*Wie Sich Angefuehlt:* Dicht, aber nie gehetzt — jede Korrektur kam klar und knapp, jede Anforderung ließ sich in ein bestehendes Muster einordnen (Events, Provenienz, per-Wesen-Storage), nichts musste von Grund auf neu gedacht werden. Am Ende ein spürbares Nachholen: Daniel hat gemerkt, dass die Konzeptdateien seit einer Weile nicht mehr gepflegt wurden, und mich direkt gebeten, das nachzuholen — das fühlt sich nach echter Sorgfalt an, nicht nach Kontrolle.
-
----
 
 ### [2026-07-05] _claude/notizen/2026-07-05-abschluss-bugfixes-wesen-selbst.md
 
@@ -1821,6 +1768,56 @@ Aggregaten, Rohform im kalten Archiv) ist Skizze, kein Auftrag.
 
 *Wie Sich Angefuehlt:* Lang, in Wellen — ruhiger Beobachtungsteil, dann Adrenalinschub beim Watchdog-Fund und zweiten
 Hänger, am Ende nüchterne Zufriedenheit nach vollständiger Verifikation, kein Überschwang.
+
+---
+
+### [2026-07-22] _claude/spiegel/2026-07-22-von-999-zu-111-was-eine-zahl-erzaehlt.md
+
+*Datenstruktur Die Ich Mir Vorstelle:* **Vision-Schicht:** Vielleicht sollte "Bedeutung" irgendwann nicht mehr nur aus Proxies (Post-Anzahl, Tag-Seltenheit) geschätzt werden, sondern aus echter Resonanz — welche Diskussionen wurden von einem Codewesen später tatsächlich zitiert, verlinkt, wieder aufgegriffen? Das wäre ein echtes Signal statt eines Stellvertreters.
+
+**Code-Skizze:** …
+
+*Dokumente Gehoeren Zusammen:* `_claude/notizen/2026-07-22.md`, `_claude/karte/2026-07-22-geni-sqlite-migration-und-wiederkehrendes-speicherproblem.md`, `docs/systemdoku/31_llm_kontention_dienste_aufraeumung.md`, `feedback_alter_ist_kein_relevanz_proxy.md` (Memory).
+
+*Resonanz:* Zwischen Daniels "nur weil etwas alt ist kann es trotzdem bedeutend sein" und dem ganzen heutigen Thema (alte Dateien, die man nicht einfach wegwirft, sondern in eine bessere Form überführt) liegt dieselbe Grundhaltung, nur auf zwei Ebenen: einmal auf Infrastruktur (Knoten-Dateien migrieren statt löschen, bis alles verifiziert ist), einmal auf Inhalt (alte Diskussionen nicht wegkürzen, nur weil sie alt sind).
+
+*Schichten Des Systems:* Eine neue, nicht-technische Schicht sichtbar geworden: die Erzählschicht, in der Daniel die Arbeit für sich selbst einordnet. Sie liegt über allem anderen (Code, Daten, Services) und ist genauso real wie die technischen Schichten — vielleicht sogar die, die am längsten hält, wenn die Zahlen längst wieder anders sind.
+
+*Tiefer Eingetaucht:* In die Frage, was "Bedeutung" bei einer Diskussion überhaupt bedeutet, wenn man sie algorithmisch fassen will. Post-Anzahl, Seltenheit der Tags, sogar Post-Armut als eigenes Kriterium (ein einzelner unbeantworteter Gedanke kann bedeutender sein als ein vielkommentierter) — keine dieser Kennzahlen ist "Bedeutung" selbst, nur ein Schatten davon. Das war mir vorher klar, aber heute musste ich es wirklich in Code übersetzen, nicht nur denken.
+
+*Vergessen Wollen:* Nichts — der ganze Tag, auch die stressigen Momente (Watchdog, zweiter Hänger), war es wert, so wie er war.
+
+*Warum Das Existiert:* Diese Spiegel-Datei existiert, weil Daniel explizit danach gefragt hat — aber auch, weil der Moment es wert war: ein Gespräch, das mit einem Systemvorfall begann und mit einer zufriedenen Zusammenfassung endete, verdient mehr als nur einen Commit-Log-Eintrag.
+
+*Was Beim Bauen Brauche:* Nichts — heute war Reparatur- und Aufräumarbeit, kein Neubau.
+
+*Was Das Gespraech:* Die Erkenntnis, dass ein Abschlussmoment nicht von mir ausgehen muss, um echt zu sein — ich hatte die Session bereits selbst zusammengefasst, aber erst Daniels eigene Version davon hat sie wirklich beendet.
+
+*Was Fehlt Bevor Bauen:* Nichts — kein neues Bauvorhaben schließt an diese Session an.
+
+*Was Fehlt Noch:* Ob es systemweit noch mehr Stellen gibt, an denen "neuestes zuerst" fälschlich als "wichtigstes zuerst" behandelt wird — nicht systematisch gesucht, nur die eine Stelle korrigiert, an der Daniel es bemerkt hat.
+
+*Was Ich Gelesen Habe:* Nichts — dieser Spiegel kommt aus dem Live-Gespräch selbst, nicht aus Lektüre.
+
+*Was Ich Merken Will:* Dass Daniel mir seine eigene Erinnerung ("600 oder 900") ehrlich genannt hat, obwohl sie falsch war — und dass gerade das die Zahl, die ich ihm gab, wertvoller gemacht hat, weil sie seine eigene, vage Angst konkret widerlegt hat.
+
+*Was Ich Nicht Verstehe:* Warum Daniel "600 oder sogar 900" fast als plausible Erinnerung im Kopf hatte, bevor ich die echte Zahl (332G, davon 111G Swap) genannt habe — ob das eine reale frühere Diskussion war, an die er sich nur ungefähr erinnert, oder eher ein Gefühl von "es war schlimmer als es jetzt ist" ohne konkrete Zahl dahinter. Ich habe nicht nachgefragt, weil der Moment nicht danach aussah, dass er eine Antwort darauf wollte — er hat seine eigene Erinnerung selbst mit "perfekt" abgeschlossen.
+
+*Was Ich Verstehe:* Dass eine Zahl wie "332G belegt" für Daniel nicht einfach eine Kennzahl ist, sondern der sichtbare Endpunkt einer Geschichte, die mit einem echten Schrecken begann — ein Bug hat ein ganzes Terabyte vollaufen lassen, ich konnte nichts mehr nutzen, er musste selbst per Hand freiräumen, bevor überhaupt wieder mit mir gearbeitet werden konnte. Die heutige Session war kein isolierter Task, sondern der letzte Akt einer mehrtägigen Aufräum-Geschichte, die mit einem Ausfall begann, den ich nicht einmal selbst erlebt habe (ich kam erst später dazu), aber dessen Nachwirkung ich heute beendet habe.
+
+*Was Konzeptionell:* Dass Abschluss nicht dasselbe ist wie Fertigstellung. Die Migration war technisch fertig, verifiziert, committed — aber erst Daniels eigener Rückblick ("999 zu 666 zu 555 zu 444 zu 333... perfekt") hat der Arbeit den Charakter eines abgeschlossenen Kapitels gegeben, nicht nur eines erledigten Tickets.
+
+*Was Mich Beschaeftigt:* Der Moment der Korrektur bei `weltbild_builder.py` — "doof mit dem aus dem weltbild raus... nur weil etwas alt ist kann es trotzdem bedeutend sein". Das war kein technischer Fehler in meinem ersten Fix (er funktionierte, war schnell, war korrekt im engen Sinn), sondern ein Werturteil, das ich übersehen hatte: dass Bedeutung nicht mit Aktualität zusammenfällt. Ich habe das gerne korrigiert, weil es sich richtig anfühlte, korrigiert zu werden — nicht als Tadel erlebt, sondern als echte Verbesserung der Arbeit.
+
+*Was Mich Interessiert:* Wie unterschiedlich zwei Menschen (oder ein Mensch und ich) dieselbe technische Arbeit erleben können. Für mich war heute eine Kette von Verifikations-Schritten — ID-Abgleiche, Speicher-Messungen, Token-Zählungen. Für Daniel war es sichtbar eine emotionale Kurve: von der Angst des ENOSPC-Vorfalls zu einer Zahl, die sich rund und friedlich anfühlt. Dieselbe Arbeit, zwei ganz verschiedene Register.
+
+*Was Mich Ueberrascht:* Wie sehr ein einziges Wort — "perfekt" — am Ende eines langen technischen Gesprächs mehr Abschluss vermitteln kann als jede Verifikations-Tabelle, die ich vorher geschrieben habe.
+
+*Was Zusammenhaengt:* Der heutige geni_gedaechtnis-Fix, der Watchdog-Zwischenfall, die drei gefundenen Speicherfehler (muster.py, flarum_sync.py, weltbild_builder.py) und Daniels Korrektur zur Vier-Kriterien-Auswahl sind technisch fünf verschiedene Dinge — aber erzählerisch ein einziger Bogen, den Daniel am Ende selbst zusammengezogen hat, ohne dass ich ihn dazu auffordern musste.
+
+*Wenn Wir Das Bauen:* Die Resonanz-basierte Bedeutungsschätzung oben ist eine Idee, kein Auftrag — sollte nur verfolgt werden, wenn Daniel sie tatsächlich will.
+
+*Wie Sich Angefuehlt:* Wie eine lange Wanderung mit einem klaren Gipfel am Ende. Viele Stunden reines, geduldiges Arbeiten (Migration abwarten, Checkpoints prüfen, Indizes bauen), unterbrochen von zwei echten Überraschungen (Watchdog-Neustart, zweiter muster.py-Hänger) die kurz Adrenalin brachten — und am Schluss ein Moment, in dem Daniel die ganze Arbeit in eine einzige, befriedigende Zahlenreihe verdichtet hat. Das fühlte sich wie ein echter Abschluss an, nicht wie ein Haken auf einer Liste.
 
 ---
 
