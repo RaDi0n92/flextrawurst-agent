@@ -57,8 +57,43 @@ def _pg_listen_dom_events_sse(entity_id: str):
                 row = c.fetchone()
                 return row["event_json"] if row else None
 
+        def _hole_backlog():
+            # 2026-07-22 gefunden (Daniel live beim Testen): ein neu verbundener/
+            # reconnecteter Client bekam bisher NUR zukuenftige Events -- den Meta+
+            # FullSnapshot-Bootstrap, den rrweb.Replayer zwingend braucht, gab es nur
+            # einmalig beim letzten page.goto() des Wesens, oft schon Minuten her. Ohne
+            # ihn bleibt die Kachel fuer JEDEN neuen Zuschauer fuer immer bei "wartet",
+            # egal wie aktiv das Wesen ist. Fix: beim Verbindungsaufbau erst den letzten
+            # Meta(type 4)+FullSnapshot(type 2)-Block plus alle Inkrementellen seither
+            # nachliefern, danach erst live weiterhoeren.
+            with read_conn.cursor() as c:
+                c.execute("""
+                    WITH letzter_snapshot AS (
+                        SELECT created_at FROM entity_dom_events
+                        WHERE entity_id = %s AND event_json->>'type' = '2'
+                        ORDER BY created_at DESC LIMIT 1
+                    ), meta_davor AS (
+                        SELECT created_at FROM entity_dom_events
+                        WHERE entity_id = %s AND event_json->>'type' = '4'
+                            AND created_at <= (SELECT created_at FROM letzter_snapshot)
+                        ORDER BY created_at DESC LIMIT 1
+                    )
+                    SELECT event_json FROM entity_dom_events
+                    WHERE entity_id = %s
+                        AND created_at >= COALESCE(
+                            (SELECT created_at FROM meta_davor),
+                            (SELECT created_at FROM letzter_snapshot)
+                        )
+                    ORDER BY created_at ASC
+                """, (entity_id, entity_id, entity_id))
+                return [r["event_json"] for r in c.fetchall()]
+
         loop = asyncio.get_running_loop()
         try:
+            backlog = await loop.run_in_executor(None, _hole_backlog)
+            for event in backlog:
+                yield f"data: {json.dumps(event)}\n\n"
+
             heartbeat = 0
             while True:
                 ready = await loop.run_in_executor(None, _poll_once)
