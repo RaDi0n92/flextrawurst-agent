@@ -69,6 +69,21 @@ Sie kann die Klonstruktur jedes Wesens (6 namelessAI-Entitäten, `dak+gord-syste
 
 ---
 
+### 5. Schichten-Inspector, System-Prompt Composer & Versionierungs-Engine
+- **Pfad:** `/root/zensi/wesensprofile/<wesen_id>/versionen/<version_name>/` & `schichten_config.json`
+- **APIs:**
+  - `GET /zensi/api/schichten`: Liefert alle 7 Kognitions- & Memory-Schichten (`zensi_basis`, `wesen_md`, `memory`, `postgres`, `flarum_rag`, `langgraph`, `custom_override`) inkl. Toggles, Text-Content & Gesamt-Prompt Preview.
+  - `POST /zensi/api/schichten/update`: Speichert Schichten-Toggles und Text-Overrides live in der Sandbox.
+  - `GET /zensi/api/versionen/liste`: Listet alle abgespeicherten Versionen-Branches auf.
+  - `POST /zensi/api/versionen/speichern`: Speichert den vollständigen Sandbox-Zustand als benannte Version (z. B. `v1_urform`, `v2_schlaf`).
+  - `POST /zensi/api/versionen/laden`: Lädt eine abgespeicherte Version zurück in den aktiven Sandbox-Ordner.
+- **Visual Inspector (Web-UI Button `📜 schichten & prompt`):**
+  - **Live Prompt Composer:** Zeigt die exakte Zeichenkette, die an HauhauCS/Dolphin übergeben wird.
+  - **Schichten-Toggles (👁️ / 🙈):** Ermöglicht das gezielte Deaktivieren / Ausblenden einzelner Schichten (z. B. Flarum RAG oder Postgres-Sedimente) aus dem Kontext.
+  - **Direct Edit:** Inhalt jedes Bausteins kann direkt in der UI manipuliert werden.
+
+---
+
 ## Status & Verifikation
 
 - `zensi-sync.service` aktiv & enabled
@@ -76,4 +91,5 @@ Sie kann die Klonstruktur jedes Wesens (6 namelessAI-Entitäten, `dak+gord-syste
 - GET `/zensi/api/wesensliste` verifiziert (13 Wesen-Profile sofort gelistet)
 - POST `/zensi/api/spiegeln` verifiziert (lädt z.B. Resonanzknoten mit echtem Systemprompt & `wesen.md`)
 - REST-APIs für Aufgaben-Engine (`/zensi/api/aufgaben/start`, `/zensi/api/aufgaben/tick`, `/zensi/api/aufgaben/liste`) live verifiziert.
+- REST-APIs & Web-UI für Schichten-Inspector (`/zensi/api/schichten`, `/zensi/api/schichten/update`, `/zensi/api/versionen/speichern`) live verifiziert.
 
