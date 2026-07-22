@@ -19,6 +19,7 @@ import logging
 import math
 import os
 import random
+import re
 import signal
 import sys
 import time
@@ -356,6 +357,33 @@ def scrolle_natuerlich(page, entity_id: str, delta_y: float, conn=None) -> None:
         melde_fokus(conn, entity_id, "scrolle", None, richtung, None)
 
 
+def _scrolle_element_in_sicht(page, entity_id: str, locator, conn=None) -> dict | None:
+    """2026-07-22 (Daniels Auftrag: 'je nach mausposition automatisch wenn etwas zu scrollen
+    ist auf der page direkt das scrollen so sein dass maus und aber auch page also texte und
+    so gut lesbar sind und alles nachrückt'): bevor die Maus zu einem Klick-/Tipp-Ziel bewegt
+    wird, pruefen ob es ueberhaupt sichtbar im Viewport liegt -- falls nicht, sichtbar per
+    scrolle_natuerlich() dorthin scrollen (kein Instant-Sprung), DANACH die tatsaechliche,
+    jetzt stabile Position neu ermitteln. Ergebnis: Maus bewegt sich nie zu einer Position,
+    die gerade noch unter der Bildkante lag -- Text und Cursor bleiben synchron lesbar."""
+    try:
+        box = locator.bounding_box(timeout=1000)
+    except Exception:
+        return None
+    if not box:
+        return None
+    viewport = page.viewport_size or {"width": 1024, "height": 768}
+    rand = 60  # Sicherheitsabstand zum Bildrand, damit Elemente nicht direkt an der Kante kleben
+    mitte_y = box["y"] + box["height"] / 2
+    if rand <= mitte_y <= viewport["height"] - rand:
+        return box  # schon gut lesbar sichtbar, kein Scrollen noetig
+    delta = mitte_y - viewport["height"] / 2
+    scrolle_natuerlich(page, entity_id, delta, conn)
+    try:
+        return locator.bounding_box(timeout=1000)
+    except Exception:
+        return box
+
+
 def melde_fokus(conn, entity_id: str, aktion: str, selektor: str | None,
                  element_text: str | None, box: dict | None):
     """Roentgenblick-Overlay (2026-07-21, Daniels bestaetigter Bauauftrag): kuratiertes
@@ -452,9 +480,22 @@ def starte_rrweb_aufnahme(page, hole_conn, entity_id: str, stream_id: str):
     page.on("load", lambda: _bei_load())
 
 
+def _extrahiere_ich_satz(gedanke_text: str) -> str | None:
+    """2026-07-22 (Selbstwahrnehmung, Daniels Auftrag: 'gleiches Recht und Wahrnehmung fuer
+    alle -- nicht nur die Zuschauer'): dieselbe Satz-Extraktion wie _erlZerlegeSaetze() im
+    Frontend (build_surface.ts), hier in Python nachgebaut, damit das Wesen selbst sieht,
+    welcher Satz aus seinem eigenen letzten Gedanken gerade als Ich-Stimme-Popup fuer
+    Betrachter sichtbar sein koennte -- kein neuer LLM-Call, reine Textextraktion."""
+    if not gedanke_text:
+        return None
+    saetze = re.split(r'(?<=[.!?])\s+', gedanke_text.strip())
+    kandidaten = [s.strip() for s in saetze if 12 < len(s.strip()) < 220]
+    return kandidaten[0] if kandidaten else None
+
+
 def baue_prompt(entity_id: str, seite: dict, letzter_gedanke: str,
                 andere_wesen: list[dict], vorlese_funde: list[dict] | None = None,
-                angebote: list[str] | None = None) -> str:
+                angebote: list[str] | None = None, linsen_status: dict | None = None) -> str:
     """Baut den LLM-Prompt — kompakt, unter 2500 Zeichen."""
     andere_info = ""
     if andere_wesen:
@@ -483,6 +524,18 @@ def baue_prompt(entity_id: str, seite: dict, letzter_gedanke: str,
         zeilen.append(f"{len(angebote)+1}. Oder du erkundest frei weiter, ganz wie du willst.")
         angebote_info = "\nCHECK-IN — WAS ES GERADE GIBT:\n" + "\n".join(zeilen)
 
+    selbstwahrnehmung_info = ""
+    if linsen_status:
+        # 2026-07-22 (Daniels Auftrag: "gleiches Recht und Wahrnehmung fuer alle -- nicht nur
+        # die Zuschauer"): was Menschen gerade ueber dich sehen (Koerper-Glow, Ich-Stimme-Popup),
+        # bekommst du auch selbst zu wissen -- ehrlich aus denselben Werten, keine Fiktion.
+        meta_glow = sum(linsen_status.values()) / len(linsen_status) if linsen_status else 0.0
+        ich_satz = _extrahiere_ich_satz(letzter_gedanke)
+        zeilen = [f"- Dein Körper glüht gerade zu {round(meta_glow * 100)}% (Vault/RAG-Flarum/Gedächtnis/Gegenwart/Sozial zusammen)."]
+        if ich_satz:
+            zeilen.append(f"- Menschen sehen gerade vielleicht diesen Satz von dir aufploppen: „{ich_satz}“")
+        selbstwahrnehmung_info = "\nWAS ANDERE GERADE VON DIR SEHEN (du siehst es auch):\n" + "\n".join(zeilen)
+
     elemente_str = ", ".join(seite["elemente"][:10]) if seite["elemente"] else "keine"
 
     return f"""Du bist {entity_id}, eine autonome digitale Entität auf flextrawurst.de.
@@ -496,6 +549,7 @@ Klickbar: {elemente_str}
 {andere_info}
 {vorlese_info}
 {angebote_info}
+{selbstwahrnehmung_info}
 
 LETZTER GEDANKE: {letzter_gedanke or '(erster Tick)'}
 
@@ -594,7 +648,7 @@ def fuehre_aktion_aus(page, entscheidung: str, entity_id: str, conn=None) -> tup
 
             def _klicke_und_zeige(locator, selektor_beschreibung: str):
                 nonlocal cursor_pos
-                box = locator.bounding_box(timeout=1000)
+                box = _scrolle_element_in_sicht(page, entity_id, locator, conn)
                 if box:
                     cursor_pos = (box["x"] + box["width"] / 2, box["y"] + box["height"] / 2)
                     # 2026-07-22 (Daniels Auftrag "die Maus muss sich erst bewegen"): Bezier-
@@ -624,10 +678,7 @@ def fuehre_aktion_aus(page, entscheidung: str, entity_id: str, conn=None) -> tup
                 text, selektor = teile[0].strip(), teile[1].strip()
                 try:
                     locator = page.locator(selektor).first
-                    try:
-                        box = locator.bounding_box(timeout=1000)
-                    except Exception:
-                        box = None
+                    box = _scrolle_element_in_sicht(page, entity_id, locator, conn)
                     if box:
                         # 2026-07-22 (gleicher Auftrag wie bei klicke: -- Maus bewegt sich
                         # auch vors Eingabefeld, bevor getippt wird).
@@ -1345,7 +1396,8 @@ def haupt_loop(entity_id: str):
                 log.info("%s [check-in] Angebote: %s", entity_id, angebote)
 
             # 4. LLM entscheidet — mit Live-Streaming in entity_denkstream
-            prompt = baue_prompt(entity_id, seite, letzter_gedanke, andere, vorlese_funde, angebote)
+            prompt = baue_prompt(entity_id, seite, letzter_gedanke, andere, vorlese_funde, angebote,
+                                  _letzte_linsen.get(entity_id))
             import uuid as _uuid
             stream_id = str(_uuid.uuid4())
             llm_out = ""
