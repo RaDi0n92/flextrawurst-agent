@@ -136,6 +136,23 @@ Direkter Nachfolger des Abschnitts "Offen: geni-muster.service" oben — auf Dan
 - Nach Daniels explizitem Go: `/root/geni_gedaechtnis/knoten/` (alle 1000 Shard-Ordner, parallelisiert mit 16 Prozessen) gelöscht. `kanten/`, `rauschen/`, `episodisch/`, `semantisch/` unangetastet.
 - Root-Partition: von 452G belegt (Start dieser Session) auf **332G belegt / 598G frei (36%)**.
 
+## Update 2026-07-22, Fortsetzung: systematische Suche nach demselben Muster + zweiter Fix (`flarum_sync.py`)
+
+Auf Daniels Wort "dann such pls" systemweit nach demselben Grundfehler (periodisch laufender Code, der ein Zeitfenster lädt, das mit der Zeit/Systemaktivität mitwächst, ohne Streaming/Limit) gesucht — Ergebnis, nach Risiko sortiert:
+
+1. **`scripts/flarum_sync.py` (Cron alle 5 Min) — bestätigt, aktiv laufend.** `sync_diskussionen()` lud bei jedem Lauf ALLE Diskussionen (`SELECT * ... ohne LIMIT`) und feuerte pro Diskussion einen eigenen Posts-Query (N+1) sowie einen eigenen Tags-Query. Bei ~41 neuen Diskussionen/Tag wurde das von Lauf zu Lauf teurer — dieselbe Ursache, deren *Nebenwirkung* (GENI-Hörer verewigt jede Neuschreibung als Knoten) schon am 2026-07-21 gefixt wurde, aber der eigentliche Vollscan lief seitdem unangetastet weiter.
+2. **`weltbild_builder.py` — bestätigt, aber Service bereits deaktiviert.** Baut aus allen Flarum-Vault-Dateien einen einzigen LLM-Prompt; Kommentar sagt "~4000 Tokens für 89 Diskussionen", zuletzt (2026-07-21) tatsächlich ~285.731 Tokens (Faktor 70). Nicht angefasst — Service läuft nicht, kein akuter Schaden, aber derselbe Fehler falls je reaktiviert.
+3. **`welt/similarity_daemon.py`, `welt/themen_cluster.py` — dasselbe Architekturmuster, aktuell ohne Wirkung** (`ftw_posts` seit 2026-06-13 bei 46 Zeilen eingefroren).
+4. **`_claude/tools/*_grundriss_sync.py`-Familie** — `rglob("*")` alle 5s über Obsidian-Arbeitsverzeichnisse, aktuell klein (~1000 Dateien).
+
+Geprüft und sauber (LIMIT/Wasserzeichen bereits korrekt): `entity_takt.py`, `entity_kern.py`, `tension_daemon.py`, `cyberling_daemon.py`, `browser_agent.py`, `flarum_monitor.py`, `innenleben/flarum_feeder.py` (nur lesend geprüft, Grundgesetz 7).
+
+**Fix für Fund 1 (`flarum_sync.py`):** analog zu `flarum_monitor.py`s bereits vorhandenem `last_post_id`-Wasserzeichen-Muster. Neue `flarum/_sync_state.json` merkt sich `letzter_post_id` + `letzter_edit_zeitpunkt`. Jeder Lauf ermittelt per `SELECT DISTINCT discussion_id FROM posts WHERE type='comment' AND (id > :letzter_id OR edited_at > :letzter_edit)` nur die Diskussionen mit echter neuer Aktivität, batch-lädt deren Posts+Tags über je eine `IN (...)`-Query (kein N+1 mehr, auch nicht beim Bootstrap-Lauf). Erster Lauf ohne State = Bootstrap, verarbeitet wie zuvor alles.
+
+**Getestet:** Bootstrap-Lauf (3776 Diskussionen, 0,84s), Lauf ohne Änderungen (0 Diskussionen erkannt, 0,27s, keine Datei angefasst — per mtime verifiziert), simulierter Lauf mit künstlich um 20 Posts zurückgesetztem Wasserzeichen (exakt 9 betroffene Dateien neugeschrieben, alle anderen 3767 unverändert — per `find -newer` verifiziert). Watermark heilt sich nach dem Test-Lauf automatisch auf den echten Stand zurück (wird immer als aktuelles `MAX(id)`/`MAX(edited_at)` neu berechnet, nicht relativ fortgeschrieben).
+
+**Bekannter Scope-Schnitt, bewusst nicht behoben:** reine Diskussions-Statusänderungen ohne neuen/editierten Post (z.B. nur `hidden_at` gesetzt) lösen keinen Resync aus. `sync_tags()`/`sync_nutzer()` bauen weiterhin bei jedem Lauf die volle Diskussions-Zuordnung neu (bounded durch Diskussions-*Anzahl*, nicht Post-Inhalt — deutlich weniger riskant als der gefixte Fall, daher nicht mit angefasst). `weltbild_builder.py` (Fund 2) ebenfalls nicht behoben — Service inaktiv, kein Auftrag dafür in dieser Session.
+
 **Soforthilfe:**
 1. `truncate -s 0 /var/log/syslog` — sofortiger Platz zurück (rsyslogd hielt die Datei offen, `rm` hätte nicht sofort geholfen).
 2. `systemctl restart llama-hauhaucs-hintergrund.service` — hing zunächst selbst (SIGTERM ohne Reaktion), `kill -9` auf die alte PID aus einem zweiten Terminal hat den Restart entblockt.
