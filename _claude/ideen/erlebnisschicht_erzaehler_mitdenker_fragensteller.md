@@ -242,3 +242,47 @@ Das ist im Kern exakt die Ich-Stimme/Erzähler/Denkstream-Auszüge-Idee von weit
 ### Stand danach
 
 Kein Bauauftrag bisher — Daniel hat nach der Präsentation dieses vierteiligen Ablaufs nur mit *"jup"* bestätigt, dass es genau so (Entwurf→Angriff→Verbesserung→Suche, alles wörtlich dokumentiert) in die Ideen-Datei soll. Ob/wann daraus ein echter Bauauftrag wird, ist noch offen.
+
+## Nachtrag — "bauen": Mausbewegung, Klick-Ripple, und der eigentliche Ich-Stimme/Erzähler-Bug gefunden+behoben
+
+Daniel: *"bauen"* — der explizite CLAUDE.md-Startschuss nach dem vierteiligen Entwurf oben. Danach: *"klar"* (OK für Neustart der 7 browser-agent-Services), dann zweimal *"weiter"*/*"go"* um durch die drei Bausteine zu gehen.
+
+### Baustein 1 — animierte Mausbewegung (`browser_agent.py`)
+
+Umgesetzt wie in Schritt 3 oben festgelegt: kein eigener Talker-LLM-Call, sondern die bestehende Reasoner-Entscheidung wird in echte Zwischenschritte aufgelöst. Neue Funktion `bewege_cursor_natuerlich(page, entity_id, ziel_x, ziel_y)`: quadratische Bezier-Kurve (Start → zufällig versetzter Kontrollpunkt senkrecht zur Bewegungsrichtung → Ziel), Ease-in-out-Timing (kubisch), Schrittzahl und Dauer skalieren mit der Distanz (8-28 Schritte, 0,15-0,9s) — angelehnt an die recherchierten Bibliotheken (`ghost-cursor-playwright`, `shy-mouse-playwright`, Fitts's-Law-Prinzip), aber selbst geschrieben statt einer der Bibliotheken, um keine neue Abhängigkeit einzuführen. Eingehängt in den Klick-Pfad (`_klicke_und_zeige`) UND neu auch in den `tippe:`-Pfad, der vorher gar keine Cursorbewegung hatte. Live verifiziert nach Neustart der 7 Services.
+
+### Baustein 2 — Klick-Ripple (Frontend)
+
+`_erlZeigeKlickRipple(entityId, box)` in `build_surface.ts`: berechnet den Skalierungsfaktor aus `.scv-screen.clientWidth/1024` (dieselbe Skalierungslogik wie die SCREENS-Kacheln selbst, damit der Ripple an der richtigen Bildschirmposition sitzt egal wie klein/groß die Kachel gerade dargestellt wird), setzt einen kleinen Kreis an die Klickposition, entfernt sich selbst nach 650ms. Eingehängt in `_erlFokusEs.onmessage` **ungefiltert** (nicht ans offene Modal gebunden wie Ich/Erzähler/Fragensteller) — bewusste Entscheidung: der Ripple soll auf JEDER Kachel sichtbar sein, nicht nur der großgeschalteten, weil er reine Bewegungs-Rückmeldung ist, keine Text-Aussage, die Bildschirmplatz braucht.
+
+### Baustein 3 — der eigentliche Bug: warum Ich-Stimme/Erzähler-Popups NIE erschienen
+
+Daniels ursprünglicher Befund, wörtlich: *"garkeine erzähler und ichaussagen"*. In der vorigen Session (vor dieser Zusammenfassung) hatte ich die Ursache zunächst falsch bei der Häufigkeit vermutet: Denkzyklen dauern gemessen 2,5-6 Minuten, vorher wurde aber erst bei `d.done` extrahiert — wer nicht so lange das Modal offen hält, sieht dadurch nie eine Ich-Stimme, während die Fragensteller-Stimme (fester 25s-Takt) zuverlässig auftaucht. Also wurde `_erlVerarbeiteDenkstreamChunk` umgebaut auf progressive Extraktion (laufend neue VOLLSTÄNDIGE Sätze rausziehen, den letzten möglicherweise unfertigen Satz zurückhalten).
+
+**Nach dem Deploy dieser Änderung: immer noch null Ich/Erzähler-Popups, über mehrere Live-Tests hinweg (5min, dann 100s, dann 260s, dann 150s) — die eigentliche Fehlerursache lag ganz woanders.**
+
+Debug-Instrumentierung (`window.__erlDbg2`, Live-Playwright-Polling gegen ein offenes Modal für `dak+gord-system`) zeigte: `calls` und `modalMatch` liefen korrekt hoch, `textLen` wuchs mit jedem Chunk (140→464→806→994 Zeichen in einem Testlauf) — aber `gedankeLen` blieb konstant `0`. Der Text kam also an, das Modal-Matching stimmte, aber die Regex, die den `GEDANKE:`-Abschnitt aus dem Rohtext herausschneidet, lieferte nie etwas.
+
+Direkter DB-Vergleich (per `psql`, echte Denkstream-Zeilen von `dak+gord-system`) zeigte: der Rohtext enthält ganz klar von Anfang an `GEDANKE: Ich befinde mich an einem leeren Ort...` — die Regex hätte matchen müssen. Test der exakten Regex in einem isolierten `node -e`-Aufruf gegen genau diesen Text: **matcht einwandfrei, 631 Zeichen Ergebnis.** Widerspruch: im Browser leer, isoliert in Node korrekt.
+
+**Auflösung:** `grep` auf die ausgelieferte Datei (`out/surface/flextrawurst_surface.html`) zeigte die tatsächlich an den Browser ausgelieferte Regex:
+```
+/GEDANKE:s*([sS]*?)(ENTSCHEIDUNG:|BEGR[UÜ]NDUNG:|$)/
+```
+— aus `\s*` wurde `s*`, aus `[\s\S]*?` wurde `[sS]*?`. Jeder einzelne Backslash vor einem `s` war verschwunden. Root cause: `_erlVerarbeiteDenkstreamChunk` und `_erlZerlegeSaetze` liegen (wie der gesamte SCREENS/Erlebnisschicht-Frontend-Code) innerhalb der riesigen JS-Template-Literal-Rückgabe von `generateGruppenView()` in `build_surface.ts` — eine einzige, ununterbrochene Backtick-Zeichenkette, die von Zeile 8650 bis 10259 reicht (>1600 Zeilen, enthält den kompletten `<script>`-Block der Surface-Seite als literalen Text). Wenn `build_surface.ts` per `tsx` ausgeführt wird, wertet die JS-Engine selbst diese Template-Literal-Zeichenkette aus — und ein einfacher Backslash vor einem nicht-reservierten Zeichen wie `s` ist in JS-String-/Template-Literalen ein historisch gültiges, aber "totes" Escape: der Backslash wird stillschweigend verschluckt, `s` bleibt übrig (kein Syntaxfehler, keine Warnung). Bestätigt durch Gegenprobe: bereits bestehender, seit langem funktionierender Code an derselben Stelle (`tok.replace(/^Bearer\\s+/,'')`) verwendet genau deshalb **doppelte** Backslashes — die äußere Auswertung frisst einen, im ausgelieferten Browser-Code bleibt genau ein `\s` übrig. Ich hatte beim Schreiben der drei neuen Regexes in der vorigen Session diese Konvention übersehen und einfache Backslashes verwendet — dadurch war nicht nur die neue progressive Extraktion, sondern auch die schon vorher genutzte `_erlZerlegeSaetze`-Satzzerlegung und der `endetFertig`-Test von Anfang an lautlos kaputt.
+
+**Fix:** alle drei betroffenen Regexes auf doppelte Backslashes umgestellt (`\s` → `\\s`, `[\s\S]` → `[\\s\\S]`), Build neu erzeugt, in beide Ausgabeorte kopiert (`out/surface/` und `out/process_camera/`), Debug-Instrumentierung wieder entfernt.
+
+**Verifikation, zweistufig:**
+1. Node-Simulation der exakten (reparierten) Extraktionslogik gegen einen kompletten, echten aufgezeichneten Denkstream (`stream_id=7a1a78c0…`, 290 Chunks aus der DB) — lieferte korrekt vier vollständige Ich-Stimme-Sätze.
+2. Live-Playwright-Test gegen die laufenden Services: Modal für `dak+gord-system` offen gehalten, per direkter DB-Abfrage (`entity_denkstream`) auf den Beginn eines wirklich neuen Denkzyklus gewartet (Live-Tests vorher liefen mehrfach ins Leere, weil zwischen zwei Zyklen bei diesem Wesen Pausen von 3-8 Minuten liegen können — reines Timing-Pech, kein Bug). Ergebnis nach 105s: `'Ich befinde mich in einem ruhigen Zustand auf `wesen.md`.'` erscheint als echtes Ich-Stimme-Popup.
+
+Committed (`8dbf03f41`): `build_surface.ts` + beide gebauten HTML-Ausgaben.
+
+### Was das für die "Rohheit bewahren"-Kritik von weiter oben bedeutet
+
+Der Bug selbst hat nichts mit dem Rohheit-Thema zu tun — aber die Suche danach ist ein Lehrstück dafür, wie leicht ein scheinbar erklärtes Verhalten (progressive Extraktion "behebt" ein Häufigkeits-Problem) einen ECHTEN, tiefer liegenden Fehler verdeckt, wenn man sich mit der ersten plausiblen Erklärung zufriedengibt. Erst der Vergleich zwischen isoliertem Node-Test (funktioniert) und Live-Browser (funktioniert nicht) hat den eigentlichen Bruch sichtbar gemacht.
+
+### Was noch offen ist
+
+Content-aware Fragensteller-Fragen (fragt bisher nur generische Templates, nie etwas das sich auf den tatsächlichen Denkstream-Text bezieht) — von Daniel als konkrete Lücke benannt, noch nicht begonnen. Scroll-Sichtbarkeit (Daniel: noch nie beobachtet, wichtiger als Mausbewegung). Puls/Ring-Glow gekoppelt an echten Denk-Takt. Live-chat-artiges scrollbares Denkfenster-Panel mit natürlichem Pacing (max. 3-4 Sätze pro ≤0,8s) — bisher nur Vision, kein Code.

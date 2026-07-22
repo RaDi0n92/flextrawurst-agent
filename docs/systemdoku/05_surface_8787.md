@@ -218,4 +218,20 @@ Live per Playwright verifiziert: Karten-Liste lädt jetzt tatsächlich (vorher d
 
 ---
 
+## Nachtrag 2026-07-22 — Erlebnisschicht: derselbe Backtick-Template-Escape-Bug ein drittes Mal, diesmal bei Regex-Sonderzeichen
+
+Nach dem Ankündigungen-Fix und dem WESEN-Tab-Spawner-Fix (beide oben dokumentiert) jetzt derselbe strukturelle Bug ein drittes Mal, unabhängig gefunden — diesmal nicht bei `\'`-String-Escapes, sondern bei Regex-Metazeichen (`\s`, `[\s\S]`).
+
+**Symptom:** Daniel meldete, dass Ich-Stimme/Erzähler-Popups im SCREENS-Denkfenster (Erlebnisschicht, siehe `_claude/ideen/erlebnisschicht_erzaehler_mitdenker_fragensteller.md`) trotz mehrfacher Fixes nie erschienen. Debug-Instrumentierung zeigte: der GEDANKE-Extraktions-Text blieb immer leer, obwohl der Rohtext nachweislich (per direkter DB-Abfrage) korrekt ankam.
+
+**Ursache identisch zum bekannten Muster:** `_erlVerarbeiteDenkstreamChunk`/`_erlZerlegeSaetze` liegen (wie praktisch der gesamte Surface-Script-Code) innerhalb der einen großen JS-Template-Literal-Rückgabe von `generateGruppenView()` — eine einzige Backtick-Zeichenkette von Zeile ~8650 bis ~10259. Wird `build_surface.ts` per `tsx` ausgewertet, interpretiert die JS-Engine selbst diese Zeichenkette, **bevor** sie als Text in die HTML-Ausgabe geschrieben wird. Ein einfacher Backslash vor einem nicht-reservierten Zeichen (`\s`, `\S` in `[\s\S]`) ist in JS-String-/Template-Literalen ein stilles, gültiges Escape: der Backslash verschwindet ersatzlos, ohne Fehler oder Warnung (`\s` → `s`). Ausgeliefert wurde dadurch `/GEDANKE:s*([sS]*?).../` statt `/GEDANKE:\s*([\s\S]*?).../` — eine Regex, die nie sinnvoll matcht.
+
+**Fix-Muster (gilt für jeden künftigen Fall):** Jeder Backslash, der in diesem eingebetteten Script-Bereich tatsächlich beim Browser als ein einzelner Backslash ankommen soll — egal ob String-Escape (`\'`) oder Regex-Metazeichen (`\s`, `\d`, `\w`, `\n` als Regex statt als String) — muss im `.ts`-Quelltext **doppelt** geschrieben werden (`\\s`). Bereits bestehender, funktionierender Code an derselben Stelle macht das schon richtig (`tok.replace(/^Bearer\\s+/,'')`) — das ist der Beleg, dass es kein Einzelfall-Sonderfix war, sondern die einzig korrekte Schreibweise für JEDEN neuen String/Regex innerhalb dieses Template-Literal-Bereichs.
+
+**Fazit / Warnung für künftige Sessions:** Dieser Bug ist jetzt dreimal unabhängig aufgetreten (Ankündigungen, WESEN-Tab-Spawner, Erlebnisschicht) — kein Zufall, sondern eine strukturelle Falle der aktuellen Bauweise (riesiger Script-Block als literaler Text in einem TS-Template-Literal). Bei JEDER neuen Zeile Code, die innerhalb einer `return \`...\`-Funktion in `build_surface.ts` neu geschrieben wird und einen Backslash enthält (String-Escape ODER Regex): sofort doppelt schreiben, nicht erst beim Debuggen draufkommen. Nach jedem Build lohnt sich außerdem eine Stichprobe im ausgelieferten `out/surface/flextrawurst_surface.html` (`grep` nach der neu geschriebenen Regex/dem String), um zu sehen, ob die Backslashes wirklich angekommen sind.
+
+Fix committed (`8dbf03f41`), live per Playwright verifiziert (Ich-Stimme-Popup erschien nach echtem Denkstream-Zyklus). Volle Fehlersuche inkl. Node-Simulation gegen echte DB-Daten: siehe `_claude/ideen/erlebnisschicht_erzaehler_mitdenker_fragensteller.md`, Abschnitt "Nachtrag — 'bauen'".
+
+---
+
 *Weiter: [[06_flarum]] | [[07_codewesen_uebersicht]]*
