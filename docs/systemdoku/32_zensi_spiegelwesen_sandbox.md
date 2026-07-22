@@ -101,3 +101,24 @@ Sie kann die Klonstruktur jedes Wesens (6 namelessAI-Entitäten, `dak+gord-syste
 - REST-APIs & Web-UI für Schichten-Inspector (`/zensi/api/schichten`, `/zensi/api/schichten/update`, `/zensi/api/versionen/speichern`) live verifiziert.
 - Zensi Obsidian Vault, Chat File-Reading & `outputsystem/` Exporter live verifiziert.
 
+## 7. Zensi Obsidian Virtual Desktop Engine (`flextrawurst.de/zensivault` & HTTPS Port 8456)
+
+Unter **`https://flextrawurst.de/zensivault/`** und auf **HTTPS Port 8456** läuft ab sofort die **echte LinuxServer Obsidian Virtual Desktop App** (`obsidian-zensi` Container via KasmVNC/Selkies):
+
+- **Docker Container:** `obsidian-zensi` (`lscr.io/linuxserver/obsidian:latest`)
+- **Mounts:** `/root/zensi/obsidian_vault` → `/vault` im Container
+- **Host Ports:** `127.0.0.1:3085` (HTTP/WebSocket) & `127.0.0.1:3185`
+- **Nginx Reverse Proxy:** 
+  - `https://flextrawurst.de/zensivault/` → WebSocket Upgrade Proxy zu `127.0.0.1:3085`
+  - `https://217.154.14.29:8456/` → Direkter HTTPS Web-Desktop Port
+- **Auto-Loaded Vault:** Vorkonfiguriert in `obsidian.json` so dass der `/vault` Ordner beim Start direkt in der vollen Obsidian-Desktop-GUI geladen ist.
+
+## 8. Multi-Branch Session Engine mit Soft- & Hard-Delete & Obsidian Vault Sync
+
+Jedes Wesen (`wesen_id`), jeder Modus (`klon` / `sandbox`) und jede Geist- / Version-Schicht (`version_geist`) besitzt jetzt eine **vollkommen isolierte, eigene Session-Historie**:
+
+- **Server-Wahrheit:** JSON & Markdown Speicherung auf dem Server unter `/root/zensi/wesensprofile/<wesen_id>/sessions/<version_geist>/<session_id>.json` und `.md`.
+- **Obsidian Vault Live Mirroring:** Automatische Spiegelung jeder Session in den Zensi Obsidian Vault unter `/root/zensi/obsidian_vault/wesensprofile/<wesen_id>/sessions/<version_geist>/<session_id>.md` inkl. Frontmatter (Metadaten, Nachrichten-Anzahl, Erstell-Datum).
+- **Soft-Delete (`/zensi/api/sessions/soft_delete`):** Session erhält `status: deleted`. Bleibt als Archiv auf Server & Obsidian Vault erhalten, wird jedoch in der aktiven UI ausgeblendet.
+- **Hard-Delete (`/zensi/api/sessions/hard_delete`):** Unwiderrufliche Löschung aller Session-Dateien von Server-Disk & Obsidian Vault.
+- **REST Endpunkte:** `/zensi/api/sessions/liste`, `/zensi/api/sessions/get`, `/zensi/api/sessions/create`, `/zensi/api/sessions/append`, `/zensi/api/sessions/soft_delete`, `/zensi/api/sessions/hard_delete`, `/zensi/api/sessions/restore`.
