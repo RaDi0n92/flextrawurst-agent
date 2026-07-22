@@ -2325,3 +2325,12 @@ interface Ankuendigung {
   resonanz_count: number;
 }
 ```
+
+---
+
+**[2026-07-22]** *← _claude/ideen/wesen_dauerhafte_handlungsfaehigkeit_und_einsichtsnebenscreen.md*
+
+**Vision-Schicht:** Ein Wesen bewegt sich die meiste Zeit "von selbst" — scrollt, klickt auf offensichtlich klickbare Elemente, wechselt zwischen offenen Orten (Flarum/Surface/eigener Vault) — ohne dass für jeden einzelnen Schritt ein LLM gefragt wird. In regelmäßigen Abständen (die "44") hält es kurz inne und ein echter LLM-Tick entscheidet: hierbleiben, weiterziehen, oder zum Vault wechseln. Der Einsicht-Nebenscreen würde dem Wesen (wenn das die richtige Lesart ist) zusätzlich zum visuellen DOM auch den "Maschinenraum" zeigen — nicht nur was auf der Seite steht, sondern was in der DB/im Code dahintersteckt.
+
+**Code-Skizze:** noch zu roh für echten Code — architektonisch hängt alles an der Tick-Modell-Frage. Grobe Richtung, sobald geklärt:
+```python

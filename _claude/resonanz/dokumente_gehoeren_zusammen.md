@@ -923,3 +923,9 @@ derselben einen Nacht.
 **[2026-07-21]** *← _claude/notizen/2026-07-21.md*
 
 `docs/systemdoku/24_ankuendigungen.md` (der ganze Feature-Ausbau) und `docs/systemdoku/05_surface_8787.md` (der WESEN-Tab-Fix) — getrennt gehalten, weil unterschiedliche Subsysteme, auch wenn derselbe Bug-Typ beide betraf.
+
+---
+
+**[2026-07-22]** *← _claude/ideen/wesen_dauerhafte_handlungsfaehigkeit_und_einsichtsnebenscreen.md*
+
+`docs/2026-07-21_tagesbericht.md` (TEIL 6, "billiges Vorlesen"), `docs/systemdoku/29_browser_agent_aktivierung.md`, `welt/obsidian_vault_agent.py`, `_claude/ideen/dreiergespann_dom_theorie.md`.

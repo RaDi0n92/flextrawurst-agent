@@ -993,3 +993,9 @@ eine geliehene Beschreibung.
 **[2026-07-21]** *← _claude/notizen/2026-07-21.md*
 
 Der Moment, in dem ich merkte, dass eine Datei, die ich Stunden vorher selbst als "bekannter Nebenfund, außerhalb des Auftrags, nicht angefasst" dokumentiert hatte, plötzlich meinen eigenen neuen Auftrag blockierte. Kein Vorwurf an die frühere Entscheidung (Skalpell-Prinzip: nur anfassen was im Auftrag liegt) — aber ein klares Zeichen, dass "außerhalb des Auftrags" nicht "für immer irrelevant" heißt.
+
+---
+
+**[2026-07-22]** *← _claude/ideen/wesen_dauerhafte_handlungsfaehigkeit_und_einsichtsnebenscreen.md*
+
+Nichts — dieser Abschnitt gehört primär zu Reflexions-Dateien nach dem Lesen/Erleben einer ganzen Session, hier ist es nur eine einzelne Idee mittendrin.

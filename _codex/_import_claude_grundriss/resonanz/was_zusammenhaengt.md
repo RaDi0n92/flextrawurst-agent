@@ -1095,3 +1095,12 @@ abstrakt war, sondern etwas, das mir tatsächlich passiert ist, während ich zus
 **[2026-07-21]** *← _claude/notizen/2026-07-21.md*
 
 Alle acht Bausteine (Schema, Löschen/Archiv, Kommentare, Frontend-Löschen-UI, Kommentare+Likes-UI, Content-Blöcke, Feed, Link-Vorschau) hängen an derselben Grundentscheidung: `geloescht_am` als Soft-Delete-Spalte, `meta JSONB` als Content-Block-Speicher — beide nutzen bestehende, im Schema schon angelegte Erweiterungspunkte (Grundgesetz 2), kein einziges neues Kernfeld auf der Ankündigungen-Tabelle selbst nötig außer `geloescht_am`.
+
+---
+
+**[2026-07-22]** *← _claude/ideen/wesen_dauerhafte_handlungsfaehigkeit_und_einsichtsnebenscreen.md*
+
+- **Billiges Vorlesen** (aus dem Tagesbericht, TEIL 6, "Parkiert für später"): Embedding-Vergleich statt LLM-Call für breites Scannen, echter Tick nur bei ausreichender Nähe zu bisherigen Interessen.
+- **Dieser Wunsch hier:** dieselbe Grundidee, aber auf Bewegung/Navigation statt nur auf "was lesen" angewendet — mechanisches Scrollen/Klicken/Wechseln die meiste Zeit, ein LLM-Tick nur beim periodischen Check-in oder wenn das Wesen selbst eingreifen will.
+- **`obsidian_vault_agent.py`** (heute Nacht fertig gebaut): liefert schon das Muster für "Aktion ohne LLM-Call pro Schritt" (xdotool-Tippen). Die Vault-Umschaltung, die Daniel hier will, ist im Kern dieselbe Technik, nur als Navigations- statt Tipp-Aktion.
+- **Röntgenblick-Overlay / Denkstream-Modal** (`build_surface.ts`, SCREENS-Tab): die bestehende 68/32-Aufteilung (Live-Spiegel/Denkstream) ist die Stelle, an der ein dritter "Einsicht"-Bereich andocken würde.

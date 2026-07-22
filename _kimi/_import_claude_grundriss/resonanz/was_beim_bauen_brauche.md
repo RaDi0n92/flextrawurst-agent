@@ -874,3 +874,9 @@ Nichts — keine Bauaufgabe.
 **[2026-07-21]** *← _claude/notizen/2026-07-21.md*
 
 Nichts Neues heute — alle Bausteine ließen sich mit bereits vorhandenen Mustern (Resonanz, Grundgesetz-2-`meta`-Feld, bestehende Upload-Validierung) zusammensetzen.
+
+---
+
+**[2026-07-22]** *← _claude/ideen/wesen_dauerhafte_handlungsfaehigkeit_und_einsichtsnebenscreen.md*
+
+Antwort auf "44" (Einheit/Zahl). Klärung, ob Tick-Modell bestehen bleibt oder grundlegend verschoben wird. Für den Einsicht-Nebenscreen: Klärung, ob er fürs Wesen selbst (neuer Kontext-Kanal) oder für Menschen (Beobachtungsfeature) gedacht ist — das sind zwei ganz verschiedene Bauaufträge.

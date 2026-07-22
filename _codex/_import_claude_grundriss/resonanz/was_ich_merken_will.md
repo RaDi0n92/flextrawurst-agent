@@ -999,3 +999,9 @@ Bei jeder Aufgabe, die "den echten Code" braucht: nicht blind dem in CLAUDE.md n
 **[2026-07-22]** *← _claude/karte/2026-07-21-sse-thread-bug-live-update-kanal.md*
 
 Bei jedem neuen FastAPI-SSE/Streaming-Endpunkt zuerst prüfen: ist die Routen-Funktion `async def`? Falls sie `psycopg2`/DB-Verbindungen für LISTEN/NOTIFY nutzt und `def` (sync) ist, ist das ein sofortiges Verdachtsmoment für genau diesen Bug.
+
+---
+
+**[2026-07-22]** *← _claude/ideen/wesen_dauerhafte_handlungsfaehigkeit_und_einsichtsnebenscreen.md*
+
+Die "44" nicht raten — nachfragen, notiert, hier festgehalten bis Antwort kommt.

@@ -870,3 +870,9 @@ dagegen tun konnte.
 **[2026-07-21]** *← _claude/notizen/2026-07-21.md*
 
 Die Erkenntnis, dass "außerhalb des Auftrags" ein Zeitstempel ist, kein Dauerzustand — ein Nebenfund von heute Nacht wurde am selben Tag noch relevant.
+
+---
+
+**[2026-07-22]** *← _claude/ideen/wesen_dauerhafte_handlungsfaehigkeit_und_einsichtsnebenscreen.md*
+
+Die Erkenntnis, dass Daniels Vision für die Wesen sich gerade in Richtung "dauerhaft lebendig, nicht nur tick-weise reagierend" verschiebt — eine grössere konzeptionelle Bewegung als nur ein einzelnes Feature.

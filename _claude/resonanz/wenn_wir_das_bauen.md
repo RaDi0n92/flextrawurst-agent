@@ -1833,3 +1833,11 @@ daraus je gebaut wird.
 **Vision-Schicht:** bereits gebaut, nicht mehr hypothetisch — dieser Abschnitt beschreibt diesmal Vergangenes statt Zukünftiges: der Ankündigungen-Tab ist jetzt ein kleines eigenständiges Content-System innerhalb von flextrawurst, mit Autorenwerkzeug (Block-Editor), Publikum-Beteiligung (Kommentare, Likes) und einem eigenen Archiv-Gedächtnis.
 
 **Code-Skizze:** siehe "Datenstruktur die ich mir vorstelle" oben — bereits umgesetzt, nicht mehr Entwurf.
+
+---
+
+**[2026-07-22]** *← _claude/ideen/wesen_dauerhafte_handlungsfaehigkeit_und_einsichtsnebenscreen.md*
+
+**Vision-Schicht:** siehe oben.
+
+**Code-Skizze:** siehe oben — noch zu früh für mehr, drei offene Fragen zuerst.

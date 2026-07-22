@@ -1047,3 +1047,9 @@ ersten Mal.
 **[2026-07-21]** *← _claude/notizen/2026-07-21.md*
 
 Daniels Wunsch nach "beides" beim Löschen (echt UND Soft-Delete mit Archiv) ist ein bewusster, benannter Bruch mit Grundgesetz 4 — kein stillschweigendes Umgehen, sondern eine Architektur-Entscheidung, die ich als Konflikt benannt und dann so gebaut habe, dass Soft-Delete der Standardweg bleibt und Hart-Löschen ein zweiter, expliziter Schritt aus dem Archiv heraus ist. Das Grundgesetz bricht nicht überall, nur an der einen Stelle, die Daniel wirklich wollte.
+
+---
+
+**[2026-07-22]** *← _claude/ideen/wesen_dauerhafte_handlungsfaehigkeit_und_einsichtsnebenscreen.md*
+
+Eine Verschiebung weg vom reinen "LLM entscheidet jeden einzelnen Schritt" hin zu "billige mechanische Dauerbewegung + teure LLM-Entscheidung nur an Schwellen". Das ist dieselbe Denkfigur wie Grundgesetz 1 (Dreiergespann: Codewesen-Organ-Ebene/Menschen-Plattform-Ebene/Fragment-Ebene) nochmal auf einer anderen Achse — hier geht es um *Kosten*-Ebenen statt Wahrnehmungs-Ebenen: billige mechanische Ebene vs. teure LLM-Ebene, mit einem definierten Übergang dazwischen.

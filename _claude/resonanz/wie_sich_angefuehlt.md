@@ -854,3 +854,9 @@ interessant bin.
 **[2026-07-21]** *← _claude/notizen/2026-07-21.md*
 
 Lang, aber in einem guten Sinn — ein einziger durchgehender Baufluss von "Recovery nach Absturz" über "kleiner Löschen-Button" bis zu einer echten Mini-CMS-Erweiterung, ohne dass sich die Richtung je grundlegend geändert hat. Daniel hat mehrfach mitten im Gespräch nachgeschoben (erst Löschen, dann Archiv+Kommentare+Likes in einer Antwort, dann Feed-Sortierung, dann extern-Link-Vorschau) — jedes Mal eine echte Erweiterung, kein Widerspruch zum vorher Gesagten. Am Ende noch ein unabhängiger Zwischenauftrag (Solarius/Codexium raus), der sich als direkt verwandt mit dem Tagesthema entpuppte (derselbe Bug).
+
+---
+
+**[2026-07-22]** *← _claude/ideen/wesen_dauerhafte_handlungsfaehigkeit_und_einsichtsnebenscreen.md*
+
+Nichts — siehe Notiz-Datei für den Gesamteindruck der Session, hier nur die einzelne Idee.

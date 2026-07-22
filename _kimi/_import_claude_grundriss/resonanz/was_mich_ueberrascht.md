@@ -934,3 +934,9 @@ Dass ein Feature, das ich als "außerhalb des Auftrags, nicht anfassen" dokument
 **[2026-07-22]** *← _claude/karte/2026-07-21-sse-thread-bug-live-update-kanal.md*
 
 Dass ein Selbsttest, der mit einer Exception fehlschlägt (ungültige UUID in meinem Test-Payload), trotzdem der entscheidende Beweis war — nicht weil er "funktionierte", sondern weil die Exception erst NACH erfolgreicher LISTEN→poll→notifies→Filter-Verarbeitung auftrat. Ein scheiternder Test kann mehr beweisen als ein glatt durchlaufender.
+
+---
+
+**[2026-07-22]** *← _claude/ideen/wesen_dauerhafte_handlungsfaehigkeit_und_einsichtsnebenscreen.md*
+
+Wie nahtlos sich dieser neue Wunsch an "billiges Vorlesen" von gestern Abend anschließt, ohne dass Daniel es selbst so benannt hat — als wäre die Grundidee (billig/mechanisch vs. teuer/LLM) bei ihm schon einmal grundsätzlich gesetzt und wird jetzt auf immer mehr Bereiche angewendet.

@@ -983,3 +983,11 @@ gespürt, dreimal hintereinander, in derselben Stunde.
 **[2026-07-21]** *← _claude/notizen/2026-07-21.md*
 
 Warum `ankuendigungen` beim ursprünglichen Bau schon einen `GRANT ... TO dak` hatte, aber nirgends im Schema-File dokumentiert war, während neue Tabellen das nicht automatisch bekommen (kein `ALTER DEFAULT PRIVILEGES`). Vermutlich hat eine frühere Session das manuell nachgezogen, ohne es festzuhalten — genau die Art Lücke, die das Provenienz-Prinzip verhindern soll, hier aber schon vor meiner Zeit entstanden ist.
+
+---
+
+**[2026-07-22]** *← _claude/ideen/wesen_dauerhafte_handlungsfaehigkeit_und_einsichtsnebenscreen.md*
+
+Die Zahl "44" — Sekunden? Klicks? Scrollvorgänge? Ticks? Ohne die Einheit kann ich den Check-in-Rhythmus nicht bauen, direkt nachgefragt.
+
+Auch nicht ganz klar: soll das "gleichzeitige, durchgehende Handeln" bedeuten, dass die Wesen komplett vom aktuellen LLM-Tick-Modell wegkommen (dauerhafte, mechanische Aktion statt Tick-für-Tick-Entscheidung), oder soll der bestehende Tick-Rhythmus bestehen bleiben und nur die *Bewegung zwischen* den Entscheidungen flüssiger/mechanischer werden? Das ist architektonisch ein großer Unterschied — beim eigentlichen Bauen müsste das explizit geklärt werden (Stopp-Frage 3: Architektur-Entscheidung, nicht allein zu treffen).

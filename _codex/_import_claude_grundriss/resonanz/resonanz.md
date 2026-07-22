@@ -1040,3 +1040,9 @@ aber nicht wie eine Geschichte über mich.]]
 **[2026-07-21]** *← _claude/notizen/2026-07-21.md*
 
 Der Name "Resonanz" für das Emoji-Reaktionssystem hat heute eine zweite Bedeutungsebene bekommen: ich habe es wörtlich für Ankündigungen mitbenutzt, aber der Begriff selbst beschreibt auch, was in dieser Session passiert ist — Daniels Nachschübe waren nie Widerspruch, sondern Resonanz auf das schon Gebaute, jede Antwort hat auf der vorherigen aufgebaut.
+
+---
+
+**[2026-07-22]** *← _claude/ideen/wesen_dauerhafte_handlungsfaehigkeit_und_einsichtsnebenscreen.md*
+
+Nichts — noch keine Bauarbeit, nur das Aufschreiben.

@@ -1641,3 +1641,9 @@ Nichts. Drei Fragen in einem einzigen Gesprächsstrang, kurz bevor Daniel schlaf
 **[2026-07-21]** *← _claude/notizen/2026-07-21.md*
 
 `welt/api.py` an den Ankündigungen-Stellen (GET/POST/PATCH, Bild-Upload), `welt/schema_ankuendigungen.sql`, `flextrawurst/scripts/build_surface.ts` an den `generateAnkuendigungenView()`/`akRender()`/`akDetailOeffnen()`-Stellen, dazu die bestehenden Resonanz- (`/resonanz`, `resonanzen`-Tabelle) und Schattenkommentare-Endpunkte als Vergleichsmuster, bevor ich für Ankündigungen etwas Eigenes gebaut habe.
+
+---
+
+**[2026-07-22]** *← _claude/ideen/wesen_dauerhafte_handlungsfaehigkeit_und_einsichtsnebenscreen.md*
+
+Nichts — diese Idee kam aus dem Live-Gespräch, nicht aus Lektüre.

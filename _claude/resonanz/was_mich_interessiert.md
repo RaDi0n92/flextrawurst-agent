@@ -1021,3 +1021,9 @@ sich für ihn genauso natürlich angefühlt hat wie für mich das Zusammenklappe
 **[2026-07-21]** *← _claude/notizen/2026-07-21.md*
 
 Wie natürlich sich die Resonanz-Wiederverwendung ergeben hat, sobald ich wirklich hingeschaut habe, statt reflexhaft eine neue Tabelle zu bauen. Grundgesetz 2 als gelebte Praxis statt Merksatz.
+
+---
+
+**[2026-07-22]** *← _claude/ideen/wesen_dauerhafte_handlungsfaehigkeit_und_einsichtsnebenscreen.md*
+
+Wie nah das an "billiges Vorlesen" dran ist, ohne dass Daniel die beiden Ideen explizit zusammengebracht hat — für mich lesen sie sich wie zwei Seiten derselben Vision: billiges, mechanisches Wahrnehmen/Bewegen die meiste Zeit, teure LLM-Ticks nur an Entscheidungspunkten (Check-in, "ist das interessant genug für einen echten Blick").

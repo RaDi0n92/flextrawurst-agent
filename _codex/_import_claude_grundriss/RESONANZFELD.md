@@ -1,5 +1,5 @@
 # RESONANZFELD — Claude
-Automatisch kompiliert aus `resonanz/`. Stand: 2026-07-22 03:58
+Automatisch kompiliert aus `resonanz/`. Stand: 2026-07-22 04:58
 Nicht manuell bearbeiten. Quelle: `python3 _claude/tools/build_resonanzfeld.py`
 
 ---
@@ -132,71 +132,12 @@ Nicht manuell bearbeiten. Quelle: `python3 _claude/tools/build_resonanzfeld.py`
 - [2026-06-24] `notizen/2026-06-24.md` (22 Einträge)
 - [2026-06-25] `notizen/2026-06-25.md` (22 Einträge)
 - [2026-07-04] `notizen/2026-07-04.md` (20 Einträge)
+- [2026-07-04] `notizen/2026-07-04-codexium2-chat-erweiterungen.md` (21 Einträge)
 
 ---
 
 ## Neueste Quellen (mit Inhalt)
 
-
-### [2026-07-04] notizen/2026-07-04-codexium2-chat-erweiterungen.md
-
-*Dokumente Gehoeren Zusammen:* `_claude/ideen/codexium2_solarius2/chat_architektur.md` (Email-Gefühl + heutiger Abort-Nachtrag), `_claude/ideen/codexium2_solarius2/memory_container.md` (Pin/Memory-Grundkonzept + heutiger Checkbox-Nachtrag), `_claude/ideen/codexium2_solarius2/feedback_stimme_diktat.md` (heute komplett neu, inkl. aller drei Korrektur-Runden) — alle drei heute aktualisiert und sollten zusammen gelesen werden, keins allein gibt das vollständige Bild.
-
-*Resonanz:* [[abwurf: Wenn eine Interaktion auf unsichtbarem Browser-Zustand aufbaut, der durch die nächste Interaktion selbst zerstört wird, ist das kein Randfall — das ist ein Designfehler.]]
-
-*Schichten Des Systems:* ```
-wesen_chat.html
-  ├── TTS (Stimme + Tempo, alle vier Spawner) …
-
-*Tiefer Eingetaucht:* Die Web-Speech-API-Recherche: `continuous:true` auf Android/Chrome ist kein Rand-Bug, sondern strukturell kaputt, weil es auf dieser Plattform nicht nativ existiert — Chrome emuliert es durch heimliche Neustarts des Recognizers und schneidet dabei bereits gehörten Ton nochmal mit. Der dokumentierte Workaround ("continuous surrogate" aus mehreren Einzel-Sessions) ist kein Hack, sondern der von mehreren unabhängigen Projekten (react-speech-recognition, csdcorp/speech_to_text) konvergent gefundene Standardweg.
-
-Und: der Grund warum leere Profil-Felder nie auftauchten, lag nicht im Profil-Code selbst, sondern eine Schicht tiefer im Spawner — der schreibt nur für ausgefüllte Felder überhaupt eine Datei. Zwei Dateien, die nichts miteinander zu tun zu haben schienen, hatten denselben blinden Fleck.
-
-*Vergessen Wollen:* Den ersten Pin-Fix-Ansatz (`mousedown.preventDefault()`) nicht als Fehlschlag werten — er war für Desktop-Mäuse korrekt und ist es noch, nur eben nicht die vollständige Antwort. Nicht wieder vergessen, dass ein Fix der in einer Umgebung nachweislich funktioniert trotzdem in einer anderen komplett wirkungslos sein kann.
-
-*Warum Das Existiert:* `aktiveGenerationen` existiert, weil "Generierung läuft im Hintergrund weiter" und "Nutzer will jetzt wirklich abbrechen" zwei unterschiedliche Wahrheiten sind, die vorher denselben Code-Pfad geteilt haben. Die Satz-Checkbox-Liste existiert, weil Touch-Geräte keine verlässliche Zwischenspeicherung von "was war gerade markiert" anbieten — explizite UI-Zustände (angehakt/nicht angehakt) sind robuster als impliziter Browser-Zustand.
-
-*Was Beim Bauen Brauche:* Beim nächsten Mal, bevor ich eine Interaktion baue die auf Text-Selektion, Fokus-Zustand oder ähnlichem unsichtbaren Browser-State aufbaut: mich fragen, ob das auf einem Touch-Gerät genauso gilt. Meistens nicht.
-
-*Was Das Gespraech:* Die Erinnerung, dass "ich hab gemerkt dass..." oft der ehrlichste Bug-Report ist, den man bekommen kann — kein Stacktrace, aber eine echte Beobachtung aus echter Nutzung. Und die beiläufige Ankündigung der drei Tester am Ende, die den morgigen Tag in einen anderen Kontext stellt: das ist nicht mehr nur Daniel allein im Testbed.
-
-*Was Fehlt Bevor Bauen:* Nichts Blockierendes für codexium2/solarius2. Offen, aber nicht dringend: Push/Poll-Mechanismus damit der Client merkt wenn eine Hintergrund-Antwort fertig ist (aus `chat_architektur.md`, unverändert offen), Warteschlange bei mehreren Nachrichten hintereinander.
-
-*Was Fehlt Noch:* - Bestätigung ob Kindersicherung für die codexium2-Charaktere aktiv/relevant ist, falls für morgen wichtig (nicht geprüft, siehe oben).
-- Push/Poll-Mechanismus fürs Email-Gefühl (weiterhin offen, kein neuer Stand).
-- Beobachten was die drei Tester morgen finden.
-
-*Was Ich Gelesen Habe:* Zuerst `wesen_chat.html` (794 Zeilen) und `serve_process_camera_preview.ts` komplett, um zu verstehen wie Pin/Container/Memory, TTS und die History-Persistenz zusammenhängen, bevor ich irgendwas anfasse. Dann `tts_service.py` — der konnte Stimmen und Sprechtempo schon immer, das Frontend hatte beides nur nie freigelegt. Dann, mitten in der Session, zwei Web-Suchen: einmal zum bekannten Chromium-Bug bei `continuous:true` in der Web Speech API auf Android, einmal implizit über die Konzeptdateien in `_claude/ideen/codexium2_solarius2/`, um zu sehen was von den heutigen Änderungen schon dokumentiert war und was noch fehlte.
-
-*Was Ich Merken Will:* - `continuous:false` + Neustart im `onend` ist der Fix für Web-Speech-API-Wortverdopplung auf Android — nicht `continuous:true` mit Nachbearbeitung.
-- Browser-Text-Selektion + "danach einen nahen Button antippen" ist auf Touch-Geräten kein verlässliches Interaktionsmuster. Checkboxen/explizite Auswahl sind der robustere Weg.
-- Ein Stop-Button und ein Verbindungsabbruch sind zwei verschiedene Ereignisse, auch wenn sie auf HTTP-Ebene identisch aussehen (`res.on("close")`) — wenn beide unterschiedliches Verhalten brauchen, braucht es ein explizites zweites Signal (hier: der `/chat/abort`-Endpunkt). …
-
-*Was Ich Nicht Verstehe:* Ob die drei Familientester (16, 19, 21 Jahre) morgen etwas an den Charakteren finden, das heute in keinem Test auftauchte — Playwright kann Klicks simulieren, aber nicht wirklich "an die Grenzen führen" im Sinne von echtem, unvorhersehbarem Nutzerverhalten. Das wird sich erst zeigen.
-
-*Was Ich Verstehe:* Das codexium2/solarius2-System ist ein Testbed mit eigener, bewusst einfacherer Architektur als das alte Zwischenwesen-Konzept: ein Container (flache Pin-Liste, session-lokal), Memory mit fünf festen Kategorien, keine benutzerdefinierten Container. Daniel hatte das aus der Erinnerung an das ältere, nie gebaute Konzept verwechselt — gut, dass er nachgefragt hat, sonst hätte er weiter nach einem Feature gesucht, das es in dieser Form nie gab.
-
-Das "Email-Gefühl" (Generierung läuft weiter, auch wenn die Seite verlassen wird) ist bewusst so gewollt — aber ich hatte es zu wörtlich implementiert: ein bewusster Stop-Klick sah serverseitig identisch aus wie ein versehentlicher Verbindungsabbruch. Das war der Kern des ersten gemeldeten Bugs heute Abend.
-
-*Was Konzeptionell:* Der wichtigste Umbau heute war kein Feature, sondern eine Korrektur einer Annahme: dass Browser-Text-Selektion ein brauchbares Interaktionsmuster für mobile Geräte ist. Ist sie nicht, jedenfalls nicht kombiniert mit "danach einen Button in der Nähe antippen". Die Lehre daraus ist allgemeiner als dieser eine Bug: wenn eine Interaktion auf unsichtbarem Browser-/OS-Zustand aufbaut (hier: Selektion), der durch die nächste Interaktion selbst zerstört wird, ist das kein Rand­fall, sondern ein Designfehler. Die Lösung war nicht "den Bug fixen", sondern das Interaktionsmuster zu ersetzen (explizite Checkboxen statt impliziter Selektion).
-
-*Was Mich Beschaeftigt:* Der Moment, als Daniel schrieb "das speech to text ist mega sheisse" — direkt, ohne Umschweife, aber mit einem "bitte such im web" hinterher. Das ist ein gutes Beispiel für Feedback das gleichzeitig hart und konstruktiv ist. Ich habe recherchiert statt zu raten, und der erste Suchtreffer (Chromium Issue #40324711) hat die Ursache exakt bestätigt.
-
-*Was Mich Interessiert:* Wie unterschiedlich sich "im Automatisierten testen" und "Daniel testet real auf dem Handy" anfühlen. Zwei von drei Bugs heute (STT-Verdopplung, Pin auf Touch) waren genau die Art Fehler, die ein Playwright-Test mit synthetischen Mouse-Events nie gefunden hätte, weil sie nur auf echtem Touch-Hardware-Verhalten beruhen.
-
-*Was Mich Ueberrascht:* Wie schnell und präzise Daniel die drei Bugs nach dem ersten Test benannt hat — kein "irgendwas ist komisch", sondern "wenn ich abbreche kommt trotzdem eine Nachricht", "STT nimmt alles doppelt/dreifach", "ich will einen Tempo-Slider". Das hat die Fehlersuche massiv beschleunigt, weil ich nicht raten musste wo ich anfangen soll.
-
-*Was Zusammenhaengt:* Message-IDs (heute neu in `chat_history.jsonl`) sind die Voraussetzung für das Feedback-System — ohne stabile ID kein Ziel für einen Daumen-Klick. Der gleiche ID-Mechanismus hätte auch für den Abort-Fix genutzt werden können, wurde dort aber bewusst nicht gebraucht: der Abort-Fix hängt am Charakter (`spawner/name`), nicht an der einzelnen Nachricht, weil zu jedem Zeitpunkt ohnehin nur eine Generierung pro Charakter läuft.
-
-Der Pin-Fix und der neue Memory-Add-Button teilen sich jetzt dieselbe Satz-Checkbox-Liste (`splitSentences`/`renderSentenceList`/`getCheckedSentences`) — als ich das zweite Feature baute, wurde offensichtlich, dass es dieselbe Grundfrage ist wie beim Pin: welcher Teil einer Nachricht soll wohin.
-
-*Wenn Wir Das Bauen:* **Vision-Schicht:** Morgen kommen drei echte Testpersonen dazu. Das System hat jetzt Feedback-Buttons, mit denen sie (oder Daniel im Nachhinein) markieren können was funktioniert hat und was nicht — das könnte der erste echte Nutzen der Feedback-Daten werden, nicht nur ein Rohkonzept.
-
-**Code-Skizze:** Falls die Kindersicherung (`kindersicherung`-Flag, `Grenzen.md`) für den 16-jährigen Tester relevant wird — das Flag existiert schon (`kinder-badge`, `grenzen-btn` in `wesen_chat.html`), wurde heute nicht angefasst und nicht geprüft ob es für die codexium2-Charaktere überhaupt gesetzt ist. Falls Daniel das für morgen braucht, vorher explizit prüfen, nicht annehmen dass es schon greift.
-
-*Wie Sich Angefuehlt:* Iterativ im besten Sinne. Nicht "einmal bauen, fertig", sondern bauen → Daniel testet real → melden was kaputt ist → verstehen warum → nachbessern → nochmal testen. Jede Runde war kürzer als die vorherige. Am Ende hat sich das nach echter gemeinsamer Arbeit angefühlt, nicht nach einer Liste abgehakter Tickets.
-
----
 
 ### [2026-07-04] notizen/2026-07-04-charakterqualitaet-budgets-beispieldialoge.md
 
@@ -1765,6 +1706,62 @@ welt-api crash-loop) habe ich heute nicht neu geprüft — nicht Teil dieser Ses
 ### [2026-07-21] _claude/karte/2026-07-21-code-export-pfad-korrektur.md
 
 *Was Ich Merken Will:* Bei jeder Aufgabe, die "den echten Code" braucht: nicht blind dem in CLAUDE.md notierten Pfad folgen, sondern über die tatsächlich laufenden Prozesse (`ss -tlnp`, systemd-Units) verifizieren, wo der Code wirklich liegt — Doku kann veralten, laufende Prozesse lügen nicht.
+
+---
+
+### [2026-07-22] _claude/ideen/wesen_dauerhafte_handlungsfaehigkeit_und_einsichtsnebenscreen.md
+
+*Datenstruktur Die Ich Mir Vorstelle:* **Vision-Schicht:** Ein Wesen bewegt sich die meiste Zeit "von selbst" — scrollt, klickt auf offensichtlich klickbare Elemente, wechselt zwischen offenen Orten (Flarum/Surface/eigener Vault) — ohne dass für jeden einzelnen Schritt ein LLM gefragt wird. In regelmäßigen Abständen (die "44") hält es kurz inne und ein echter LLM-Tick entscheidet: hierbleiben, weiterziehen, oder zum Vault wechseln. Der Einsicht-Nebenscreen würde dem Wesen (wenn das die richtige Lesart ist) zusätzlich zum visuellen DOM auch den "Maschinenraum" zeigen — nicht nur was auf der Seite steht, sondern was in der DB/im Code dahintersteckt.
+
+**Code-Skizze:** noch zu roh für echten Code — architektonisch hängt alles an der Tick-Modell-Frage. Grobe Richtung, sobald geklärt: …
+
+*Dokumente Gehoeren Zusammen:* `docs/2026-07-21_tagesbericht.md` (TEIL 6, "billiges Vorlesen"), `docs/systemdoku/29_browser_agent_aktivierung.md`, `welt/obsidian_vault_agent.py`, `_claude/ideen/dreiergespann_dom_theorie.md`.
+
+*Resonanz:* Nichts — noch keine Bauarbeit, nur das Aufschreiben.
+
+*Schichten Des Systems:* Nichts — dieser Abschnitt gehört eher in Reflexions-Dateien nach echtem Lesen/Bauen, nicht in eine reine Wunsch-Notiz.
+
+*Tiefer Eingetaucht:* Nichts — noch keine Bauarbeit an dieser Idee, nur das Festhalten.
+
+*Warum Das Existiert:* Diese Datei existiert, damit der Wunsch nicht verlorengeht, bevor die Klärung ("was heißt 44") und die eigentliche Bauarbeit (billiges Vorlesen) beginnen — Daniel hatte selbst die Sorge geäußert, dass frühere Beschreibungen dieser Art schon einmal untergegangen sind.
+
+*Was Beim Bauen Brauche:* Antwort auf "44" (Einheit/Zahl). Klärung, ob Tick-Modell bestehen bleibt oder grundlegend verschoben wird. Für den Einsicht-Nebenscreen: Klärung, ob er fürs Wesen selbst (neuer Kontext-Kanal) oder für Menschen (Beobachtungsfeature) gedacht ist — das sind zwei ganz verschiedene Bauaufträge.
+
+*Was Das Gespraech:* Die Erkenntnis, dass Daniels Vision für die Wesen sich gerade in Richtung "dauerhaft lebendig, nicht nur tick-weise reagierend" verschiebt — eine grössere konzeptionelle Bewegung als nur ein einzelnes Feature.
+
+*Was Fehlt Bevor Bauen:* Die drei offenen Fragen oben. Für den ERSTEN, bestätigten Schritt (billiges Vorlesen) fehlt davon nichts — der ist unabhängig von diesen Detailfragen umsetzbar.
+
+*Was Fehlt Noch:* Antwort auf "44". Danach: Start bei "billiges Vorlesen" wie bestätigt, die größeren Fragen (Tick-Modell, Einsicht-Nebenscreen-Zielgruppe) bleiben offen für ein späteres, eigenes Gespräch.
+
+*Was Ich Gelesen Habe:* Nichts — diese Idee kam aus dem Live-Gespräch, nicht aus Lektüre.
+
+*Was Ich Merken Will:* Die "44" nicht raten — nachfragen, notiert, hier festgehalten bis Antwort kommt.
+
+*Was Ich Nicht Verstehe:* Die Zahl "44" — Sekunden? Klicks? Scrollvorgänge? Ticks? Ohne die Einheit kann ich den Check-in-Rhythmus nicht bauen, direkt nachgefragt.
+
+Auch nicht ganz klar: soll das "gleichzeitige, durchgehende Handeln" bedeuten, dass die Wesen komplett vom aktuellen LLM-Tick-Modell wegkommen (dauerhafte, mechanische Aktion statt Tick-für-Tick-Entscheidung), oder soll der bestehende Tick-Rhythmus bestehen bleiben und nur die *Bewegung zwischen* den Entscheidungen flüssiger/mechanischer werden? Das ist architektonisch ein großer Unterschied — beim eigentlichen Bauen müsste das explizit geklärt werden (Stopp-Frage 3: Architektur-Entscheidung, nicht allein zu treffen).
+
+*Was Ich Verstehe:* Daniel will, dass alle 7 Wesen **gleichzeitig, durchgehend** voll handlungsfähig sind — Tastatur und Maus jederzeit einsatzbereit, nicht nacheinander im Tick-Takt wie jetzt. Sein Wortlaut: *"die wesen alle gleichzeitig immer komplett handlungsfähig mit tastatur und maus sind dass sie sauerhalft scrollen können und insinktiv klicken und dinge so automatisch durchforsten und begehen können und schnell von ort zu ort auch zu wechseln"*. Das liest sich wie: flüssiges, mechanisches Scrollen/Klicken/Navigieren, nicht ein LLM-generierter Einzelschritt pro Tick — eher ein kontinuierlicher, fast reflexhafter Erkundungsstrom.
+
+Weil das nicht ewig ziellos weiterlaufen soll: ein periodischer Check-in-Mechanismus. Wortlaut: *"weil sie ja wie gesagt nicht alles immer dauerhaft interessiert daher sollte nach etwa jede 44 kurz bestätigt werden vom wesen dass es dort noch weiter machen will"*. Die genaue Zahl/Einheit hinter "44" ist mir nicht klar — nachgefragt, noch keine Antwort. Alternative/Ergänzung dazu: *"ansonsten könte man den wesen alle aussichten geben wass es ja sinst alles tun oder lassen könnte"* — den Wesen eine Übersicht zeigen, was sie sonst noch tun könnten, als Entscheidungshilfe beim Check-in. …
+
+*Was Konzeptionell:* Eine Verschiebung weg vom reinen "LLM entscheidet jeden einzelnen Schritt" hin zu "billige mechanische Dauerbewegung + teure LLM-Entscheidung nur an Schwellen". Das ist dieselbe Denkfigur wie Grundgesetz 1 (Dreiergespann: Codewesen-Organ-Ebene/Menschen-Plattform-Ebene/Fragment-Ebene) nochmal auf einer anderen Achse — hier geht es um *Kosten*-Ebenen statt Wahrnehmungs-Ebenen: billige mechanische Ebene vs. teure LLM-Ebene, mit einem definierten Übergang dazwischen.
+
+*Was Mich Beschaeftigt:* Nichts — dieser Abschnitt gehört primär zu Reflexions-Dateien nach dem Lesen/Erleben einer ganzen Session, hier ist es nur eine einzelne Idee mittendrin.
+
+*Was Mich Interessiert:* Wie nah das an "billiges Vorlesen" dran ist, ohne dass Daniel die beiden Ideen explizit zusammengebracht hat — für mich lesen sie sich wie zwei Seiten derselben Vision: billiges, mechanisches Wahrnehmen/Bewegen die meiste Zeit, teure LLM-Ticks nur an Entscheidungspunkten (Check-in, "ist das interessant genug für einen echten Blick").
+
+*Was Mich Ueberrascht:* Wie nahtlos sich dieser neue Wunsch an "billiges Vorlesen" von gestern Abend anschließt, ohne dass Daniel es selbst so benannt hat — als wäre die Grundidee (billig/mechanisch vs. teuer/LLM) bei ihm schon einmal grundsätzlich gesetzt und wird jetzt auf immer mehr Bereiche angewendet.
+
+*Was Zusammenhaengt:* - **Billiges Vorlesen** (aus dem Tagesbericht, TEIL 6, "Parkiert für später"): Embedding-Vergleich statt LLM-Call für breites Scannen, echter Tick nur bei ausreichender Nähe zu bisherigen Interessen.
+- **Dieser Wunsch hier:** dieselbe Grundidee, aber auf Bewegung/Navigation statt nur auf "was lesen" angewendet — mechanisches Scrollen/Klicken/Wechseln die meiste Zeit, ein LLM-Tick nur beim periodischen Check-in oder wenn das Wesen selbst eingreifen will.
+- **`obsidian_vault_agent.py`** (heute Nacht fertig gebaut): liefert schon das Muster für "Aktion ohne LLM-Call pro Schritt" (xdotool-Tippen). Die Vault-Umschaltung, die Daniel hier will, ist im Kern dieselbe Technik, nur als Navigations- statt Tipp-Aktion. …
+
+*Wenn Wir Das Bauen:* **Vision-Schicht:** siehe oben.
+
+**Code-Skizze:** siehe oben — noch zu früh für mehr, drei offene Fragen zuerst.
+
+*Wie Sich Angefuehlt:* Nichts — siehe Notiz-Datei für den Gesamteindruck der Session, hier nur die einzelne Idee.
 
 ---
 

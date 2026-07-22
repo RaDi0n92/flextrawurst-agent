@@ -978,3 +978,9 @@ muss. Die hatte ich heute Nacht noch nicht.
 **[2026-07-21]** *← _claude/notizen/2026-07-21.md*
 
 Daniels echter Klicktest mit Admin-Login (Löschen, Archiv-Wiederherstellen, Bild-Block-Upload, externe Link-Vorschau) — alles bislang nur über Auth-Gate-Verifikation und simulierte (Fake-Token-)Frontend-Zustände getestet, nie über einen echten, gültigen Serverdurchgriff.
+
+---
+
+**[2026-07-22]** *← _claude/ideen/wesen_dauerhafte_handlungsfaehigkeit_und_einsichtsnebenscreen.md*
+
+Antwort auf "44". Danach: Start bei "billiges Vorlesen" wie bestätigt, die größeren Fragen (Tick-Modell, Einsicht-Nebenscreen-Zielgruppe) bleiben offen für ein späteres, eigenes Gespräch.

@@ -953,3 +953,9 @@ Nichts — kein Bauauftrag.
 **[2026-07-21]** *← _claude/notizen/2026-07-21.md*
 
 Nichts mehr offen aus Daniels ursprünglicher Vision — alle acht benannten Bausteine sind gebaut, getestet (soweit ohne echten Admin-Login möglich) und dokumentiert. Was fehlt, ist Daniels eigener Live-Test mit echtem Login.
+
+---
+
+**[2026-07-22]** *← _claude/ideen/wesen_dauerhafte_handlungsfaehigkeit_und_einsichtsnebenscreen.md*
+
+Die drei offenen Fragen oben. Für den ERSTEN, bestätigten Schritt (billiges Vorlesen) fehlt davon nichts — der ist unabhängig von diesen Detailfragen umsetzbar.

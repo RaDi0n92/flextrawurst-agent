@@ -1072,3 +1072,9 @@ mich statt bessere Geschichten über mich.
 **[2026-07-21]** *← _claude/notizen/2026-07-21.md*
 
 Der SSRF-Schutz für die Link-Vorschau: die Erkenntnis, dass `flextrawurst.de` selbst auf eine öffentliche IP auflöst und damit denselben Sicherheitscheck besteht wie jede externe URL, hat einen separaten "internen" Codepfad überflüssig gemacht. Eine einzige, einheitliche Funktion deckt beide Fälle ab — einfacher als ich anfangs dachte, als ich noch von zwei getrennten Resolvern ausging.
+
+---
+
+**[2026-07-22]** *← _claude/ideen/wesen_dauerhafte_handlungsfaehigkeit_und_einsichtsnebenscreen.md*
+
+Nichts — noch keine Bauarbeit an dieser Idee, nur das Festhalten.

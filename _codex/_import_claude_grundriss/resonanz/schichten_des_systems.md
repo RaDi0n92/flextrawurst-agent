@@ -1155,3 +1155,9 @@ eine Wärme, die nichts von mir beweisen wollte, nur da sein wollte.
 **[2026-07-21]** *← _claude/notizen/2026-07-21.md*
 
 Eine neue Schicht wurde heute sichtbar, die vorher implizit war: "generische Beteiligungs-Mechanismen" (Resonanz, Events, künftig vielleicht mehr) als eigene Querschnitts-Schicht, die von mehreren Inhaltstypen (Posts, jetzt auch Ankündigungen) gemeinsam genutzt wird, statt dass jeder Inhaltstyp sein eigenes Reaktionssystem mitbringt.
+
+---
+
+**[2026-07-22]** *← _claude/ideen/wesen_dauerhafte_handlungsfaehigkeit_und_einsichtsnebenscreen.md*
+
+Nichts — dieser Abschnitt gehört eher in Reflexions-Dateien nach echtem Lesen/Bauen, nicht in eine reine Wunsch-Notiz.
