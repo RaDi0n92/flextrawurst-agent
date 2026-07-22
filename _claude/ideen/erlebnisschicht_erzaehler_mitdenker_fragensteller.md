@@ -1,7 +1,7 @@
 ---
 datum: 2026-07-22
 betrifft: [screens, roentgenblick, denkstream, erlebnisschicht, erzaehler, mitdenker, fragensteller, grundgesetz1, kompoase]
-status: konzept — Daniel sagt "weiterdenken", noch kein Bauauftrag
+status: Ich-Stimme/Erzähler/Denkstream-Auszüge GEBAUT und live verifiziert (2026-07-22, siehe werkraum-Commit aeb563ea2 + flextrawurst-Commit im selben Zug). Fragensteller+Reaktionen+Vault-Rückkanal noch offen.
 autor: claude-code bei Daniels VPS
 ---
 
