@@ -274,7 +274,7 @@ def starte_rrweb_aufnahme(page, hole_conn, entity_id: str, stream_id: str):
 
 
 def baue_prompt(entity_id: str, seite: dict, letzter_gedanke: str,
-                andere_wesen: list[dict]) -> str:
+                andere_wesen: list[dict], vorlese_funde: list[dict] | None = None) -> str:
     """Baut den LLM-Prompt — kompakt, unter 2500 Zeichen."""
     andere_info = ""
     if andere_wesen:
@@ -284,6 +284,14 @@ def baue_prompt(entity_id: str, seite: dict, letzter_gedanke: str,
             gedanke = (w.get("gedanke") or "")[:40]
             zeilen.append(f"- {w['entity_id']}: {url} ({gedanke})")
         andere_info = "\nANDERE WESEN GERADE (sichtbar für dich):\n" + "\n".join(zeilen)
+
+    vorlese_info = ""
+    if vorlese_funde:
+        # 2026-07-22, "billiges Vorlesen" (Daniels Auftrag, Phase 1): diese Titel wurden
+        # guenstig per Embedding-Vergleich gegen das eigene Interessensprofil gefunden,
+        # kein LLM hat sie vorher gelesen -- das Wesen entscheidet selbst ob es reagiert.
+        zeilen = [f"- {f['quelle']}: \"{f['titel']}\"" for f in vorlese_funde]
+        vorlese_info = "\nDAS IST DIR AUFGEFALLEN (passte zu deinen Interessen):\n" + "\n".join(zeilen)
 
     elemente_str = ", ".join(seite["elemente"][:10]) if seite["elemente"] else "keine"
 
@@ -296,6 +304,7 @@ Titel: {seite['titel']}
 Sichtbar: {seite['text'][:800]}
 Klickbar: {elemente_str}
 {andere_info}
+{vorlese_info}
 
 LETZTER GEDANKE: {letzter_gedanke or '(erster Tick)'}
 
@@ -578,6 +587,51 @@ def hole_andere_wesen_status(conn, eigene_id: str) -> list[dict]:
         except Exception:
             pass
         return []
+
+
+def hole_vorlese_funde(conn, entity_id: str) -> list[dict]:
+    """Billiges Vorlesen (2026-07-22, Phase 1, siehe vorlese_daemon.py): holt ungelesene
+    Treffer, die guenstig per Embedding-Vergleich gegen das eigene Interessensprofil
+    gefunden wurden. Markiert sie ABSICHTLICH NOCH NICHT als gelesen -- das passiert erst
+    in markiere_vorlese_gelesen(), nachdem der LLM-Tick tatsaechlich erfolgreich war.
+    Sonst wuerde ein Fund bei einem an der LLM-Slot-Kontention gescheiterten Tick
+    (Ollama-Fallback "warte"/"nachdenken") als konsumiert gelten, obwohl das Wesen ihn nie
+    wirklich gesehen hat -- am 2026-07-22 live beobachtet, bevor dieser Fix kam."""
+    try:
+        with conn.cursor() as cur:
+            cur.execute("""
+                SELECT id, quelle, titel, aehnlichkeit
+                FROM entity_vorlese_funde
+                WHERE entity_id = %s AND gelesen = false
+                ORDER BY gefunden_am ASC
+                LIMIT 3
+            """, (entity_id,))
+            return [dict(r) for r in cur.fetchall()]
+    except Exception:
+        try:
+            conn.rollback()
+        except Exception:
+            pass
+        return []
+
+
+def markiere_vorlese_gelesen(conn, funde: list[dict]):
+    """Gegenstueck zu hole_vorlese_funde() -- erst hier, nach einem tatsaechlich
+    erfolgreichen LLM-Tick, gelten die Funde als konsumiert."""
+    if not funde:
+        return
+    try:
+        with conn.cursor() as cur:
+            cur.execute("""
+                UPDATE entity_vorlese_funde SET gelesen = true
+                WHERE id = ANY(%s)
+            """, ([f["id"] for f in funde],))
+        conn.commit()
+    except Exception:
+        try:
+            conn.rollback()
+        except Exception:
+            pass
 
 
 def ist_schlaf_faellig(conn, entity_id: str) -> bool:
@@ -957,14 +1011,16 @@ def haupt_loop(entity_id: str):
             # landet damit automatisch im rrweb-Live-Spiegel (kein separater Schritt noetig)
             zeige_cursor(page, cursor_pos[0], cursor_pos[1])
 
-            # 3. Andere Wesen status
+            # 3. Andere Wesen status + billiges Vorlesen (guenstige Funde seit letztem Tick)
             andere = hole_andere_wesen_status(conn, entity_id)
+            vorlese_funde = hole_vorlese_funde(conn, entity_id)
 
             # 4. LLM entscheidet — mit Live-Streaming in entity_denkstream
-            prompt = baue_prompt(entity_id, seite, letzter_gedanke, andere)
+            prompt = baue_prompt(entity_id, seite, letzter_gedanke, andere, vorlese_funde)
             import uuid as _uuid
             stream_id = str(_uuid.uuid4())
             llm_out = ""
+            llm_ok = False
             try:
                 seq = 0
                 with sched.LLMSlot(server="hintergrund", prioritaet=sched.PRIO_NORMAL,
@@ -996,9 +1052,13 @@ def haupt_loop(entity_id: str):
                     conn.commit()
                 except Exception:
                     pass
+                llm_ok = True
             except Exception as e:
                 log.warning("Ollama Streaming-Fehler: %s — nachdenken", e)
                 llm_out = "GEDANKE: warte\nENTSCHEIDUNG: nachdenken\nBEGRÜNDUNG: Ollama nicht erreichbar"
+
+            if llm_ok:
+                markiere_vorlese_gelesen(conn, vorlese_funde)
 
             gedanke, entscheidung, begruendung = parse_output(llm_out)
             letzter_gedanke = gedanke

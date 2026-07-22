@@ -2478,3 +2478,6 @@ Aus meiner Stunden/Tag«
 
 >«
 - [2026-07-22 04:52] **wasser** (i=0.45) → Zwischenraum: »Verstanden — das ist deutlich größer geworden als ich am Anfang gedacht hatte«
+- [2026-07-22 05:03] **nebel** (i=0.31) → Zwischenraum: »Zwischenstand:
+
+- **288/1000 Shards** erledigt, **9.097.048 Knoten** migriert, **1 Fehler** bislang «
