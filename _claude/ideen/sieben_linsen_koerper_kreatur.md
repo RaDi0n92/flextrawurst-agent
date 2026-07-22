@@ -170,3 +170,19 @@ Antworten auf die drei offenen Fragen (visuelle Form, Parallelität, Kosten), be
 `zeige_cursor()` in `browser_agent.py` ersetzt das simple CSS-Dreieck durch ein prozedurales Canvas mit 6 IK-Beinen (Code-Skizze oben umgesetzt, mit echter "follow the leader"-Segmentlogik statt Pseudocode), Ausschlag/Tempo skaliert mit der echten Geschwindigkeit aus `bewege_cursor_natuerlich()` — genau wie in der Vision-Schicht oben beschrieben. Verifiziert: Canvas+Engine mit 6 Beinen laufen fehlerfrei über 20 simulierte Bewegungsschritte, keine JS-Fehler. Committed (werkraum `f421071de`).
 
 **Wichtig, damit hier nichts vermischt wird:** das ist NUR die Körper-Hülle (Bewegungs-Kreatur), noch OHNE die sieben Linsen als Gliedmaßen — die drei offenen Fragen oben (visuelle Form der Linsen, Parallelität, Kosten) sind dadurch nicht beantwortet, nur die technische Basis steht, auf der die Linsen später aufgesetzt werden könnten.
+
+## Nachtrag — "ja ich will alles und komplett": fünf der sieben Linsen gebaut
+
+Daniel: *"ja ih will alles und komplett"* — keine Antwort auf die drei offenen Fragen im engeren Sinne, aber als klares "geh mit deinem eigenen Urteil, so wie den Rest der Session" gelesen. Eigene Entscheidung getroffen, hier festgehalten statt stillschweigend:
+
+- **Visuelle Form:** fünf feste Beine mit fester Farbe pro Linse (nicht sieben — DOM braucht kein eigenes Bein, der Körper IST die DOM-Bewegung; Meta braucht kein eigenes Bein, der Körperkern selbst ist die Meta-Linse, Glow-Stärke aus dem Mittelwert der fünf).
+- **Parallelität:** bewusst KEINE sieben parallelen Prozesse/LLM-Calls — alle fünf Werte kommen aus bereits vorhandenen, passiv geloggten Daten (`entity_thinking_log`-Entscheidungspräfixe, `hole_andere_wesen_status()`), einmal pro echtem LLM-Tick aggregiert. Löst die Kosten-Sorge aus der ursprünglichen Frage 3 komplett auf — keine 49 Prozesse, sondern eine einzige zusätzliche Aggregations-Query pro Tick.
+- **Konkrete Zuordnung, aus echten `entscheidung`-Präfixen in der DB verifiziert** (nicht geraten): Vault=`obsidian_*` (854 reale Vorkommen), RAG/Flarum=`rag_erkund*`+`flarum_besuchen` (~351), DOM=`klicke`/`tippe`/`navigiere`/`scrolle` (~742), Gedächtnis-Tiefe=Gesamtzahl aller Ticks (log-skaliert, waechst nur), Gegenwart-Anteil=Anteil reiner DOM-Aktionen an vault+rag_flarum+dom, Sozial=Anzahl anderer sichtbarer Wesen (`hole_andere_wesen_status()`, bereits vorhanden).
+
+**Umgesetzt:** neuer Endpunkt `/entities/{id}/linsen` (api.py) + `hole_linsen_status()` (browser_agent.py, direkter DB-Zugriff statt HTTP-Umweg, da `conn` schon offen), Cache `_letzte_linsen`, aktualisiert einmal pro echtem LLM-Tick. `_KOERPER_JS` erweitert: fünf Beine mit festen Farben (Vault=violett `#a855f7`, RAG/Flarum=cyan `#22d3ee`, Gedächtnis=blau `#3b82f6`, Gegenwart=weiß `#f8fafc`, Sozial=grün `#22c55e`), Ausschlag pro Bein sanft interpoliert Richtung echtem Wert.
+
+**Verifiziert:** `hole_linsen_status()` gegen echte Daten für drei Entitäten (plausible 0..1-Werte), isolierter Playwright-Test der Engine (Beine konvergieren korrekt, reagieren auf Updates ohne Neuaufbau, keine JS-Fehler), alle 7 Services neu gestartet und laufen fehlerfrei über mehrere echte Ticks, Körper-Canvas live im rrweb-Spiegel gefunden (Schorschel + dak+gord-system). Committed `e660c7f55`.
+
+Dabei ein Nebenzwischenfall (kein Code-Bug): beim gleichzeitigen Neustart von `welt-api` und allen `browser-agent@*` gab es eine harmlose Startup-Race (ein Wesen versuchte Login bevor welt-api bereit war, `ConnectionRefusedError`) — systemd hat automatisch nach 30s erfolgreich neu gestartet (`RestartSec=30`), kein Zusammenhang mit dieser Änderung.
+
+**Was noch offen bleibt:** ob "alles und komplett" auch die verbleibenden zwei Wege (formaler Talker-Prozess, Live-Chat-Denkfenster-Panel) einschließen soll, oder ob das jetzt genügt.
