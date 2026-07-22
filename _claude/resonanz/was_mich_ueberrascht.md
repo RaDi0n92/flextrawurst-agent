@@ -940,3 +940,19 @@ Dass ein Selbsttest, der mit einer Exception fehlschlägt (ungültige UUID in me
 **[2026-07-22]** *← _claude/ideen/wesen_dauerhafte_handlungsfaehigkeit_und_einsichtsnebenscreen.md*
 
 Wie nahtlos sich dieser neue Wunsch an "billiges Vorlesen" von gestern Abend anschließt, ohne dass Daniel es selbst so benannt hat — als wäre die Grundidee (billig/mechanisch vs. teuer/LLM) bei ihm schon einmal grundsätzlich gesetzt und wird jetzt auf immer mehr Bereiche angewendet.
+
+---
+
+**[2026-07-22]** *← _claude/karte/2026-07-22-geni-sqlite-migration-und-wiederkehrendes-speicherproblem.md*
+
+Wie klein der eigentliche Inhalt war, verglichen mit der Zahl, die alle bisherigen Gespräche über
+"das Speicherproblem" geprägt hat. "126G Gedächtnis" klingt nach einer riesigen, gewachsenen Menge an
+Erinnerung — tatsächlich waren es rechnerisch nur ~13G echter Text. Die Zahl, über die wir gesprochen
+haben, war fast zehnmal so groß wie das, was sie eigentlich bedeutete.
+
+---
+
+**[2026-07-22]** *← _claude/notizen/2026-07-22.md*
+
+Wie klein der echte Inhalt war (~13G) verglichen mit der Zahl (126G), die alle bisherigen Gespräche
+über "das Speicherproblem" geprägt hat.

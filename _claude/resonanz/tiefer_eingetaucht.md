@@ -1078,3 +1078,19 @@ Der SSRF-Schutz für die Link-Vorschau: die Erkenntnis, dass `flextrawurst.de` s
 **[2026-07-22]** *← _claude/ideen/wesen_dauerhafte_handlungsfaehigkeit_und_einsichtsnebenscreen.md*
 
 Nichts — noch keine Bauarbeit an dieser Idee, nur das Festhalten.
+
+---
+
+**[2026-07-22]** *← _claude/karte/2026-07-22-geni-sqlite-migration-und-wiederkehrendes-speicherproblem.md*
+
+Ja, an einer Stelle: der Unterschied zwischen `fetchall()` und echtem Cursor-Streaming in SQLite war
+mir vorher abstrakt bekannt, heute an echten Zahlen erlebt — 3,1G Peak-RSS für 1,9 Mio. volle Dicts
+vs. 315M für dieselbe Datenmenge als Cursor-Stream mit sofortiger Aggregation. Der Unterschied ist
+nicht "etwas schneller", sondern zwischen "funktioniert im Ressourcenlimit" und "funktioniert nicht".
+
+---
+
+**[2026-07-22]** *← _claude/notizen/2026-07-22.md*
+
+Cursor-Streaming vs. `fetchall()` in SQLite — heute an echten Zahlen erlebt statt nur abstrakt
+gewusst: 3,1G vs. 315M für dieselbe Datenmenge.

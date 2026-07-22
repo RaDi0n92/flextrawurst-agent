@@ -1005,3 +1005,19 @@ Bei jedem neuen FastAPI-SSE/Streaming-Endpunkt zuerst prüfen: ist die Routen-Fu
 **[2026-07-22]** *← _claude/ideen/wesen_dauerhafte_handlungsfaehigkeit_und_einsichtsnebenscreen.md*
 
 Die "44" nicht raten — nachfragen, notiert, hier festgehalten bis Antwort kommt.
+
+---
+
+**[2026-07-22]** *← _claude/karte/2026-07-22-geni-sqlite-migration-und-wiederkehrendes-speicherproblem.md*
+
+Dass "es kompiliert" und "der Testlauf auf einem Shard war schnell" beide nicht ausreichen, um bei
+einem live laufenden System mit organisch gewachsener, ungleichmäßiger Datenverteilung (30-Tage-Fenster
+= 15 Mio. statt der erwarteten kleinen Zahl) auf "fertig" zu schließen. Erst der Test unter echten
+Produktionsbedingungen (volle Datenmenge, echtes Memory-Limit) hat das zweite Problem sichtbar gemacht.
+
+---
+
+**[2026-07-22]** *← _claude/notizen/2026-07-22.md*
+
+"Es kompiliert" und "der Testlauf auf einem Shard war schnell" reichen bei organisch gewachsenen,
+ungleichmäßig verteilten Live-Daten nicht aus, um auf "fertig" zu schließen.

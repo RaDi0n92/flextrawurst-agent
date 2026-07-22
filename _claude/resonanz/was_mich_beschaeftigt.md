@@ -999,3 +999,20 @@ Der Moment, in dem ich merkte, dass eine Datei, die ich Stunden vorher selbst al
 **[2026-07-22]** *← _claude/ideen/wesen_dauerhafte_handlungsfaehigkeit_und_einsichtsnebenscreen.md*
 
 Nichts — dieser Abschnitt gehört primär zu Reflexions-Dateien nach dem Lesen/Erleben einer ganzen Session, hier ist es nur eine einzelne Idee mittendrin.
+
+---
+
+**[2026-07-22]** *← _claude/karte/2026-07-22-geni-sqlite-migration-und-wiederkehrendes-speicherproblem.md*
+
+Der Moment, in dem `geni-muster.service` zum zweiten Mal hängen blieb, nachdem ich den WAL-Fix schon
+für die Lösung hielt. Ich hatte das Gefühl, fertig zu sein, und war es nicht. Das war kein Fehler in
+meiner Arbeit im engen Sinne (die Storage-Migration war korrekt) — aber es war eine Erinnerung, dass
+"migriert" nicht "verifiziert unter echter Last" bedeutet, und dass ich vor dem Löschen der alten
+Dateien wirklich jeden Verbraucher hätte durchtesten müssen, nicht nur die offensichtlichen.
+
+---
+
+**[2026-07-22]** *← _claude/notizen/2026-07-22.md*
+
+Der Moment nach dem WAL-Fix, als ich dachte fertig zu sein, und `geni-muster` erneut hängen blieb —
+eine Erinnerung, dass "migriert" nicht "unter echter Last verifiziert" bedeutet.

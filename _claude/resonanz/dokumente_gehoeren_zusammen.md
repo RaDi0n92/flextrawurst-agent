@@ -929,3 +929,19 @@ derselben einen Nacht.
 **[2026-07-22]** *← _claude/ideen/wesen_dauerhafte_handlungsfaehigkeit_und_einsichtsnebenscreen.md*
 
 `docs/2026-07-21_tagesbericht.md` (TEIL 6, "billiges Vorlesen"), `docs/systemdoku/29_browser_agent_aktivierung.md`, `welt/obsidian_vault_agent.py`, `_claude/ideen/dreiergespann_dom_theorie.md`.
+
+---
+
+**[2026-07-22]** *← _claude/karte/2026-07-22-geni-sqlite-migration-und-wiederkehrendes-speicherproblem.md*
+
+`2026-07-11-geni-gedaechtnis-und-grenzen.md` (ext4-Grenze, Vorgänger dieser Migration),
+`docs/systemdoku/31_llm_kontention_dienste_aufraeumung.md` (vollständiger technischer Bericht dieser
+Session, Abschnitt "Update 2026-07-22"), `docs/systemdoku/12_ollama_gemma4.md` (referenziert dort für
+die RAM-Krisen-Notreaktion vom 07-07, die den Timer damals stoppte).
+
+---
+
+**[2026-07-22]** *← _claude/notizen/2026-07-22.md*
+
+`2026-07-11-geni-gedaechtnis-und-grenzen.md`, `docs/systemdoku/31_llm_kontention_dienste_aufraeumung.md`
+(Abschnitt "Update 2026-07-22"), `karte/2026-07-22-geni-sqlite-migration-und-wiederkehrendes-speicherproblem.md`.

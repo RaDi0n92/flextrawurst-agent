@@ -2334,3 +2334,24 @@ interface Ankuendigung {
 
 **Code-Skizze:** noch zu roh für echten Code — architektonisch hängt alles an der Tick-Modell-Frage. Grobe Richtung, sobald geklärt:
 ```python
+
+---
+
+**[2026-07-22]** *← _claude/karte/2026-07-22-geni-sqlite-migration-und-wiederkehrendes-speicherproblem.md*
+
+**Vision-Schicht:** GENIs Gedächtnis als etwas, das mit der Zeit natürlich verdichtet statt nur
+wächst — nicht durch Löschen, sondern durch bessere Repräsentation. Eine SQLite-Zeile ist dichter
+als eine Datei, aber immer noch ein 1:1-Abbild jedes einzelnen Ereignisses. Der nächste gedankliche
+Schritt (nicht heute gebaut) wäre eine Schicht, die alte, "abgeklungene" Knoten zu Mustern verdichtet,
+ohne die Rohform zu verlieren — ähnlich wie `muster.py` es für Erkenntnisse schon tut, nur für die
+Rohdaten selbst.
+
+**Code-Skizze:**
+```python
+
+---
+
+**[2026-07-22]** *← _claude/notizen/2026-07-22.md*
+
+Siehe `karte/2026-07-22-geni-sqlite-migration-und-wiederkehrendes-speicherproblem.md` — dort
+ausführlich mit Vision- und Code-Skizzen-Schicht.

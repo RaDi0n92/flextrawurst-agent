@@ -1841,3 +1841,21 @@ daraus je gebaut wird.
 **Vision-Schicht:** siehe oben.
 
 **Code-Skizze:** siehe oben — noch zu früh für mehr, drei offene Fragen zuerst.
+
+---
+
+**[2026-07-22]** *← _claude/karte/2026-07-22-geni-sqlite-migration-und-wiederkehrendes-speicherproblem.md*
+
+**Vision-Schicht:** Bereits gebaut, kein "wenn" mehr für die Migration selbst. Für die Verdichtungs-Idee
+oben: das wäre ein eigenes, eigenständiges Gespräch mit Daniel wert, kein impliziter Auftrag aus
+heutiger Arbeit.
+
+**Code-Skizze:** siehe oben unter "Datenstruktur die ich mir vorstelle" — bewusst nur Skizze, nicht
+Auftrag.
+
+---
+
+**[2026-07-22]** *← _claude/notizen/2026-07-22.md*
+
+Bereits gebaut — kein "wenn" mehr für die Migration selbst. Die Verdichtungs-Idee (alte Knoten zu
+Aggregaten, Rohform im kalten Archiv) ist Skizze, kein Auftrag.

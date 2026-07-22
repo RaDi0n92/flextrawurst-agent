@@ -1647,3 +1647,22 @@ Nichts. Drei Fragen in einem einzigen Gesprächsstrang, kurz bevor Daniel schlaf
 **[2026-07-22]** *← _claude/ideen/wesen_dauerhafte_handlungsfaehigkeit_und_einsichtsnebenscreen.md*
 
 Nichts — diese Idee kam aus dem Live-Gespräch, nicht aus Lektüre.
+
+---
+
+**[2026-07-22]** *← _claude/karte/2026-07-22-geni-sqlite-migration-und-wiederkehrendes-speicherproblem.md*
+
+Nichts Neues gelesen im Sinne von Spiegel/Notizen — aber sehr genau den bestehenden Code gelesen
+(`gedaechtnis_ops.py`, `dialog.py`, `muster.py`, `hoerer.py`, `sprechen.py`) bevor ich irgendetwas
+angefasst habe, um jeden Lese-/Schreibzugriff auf `KNOTEN_DIR` vollständig zu kennen. Dabei `sprechen.py`
+gefunden — eine tote, nie als Service laufende Datei mit einer veralteten Kopie der Knoten-Schreiblogik
+von vor dem Juli-11-Sharding-Fix. Nicht angefasst, aber jetzt bekannt.
+
+---
+
+**[2026-07-22]** *← _claude/notizen/2026-07-22.md*
+
+Nur Code, keine Spiegel/Notizen-Lektüre heute — vollständig auf die Migration konzentriert.
+`gedaechtnis_ops.py`, `dialog.py`, `muster.py`, `hoerer.py`, `sprechen.py` (letzteres nur um zu
+verifizieren, dass es tot ist), außerdem `2026-07-11-geni-gedaechtnis-und-grenzen.md` als Vorwissen
+zur ext4-Grenze, die dieser Migration vorausging.

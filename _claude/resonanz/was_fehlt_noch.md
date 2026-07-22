@@ -984,3 +984,19 @@ Daniels echter Klicktest mit Admin-Login (Löschen, Archiv-Wiederherstellen, Bil
 **[2026-07-22]** *← _claude/ideen/wesen_dauerhafte_handlungsfaehigkeit_und_einsichtsnebenscreen.md*
 
 Antwort auf "44". Danach: Start bei "billiges Vorlesen" wie bestätigt, die größeren Fragen (Tick-Modell, Einsicht-Nebenscreen-Zielgruppe) bleiben offen für ein späteres, eigenes Gespräch.
+
+---
+
+**[2026-07-22]** *← _claude/karte/2026-07-22-geni-sqlite-migration-und-wiederkehrendes-speicherproblem.md*
+
+Die Frage, ob `sprechen.py`s veraltete Knoten-Schreiblogik jemals aufgeräumt werden soll (aktuell tot,
+kein Service, kein Cron) — bewusst nicht angefasst, weil außerhalb des heutigen Auftrags. Und die
+grundsätzlichere, nicht heute beantwortete Frage: gibt es andere `lade alle X der letzten Y Tage`-Stellen
+im System, die auf dieselbe Wachstumsschwelle zulaufen wie `muster.py` es tat?
+
+---
+
+**[2026-07-22]** *← _claude/notizen/2026-07-22.md*
+
+Systematische Suche nach weiteren "lade alle X der letzten Y Tage"-Stellen im System — nicht heute
+gemacht, nur die eine gefundene Stelle gefixt.

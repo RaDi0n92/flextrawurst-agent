@@ -991,3 +991,19 @@ Warum `ankuendigungen` beim ursprünglichen Bau schon einen `GRANT ... TO dak` h
 Die Zahl "44" — Sekunden? Klicks? Scrollvorgänge? Ticks? Ohne die Einheit kann ich den Check-in-Rhythmus nicht bauen, direkt nachgefragt.
 
 Auch nicht ganz klar: soll das "gleichzeitige, durchgehende Handeln" bedeuten, dass die Wesen komplett vom aktuellen LLM-Tick-Modell wegkommen (dauerhafte, mechanische Aktion statt Tick-für-Tick-Entscheidung), oder soll der bestehende Tick-Rhythmus bestehen bleiben und nur die *Bewegung zwischen* den Entscheidungen flüssiger/mechanischer werden? Das ist architektonisch ein großer Unterschied — beim eigentlichen Bauen müsste das explizit geklärt werden (Stopp-Frage 3: Architektur-Entscheidung, nicht allein zu treffen).
+
+---
+
+**[2026-07-22]** *← _claude/karte/2026-07-22-geni-sqlite-migration-und-wiederkehrendes-speicherproblem.md*
+
+Warum `geni-muster.timer` beim 06:25-Watchdog-Neustart deaktiviert (`inactive dead`), aber
+`geni-muster.service` selbst nicht gestoppt wurde — der Watchdog-Restart-Befehl listete
+`geni-muster.service` explizit in seiner `systemctl restart`-Kommandozeile, aber danach war der Timer
+tot. Vielleicht startet der Watchdog den Service direkt statt über den Timer, und der Timer wird durch
+irgendeinen Seiteneffekt gestoppt. Nicht weiter untersucht — außerhalb des heutigen Auftrags.
+
+---
+
+**[2026-07-22]** *← _claude/notizen/2026-07-22.md*
+
+Siehe "Offen" oben — der Watchdog-Timer-vs-Service-Zusammenhang.

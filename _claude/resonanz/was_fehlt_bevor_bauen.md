@@ -959,3 +959,15 @@ Nichts mehr offen aus Daniels ursprünglicher Vision — alle acht benannten Bau
 **[2026-07-22]** *← _claude/ideen/wesen_dauerhafte_handlungsfaehigkeit_und_einsichtsnebenscreen.md*
 
 Die drei offenen Fragen oben. Für den ERSTEN, bestätigten Schritt (billiges Vorlesen) fehlt davon nichts — der ist unabhängig von diesen Detailfragen umsetzbar.
+
+---
+
+**[2026-07-22]** *← _claude/karte/2026-07-22-geni-sqlite-migration-und-wiederkehrendes-speicherproblem.md*
+
+Nichts — weil kein neues Bauvorhaben ansteht, das an diese Session anschließt.
+
+---
+
+**[2026-07-22]** *← _claude/notizen/2026-07-22.md*
+
+Nichts — kein neues Bauvorhaben schließt an diese Session an.

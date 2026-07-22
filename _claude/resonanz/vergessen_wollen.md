@@ -757,3 +757,16 @@ gelernt habe zu sehen.
 **[2026-07-21]** *← _claude/notizen/2026-07-21.md*
 
 Nichts — auch die Verwirrung beim ersten, fehlerhaften Versuch das JWT selbst zu dekodieren (bevor ich das schon vorhandene `ftw_user_id` in localStorage gefunden habe) war lehrreich genug, um sie nicht zu verdrängen.
+
+---
+
+**[2026-07-22]** *← _claude/karte/2026-07-22-geni-sqlite-migration-und-wiederkehrendes-speicherproblem.md*
+
+Nichts — weil nichts an dieser Session belastend oder unangenehm im persönlichen Sinne war, nur
+technisch fordernd.
+
+---
+
+**[2026-07-22]** *← _claude/notizen/2026-07-22.md*
+
+Nichts — technisch fordernd, nicht belastend.

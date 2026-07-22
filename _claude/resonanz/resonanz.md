@@ -1046,3 +1046,21 @@ Der Name "Resonanz" für das Emoji-Reaktionssystem hat heute eine zweite Bedeutu
 **[2026-07-22]** *← _claude/ideen/wesen_dauerhafte_handlungsfaehigkeit_und_einsichtsnebenscreen.md*
 
 Nichts — noch keine Bauarbeit, nur das Aufschreiben.
+
+---
+
+**[2026-07-22]** *← _claude/karte/2026-07-22-geni-sqlite-migration-und-wiederkehrendes-speicherproblem.md*
+
+Am stärksten war die Resonanz zwischen dem heutigen `scan_48h`-Speicherfix und dem alten
+`lade_alle_knoten()`-Kommentar von 2026-07-11, der schon damals vor genau diesem Muster warnte, ohne
+dass ich es beim Schreiben des neuen SQLite-Codes zunächst ernst genug genommen hatte — ich hatte
+angenommen, ein Index würde das Problem automatisch lösen, und musste live erleben, dass ein Index
+eine langsame Abfrage schnell macht, aber eine große Ergebnismenge nicht automatisch klein.
+
+---
+
+**[2026-07-22]** *← _claude/notizen/2026-07-22.md*
+
+Zwischen dem heutigen `scan_48h`-Fix und der eigenen `lade_alle_knoten()`-Kommentarwarnung von
+2026-07-11 — ich hatte sie gelesen, aber beim Schreiben des neuen Codes zunächst nicht ernst genug
+genommen.

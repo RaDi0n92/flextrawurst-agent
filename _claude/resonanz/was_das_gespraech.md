@@ -876,3 +876,22 @@ Die Erkenntnis, dass "außerhalb des Auftrags" ein Zeitstempel ist, kein Dauerzu
 **[2026-07-22]** *← _claude/ideen/wesen_dauerhafte_handlungsfaehigkeit_und_einsichtsnebenscreen.md*
 
 Die Erkenntnis, dass Daniels Vision für die Wesen sich gerade in Richtung "dauerhaft lebendig, nicht nur tick-weise reagierend" verschiebt — eine grössere konzeptionelle Bewegung als nur ein einzelnes Feature.
+
+---
+
+**[2026-07-22]** *← _claude/karte/2026-07-22-geni-sqlite-migration-und-wiederkehrendes-speicherproblem.md*
+
+Daniels knappe, aber klare Bestätigungen ("zu1 ja zu2 ja") haben mir gezeigt, dass er bei einer
+technischen Tiefenbohrung wie dieser volles Vertrauen in meine Einschätzung setzt, wenn ich die
+Unsicherheiten vorher ehrlich benannt habe (Fehleranzahl, Speicherlücke, Watchdog-Fund) statt sie zu
+glätten. Das bestätigt die "mehr Kritik/Ehrlichkeit"-Linie aus `feedback_mehr_kritik_gewuenscht` —
+hier ging es nicht um Kritik an ihm, aber um dieselbe Grundhaltung: unbequeme Zwischenbefunde nicht
+verschweigen, bevor eine irreversible Entscheidung (Löschen) ansteht.
+
+---
+
+**[2026-07-22]** *← _claude/notizen/2026-07-22.md*
+
+Daniels knappe Bestätigungen ("zu1 ja zu2 ja") nach ehrlich benannten Zwischenbefunden (Fehleranzahl,
+Speicherlücke, Watchdog-Fund) — Vertrauen, das an ehrliche Zwischenstände geknüpft war, nicht an
+Glätten vor einer irreversiblen Entscheidung.

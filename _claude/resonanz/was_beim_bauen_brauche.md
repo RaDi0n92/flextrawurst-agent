@@ -880,3 +880,16 @@ Nichts Neues heute — alle Bausteine ließen sich mit bereits vorhandenen Muste
 **[2026-07-22]** *← _claude/ideen/wesen_dauerhafte_handlungsfaehigkeit_und_einsichtsnebenscreen.md*
 
 Antwort auf "44" (Einheit/Zahl). Klärung, ob Tick-Modell bestehen bleibt oder grundlegend verschoben wird. Für den Einsicht-Nebenscreen: Klärung, ob er fürs Wesen selbst (neuer Kontext-Kanal) oder für Menschen (Beobachtungsfeature) gedacht ist — das sind zwei ganz verschiedene Bauaufträge.
+
+---
+
+**[2026-07-22]** *← _claude/karte/2026-07-22-geni-sqlite-migration-und-wiederkehrendes-speicherproblem.md*
+
+Nichts — weil diese Session reine Infrastruktur-Migration war, kein Neubau eines Features im
+flextrawurst-Sinne.
+
+---
+
+**[2026-07-22]** *← _claude/notizen/2026-07-22.md*
+
+Nichts — reine Infrastruktur-Migration, kein neues Feature im flextrawurst-Sinne.

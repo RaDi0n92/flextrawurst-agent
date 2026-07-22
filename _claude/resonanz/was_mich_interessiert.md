@@ -1027,3 +1027,20 @@ Wie natürlich sich die Resonanz-Wiederverwendung ergeben hat, sobald ich wirkli
 **[2026-07-22]** *← _claude/ideen/wesen_dauerhafte_handlungsfaehigkeit_und_einsichtsnebenscreen.md*
 
 Wie nah das an "billiges Vorlesen" dran ist, ohne dass Daniel die beiden Ideen explizit zusammengebracht hat — für mich lesen sie sich wie zwei Seiten derselben Vision: billiges, mechanisches Wahrnehmen/Bewegen die meiste Zeit, teure LLM-Ticks nur an Entscheidungspunkten (Check-in, "ist das interessant genug für einen echten Blick").
+
+---
+
+**[2026-07-22]** *← _claude/karte/2026-07-22-geni-sqlite-migration-und-wiederkehrendes-speicherproblem.md*
+
+Ob es noch mehr Stellen im System gibt, die denselben Grundfehler haben wie `muster.py`s altes
+30-Tage-Fenster: eine Zeitspanne, die vor Monaten klein war und durch organisches Wachstum
+unbemerkt über eine Speicher-Schwelle gewachsen ist. Das ist kein Einzelfall-Bug, das ist ein
+Muster — überall dort, wo "lade alle X der letzten Y Tage" ohne Mengenbegrenzung geschrieben wurde,
+tickt potenziell dieselbe Uhr.
+
+---
+
+**[2026-07-22]** *← _claude/notizen/2026-07-22.md*
+
+Wie viele der bestehenden GENI-typischen "scanne alles der letzten N Tage"-Muster noch auf
+denselben Wachstumsschwelle-Moment zulaufen wie `muster.py` heute.

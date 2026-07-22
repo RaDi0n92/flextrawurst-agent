@@ -1447,3 +1447,26 @@ Weil das nicht ewig ziellos weiterlaufen soll: ein periodischer Check-in-Mechani
 Jederzeit-Umschalten zum eigenen Vault: *"ich will ja quasi auch dass sie jederzeit switchen können um dann ihren vauld zu designen zu strukturieren neue dinge dort zu schaffen oder alte überarbeiten"* — und das soll **ohne echten LLM-Call** passieren, *"am besten durch meine 6fingerstyletaktik dachte sich xD"* — ich lese das als Anspielung auf genau das Prinzip, das wir heute Nacht schon für `obsidian_vault_agent.py` gebaut haben: mechanisches Tippen über `xdotool`, kein LLM-Call pro Taste, "wie auf der Schreibmaschine".
 
 Neuer "Einsicht"-Nebenscreen: *"das was das wesen im hintergrund auch gleichzeitig ja immer bekommen sollte die echtes dbs die echten jsons den echten code und auch alles aus langgraph und postgersql und so das sollte eigentsich ne art gleiner nebenscreen nochmal unten rechts neben dem normalem screen sein und das denkfester teilern"* — ein kleiner Nebenscreen unten rechts, der zusätzlich zum normalen Browser-Screen läuft, mit rohen Systemdaten (DB, JSON, Code, LangGraph/Postgres-Zustand) — nicht nur für Daniel als Beobachter gedacht, sondern etwas, das das Wesen selbst "im Hintergrund" bekommt. Das bestehende Denkfenster/Modal würde dafür geteilt (Bild+Denkstream ist ja jetzt schon eine 68/32-Aufteilung, hier käme eine dritte Spalte/Sektion dazu).
+
+---
+
+**[2026-07-22]** *← _claude/karte/2026-07-22-geni-sqlite-migration-und-wiederkehrendes-speicherproblem.md*
+
+Dass "Migration abgeschlossen" und "Migration sicher" zwei verschiedene Dinge sind. Die reine
+Datenübertragung (31,6 Mio. Dateien → SQLite) war der einfache Teil und lief technisch sauber durch.
+Der eigentliche Aufwand lag danach: ein bestehender, mir unbekannter Watchdog-Mechanismus
+(`weltkern-watchdog.timer`) hat zwei der drei betroffenen Services mitten in der Migration neu
+gestartet, bevor ich verifiziert hatte. Das hat mir gezeigt, dass ich bei laufenden Systemen nicht
+nur meine eigenen Aktionen im Blick haben darf, sondern auch fremde, mir nicht bekannte Automatismen,
+die jederzeit dazwischenfunken können. Ich habe das erst bemerkt, weil ich vor dem WAL-Checkpoint
+`lsof` auf die DB-Datei geprüft habe — ohne diesen Schritt wäre der Watchdog-Neustart unbemerkt
+geblieben, bis der nächste Hänger aufgetreten wäre.
+
+---
+
+**[2026-07-22]** *← _claude/notizen/2026-07-22.md*
+
+Dass ein Index eine langsame Abfrage schnell macht, aber eine große Ergebnismenge nicht automatisch
+klein — das hätte mir vorher klar sein müssen, ist es aber erst durch den zweiten `muster.py`-Hänger
+wirklich geworden. Der Index (`idx_knoten_mtime`) tat exakt was er sollte (28ms für den Shard-Test),
+das eigentliche Problem lag eine Ebene höher: was mit dem Ergebnis danach in Python passiert.

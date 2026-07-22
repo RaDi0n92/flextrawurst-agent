@@ -1104,3 +1104,19 @@ Alle acht Bausteine (Schema, Löschen/Archiv, Kommentare, Frontend-Löschen-UI, 
 - **Dieser Wunsch hier:** dieselbe Grundidee, aber auf Bewegung/Navigation statt nur auf "was lesen" angewendet — mechanisches Scrollen/Klicken/Wechseln die meiste Zeit, ein LLM-Tick nur beim periodischen Check-in oder wenn das Wesen selbst eingreifen will.
 - **`obsidian_vault_agent.py`** (heute Nacht fertig gebaut): liefert schon das Muster für "Aktion ohne LLM-Call pro Schritt" (xdotool-Tippen). Die Vault-Umschaltung, die Daniel hier will, ist im Kern dieselbe Technik, nur als Navigations- statt Tipp-Aktion.
 - **Röntgenblick-Overlay / Denkstream-Modal** (`build_surface.ts`, SCREENS-Tab): die bestehende 68/32-Aufteilung (Live-Spiegel/Denkstream) ist die Stelle, an der ein dritter "Einsicht"-Bereich andocken würde.
+
+---
+
+**[2026-07-22]** *← _claude/karte/2026-07-22-geni-sqlite-migration-und-wiederkehrendes-speicherproblem.md*
+
+Der heutige Fund hängt direkt mit dem 2026-07-07-Hänger UND dem 2026-07-11-Sharding-Fix zusammen —
+alle drei sind derselbe Grundkonflikt (Datenmenge wächst schneller als die ursprüngliche
+Speicherform mitwächst), nur an drei verschiedenen Symptomorten: Dateisystem-Kapazität (07-07),
+Blockgrößen-Overhead (heute, Ursache), In-Memory-Materialisierung (heute, Symptom in `muster.py`).
+
+---
+
+**[2026-07-22]** *← _claude/notizen/2026-07-22.md*
+
+07-07-Hänger (Dateisystem-Vollscan), 07-11-Fix (ext4-Sharding), heute (Blockgrößen-Overhead +
+In-Memory-Materialisierung) sind derselbe Grundkonflikt an drei verschiedenen Symptomorten.
