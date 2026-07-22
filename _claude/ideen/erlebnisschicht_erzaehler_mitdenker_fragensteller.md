@@ -286,3 +286,64 @@ Der Bug selbst hat nichts mit dem Rohheit-Thema zu tun — aber die Suche danach
 ### Was noch offen ist
 
 Content-aware Fragensteller-Fragen (fragt bisher nur generische Templates, nie etwas das sich auf den tatsächlichen Denkstream-Text bezieht) — von Daniel als konkrete Lücke benannt, noch nicht begonnen. Scroll-Sichtbarkeit (Daniel: noch nie beobachtet, wichtiger als Mausbewegung). Puls/Ring-Glow gekoppelt an echten Denk-Takt. Live-chat-artiges scrollbares Denkfenster-Panel mit natürlichem Pacing (max. 3-4 Sätze pro ≤0,8s) — bisher nur Vision, kein Code.
+
+## Nachtrag — Daniels Auftrag zum großen Umbau: Bestandsaufnahme → Vollsimulation → Selbstangriff → Verbesserung → gezielte Nachsuche, roh
+
+Nachdem ich mich (siehe Konversation davor) selbst korrigiert hatte, dass SCREENS/die Erlebnisschicht nicht "komplett rausgeschmissen und umgedacht" wurde, sondern nur die drei kleinen Bausteine (Maus, Ripple, Ich-Stimme-Bugfix) unter demselben "bauen"-Auftrag gebaut wurden, kam Daniels nächster, wörtlicher Auftrag: *"ich will jetzt dass du alles was wir haben zum umbauen nochmal liest und strukturiert und einmal den bau komplett simulierst dann das ergebnis redteamen und danach die strategie verbessern und dann will ich dass du nochmal zusätzlich alles was wir in dokus haben zusammen mit deinem verbessertem plan ins netz wirft und nach dingen siuchst du uns noch mehr helfen. und dann stehen wir weiter"* — ausdrücklich KEIN Bauauftrag, reine Planung, "dann stehen wir weiter" heißt: danach wieder gemeinsam entscheiden.
+
+### Schritt 0 — vollständig neu gelesen
+
+Alle drei zusammengehörigen Ideen-Dateien vollständig (nicht nur Tail): diese Datei komplett, `wesen_dauerhafte_handlungsfaehigkeit_und_einsichtsnebenscreen.md` komplett (44s-Check-in, billiges Vorlesen, Einsicht-Nebenscreen, selbstorganisierte Vault-Vorhaben — eigenes, größeres Thema, nur als verwandter Kontext mitgedacht, nicht Teil dieser Umbau-Simulation), `dreiergespann_dom_theorie.md` (Grundgesetz-1-Herleitung) und `docs/systemdoku/26_dom_agenten_brainstorm.md` (X-Ray-Overlay als Ur-Idee, die zum Röntgenblick wurde). Dazu den echten aktuellen Code gegengeprüft statt nur aus dem Gedächtnis zu simulieren: `.scv-modal-img-wrap{flex:0 0 68%}`/`.scv-modal-stream{flex:0 0 32%}` (der reale Modal-Split, an dem ein Live-Chat-Panel andocken würde), und `browser_agent.py` Zeile 505-508.
+
+### Echter Fund beim Gegenprüfen, nicht simuliert sondern verifiziert
+
+`scrolle:unten`/`scrolle:oben` rufen nur `page.mouse.wheel(0,600)` bzw. `(0,-600)` auf — **kein** `melde_fokus()`-Aufruf, keine Animation, ein einziger Instant-Sprung. Das erklärt Daniels Beobachtung *"scrollen hab ich noch nie gesehen"* technisch exakt: Scroll passiert (bei den mechanisch aktiven Wesen laut `waehle_mechanische_aktion()` sogar mit 40% Wahrscheinlichkeit pro Tick — `wuerfel<0.75` nach dem 35%-Klick-Zweig), meldet sich aber nirgendwo im Röntgenblick-System. Kein Frontend-Bug — die Aktion selbst ist unsichtbar an der Quelle.
+
+### Bestandsaufnahme, strukturiert
+
+| # | Baustein | Stand |
+|---|---|---|
+| A | Live-Chat-Denkfenster-Panel (ersetzt/erweitert `.scv-modal-stream`) | nur Vision |
+| B | Talker-Reasoner: Mausbewegung | gebaut (`bewege_cursor_natuerlich`) |
+| B2 | Talker-Reasoner: Scroll-Animation + Meldung | fehlt komplett (echter Fund, siehe oben) |
+| C | rrweb vs. `page.content()`-Schnappschüsse | nie final entschieden |
+| D | Puls/Ring-Glow gekoppelt an Denkstream | von "bauen" mit-autorisiert, nicht gebaut |
+| E | Content-aware Fragensteller-Fragen | nicht begonnen |
+| F | Röntgenblick-Integration (alles zusammen) | Fokus-Events+Ripple gebaut, Scroll fehlt |
+| G | Natürliche Bruchstellenerkennung im Denktext | nur Vision |
+| H | Tempo-Vorgabe (max. 0,8s/Schub, 3-4 Sätze) | nur Vision |
+
+### Vollsimulation
+
+**Scroll-Fix (B2):** dieselbe Behandlung wie Klick/Tippe — echte kleinschrittige Wheel-Events statt 600px-Sprung, plus `melde_fokus(conn, entity_id, "scrolle", None, None, None)`. Kleinster, klarster Baustein, keine Architektur-Entscheidung nötig.
+
+**rrweb→`page.content()`-Umstieg (C) simuliert:** `page.content()` liefert nur statisches HTML — kein Scroll-Offset, kein Hover, keine laufenden Animationen der Zielseite. Um Scrollen trotzdem sichtbar zu machen, bräuchte es einen separaten Scroll-Offset-Kanal zusätzlich zum ohnehin geplanten Maus-Koordinaten-Kanal — aus "eine Technik ersetzt eine andere" werden beim genauen Simulieren real DREI parallele Datenkanäle (HTML-Snapshot, Maus, Scroll), nicht einer.
+
+**Denkfenster-Live-Chat-Panel (A+G+H) simuliert:** `.scv-modal-stream` wird vom reinen Text-Dump zum wachsenden, scrollbaren Panel. Bruchstellenerkennung zunächst simpel (Absatzwechsel/Label-Wechsel `GEDANKE:`→`ENTSCHEIDUNG:`), Pacing per Timer-Kette mit 0,8s-Deckel. Beim Simulieren fällt auf: das ist strukturell fast identisch mit der schon gebauten Ich-Stimme/Auszug-Extraktion (`_erlVerarbeiteDenkstreamChunk`) — nur die Ausgabe ändert sich (bleibendes Panel statt flüchtiges Popup).
+
+### Selbstangriff (Red-Team)
+
+- **C ist der teuerste, riskanteste Punkt und wurde am wenigsten hinterfragt** — wir haben uns zwischen zwei unvollständigen Optionen (rrweb: Live-Scheduler-Race, siehe der ganze Bugmarathon dieses Tages; `page.content()`: kein Scroll/Hover ohne Zusatzkanäle) festgelegt, ohne eine dritte zu prüfen.
+- **Das Live-Chat-Panel (A) dupliziert die schon gebaute Ich-Stimme/Auszug-Infrastruktur fast 1:1** — als eigener neuer Baustein simuliert, entsteht dieselbe Extraktionslogik zweimal.
+- **B2 (Scroll-Fix) ist der einzige Punkt mit einem echten, verifizierten Bug dahinter** — alles andere ist Vision/Erweiterung, kein Bugfix.
+- **H ("KI behinderter machen", starrer 0,8s-Deckel) widerspricht potenziell Daniels eigenem, unverhandelbarem Live-Gefühl-Prinzip** (*"warum soll ein mensch länger als 3 sekunden auf etwas gotzen das sich nicht ändert"*, weiter oben in dieser Datei) — ein künstlicher Zeit-Deckel würde das Panel genau dann ausbremsen, wenn der Denkstream gerade schnell chunkt. Ein echter innerer Widerspruch im ursprünglichen Wunsch, den ich beim ersten Entwurf nicht benannt hatte.
+
+### Verbesserte Strategie
+
+Scroll-Fix (B2) zuerst und unabhängig vom Rest — echter Bug, sofort baubar, keine Architektur-Entscheidung. Für C: dritte Option prüfen statt zwischen zwei schlechten wählen (siehe Nachsuche unten). A nicht als neuen Baustein, sondern als zweite Ausgabe-Form derselben bestehenden Erlebnisschicht-Extraktion bauen. H präzisieren: Tempo an tatsächliche Chunk-Ankunft koppeln statt an einen starren Timer — löst den Live-Gefühl-Widerspruch auf.
+
+### Gezielte Nachsuche zu C und H/G, mit Quellen
+
+**Zu C — dritte Option, die keiner von uns kannte:** Chrome DevTools Protocol `Page.startScreencast`, wörtlich aus der Recherche: *"Page.startScreencast enables continuous streaming of browser frames, and can be used to build live browser previews, record user sessions, and create product demos. [...] The CDP message Page.startScreencast tells the browser to start sending screencastFrame events for every rendered frame. [...] If you use Puppeteer or Playwright, you already rely on the Chrome DevTools Protocol."* Playwright hat direkten CDP-Zugriff (`page.context().new_cdp_session(page)`). Ergebnis: echte laufende Bild-Frames des tatsächlich gerenderten Zustands — Scroll, Hover, Animation automatisch mit drin, weil es ein Video-Frame-Stream ist, kein Mutations- oder HTML-Nachbau. Sicherheitstechnisch sogar besser als beide bisherigen Optionen: reine Bilddaten, kein einziges fremdes `<script>`-Tag kommt je im Surface-Origin an.
+
+**Zu H/G — natürliche Bruchstellen, wissenschaftlich belegt statt selbst erfunden:** CHI-2026-Paper *"Just-in-Time Tokens: Adaptive Token Pacing for Cognitive-Friendly LLM Streaming"*, wörtlich: *"Tokens are buffered until a readable unit is completed and then released as a coherent chunk; crucially, resource switching is constrained to unit boundaries, so any pauses occur at linguistically meaningful points rather than arbitrary mid-sentence positions. [...] Simple requests are streamed in larger units with minimal pauses for a fast feel, while complex requests are delivered in smaller units with controlled pauses to support step-by-step comprehension."* Das ist die publizierte Bestätigung für "Bruchstellen statt Zeitraster" UND löst den H-Widerspruch aus dem Red-Team direkt auf: demand-aware Pacing statt starrem Deckel.
+
+Quellen:
+- [Chrome DevTools Protocol - Page domain](https://chromedevtools.github.io/devtools-protocol/tot/Page/)
+- [Use Chrome DevTools to debug your user's browser remotely with BrowserRemote (Kenneth Auchenberg)](https://kenneth.io/post/use-chrome-devtools-to-debug-your-users-browser-remotely-with-browserremote)
+- [Screen recording with Playwright - DEV Community](https://dev.to/headlesstesting/screen-recording-with-playwright-5dm0)
+- [Just-in-Time Tokens: Adaptive Token Pacing for Cognitive-Friendly LLM Streaming — CHI 2026](https://dl.acm.org/doi/10.1145/3772363.3798936)
+
+### Stand danach
+
+Kein Bauauftrag — wie von Daniel vorgegeben ("dann stehen wir weiter"), Ergebnis präsentiert, wartet auf gemeinsame Entscheidung.
