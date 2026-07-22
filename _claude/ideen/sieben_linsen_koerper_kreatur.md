@@ -223,3 +223,21 @@ Alle drei live mit allen 7 Services verifiziert (echte Ticks, keine neuen Traceb
 ### Was noch offen bleibt
 
 Die fünf oben genannten, bewusst zurückgestellten Punkte — keiner davon stillschweigend fallengelassen, alle hier benannt für die nächste Bau-Runde.
+
+## Nachtrag — DOM-Habitat-Locomotion gebaut, nach Daniels Lupe/Taschenlampe/Kescher-Metapher
+
+Daniel, roh, direkt im Anschluss an die Doku-Kritik: *"und ja dieses shnell und langam soll auch wirklich interessensbasiert dann gesteuert werden durch rag und wesen weil ja ai quasi auch in 10 sekunden 10000 zeichen verarbeiten könnte kann rag bestimmt auch mal schnel 22222 zeichen runterschrollen alles nur halblesen aber dort wo das wesen genaz zentriert ist es es fst wie mit einer lupe mit taschenlampe und mem kescher pfw fangnetz dass es wenn es inretessante wrte sihrt sofort zuschnappt und auufsaugt für weiteres und wenn etwas wirlklich interessant ist oder direkt größere textleien gelesen weren wollen dann ist verweilen auch mal angebracher"*
+
+### Technische Umsetzung
+
+Wiederverwendet statt neu erfunden: dieselbe Embedding+Kosinus-Infrastruktur wie `vorlese_daemon.py` (`entity_interessensprofil`, bge-m3, Schwelle 0.55 — identisch übernommen, nicht neu kalibriert). Neue Funktion `skim_bewertung(page, entity_id, conn)`: embedded den gerade sichtbaren Seitentext (erste 600 Zeichen), vergleicht per Kosinus-Ähnlichkeit gegen das Interessensprofil des Wesens. Gedrosselt auf einen echten Embedding-Request alle 20 Sekunden (`SKIM_PRUEF_COOLDOWN_S`) — kein Dauerfeuer bei jedem Scroll-Tick, echte Kostenkontrolle statt versteckter Dauerlast.
+
+`scrolle:unten`/`scrolle:oben` nutzen das Ergebnis jetzt für zwei klar unterschiedene Modi:
+- **Uninteressant (< 0.55):** schnelles Halblesen — 900px-Sprung statt der alten festen 600px, "rasen" im Sinne von Daniels Bild ("KI kann in Sekunden viel mehr überfliegen").
+- **Interessant (≥ 0.55):** der Kescher schnappt zu — sichtbarer Geschwindigkeits-Ausschlag am Körper (Speed-Wert 900 an `zeige_cursor()`, lässt die Beine kurz weit ausschlagen wie ein Alarm-Reflex), danach nur noch ein kleiner 80px-Rest-Scroll statt des großen Sprungs — echtes Verweilen statt Weiterrasen.
+
+### Verifiziert
+
+Isolierter Test mit echtem Testtext über "flextrawurst Codewesen/Vaults/Notizen/Beziehungen" gegen Schorschels echtes Interessensprofil: Ähnlichkeit 0.6065 (korrekt über der Schwelle, würde "zuschnappen" auslösen). Zweite sofortige Prüfung korrekt gedrosselt (`None`). `jumpa` (kein Interessensprofil vorhanden) liefert korrekt `0.0`, kein Crash. Alle 7 Services neu gestartet, live-Fehlerprüfung nach echtem `scrolle:`-Vorkommen lief mit.
+
+**Ehrliche Grenze:** nur Schorschel hat aktuell überhaupt ein `entity_interessensprofil` (aus `seede_charakterprofil_falls_fehlend()`, `vorlese_daemon.py`) — die anderen 6 Wesen bekommen bis dahin immer `0.0` (immer "uninteressant"/schnelles Skimmen), nicht weil die Locomotion kaputt ist, sondern weil ihr Interessensprofil noch nie geseedet wurde. Kein neuer Bug, derselbe Datenstand wie schon vor dieser Änderung.
