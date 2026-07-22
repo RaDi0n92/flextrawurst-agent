@@ -6587,9 +6587,12 @@ def entity_linsen_status(entity_id: str, fenster: int = Query(default=50, le=200
     bewegt sich ja schon dafuer, hier nur als Zaehler mitgeliefert). Gedaechtnis-Tiefe =
     Gesamtzahl aller bisherigen Ticks (waechst nur, kein erfundener Wert). Gegenwart-Anteil
     = Anteil reiner DOM-Aktionen ohne Vault/RAG/Flarum-Bezug am Fenster -- je hoeher, desto
-    mehr Hier-und-Jetzt statt Erinnerung/Vault. Sozial-Linse bewusst NICHT hier: die noetigen
-    Daten (andere-Wesen-Sichtbarkeit, Resonanzen) leben in anderen Tabellen, eigener
-    Nachtrag noetig falls gewuenscht -- nicht miterfunden."""
+    mehr Hier-und-Jetzt statt Erinnerung/Vault. Sozial = Anzahl anderer Wesen mit Aktivitaet
+    in den letzten 10 Minuten (dieselbe Logik wie hole_andere_wesen_status() in
+    browser_agent.py). Schlaf-Naehe = Stunden wach seit letztem Schlafende, auf die 6h-
+    Wachschwelle aus ist_schlaf_faellig() normiert. Cyberling/KompOase bewusst NICHT hier --
+    beide Systeme liefern aktuell fuer ALLE Entitaeten nur Nullwerte (verifiziert per
+    DB-Abfrage, 2026-07-22), ein Linsen-Wert waere gerade nicht unterscheidungskraeftig."""
     conn = get_conn()
     try:
         with conn.cursor() as cur:
@@ -6600,11 +6603,37 @@ def entity_linsen_status(entity_id: str, fenster: int = Query(default=50, le=200
             entscheidungen = [r["entscheidung"] or "" for r in cur.fetchall()]
             cur.execute("SELECT COUNT(*) AS n FROM entity_thinking_log WHERE entity_id = %s", (entity_id,))
             gedaechtnis_tiefe = cur.fetchone()["n"]
+            cur.execute("""
+                SELECT COUNT(DISTINCT entity_id) AS n FROM entity_thinking_log
+                WHERE entity_id != %s AND meta->>'source' = 'browser_agent'
+                    AND tick_at > NOW() - INTERVAL '10 minutes'
+            """, (entity_id,))
+            sozial = cur.fetchone()["n"]
+            cur.execute("""
+                SELECT ended_at FROM sleep_phases
+                WHERE entity_id = %s AND ended_at IS NOT NULL
+                ORDER BY ended_at DESC LIMIT 1
+            """, (entity_id,))
+            schlaf_row = cur.fetchone()
+            bezug = schlaf_row["ended_at"] if schlaf_row else None
+            if bezug is None:
+                cur.execute("""
+                    SELECT MIN(tick_at) AS erster FROM entity_thinking_log
+                    WHERE entity_id = %s AND meta->>'source' = 'browser_agent'
+                """, (entity_id,))
+                r = cur.fetchone()
+                bezug = r["erster"] if r else None
         vault = sum(1 for e in entscheidungen if e.startswith("obsidian_"))
         rag_flarum = sum(1 for e in entscheidungen if e.startswith("rag_erkund") or e.startswith("flarum_besuchen"))
         dom = sum(1 for e in entscheidungen if e.startswith(("klicke", "tippe", "navigiere", "scrolle")))
         gesamt_bewertet = vault + rag_flarum + dom
         gegenwart_anteil = (dom / gesamt_bewertet) if gesamt_bewertet else 0.0
+        schlaf_naehe = 0.0
+        if bezug is not None:
+            if bezug.tzinfo is None:
+                bezug = bezug.replace(tzinfo=timezone.utc)
+            stunden_wach = (datetime.now(timezone.utc) - bezug).total_seconds() / 3600.0
+            schlaf_naehe = round(min(1.0, max(0.0, stunden_wach / 6.0)), 3)
         return {
             "entity_id": entity_id,
             "fenster": len(entscheidungen),
@@ -6613,6 +6642,8 @@ def entity_linsen_status(entity_id: str, fenster: int = Query(default=50, le=200
             "dom": dom,
             "gedaechtnis_tiefe": gedaechtnis_tiefe,
             "gegenwart_anteil": round(gegenwart_anteil, 3),
+            "sozial": sozial,
+            "schlaf_naehe": schlaf_naehe,
         }
     finally:
         conn.close()

@@ -188,7 +188,13 @@ _KOERPER_JS = """
     { key: 'gedaechtnis_tiefe', farbe: '#3b82f6' },
     { key: 'gegenwart_anteil', farbe: '#f8fafc' },
     { key: 'sozial', farbe: '#22c55e' },
+    { key: 'schlaf_naehe', farbe: '#f59e0b' },
   ];
+  // Cyberling- und KompOase-Linse (Daniels Nachtrag) bewusst NOCH KEIN eigenes Bein --
+  // cyberlinge.status='tot'/alle Werte 0 und entity_splitter_stats komplett 0 fuer ALLE
+  // Entitaeten (per DB-Abfrage verifiziert, 2026-07-22) -- ein Bein dafuer waere gerade fuer
+  // jedes Wesen gleich unsichtbar/flach, keine echte Information. /entities/{id}/linsen kann
+  // das spaeter tragen, sobald diese Systeme wieder echte, unterscheidbare Werte liefern.
   let eng = window.__agentKoerperEngine;
   if (!eng) {
     const canvas = document.createElement('canvas');
@@ -926,6 +932,7 @@ def hole_linsen_status(conn, entity_id: str) -> dict:
         gesamt_bewertet = vault + rag_flarum + dom
         gegenwart_anteil = (dom / gesamt_bewertet) if gesamt_bewertet else 0.0
         sozial = len(hole_andere_wesen_status(conn, entity_id))
+        schlaf_naehe = _hole_schlaf_naehe(conn, entity_id)
         # Auf 0..1 normiert fuers Koerper-Rendering -- Gedaechtnis-Tiefe waechst unbegrenzt,
         # deshalb log-skaliert statt linear (sonst waere jedes Wesen nach kurzer Zeit "voll").
         return {
@@ -934,13 +941,53 @@ def hole_linsen_status(conn, entity_id: str) -> dict:
             "gedaechtnis_tiefe": min(1.0, math.log10(gedaechtnis_tiefe + 1) / 4.0),
             "gegenwart_anteil": gegenwart_anteil,
             "sozial": min(1.0, sozial / 6.0),
+            "schlaf_naehe": schlaf_naehe,
         }
     except Exception:
         try:
             conn.rollback()
         except Exception:
             pass
-        return {"vault": 0, "rag_flarum": 0, "gedaechtnis_tiefe": 0, "gegenwart_anteil": 0.0, "sozial": 0}
+        return {"vault": 0, "rag_flarum": 0, "gedaechtnis_tiefe": 0, "gegenwart_anteil": 0.0,
+                "sozial": 0, "schlaf_naehe": 0.0}
+
+
+def _hole_schlaf_naehe(conn, entity_id: str) -> float:
+    """2026-07-22 (Schlafregeln-Linse, Daniels Nachtrag: 'eine linste auf die schlafregeln'):
+    ehrlicher, vereinfachter Naeherungswert (0..1) zu ist_schlaf_faellig() -- Stunden wach seit
+    dem letzten Schlafende, normiert auf die 6h-Wachschwelle aus derselben Funktion. Kein
+    Duplikat der vollen Verzweigungslogik dort (die entscheidet schlafen/nicht, hier geht es
+    nur um einen stufenlosen Naehe-Wert fuers Koerper-Rendering)."""
+    try:
+        with conn.cursor() as cur:
+            cur.execute("""
+                SELECT ended_at FROM sleep_phases
+                WHERE entity_id = %s AND ended_at IS NOT NULL
+                ORDER BY ended_at DESC LIMIT 1
+            """, (entity_id,))
+            row = cur.fetchone()
+        bezug = row["ended_at"] if row else None
+        if bezug is None:
+            cur2 = conn.cursor()
+            cur2.execute("""
+                SELECT MIN(tick_at) AS erster FROM entity_thinking_log
+                WHERE entity_id = %s AND meta->>'source' = 'browser_agent'
+            """, (entity_id,))
+            r = cur2.fetchone()
+            cur2.close()
+            bezug = r["erster"] if r else None
+        if bezug is None:
+            return 0.0
+        if bezug.tzinfo is None:
+            bezug = bezug.replace(tzinfo=timezone.utc)
+        stunden_wach = (datetime.now(timezone.utc) - bezug).total_seconds() / 3600.0
+        return min(1.0, max(0.0, stunden_wach / 6.0))
+    except Exception:
+        try:
+            conn.rollback()
+        except Exception:
+            pass
+        return 0.0
 
 
 def hole_vorlese_funde(conn, entity_id: str) -> list[dict]:
