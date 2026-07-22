@@ -71,6 +71,64 @@ def _pg_listen_fokus_events_sse(entity_id: str):
     return gen()
 
 
+def _pg_listen_fokus_events_alle_sse():
+    # 2026-07-22 (Erzählerschicht-Auftrag): analog zu dom_events_api.py's /stream/all --
+    # Browser-Verbindungslimit pro Origin (~6), keine 7 einzelnen Fokus-Events-Streams
+    # fuer die Erzaehler-Popups. Payload enthaelt entity_id schon (siehe melde_fokus() in
+    # browser_agent.py), daher hier nur der entity_id-Filter weggelassen -- sonst
+    # identisch zu _pg_listen_fokus_events_sse().
+    async def gen():
+        conn = psycopg2.connect(DB_URI)
+        conn.set_isolation_level(psycopg2.extensions.ISOLATION_LEVEL_AUTOCOMMIT)
+        cur = conn.cursor()
+        cur.execute("LISTEN entity_fokus_events")
+
+        def _poll_once():
+            readable, _, _ = sel.select([conn], [], [], 0.5)
+            return bool(readable)
+
+        loop = asyncio.get_running_loop()
+        try:
+            heartbeat = 0
+            while True:
+                ready = await loop.run_in_executor(None, _poll_once)
+                if ready:
+                    conn.poll()
+                    while conn.notifies:
+                        notify = conn.notifies.pop(0)
+                        try:
+                            data = json.loads(notify.payload)
+                        except Exception:
+                            continue
+                        yield f"data: {json.dumps(data)}\n\n"
+                        heartbeat = 0
+                else:
+                    heartbeat += 1
+                    if heartbeat >= 60:
+                        yield f": heartbeat\n\n"
+                        heartbeat = 0
+        finally:
+            cur.close()
+            conn.close()
+
+    return gen()
+
+
+@fokus_events_router.get("/stream/all")
+async def fokus_events_alle_sse():
+    """Live-SSE-Stream der Fokus-Events ALLER Wesen in EINER Verbindung — öffentlich.
+    Muss VOR der dynamischen /stream/{entity_id}-Route registriert sein."""
+    return StreamingResponse(
+        _pg_listen_fokus_events_alle_sse(),
+        media_type="text/event-stream",
+        headers={
+            "Cache-Control": "no-cache",
+            "X-Accel-Buffering": "no",
+            "Access-Control-Allow-Origin": "*",
+        }
+    )
+
+
 @fokus_events_router.get("/stream/{entity_id}")
 async def fokus_events_sse(entity_id: str = Path(..., max_length=64)):
     """Live-SSE-Stream der Fokus-Events eines Wesens — öffentlich, kein Auth
