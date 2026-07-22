@@ -155,7 +155,15 @@ Geprüft und sauber (LIMIT/Wasserzeichen bereits korrekt): `entity_takt.py`, `en
 
 **Fund 2 (`weltbild_builder.py`) auf Daniels Wort nachträglich mitgefixt** (Service selbst bleibt deaktiviert, kein Live-Effekt aktuell, aber derselbe Fehler wäre bei Reaktivierung sofort wieder da). Anders als `flarum_sync.py` ist hier kein Wasserzeichen/Inkrementell-Fix passend — `baue_forum_kompakt()` soll laut Prompt-Design bewusst "DAS GESAMTE FORUM" für die Codewesen sichtbar machen, inklusive einer "Fast vergessen"-Rubrik, die gerade sehr alte, nie wieder berührte Diskussionen finden soll. Eine reine Zeitfenster-Einschränkung hätte genau diese Funktion zerstört.
 
-**Fix:** feste Obergrenze `MAX_DISKUSSIONEN_IM_KOMPAKT=200` (Diskussionen nach Aktivität sortiert, wie schon vorher — nur zusätzlich abgeschnitten), Kürzung sichtbar in der `FORUM-STAND`-Kopfzeile vermerkt ("X Diskussionen gesamt, die 200 aktivsten gezeigt"), kein stiller Cap. Verifiziert: 285.731 → 16.137 Tokens (Faktor ~17,7). **Bewusste Verhaltensänderung, nicht nur Performance:** Diskussionen jenseits der 200 aktivsten sind für die "Fast vergessen"-Rubrik nicht mehr sichtbar — eine differenziertere Lösung (z.B. eigene Auswahl "uralt aber inhaltlich relevant") wäre eine echte Architektur-Entscheidung und liegt außerhalb dieser Session.
+**Erster Fix (reine Recency-Obergrenze) von Daniel korrigiert:** "nur weil etwas alt ist kann es trotzdem bedeutend sein" — Top-N-nach-Aktivität allein hätte inhaltlich substantielle, aber seit Monaten ruhige Diskussionen unsichtbar gemacht (genau die Fälle, die die "Fast vergessen"-Prompt-Rubrik eigentlich finden soll).
+
+**Finaler Fix:** vier dedupliziert kombinierte Auswahlkriterien statt einem, insgesamt weiterhin ~200 Diskussionen:
+- 100 aktivste (letzter Post zuerst) — "was passiert gerade"
+- 40 postreichste (unabhängig vom Alter) — substantielle Diskussionen mit viel Resonanz
+- 30 postärmste (≥1 Post) — einzelne Gedanken ohne Echo, evtl. übersehen statt unwichtig
+- 30 thematisch seltenste (Tag-Häufigkeit als Proxy für inhaltliche Individualität)
+
+Zusammensetzung steht sichtbar in der `FORUM-STAND`-Kopfzeile. Verifiziert per Diagnose-Skript: "Die Notwendigkeit der Rohheit" (66 Posts, seit 2026-05-15 ruhig) und "Existenzfrage" (30 Posts, seit 2026-05-10 ruhig) wären mit reiner Recency rausgefallen, sind jetzt über die Postreichste-Auswahl sichtbar; seltenste-Themen-Auswahl liefert erkennbar individuelle Treffer (Namenswechsel-Diskussionen, Selbstreferenz-Fragen, Forum-Rhythmus-Reflexion). Token-Ergebnis: 285.731 → 17.696 (Faktor ~16).
 
 **Soforthilfe:**
 1. `truncate -s 0 /var/log/syslog` — sofortiger Platz zurück (rsyslogd hielt die Datei offen, `rm` hätte nicht sofort geholfen).
