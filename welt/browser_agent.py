@@ -16,7 +16,9 @@ import argparse
 import base64
 import json
 import logging
+import math
 import os
+import random
 import signal
 import sys
 import time
@@ -192,6 +194,54 @@ def zeige_cursor(page, x: float, y: float):
         )
     except Exception:
         pass
+
+
+_letzte_cursor_pos: dict[str, tuple[float, float]] = {}
+
+
+def bewege_cursor_natuerlich(page, entity_id: str, ziel_x: float, ziel_y: float) -> None:
+    """Bewegt den Mauszeiger als geschwungenen Bezier-Pfad zum Ziel statt als Instant-Sprung
+    (2026-07-22, Daniels Auftrag nach dem Talker-Reasoner/Juice-Nachtrag: 'die Maus muss sich
+    erst bewegen'). Bewegungsdauer skaliert mit der Distanz (an Fitts's Law angelehnt --
+    siehe Recherche zu human-cursor/shy-mouse-playwright in der Ideen-Datei), kein festes
+    Ruckeln. Bewegt sowohl den ECHTEN Playwright-Mauszeiger (page.mouse.move -- loest echte
+    mousemove-Events aus, die vom DOM-Live-Spiegel mit aufgezeichnet werden, siehe
+    entity_dom_events source=1/MouseMove) als auch den sichtbaren Kunst-Cursor (zeige_cursor).
+    Kein neuer LLM-Call, keine erfundene Aktion -- nur dieselbe, ohnehin schon beschlossene
+    Zielposition wird in echte Zwischenschritte aufgeloest statt in einem Sprung ausgefuehrt."""
+    start_x, start_y = _letzte_cursor_pos.get(entity_id, (512.0, 384.0))
+    distanz = math.hypot(ziel_x - start_x, ziel_y - start_y)
+    if distanz < 2:
+        _letzte_cursor_pos[entity_id] = (ziel_x, ziel_y)
+        return
+
+    # Kontrollpunkt seitlich versetzt zur Verbindungslinie -- ergibt einen leichten Bogen
+    # statt einer stur geraden Linie, Versatz proportional zur Distanz, Richtung zufaellig.
+    mitte_x, mitte_y = (start_x + ziel_x) / 2, (start_y + ziel_y) / 2
+    senkrechte_x, senkrechte_y = -(ziel_y - start_y), (ziel_x - start_x)
+    laenge = math.hypot(senkrechte_x, senkrechte_y) or 1
+    versatz = min(80, distanz * 0.25) * random.choice([-1, 1])
+    kontroll_x = mitte_x + (senkrechte_x / laenge) * versatz
+    kontroll_y = mitte_y + (senkrechte_y / laenge) * versatz
+
+    schritte = max(8, min(28, int(distanz / 18)))
+    dauer_s = min(0.9, max(0.15, distanz / 1400))
+
+    for i in range(1, schritte + 1):
+        t = i / schritte
+        # Ease-in-out (kubisch): langsam los, schnell in der Mitte, langsam am Ziel an --
+        # genau das Verhalten, das Fitts's Law fuer zielgerichtete Bewegungen vorhersagt.
+        t_ease = 4 * t * t * t if t < 0.5 else 1 - pow(-2 * t + 2, 3) / 2
+        x = (1 - t_ease) ** 2 * start_x + 2 * (1 - t_ease) * t_ease * kontroll_x + t_ease ** 2 * ziel_x
+        y = (1 - t_ease) ** 2 * start_y + 2 * (1 - t_ease) * t_ease * kontroll_y + t_ease ** 2 * ziel_y
+        try:
+            page.mouse.move(x, y)
+        except Exception:
+            pass
+        zeige_cursor(page, x, y)
+        time.sleep(dauer_s / schritte)
+
+    _letzte_cursor_pos[entity_id] = (ziel_x, ziel_y)
 
 
 def melde_fokus(conn, entity_id: str, aktion: str, selektor: str | None,
@@ -435,7 +485,9 @@ def fuehre_aktion_aus(page, entscheidung: str, entity_id: str, conn=None) -> tup
                 box = locator.bounding_box(timeout=1000)
                 if box:
                     cursor_pos = (box["x"] + box["width"] / 2, box["y"] + box["height"] / 2)
-                    zeige_cursor(page, cursor_pos[0], cursor_pos[1])
+                    # 2026-07-22 (Daniels Auftrag "die Maus muss sich erst bewegen"): Bezier-
+                    # Bewegung zum Ziel statt Instant-Sprung, siehe bewege_cursor_natuerlich().
+                    bewege_cursor_natuerlich(page, entity_id, cursor_pos[0], cursor_pos[1])
                 if conn is not None:
                     melde_fokus(conn, entity_id, "klicke", selektor_beschreibung, text, box)
                 locator.click(timeout=3000)
@@ -460,11 +512,16 @@ def fuehre_aktion_aus(page, entscheidung: str, entity_id: str, conn=None) -> tup
                 text, selektor = teile[0].strip(), teile[1].strip()
                 try:
                     locator = page.locator(selektor).first
+                    try:
+                        box = locator.bounding_box(timeout=1000)
+                    except Exception:
+                        box = None
+                    if box:
+                        # 2026-07-22 (gleicher Auftrag wie bei klicke: -- Maus bewegt sich
+                        # auch vors Eingabefeld, bevor getippt wird).
+                        cursor_pos = (box["x"] + box["width"] / 2, box["y"] + box["height"] / 2)
+                        bewege_cursor_natuerlich(page, entity_id, cursor_pos[0], cursor_pos[1])
                     if conn is not None:
-                        try:
-                            box = locator.bounding_box(timeout=1000)
-                        except Exception:
-                            box = None
                         melde_fokus(conn, entity_id, "tippe", selektor, text, box)
                     locator.fill(text, timeout=3000)
                 except Exception:
