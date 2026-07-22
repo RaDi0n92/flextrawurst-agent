@@ -421,3 +421,13 @@ Daniel: *"sweiter denke ich"* — als "weiter" gelesen, kein konkreter neuer Pun
 **Umgesetzt, bewusst die günstige Variante (Daniel hatte beides offen gelassen, "könnte auch einen Call brauchen"):** `_erlExtrahiereStichwort()` zieht ein großgeschriebenes, ausreichend langes Wort aus dem GEDANKE-Abschnitt des laufenden Denkstreams, gefiltert gegen eine Füllwort-Liste — kein neuer LLM-Call, gleiches Kostenprofil wie alle anderen Erlebnisschicht-Stimmen. 60% Chance auf eine Inhalts-Frage, wenn ein Stichwort verfügbar ist, sonst Fallback auf die alten generischen Templates.
 
 Verifiziert per Node-Simulation gegen einen echten aufgezeichneten Denkstream: liefert u.a. `METAWAR-Startseite`, `Rohform`, `Diskursräume`, `Gedächtnis`, `Autonomie` als Kandidaten — Beispiel-Ausgabe: *"Warum denkt sich dak+gord-system gerade über „METAWAR-Startseite" nach?"*. Committed `f1b309b60`.
+
+## Nachtrag — "go weiter durchziehen und bauen": Substanz-Heilung geschlossen
+
+Daniel: *"go weiter durchziehen und bauen"* — kein neuer konkreter Punkt benannt, als Fortsetzungssignal gelesen. Den letzten offen gebliebenen Teil aus dem Substanz-Infekt-Brainstorm geschlossen: *"heilbar nur durch echte menschliche Resonanz-Handlung"*.
+
+**Umgesetzt:** Klick auf den Infekt-Overlay sendet eine echte Resonanz über den schon generischen `/api/resonanz`-Endpunkt (`post_source='wesen_heilung'`, `post_ref=Entity-ID`) — kein neuer Backend-Code, `post_source` ist bereits ein freier String ohne Allowlist. Nach Erfolg (oder 409 "bereits reagiert"): rein lokale, sitzungsweite Sichtunterdrückung des Overlays. Bewusste Entscheidung, nicht selbst erfunden: die echten `substance_sediments`-Diagnosedaten bleiben unangetastet, nur die menschliche Ansicht blendet ab — ob "geheilt" serverseitig dauerhaft/zeitbasiert gelten soll, blieb in Daniels Original-Zitat selbst vage ("o.ä."), deshalb nicht eigenmächtig entschieden.
+
+Verifiziert per Playwright (Route-Interception statt echtem Login, da direkter DB-Zugriff auf `users` für `dak` per Grant gesperrt ist): Alert ohne Token korrekt, POST-Payload mit Token korrekt (`{"post_ref":"Schorschel","post_source":"wesen_heilung","emojis":["👍"]}`), Opazität nach Antwort korrekt auf 0, keine JS-Fehler. i18n-Keys ergänzt. Committed `b3c2c018d`.
+
+**Damit ist der Substanz-Infekt-Brainstorm jetzt vollständig geschlossen** (Infektion + Heilung, beide aus echten Daten/echten Aktionen, keine erfundene Fiktion).
