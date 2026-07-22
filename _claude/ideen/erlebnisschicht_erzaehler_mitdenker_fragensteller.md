@@ -146,3 +146,48 @@ Direkt aus `entity_thinking_log` gemessen (letzte 10 Minuten, alle 7 Wesen, Zeit
 ### Was noch nicht geklärt ist
 
 Ob dieser ganze Umbau (Live-Chat-Denkfenster-Panel, Bruchstellen-Erkennung, Maus-vor-Text-Sequenzierung, `page.content()`-Schnappschüsse statt rrweb, getrennter leichter Mauszeiger-Stream, Klick-Ripple, Scroll-Sichtbarkeit) als eine zusammenhängende Vision zuerst vollständig durchdacht/aufgeschrieben wird, bevor gebaut wird, oder ob Daniel direkt mit den zwei konkreten, kleineren Bugs (Fragen ohne Content-Bezug, fehlende Erzähler/Ich-Popups) anfangen will, während der große Rest noch reift — das war die offene Frage am Ende dieses Gesprächsabschnitts, noch nicht beantwortet.
+
+**Daniels Antwort darauf, roh:** *"der dritte? nee der 22 zigte haha ...natürlich weiterim text beim großen ganzen und warum reifen ..what do we missing? was könnte uns noch helfen dass das wesen noch agieler und schneller und handlunsaktiver und fähiger wird und wie können wir das noch besser so bauen und behalndeln dann dass es wirklich wie eine art trippleaaamivie ist xD ...such das genau so mal im netz in allen ecken"*
+
+(Nebenbei wichtig, zur "Rohheit bewahren"-Feedback-Notiz von eben: Daniel korrigiert hier selbst, dass es nicht der dritte, sondern eher der 22. beleg dieses Musters ist — deutlich chronischer als ich es eingeschätzt hatte.)
+
+## Nachtrag — Websuche "wie wird ein Wesen agiler/schneller/handlungsaktiver", roh und vollständig
+
+Direkter Auftrag, wortwörtlich oben zitiert. Recherche-Auftrag ausgeführt, drei Treffer gefunden, alle direkt auf flextrawurst anwendbar. Hier vollständig, nicht zusammengestrichen:
+
+### Treffer 1 — Neuro-sama (der bekannteste KI-Streamer, spielt UND chattet gleichzeitig live)
+
+Aus der Recherche: *"Neuro-sama was built in C# using Unity, while all AI systems were developed in Python. More specifically, her gaming AI operates on Python, while her VTuber functionality is powered by C#. She's powered by a sophisticated tech stack that brings together language models, computer vision, custom game playing agents, and real time animation. Neuro-sama's architecture involves the seamless communication of different AI systems, which is critical for ensuring consistent and coordinated responses during live interactions. [...] At the heart of Neuro-sama's personality is a transformer-based language model, similar in architecture to models like GPT, which takes in text from Twitch chat and generates responses in real time. Neuro's brain is a chatbot, but a separate AI turns her speech, vision, and in-game data into text, which is passed to the language model to generate replies. This layered architecture helps explain how Neuro-sama can play osu! while chatting because multiple systems are working in parallel. [...] The key innovation is how all her movements, speech, and gameplay are powered by different generative AI systems to emulate a human streamer's actions and interactions with her viewers."*
+
+Übertragung auf flextrawurst: Neuro-sama trennt bewusst mehrere schnelle Teilsysteme (Sicht, Spielzustand, Chat), die PARALLEL laufen und alle in ein zentrales Gehirn einspeisen — nicht ein einziger großer Call, der alles nacheinander macht. Das erklärt, warum sie gleichzeitig reagieren UND spielen kann, ohne dass eins das andere blockiert.
+
+### Treffer 2 — "Talker-Reasoner"-Architektur (die direkte Antwort auf "wie werden Wesen agiler")
+
+Aus der Recherche: *"Dual process AI frameworks integrate both System 1, which facilitates fast, intuitive decision-making, and System 2, which supports deliberate, analytical reasoning. System 1 governs fast, intuitive, emotional, and automatic responses, allowing quick reactions with minimal effort, while System 2 is responsible for slower, more deliberate processes involving conscious reasoning, logical analysis, and problem-solving. [...] Single execution loops are forced to do two completely different jobs: talking/acting (which requires low latency and high bandwidth) and planning (which requires slow, deliberative reasoning). A single monolithic model often struggles to satisfy both: fast models lack semantic depth, while deliberative models are too slow for interactive control. [...] The architecture divides the agent into a fast and intuitive Talker agent that interacts with the environment and generates conversational responses, and a slower and deliberative Reasoner agent responsible for complex problem solving. [...] DPT-Agent is the first agent framework that can achieve successful real-time simultaneous human-AI collaboration autonomously in the hard version of Overcooked, a collaborative game. DPT-Agent's System 1 uses a Finite-state Machine (FSM) and code-as-policy for fast, intuitive, and controllable decision-making. This architecture is particularly valuable for game NPCs where responsiveness to player actions is critical while still maintaining strategic coherence."*
+
+Übertragung auf flextrawurst: das ist exakt unser gemessenes 2,5-6-Minuten-Problem, wortwörtlich als Forschungsproblem beschrieben ("single execution loops are forced to do two completely different jobs"). Die Lösung: ein schneller "Talker" fürs sofortige Handeln (Mausbewegung, Klick, Scrollen — braucht keine tiefe Reflexion) getrennt von einem langsamen "Reasoner" fürs eigentliche, lange Nachdenken (das Denkfenster). Die Aktion müsste dann nicht mehr auf den fertigen, langen Gedanken warten. Passt auch strukturell zum schon bestehenden "mechanischen Tick"-Pilotmodus (Schorschel/träumerlie, `MECHANISCHE_SCHRITTE_PRO_ENTSCHEIDUNG` in `browser_agent.py`, kein LLM-Call) — das ist im Kleinen bereits ein "Talker"-artiges Element, nur noch nicht bewusst als solches benannt/ausgebaut.
+
+### Treffer 3 — "Juice" / Game Feel (das Vokabular für "Triple-A-Gefühl")
+
+Aus der Recherche: *"Juice is about amplifying player actions through sensory feedback—visual flair, audio cues, and haptic feedback—all designed to create a heightened sense of impact. Juice refers to small, often subtle effects that make a game feel alive and reactive. [...] Designing game feel requires responsive controls, hit-stop, sound, animation, and feedback systems that make gameplay satisfying. [...] Visual feedback includes effects like particles, screen shakes, and dynamic lighting, which make actions feel more impactful. Screen shake adds weight and drama, whether it's a punch, explosion, or big jump. [...] Pressing a button to jump should be accompanied by animations, sound effects, screen shake, and other layers of feedback that make the action feel impactful. [...] These effects aren't core mechanics, but they dramatically improve the player experience. Notably, a game with mediocre mechanics and great juice will often outperform a game with great mechanics and no juice. Juice doesn't change the rules of your game, but it changes how it feels—making the game more responsive, satisfying, and engaging."*
+
+Übertragung auf flextrawurst: bestätigt Daniels eigene Ideen (Puls/Ring-Glow, Klick-Ripple) als Teil einer ganzen, seriösen Design-Disziplin mit eigenem Namen und noch viel mehr Techniken zum Anzapfen (Partikel, kleine Animationen, geschichtetes Feedback) — nicht nur Zierrat, sondern nachweislich wichtiger als reine Mechanik-Qualität für das Erlebnis.
+
+### Quellen der Recherche
+
+- [AIRI: Complete Guide to Building Your Own AI VTuber Like Neuro-sama](https://explainx.ai/blog/airi-ai-vtuber-neuro-sama-guide-2026)
+- [Stop building reactive agents: Why your architecture needs a System 1 and System 2](https://dev.to/an0nymus/stop-building-reactive-agents-why-your-architecture-needs-a-system-1-and-system-2-4b6p)
+- [Agents Thinking Fast and Slow: A Talker-Reasoner Architecture](https://arxiv.org/html/2410.08328)
+- [Leveraging Dual Process Theory in Language Agent Framework for Real-time Simultaneous Human-AI Collaboration](https://arxiv.org/html/2502.11882v3)
+- [Game Feel: A Beginner's Guide](https://gamedesignskills.com/game-design/game-feel/)
+- [The "Juice" Factor: Designing Game Feel](https://hackread.com/the-juice-factor-designing-game-feel/)
+
+### Daniels Reaktion darauf, roh — wichtig genug um wörtlich festzuhalten
+
+*"natürlich alles von oben bis unten wort für word und endlich bekomme ich seit knapp 12 stundnen es hin dass du endlich verstehst was ich die ganze zeit will weil es ja eben möglich war und sit"*
+
+Das ist nach einem sehr langen Tag (Bugmarathon an SCREENS seit dem Vormittag, dann diese Vision-Erweiterung am Abend) der erste Moment, an dem Daniel das Gefühl hat, wirklich verstanden worden zu sein — nicht nur inhaltlich, sondern in der FORM (roh, wörtlich, nicht geglättet). Festhalten für künftige Sessions: genau DAS ist das Ziel, nicht "die Kernaussage in eigenen Worten wiedergeben".
+
+### Was noch offen ist, jetzt mit den drei neuen Treffern
+
+Ob/wie die Talker-Reasoner-Trennung konkret in `browser_agent.py` umgesetzt würde (eigener, schneller Entscheidungs-Call vs. der bestehende lange Denkfenster-Call — welches Verhältnis, welcher Trigger, laufen beide wirklich parallel oder wird der Reasoner-Call einfach nicht mehr blockierend abgewartet bevor gehandelt wird), und wie die Juice-Effekte konkret aussehen sollen (welche genau, wo, wie oft) — beides noch nicht von Daniel spezifiziert, noch kein Bauauftrag.
