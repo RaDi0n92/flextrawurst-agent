@@ -122,3 +122,28 @@ Jedes Wesen (`wesen_id`), jeder Modus (`klon` / `sandbox`) und jede Geist- / Ver
 - **Soft-Delete (`/zensi/api/sessions/soft_delete`):** Session erhält `status: deleted`. Bleibt als Archiv auf Server & Obsidian Vault erhalten, wird jedoch in der aktiven UI ausgeblendet.
 - **Hard-Delete (`/zensi/api/sessions/hard_delete`):** Unwiderrufliche Löschung aller Session-Dateien von Server-Disk & Obsidian Vault.
 - **REST Endpunkte:** `/zensi/api/sessions/liste`, `/zensi/api/sessions/get`, `/zensi/api/sessions/create`, `/zensi/api/sessions/append`, `/zensi/api/sessions/soft_delete`, `/zensi/api/sessions/hard_delete`, `/zensi/api/sessions/restore`.
+
+## 9. Universelles Audit- & Erweiterungssystem (Die 5 Bausteine)
+
+### ⚖️ Baustein 1: Klon- vs. Sandbox-Diff & Historischer Kommentar-Inspector
+- **Visuelle Gegenüberstellung:** Farblich strukturierte Line-by-Line Diffs (`wesen.md`, `memory.json`, `container.json`, `schichten_config`).
+- **Daniel-Audit-Kommentare:** Du kannst zu jeder Haltungsänderung oder Versionsexperiment Notizen abgeben (`/zensi/api/diff/kommentar`).
+- **Obsidian Sync & Historie:** Jede Änderung wird historisch in `diff_historie.json` sowie im Obsidian Vault unter `obsidian_vault/wesensprofile/<wesen_id>/historie/YYYY-MM-DD_HH-MM-SS_diff_kommentar.md` hinterlegt.
+
+### 🪞 Baustein 2: Zensi Surface Tab Integration (`flextrawurst_surface.html`)
+- **Direct Access:** Zensi ist als vollwertiger `ZENSI`-Tab direkt auf Port 8787 in `flextrawurst_surface.html` eingebettet (`generateZensiView()` iframe zu `/zensi/`).
+- **i18n:** `tab.zensi` in `UI_TR.de` und `UI_TR.en` verankert.
+- **Automatisierter Test:** Ring-24 Testsuite (`tests/surface_ring_23.test.ts`) prüft die Existenz des Zensi-Tabs & Iframe-Containers (83/83 Tests grün).
+
+### 🎭 Baustein 3: Multi-Wesen-Symposium / Arena (Cross-Wesen Dialektik)
+- **Cross-Wesen Dialektik:** 2 bis 3 Wesen (z.B. Resonanzknoten + GENI + F3INSCHM3CK3R) diskutieren autonom über ein Thema oder einen Streitfall in einer gemeinsamen Sandbox (`/zensi/api/symposium/start` & `/zensi/api/symposium/tick`).
+- **Zensi-Marker in Dialektik:** Die Wesen decken gegenseitig verdeckte Wunden auf (`[[ZEIGE_WUNDE: ...]]`) und destillieren gemeinsame Essenz-Notizen.
+- **Obsidian Vault Sync:** Speichert das Symposium-Protokoll live unter `obsidian_vault/outputsystem/symposien/YYYY-MM-DD_thema.md`.
+
+### 🌙 Baustein 4: Traum- & Schlaf-Prozessor (Nacht-Kognition & Konsolidierung)
+- **Nacht-Kognition:** Das Wesen verarbeitet veraltete Chat-Sessions und verdichtet rohe Eindrücke zu 2-3 Essenz-Erkenntnissen in `memory.json` (`/zensi/api/traum/start`).
+- **Traum-Protokoll:** Das erzeugte Traum-Protokoll wird als strukturierte Markdown-Notiz unter `obsidian_vault/outputsystem/<wesen_id>/traeume/YYYY-MM-DD_HH-MM-SS_traum.md` verankert.
+
+### 🎙️ Baustein 5: Mikrophon-Spracheingabe (Web Speech API STT)
+- **Hands-Free Konversation:** Neben der TTS-Stimmenausgabe (Thorsten, Kerstin, Speed-Slider) besitzt Zensi jetzt einen `🎙️`-Mikrophonbutton für Web Speech API Spracheingabe.
+- **Transkription:** Gesprochener Text wird live ins Eingabefeld übertragen und kann per Klick an HauhauCS gesendet werden.
