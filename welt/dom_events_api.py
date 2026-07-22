@@ -46,6 +46,13 @@ def _pg_listen_dom_events_sse(entity_id: str):
         cur = conn.cursor()
         cur.execute("LISTEN entity_dom_events")
         read_conn = psycopg2.connect(DB_URI, cursor_factory=psycopg2.extras.RealDictCursor)
+        # 2026-07-22 gefunden (per pg_stat_activity verifiziert): ohne Autocommit blieb
+        # jede einzelne SELECT-Query dieser lang lebenden SSE-Verbindung in EINER nie
+        # committeten Transaktion haengen (bei einer Kachel schon 6+ Minuten offen) --
+        # Snapshot-Alter wächst mit der Verbindungsdauer, was Autovacuum blockiert und
+        # die Tabelle ueber Stunden zunehmend traege macht. Gleicher Fix wie bei der
+        # LISTEN-Verbindung oben.
+        read_conn.set_isolation_level(psycopg2.extensions.ISOLATION_LEVEL_AUTOCOMMIT)
 
         def _poll_once():
             readable, _, _ = sel.select([conn], [], [], 0.5)
@@ -91,6 +98,15 @@ def _pg_listen_dom_events_sse(entity_id: str):
             backlog = await loop.run_in_executor(None, _hole_backlog)
             for event in backlog:
                 yield f"data: {json.dumps(event)}\n\n"
+            # 2026-07-22 (per Playwright-Repro verifiziert, siehe build_surface.ts-Kommentar
+            # bei _scvVerarbeiteGridEvent): der Client darf den Backlog NICHT durch denselben
+            # liveMode-Scheduler jagen wie echte Live-Events -- rrweb plant jedes addEvent()
+            # nach seinem *echten* Zeitstempel relativ zur Baseline ein. Liegt der letzte
+            # Snapshot Minuten/Stunden zurueck, muesste der Client buchstaeblich so lange
+            # warten, bis die juengsten Backlog-Events "dran" waeren -- die Kachel blieb
+            # ein Standbild. Dieser Marker sagt dem Client: Backlog fertig, jetzt per
+            # replayer.pause(totalTime) synchron ans Ende vorspulen und danach erst live schalten.
+            yield f"data: {json.dumps({'backlog_done': True})}\n\n"
 
             heartbeat = 0
             while True:
@@ -140,6 +156,13 @@ def _pg_listen_dom_events_alle_sse():
         cur = conn.cursor()
         cur.execute("LISTEN entity_dom_events")
         read_conn = psycopg2.connect(DB_URI, cursor_factory=psycopg2.extras.RealDictCursor)
+        # 2026-07-22 gefunden (per pg_stat_activity verifiziert): ohne Autocommit blieb
+        # jede einzelne SELECT-Query dieser lang lebenden SSE-Verbindung in EINER nie
+        # committeten Transaktion haengen (bei einer Kachel schon 6+ Minuten offen) --
+        # Snapshot-Alter wächst mit der Verbindungsdauer, was Autovacuum blockiert und
+        # die Tabelle ueber Stunden zunehmend traege macht. Gleicher Fix wie bei der
+        # LISTEN-Verbindung oben.
+        read_conn.set_isolation_level(psycopg2.extensions.ISOLATION_LEVEL_AUTOCOMMIT)
 
         def _poll_once():
             readable, _, _ = sel.select([conn], [], [], 0.5)
@@ -182,6 +205,12 @@ def _pg_listen_dom_events_alle_sse():
                     """, (eid, eid, eid))
                     for r in c.fetchall():
                         ergebnis.append({"entity_id": eid, "event": r["event_json"]})
+                # Marker direkt nach dem Backlog-Block DIESES Wesens (siehe Kommentar in
+                # _pg_listen_dom_events_sse oben -- gleicher Grund, hier pro Wesen einzeln,
+                # da alle 7 sich diese eine Verbindung teilen). In dieselbe {entity_id,event}-
+                # Huelle gepackt wie jede andere Nachricht dieses Endpunkts, sonst liest der
+                # Client (der immer data.event auswertet) den Marker als event=undefined.
+                ergebnis.append({"entity_id": eid, "event": {"backlog_done": True}})
             return ergebnis
 
         loop = asyncio.get_running_loop()
