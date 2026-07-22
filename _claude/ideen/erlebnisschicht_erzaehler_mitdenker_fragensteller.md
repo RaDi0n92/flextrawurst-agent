@@ -1,7 +1,7 @@
 ---
 datum: 2026-07-22
 betrifft: [screens, roentgenblick, denkstream, erlebnisschicht, erzaehler, mitdenker, fragensteller, grundgesetz1, kompoase]
-status: Alle vier Stimmen GEBAUT und live verifiziert (2026-07-22). Ich-Stimme/Erzähler/Denkstream-Auszüge: werkraum-Commit aeb563ea2 + flextrawurst-Commit gleichzeitig. Fragensteller+Text/Emoji-Reaktionen+Vault-Rückkanal: werkraum-Commits fd20ee947 (Backend) + flextrawurst-Commit 75995dfa5 (Frontend). Noch offen: echter Login-Test mit menschlichem Account (kein Passwort vorhanden), Wesen-Animation zum Profilbesuch (Prompt-Nudge in browser_agent.py), inhaltsbasierte (nicht nur Template-)Fragen, kein per-Nutzer-Profilseiten-Deep-Link vorhanden (nur allgemeine #menschen-Liste).
+status: Alle vier Stimmen GEBAUT und live verifiziert (2026-07-22). Ich-Stimme/Erzähler/Denkstream-Auszüge: werkraum-Commit aeb563ea2 + flextrawurst-Commit gleichzeitig. Fragensteller+Text/Emoji-Reaktionen+Vault-Rückkanal: werkraum-Commits fd20ee947 (Backend) + flextrawurst-Commit 75995dfa5 (Frontend). **Kompletter End-to-End-Test mit echtem Login (Account "system", von Daniel bereitgestellt) erfolgreich:** Login → Text-Reaktion → Emoji-Reaktion → zweite Emoji-Reaktion korrekt mit 429/Drossel-Restzeit abgelehnt → DB-Zeilen korrekt → Vault-Datei korrekt mit Username "System" beschriftet. Testdaten danach wieder entfernt (DB-Zeilen, Vault-Datei). Noch offen: Wesen-Animation zum Profilbesuch (Prompt-Nudge in browser_agent.py), inhaltsbasierte (nicht nur Template-)Fragen, kein per-Nutzer-Profilseiten-Deep-Link vorhanden (nur allgemeine #menschen-Liste).
 autor: claude-code bei Daniels VPS
 ---
 
