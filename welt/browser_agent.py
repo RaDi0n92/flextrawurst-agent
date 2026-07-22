@@ -343,6 +343,50 @@ def bewege_cursor_natuerlich(page, entity_id: str, ziel_x: float, ziel_y: float)
     _letzte_cursor_pos[entity_id] = (ziel_x, ziel_y)
 
 
+_letzte_skim_pruefung: dict[str, float] = {}
+_letztes_skim_tempo: dict[str, float] = {}  # letzte bekannte Aehnlichkeit, solange die naechste Pruefung noch gedrosselt ist
+SKIM_PRUEF_COOLDOWN_S = 20.0
+SKIM_AEHNLICHKEITS_SCHWELLE = 0.55  # dieselbe Schwelle wie vorlese_daemon.py, nicht neu erfunden
+
+
+def skim_bewertung(page, entity_id: str, conn) -> float | None:
+    """2026-07-23 (DOM-Habitat-Locomotion, Daniels Metapher: 'lupe mit taschenlampe und
+    einem kescher fangnetz dass es wenn es interessante wörte sieht sofort zuschnappt'):
+    prueft ob der gerade sichtbare Text zum Interessensprofil des Wesens passt -- dieselbe
+    embed()+Kosinus-Vergleich-Infrastruktur wie vorlese_daemon.py (entity_interessensprofil,
+    bge-m3), hier live waehrend des Scrollens statt gegen vorbereitete Ankuendigungen.
+    Gedrosselt (SKIM_PRUEF_COOLDOWN_S) -- jeder Aufruf ist ein echter Embedding-Request,
+    kein Dauerfeuer bei jedem Scroll-Tick. Gibt None zurueck wenn gerade zu frueh fuer eine
+    neue Pruefung (dann behaelt der Aufrufer das vorige Tempo bei), sonst die Kosinus-
+    Aehnlichkeit (0..1, oder 0.0 falls kein Profil/zu wenig sichtbarer Text)."""
+    jetzt = time.time()
+    letzte = _letzte_skim_pruefung.get(entity_id, 0)
+    if jetzt - letzte < SKIM_PRUEF_COOLDOWN_S:
+        return None
+    _letzte_skim_pruefung[entity_id] = jetzt
+    try:
+        sichtbarer_text = page.inner_text("body")[:600].strip()
+        if len(sichtbarer_text) < 40:
+            return 0.0
+        resp = requests.post("http://localhost:11434/api/embed",
+                              json={"model": "bge-m3", "input": sichtbarer_text}, timeout=15)
+        resp.raise_for_status()
+        vektor = resp.json()["embeddings"][0]
+        with conn.cursor() as cur:
+            cur.execute("""
+                SELECT 1 - (profil_vektor <=> %(vektor)s) AS aehnlichkeit
+                FROM entity_interessensprofil WHERE entity_id = %(eid)s
+            """, {"vektor": str(vektor), "eid": entity_id})
+            row = cur.fetchone()
+        return float(row["aehnlichkeit"]) if row else 0.0
+    except Exception:
+        try:
+            conn.rollback()
+        except Exception:
+            pass
+        return 0.0
+
+
 def scrolle_natuerlich(page, entity_id: str, delta_y: float, conn=None) -> None:
     """2026-07-22 (echter Fund beim Umbau-Simulieren: scrolle:unten/oben rief bisher nur
     page.mouse.wheel() als einzigen 600px-Sprung auf -- ohne melde_fokus(), ohne Animation.
@@ -674,10 +718,25 @@ def fuehre_aktion_aus(page, entscheidung: str, entity_id: str, conn=None) -> tup
                         break
                     except Exception:
                         pass
-        elif e == "scrolle:unten":
-            scrolle_natuerlich(page, entity_id, 600, conn)
-        elif e == "scrolle:oben":
-            scrolle_natuerlich(page, entity_id, -600, conn)
+        elif e in ("scrolle:unten", "scrolle:oben"):
+            # 2026-07-23 (DOM-Habitat-Locomotion, Daniels Metapher: 'lupe mit taschenlampe
+            # und kescher -- wenn interessante wörte, sofort zuschnappen; sonst rag halb-
+            # lesen und schnell weiter'): Tempo interessensbasiert, nicht mehr fest 600px.
+            richtung = 1 if e == "scrolle:unten" else -1
+            aehnlichkeit = skim_bewertung(page, entity_id, conn) if conn is not None else None
+            if aehnlichkeit is not None:
+                _letztes_skim_tempo[entity_id] = aehnlichkeit
+            tempo = _letztes_skim_tempo.get(entity_id, 0.0)
+            letzte_pos = _letzte_cursor_pos.get(entity_id, (512.0, 384.0))
+            if tempo >= SKIM_AEHNLICHKEITS_SCHWELLE:
+                # Interessant -- der Kescher schnappt zu: sichtbarer Ausschlag am Ort,
+                # danach verweilen (kaum noch scrollen) statt weiter durchzurasen.
+                zeige_cursor(page, letzte_pos[0], letzte_pos[1], 900.0, _letzte_linsen.get(entity_id))
+                scrolle_natuerlich(page, entity_id, richtung * 80, conn)
+            else:
+                # Uninteressant -- schnelles Halblesen, weiterer Sprung als der alte
+                # feste 600px-Standard (KI kann in Sekunden viel mehr ueberfliegen).
+                scrolle_natuerlich(page, entity_id, richtung * 900, conn)
         elif e.startswith("tippe:"):
             teile = e[len("tippe:"):].split("|")
             if len(teile) == 2:
