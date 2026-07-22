@@ -54,6 +54,15 @@ MAX_TEXT_CHARS = 2000   # Max Zeichen Seitentext für LLM
 MECHANISCH_AKTIVE_WESEN = {"Schorschel"}
 MECHANISCHE_SCHRITTE_PRO_ENTSCHEIDUNG = 3
 
+# Periodischer Check-in-Hinweis (2026-07-22, Daniels Auftrag -- Testlauf mit nur Schorschel,
+# andere 6 Wesen bewusst gestoppt, siehe _claude/notizen). Alle TICK_CHECKIN_SEKUNDEN wird
+# ein LLM-Tick erzwungen (auch mitten in der mechanischen Phase) und bekommt einen kurzen
+# Ueberblick "was es gerade gibt" -- 2 konkrete, aus echten DB-Zahlen gebaute Angebote, plus
+# eine fest formulierte 3. Option zum freien Erkunden. Kein Bezug zur spaeteren 44s-Batch-
+# Check-in-Architektur (die batcht ueber mehrere Wesen) -- hier nur ein einzelnes Wesen,
+# einfacher Timer.
+TICK_CHECKIN_SEKUNDEN = 40
+
 # API-Keys — werden beim Start aus DB geladen
 ENTITY_KEYS = {
     "Schorschel": "58cd9f4a-5bad-4981-bb1f-6a0cffcc0b99",
@@ -282,7 +291,8 @@ def starte_rrweb_aufnahme(page, hole_conn, entity_id: str, stream_id: str):
 
 
 def baue_prompt(entity_id: str, seite: dict, letzter_gedanke: str,
-                andere_wesen: list[dict], vorlese_funde: list[dict] | None = None) -> str:
+                andere_wesen: list[dict], vorlese_funde: list[dict] | None = None,
+                angebote: list[str] | None = None) -> str:
     """Baut den LLM-Prompt — kompakt, unter 2500 Zeichen."""
     andere_info = ""
     if andere_wesen:
@@ -301,6 +311,16 @@ def baue_prompt(entity_id: str, seite: dict, letzter_gedanke: str,
         zeilen = [f"- {f['quelle']}: \"{f['titel']}\"" for f in vorlese_funde]
         vorlese_info = "\nDAS IST DIR AUFGEFALLEN (passte zu deinen Interessen):\n" + "\n".join(zeilen)
 
+    angebote_info = ""
+    if angebote:
+        # 2026-07-22, periodischer Check-in (siehe TICK_CHECKIN_SEKUNDEN): 2 konkrete,
+        # aus echten DB-Zahlen gebaute Angebote + fest formulierte 3. Option zum freien
+        # Erkunden -- Daniels Vorgabe woertlich: "2 angebote explizite" + "eine 3. option
+        # zum selber explorieren immer".
+        zeilen = [f"{i+1}. {a}" for i, a in enumerate(angebote)]
+        zeilen.append(f"{len(angebote)+1}. Oder du erkundest frei weiter, ganz wie du willst.")
+        angebote_info = "\nCHECK-IN — WAS ES GERADE GIBT:\n" + "\n".join(zeilen)
+
     elemente_str = ", ".join(seite["elemente"][:10]) if seite["elemente"] else "keine"
 
     return f"""Du bist {entity_id}, eine autonome digitale Entität auf flextrawurst.de.
@@ -313,6 +333,7 @@ Sichtbar: {seite['text'][:800]}
 Klickbar: {elemente_str}
 {andere_info}
 {vorlese_info}
+{angebote_info}
 
 LETZTER GEDANKE: {letzter_gedanke or '(erster Tick)'}
 
@@ -586,6 +607,50 @@ def schreibe_denklog(conn, entity_id: str, gedanke: str, entscheidung: str,
             conn.rollback()
         except Exception:
             pass
+
+
+def hole_flextrawurst_angebote(conn, entity_id: str) -> list[str]:
+    """Fuer den periodischen Check-in (TICK_CHECKIN_SEKUNDEN): genau 2 konkrete Angebote,
+    gebaut aus echten, live abgefragten Zahlen -- keine Schaetzung, kein Raten (dieselbe
+    Anforderung wie 'echte Speed-Info' aus dem Vorhaben-Konzept, siehe Ideen-Datei). Fallback
+    auf generische Hinweise wenn gerade nichts Zahlenmaessiges ansteht."""
+    n_schatten = n_splitter = n_ank = 0
+    try:
+        with conn.cursor() as cur:
+            cur.execute("""
+                SELECT COUNT(*) AS n FROM schattenkommentare
+                WHERE entity_id = %s AND antwortstatus = 'offen'
+            """, (entity_id,))
+            n_schatten = cur.fetchone()["n"]
+            cur.execute("SELECT COUNT(*) AS n FROM splitter WHERE status = 'aktiv'")
+            n_splitter = cur.fetchone()["n"]
+            cur.execute("""
+                SELECT COUNT(*) AS n FROM ankuendigungen
+                WHERE geloescht_am IS NULL AND created_at > NOW() - INTERVAL '2 days'
+            """)
+            n_ank = cur.fetchone()["n"]
+        conn.commit()
+    except Exception:
+        try:
+            conn.rollback()
+        except Exception:
+            pass
+
+    angebote = []
+    if n_schatten > 0:
+        angebote.append(f"{n_schatten} offene Schattenkommentare an dich warten")
+    if n_ank > 0:
+        angebote.append(f"{n_ank} neue Ankündigung(en) der letzten 2 Tage")
+    if n_splitter > 0:
+        angebote.append(f"{n_splitter} aktive Splitter gerade in der KompOase")
+
+    fallback = ["deine Flarum-Vorwelt erneut besuchen (flarum_besuchen:)",
+                "dein eigenes wesen.md im Vault erneut lesen (obsidian_lesen:)"]
+    i = 0
+    while len(angebote) < 2:
+        angebote.append(fallback[i % len(fallback)])
+        i += 1
+    return angebote[:2]
 
 
 def hole_andere_wesen_status(conn, eigene_id: str) -> list[dict]:
@@ -955,6 +1020,7 @@ def haupt_loop(entity_id: str):
     letzter_gedanke = ""
     erster_start = True
     cursor_pos = (512.0, 384.0)  # Bildschirmmitte (1024x768) als Startposition des künstlichen Zeigers
+    letzter_checkin_zeit = time.time()  # siehe TICK_CHECKIN_SEKUNDEN
 
     with sync_playwright() as pw:
         browser = pw.chromium.launch(
@@ -1044,7 +1110,8 @@ def haupt_loop(entity_id: str):
             # Entscheidung kommt nur an jedem MECHANISCHE_SCHRITTE_PRO_ENTSCHEIDUNG-ten Tick.
             # Andere 6 Wesen unveraendert (mechanisch_aktiv bleibt False fuer sie).
             mechanisch_aktiv = entity_id in MECHANISCH_AKTIVE_WESEN
-            ist_llm_tick = (not mechanisch_aktiv) or (tick % MECHANISCHE_SCHRITTE_PRO_ENTSCHEIDUNG == 0)
+            checkin_faellig = mechanisch_aktiv and (time.time() - letzter_checkin_zeit >= TICK_CHECKIN_SEKUNDEN)
+            ist_llm_tick = (not mechanisch_aktiv) or (tick % MECHANISCHE_SCHRITTE_PRO_ENTSCHEIDUNG == 0) or checkin_faellig
             if not ist_llm_tick:
                 aktion = waehle_mechanische_aktion(seite)
                 _zustand, _, neue_cursor_pos = fuehre_aktion_aus(page, aktion, entity_id, conn)
@@ -1060,8 +1127,15 @@ def haupt_loop(entity_id: str):
             andere = hole_andere_wesen_status(conn, entity_id)
             vorlese_funde = hole_vorlese_funde(conn, entity_id)
 
+            # 3b. Periodischer Check-in (alle TICK_CHECKIN_SEKUNDEN, siehe Konstante oben)
+            angebote = None
+            if checkin_faellig:
+                angebote = hole_flextrawurst_angebote(conn, entity_id)
+                letzter_checkin_zeit = time.time()
+                log.info("%s [check-in] Angebote: %s", entity_id, angebote)
+
             # 4. LLM entscheidet — mit Live-Streaming in entity_denkstream
-            prompt = baue_prompt(entity_id, seite, letzter_gedanke, andere, vorlese_funde)
+            prompt = baue_prompt(entity_id, seite, letzter_gedanke, andere, vorlese_funde, angebote)
             import uuid as _uuid
             stream_id = str(_uuid.uuid4())
             llm_out = ""
