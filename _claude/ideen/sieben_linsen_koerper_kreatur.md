@@ -164,3 +164,9 @@ Nichts.
 ## Was fehlt noch
 
 Antworten auf die drei offenen Fragen (visuelle Form, Parallelität, Kosten), bevor aus der Linsen-Idee selbst Code wird. Die Körper-Basis (Bewegungs-Kreatur ohne Linsen) läuft parallel als eigener, schon freigegebener kleiner Baustein.
+
+## Nachtrag — Körper-Basis gebaut+verifiziert (noch ohne die sieben Linsen)
+
+`zeige_cursor()` in `browser_agent.py` ersetzt das simple CSS-Dreieck durch ein prozedurales Canvas mit 6 IK-Beinen (Code-Skizze oben umgesetzt, mit echter "follow the leader"-Segmentlogik statt Pseudocode), Ausschlag/Tempo skaliert mit der echten Geschwindigkeit aus `bewege_cursor_natuerlich()` — genau wie in der Vision-Schicht oben beschrieben. Verifiziert: Canvas+Engine mit 6 Beinen laufen fehlerfrei über 20 simulierte Bewegungsschritte, keine JS-Fehler. Committed (werkraum `f421071de`).
+
+**Wichtig, damit hier nichts vermischt wird:** das ist NUR die Körper-Hülle (Bewegungs-Kreatur), noch OHNE die sieben Linsen als Gliedmaßen — die drei offenen Fragen oben (visuelle Form der Linsen, Parallelität, Kosten) sind dadurch nicht beantwortet, nur die technische Basis steht, auf der die Linsen später aufgesetzt werden könnten.

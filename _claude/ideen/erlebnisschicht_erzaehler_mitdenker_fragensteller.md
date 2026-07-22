@@ -377,3 +377,17 @@ Direkt im Anschluss, Daniel: *"wir nehmen jetzt alles was du da hast und die gan
 ### Stand danach
 
 Immer noch kein Bauauftrag. Zwei Recherche-Runden (gezielt zu C/H, dann breit über alles) jetzt beide dokumentiert. Wartet auf Daniels Entscheidung, wo es weitergeht.
+
+## Nachtrag — drei Bausteine gebaut+verifiziert+committed, direkt im Anschluss an "gleich direkt bauen"
+
+Daniel: *"ja gut und wir nutzen alles davon und wollen es haben und gleich direkt bauen und umsetzten"* — Umfang geklärt als: Scroll-Fix (echter Bug), Kachel-Zustands-Expression (Open-LLM-VTuber-Fund), IK-Kreatur-Körper-Basis (Vorstufe zur Sieben-Linsen-Idee, siehe `_claude/ideen/sieben_linsen_koerper_kreatur.md`, dort die volle Herleitung).
+
+**Scroll-Fix (`werkraum/welt/browser_agent.py`):** neue `scrolle_natuerlich()` — kleinschrittige Wheel-Bewegung statt 600px-Sprung, plus `melde_fokus(..., "scrolle", ...)`. Verifiziert: `scrollY` 0→400 auf echter scrollbarer Testseite, `entity_fokus_events`-Zeile mit `aktion='scrolle'` korrekt geschrieben (Testzeile danach entfernt).
+
+**Kachel-Zustands-Expression (`build_surface.ts`):** `.scv-card` bekommt Rahmen-Glow je nach `zustand` (dieselben Farben wie der Badge), plus kurzer Puls bei jedem echten Denkstream-Chunk. Live per Playwright bestätigt: `scv-zust-wach` erscheint durch echte Produktionsdaten, nicht nur synthetisch.
+
+**IK-Kreatur-Körper-Basis (`zeige_cursor()`):** ersetzt das simple CSS-Dreieck durch ein Canvas mit 6 prozeduralen IK-Beinen ("follow the leader", angelehnt an Reptile-Interactive-Cursor), Ausschlag/Tempo skaliert mit echter Geschwindigkeit aus `bewege_cursor_natuerlich()`. Verifiziert: Canvas+Engine mit 6 Beinen laufen fehlerfrei, keine JS-Fehler.
+
+Committed: `29cfb1e97` (flextrawurst: Kachel-Expression + Scroll-Erzähler-Text), `f421071de` (werkraum: Scroll-Fix + IK-Körper). Alle 7 browser-agent-Services neu gestartet.
+
+Direkt danach kam die Kraken-Körper-Idee ("mega idee") und daraus die Sieben-Linsen-Idee — beide jetzt in eigener Datei, siehe `_claude/ideen/sieben_linsen_koerper_kreatur.md`.
