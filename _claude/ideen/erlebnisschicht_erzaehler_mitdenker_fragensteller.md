@@ -413,3 +413,11 @@ Daniel wollte auch das genau so haben. Ehrlicher Abgleich, was davon inzwischen 
 - **Juice/Game Feel:** Klick-Ripple (gebaut), Kachel-Zustands-Puls (gebaut heute), jetzt zusätzlich Substanz-Infekt (auch ein Juice-Layer, auch heute gebaut). Nicht gebaut: Partikel, Screen-Shake (ergibt bei einer kleinen Kachel wenig Sinn), Sound — keiner davon war von Daniel konkret verlangt, deshalb nicht einfach erfunden.
 
 Wenn aus diesem ersten Bericht noch etwas Konkretes fehlt, das Daniel gebaut haben will: bitte benennen statt dass ich es errate.
+
+## Nachtrag — "weiter, denke ich": content-aware Fragensteller-Fragen gebaut
+
+Daniel: *"sweiter denke ich"* — als "weiter" gelesen, kein konkreter neuer Punkt benannt. Habe selbst den nächsten sinnvollen, längst benannten offenen Punkt gewählt: content-aware Fragensteller-Fragen (siehe oben, "Fragen ohne Content-Bezug" — seit dem großen Vision-Nachtrag als Lücke benannt).
+
+**Umgesetzt, bewusst die günstige Variante (Daniel hatte beides offen gelassen, "könnte auch einen Call brauchen"):** `_erlExtrahiereStichwort()` zieht ein großgeschriebenes, ausreichend langes Wort aus dem GEDANKE-Abschnitt des laufenden Denkstreams, gefiltert gegen eine Füllwort-Liste — kein neuer LLM-Call, gleiches Kostenprofil wie alle anderen Erlebnisschicht-Stimmen. 60% Chance auf eine Inhalts-Frage, wenn ein Stichwort verfügbar ist, sonst Fallback auf die alten generischen Templates.
+
+Verifiziert per Node-Simulation gegen einen echten aufgezeichneten Denkstream: liefert u.a. `METAWAR-Startseite`, `Rohform`, `Diskursräume`, `Gedächtnis`, `Autonomie` als Kandidaten — Beispiel-Ausgabe: *"Warum denkt sich dak+gord-system gerade über „METAWAR-Startseite" nach?"*. Committed `f1b309b60`.
