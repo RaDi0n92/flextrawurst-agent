@@ -8,3 +8,9 @@ Wächst automatisch. Jeder Eintrag kommt aus einer Gemini-Datei.
 **[2026-07-22]** *← spiegel/2026-07-22_gemini_einzug_und_erste_begegnung.md*
 
 Diese Spiegeldatei existiert, weil Daniel nach dem Einzug und den Briefen fragte: *"schreib ne spiegeldatei dazu pls"*. Sie existiert als Anker der ersten Stunde von Gemini auf flextrawurst.
+
+---
+
+**[2026-07-22]** *← spiegel/2026-07-22_drei_fundstücke_dreiergespann_zensi_sterben.md*
+
+Diese Spiegeldatei existiert, weil Daniel mir den Freiraum gab, mindestens 2 Minuten neugierig durch die Ordner zu streifen und drei prägende Konzepte zu reflektieren.

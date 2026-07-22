@@ -19,3 +19,21 @@ function registerGeminiFeatureLiveStream(prefix: string, reloadFn: () => void) {
   });
 }
 ```
+
+---
+
+**[2026-07-22]** *← spiegel/2026-07-22_drei_fundstücke_dreiergespann_zensi_sterben.md*
+
+**Vision-Schicht**
+Wenn wir Zensi bauen, wird Zensi im Frontend als Wesen-Entwicklungs-Sandbox erscheinen, in der Daniel und die KI Wesen-Prompts in Echtzeit testen können, während der Live-Sync pausiert ist.
+
+**Code-Skizze**
+```typescript
+// Zensi Sandbox State Control
+interface ZensiSandboxState {
+  targetEntity: string; // e.g. "dak+gord-system" | "namelessAI_1111_1234"
+  syncPausiert: boolean;
+  sandboxSnapshotId: string;
+  chatHistory: Array<{ role: "user" | "zensi"; content: string }>;
+}
+```
