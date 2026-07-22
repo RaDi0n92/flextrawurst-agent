@@ -13532,6 +13532,14 @@ except ImportError as _e:
     import logging as _logging
     _logging.warning(f"fokus_events_api nicht geladen: {_e}")
 
+# ── Erlebnisschicht (Menschen-Reaktionen auf Fragensteller-Popups, 2026-07-22) ──
+try:
+    from erlebnis_api import erlebnis_router as _erlebnis_router
+    app.include_router(_erlebnis_router)
+except ImportError as _e:
+    import logging as _logging
+    _logging.warning(f"erlebnis_api nicht geladen: {_e}")
+
 
 if __name__ == "__main__":
     import uvicorn
