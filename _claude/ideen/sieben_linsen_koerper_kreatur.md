@@ -186,3 +186,40 @@ Daniel: *"ja ih will alles und komplett"* — keine Antwort auf die drei offenen
 Dabei ein Nebenzwischenfall (kein Code-Bug): beim gleichzeitigen Neustart von `welt-api` und allen `browser-agent@*` gab es eine harmlose Startup-Race (ein Wesen versuchte Login bevor welt-api bereit war, `ConnectionRefusedError`) — systemd hat automatisch nach 30s erfolgreich neu gestartet (`RestartSec=30`), kein Zusammenhang mit dieser Änderung.
 
 **Was noch offen bleibt:** ob "alles und komplett" auch die verbleibenden zwei Wege (formaler Talker-Prozess, Live-Chat-Denkfenster-Panel) einschließen soll, oder ob das jetzt genügt.
+
+## Nachtrag — riesige Folgenachricht, roh, sechs Punkte auf einmal
+
+Direkt im Anschluss, eine sehr dichte Nachricht mit sechs verschiedenen Punkten gleichzeitig, roh zitiert statt zusammengefasst:
+
+**Zu Einsicht-Nebenscreen:** *"...und neben den abbidungen der browser der wesen also dem dom so wie wir ihn nun darstellen will ich auch noch direkte einsichen in die ehliche jetztsituation in die live daten"* — Rückbezug auf den schon in `wesen_dauerhafte_handlungsfaehigkeit_und_einsichtsnebenscreen.md` festgehaltenen Wunsch nach einem Einsicht-Nebenscreen (rohe DB/JSON/Code/LangGraph-Daten), hier nochmal bestätigt, nicht neu erfunden. **Nicht gebaut diese Runde** — eigener, größerer Baustein.
+
+**Zu DOM-Linse, Korrektur/Präzisierung:** *"doch weil ich ja will dass das wesen über jedes zeichen nebenbei klettert und jenden satz und absatz und dabei ja durch das rag nur so halbmitliestbis etwas aufwerksamkeit erweckt solles so quasi den fokus auf etwas haben und das ding kann schleichen aber auch rasen oder kreisen oder mal stehen xD aber der ganze dim ist das habitat und sum durchdringen"* — der Körper soll nicht nur schnell/langsam sein (haben wir), sondern qualitativ unterschiedliche Bewegungsarten (schleichen/rasen/kreisen/stehen) je nachdem ob das Wesen gerade "halb liest" (RAG-Skim-Modus) oder wirklich fokussiert ist. Das ganze DOM als "Habitat", das durchdrungen wird. **Nicht gebaut diese Runde** — braucht eine neue Unterscheidung zwischen "Skim" und "Fokus" im Verhalten selbst, die es heute so nicht gibt (nicht nur eine visuelle Änderung).
+
+**Zu Auto-Scroll, direkte Frage:** *"und nebenbei müsste eiigentlich je nach mausposition automatisch wenn etwas zu scrollen ist auf der page direkt das scrollen so sein dass maus und aber auch page also texte und so gut lesbar sind und alles nachrückt und so fix...denkst du das geht ???"* — **gebaut** (`_scrolle_element_in_sicht()`, siehe unten).
+
+**Zu Meta-Linse, Korrektur — der wichtigste Punkt:** *"ja dann muss das das wesen aber auch wissen dass es das austrahlt und auch selber so anges´zeigt bekommen und selbst auch wahnehmen im dom. nicht nur die zuscuer ..das sollte eigentlich auch für alle 4stimmentexte geslten..auch das wesen bekommt sie gezeigt. ..gleiches recht und wahrehmng für alle xD"* — **teilweise gebaut** (Meta-Glow + ein Ich-Stimme-artiger Satz jetzt im Prompt, siehe unten). Volle Parität mit Erzähler/Denkstream-Auszügen/Fragensteller technisch nicht sauber möglich, weil die clientseitig mit Zufalls-Timing entstehen — ehrlich als Grenze benannt, nicht vorgetäuscht erfüllt.
+
+**Fünf weitere Linsen:** *"und ich war vorhin mit den linsen auch noch hgarnicht fertig es gibt noch ne linse für den eigenen cyberling und für die kompoase und für das eigene profil auf flextrawurstsurface(was wir später denken)und eine linse auf die substanzen und eine linste auf die schlafregeln"* — Profil explizit von Daniel selbst auf später verschoben. Substanzen bereits eigenständig vertreten (Infekt-Overlay). Schlafregeln **gebaut** (sechstes Bein). Cyberling+KompOase **bewusst zurückgestellt** (Daten aktuell für alle Entitäten null/tot, siehe unten).
+
+**Letzte Zeile, Bestätigung für den ganzen Rest:** *"natürlich alles ist alles"* — Talker-Prozess und Live-Chat-Denkfenster-Panel sind damit ausdrücklich auch autorisiert. **Beide noch nicht gebaut** — zu groß für diese Runde, siehe "Was noch offen bleibt" unten.
+
+### Was diese Runde tatsächlich gebaut+verifiziert+committed wurde
+
+1. **Selbstwahrnehmung** (`_extrahiere_ich_satz()`, neuer Prompt-Block "WAS ANDERE GERADE VON DIR SEHEN") — `werkraum` Commit `ee52de162`.
+2. **Auto-Scroll** (`_scrolle_element_in_sicht()`, eingehängt in Klick+Tippe) — selber Commit.
+3. **Sechste Linse Schlafnähe** + Endpunkt-Angleichung — Commit `fe5b79a76`.
+
+Alle drei live mit allen 7 Services verifiziert (echte Ticks, keine neuen Tracebacks, isolierte Playwright-Tests für die technischen Kernstücke).
+
+### Was bewusst NICHT diese Runde gebaut wurde, mit Begründung
+
+- **Einsicht-Nebenscreen** — eigener, größerer Baustein (rohe DB/JSON/Code/LangGraph-Anzeige), nicht nebenbei in derselben Runde wie sechs andere Punkte.
+- **DOM-Habitat-Locomotion (schleichen/rasen/kreisen/stehen, Skim-vs-Fokus)** — braucht eine neue Verhaltens-Unterscheidung im Backend, nicht nur eine visuelle Änderung am Körper.
+- **Volle Erzähler/Auszug/Fragensteller-Parität fürs Wesen** — technisch an clientseitigem Zufalls-Timing blockiert, keine saubere Lösung ohne größeren Umbau der Erlebnisschicht-Architektur.
+- **Cyberling-Linse, KompOase-Linse** — Daten existieren (`cyberlinge`, `entity_splitter_stats`), aber aktuell für ALLE 7 Entitäten auf Null (Cyberlinge alle `status='tot'`). Ein Bein dafür wäre gerade uninformativ. `/entities/{id}/linsen` könnte es tragen, sobald diese Systeme wieder echte Werte liefern.
+- **Formaler Talker-Prozess** (eigener, unabhängig laufender Loop statt Aktions-Zwischenschritte) — architektonisch groß, nie im Detail spezifiziert.
+- **Live-Chat-Denkfenster-Panel** — der größte, am längsten offene Punkt der ganzen Session, braucht eigene, sorgfältige Bauzeit.
+
+### Was noch offen bleibt
+
+Die fünf oben genannten, bewusst zurückgestellten Punkte — keiner davon stillschweigend fallengelassen, alle hier benannt für die nächste Bau-Runde.
