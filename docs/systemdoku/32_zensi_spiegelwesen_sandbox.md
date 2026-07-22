@@ -225,3 +225,24 @@ Das erste durch meiotische Rekombination erschaffene Wesen **Synapse (Syn)** wur
 - **Kern-Prinzip:** *„Entropie ist nicht der Feind, sondern der Rohstoff für neue Ordnung.“*
 - **Wesensliste-Integration:** Syn ist vollwertig in `/api/wesensliste` integriert und im Zensi Chat ansprechbar.
 
+---
+
+## 14. Visuelle Zensi-UI Module (`index.html`)
+
+In `/root/zensi/index.html` wurden die 3 Frontend-Elemente für die neue Kognitions-Laboratoriums-Architektur direkt verbaut:
+
+1. **Pulsierendes Telemetrie-Badge (`#physio-badge`):**
+   - Befindet sich im Header neben der Wesensbezeichnung.
+   - Zeigt in Echtzeit VPS-Zustand, CPU-Last, RAM-Verbrauch und System-Entropie.
+   - Besitzt ein dynamisch animiertes Puls-Signal (`.pulse-dot.fieber`, `.pulse-dot.erregung`, `.pulse-dot.ruhe`), das alle 5s per Polling (`/api/physiologie/status`) synchronisiert wird.
+
+2. **Mutationskammer- & Stammbaum-Modal (`#mutations-modal`):**
+   - Aufrufbar über den neuen Header-Button `🧬 mutator`.
+   - Bietet interaktive Dropdowns zur Auswahl beider Elternteile (inkl. daughter entity *Syn*), Eingabefelder für Zeugungsimpuls & Tochter-ID.
+   - Button `🧬 Kognitive Meiose Zünden` löst `/api/mutationskammer/verschmelze` aus und zeigt in Echtzeit den meiotischen Stammbaum-Stamm, Audit-Scores und `wesen.md` Vorschau an.
+
+3. **Gedanken-EKG Profiler (`.ekg-profiler`):**
+   - Unter allen Bot-Nachrichten wird ein visualisiertes Schatten-Biopsie Thermografie-Band eingeblendet.
+   - Baut ein farbliches Varianz-Spektrum (blau für kohärente Stabilisation, gelb für moderate Spannung, rot für hohe Logit-Varianz).
+
+
