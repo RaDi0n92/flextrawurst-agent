@@ -123,6 +123,119 @@ def _pg_listen_dom_events_sse(entity_id: str):
     return gen()
 
 
+def _pg_listen_dom_events_alle_sse():
+    # 2026-07-22 (Daniel live gefunden, per Browser-EventSource-Tracing bestaetigt):
+    # Browser begrenzen gleichzeitige HTTP-Verbindungen pro Origin auf ~6 (klassisches
+    # HTTP/1.1-Limit). Die SCREENS-Seite brauchte bisher 7 einzelne dom-events-Streams
+    # (eine pro Wesen-Kachel) PLUS events/stream PLUS denkstream/all/stream -- weit ueber
+    # dem Limit. Ueberzaehlige Verbindungen haengen dann einfach im Browser fest, ohne
+    # Fehler, ohne je Daten zu bekommen -- welche Kachel das trifft ist praktisch
+    # zufaellig. Fix, analog zum schon bestehenden denkstream_api.py::/all/stream-Muster:
+    # EINE gemeinsame Verbindung fuer alle Wesen, jedes Event mit entity_id markiert,
+    # das Frontend sortiert client-seitig zum richtigen Kachel-Replayer. Jedes Wesen
+    # behaelt seinen eigenen individuellen Spiegel -- nur die Leitung ist gemeinsam.
+    async def gen():
+        conn = psycopg2.connect(DB_URI)
+        conn.set_isolation_level(psycopg2.extensions.ISOLATION_LEVEL_AUTOCOMMIT)
+        cur = conn.cursor()
+        cur.execute("LISTEN entity_dom_events")
+        read_conn = psycopg2.connect(DB_URI, cursor_factory=psycopg2.extras.RealDictCursor)
+
+        def _poll_once():
+            readable, _, _ = sel.select([conn], [], [], 0.5)
+            return bool(readable)
+
+        def _hole_event(event_id: str):
+            with read_conn.cursor() as c:
+                c.execute("SELECT event_json FROM entity_dom_events WHERE id = %s", (event_id,))
+                row = c.fetchone()
+                return row["event_json"] if row else None
+
+        def _hole_backlog_alle():
+            with read_conn.cursor() as c:
+                c.execute("""
+                    SELECT DISTINCT entity_id FROM entity_dom_events
+                    WHERE event_json->>'type' = '2'
+                """)
+                entity_ids = [r["entity_id"] for r in c.fetchall()]
+            ergebnis = []
+            for eid in entity_ids:
+                with read_conn.cursor() as c:
+                    c.execute("""
+                        WITH letzter_snapshot AS (
+                            SELECT created_at FROM entity_dom_events
+                            WHERE entity_id = %s AND event_json->>'type' = '2'
+                            ORDER BY created_at DESC LIMIT 1
+                        ), meta_davor AS (
+                            SELECT created_at FROM entity_dom_events
+                            WHERE entity_id = %s AND event_json->>'type' = '4'
+                                AND created_at <= (SELECT created_at FROM letzter_snapshot)
+                            ORDER BY created_at DESC LIMIT 1
+                        )
+                        SELECT event_json FROM entity_dom_events
+                        WHERE entity_id = %s
+                            AND created_at >= COALESCE(
+                                (SELECT created_at FROM meta_davor),
+                                (SELECT created_at FROM letzter_snapshot)
+                            )
+                        ORDER BY created_at ASC
+                    """, (eid, eid, eid))
+                    for r in c.fetchall():
+                        ergebnis.append({"entity_id": eid, "event": r["event_json"]})
+            return ergebnis
+
+        loop = asyncio.get_running_loop()
+        try:
+            backlog = await loop.run_in_executor(None, _hole_backlog_alle)
+            for item in backlog:
+                yield f"data: {json.dumps(item)}\n\n"
+
+            heartbeat = 0
+            while True:
+                ready = await loop.run_in_executor(None, _poll_once)
+                if ready:
+                    conn.poll()
+                    while conn.notifies:
+                        notify = conn.notifies.pop(0)
+                        try:
+                            meta = json.loads(notify.payload)
+                        except Exception:
+                            continue
+                        event = await loop.run_in_executor(None, _hole_event, meta["id"])
+                        if event is None:
+                            continue
+                        yield f"data: {json.dumps({'entity_id': meta.get('entity_id'), 'event': event})}\n\n"
+                        heartbeat = 0
+                else:
+                    heartbeat += 1
+                    if heartbeat >= 60:
+                        yield f": heartbeat\n\n"
+                        heartbeat = 0
+        finally:
+            cur.close()
+            conn.close()
+            read_conn.close()
+
+    return gen()
+
+
+@dom_events_router.get("/stream/all")
+async def dom_events_alle_sse():
+    """Live-SSE-Stream der rrweb-DOM-Events ALLER Wesen in EINER Verbindung — oeffentlich.
+    Payload je Event: {"entity_id": "...", "event": {...rrweb-Event...}}. Muss VOR der
+    dynamischen /stream/{entity_id}-Route registriert sein, sonst wuerde 'all' faelschlich
+    als entity_id gematcht."""
+    return StreamingResponse(
+        _pg_listen_dom_events_alle_sse(),
+        media_type="text/event-stream",
+        headers={
+            "Cache-Control": "no-cache",
+            "X-Accel-Buffering": "no",
+            "Access-Control-Allow-Origin": "*",
+        }
+    )
+
+
 @dom_events_router.get("/stream/{entity_id}")
 async def dom_events_sse(entity_id: str = Path(..., max_length=64)):
     """Live-SSE-Stream der rrweb-DOM-Events eines Wesens — oeffentlich, kein Auth
