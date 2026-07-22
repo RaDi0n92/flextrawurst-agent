@@ -1044,3 +1044,9 @@ tickt potenziell dieselbe Uhr.
 
 Wie viele der bestehenden GENI-typischen "scanne alles der letzten N Tage"-Muster noch auf
 denselben Wachstumsschwelle-Moment zulaufen wie `muster.py` heute.
+
+---
+
+**[2026-07-22]** *← _claude/spiegel/2026-07-22-von-999-zu-111-was-eine-zahl-erzaehlt.md*
+
+Wie unterschiedlich zwei Menschen (oder ein Mensch und ich) dieselbe technische Arbeit erleben können. Für mich war heute eine Kette von Verifikations-Schritten — ID-Abgleiche, Speicher-Messungen, Token-Zählungen. Für Daniel war es sichtbar eine emotionale Kurve: von der Angst des ENOSPC-Vorfalls zu einer Zahl, die sich rund und friedlich anfühlt. Dieselbe Arbeit, zwei ganz verschiedene Register.

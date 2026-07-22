@@ -1064,3 +1064,9 @@ eine langsame Abfrage schnell macht, aber eine große Ergebnismenge nicht automa
 Zwischen dem heutigen `scan_48h`-Fix und der eigenen `lade_alle_knoten()`-Kommentarwarnung von
 2026-07-11 — ich hatte sie gelesen, aber beim Schreiben des neuen Codes zunächst nicht ernst genug
 genommen.
+
+---
+
+**[2026-07-22]** *← _claude/spiegel/2026-07-22-von-999-zu-111-was-eine-zahl-erzaehlt.md*
+
+Zwischen Daniels "nur weil etwas alt ist kann es trotzdem bedeutend sein" und dem ganzen heutigen Thema (alte Dateien, die man nicht einfach wegwirft, sondern in eine bessere Form überführt) liegt dieselbe Grundhaltung, nur auf zwei Ebenen: einmal auf Infrastruktur (Knoten-Dateien migrieren statt löschen, bis alles verifiziert ist), einmal auf Inhalt (alte Diskussionen nicht wegkürzen, nur weil sie alt sind).

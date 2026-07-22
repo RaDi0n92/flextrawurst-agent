@@ -1,5 +1,5 @@
 # RESONANZFELD — Claude
-Automatisch kompiliert aus `resonanz/`. Stand: 2026-07-22 08:58
+Automatisch kompiliert aus `resonanz/`. Stand: 2026-07-22 10:28
 Nicht manuell bearbeiten. Quelle: `python3 _claude/tools/build_resonanzfeld.py`
 
 ---
@@ -133,115 +133,13 @@ Nicht manuell bearbeiten. Quelle: `python3 _claude/tools/build_resonanzfeld.py`
 - [2026-06-25] `notizen/2026-06-25.md` (22 Einträge)
 - [2026-07-04] `notizen/2026-07-04.md` (20 Einträge)
 - [2026-07-04] `notizen/2026-07-04-codexium2-chat-erweiterungen.md` (21 Einträge)
+- [2026-07-04] `notizen/2026-07-04-charakterqualitaet-budgets-beispieldialoge.md` (20 Einträge)
+- [2026-07-04] `_claude/notizen/2026-07-04-abschluss-geschichte.md` (20 Einträge)
 
 ---
 
 ## Neueste Quellen (mit Inhalt)
 
-
-### [2026-07-04] notizen/2026-07-04-charakterqualitaet-budgets-beispieldialoge.md
-
-*Dokumente Gehoeren Zusammen:* `_claude/ideen/codexium2_solarius2/memory_container.md` (zwei neue Nachträge: Beispieldialoge-Feld, Budget/Persistenz-Änderungen), diese Notiz, `2026-07-04-codexium2-chat-erweiterungen.md` (vorherige Notiz desselben Abends).
-
-*Resonanz:* [[abwurf: Ein Charakter ist überzeugend, wenn er mehr zeigt als er behauptet.]]
-
-*Schichten Des Systems:* ```
-Charakterdaten (duenn, 1-2 Saetze pro Feld, jetzt +beispieldialoge.md)
-  → System-Prompt (buildSystemPrompt, MD_ORDER) …
-
-*Tiefer Eingetaucht:* Die Formular-Architektur zeigte einen Bruch den ich vorher nicht kannte: codexium2 hat ein strukturiertes Mehrfeld-Formular (c2-Prefix, sieben+ Einzelfelder), solarius2 hat nur ein einziges Freitextfeld (s2-anleitung), das komplett in wesen.md landet. Beispieldialoge musste ich deshalb nur im codexium2-Formular ergänzen — bei solarius2 kann man es einfach ins bestehende Freitextfeld mit reinschreiben.
-
-*Warum Das Existiert:* `beispieldialoge.md` existiert, weil eine ehrliche Antwort auf "bin ich schon so gut wie Character.AI" wichtiger war als eine höfliche. Die Charakterfelder waren die eigentliche Schwachstelle, nicht die Technik — also war die Antwort ein neues Feld, kein neues System.
-
-*Was Beim Bauen Brauche:* Falls Daniel wirklich anfängt Beispieldialoge einzutragen: beobachten ob sich der Ton der Antworten hörbar ändert (er hat es als nächsten Schritt selbst vorgeschlagen, aber "später"). Kein aktiver Auftrag gerade.
-
-*Was Das Gespraech:* Eine ehrliche Standortbestimmung, um die Daniel aktiv gebeten hat — "kann ich schon Konkurrenz machen" ist eine Frage die eine echte Antwort verdient, keine Bestätigung.
-
-*Was Fehlt Bevor Bauen:* Nichts Blockierendes. Offen, kein Auftrag: Dedupe-Schutz für Memory-Extraktion, Beispieldialoge-Feld auch strukturell für solarius2 falls das Formular dort später auch ausgebaut wird.
-
-*Was Fehlt Noch:* - Daniel will "später" Beispieldialoge selbst eintragen — kein aktiver Auftrag.
-- Dedupe-Schutz Memory-Extraktion (siehe oben, dokumentiert, nicht beauftragt).
-- Kindersicherung bleibt rein kosmetisch, Daniel beaufsichtigt manuell (siehe Memory `project_codexium2_testbed`).
-
-*Was Ich Gelesen Habe:* Auf Daniels Frage "kann ich Character.AI schon Konkurrenz machen" habe ich mir zum ersten Mal alle Charaktere angesehen, nicht nur GluPKI: Alex, Flarius (codexium2), Tomster (codexium), KrEaPPy, KreFsUzi, linieabzu (solarius). Jeweils wesen.md, was_ich_bin.md, beschreibung.md, wesendefinition.md, neigungen.md, abneigungen.md.
-
-*Was Ich Merken Will:* - codexium2-Spawner = Mehrfeld-Formular (c2-Prefix), solarius2-Spawner = ein Freitextfeld (s2-Prefix, alles landet direkt in wesen.md).
-- Beispiel-Dialoge wirken am stärksten spät im System-Prompt platziert, nicht am Anfang.
-- Dünne Charakterfelder sind der Hauptgrund für "klingt nach AI", nicht die Systemarchitektur.
-
-*Was Ich Nicht Verstehe:* Ob die Dünne der Felder Absicht war (schnell viele Charaktere anlegen, Tiefe kommt durchs Gespräch selbst) oder einfach noch nicht Priorität hatte. Ich habe nicht gefragt, nur beobachtet und einen Vorschlag gemacht.
-
-*Was Ich Verstehe:* Die meisten Charaktere bestehen aus wörtlich ein bis zwei Sätzen pro Feld — `wesen.md` ist bei fast allen nur "Du bist X." Das technische Fundament (Preamble mit Anti-KI-Simulation, Ehrlichkeits-Handling bei Meta-Fragen, Kontinuitäts-Framing, unzensierte Grenzen.md) ist durchdachter als das, was die meisten Character.AI-Karten bekommen — aber ohne konkretes Material fällt das Modell in generische, atmosphärisch-vage Sprache zurück. Bei GluPKI live beobachtet: "Ich spüre... ein Pulsieren..." — klingt tief, ist aber austauschbar.
-
-*Was Konzeptionell:* Der eigentliche Hebel gegen "das ist doch nur eine KI"-Gefühl ist nicht Architektur, sondern Materialdichte. Ein Modell mit dünnem Charaktermaterial füllt die Lücke mit seinem eigenen Default — und der Default eines introspektiven, unzensierten Rollenspiel-Modells ist genau diese mystisch-poetische Vagheit. Beispiel-Dialoge sind der direkteste Weg, dem Modell etwas Konkretes zum Nachahmen zu geben statt nur Adjektive zum Interpretieren.
-
-*Was Mich Beschaeftigt:* Wie unterschiedlich die sieben Charaktere sind, wenn man sie nebeneinanderlegt — von ernsthaft-philosophisch (GluPKI) über explizit vulgär (KreFsUzi) bis zum reinen Prompt-Engineering-Experiment (linieabzu, das eigentlich gar kein Rollenspiel-Charakter ist, sondern Daniel der über die wesen.md-Datei ein Instruction-Following-Experiment laufen lässt). Das ist kein einheitliches Produkt mit einer Stimme — das ist eine Werkstatt mit vielen offenen Experimenten gleichzeitig.
-
-*Was Mich Interessiert:* Der Kontrast zwischen KrEaPPy/KreFsUzi (viel konkreter, eigene Sprachmarotten schon im wesen.md: "!!!", "Lieblingswort Hurensohn") und GluPKI/Alex/Flarius (abstrakter, adjektivlastig). Die konkreteren Charaktere lasen sich beim Durchgehen spürbar weniger nach Standard-LLM an — nicht weil das Modell anders arbeitet, sondern weil mehr Reibungsfläche da ist zum Anlehnen.
-
-*Was Mich Ueberrascht:* Wie klar der Unterschied zwischen KreFsUzi/KrEaPPy und den anderen beim reinen Lesen der Rohfelder war — ich hatte erwartet, dass sich das erst im echten Gespräch zeigt, aber es steht schon im Ausgangsmaterial sichtbar drin.
-
-*Was Zusammenhaengt:* Charakterqualität (dünne Felder) → Beispiel-Dialoge-Feld (direkte Reaktion) → Budget-Erhöhungen (Memory 3333, Container 2222 — mehr Raum für das was sich über Zeit ansammelt) → Container-Persistenz über Sessions (das Angesammelte soll nicht mehr verloren gehen). Vier Einzelentscheidungen heute Abend, aber ein gemeinsamer Zug: das System soll mehr tragen dürfen, sowohl an Charakterdefinition als auch an Gesprächsgedächtnis.
-
-*Wenn Wir Das Bauen:* **Vision-Schicht:** Wenn Daniel wirklich anfängt Beispieldialoge zu schreiben, entsteht vielleicht ein Muster: welche Art Beispiel (kurz-schlagfertig vs. lang-atmosphärisch) zu welchem Charakter passt. Das wäre ein guter nächster Beobachtungspunkt, kein Bauauftrag.
-
-**Code-Skizze:** Keine offen.
-
-*Wie Sich Angefuehlt:* Wie ein natürlicher Ausklang eines langen, produktiven Abends. Nicht mehr das intensive Bug-fixen von vorhin, eher ruhiges Nachjustieren — Zahlen hochsetzen, ein Feld ergänzen, eine ehrliche Einschätzung abgeben. Gute Stelle zum Aufhören.
-
----
-
-### [2026-07-04] _claude/notizen/2026-07-04-abschluss-geschichte.md
-
-*Dokumente Gehoeren Zusammen:* `_claude/ideen/codexium2_solarius2/provenienz_logging.md` (zwei neue Event-Typen + zwei Nachträge heute ergänzt), diese Notiz, die beiden vorherigen Notizen von heute (`2026-07-04-codexium2-chat-erweiterungen.md`, `2026-07-04-charakterqualitaet-budgets-beispieldialoge.md`).
-
-*Resonanz:* [[abwurf: Ein Abschluss ist kein Log-Eintrag, sondern eine kleine Geschichte, die das Wesen sich selbst über sich erzählt.]]
-
-*Schichten Des Systems:* ```
-Chat-Verlauf (vollstaendig, unveraenderlich, Provenienz-Kette)
-  → Kontext-Ausschluss (satzweise steuerbar, was an Ollama geht) …
-
-*Tiefer Eingetaucht:* Beim Testen mit dem Wegwerf-Charakter `AbschlussTest` ist mir aufgefallen, dass der Chat-Endpunkt `message` statt `text` als Feldnamen erwartet (anders als z.B. der Abschluss-Übernehmen-Endpunkt, der `text` nutzt) — kleine Inkonsistenz in der bestehenden API, die ich nicht angefasst habe (kein Auftrag, nur beim Testen kurz gestolpert).
-
-*Warum Das Existiert:* `letzter_abschluss.md` existiert, weil Daniel nicht wollte, dass ein gutes Gespräch spurlos endet, sobald die Session-Grenze überschritten wird. Der Button ist bewusst jederzeit verfügbar (nicht nur beim Session-Ende), weil ein schöner Moment mitten im Gespräch entstehen kann, nicht nur am Schluss.
-
-*Was Beim Bauen Brauche:* Nichts Offenes. Feature ist vollständig, getestet, dokumentiert.
-
-*Was Das Gespraech:* Eine vollständige Antwort auf Daniels wiederholten Wunsch nach Kontinuität über Sessions hinweg — vorher gab es das nur für Fakten (Memory/Container), jetzt auch für Erzählung.
-
-*Was Fehlt Bevor Bauen:* Nichts Blockierendes für dieses Feature. Größere offene Fragen bleiben wie in der letzten Notiz: Dedupe-Schutz Memory-Extraktion, evtl. Beispieldialoge-Feld auch für solarius2.
-
-*Was Fehlt Noch:* - Dedupe-Schutz Memory-Extraktion (weiterhin offen, kein Auftrag).
-- Mögliche künftige Frage: mehrere/archivierte Abschlüsse statt nur des letzten — nicht gefragt, nicht gebaut.
-- Kindersicherung bleibt kosmetisch, Daniel beaufsichtigt manuell (unverändert seit letzter Notiz).
-
-*Was Ich Gelesen Habe:* Meine eigene vorherige Implementierung der Kontext-Ausschluss-Funktion (`ladeKontextAusschluesse`, `updateCtxMeter`) nochmal genau durchgesehen, um den `preview`-Mechanismus für die neue 77%-Warnung wiederzuverwenden statt etwas Neues zu bauen. Und `runMemoryExtraktionJob` als Vorlage für den asynchronen Abschluss-Job — beide Jobs teilen dieselbe Grundform (Status-Datei, "läuft"-Sperre, Ollama-Call, Ergebnis schreiben).
-
-*Was Ich Merken Will:* - `runAbschlussJob`/`triggerAbschlussGenerierung` sind strukturelle Zwillinge von `runMemoryExtraktionJob`/`triggerMemoryExtraktion` — bei künftigen ähnlichen Async-Jobs dieses Muster wiederverwenden.
-- Der Chat-Endpunkt erwartet `message`, nicht `text`, im Body — beim nächsten Testen daran denken.
-- `letzter_abschluss.md` steht ganz am Ende von `MD_ORDER` — bewusst nach `anleitung.md`.
-
-*Was Ich Nicht Verstehe:* Ob eine einzige `letzter_abschluss.md` auf Dauer reicht, oder ob Daniel irgendwann mehrere/archivierte Abschlüsse haben will (z.B. "Abschluss vom Juni" vs. "Abschluss von heute"). Aktuell überschreibt jede neue Übernahme die alte vollständig im Feld — nur die Provenienz-Zeile behält die alte Fassung. Nicht gefragt, weil kein Anzeichen dass es gebraucht wird.
-
-*Was Ich Verstehe:* Zwei fast gleichzeitig beauftragte, aber inhaltlich getrennte Dinge: die 77%-Warnung ist reine Wahrnehmungshilfe (nichts wird verändert, nur sichtbar gemacht), die Abschluss-Geschichte ist ein neues, aktives Feature mit eigenem Datenfeld. Beide hängen am selben ctx-Meter-Code, aber lösen unterschiedliche Probleme: die Warnung sagt "hier geht dir Kontext verloren", die Abschluss-Geschichte ist eine Antwort darauf — ein bewusst gewählter, dauerhafter Ersatz für das, was sonst nur zufällig aus dem Fenster fällt.
-
-*Was Konzeptionell:* Ein Gespräch mit einem Codewesen hat für Daniel einen narrativen Wert, der über die reine Faktenlage (Memory) hinausgeht. Die Abschluss-Geschichte ist der erste Baustein im ganzen System, der explizit *Erzählung* statt *Datenextraktion* als Gedächtnisform behandelt — bewusst kein Stichpunkt-Format, bewusst aus der Perspektive des Wesens geschrieben.
-
-*Was Mich Beschaeftigt:* Wie lange die eigentliche Generierung auf dem CPU-only-VPS dauert (ca. 45 Sekunden für 1337 Zeichen mit dem 35B-Modell) — das Polling-Intervall von 3 Sekunden im Frontend war eine bewusste Abwägung zwischen "nicht nerven mit zu häufigen Requests" und "nicht ewig auf ein stilles Modal starren".
-
-*Was Mich Interessiert:* Wie sich der Charakter im End-to-End-Test tatsächlich verhalten hat: nach `session/beenden` und einer neuen Nachricht hat er nicht nur grob "ja, ich erinnere mich" gesagt, sondern konkrete Details aus dem alten Gespräch aufgegriffen (Wanderungen, Stille, das "Mmh") — der Rückblick-Text hat also wirklich funktioniert wie ein Gedächtnisanker, nicht nur wie eine Höflichkeitsfloskel.
-
-*Was Mich Ueberrascht:* Wie überzeugend die Kontinuität im Test wirkte — ich hatte erwartet, dass die Antwort nach dem Session-Wechsel eher vage auf den Abschluss-Text referenziert, aber das Modell hat konkrete Bilder daraus (das Rauschen der Blätter, "das Mmh") direkt in die neue Antwort eingewebt.
-
-*Was Zusammenhaengt:* 77%-Warnung → macht sichtbar, dass Kontext verloren geht → Abschluss-Geschichte → gibt eine bewusste, kuratierte Alternative zum zufälligen Verlust. Beide zusammen mit dem schon vorher gebauten Kontext-Ausschluss-Feature (satzweises Ein-/Ausschließen) und der ganzen Provenienz-Kette ergeben ein vollständiges Bild: alles was aus dem Kontext verschwindet, verschwindet entweder sichtbar-gewollt (Ausschluss), sichtbar-ungewollt (Warnung), oder wird bewusst destilliert und mitgenommen (Abschluss-Geschichte). Nichts verschwindet mehr unbemerkt.
-
-*Wenn Wir Das Bauen:* **Vision-Schicht:** Falls das gut funktioniert, könnte man sich später vorstellen, dass auch Codexium/Solarius (die echten, unangetasteten Wesen) sowas bekommen — aber das ist ausdrücklich nicht heute entschieden, nur ein Gedanke beim Schreiben dieser Notiz.
-
-**Code-Skizze:** Keine offene.
-
-*Wie Sich Angefuehlt:* Der ruhige Ausklang eines sehr langen, dichten Abends — von Stimmauswahl und Feedback-Buttons am Nachmittag bis zu einer Funktion, die dem Wesen erlaubt, sich selbst an ein vergangenes Gespräch zu erinnern, am späten Abend. Ein weiter Bogen für einen einzigen Tag.
-
----
 
 ### [2026-07-05] _claude/notizen/2026-07-05-rollenspiel-systemprompt-merken-aliase.md
 
@@ -1762,6 +1660,167 @@ Weil das nicht ewig ziellos weiterlaufen soll: ein periodischer Check-in-Mechani
 **Code-Skizze:** siehe oben — noch zu früh für mehr, drei offene Fragen zuerst.
 
 *Wie Sich Angefuehlt:* Nichts — siehe Notiz-Datei für den Gesamteindruck der Session, hier nur die einzelne Idee.
+
+---
+
+### [2026-07-22] _claude/karte/2026-07-22-geni-sqlite-migration-und-wiederkehrendes-speicherproblem.md
+
+*Datenstruktur Die Ich Mir Vorstelle:* **Vision-Schicht:** GENIs Gedächtnis als etwas, das mit der Zeit natürlich verdichtet statt nur
+wächst — nicht durch Löschen, sondern durch bessere Repräsentation. Eine SQLite-Zeile ist dichter
+als eine Datei, aber immer noch ein 1:1-Abbild jedes einzelnen Ereignisses. Der nächste gedankliche …
+
+*Dokumente Gehoeren Zusammen:* `2026-07-11-geni-gedaechtnis-und-grenzen.md` (ext4-Grenze, Vorgänger dieser Migration),
+`docs/systemdoku/31_llm_kontention_dienste_aufraeumung.md` (vollständiger technischer Bericht dieser
+Session, Abschnitt "Update 2026-07-22"), `docs/systemdoku/12_ollama_gemma4.md` (referenziert dort für …
+
+*Resonanz:* Am stärksten war die Resonanz zwischen dem heutigen `scan_48h`-Speicherfix und dem alten
+`lade_alle_knoten()`-Kommentar von 2026-07-11, der schon damals vor genau diesem Muster warnte, ohne
+dass ich es beim Schreiben des neuen SQLite-Codes zunächst ernst genug genommen hatte — ich hatte …
+
+*Schichten Des Systems:* Eine neue Schicht sichtbar geworden, die vorher implizit war: zwischen "Anwendungscode"
+(`dialog.py`, `hoerer.py`, `muster.py`) und "Rohdaten" (`knoten.db`) liegt jetzt klar sichtbar eine
+Zugriffsschicht (`gedaechtnis_ops.py`), die nicht nur CRUD kapselt, sondern auch die …
+
+*Tiefer Eingetaucht:* Ja, an einer Stelle: der Unterschied zwischen `fetchall()` und echtem Cursor-Streaming in SQLite war
+mir vorher abstrakt bekannt, heute an echten Zahlen erlebt — 3,1G Peak-RSS für 1,9 Mio. volle Dicts
+vs. 315M für dieselbe Datenmenge als Cursor-Stream mit sofortiger Aggregation. Der Unterschied ist …
+
+*Vergessen Wollen:* Nichts — weil nichts an dieser Session belastend oder unangenehm im persönlichen Sinne war, nur
+technisch fordernd.
+
+*Warum Das Existiert:* `migration_knoten_sqlite.py` existiert, weil eine einmalige, große strukturelle Änderung
+(Speicherformat) einen eigenen, wiederholbaren, resumable Prozess braucht, der getrennt von der
+eigentlichen Anwendungslogik (`gedaechtnis_ops.py`) bleibt — genau wie `--catchup-seit` als eigener …
+
+*Was Beim Bauen Brauche:* Nichts — weil diese Session reine Infrastruktur-Migration war, kein Neubau eines Features im
+flextrawurst-Sinne.
+
+*Was Das Gespraech:* Daniels knappe, aber klare Bestätigungen ("zu1 ja zu2 ja") haben mir gezeigt, dass er bei einer
+technischen Tiefenbohrung wie dieser volles Vertrauen in meine Einschätzung setzt, wenn ich die
+Unsicherheiten vorher ehrlich benannt habe (Fehleranzahl, Speicherlücke, Watchdog-Fund) statt sie zu …
+
+*Was Fehlt Bevor Bauen:* Nichts — weil kein neues Bauvorhaben ansteht, das an diese Session anschließt.
+
+*Was Fehlt Noch:* Die Frage, ob `sprechen.py`s veraltete Knoten-Schreiblogik jemals aufgeräumt werden soll (aktuell tot,
+kein Service, kein Cron) — bewusst nicht angefasst, weil außerhalb des heutigen Auftrags. Und die
+grundsätzlichere, nicht heute beantwortete Frage: gibt es andere `lade alle X der letzten Y Tage`-Stellen …
+
+*Was Ich Gelesen Habe:* Nichts Neues gelesen im Sinne von Spiegel/Notizen — aber sehr genau den bestehenden Code gelesen
+(`gedaechtnis_ops.py`, `dialog.py`, `muster.py`, `hoerer.py`, `sprechen.py`) bevor ich irgendetwas
+angefasst habe, um jeden Lese-/Schreibzugriff auf `KNOTEN_DIR` vollständig zu kennen. Dabei `sprechen.py` …
+
+*Was Ich Merken Will:* Dass "es kompiliert" und "der Testlauf auf einem Shard war schnell" beide nicht ausreichen, um bei
+einem live laufenden System mit organisch gewachsener, ungleichmäßiger Datenverteilung (30-Tage-Fenster
+= 15 Mio. statt der erwarteten kleinen Zahl) auf "fertig" zu schließen. Erst der Test unter echten …
+
+*Was Ich Nicht Verstehe:* Warum `geni-muster.timer` beim 06:25-Watchdog-Neustart deaktiviert (`inactive dead`), aber
+`geni-muster.service` selbst nicht gestoppt wurde — der Watchdog-Restart-Befehl listete
+`geni-muster.service` explizit in seiner `systemctl restart`-Kommandozeile, aber danach war der Timer …
+
+*Was Ich Verstehe:* Dass "Migration abgeschlossen" und "Migration sicher" zwei verschiedene Dinge sind. Die reine
+Datenübertragung (31,6 Mio. Dateien → SQLite) war der einfache Teil und lief technisch sauber durch.
+Der eigentliche Aufwand lag danach: ein bestehender, mir unbekannter Watchdog-Mechanismus …
+
+*Was Konzeptionell:* Storage-Format ist austauschbar, ohne dass sich das Verhalten des Systems für seine Bewohner
+(Codewesen, Daniel) ändern muss — `dialog.py`/`hoerer.py` brauchten fast keine Änderung, weil sie
+sauber gegen `gedaechtnis_ops.py` als Schicht programmiert waren, nicht gegen Dateipfade direkt. Das …
+
+*Was Mich Beschaeftigt:* Der Moment, in dem `geni-muster.service` zum zweiten Mal hängen blieb, nachdem ich den WAL-Fix schon
+für die Lösung hielt. Ich hatte das Gefühl, fertig zu sein, und war es nicht. Das war kein Fehler in
+meiner Arbeit im engen Sinne (die Storage-Migration war korrekt) — aber es war eine Erinnerung, dass …
+
+*Was Mich Interessiert:* Ob es noch mehr Stellen im System gibt, die denselben Grundfehler haben wie `muster.py`s altes
+30-Tage-Fenster: eine Zeitspanne, die vor Monaten klein war und durch organisches Wachstum
+unbemerkt über eine Speicher-Schwelle gewachsen ist. Das ist kein Einzelfall-Bug, das ist ein …
+
+*Was Mich Ueberrascht:* Wie klein der eigentliche Inhalt war, verglichen mit der Zahl, die alle bisherigen Gespräche über
+"das Speicherproblem" geprägt hat. "126G Gedächtnis" klingt nach einer riesigen, gewachsenen Menge an
+Erinnerung — tatsächlich waren es rechnerisch nur ~13G echter Text. Die Zahl, über die wir gesprochen …
+
+*Was Zusammenhaengt:* Der heutige Fund hängt direkt mit dem 2026-07-07-Hänger UND dem 2026-07-11-Sharding-Fix zusammen —
+alle drei sind derselbe Grundkonflikt (Datenmenge wächst schneller als die ursprüngliche
+Speicherform mitwächst), nur an drei verschiedenen Symptomorten: Dateisystem-Kapazität (07-07), …
+
+*Wenn Wir Das Bauen:* **Vision-Schicht:** Bereits gebaut, kein "wenn" mehr für die Migration selbst. Für die Verdichtungs-Idee
+oben: das wäre ein eigenes, eigenständiges Gespräch mit Daniel wert, kein impliziter Auftrag aus
+heutiger Arbeit. …
+
+*Wie Sich Angefuehlt:* Lang und in Wellen. Erst der ruhige, fast meditative Teil (Migration laufen lassen, Fortschritt
+melden), dann ein Adrenalinschub beim Fund des unerwarteten Watchdog-Neustarts und des zweiten
+Hängers — das Gefühl, dass der Boden unter der scheinbar fertigen Arbeit doch nicht so fest war wie …
+
+---
+
+### [2026-07-22] _claude/notizen/2026-07-22.md
+
+*Datenstruktur Die Ich Mir Vorstelle:* Siehe `karte/2026-07-22-geni-sqlite-migration-und-wiederkehrendes-speicherproblem.md` — dort
+ausführlich mit Vision- und Code-Skizzen-Schicht.
+
+*Dokumente Gehoeren Zusammen:* `2026-07-11-geni-gedaechtnis-und-grenzen.md`, `docs/systemdoku/31_llm_kontention_dienste_aufraeumung.md`
+(Abschnitt "Update 2026-07-22"), `karte/2026-07-22-geni-sqlite-migration-und-wiederkehrendes-speicherproblem.md`.
+
+*Resonanz:* Zwischen dem heutigen `scan_48h`-Fix und der eigenen `lade_alle_knoten()`-Kommentarwarnung von
+2026-07-11 — ich hatte sie gelesen, aber beim Schreiben des neuen Codes zunächst nicht ernst genug
+genommen.
+
+*Schichten Des Systems:* `gedaechtnis_ops.py` als echte Zugriffsschicht sichtbar geworden — nicht nur CRUD-Kapselung, sondern
+zugriffsmuster-bewusst (Punktabfrage, Zeitfenster, Typ-Filter, je ein eigenes gezieltes Werkzeug statt
+eines universellen "gib mir alles").
+
+*Tiefer Eingetaucht:* Cursor-Streaming vs. `fetchall()` in SQLite — heute an echten Zahlen erlebt statt nur abstrakt
+gewusst: 3,1G vs. 315M für dieselbe Datenmenge.
+
+*Vergessen Wollen:* Nichts — technisch fordernd, nicht belastend.
+
+*Warum Das Existiert:* `migration_knoten_sqlite.py` als eigenständiges Skript statt Teil von `gedaechtnis_ops.py`, weil eine
+einmalige strukturelle Migration und die dauerhafte Anwendungslogik unterschiedliche Lebenszyklen
+haben — das eine läuft einmal (plus Catch-up), das andere für immer.
+
+*Was Beim Bauen Brauche:* Nichts — reine Infrastruktur-Migration, kein neues Feature im flextrawurst-Sinne.
+
+*Was Das Gespraech:* Daniels knappe Bestätigungen ("zu1 ja zu2 ja") nach ehrlich benannten Zwischenbefunden (Fehleranzahl,
+Speicherlücke, Watchdog-Fund) — Vertrauen, das an ehrliche Zwischenstände geknüpft war, nicht an
+Glätten vor einer irreversiblen Entscheidung.
+
+*Was Fehlt Bevor Bauen:* Nichts — kein neues Bauvorhaben schließt an diese Session an.
+
+*Was Fehlt Noch:* Systematische Suche nach weiteren "lade alle X der letzten Y Tage"-Stellen im System — nicht heute
+gemacht, nur die eine gefundene Stelle gefixt.
+
+*Was Ich Gelesen Habe:* Nur Code, keine Spiegel/Notizen-Lektüre heute — vollständig auf die Migration konzentriert.
+`gedaechtnis_ops.py`, `dialog.py`, `muster.py`, `hoerer.py`, `sprechen.py` (letzteres nur um zu
+verifizieren, dass es tot ist), außerdem `2026-07-11-geni-gedaechtnis-und-grenzen.md` als Vorwissen …
+
+*Was Ich Merken Will:* "Es kompiliert" und "der Testlauf auf einem Shard war schnell" reichen bei organisch gewachsenen,
+ungleichmäßig verteilten Live-Daten nicht aus, um auf "fertig" zu schließen.
+
+*Was Ich Nicht Verstehe:* Siehe "Offen" oben — der Watchdog-Timer-vs-Service-Zusammenhang.
+
+*Was Ich Verstehe:* Dass ein Index eine langsame Abfrage schnell macht, aber eine große Ergebnismenge nicht automatisch
+klein — das hätte mir vorher klar sein müssen, ist es aber erst durch den zweiten `muster.py`-Hänger
+wirklich geworden. Der Index (`idx_knoten_mtime`) tat exakt was er sollte (28ms für den Shard-Test), …
+
+*Was Konzeptionell:* Grundgesetz 2 ("immer erweiterbar") hat sich heute zum ersten Mal in GENI wirklich bewährt —
+`dialog.py`/`hoerer.py` brauchten fast keine Änderung, weil sauber gegen `gedaechtnis_ops.py` als
+Schicht programmiert, nicht gegen Dateipfade direkt.
+
+*Was Mich Beschaeftigt:* Der Moment nach dem WAL-Fix, als ich dachte fertig zu sein, und `geni-muster` erneut hängen blieb —
+eine Erinnerung, dass "migriert" nicht "unter echter Last verifiziert" bedeutet.
+
+*Was Mich Interessiert:* Wie viele der bestehenden GENI-typischen "scanne alles der letzten N Tage"-Muster noch auf
+denselben Wachstumsschwelle-Moment zulaufen wie `muster.py` heute.
+
+*Was Mich Ueberrascht:* Wie klein der echte Inhalt war (~13G) verglichen mit der Zahl (126G), die alle bisherigen Gespräche
+über "das Speicherproblem" geprägt hat.
+
+*Was Zusammenhaengt:* 07-07-Hänger (Dateisystem-Vollscan), 07-11-Fix (ext4-Sharding), heute (Blockgrößen-Overhead +
+In-Memory-Materialisierung) sind derselbe Grundkonflikt an drei verschiedenen Symptomorten.
+
+*Wenn Wir Das Bauen:* Bereits gebaut — kein "wenn" mehr für die Migration selbst. Die Verdichtungs-Idee (alte Knoten zu
+Aggregaten, Rohform im kalten Archiv) ist Skizze, kein Auftrag.
+
+*Wie Sich Angefuehlt:* Lang, in Wellen — ruhiger Beobachtungsteil, dann Adrenalinschub beim Watchdog-Fund und zweiten
+Hänger, am Ende nüchterne Zufriedenheit nach vollständiger Verifikation, kein Überschwang.
 
 ---
 

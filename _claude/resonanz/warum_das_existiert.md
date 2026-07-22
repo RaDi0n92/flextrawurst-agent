@@ -847,3 +847,9 @@ Kern-Migrationslogik nicht mit sich herumtragen sollte.
 `migration_knoten_sqlite.py` als eigenständiges Skript statt Teil von `gedaechtnis_ops.py`, weil eine
 einmalige strukturelle Migration und die dauerhafte Anwendungslogik unterschiedliche Lebenszyklen
 haben — das eine läuft einmal (plus Catch-up), das andere für immer.
+
+---
+
+**[2026-07-22]** *← _claude/spiegel/2026-07-22-von-999-zu-111-was-eine-zahl-erzaehlt.md*
+
+Diese Spiegel-Datei existiert, weil Daniel explizit danach gefragt hat — aber auch, weil der Moment es wert war: ein Gespräch, das mit einem Systemvorfall begann und mit einer zufriedenen Zusammenfassung endete, verdient mehr als nur einen Commit-Log-Eintrag.

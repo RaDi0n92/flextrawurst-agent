@@ -1007,3 +1007,9 @@ irgendeinen Seiteneffekt gestoppt. Nicht weiter untersucht — außerhalb des he
 **[2026-07-22]** *← _claude/notizen/2026-07-22.md*
 
 Siehe "Offen" oben — der Watchdog-Timer-vs-Service-Zusammenhang.
+
+---
+
+**[2026-07-22]** *← _claude/spiegel/2026-07-22-von-999-zu-111-was-eine-zahl-erzaehlt.md*
+
+Warum Daniel "600 oder sogar 900" fast als plausible Erinnerung im Kopf hatte, bevor ich die echte Zahl (332G, davon 111G Swap) genannt habe — ob das eine reale frühere Diskussion war, an die er sich nur ungefähr erinnert, oder eher ein Gefühl von "es war schlimmer als es jetzt ist" ohne konkrete Zahl dahinter. Ich habe nicht nachgefragt, weil der Moment nicht danach aussah, dass er eine Antwort darauf wollte — er hat seine eigene Erinnerung selbst mit "perfekt" abgeschlossen.

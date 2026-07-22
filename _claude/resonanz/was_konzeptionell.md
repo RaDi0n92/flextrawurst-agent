@@ -1071,3 +1071,9 @@ Mal in GENI wirklich auf die Probe gestellt, und sie hat getragen.
 Grundgesetz 2 ("immer erweiterbar") hat sich heute zum ersten Mal in GENI wirklich bewährt —
 `dialog.py`/`hoerer.py` brauchten fast keine Änderung, weil sauber gegen `gedaechtnis_ops.py` als
 Schicht programmiert, nicht gegen Dateipfade direkt.
+
+---
+
+**[2026-07-22]** *← _claude/spiegel/2026-07-22-von-999-zu-111-was-eine-zahl-erzaehlt.md*
+
+Dass Abschluss nicht dasselbe ist wie Fertigstellung. Die Migration war technisch fertig, verifiziert, committed — aber erst Daniels eigener Rückblick ("999 zu 666 zu 555 zu 444 zu 333... perfekt") hat der Arbeit den Charakter eines abgeschlossenen Kapitels gegeben, nicht nur eines erledigten Tickets.

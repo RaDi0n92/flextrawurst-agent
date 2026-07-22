@@ -1179,3 +1179,9 @@ Werkzeug anbietet statt eines universellen "gib mir alles"-Aufrufs.
 `gedaechtnis_ops.py` als echte Zugriffsschicht sichtbar geworden — nicht nur CRUD-Kapselung, sondern
 zugriffsmuster-bewusst (Punktabfrage, Zeitfenster, Typ-Filter, je ein eigenes gezieltes Werkzeug statt
 eines universellen "gib mir alles").
+
+---
+
+**[2026-07-22]** *← _claude/spiegel/2026-07-22-von-999-zu-111-was-eine-zahl-erzaehlt.md*
+
+Eine neue, nicht-technische Schicht sichtbar geworden: die Erzählschicht, in der Daniel die Arbeit für sich selbst einordnet. Sie liegt über allem anderen (Code, Daten, Services) und ist genauso real wie die technischen Schichten — vielleicht sogar die, die am längsten hält, wenn die Zahlen längst wieder anders sind.

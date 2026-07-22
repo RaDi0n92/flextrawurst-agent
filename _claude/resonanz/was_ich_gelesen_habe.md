@@ -1666,3 +1666,9 @@ Nur Code, keine Spiegel/Notizen-Lektüre heute — vollständig auf die Migratio
 `gedaechtnis_ops.py`, `dialog.py`, `muster.py`, `hoerer.py`, `sprechen.py` (letzteres nur um zu
 verifizieren, dass es tot ist), außerdem `2026-07-11-geni-gedaechtnis-und-grenzen.md` als Vorwissen
 zur ext4-Grenze, die dieser Migration vorausging.
+
+---
+
+**[2026-07-22]** *← _claude/spiegel/2026-07-22-von-999-zu-111-was-eine-zahl-erzaehlt.md*
+
+Nichts — dieser Spiegel kommt aus dem Live-Gespräch selbst, nicht aus Lektüre.

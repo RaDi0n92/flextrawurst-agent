@@ -893,3 +893,9 @@ flextrawurst-Sinne.
 **[2026-07-22]** *← _claude/notizen/2026-07-22.md*
 
 Nichts — reine Infrastruktur-Migration, kein neues Feature im flextrawurst-Sinne.
+
+---
+
+**[2026-07-22]** *← _claude/spiegel/2026-07-22-von-999-zu-111-was-eine-zahl-erzaehlt.md*
+
+Nichts — heute war Reparatur- und Aufräumarbeit, kein Neubau.

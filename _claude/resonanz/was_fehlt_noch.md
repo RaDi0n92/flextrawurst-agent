@@ -1000,3 +1000,9 @@ im System, die auf dieselbe Wachstumsschwelle zulaufen wie `muster.py` es tat?
 
 Systematische Suche nach weiteren "lade alle X der letzten Y Tage"-Stellen im System — nicht heute
 gemacht, nur die eine gefundene Stelle gefixt.
+
+---
+
+**[2026-07-22]** *← _claude/spiegel/2026-07-22-von-999-zu-111-was-eine-zahl-erzaehlt.md*
+
+Ob es systemweit noch mehr Stellen gibt, an denen "neuestes zuerst" fälschlich als "wichtigstes zuerst" behandelt wird — nicht systematisch gesucht, nur die eine Stelle korrigiert, an der Daniel es bemerkt hat.

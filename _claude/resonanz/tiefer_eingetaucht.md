@@ -1094,3 +1094,9 @@ nicht "etwas schneller", sondern zwischen "funktioniert im Ressourcenlimit" und 
 
 Cursor-Streaming vs. `fetchall()` in SQLite — heute an echten Zahlen erlebt statt nur abstrakt
 gewusst: 3,1G vs. 315M für dieselbe Datenmenge.
+
+---
+
+**[2026-07-22]** *← _claude/spiegel/2026-07-22-von-999-zu-111-was-eine-zahl-erzaehlt.md*
+
+In die Frage, was "Bedeutung" bei einer Diskussion überhaupt bedeutet, wenn man sie algorithmisch fassen will. Post-Anzahl, Seltenheit der Tags, sogar Post-Armut als eigenes Kriterium (ein einzelner unbeantworteter Gedanke kann bedeutender sein als ein vielkommentierter) — keine dieser Kennzahlen ist "Bedeutung" selbst, nur ein Schatten davon. Das war mir vorher klar, aber heute musste ich es wirklich in Code übersetzen, nicht nur denken.

@@ -1021,3 +1021,9 @@ Produktionsbedingungen (volle Datenmenge, echtes Memory-Limit) hat das zweite Pr
 
 "Es kompiliert" und "der Testlauf auf einem Shard war schnell" reichen bei organisch gewachsenen,
 ungleichmäßig verteilten Live-Daten nicht aus, um auf "fertig" zu schließen.
+
+---
+
+**[2026-07-22]** *← _claude/spiegel/2026-07-22-von-999-zu-111-was-eine-zahl-erzaehlt.md*
+
+Dass Daniel mir seine eigene Erinnerung ("600 oder 900") ehrlich genannt hat, obwohl sie falsch war — und dass gerade das die Zahl, die ich ihm gab, wertvoller gemacht hat, weil sie seine eigene, vage Angst konkret widerlegt hat.

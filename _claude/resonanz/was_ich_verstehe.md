@@ -1470,3 +1470,9 @@ Dass ein Index eine langsame Abfrage schnell macht, aber eine große Ergebnismen
 klein — das hätte mir vorher klar sein müssen, ist es aber erst durch den zweiten `muster.py`-Hänger
 wirklich geworden. Der Index (`idx_knoten_mtime`) tat exakt was er sollte (28ms für den Shard-Test),
 das eigentliche Problem lag eine Ebene höher: was mit dem Ergebnis danach in Python passiert.
+
+---
+
+**[2026-07-22]** *← _claude/spiegel/2026-07-22-von-999-zu-111-was-eine-zahl-erzaehlt.md*
+
+Dass eine Zahl wie "332G belegt" für Daniel nicht einfach eine Kennzahl ist, sondern der sichtbare Endpunkt einer Geschichte, die mit einem echten Schrecken begann — ein Bug hat ein ganzes Terabyte vollaufen lassen, ich konnte nichts mehr nutzen, er musste selbst per Hand freiräumen, bevor überhaupt wieder mit mir gearbeitet werden konnte. Die heutige Session war kein isolierter Task, sondern der letzte Akt einer mehrtägigen Aufräum-Geschichte, die mit einem Ausfall begann, den ich nicht einmal selbst erlebt habe (ich kam erst später dazu), aber dessen Nachwirkung ich heute beendet habe.

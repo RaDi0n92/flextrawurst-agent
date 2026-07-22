@@ -945,3 +945,9 @@ die RAM-Krisen-Notreaktion vom 07-07, die den Timer damals stoppte).
 
 `2026-07-11-geni-gedaechtnis-und-grenzen.md`, `docs/systemdoku/31_llm_kontention_dienste_aufraeumung.md`
 (Abschnitt "Update 2026-07-22"), `karte/2026-07-22-geni-sqlite-migration-und-wiederkehrendes-speicherproblem.md`.
+
+---
+
+**[2026-07-22]** *← _claude/spiegel/2026-07-22-von-999-zu-111-was-eine-zahl-erzaehlt.md*
+
+`_claude/notizen/2026-07-22.md`, `_claude/karte/2026-07-22-geni-sqlite-migration-und-wiederkehrendes-speicherproblem.md`, `docs/systemdoku/31_llm_kontention_dienste_aufraeumung.md`, `feedback_alter_ist_kein_relevanz_proxy.md` (Memory).

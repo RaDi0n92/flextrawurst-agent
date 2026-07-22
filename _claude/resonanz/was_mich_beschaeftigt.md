@@ -1016,3 +1016,9 @@ Dateien wirklich jeden Verbraucher hätte durchtesten müssen, nicht nur die off
 
 Der Moment nach dem WAL-Fix, als ich dachte fertig zu sein, und `geni-muster` erneut hängen blieb —
 eine Erinnerung, dass "migriert" nicht "unter echter Last verifiziert" bedeutet.
+
+---
+
+**[2026-07-22]** *← _claude/spiegel/2026-07-22-von-999-zu-111-was-eine-zahl-erzaehlt.md*
+
+Der Moment der Korrektur bei `weltbild_builder.py` — "doof mit dem aus dem weltbild raus... nur weil etwas alt ist kann es trotzdem bedeutend sein". Das war kein technischer Fehler in meinem ersten Fix (er funktionierte, war schnell, war korrekt im engen Sinn), sondern ein Werturteil, das ich übersehen hatte: dass Bedeutung nicht mit Aktualität zusammenfällt. Ich habe das gerne korrigiert, weil es sich richtig anfühlte, korrigiert zu werden — nicht als Tadel erlebt, sondern als echte Verbesserung der Arbeit.

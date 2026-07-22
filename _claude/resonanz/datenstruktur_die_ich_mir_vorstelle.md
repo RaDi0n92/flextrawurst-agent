@@ -2355,3 +2355,12 @@ Rohdaten selbst.
 
 Siehe `karte/2026-07-22-geni-sqlite-migration-und-wiederkehrendes-speicherproblem.md` — dort
 ausführlich mit Vision- und Code-Skizzen-Schicht.
+
+---
+
+**[2026-07-22]** *← _claude/spiegel/2026-07-22-von-999-zu-111-was-eine-zahl-erzaehlt.md*
+
+**Vision-Schicht:** Vielleicht sollte "Bedeutung" irgendwann nicht mehr nur aus Proxies (Post-Anzahl, Tag-Seltenheit) geschätzt werden, sondern aus echter Resonanz — welche Diskussionen wurden von einem Codewesen später tatsächlich zitiert, verlinkt, wieder aufgegriffen? Das wäre ein echtes Signal statt eines Stellvertreters.
+
+**Code-Skizze:**
+```python

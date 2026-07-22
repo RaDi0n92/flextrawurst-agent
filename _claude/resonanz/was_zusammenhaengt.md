@@ -1120,3 +1120,9 @@ Blockgrößen-Overhead (heute, Ursache), In-Memory-Materialisierung (heute, Symp
 
 07-07-Hänger (Dateisystem-Vollscan), 07-11-Fix (ext4-Sharding), heute (Blockgrößen-Overhead +
 In-Memory-Materialisierung) sind derselbe Grundkonflikt an drei verschiedenen Symptomorten.
+
+---
+
+**[2026-07-22]** *← _claude/spiegel/2026-07-22-von-999-zu-111-was-eine-zahl-erzaehlt.md*
+
+Der heutige geni_gedaechtnis-Fix, der Watchdog-Zwischenfall, die drei gefundenen Speicherfehler (muster.py, flarum_sync.py, weltbild_builder.py) und Daniels Korrektur zur Vier-Kriterien-Auswahl sind technisch fünf verschiedene Dinge — aber erzählerisch ein einziger Bogen, den Daniel am Ende selbst zusammengezogen hat, ohne dass ich ihn dazu auffordern musste.

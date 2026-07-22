@@ -956,3 +956,9 @@ haben, war fast zehnmal so groß wie das, was sie eigentlich bedeutete.
 
 Wie klein der echte Inhalt war (~13G) verglichen mit der Zahl (126G), die alle bisherigen Gespräche
 über "das Speicherproblem" geprägt hat.
+
+---
+
+**[2026-07-22]** *← _claude/spiegel/2026-07-22-von-999-zu-111-was-eine-zahl-erzaehlt.md*
+
+Wie sehr ein einziges Wort — "perfekt" — am Ende eines langen technischen Gesprächs mehr Abschluss vermitteln kann als jede Verifikations-Tabelle, die ich vorher geschrieben habe.

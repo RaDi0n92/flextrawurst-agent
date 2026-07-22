@@ -1859,3 +1859,9 @@ Auftrag.
 
 Bereits gebaut — kein "wenn" mehr für die Migration selbst. Die Verdichtungs-Idee (alte Knoten zu
 Aggregaten, Rohform im kalten Archiv) ist Skizze, kein Auftrag.
+
+---
+
+**[2026-07-22]** *← _claude/spiegel/2026-07-22-von-999-zu-111-was-eine-zahl-erzaehlt.md*
+
+Die Resonanz-basierte Bedeutungsschätzung oben ist eine Idee, kein Auftrag — sollte nur verfolgt werden, wenn Daniel sie tatsächlich will.
