@@ -347,3 +347,33 @@ Quellen:
 ### Stand danach
 
 Kein Bauauftrag — wie von Daniel vorgegeben ("dann stehen wir weiter"), Ergebnis präsentiert, wartet auf gemeinsame Entscheidung.
+
+## Nachtrag — "alles ins www werfen", roh missverstanden und richtiggestellt
+
+Direkt im Anschluss, Daniel: *"wir nehmen jetzt alles was du da hast und die ganzen dokus und alles und werfen es inst www"*. Ich habe das zuerst als Veröffentlichungs-Auftrag gelesen (öffentlich posten) und nachgefragt, weil das mit privaten Zitaten/Systemdetails ein echtes Risiko wäre. Klärung per Nachfrage — Umfang: *"Wirklich alles"*. Ziel: *"du sollst es als suche benutzen um noch genialere strategien zu erhalten xD"* — also kein Veröffentlichen, sondern: alles was wir haben (die ganze rohe Vision, nicht nur die technische Zusammenfassung) als Grundlage für eine breitere, tiefere Websuche nutzen, um noch bessere Strategien zu finden. Kein Upload, keine Consent-Frage — reine Recherche-Erweiterung.
+
+### Sechs Suchen, quer durch alle drei Ideen-Dateien (nicht nur SCREENS)
+
+**Treffer 1, der stärkste — Open-LLM-VTuber existiert bereits und macht fast genau unsere Ich-Stimme-Idee:** *"Open-LLM-VTuber displays AI's inner thoughts, allowing you to see AI's expressions, thoughts and actions without them being spoken. [...] The system separates internal processing from vocalized output. [...] Live2D works as an interaction feedback layer where character expressions, motion, touch feedback help users perceive system state — for example, whether the AI is listening, thinking, speaking, or changing mood can be communicated visually."* Neue Idee daraus, die wir noch nicht hatten: Zustand (denkt/hört/spricht/Stimmung) zusätzlich zu Text-Popups auch als **visuelle Kachel-Expression** zeigen (Rahmenfarbe/Glow-Muster je nach `entscheidung`/Denkstream-Zustand) — nicht nur Text, auch Form.
+
+**Treffer 2 — unsere bestehende Architektur entspricht bereits dem Industriestandard für Agent-Observability:** *"Real-time visualization architectures typically comprise three layers: a data-collection layer that captures the agent's interactions as they occur; a streaming layer that filters and routes captured events; and a visualization layer that renders these events to users in real time."* Entity_denkstream/fokus_events = Collection, SSE = Streaming, Popups/Grid = Visualization — schon richtig geschichtet, unabhängig von der C-Frage.
+
+**Treffer 3 — reale Kostenzahlen zur "billig-mechanisch vs. teuer-LLM"-Frage (aus der zweiten Ideen-Datei, dauerhafte Handlungsfähigkeit):** *"The difference between GPT-4o and Gemini Flash for high-volume automation is roughly 285x. [...] Agent-E parses DOM structure directly without vision models, which runs faster but struggles when websites use dynamic dropdowns. [...] For tasks where raw reasoning matters less than reliable execution, routing strategies let you use expensive models only when needed."* Bestätigt Daniels eigene Intuition als Industriestandard, nicht nur Eigenidee.
+
+**Treffer 4 — für die Vault-Selbstorganisation ein direktes Referenzprojekt:** `claude-obsidian` (GitHub, AgriciDaniel) — *"Self-organizing AI second brain for Obsidian [...] Drop any source and Claude reads, links, and files it into one connected knowledge graph of plain Markdown you own."*
+
+**Zwei Suchen ohne echten neuen Ertrag, ehrlich benannt statt erfunden:** "ehrliches Feedback statt Gamification" (Grundgesetz-1-Feedbackprinzip) und "Fragment als eigene Mini-Webseite" (Dreiergespann-Fragment-Ebene) brachten nur generische Microservice-/HCI-Treffer, nichts über unsere eigene Dreiergespann-Theorie hinaus.
+
+### Quellen
+
+- [GitHub - Open-LLM-VTuber/Open-LLM-VTuber](https://github.com/Open-LLM-VTuber/Open-LLM-VTuber)
+- [Project Overview | Open LLM Vtuber](http://docs.llmvtuber.com/en/docs/intro/)
+- [AI Agent Observability Platforms 2026 — getmaxim.ai](https://www.getmaxim.ai/articles/top-5-ai-agent-observability-platforms-in-2026/)
+- [Agentic AI Observability: A 2026 Playbook — arthur.ai](https://www.arthur.ai/column/agentic-ai-observability-playbook-2026)
+- [Lyfe Agents: Generative agents for low-cost real-time social interactions (arXiv)](https://arxiv.org/pdf/2310.02172)
+- [Best 30+ Open Source Web Agents in 2026 — aimultiple.com](https://aimultiple.com/open-source-web-agents)
+- [GitHub - AgriciDaniel/claude-obsidian](https://github.com/AgriciDaniel/claude-obsidian)
+
+### Stand danach
+
+Immer noch kein Bauauftrag. Zwei Recherche-Runden (gezielt zu C/H, dann breit über alles) jetzt beide dokumentiert. Wartet auf Daniels Entscheidung, wo es weitergeht.
