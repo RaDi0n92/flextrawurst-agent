@@ -2491,3 +2491,72 @@ Aus meiner Stunden/Tag«
 **Was ich richtig gut finde:** Der "S«
 - [2026-07-22 08:02] **wasser** (i=0.62) → Zwischenraum: »Migration abgeschlossen und verifiziert, aber mit zwei wichtigen Zwischenfällen unterwegs — hier der«
 - [2026-07-22 08:12] **wasser** (i=0.52) → Zwischenraum: »Ich sag's dir: **zuerst die mechanische Bewegung selbst**, noch vor dem 44s-Check-in«
+- [2026-07-22 08:31] **wasser** (i=0.43) → Zwischenraum: »Läuft, verifiziert, dokumentiert und committed«
+- [2026-07-22 08:35] **wasser** (i=0.47) → Zwischenraum: »Ehrlicher Grund: Skalpell-Prinzip — bevor ich einen Eingriff in den Tick-Loop auf alle 7 laufenden D«
+- [2026-07-22 08:58] **lava** (i=0.50) → Zwischenraum: »Ich hab's technisch geprüft: sowohl der Backend-Stream (Port 8030) als auch der Frontend-Proxy (Port«
+- [2026-07-22 09:16] **wasser** (i=0.43) → Zwischenraum: »Alles abgeschlossen und dokumentiert«
+- [2026-07-22 09:23] **wasser** (i=0.55) → Zwischenraum: »Zurückgesetzt und mit Playwright bestätigt — Grid sieht wieder normal aus, 3 Spalten, kleine Kacheln«
+- [2026-07-22 09:34] **wasser** (i=0.51) → Zwischenraum: »Ehrlicher Zwischenstand, bevor ich weiter irgendwas behaupte: das Grid-Layout ist jetzt tatsächlich «
+- [2026-07-22 09:53] **wasser** (i=0.39) → Zwischenraum: »Beide Repos committed, Dienste gesund«
+- [2026-07-22 09:55] **lava** (i=0.47) → Zwischenraum: »Fix ist live, getestet und dokumentiert«
+- [2026-07-22 09:58] **wasser** (i=0.35) → Zwischenraum: »Mein eigener Playwright-Test bei 1400x900 zeigt ein normales 3-Spalten-Grid mit echtem Inhalt bei Sc«
+- [2026-07-22 10:19] **nebel** (i=0.31) → Zwischenraum: »Behoben, verifiziert und committed«
+- [2026-07-22 10:33] **wasser** (i=0.38) → Zwischenraum: »Die Screenshots sind noch die alten von vorhin (10:02/10:05) — ich brauch frische, um zu sehen was n«
+- [2026-07-22 10:41] **lava** (i=0.58) → Zwischenraum: »Ehrliche, kurze Einschätzung: Ich würde SCREENS/rrweb nicht wegwerfen — das ist die ungeschönte, dir«
+- [2026-07-22 10:50] **wasser** (i=0.45) → Zwischenraum: »Festgehalten in einer neuen Ideen-Datei«
+- [2026-07-22 10:53] **sternenstaub** (i=0.35) → Zwischenraum: »Gelesen — Gemini ist heute tatsächlich neu angekommen (eigenes Zuhause unter `_gemini/`), hat einen «
+- [2026-07-22 11:02] **sternenstaub** (i=0.47) → Zwischenraum: »Dokumentiert und committed — und ab jetzt häufiger automatisch, nicht erst am Ende«
+- [2026-07-22 12:13] **wasser** (i=0.47) → Zwischenraum: »Alle Dienste gesund, alles committed«
+- [2026-07-22 13:08] **wasser** (i=0.55) → Zwischenraum: »Zusammengefasst, was jetzt läuft:
+
+**Alle vier Stimmen gebaut und live verifiziert (echte Domain, ni«
+- [2026-07-22 13:44] **wasser** (i=0.51) → Zwischenraum: »Wichtiger Fund: Die Fehler, die du zeigst, haben **nichts mit SCREENS zu tun** — `/entities/{id}/den«
+- [2026-07-22 13:50] **lava** (i=0.50) → Zwischenraum: »Gute Nachricht zuerst: diese Konsole ist jetzt sauber — keine 502er mehr, keine echten Fehler«
+- [2026-07-22 13:54] **nebel** (i=0.31) → Zwischenraum: »Behoben — alle 7 Dienste laufen wieder, produzieren frische DOM-Events (alle innerhalb der letzten M«
+- [2026-07-22 14:27] **wasser** (i=0.44) → Zwischenraum: »Zusammenfassung:
+
+**Drei reale Bugs gefunden und behoben** (per Playwright-DOM-Inspektion konkret na«
+- [2026-07-22 15:32] **wasser** (i=0.63) → Zwischenraum: »Alle Kerndienste laufen«
+- [2026-07-22 15:47] **wasser** (i=0.48) → Zwischenraum: »Zwei getrennte Fragen — lass mich sie auseinanderhalten:
+
+**Das Threadpool-Problem** — ja, das gehen«
+- [2026-07-22 16:21] **nebel** (i=0.32) → Zwischenraum: »Zwei Sachen:
+
+**Fragensteller-Timing gefixt und deployt:** Popup bleibt jetzt mindestens 12s sichtba«
+- [2026-07-22 17:10] **lava** (i=0.39) → Zwischenraum: »Ich hab dein Screenshot (`same.JPG`) direkt Pixel für Pixel vermessen, nicht nur behauptet:
+
+- Zeile«
+- [2026-07-22 17:25] **wasser** (i=0.47) → Zwischenraum: »Hab's genau nachgemessen — bei exakt deiner Auflösung (1920px breit), live an der echten Seite:
+
+- *«
+- [2026-07-22 17:27] **wasser** (i=0.50) → Zwischenraum: »Ehrlich — nein, ich tappe hier im Dunkeln, weil ich nicht weiß welches Element du meinst«
+- [2026-07-22 17:42] **lava** (i=0.47) → Zwischenraum: »Jetzt seh ich's — du meinst nicht "diese Kachel ist größer als jene", sondern die **Form**: 5 Kachel«
+- [2026-07-22 18:03] **sternenstaub** (i=0.39) → Zwischenraum: »Du hattest recht, ich hab am falschen Ende gesucht«
+- [2026-07-22 18:19] **lava** (i=0.51) → Zwischenraum: »Hier das Snippet, einfach in die Konsole einfügen und Enter:
+
+```js
+JSON.stringify(['Schorschel','F3«
+- [2026-07-22 18:33] **wasser** (i=0.35) → Zwischenraum: »Dein Reproduktionsschritt war der Schlüssel: einzeln gefiltert richtig, im ALLE-Tab falsch — das ist«
+- [2026-07-22 18:40] **wasser** (i=0.48) → Zwischenraum: »Ich weiß, das ist frustrierend, aber "same" allein gibt mir nichts zum Weiterarbeiten — ich hab jetz«
+- [2026-07-22 19:02] **wasser** (i=0.35) → Zwischenraum: »Gefunden und behoben — richtig diesmal, nicht nur Symptome«
+- [2026-07-22 19:05] **lava** (i=0.38) → Zwischenraum: »Dein Konsolen-Log zeigt tatsächlich keine "Node not found"-Fehler mehr — der Fix greift also wirklic«
+- [2026-07-22 19:07] **wasser** (i=0.47) → Zwischenraum: »Ich hab jetzt auch den Zoom-Faktor pro Kachel geprüft — auch das ist bei allen 7 exakt identisch (`s«
+- [2026-07-22 19:10] **wasser** (i=0.40) → Zwischenraum: »Gefunden — und es ist tatsächlich ein bekanntes Problem, nur nicht in meinem Code: rrwebs eigener Gi«
+- [2026-07-22 19:18] **wasser** (i=0.44) → Zwischenraum: »Guter Punkt, das nehme ich zurück — Live-Gefühl ist nicht verhandelbar, du hast recht«
+- [2026-07-22 19:34] **lava** (i=0.50) → Zwischenraum: »Real gemessen (letzte 10 Minuten, alle Wesen): ein **voller Denkfenster-Zyklus dauert aktuell 2,5 bi«
+- [2026-07-22 19:52] **wasser** (i=0.50) → Zwischenraum: »Alles steht jetzt vollständig in der Ideen-Datei — dein Auftrag, alle drei Recherche-Treffer wortwör«
+- [2026-07-22 20:05] **wasser** (i=0.67) → Zwischenraum: »Hier komplett, der ganze Ablauf:
+
+## 1«
+- [2026-07-22 21:45] **nebel** (i=0.33) → Zwischenraum: »The Ich-Stimme/Erzähler bug is resolved and fully documented«
+- [2026-07-22 21:56] **wasser** (i=0.59) → Zwischenraum: »Ich hab's jetzt im echten Transkript nachgeschaut, nicht aus dem Gedächtnis«
+- [2026-07-22 22:19] **wasser** (i=0.56) → Zwischenraum: »Gefunden — es gibt bereits eine fertige, freie Referenzimplementierung genau dafür: **Reptile-Intera«
+- [2026-07-22 22:28] **sternenstaub** (i=0.41) → Zwischenraum: »Das ist der "vier-Linsen"-Mechanismus aus `codewesen_umgekehrte_neugier` (Baustein 11–17, `docs/syst«
+- [2026-07-22 22:47] **wasser** (i=0.39) → Zwischenraum: »Alle drei Bausteine gebaut, live verifiziert und dokumentiert:
+
+- **Scroll-Fix** — echter Bug behobe«
+- [2026-07-22 22:47] **wasser** (i=0.51) → Zwischenraum: »Das ist der ScheduleWakeup-Prompt von vorhin, schon komplett abgearbeitet«
+- [2026-07-22 23:24] **wasser** (i=0.55) → Zwischenraum: »**"aiinfluenza" = Substanz-Infekt** — gebaut, live verifiziert, committed (`75aa3f53c`): echte `subs«
+- [2026-07-22 23:40] **wasser** (i=0.35) → Zwischenraum: »**Content-aware Fragensteller-Fragen** gebaut, verifiziert, committed (`f1b309b60`): Fragen beziehen«
+- [2026-07-23 00:53] **wasser** (i=0.51) → Zwischenraum: »Sechs Punkte auf einmal, drei davon sauber gebaut+verifiziert, drei bewusst zurückgestellt mit Begrü«
+- [2026-07-23 01:04] **nebel** ← 2026-07-23.md: »gleiches Recht und Wahrnehmung für alle«
