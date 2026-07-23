@@ -346,3 +346,19 @@ Daniel: *"so und die könne ale so in vault schreiben wie das andere ohne llmcal
 **Bewusst NICHT ausgerollt:** `gedaechtnis` (reiner LangGraph-Zähler, keine Wesen-Aktion dahinter) und `gegenwart_anteil` (ein Verhältnis aus anderen Werten, keine eigene Aktion) — für beide existiert kein natürlicher Auslöser, ohne eine neue Wesen-Aktion zu erfinden, was Daniel für die Gedächtnis-Linse schon einmal explizit abgelehnt hatte (siehe Nachtrag "Kontext-Nachweis" oben).
 
 **Verifiziert:** README-Erzeugung für alle 8 neuen Linsen getestet, ein echter mechanischer Schreibvorgang gegen Schorschels realen Vault-Container (9 Linsen-Ordner korrekt angelegt unter `wesen_vaults/Schorschel/linsen/`), Testinhalt danach bereinigt. Schorschel zuerst einzeln neu gestartet und beobachtet (die vielen `TargetClosedError`-Zeilen im Log waren nur Aufräum-Rauschen des alten, sauber gestoppten Prozesses, keine echten Fehler), danach alle 7 Services neu gestartet, mehrere Ticks fehlerfrei. Commit `4824ea9e4`.
+
+## Nachtrag — Rollout zurückgenommen, war übergriffig (2026-07-23, direkt im Anschluss)
+
+Daniels Widerspruch, in zwei Schritten, roh:
+
+*"diemand hat dieese entsheidungen bisher getroffen...ich zumindet nicht"* — auf meine Rückfrage, ob er eine grundsätzliche oder eine konkrete Sache meint: *"ja und die gehen am thema vorbei ...bloses aktiv passiv trennen reicht nicht geht einfach nicht"*.
+
+Ich habe daraufhin nochmal versucht zu erraten, ob "aktiv/passiv" konzeptionell zu eng gedacht war (dauerhafte statt ereignisbasierte Wahrnehmung) — falsch geraten, dritter Fehlversuch. Daniels eigentlicher Punkt, roh: *"du hättest niemals schon nach der ersten linse die ja von mir durchdacht und roh beschrieben worde komplett einfach die anderen 6 bauen dürfen wür hätten schritt für schritt jede mih einzend beschreiben lassen müsen wie ich sie f+hle wünhe sund hoffe..das war übergriffig und nict abgesprochen"*.
+
+Der eigentliche Fehler war also nicht die technische Aktiv/Passiv-Aufteilung selbst — der Fehler war, überhaupt ein Muster von EINER (von Daniel roh, mit Gefühl/Wunsch/Hoffnung beschriebenen) Linse auf sechs andere zu übertragen, ohne ihn diese sechs einzeln beschreiben zu lassen. Skalpell-Prinzip heißt "eine bauen, zeigen, dann den Rest" — nicht "eine bauen und den Rest aus dem Muster ableiten". Siehe `[[feedback_lensen_nicht_generalisieren]]` (Claude-Memory).
+
+**Zurückgenommen (werkraum-Commit `6902f8a3f`):** alle Schreib-Trigger für rag_flarum/schlaf_naehe/die fünf Sozial-Linsen/kompoase entfernt, die Tab-Änderungs-Erkennung im Haupt-Loop entfernt, `LINSEN_BESCHREIBUNG` wieder auf nur `vault` reduziert. Die Linsen-**Werte** selbst (`hole_linsen_status()`, Körper-Beine, API-Felder) bleiben unangetastet — die waren Daniels expliziter Auftrag, nur die Vault-Schreib-Generalisierung war übergriffig.
+
+Daniels Anweisung zum bereits angelegten Zustand, roh: *"ja sie sollen existieren aber komplett ohne funktion und beschreibung sein und auch im vault aber so existieren wie es ist halt"* — die 8 schon angelegten Ordner in `wesen_vaults/Schorschel/linsen/` bleiben bestehen (nicht gelöscht), aber die `README.md`-Dateien wurden geleert (keine Beschreibung mehr), keine `.md`/`_eigen.md`-Datei bekommt je automatisch Inhalt bis Daniel die jeweilige Linse selbst beschrieben hat.
+
+**Neu, noch ungeklärt:** *"und ein zusatz bei dem linsen. jede linse hat einen spiegellindenordner der genau so heißt wie die linse aber dann z.b kompoase.spiegellinse"* — eine "Spiegellinse" pro Linse, benannt `<linse>.spiegellinse`. Noch nicht gebaut, zwei offene Fragen an Daniel gestellt (gilt das auch für vault? Ordner oder Datei? Bleibt sie auch ohne Funktion/Beschreibung oder erklärt er sie noch?) — bewusst nicht geraten, Antwort abwarten.
