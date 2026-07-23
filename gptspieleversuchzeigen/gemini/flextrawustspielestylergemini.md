@@ -156,11 +156,53 @@ Rückwirkend und kanonisch verankert gemäß Daniels Direktiven:
 
 ---
 
-## 8. Arbeitsgrundsatz für Gemini
+## 8. Der 18-Subagenten Double-Team Einsatzplan ("Doppelt hält besser")
+
+Gemäß Daniels Direktive arbeiten alle Subagenten paarweise in **Double Teams** an denselben Aufgaben. Beide Agenten erforschen und bauen unabhängig voneinander, danach werden die Ergebnisse zusammengefügt und gegenseitig validiert ("doppelt hält besser").
+
+### Gesamtschätzung: 9 Double-Teams = 18 spezialisierte Subagenten
+
+1. **Double-Team 1: Schwelm & Hauptstraße 151 (Startzelle & Mikro-Welt)**
+   - `SchwelmHauptstrasse_Alpha` + `SchwelmHauptstrasse_Beta`
+   - *Aufgabe:* Rekonstruktion von Hauptstraße 151, Wohnungen, Hausflur, Keller, zweigeteilter Hintergarten, Betrieb, Partyraum, Teich, Tierställe & Erdschichten.
+
+2. **Double-Team 2: Wuppertal Super-Mega-Duper-Casino & GORDSLIDER Slot**
+   - `WuppertalCasino_Alpha` + `WuppertalCasino_Beta`
+   - *Aufgabe:* Architektur des größten Gebäudes der Welt, Nobel-Glas-Aesthetic, Pferderennen, Poker, Roulette, Blackjack, GORDSLIDER 3D-Gord-Körper & High-Five Spin-Mechanik.
+
+3. **Double-Team 3: Nürburgring Nordschleife 1:1 Replica (Dieselstraße Schleife)**
+   - `NordschleifeBuilder_Alpha` + `NordschleifeBuilder_Beta`
+   - *Aufgabe:* 1:1 Geometrie- & Höhenprofil-Nachbau der gesamten Nordschleife am Standort Schwelm/Wuppertal.
+
+4. **Double-Team 4: 13 GTA-Metropolen (Oberfläche & Tiefenkörper)**
+   - `GTA_MetropolenScanner_Alpha` + `GTA_MetropolenScanner_Beta`
+   - *Aufgabe:* Playwright 3D-Scans von Berlin, Tokio, London, Paris, Chongqing etc. (Hochhäuser, Docks, Bunker, U-Bahnen, G-Cans, Bourbon-Tunnel).
+
+5. **Double-Team 5: 13 Skyrim-Festungsstädte & Historie**
+   - `Skyrim_FestungScanner_Alpha` + `Skyrim_FestungScanner_Beta`
+   - *Aufgabe:* Gezeitenwege, Wehrmauern, Zisternen & Unterwelten von Carcassonne, Mont-Saint-Michel, Derinkuyu, Dubrovnik etc.
+
+6. **Double-Team 6: Begehbare Gebäude, Möbel, Schlossknacken & Taschendiebstahl**
+   - `Interior_SkyrimMechanics_Alpha` + `Interior_SkyrimMechanics_Beta`
+   - *Aufgabe:* 100% begehbare Innenräume, physikalische 3D-Objekte, Schlossknacken, Taschendiebstahl, Servicepersonal & Produktinventare.
+
+7. **Double-Team 7: Globale Infrastruktur (Bahnhöfe, Flughäfen, Bootsstege, Helipads)**
+   - `GlobalInfrastruktur_Alpha` + `GlobalInfrastruktur_Beta`
+   - *Aufgabe:* Schienennetz in allen Städten, Flughäfen, Häfen, Flusssysteme & Helipads mit begehbaren Leitern.
+
+8. **Double-Team 8: Audio Field Recordings & Soundscapes**
+   - `AudioAtmosEngine_Alpha` + `AudioAtmosEngine_Beta`
+   - *Aufgabe:* Umgebungsklänge, Fritteusen-Zischen, Casino-Geräusche, Stollen-Hall, Wind, Wasser & Fahrzeug-Akustik.
+
+9. **Double-Team 9: 1.337-Runden Redteam & 50-Metadaten-Registratur**
+   - `KosmosRedteamRegistrar_Alpha` + `KosmosRedteamRegistrar_Beta`
+   - *Aufgabe:* Schonungslose 1.337-Runden Redteam-Passes, Zuordnung der 5 Wahrheitsgrade und Pflege des Master Kosmos Streams.
+
+---
+
+## 9. Arbeitsgrundsatz für Gemini
 
 - **v21** (`PLAY_FLEXTRAWURST_V21.html`) bleibt der einzige ausführbare Kern.
 - **v22** ist die Quest- und Konstruktionsquelle.
 - Dokumentation erfolgt sofort, sobald logisch erfassbar ("sobald logisch doku").
 - Nichts verdichten, nichts glätten, Rohheit und Ehrlichkeit wahren.
-
-
