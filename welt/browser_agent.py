@@ -205,12 +205,19 @@ _KOERPER_JS = """
     { key: 'entitaetenprofile', farbe: '#22c55e' },
     { key: 'schattenkommentare', farbe: '#818cf8' },
     { key: 'diskurs', farbe: '#f472b6' },
+    // 2026-07-23 (Daniels Nachtrag: "und ich will noch ne linse zu kompoase"): #theater-
+    // Tab-Besuche (KOMPOASE-Erlebnisebene), echtes Signal (F3INSCHM3CK3R/jumpa/Schorschel
+    // haben ihn organisch schon besucht) -- anders als entity_splitter_stats, das fuer
+    // alle 7 Wesen weiterhin 0 ist.
+    { key: 'kompoase', farbe: '#eab308' },
   ];
-  // Cyberling- und KompOase-Linse (Daniels Nachtrag) bewusst NOCH KEIN eigenes Bein --
-  // cyberlinge.status='tot'/alle Werte 0 und entity_splitter_stats komplett 0 fuer ALLE
-  // Entitaeten (per DB-Abfrage verifiziert, 2026-07-22) -- ein Bein dafuer waere gerade fuer
-  // jedes Wesen gleich unsichtbar/flach, keine echte Information. /entities/{id}/linsen kann
-  // das spaeter tragen, sobald diese Systeme wieder echte, unterscheidbare Werte liefern.
+  // Cyberling-Linse (Daniels Nachtrag) bewusst NOCH KEIN eigenes Bein --
+  // cyberlinge.status='tot' fuer alle 7 echten Wesen (per DB-Abfrage verifiziert,
+  // 2026-07-22/23) -- ein Bein dafuer waere gerade fuer jedes Wesen gleich unsichtbar/
+  // flach, keine echte Information. /entities/{id}/linsen kann das spaeter tragen, sobald
+  // das System wieder echte, unterscheidbare Werte liefert. KompOase (2026-07-23) HAT
+  // dagegen schon ein Bein -- entity_splitter_stats ist zwar weiterhin 0, aber der
+  // "#theater"-Tab (echte KompOase-Erlebnisebene) wurde bereits organisch besucht.
   let eng = window.__agentKoerperEngine;
   if (!eng) {
     const canvas = document.createElement('canvas');
@@ -1026,6 +1033,16 @@ SOZIAL_LINSEN_HASHES = {
     "diskurs": "#diskurs",
 }
 
+# 2026-07-23 (Daniels Nachtrag: "und ich will noch ne linse zu kompoase"): entity_splitter_
+# stats (splitter_abgegeben/aufgesammelt) ist fuer ALLE 7 Wesen weiterhin 0 -- kein echter
+# Wesen-Mechanismus greift dort bislang ein. Echtes, unterscheidungskraeftiges Signal
+# existiert aber schon: der "#theater"-Tab (KOMPOASE-Erlebnisebene mit Aufnahmen/
+# Provenienz, siehe build_surface.ts "Theater, Provenienz, Aufnahme") wurde bereits
+# organisch besucht (F3INSCHM3CK3R 10x, jumpa 3x, Schorschel 1x, verifiziert per DB-
+# Abfrage) -- der separate, in der Tab-Leiste versteckte "#splitter"-Tab (display:none)
+# dagegen nie. Gleiche Tab-Hash-Zaehlweise wie bei den fuenf Sozial-Linsen.
+KOMPOASE_HASH = "#theater"
+
 
 def hole_linsen_status(conn, entity_id: str) -> dict:
     """2026-07-22/23 (Sieben-Linsen-Koerper, siehe _claude/ideen/sieben_linsen_koerper_kreatur.md
@@ -1071,17 +1088,19 @@ def hole_linsen_status(conn, entity_id: str) -> dict:
         for name, hash_ in SOZIAL_LINSEN_HASHES.items():
             n = sum(1 for r in zeilen if r["url"] and hash_ in r["url"])
             sozial_werte[name] = min(1.0, n / 5.0)
+        kompoase = sum(1 for r in zeilen if r["url"] and KOMPOASE_HASH in r["url"])
         schlaf_naehe = _hole_schlaf_naehe(conn, entity_id)
         # Auf 0..1 normiert fuers Koerper-Rendering -- log-skaliert wo unbegrenzt wachsend
-        # (sonst waere jedes Wesen nach kurzer Zeit "voll"). Sozial-Linsen auf /5 statt
-        # /20 wie vault/rag_flarum -- deutlich seltenere Aktionen, sonst faellt das Bein
-        # praktisch immer flach aus.
+        # (sonst waere jedes Wesen nach kurzer Zeit "voll"). Sozial-/KompOase-Linsen auf /5
+        # statt /20 wie vault/rag_flarum -- deutlich seltenere Aktionen, sonst faellt das
+        # Bein praktisch immer flach aus.
         return {
             "vault": min(1.0, vault / 20.0),
             "rag_flarum": min(1.0, rag_flarum / 20.0),
             "gedaechtnis": min(1.0, math.log10(lg_ticks + 1) / 4.0),
             "gegenwart_anteil": gegenwart_anteil,
             "schlaf_naehe": schlaf_naehe,
+            "kompoase": min(1.0, kompoase / 5.0),
             **sozial_werte,
         }
     except Exception:
@@ -1090,7 +1109,7 @@ def hole_linsen_status(conn, entity_id: str) -> dict:
         except Exception:
             pass
         return {"vault": 0, "rag_flarum": 0, "gedaechtnis": 0, "gegenwart_anteil": 0.0,
-                "schlaf_naehe": 0.0, **{name: 0 for name in SOZIAL_LINSEN_HASHES}}
+                "schlaf_naehe": 0.0, "kompoase": 0, **{name: 0 for name in SOZIAL_LINSEN_HASHES}}
 
 
 def hole_einsicht_snapshot(conn, entity_id: str) -> dict:

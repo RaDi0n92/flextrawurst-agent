@@ -6585,6 +6585,11 @@ SOZIAL_LINSEN_HASHES = {
     "schattenkommentare": "#schatten",
     "diskurs": "#diskurs",
 }
+# 2026-07-23 (Daniels Nachtrag: "und ich will noch ne linse zu kompoase"): entity_splitter_
+# stats ist fuer alle 7 Wesen weiterhin 0, aber der "#theater"-Tab (KOMPOASE-Erlebnisebene)
+# wurde schon organisch besucht (F3INSCHM3CK3R 10x, jumpa 3x, Schorschel 1x) -- gleiche
+# Tab-Hash-Zaehlweise wie bei den Sozial-Linsen.
+KOMPOASE_HASH = "#theater"
 
 
 @app.get("/entities/{entity_id}/linsen")
@@ -6596,10 +6601,12 @@ def entity_linsen_status(entity_id: str, fenster: int = Query(default=50, le=200
     bewegt sich ja schon dafuer, hier nur als Zaehler mitgeliefert). Gegenwart-Anteil
     = Anteil reiner DOM-Aktionen ohne Vault/RAG/Flarum-Bezug am Fenster -- je hoeher, desto
     mehr Hier-und-Jetzt statt Erinnerung/Vault. Schlaf-Naehe = Stunden wach seit letztem
-    Schlafende, auf die 6h-Wachschwelle aus ist_schlaf_faellig() normiert. Cyberling/KompOase
-    bewusst NICHT hier -- beide Systeme liefern aktuell fuer ALLE Entitaeten nur Nullwerte
-    (verifiziert per DB-Abfrage, 2026-07-22), ein Linsen-Wert waere gerade nicht
-    unterscheidungskraeftig.
+    Schlafende, auf die 6h-Wachschwelle aus ist_schlaf_faellig() normiert. Cyberling bewusst
+    NICHT hier -- cyberlinge.status='tot' fuer ALLE 7 echten Entitaeten (verifiziert per
+    DB-Abfrage, 2026-07-22/23), ein Linsen-Wert waere gerade nicht unterscheidungskraeftig.
+    KompOase (kompoase, 2026-07-23) dagegen schon: entity_splitter_stats ist zwar weiterhin
+    0, aber der "#theater"-Tab (echte KompOase-Erlebnisebene) wurde bereits organisch von
+    mehreren Wesen besucht -- gleiche Tab-Hash-Zaehlweise wie SOZIAL_LINSEN_HASHES.
 
     2026-07-23 Rekonstruktion (siehe Ideen-Datei, Nachtrag "Kontext-Nachweis"): die zuerst
     getrennt gebauten "gedaechtnis_tiefe" (Denklog-Zeilenzahl) und "einsicht_lg_ticks"
@@ -6650,6 +6657,7 @@ def entity_linsen_status(entity_id: str, fenster: int = Query(default=50, le=200
             f"sozial_{name}": sum(1 for r in zeilen if r["url"] and hash_ in r["url"])
             for name, hash_ in SOZIAL_LINSEN_HASHES.items()
         }
+        kompoase = sum(1 for r in zeilen if r["url"] and KOMPOASE_HASH in r["url"])
         schlaf_naehe = 0.0
         if bezug is not None:
             if bezug.tzinfo is None:
@@ -6665,6 +6673,7 @@ def entity_linsen_status(entity_id: str, fenster: int = Query(default=50, le=200
             "gedaechtnis_lg_ticks": lg_ticks,
             "gegenwart_anteil": round(gegenwart_anteil, 3),
             "schlaf_naehe": schlaf_naehe,
+            "kompoase": kompoase,
             **sozial_werte,
         }
     finally:
