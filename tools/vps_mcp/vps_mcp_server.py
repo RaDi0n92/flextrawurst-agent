@@ -46,6 +46,21 @@ ALLOWED_ROOTS = [
     Path("/root/flextrawurst"),
     Path("/root/zensi"),
     Path("/root/.gemini/antigravity-cli/brain"),
+    # 2026-07-23 (Daniel: "das hier muss er auch alles genau sehen"): /root/werkraum/
+    # hat mehrere Top-Level-Symlinks auf Geschwister-Ordner AUSSERHALB von
+    # /root/werkraum (Disk-Layout-Entscheidung, nicht meine) -- Path.resolve() folgt
+    # Symlinks, die echten Ziele lagen bisher ausserhalb aller Wurzeln und wurden
+    # blockiert. Nur die eindeutig unbedenklichen (Projekt-Inhalt, keine fremden
+    # Personendaten) hier aufgenommen -- werkraum_flarum (enthaelt echte Flarum-
+    # Nutzerdaten, nicht nur Daniels eigenes Material) und werkraum_logs (395MB rohe
+    # Laufzeit-Logs, wenig Inhaltswert) bewusst NICHT, Daniel gefragt statt geraten.
+    # Reine Abhaengigkeits-Ordner (venv/node_modules/watchdog_venv) ebenfalls nicht --
+    # kein Projekt-Inhalt, nur Bibliotheks-Ballast.
+    Path("/root/werkraum_bilder"),
+    Path("/root/werkraum_geni"),
+    Path("/root/werkraum_codewesen"),
+    Path("/root/werkraum_agent"),
+    Path("/root/werkraum_erkenntnis"),
 ]
 # /etc/systemd/system/ nur lesend, separat behandelt (kein freier Datei-Zugriff,
 # nur ueber services.status/services.logs via systemctl/journalctl).
