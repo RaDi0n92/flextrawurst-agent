@@ -323,3 +323,13 @@ Statt einer Summe über alle fünf Systeme jetzt fünf eigene Linsen/Beine — `
 **Verifiziert:** isolierter `hole_linsen_status()`-Test zeigt korrekt 10 Schlüssel, API-Endpunkt liefert `sozial_*`-Präfix-Felder einzeln, Playwright-Test zeigt 10 unterscheidbare Beine, alle 7 Services neu gestartet, mehrere Ticks fehlerfrei. Commit `85a6a6893`.
 
 **Noch offen:** ob 10 gleichzeitig sichtbare Beine visuell noch als "ein Wesen" lesbar sind oder zu überladen wirken — das kann nur ein echter Blick auf den laufenden Live-Spiegel beantworten, nicht ein isolierter Test.
+
+## Nachtrag — KompOase-Linse ergänzt (2026-07-23, direkt im Anschluss)
+
+Daniel: *"und ich will noch ne linse zu kompoase"*.
+
+Erst geprüft statt blind gebaut: `entity_splitter_stats` (splitter_abgegeben/aufgesammelt) ist weiterhin für alle 7 echten Wesen `0` — genau wie schon am 22.07. festgestellt, kein neuer Wesen-Mechanismus greift dort bislang ein. Aber es gibt ein echtes, unterscheidungskräftiges Signal: der `#theater`-Tab (die eigentliche KompOase-Erlebnisebene mit Aufnahmen/Provenienz, siehe `build_surface.ts` "Theater, Provenienz, Aufnahme") wurde bereits organisch besucht — F3INSCHM3CK3R 10×, jumpa 3×, Schorschel 1×, per DB-Abfrage verifiziert. Der separate, in der Tab-Leiste versteckte `#splitter`-Tab (`display:none`) dagegen nie.
+
+**Gebaut:** `kompoase`-Linse nach demselben Tab-Hash-Zählmuster wie die fünf Sozial-Linsen (`entity_thinking_log.meta->>'url'` enthält `#theater`), elftes Bein am Körper, Farbe Gelb `#eab308`. Cyberling bleibt weiterhin ohne eigenes Bein (`status='tot'` für alle 7 echten Wesen, unverändert).
+
+**Verifiziert:** isolierter `hole_linsen_status()`-Test zeigt echte Differenzierung zwischen Wesen (Schorschel 0.2, andere 0.0 im aktuellen 50er-Fenster — ältere Theater-Besuche liegen bei manchen Wesen schon außerhalb des Fensters, ehrlich, kein Bug), API-Endpunkt live geprüft, Playwright-Test zeigt 11 Beine, alle 7 Services neu gestartet, mehrere Ticks fehlerfrei. Commit `acdfaf4b4`.
