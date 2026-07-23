@@ -73,6 +73,16 @@ Neue `ALLOWED_FILES`-Liste (bewusst einzelne Dateien, nicht `/root` als ganze Wu
 
 `vps.list_roots` liefert jetzt zusätzlich die Einzeldatei-Liste. Verifiziert: `GEMINI.md` lesbar, Security-Reports weiterhin korrekt blockiert, live bestätigt. Commit `416d6e140`.
 
+## 10c. Ausgelagerte werkraum-Symlink-Ziele freigegeben
+
+Beim gezielten Nachprüfen einzelner von ChatGPT/Gemini referenzierter Pfade (Daniel: *"das hier muss er auch alles genau sheen"*) gefunden: `/root/werkraum/bilder/` ist ein Symlink auf `/root/werkraum_bilder` — physisch **außerhalb** von `/root/werkraum`. `Path.resolve()` folgt Symlinks (Sicherheitsfeature gegen Sandbox-Flucht per Symlink), das echte Ziel lag bisher außerhalb aller Wurzeln und wurde korrekt blockiert.
+
+`/root/werkraum` hat mehrere solcher Top-Level-Symlinks auf `werkraum_*`-Geschwisterordner (Disk-Layout-Entscheidung, nicht meine). Geprüft und hinzugefügt: `werkraum_bilder` (568M Bilder), `werkraum_geni` (GENI-System), `werkraum_codewesen` (Wesen-Profile), `werkraum_agent` (Kooperations-Doku), `werkraum_erkenntnis` (Konzept-Doku) — alle eindeutig Projekt-Inhalt ohne fremde Personendaten.
+
+**Bewusst nicht hinzugefügt, Daniel gefragt statt geraten:** `werkraum_flarum` (enthält einen `nutzer/`-Ordner — vermutlich echte Daten realer Flarum-Forennutzer, nicht nur Daniels eigenes Material) und `werkraum_logs` (395MB rohe Laufzeit-Logs, wenig Inhaltswert). Reine Abhängigkeits-Ordner (venv/node_modules/watchdog_venv) ebenfalls nicht — kein Projekt-Inhalt, nur Bibliotheks-Ballast.
+
+Verifiziert: alle fünf neuen Wurzeln lesbar, `_api_tokens.json` innerhalb `werkraum_codewesen` bleibt durch `SECRET_MUSTER` korrekt blockiert, live bestätigt. Commit `e7e4e8219`.
+
 ## 10. scopes_supported ergänzt
 
 ChatGPTs Connector-UI zeigte beim Einrichten "Basis-Scopes"/"Standard-Scopes" mit dem Hinweis: "Die ermittelte OAuth-Konfiguration hat keine unterstützten Scopes zum Auswählen angegeben" — `scopes_supported` fehlte in beiden Discovery-Dokumenten. Ergänzt (`["tools"]`, ein einziger Scope für den kompletten, nur lesenden Werkzeugsatz — kein granulares Berechtigungsmodell in Phase 1). Commit `657dab1d0`, live verifiziert.
