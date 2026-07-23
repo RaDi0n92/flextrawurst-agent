@@ -118,3 +118,5 @@ Verifiziert: kompletter Flow lokal simuliert (authorize → Redirect mit Code �
 2. **"MCP server ... does not implement OAuth"** — der 401-Antwort auf `/mcp` fehlte der `WWW-Authenticate`-Header (RFC 9728/RFC 6750 §3), der einem konformen Client sagt, wo die Protected-Resource-Metadaten liegen. Zusätzlich beantworteten `/.well-known/oauth-protected-resource` und `/.well-known/oauth-authorization-server` bislang fälschlich dasselbe Dokument, obwohl sie laut RFC 9728 vs. RFC 8414 unterschiedliche Felder brauchen — jetzt korrekt getrennt. Commit `a1f633a3b`.
 
 Beide live über `https://flextrawurst.de/3d-mcp/` nachverifiziert.
+
+3. **"3 validation errors for ListToolsResult ... inputSchema Field required"** — `tools/list` lieferte pro Tool nur `name`+`description`, die MCP-Spezifikation verlangt zusätzlich ein `inputSchema` (JSON Schema der Parameter), ChatGPTs Pydantic-Client validiert strikt dagegen. Ergänzt für alle drei Tools (dieselben Felder wie im OpenAPI-Schema, nur im JSON-Schema-Format). Commit `957322716`, live verifiziert.
