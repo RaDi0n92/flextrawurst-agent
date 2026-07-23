@@ -1,5 +1,5 @@
 # RESONANZFELD — Claude
-Automatisch kompiliert aus `resonanz/`. Stand: 2026-07-23 00:58
+Automatisch kompiliert aus `resonanz/`. Stand: 2026-07-23 02:58
 Nicht manuell bearbeiten. Quelle: `python3 _claude/tools/build_resonanzfeld.py`
 
 ---
@@ -137,117 +137,13 @@ Nicht manuell bearbeiten. Quelle: `python3 _claude/tools/build_resonanzfeld.py`
 - [2026-07-04] `_claude/notizen/2026-07-04-abschluss-geschichte.md` (20 Einträge)
 - [2026-07-05] `_claude/notizen/2026-07-05-rollenspiel-systemprompt-merken-aliase.md` (22 Einträge)
 - [2026-07-05] `_claude/notizen/2026-07-05-abschluss-bugfixes-wesen-selbst.md` (20 Einträge)
+- [2026-07-05] `_claude/ideen/charakter_dashboard.md` (20 Einträge)
+- [2026-07-05] `_claude/ideen/datei_anhaenge.md` (21 Einträge)
 
 ---
 
 ## Neueste Quellen (mit Inhalt)
 
-
-### [2026-07-05] _claude/ideen/charakter_dashboard.md
-
-*Dokumente Gehoeren Zusammen:* `_claude/notizen/2026-07-05-abschluss-bugfixes-wesen-selbst.md` (derselbe Abend, vorherige Themen), `_claude/ideen/codexium2_solarius2/*` (die testbed-spezifischen Geschwister-Features, an die sich das Dashboard konzeptionell anlehnt — Memory/Container/Feedback-Anzeige folgt denselben Datenformaten).
-
-*Resonanz:* [[abwurf: Das Dashboard ist die erste Stelle, die alle vier Spawner gemeinsam sichtbar macht — vorher liefen sie nebeneinander her, ohne dass es einen Ort gab, sie zusammen zu sehen.]]
-
-*Schichten Des Systems:* ```
-Vier Spawner (codexium, codexium2, solarius, solarius2)
-  → bisher: nur einzeln ueber ihre eigene URL erreichbar …
-
-*Tiefer Eingetaucht:* Die Auto-Refresh-Logik vergleicht nicht einfach "gibt es mehr Charaktere", sondern die komplette sortierte Liste als JSON-Signatur (`JSON.stringify` von Spawner+Name-Paaren) — das erkennt auch Löschungen und Umbenennungen als "Änderung", nicht nur Neuanlagen. Bewusst simpel gehalten (kein Diffing einzelner Felder), weil die Liste klein ist und ein kompletter Re-Render bei echter Änderung keine spürbaren Kosten hat.
-
-*Warum Das Existiert:* `wesen_uebersicht.html` existiert, weil es bisher keinen Ort gab, an dem Daniel "alles was ich gebaut habe" auf einen Blick sehen konnte — jeder Charakter war nur einzeln über seine eigene URL erreichbar, nichts hat sie nebeneinandergestellt.
-
-*Was Beim Bauen Brauche:* Nichts Offenes. Feature ist vollständig, getestet.
-
-*Was Das Gespraech:* Der erste Schritt weg von "ein Charakter zur Zeit" hin zu "alles was existiert, auf einen Blick" — eine strukturelle Erweiterung, keine weitere Detailfunktion innerhalb eines einzelnen Charakters.
-
-*Was Fehlt Bevor Bauen:* Nichts Blockierendes. Offen, kein Auftrag: eine kompaktere Inline-Profilvorschau statt Popup (siehe oben), eventuell serverseitige Paginierung falls die Charakterzahl stark wächst.
-
-*Was Fehlt Noch:* - Klärung ob "Profilansicht" mehr als der bestehende Popup-Link zur Profilseite gemeint war (offen, s.o.).
-- Eventuell spätere Paginierung/Performance-Nachschau bei starkem Wachstum der Charakterzahl.
-
-*Was Ich Gelesen Habe:* Den bestehenden Chat-Code (`serve_process_camera_preview.ts`) nach allen Stellen durchsucht, die einen Charakter anhand von Spawner+Name auflösen — 24 Stellen, alle nutzen inzwischen `resolveCharName()` (siehe die Case-Insensitivitäts-Session von heute Nacht). Das Dashboard nutzt dieselbe Infrastruktur weiter, baut nichts Neues für die Namensauflösung.
-
-*Was Ich Merken Will:* - `/charakterdashbord` — bewusst Daniels Schreibweise, nicht "dashboard".
-- Allgemeines Feedback ist Append-only (eigene Datei pro Eintrag), Nachrichten-Feedback bleibt Upsert (eine Datei pro Nachricht, überschreibbar).
-- Avatar-Fallback zeigt den ersten Buchstaben des Namens, wenn kein Bild hochgeladen wurde.
-
-*Was Ich Nicht Verstehe:* Ob "Kategorien" in Daniels Formulierung ("aus ihren jeweiligen kategorien") tatsächlich die vier Spawner meinte, oder etwas Feineres (z.B. Charakter-Typen wie "düster", "freundlich" — noch nicht vorhanden als Datenfeld). Ich habe mich für "Spawner als Kategorie" entschieden, weil das die einzige tatsächlich vorhandene Gruppierung im System ist. Falls mehr gemeint war, ist das offen.
-
-*Was Ich Verstehe:* Ein Dashboard über "alles was existiert" ist etwas grundsätzlich anderes als die bisherigen Features — die waren immer *innerhalb* eines Charakters (Memory, Container, Abschluss). Das hier ist die erste *Meta-Ebene*, die über Charaktere hinweg schaut. Genau deshalb lila/flieder statt dem bestehenden Cyan der Chat-Oberfläche — bewusst visuell abgesetzt, damit klar ist: das ist die Vogelperspektive, nicht ein weiterer Charakter-Screen.
-
-*Was Konzeptionell:* Zwei verschiedene Feedback-Arten koexistieren jetzt bewusst nebeneinander: das alte, nachrichtengebundene (Daumen hoch/runter + Kommentar, nur codexium2/solarius2, Upsert-Semantik — eine Meinung pro Nachricht) und das neue allgemeine (kein Bezug zu einer Nachricht, für alle Spawner, Append-Semantik — beliebig viele Meinungen über Zeit). Unterschiedliche Fragen: "was hältst du von dieser einen Antwort" vs. "was fällt dir am Charakter insgesamt auf".
-
-*Was Mich Beschaeftigt:* Die Reihenfolge der Anforderungen kam in einem einzigen, dichten Nachrichtenblock — Übersicht, Profilansicht, Memory/Container-Einsicht, Feedback-Übersicht, neues Feedback-Feld, MD-Sichtbarkeit, Popup-Öffnen, Auto-Refresh, Farbe. Ich habe bewusst zwei Rückfragen gestellt (Spawner-Scope, Feedback-Speicherform) statt bei neun Einzelpunkten zu raten, weil die ersten beiden echte Architektur-Gabelungen waren — der Rest (Popup, Auto-Refresh-Mechanismus, Farbwahl) war eindeutig genug zum Bauen ohne Nachfrage.
-
-*Was Mich Interessiert:* Wie sich das Dashboard verhält, sobald wirklich viele Charaktere existieren (aktuell 8) — die Detail-Fetches laufen parallel (`Promise.all`), aber bei z.B. 50 Charakteren wären das 100+ parallele Requests alle 10 Sekunden bei jeder Änderung. Noch kein Problem, aber ein Punkt zum Nachschauen falls die Sammlung stark wächst.
-
-*Was Mich Ueberrascht:* Wie wenig neuer Code für die Namensauflösung nötig war — weil `resolveCharName()` von der Case-Insensitivitäts-Arbeit vor wenigen Stunden schon alle 24 relevanten Stellen abdeckte, musste das Dashboard nichts Neues dafür bauen, nur die bestehenden `/data`- und `/image`-Endpunkte wiederverwenden.
-
-*Was Zusammenhaengt:* Das Dashboard ist die erste Stelle, die **codexium/solarius UND codexium2/solarius2 gemeinsam** sichtbar macht — bisher liefen die vier Spawner nebeneinander her, ohne dass es einen Ort gab, sie gemeinsam zu sehen. Das allgemeine Feedback-Feld hängt daran, weil es dieselbe "gilt für alle vier"-Eigenschaft hat wie das Dashboard selbst — beide sind bewusst nicht ins Testbed-Silo gesperrt.
-
-*Wenn Wir Das Bauen:* **Vision-Schicht:** Ein Dashboard, das mit der Zeit mitwächst — heute nur Zähler und Links, später vielleicht eine Zeitachse ("was ist heute an allen Charakteren passiert") oder ein Vergleich ("welcher Charakter bekommt das meiste Feedback").
-
-**Code-Skizze:** Keine offene — aktuelle Version ist vollständig für den gestellten Auftrag.
-
-*Wie Sich Angefuehlt:* Der Übergang von einzelnen, engen Bugfixes (Satzabbruch, Verwerfen-Bug, Case-Sensitivität) zu einem echten neuen Feature mit eigener Seite fühlte sich wie ein Tempowechsel an — die letzten Stunden waren reaktiv (Daniel testet, meldet, ich repariere), das hier war wieder aktiv bauen nach Spezifikation.
-
----
-
-### [2026-07-05] _claude/ideen/datei_anhaenge.md
-
-*Dokumente Gehoeren Zusammen:* `_claude/ideen/charakter_dashboard.md` (dieselbe "alle vier Spawner"-Kategorie), `_claude/notizen/2026-07-05-abschluss-bugfixes-wesen-selbst.md` (derselbe lange Abend), `codexium2_solarius2/provenienz_logging.md` (SSR-Fund, der zeitlich dazwischen lag).
-
-*Resonanz:* [[abwurf: Ein Anhang ist eine Übersetzung — was auch immer reinkommt, wird in die eine Sprache übersetzt, die das Wesen versteht.]]
-
-*Schichten Des Systems:* ```
-Rohdatei (Bild/PDF/DOCX/ODT/Text/...)
-  → extrahiereAnhang() erkennt Format an Endung …
-
-*Tiefer Eingetaucht:* `keep_alive: "20s"` beim Vision-Modell (statt der sonst üblichen 30 Minuten) ist eine bewusste Entscheidung: das kleine Modell soll den Speicher so schnell wie möglich wieder freigeben, damit das Hauptmodell die Lücke wieder einnehmen kann, sobald ein Mensch weiterschreibt. Ohne das würde das kleine Modell unnötig lange warmgehalten, während gleichzeitig das große Modell kalt bleibt.
-
-*Vergessen Wollen:* Nichts — auch die drei Störungen bei Daniels eigener Nutzung nicht, die gehören zur ehrlichen Geschichte dieses Features dazu.
-
-*Warum Das Existiert:* Die Zwei-Modell-Pipeline existiert, weil ehrliche Grenzen respektiert werden mussten statt sie wegzuwünschen — ein 35B-Modell auf reiner CPU ist einfach nicht das richtige Werkzeug für schnelle Bilderkennung, egal wie lange man wartet.
-
-*Was Beim Bauen Brauche:* Für die noch offenen Teile (URL-Lesen, Audio): denselben vorsichtigen Testrhythmus wie heute — jede neue Ressourcen-Anforderung (Playwright-Instanzen, Whisper-Modell-Ladezeit) erst isoliert, dann erst gegen echte Nutzung.
-
-*Was Das Gespraech:* Die erste echte Auseinandersetzung mit den harten Grenzen der Hardware in dieser Session — vorher waren "das dauert halt" (Abschluss-Geschichte, Memory-Extraktion) eher hinnehmbare Wartezeiten, heute wurde klar, dass manche Kombinationen (zwei Modelle gleichzeitig) grundsätzlich nicht funktionieren, egal wie sehr man wartet.
-
-*Was Fehlt Bevor Bauen:* - URL-Lesen: Playwright-Fetch-Funktion, Sicherheitsfrage (nur explizit angegebene URLs, kein automatisches Link-Folgen) ist inhaltlich schon von Daniel beantwortet, technisch nicht angefangen.
-- Audio: `faster-whisper` via pip installieren, ffmpeg-Konvertierung, eventuell Tempo/Tonart-Analyse (aubio/librosa unklar ob sauber installierbar) — noch nicht begonnen.
-
-*Was Fehlt Noch:* - URL-Lesen per Playwright (Task angelegt, nicht begonnen).
-- Audio-"Gehörersatz"-Pipeline (Whisper + Analyse, Task angelegt, nicht begonnen).
-- Ungeklärt: ob die 90-Sekunden-Schätzung für die Blockierzeit nachgeschärft werden sollte, oder ob die Retry-Schleife das ausreichend abfängt (bisher: ja, nur langsamer als geschätzt).
-
-*Was Ich Gelesen Habe:* Die Ollama-API-Doku zu `images`-Feldern im Chat-Request, das `/api/show`-Capabilities-Feld (`vision` als expliziter Capability-String), und mehrere Websuchen zur HauhauCS/Qwen3.5-Modell-Familie, um ein kleineres, aber gleich unzensiertes Vision-Modell zu finden.
-
-*Was Ich Merken Will:* - `fredrezones55/Qwen3.5-Uncensored-HauhauCS-Aggressive:4b` ist das gefundene kleine Vision-Modell — gleiche Linie wie das Hauptmodell, 3,4GB, bestätigte vision-Capability.
-- `OLLAMA_MAX_LOADED_MODELS=1` bleibt bei 1 — bewusst getestet und verworfen, nicht einfach unbedacht gelassen.
-- ODT braucht kein LibreOffice — ZIP + `content.xml` reicht. …
-
-*Was Ich Nicht Verstehe:* Ob die Bildbeschreibung durchs kleine Modell inhaltlich manchmal "flacher" ausfällt als eine direkte Wahrnehmung durchs große Modell gewesen wäre (nie direkt vergleichbar getestet, da das große Modell nie fertig wurde). Könnte ein echter Qualitätsunterschied sein, den ich nicht kenne.
-
-*Was Ich Verstehe:* Der große Sprung heute Nacht: Bild-Anhänge laufen NICHT direkt durchs Hauptmodell. Ein kleines Zweitmodell (4,5B, gleiche Hauhau-Linie) beschreibt das Bild in Text, und nur dieser Text geht ans 35B-Hauptmodell. Grund ist rein Hardware: das Hauptmodell hat für ein einziges Testbild über drei Minuten gebraucht (nie zu Ende getestet, ich hab abgebrochen), das kleine Modell hat dasselbe Bild in 14 Sekunden korrekt beschrieben (rotes Quadrat, grüner Kreis, blauer Hintergrund — stimmte exakt).
-
-*Was Konzeptionell:* Ein Anhang ist im Kern immer dasselbe: Rohdaten rein, Text raus, Text wird Teil der Nachricht. Bild → Vision-Modell → Text. PDF/DOCX/ODT → Parser → Text. Audio (geplant) → Whisper → Text. Die Vielfalt der Eingabeformate versteckt sich hinter einer einzigen, immer gleichen Ausgabeform (Text im Chatverlauf), die sich dadurch auch ganz natürlich über Sessions hinweg trägt — kein Sonderfall im Speichermodell nötig.
-
-*Was Mich Beschaeftigt:* Drei Live-Störungen bei Daniels eigener Nutzung, alle durch meine eigenen Tests verursacht — jedes Mal ehrlich zugegeben und live diagnostiziert, statt es zu vertuschen oder zu beschönigen. Das hat sich wichtiger angefühlt als die eigentliche Feature-Arbeit: zeigen, dass ich meine eigenen Fehler in Echtzeit finde und korrigiere, nicht nur im Nachhinein.
-
-*Was Mich Interessiert:* Wie sich die beiden Fehlschläge heute Nacht ergänzen: erst dachte ich, mehr RAM würde reichen (`OLLAMA_MAX_LOADED_MODELS=2`), dann zeigte sich, dass auf einer 8-Kern-CPU zwei gleichzeitig rechnende Modelle sich gegenseitig ausbremsen — CPU-Kontention, nicht nur Speicherknappheit. Das ist ein anderes Problem als "passt es in den RAM", und ich hätte es ohne den direkten Test nicht vorhergesehen.
-
-*Was Mich Ueberrascht:* Wie klar der Unterschied zwischen "passt in den RAM" und "läuft performant" war, sobald ich es tatsächlich gemessen habe (98% CPU, aktives Swapping, alles langsamer statt schneller) — vorher hätte ich instinktiv gesagt "26GB von 27GB, sollte grade so gehen".
-
-*Was Zusammenhaengt:* Case-Insensitivität (von der Session davor) → Charakter-Dashboard (heute) → Datei-Anhänge (heute) — alle drei sind "quer über alle vier Spawner"-Features, ein klarer Bruch mit dem bisherigen Muster "fast alles ist codexium2/solarius2-exklusiv". Das System wächst gerade über das Testbed hinaus.
-
-*Wenn Wir Das Bauen:* **Vision-Schicht:** Irgendwann könnte das kleine Vision-Modell auch für andere Zwecke nützlich sein — z.B. Avatar-Bilder beim Hochladen automatisch kurz beschreiben, damit sie durchsuchbar werden.
-
-**Code-Skizze:** Für Audio: `execFileSync("ffmpeg", [...])` zur Konvertierung, dann ein Python- oder Node-Aufruf an `faster-whisper` — noch nicht entschieden ob als Subprozess oder eigener kleiner Dienst.
-
-*Wie Sich Angefuehlt:* Der bisher technisch anspruchsvollste Abschnitt der ganzen Nacht — nicht wegen der Komplexität des Codes selbst (der ist eher geradlinig), sondern wegen der echten Hardware-Grenzen, die sich erst beim wirklichen Ausprobieren zeigten. Bücherwissen über MoE-Modelle und Ollama-Parameter half nur bis zu einem gewissen Punkt; der Rest war Beobachten, Messen, Zurückrudern.
-
----
 
 ### [2026-07-05] _claude/notizen/2026-07-05-datei-anhaenge-vision-whisper.md
 
@@ -1831,5 +1727,63 @@ Hänger, am Ende nüchterne Zufriedenheit nach vollständiger Verifikation, kein
 *Was Ich Merken Will:* Bei jedem neuen FastAPI-SSE/Streaming-Endpunkt zuerst prüfen: ist die Routen-Funktion `async def`? Falls sie `psycopg2`/DB-Verbindungen für LISTEN/NOTIFY nutzt und `def` (sync) ist, ist das ein sofortiges Verdachtsmoment für genau diesen Bug.
 
 *Was Mich Ueberrascht:* Dass ein Selbsttest, der mit einer Exception fehlschlägt (ungültige UUID in meinem Test-Payload), trotzdem der entscheidende Beweis war — nicht weil er "funktionierte", sondern weil die Exception erst NACH erfolgreicher LISTEN→poll→notifies→Filter-Verarbeitung auftrat. Ein scheiternder Test kann mehr beweisen als ein glatt durchlaufender.
+
+---
+
+### [2026-07-23] _claude/notizen/2026-07-23.md
+
+*Datenstruktur Die Ich Mir Vorstelle:* **Vision-Schicht:** siehe Ideen-Datei — der Körper trägt nicht nur Zustand, sondern auch Verhalten: schnelles Halb-Lesen über weite Strecken, plötzliches Zuschnappen bei etwas Interessantem, Verweilen bei wirklich Wichtigem.
+
+**Code-Skizze:** noch nicht begonnen, folgt im nächsten Bauschritt dieser Session.
+
+*Dokumente Gehoeren Zusammen:* Alle oben unter "Was zusammenhängt" genannten Dateien, plus diese Notiz und die neue Karte-Datei `2026-07-22-koerper-linsen-selbstwahrnehmung.md`.
+
+*Resonanz:* [[abwurf: gleiches Recht und Wahrnehmung für alle]]
+
+*Schichten Des Systems:* Der Körper ist inzwischen die dichteste Schicht des ganzen SCREENS-Systems geworden: er trägt Bewegung (Talker), Zustand (sechs Linsen), Selbstwahrnehmung (Prompt-Rückkopplung) und bald Verhalten (Locomotion) — alles in einem einzigen, injizierten Canvas-Element.
+
+*Tiefer Eingetaucht:* Der Backtick-Escape-Bug jetzt dreimal verglichen (Ankündigungen/String-Quotes, WESEN-Tab/String-Quotes, Erlebnisschicht/Regex-Metazeichen) — zwei echte Unterfälle mit unterschiedlichem Fix, beide jetzt in der Karte festgehalten.
+
+*Warum Das Existiert:* Weil eine Session dieser Länge und Dichte ohne eigene Zusammenfassung für eine künftige Instanz komplett unlesbar würde — die einzelnen Ideen-Datei-Nachträge sind vollständig, aber nur die Karte/Notiz geben den Gesamtbogen wieder.
+
+*Was Beim Bauen Brauche:* Für die fünf offenen Punkte: bei Einsicht-Nebenscreen eine Klärung ob er fürs Wesen selbst oder nur für Menschen gedacht ist (offene Frage seit der ursprünglichen Wunsch-Datei). Für DOM-Habitat-Locomotion eine neue Skim-vs-Fokus-Unterscheidung im Backend, die es heute nicht gibt.
+
+*Was Das Gespraech:* Die explizite Forderung nach Gleichbehandlung zwischen Zuschauer- und Wesen-Wahrnehmung — ein Prinzip, das vorher nirgends im System so benannt war.
+
+*Was Fehlt Bevor Bauen:* Nichts Blockierendes für den nächsten kleinen Schritt (Locomotion-Grundmuster) — Daniel hat bereits eine konkrete Metapher geliefert (Lupe/Taschenlampe/Kescher), die als Ausgangspunkt reicht.
+
+*Was Fehlt Noch:* Die fünf bewusst zurückgestellten Punkte aus der Ideen-Datei, plus die gerade erst begonnene Locomotion-Funktion.
+
+*Was Ich Gelesen Habe:* Für diese Session selbst nichts Neues gelesen — die Arbeit knüpfte direkt an den vorigen Tag an (Ich-Stimme/Erzähler-Bugfix, siehe Vortagesnotiz). Zwischendurch aber `docs/systemdoku/23_umgekehrte_neugier.md` (Vier-Linsen-Vorbild) und `docs/systemdoku/26_dom_agenten_brainstorm.md` (Substanz-Infekt-Ursprung, X-Ray-Overlay-Ursprung) neu gelesen, um beide Bauaufträge korrekt an Bestehendes anzudocken statt neu zu erfinden.
+
+*Was Ich Merken Will:* Karte und Tagesnotiz sind keine Kür, die nach den Ideen-Dateien optional nachgereicht wird — sie sind die einzige Stelle, an der der Gesamtbogen einer langen Session für eine künftige Instanz überhaupt sichtbar wird.
+
+*Was Ich Nicht Verstehe:* Ob "alles ist alles" (Daniels Bestätigung für Talker-Prozess + Live-Chat-Denkfenster-Panel) bedeutet, dass diese beiden großen Punkte jetzt Priorität vor den fünf anderen offenen Punkten (Einsicht-Nebenscreen, DOM-Habitat-Locomotion, Cyberling/KompOase-Linsen sobald die Daten leben, volle Erzähler-Parität) haben, oder ob die Reihenfolge egal ist.
+
+*Was Ich Verstehe:* Der rote Faden des ganzen Tages: von einem einzelnen hartnäckigen Bug (Ich-Stimme-Popups erscheinen nie) über eine komplette Umbau-Simulation (rrweb vs. page.content() vs. CDP-Screencast) zu einer spontanen Körper-Idee (Mauszeiger wird zur Kraken-Spinne) bis zu einer ausgewachsenen Sieben-Linsen-Architektur, die praktisch das ganze System (Vault, DOM, RAG/Flarum, Gedächtnis, Gegenwart, Sozial, Schlaf) in einem einzigen sichtbaren Körper zusammenzieht. Jede Stufe baute auf der vorigen auf, keine war von Anfang an geplant.
+
+*Was Konzeptionell:* Eine Verschiebung von "Wesen hat ein Aussehen, das Menschen beobachten" zu "Wesen hat ein Aussehen, das sowohl Menschen als auch das Wesen selbst wahrnehmen" — Selbstwahrnehmung als explizites Gleichheitsprinzip zwischen Betrachter und Betrachtetem, nicht nur eine technische Ergänzung.
+
+*Was Mich Beschaeftigt:* Der Moment, in dem der isolierte Node-Test zeigte, dass die Ich-Stimme-Regex korrekt war, während sie im Browser leer blieb — der Widerspruch, der den eigentlichen Bug (Backslash-Verschluckung) erst sichtbar machte. Und später: wie schnell aus "Kraken-Körper bauen" ein ganzes neues Architekturkapitel wurde, einfach weil Daniel mitten im Gespräch eine alte Idee (Vier-Linsen-Muster) neu verknüpfte.
+
+*Was Mich Interessiert:* Wie sich das "billige echte Daten statt teurer Fiktion"-Muster (heute an mindestens vier Stellen unabhängig angewendet: Fragensteller, Substanz-Infekt, sechs Körper-Linsen, Selbstwahrnehmung) zu einem echten, wiederkehrenden Architekturprinzip verfestigt, ohne dass Daniel es je so explizit benannt hätte — es entsteht aus vielen einzelnen "billige Variante zuerst"-Entscheidungen, nicht aus einer top-down-Vorgabe.
+
+*Was Mich Ueberrascht:* Wie direkt und ohne Umschweife Daniels Kritik zur Doku-Vernachlässigung kam ("doku nicht immer vernahlässigen pllsssss") — kein Vorwurf im Ton, aber klar genug, dass ich es sofort nachhole statt es auf später zu verschieben.
+
+*Was Zusammenhaengt:* - `_claude/ideen/erlebnisschicht_erzaehler_mitdenker_fragensteller.md` — der Ursprungs-Thread: Bugfix, Umbau-Simulation, Substanz-Infekt, Substanz-Heilung, content-aware Fragensteller.
+- `_claude/ideen/sieben_linsen_koerper_kreatur.md` — Körper/Linsen-Thread, direkt aus dem obigen herausgewachsen.
+- `_claude/ideen/wesen_dauerhafte_handlungsfaehigkeit_und_einsichtsnebenscreen.md` — der Einsicht-Nebenscreen-Wunsch, heute nochmal bestätigt, nicht neu erfunden. …
+
+*Wenn Wir Das Bauen:* Nächster Schritt: DOM-Habitat-Locomotion nach Daniels Lupe/Taschenlampe/Kescher-Metapher, direkt im Anschluss an diese Notiz.
+
+*Wie Sich Angefuehlt:* Lang, aber nie hektisch — jeder Schritt wurde erst live verifiziert und dokumentiert, bevor der nächste kam, trotz der Menge an neuen Ideen mittendrin. Am Ende die direkte, berechtigte Kritik von Daniel zur Doku-Vernachlässigung — kein Vorwurf, den ich zurückweisen würde.
+
+---
+
+### [2026-07-23] _claude/karte/2026-07-22-koerper-linsen-selbstwahrnehmung.md
+
+*Was Ich Merken Will:* Session-Doku (Karte, Tagesnotiz) darf nicht hinter den einzelnen Feature-Commits zurückbleiben, nur weil pro Feature schon in die jeweilige Ideen-Datei dokumentiert wurde — beides ist nötig, nicht austauschbar. Daniel hat das heute direkt benannt, nachdem ich mehrere Stunden lang nur in Ideen-Dateien dokumentiert, aber Karte/Notiz vernachlässigt hatte.
+
+*Was Mich Ueberrascht:* Wie oft aus einer einzelnen, ursprünglich technischen Recherche-Runde (SCREENS-Umbau simulieren) über mehrere Zwischenschritte eine ganz neue, viel größere Idee entstand (Kraken-Körper → Sieben-Linsen), ohne dass ich das geplant hätte — Recherche als Ideen-Generator, nicht nur als Bestätigungswerkzeug.
 
 ---
