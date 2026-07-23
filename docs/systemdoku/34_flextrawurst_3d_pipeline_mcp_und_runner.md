@@ -100,3 +100,14 @@ Daniels Auftrag: den Server für ChatGPT erreichbar machen (Custom-GPT-Actions v
 - Beide erfordern `Authorization: Bearer <FLEXTRAWURST_3D_MCP_KEY>`
 
 Verifiziert: lokal (401 ohne Key, 200 mit Key, `initialize`-Antwort korrekt formt), live über die echte Domain nach nginx-Reload, Hauptseite + Flarum-Embed danach weiterhin unverändert erreichbar. werkraum-Commit `f1789f12a`.
+
+### 5b. OAuth 2.1 + PKCE (Daniel: "need an OAuth")
+
+Der einfache Bearer-Key reicht für ChatGPTs nativen MCP-Connector nicht — der verlangt einen echten OAuth-2.1-Authorization-Code+PKCE-Flow. Ergänzt: Discovery-Metadaten (`/.well-known/oauth-authorization-server`), `GET /oauth/authorize` (einfache Zustimmungs-Seite, fragt den bestehenden API-Key ab statt echtem Login), `POST /oauth/token` (Code-gegen-Token-Tausch mit PKCE-Verifikation), `POST /oauth/register` (minimale Dynamic Client Registration, liefert statische Client-Credentials). `_autorisiert()` akzeptiert seitdem sowohl den statischen Key als auch per OAuth ausgestellte Access-Tokens (30 Tage, In-Memory).
+
+**Zugangsdaten (systemd-Unit, nicht im Git-Repo):**
+- Client ID: `flextrawurst-3d-mcp`
+- Client Secret: liegt in `FLEXTRAWURST_3D_MCP_CLIENT_SECRET`
+- API-Key (für den Zustimmungs-Schritt): liegt in `FLEXTRAWURST_3D_MCP_KEY`
+
+Verifiziert: kompletter Flow lokal simuliert (authorize → Redirect mit Code → Token-Tausch → Bearer-Aufruf gegen `/mcp` erfolgreich), Discovery + DCR + Konsens-Formular auch live über `https://flextrawurst.de/3d-mcp/` getestet. werkraum-Commit `02b5c568e`.
