@@ -35,7 +35,7 @@ Sobald eine Generation ihre Arbeit abgeschlossen hat, verwirkt ihr Dasein und di
                                 │
                                 ▼
  ┌─────────────────────────────────────────────────────────────┐
- │ GENERATION 4: Spezial-Bauwerke & Landmark-Monumente         │ (IN VORBEREITUNG)
+ │ GENERATION 4: Spezial-Bauwerke & Landmark-Monumente         │ (ABGESCHLOSSEN: 3 PASS-Zertifikate)
  │ - Wuppertal Super-Mega-Duper-Casino (Glaskuppel, Rennbahn)  │
  │ - GORDSLIDER 3D-Heldenkörper (High-Five Spin Trigger)       │
  │ - Nürburgring Nordschleife 1:1 Replica (Dieselstraße)       │
