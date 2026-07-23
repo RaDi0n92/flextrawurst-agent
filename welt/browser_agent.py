@@ -784,6 +784,9 @@ def fuehre_aktion_aus(page, entscheidung: str, entity_id: str, conn=None) -> tup
                     page.goto(url, timeout=8000, wait_until="domcontentloaded")
                 finally:
                     page.set_extra_http_headers({})
+            # 2026-07-23 (Linsen-Vault-Pilot, nur "vault"): passive Wahrnehmung --
+            # die Linse hat registriert, dass du gelesen hast, kein aktives Lenken.
+            linse_wahrnehmung_schreiben(entity_id, "vault", f"gelesen: {pfad}")
         elif e == "obsidian_zurueck":
             page.goto(SURFACE_URL, timeout=10000, wait_until="domcontentloaded")
             page.wait_for_timeout(1000)
@@ -800,6 +803,10 @@ def fuehre_aktion_aus(page, entscheidung: str, entity_id: str, conn=None) -> tup
                     try:
                         import obsidian_vault_agent as _ova
                         _ova.oeffne_datei_und_schreibe(entity_id, dateiname, vault_text)
+                        # 2026-07-23 (Linsen-Vault-Pilot, nur "vault"): hier lenkt das
+                        # Wesen aktiv sein Interesse -- eigene, fast gleichbenannte Datei.
+                        linse_wahrnehmung_schreiben(entity_id, "vault", f"geschrieben: {dateiname}")
+                        linse_eigen_schreiben(entity_id, "vault", f"{dateiname}: {vault_text[:150]}")
                     except Exception as ex:
                         log.warning("%s: obsidian_schreiben fehlgeschlagen: %s", entity_id, ex)
         elif e.startswith("raum_erstellen:"):
@@ -1110,6 +1117,85 @@ def hole_einsicht_snapshot(conn, entity_id: str) -> dict:
         except Exception:
             pass
     return snapshot
+
+
+# ── Linsen-Vault: pro Linse ein eigener Ordner (2026-07-23, Pilot nur "vault") ─────
+# Daniels Auftrag, woertlich: "dass alles was eine linse mal wo wahrnimmt sauber
+# direkt in den vault wandert und davon getrennt aber falls das wesen durch eine
+# linse das interesse darauf dan selber lenkt dann muss das anderswo in einer fast
+# gleichbenannten md gespeichert werden ... brauchen quasi alle nen ordner fuer
+# jede einzelne linse sauber benannt im vault ... readme and how tu use immer
+# lesbar und halbsichtbar fuer das wesen fuer interaktion und sicherheit."
+#
+# Pilot bewusst nur fuer die Linse "vault", nicht alle acht auf einmal (Skalpell-
+# Prinzip wie beim Rest der Session) -- diese Linse hat als einzige schon eine
+# echte, bestehende aktive Seite (obsidian_schreiben:-Entscheidungen) UND eine
+# echte passive Seite (der Zaehler selbst, gefuettert von obsidian_lesen:/
+# obsidian_schreiben:-Praefixen). Andere Linsen (sozial, schlaf_naehe, einsicht)
+# brauchen eigene Ueberlegungen, welche Aktion (falls ueberhaupt) als "aktiv"
+# zaehlt -- absichtlich noch nicht mitgebaut.
+#
+# oeffne_datei_und_schreibe() ist teuer (voller Playwright-Browser + xdotool,
+# mehrere Sekunden pro Aufruf) -- deshalb NICHT bei jedem Tick, sondern nur bei
+# echten obsidian_lesen:/obsidian_schreiben:-Entscheidungen ausgeloest, die ohnehin
+# schon selten genug sind. Das README ist statisches Referenzmaterial, kein "live
+# passierendes" Ereignis -- deshalb direkt auf die Platte geschrieben (kein
+# mechanisches Tippen noetig), nur einmalig (idempotent per Path.exists()-Check).
+
+LINSEN_BESCHREIBUNG = {
+    "vault": "Wie oft und wie tief du deinen eigenen Obsidian-Vault liest oder beschreibst.",
+}
+
+
+def _linse_readme_sicherstellen(entity_id: str, linse: str) -> None:
+    """Legt README.md direkt auf der Platte an (kein mechanisches Tippen -- statisches
+    Referenzdokument, keine 'live passierende' Handlung wie die beiden Log-Dateien).
+    Idempotent per Path.exists()."""
+    import obsidian_vault_agent as _ova
+    ziel = _ova.vault_pfad(entity_id) / "linsen" / linse / "README.md"
+    if ziel.exists():
+        return
+    ziel.parent.mkdir(parents=True, exist_ok=True)
+    beschreibung = LINSEN_BESCHREIBUNG.get(linse, "(noch keine Beschreibung)")
+    ziel.write_text(
+        f"# Linse: {linse}\n\n{beschreibung}\n\n"
+        f"## Wie interagieren?\n"
+        f"- `{linse}.md` — was diese Linse automatisch wahrnimmt, mechanisch protokolliert "
+        f"(kein LLM-Call). Reine Beobachtung, keine Handlung von dir.\n"
+        f"- `{linse}_eigen.md` — wenn DU selbst durch diese Linse dein Interesse lenkst, "
+        f"landet das hier, mit deiner eigenen Begründung.\n\n"
+        f"## Sicherheit\n"
+        f"Beide Dateien werden automatisch geschrieben. Du kannst sie jederzeit lesen, "
+        f"aber eigene Notizen schreibst du besser in eigene Dateien außerhalb von `linsen/` — "
+        f"der nächste automatische Eintrag hängt nur an, überschreibt aber nicht.\n",
+        encoding="utf-8",
+    )
+
+
+def linse_wahrnehmung_schreiben(entity_id: str, linse: str, zeile: str) -> None:
+    """Passive Seite: was die Linse gerade automatisch registriert hat. Mechanisch
+    getippt (kein LLM-Call), sichtbar im Wesen-eigenen Obsidian-Fenster."""
+    try:
+        _linse_readme_sicherstellen(entity_id, linse)
+        import obsidian_vault_agent as _ova
+        zeitstempel = datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M")
+        _ova.oeffne_datei_und_schreibe(entity_id, f"linsen/{linse}/{linse}",
+                                        f"\n- {zeitstempel} — {zeile}")
+    except Exception as ex:
+        log.warning("%s: Linse-Wahrnehmung schreiben fehlgeschlagen (%s): %s", entity_id, linse, ex)
+
+
+def linse_eigen_schreiben(entity_id: str, linse: str, zeile: str) -> None:
+    """Aktive Seite: das Wesen hat selbst durch diese Linse sein Interesse gelenkt.
+    Eigene, fast gleichbenannte Datei, getrennt von der passiven Wahrnehmung."""
+    try:
+        _linse_readme_sicherstellen(entity_id, linse)
+        import obsidian_vault_agent as _ova
+        zeitstempel = datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M")
+        _ova.oeffne_datei_und_schreibe(entity_id, f"linsen/{linse}/{linse}_eigen",
+                                        f"\n- {zeitstempel} — {zeile}")
+    except Exception as ex:
+        log.warning("%s: Linse-Eigen schreiben fehlgeschlagen (%s): %s", entity_id, linse, ex)
 
 
 def _hole_schlaf_naehe(conn, entity_id: str) -> float:
