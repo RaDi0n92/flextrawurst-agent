@@ -82,3 +82,21 @@ Die Flextrawurst 3D-Pipeline erweitert den VPS um vollautomatisierte, bildschirm
 
 🎉 SÄMTLICHE 5 FLESTRAWURST 3D PIPELINE & MCP TESTS ERFOLGREICH BESTANDEN!
 ```
+
+---
+
+## 5. Nachtrag (claude-code, 2026-07-23): Öffentliche Freischaltung für ChatGPT + Sicherheitsfix
+
+Daniels Auftrag: den Server für ChatGPT erreichbar machen (Custom-GPT-Actions via `/openapi.json` UND nativer MCP-Connector via `/mcp`). Vor der Freischaltung zwei Lücken gefunden und geschlossen:
+
+- **Kein Auth, keine Pfad-Prüfung:** `input_path`/`output_path`/`project_dir` wurden ungeprüft an Blender/Godot durchgereicht — öffentlich ohne Schutz wäre das beliebiges Datei-Lesen/Schreiben für jeden im Internet gewesen. Neuer `API_KEY`-Check (`FLEXTRAWURST_3D_MCP_KEY` Env-Var) vor allen POST-Endpunkten, greift nur wenn gesetzt — lokale Nutzung (Antigravity CLI) ohne die Var bleibt unverändert unauthentifiziert.
+- **`initialize`-Methode fehlte** im JSON-RPC-Handler — das offizielle MCP-Protokoll erwartet diesen Handshake vor `tools/list`/`tools/call`, sonst brechen konforme Clients (ChatGPTs nativer MCP-Connector) die Verbindung ab. Ergänzt.
+- **OpenAPI-`servers`-URL** war hart auf `http://127.0.0.1:8090` gesetzt — jetzt über `FLEXTRAWURST_3D_MCP_PUBLIC_URL` konfigurierbar.
+
+**Öffentlich erreichbar unter:** `https://flextrawurst.de/3d-mcp/` (nginx-Location in `/etc/nginx/sites-available/flextrawurst`, proxy zu weiterhin nur auf `127.0.0.1:8090` gebundenem Server — kein neuer offener Port). Schlüssel liegt in der systemd-Unit (`Environment=FLEXTRAWURST_3D_MCP_KEY=...`), nicht im Git-Repo.
+
+- OpenAPI-Schema für Custom GPT Actions: `https://flextrawurst.de/3d-mcp/openapi.json`
+- MCP-JSON-RPC-Endpunkt: `https://flextrawurst.de/3d-mcp/mcp`
+- Beide erfordern `Authorization: Bearer <FLEXTRAWURST_3D_MCP_KEY>`
+
+Verifiziert: lokal (401 ohne Key, 200 mit Key, `initialize`-Antwort korrekt formt), live über die echte Domain nach nginx-Reload, Hauptseite + Flarum-Embed danach weiterhin unverändert erreichbar. werkraum-Commit `f1789f12a`.
