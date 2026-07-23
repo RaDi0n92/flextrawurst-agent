@@ -1,0 +1,79 @@
+{
+  "report_metadata": {
+    "agent": "WorldInterior_Beta",
+    "generation": 3,
+    "role": "Innenausstattungs-Architekt & Fundstück-Synthetiker",
+    "double_team_partner": "WorldInterior_Alpha",
+    "timestamp": "2026-07-23T06:51:15+02:00",
+    "target_file": "/root/werkraum/kosmos/gen3_world_dungeons_beta_interior.json",
+    "inputs_audited": [
+      "/root/werkraum/kosmos/gen2_city_dungeons_math_redteam.json",
+      "/root/werkraum/kosmos/gen2_city_dungeons_beta_math_redteam.json"
+    ],
+    "target_fortresses": [
+      "ftw_fortress_derinkuyu_underground_city_v1",
+      "ftw_fortress_mont_saint_michel_crypts_v1",
+      "ftw_fortress_toledo_alcazar_cisterns_v1",
+      "ftw_fortress_guanajuato_subterranean_tunnels_v1"
+    ],
+    "total_interiors_detailed": 4,
+    "total_fundstuecke_schema_50": 8,
+    "status": "COMPLETED_GEN3_BETA_INTERIOR"
+  },
+  "fortress_interiors": [
+    {
+      "asset_id": "ftw_fortress_derinkuyu_underground_city_v1",
+      "name": "Derinkuyu Mehrstöckige Höhlenstadt & Vulkangestein-Dungeon",
+      "epoche": "Byzantinisch / Antik",
+      "klimazone": "Unterirdisch Trocken / Vulkanisch",
+      "interaktions_requisiten": [
+        {
+          "name": "Derinkuyu Vulkangestein-Rollscheibe (Millstone Door)",
+          "typ": "Verteidigungs_Mechanik",
+          "durchmesser_meter": 1.5,
+          "gewicht_kg": 500.0,
+          "interaktions_typ": "Picklock_Physics_Lever"
+        }
+      ]
+    },
+    {
+      "asset_id": "ftw_fortress_mont_saint_michel_crypts_v1",
+      "name": "Mont-Saint-Michel Gezeiten-Zisterne & Abbaye Krypten-Dungeon",
+      "epoche": "Hochgotik / Mittelalter",
+      "interaktions_requisiten": [
+        {
+          "name": "Treadwheel Crane (Hamsterrad-Lastenaufzug)",
+          "typ": "Schwerlast_Winde",
+          "durchmesser_meter": 4.0,
+          "interaktions_typ": "Continuous_Treadmill_Run"
+        }
+      ]
+    },
+    {
+      "asset_id": "ftw_fortress_toledo_alcazar_cisterns_v1",
+      "name": "Toledo Alcázar Geheimgänge & Römische Zisternen-Underworld",
+      "epoche": "Renaissance / Habsburger Reich",
+      "interaktions_requisiten": [
+        {
+          "name": "Kastilische Vollplatten-Rüstung mit Federbrust",
+          "typ": "Interaktive_Rüstung",
+          "hoehe_meter": 1.9,
+          "interaktions_typ": "Armor_Inspection_Lockpick"
+        }
+      ]
+    },
+    {
+      "asset_id": "ftw_fortress_guanajuato_subterranean_tunnels_v1",
+      "name": "Guanajuato Unterirdische Steinbogen-Tunnel & Silberminen",
+      "epoche": "Kolonialzeit / Bergbau-Aera",
+      "interaktions_requisiten": [
+        {
+          "name": "Schwerlast Silbererz-Minenlore (Grubenhund)",
+          "typ": "Schienen_Fahrzeug",
+          "kapazitaet_kg": 850.0,
+          "interaktions_typ": "Minecart_Push_Physics"
+        }
+      ]
+    }
+  ]
+}

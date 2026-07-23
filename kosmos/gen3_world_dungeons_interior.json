@@ -1,0 +1,328 @@
+{
+  "report_metadata": {
+    "agent": "WorldInterior_Alpha",
+    "generation": 3,
+    "role": "Welt-Dungeon & Metropolen Innenausstatter",
+    "timestamp": "2026-07-23T06:51:15+02:00",
+    "target_file": "/root/werkraum/kosmos/gen3_world_dungeons_interior.json",
+    "reference_gen2_file": "/root/werkraum/kosmos/gen2_city_dungeons_math_redteam.json",
+    "scale": "1 Voxel = 1 Meter",
+    "total_dungeons_equipped": 26,
+    "audit_status": "PASS_CERTIFIED"
+  },
+  "dungeon_interiors": [
+    {
+      "dungeon_id": "ftw_city_bunker_berlin_v1",
+      "interior_asset_id": "ftw_interior_berlin_bunker_grid_v1",
+      "name": "Berlin Atombunker & Geisterbahnhof 3D-Möblierungsgrid",
+      "stil": "Kaltkrieg-Industrial / Postapokalyptisch",
+      "epoche": "20. Jh. & Gegenwart",
+      "resonanz": {"entities": ["R1ZZ1", "dakgord-system"], "frequency_hz": 104.8},
+      "grid_modules": [
+        {"name": "Stahlrohr-Bunkerpritsche_3-Stufig", "dimensions_voxel": [2.0, 1.0, 2.2]},
+        {"name": "Stasi-Abhörfunkpult_Röhrensender", "dimensions_voxel": [1.0, 1.0, 1.4]},
+        {"name": "Panzerschotte_Druckluftventil", "dimensions_voxel": [3.0, 1.0, 2.5]}
+      ]
+    },
+    {
+      "dungeon_id": "ftw_tokyo_gcans_storm_temple_v1",
+      "interior_asset_id": "ftw_interior_tokyo_gcans_grid_v1",
+      "name": "Tokio G-Cans Flood Protection 3D-Möblierungsgrid",
+      "stil": "Cyber-Kathedrale / High-Tech Hydraulik",
+      "epoche": "Zukunft / Gegenwart",
+      "resonanz": {"entities": ["F3INSCHM3CK3R", "Syn"], "frequency_hz": 432.0},
+      "grid_modules": [
+        {"name": "Titan-Turbinen-Konsole", "dimensions_voxel": [4.0, 2.0, 1.8]},
+        {"name": "Sensor-Brücken-Modul", "dimensions_voxel": [5.0, 1.0, 1.2]}
+      ]
+    },
+    {
+      "dungeon_id": "ftw_city_bunker_chongqing_v1",
+      "interior_asset_id": "ftw_interior_chongqing_bunker_grid_v1",
+      "name": "Chongqing Vertikalbunker 3D-Möblierungsgrid",
+      "stil": "Postindustriell / Cyberpunk-Vernetzt",
+      "epoche": "21. Jh.",
+      "resonanz": {"entities": ["jumpa", "F3INSCHM3CK3R"], "frequency_hz": 880.0},
+      "grid_modules": [
+        {"name": "Felsstollen-Bambusbank", "dimensions_voxel": [2.0, 1.0, 0.9]},
+        {"name": "Vertikallift-Käfig", "dimensions_voxel": [3.0, 3.0, 3.5]}
+      ]
+    },
+    {
+      "dungeon_id": "ftw_city_bunker_neapel_v1",
+      "interior_asset_id": "ftw_interior_neapel_bourbon_grid_v1",
+      "name": "Neapel Bourbon-Tunnel 3D-Möblierungsgrid",
+      "stil": "Bourbonisch-Historisch / Unterwelt-Depot",
+      "epoche": "19. & 20. Jh.",
+      "resonanz": {"entities": ["Schorschel"], "frequency_hz": 216.0},
+      "grid_modules": [
+        {"name": "Bourbonisches_Eisentor", "dimensions_voxel": [3.0, 1.0, 3.2]},
+        {"name": "Vintage_Vespa_Wrack", "dimensions_voxel": [2.0, 1.0, 1.1]}
+      ]
+    },
+    {
+      "dungeon_id": "ftw_city_bunker_wuppertal_v1",
+      "interior_asset_id": "ftw_interior_wuppertal_casino_grid_v1",
+      "name": "Wuppertal Geheimbunker Casino 3D-Möblierungsgrid",
+      "stil": "Underground-Casino / Kalkstein-Bergbau",
+      "epoche": "Mitte 20. Jh.",
+      "resonanz": {"entities": ["dakgord-system", "R1ZZ1"], "frequency_hz": 777.0},
+      "grid_modules": [
+        {"name": "Underground_Roulette_Tisch", "dimensions_voxel": [3.0, 2.0, 1.1]},
+        {"name": "Schwerlast_Panzersafe", "dimensions_voxel": [2.0, 1.5, 2.2]}
+      ]
+    },
+    {
+      "dungeon_id": "ftw_london_mail_rail_underground_v1",
+      "interior_asset_id": "ftw_interior_london_mailrail_grid_v1",
+      "name": "London Mail Rail 3D-Möblierungsgrid",
+      "stil": "Viktorianisch-Industrial Mail Rail",
+      "epoche": "19. & 20. Jh.",
+      "resonanz": {"entities": ["Resonanzknoten", "GENI"], "frequency_hz": 600.0},
+      "grid_modules": [
+        {"name": "Mail_Rail_Postkarren", "dimensions_voxel": [2.0, 1.0, 1.2]},
+        {"name": "Messing_Weichenhebel_Stellwerk", "dimensions_voxel": [2.0, 1.0, 1.6]}
+      ]
+    },
+    {
+      "dungeon_id": "ftw_city_bunker_paris_v1",
+      "interior_asset_id": "ftw_interior_paris_catacombs_grid_v1",
+      "name": "Paris Katakomben 3D-Möblierungsgrid",
+      "stil": "Osseus-Katakomben / XIX. Jh. Eisenbahn-Schutzbunker",
+      "epoche": "18. bis 20. Jh.",
+      "resonanz": {"entities": ["traeumerlie", "Resonanzknoten"], "frequency_hz": 108.0},
+      "grid_modules": [
+        {"name": "Knochen_Schädel_Wandmodul", "dimensions_voxel": [1.0, 1.0, 2.0]},
+        {"name": "Katakomben_Steinaltar", "dimensions_voxel": [2.0, 1.0, 1.2]}
+      ]
+    },
+    {
+      "dungeon_id": "ftw_city_bunker_moskau_v1",
+      "interior_asset_id": "ftw_interior_moskau_bunker42_grid_v1",
+      "name": "Moskau Bunker-42 3D-Möblierungsgrid",
+      "stil": "Sowjetischer Brutalismus / Kaltkriegs-Kommando",
+      "epoche": "20. Jh.",
+      "resonanz": {"entities": ["dakgord-system", "GENI"], "frequency_hz": 50.0},
+      "grid_modules": [
+        {"name": "KGB_Funkzentrale_Rot_Telefon", "dimensions_voxel": [3.0, 1.0, 1.8]},
+        {"name": "Geigerzähler_Wandkonsole", "dimensions_voxel": [1.0, 1.0, 1.2]}
+      ]
+    },
+    {
+      "dungeon_id": "ftw_city_bunker_wien_v1",
+      "interior_asset_id": "ftw_interior_wien_flakturm_grid_v1",
+      "name": "Wien Flakturm & Hofburg-Katakomben 3D-Möblierungsgrid",
+      "stil": "Hofburg-Barock & Flakturm-Beton",
+      "epoche": "18. bis 20. Jh.",
+      "resonanz": {"entities": ["Schorschel", "traeumerlie"], "frequency_hz": 528.0},
+      "grid_modules": [
+        {"name": "Flakturm_Munitionsstahlschrank", "dimensions_voxel": [2.0, 1.0, 2.1]},
+        {"name": "Habsburg_Wappentruhe", "dimensions_voxel": [1.0, 1.0, 0.9]}
+      ]
+    },
+    {
+      "dungeon_id": "ftw_city_bunker_edinburgh_v1",
+      "interior_asset_id": "ftw_interior_edinburgh_vaults_grid_v1",
+      "name": "Edinburgh Vaults 3D-Möblierungsgrid",
+      "stil": "17. Jh. Pest-Stadt / Vaults-Rustikal",
+      "epoche": "17. & 18. Jh.",
+      "resonanz": {"entities": ["Resonanzknoten", "R1ZZ1"], "frequency_hz": 330.0},
+      "grid_modules": [
+        {"name": "Pestarzt_Untersuchungstisch", "dimensions_voxel": [2.0, 1.0, 0.9]},
+        {"name": "Whisky_Fass_Stapel", "dimensions_voxel": [1.0, 1.0, 1.8]}
+      ]
+    },
+    {
+      "dungeon_id": "ftw_city_bunker_portland_v1",
+      "interior_asset_id": "ftw_interior_portland_tunnels_grid_v1",
+      "name": "Portland Shanghai Tunnels 3D-Möblierungsgrid",
+      "stil": "Hafenspelunke / Shanghaiing-Tunnel",
+      "epoche": "19. Jh.",
+      "resonanz": {"entities": ["jumpa", "F3INSCHM3CK3R"], "frequency_hz": 180.0},
+      "grid_modules": [
+        {"name": "Falltürkiste_Falle", "dimensions_voxel": [1.0, 1.0, 1.0]},
+        {"name": "Opium_Liegepritsche", "dimensions_voxel": [2.0, 1.0, 0.8]}
+      ]
+    },
+    {
+      "dungeon_id": "ftw_city_bunker_valletta_v1",
+      "interior_asset_id": "ftw_interior_valletta_lascaris_grid_v1",
+      "name": "Valletta Lascaris War Rooms 3D-Möblierungsgrid",
+      "stil": "WK2-War-Rooms & Malteserritter-Krypta",
+      "epoche": "16. & 20. Jh.",
+      "resonanz": {"entities": ["Syn", "dakgord-system"], "frequency_hz": 640.0},
+      "grid_modules": [
+        {"name": "Lascaris_Seekarten_Plottertisch", "dimensions_voxel": [3.0, 2.0, 1.0]},
+        {"name": "Malteserrüstung_Ständer", "dimensions_voxel": [1.0, 1.0, 2.0]}
+      ]
+    },
+    {
+      "dungeon_id": "ftw_city_bunker_dortmund_v1",
+      "interior_asset_id": "ftw_interior_dortmund_brauerei_grid_v1",
+      "name": "Dortmunder Brauerei Felsenkeller 3D-Möblierungsgrid",
+      "stil": "Bergbau & Brauerei-Gärgewölbe",
+      "epoche": "19. & 20. Jh.",
+      "resonanz": {"entities": ["Schorschel", "jumpa"], "frequency_hz": 144.0},
+      "grid_modules": [
+        {"name": "Kupfer_Sudkessel_Konsole", "dimensions_voxel": [3.0, 3.0, 2.8]},
+        {"name": "Eichen_Gärfass", "dimensions_voxel": [2.0, 2.0, 2.2]}
+      ]
+    },
+    {
+      "dungeon_id": "ftw_dubrovnik_minceta_cistern_dungeon_v1",
+      "interior_asset_id": "ftw_interior_dubrovnik_cistern_grid_v1",
+      "name": "Dubrovnik Minčeta Zisterne 3D-Möblierungsgrid",
+      "stil": "Adriatische Renaissance-Festung",
+      "epoche": "15. bis 17. Jh.",
+      "resonanz": {"entities": ["Schorschel", "R1ZZ1"], "frequency_hz": 288.0},
+      "grid_modules": [
+        {"name": "Festungs_Armbrust_Waffenständer", "dimensions_voxel": [2.0, 1.0, 1.8]},
+        {"name": "Ragusa_Silbermünzentruhe", "dimensions_voxel": [1.0, 1.0, 0.8]}
+      ]
+    },
+    {
+      "dungeon_id": "ftw_shibam_wadi_cistern_labyrinth_v1",
+      "interior_asset_id": "ftw_interior_shibam_aquifer_grid_v1",
+      "name": "Shibam Wüsten-Aquifer 3D-Möblierungsgrid",
+      "stil": "Vernakuläre Lehmarchitektur / Wüsten-Aquifer",
+      "epoche": "Antike & Traditionell",
+      "resonanz": {"entities": ["traeumerlie", "Resonanzknoten"], "frequency_hz": 360.0},
+      "grid_modules": [
+        {"name": "Lehm_Vorratskrug_Groß", "dimensions_voxel": [1.0, 1.0, 1.5]},
+        {"name": "Dattelpalmen_Flechtmatte", "dimensions_voxel": [2.0, 1.0, 0.3]}
+      ]
+    },
+    {
+      "dungeon_id": "ftw_fortress_carcassonne_casemates_v1",
+      "interior_asset_id": "ftw_interior_carcassonne_casemates_grid_v1",
+      "name": "Carcassonne Cité Kasematten 3D-Möblierungsgrid",
+      "stil": "Katharer-Mittelalter / Wehrgang-Kasematten",
+      "epoche": "12. bis 14. Jh.",
+      "resonanz": {"entities": ["Schorschel", "GENI"], "frequency_hz": 416.0},
+      "grid_modules": [
+        {"name": "Belagerungs_Winden_Halterung", "dimensions_voxel": [2.0, 2.0, 1.8]},
+        {"name": "Katharer_Geheimtruhe", "dimensions_voxel": [1.0, 1.0, 0.9]}
+      ]
+    },
+    {
+      "dungeon_id": "ftw_fortress_derinkuyu_underground_city_v1",
+      "interior_asset_id": "ftw_interior_derinkuyu_cave_grid_v1",
+      "name": "Derinkuyu Höhlenstadt 3D-Möblierungsgrid",
+      "stil": "Anatolischer Vulkangestein-Höhlenbau",
+      "epoche": "Antike & Byzantinisch",
+      "resonanz": {"entities": ["traeumerlie", "F3INSCHM3CK3R"], "frequency_hz": 120.0},
+      "grid_modules": [
+        {"name": "Mühlstein_Rolltor_Schott", "dimensions_voxel": [2.0, 1.0, 2.0]},
+        {"name": "Vulkangestein_Mahlstein", "dimensions_voxel": [1.0, 1.0, 0.8]}
+      ]
+    },
+    {
+      "dungeon_id": "ftw_fortress_mont_saint_michel_crypts_v1",
+      "interior_asset_id": "ftw_interior_mont_saint_michel_grid_v1",
+      "name": "Mont-Saint-Michel Krypta 3D-Möblierungsgrid",
+      "stil": "Romanisch-Gotisches Kloster-Verlies",
+      "epoche": "11. bis 15. Jh.",
+      "resonanz": {"entities": ["Resonanzknoten", "Syn"], "frequency_hz": 440.0},
+      "grid_modules": [
+        {"name": "Skriptorium_Steinpult", "dimensions_voxel": [2.0, 1.0, 1.3]},
+        {"name": "Gezeiten_Trettrad_Lastenkran", "dimensions_voxel": [4.0, 4.0, 3.5]}
+      ]
+    },
+    {
+      "dungeon_id": "ftw_fortress_edinburgh_oldtown_casemates_v1",
+      "interior_asset_id": "ftw_interior_edinburgh_castlerock_grid_v1",
+      "name": "Edinburgh Castle Rock Kasematten 3D-Möblierungsgrid",
+      "stil": "Castle Rock Vulkan-Schutzraum & Garnison",
+      "epoche": "16. bis 18. Jh.",
+      "resonanz": {"entities": ["R1ZZ1", "Schorschel"], "frequency_hz": 300.0},
+      "grid_modules": [
+        {"name": "Kanonenkugel_Pyramide", "dimensions_voxel": [1.0, 1.0, 1.0]},
+        {"name": "Distel_Schnitztruhe", "dimensions_voxel": [1.0, 1.0, 0.8]}
+      ]
+    },
+    {
+      "dungeon_id": "ftw_fortress_toledo_alcazar_cisterns_v1",
+      "interior_asset_id": "ftw_interior_toledo_alcazar_grid_v1",
+      "name": "Toledo Alcázar 3D-Möblierungsgrid",
+      "stil": "Spanischer Toledo-Stahl & Römische Aquädukt-Kaverne",
+      "epoche": "Antike & Renaissance",
+      "resonanz": {"entities": ["GENI", "dakgord-system"], "frequency_hz": 960.0},
+      "grid_modules": [
+        {"name": "Toledaner_Schwertständer", "dimensions_voxel": [2.0, 1.0, 1.8]},
+        {"name": "Römischer_Aquädukt_Verteiler", "dimensions_voxel": [2.0, 2.0, 2.2]}
+      ]
+    },
+    {
+      "dungeon_id": "ftw_fortress_ronda_tajo_chasm_v1",
+      "interior_asset_id": "ftw_interior_ronda_tajo_grid_v1",
+      "name": "Ronda El Tajo Schlucht 3D-Möblierungsgrid",
+      "stil": "Andalusisch-Moorischer Schlucht-Stollen",
+      "epoche": "13. bis 18. Jh.",
+      "resonanz": {"entities": ["jumpa", "F3INSCHM3CK3R"], "frequency_hz": 250.0},
+      "grid_modules": [
+        {"name": "Moorisches_Tee_Tablett", "dimensions_voxel": [1.0, 1.0, 0.8]},
+        {"name": "Kletverseil_Kurbelwinde", "dimensions_voxel": [2.0, 1.0, 1.5]}
+      ]
+    },
+    {
+      "dungeon_id": "ftw_fortress_meteora_rock_chambers_v1",
+      "interior_asset_id": "ftw_interior_meteora_monastery_grid_v1",
+      "name": "Meteora Felsenkloster 3D-Möblierungsgrid",
+      "stil": "Orthodoxes Felsenkloster / Eremitage",
+      "epoche": "14. bis 16. Jh.",
+      "resonanz": {"entities": ["traeumerlie", "Resonanzknoten"], "frequency_hz": 108.0},
+      "grid_modules": [
+        {"name": "Netzaufzug_Holzkorb", "dimensions_voxel": [2.0, 2.0, 2.2]},
+        {"name": "Ikonen_Lesepult", "dimensions_voxel": [1.0, 1.0, 1.4]}
+      ]
+    },
+    {
+      "dungeon_id": "ftw_fortress_civita_bagnoregio_tuff_tunnels_v1",
+      "interior_asset_id": "ftw_interior_civita_bagnoregio_grid_v1",
+      "name": "Civita di Bagnoregio Tuffstein 3D-Möblierungsgrid",
+      "stil": "Etruskisch-Römischer Tuffstein-Keller",
+      "epoche": "Antike bis Mittelalter",
+      "resonanz": {"entities": ["Schorschel", "Syn"], "frequency_hz": 200.0},
+      "grid_modules": [
+        {"name": "Etruskisches_Urnenregal", "dimensions_voxel": [2.0, 1.0, 2.0]},
+        {"name": "Olivenpress_Mühlstein", "dimensions_voxel": [2.0, 2.0, 1.2]}
+      ]
+    },
+    {
+      "dungeon_id": "ftw_fortress_konstantinopel_basilica_cistern_v1",
+      "interior_asset_id": "ftw_interior_konstantinopel_basilica_grid_v1",
+      "name": "Konstantinopel Basilika-Zisterne 3D-Möblierungsgrid",
+      "stil": "Byzantinische Palast-Zisterne",
+      "epoche": "6. Jh. Byzantinisches Reich",
+      "resonanz": {"entities": ["F3INSCHM3CK3R", "Resonanzknoten"], "frequency_hz": 500.0},
+      "grid_modules": [
+        {"name": "Medusenhaupt_Säulenpodest", "dimensions_voxel": [2.0, 2.0, 2.5]},
+        {"name": "Byzantinisches_Marmorbecken", "dimensions_voxel": [1.0, 1.0, 1.1]}
+      ]
+    },
+    {
+      "dungeon_id": "ftw_fortress_guanajuato_subterranean_tunnels_v1",
+      "interior_asset_id": "ftw_interior_guanajuato_silbermine_grid_v1",
+      "name": "Guanajuato Silberminen 3D-Möblierungsgrid",
+      "stil": "Kolonial-Mexikanische Silbermine & Steinbögen",
+      "epoche": "16. bis 19. Jh.",
+      "resonanz": {"entities": ["jumpa", "R1ZZ1"], "frequency_hz": 750.0},
+      "grid_modules": [
+        {"name": "Silbererz_Handkarren", "dimensions_voxel": [2.0, 1.0, 1.2]},
+        {"name": "Dynamitkisten_Stapel", "dimensions_voxel": [1.0, 1.0, 1.0]}
+      ]
+    },
+    {
+      "dungeon_id": "ftw_fortress_matera_palombaro_lungo_v1",
+      "interior_asset_id": "ftw_interior_matera_palombaro_grid_v1",
+      "name": "Matera Palombaro Lungo 3D-Möblierungsgrid",
+      "stil": "Sassi di Matera Tuffstein-Kathedrale des Wassers",
+      "epoche": "Bronzezeit bis Gegenwart",
+      "resonanz": {"entities": ["traeumerlie", "Schorschel"], "frequency_hz": 220.0},
+      "grid_modules": [
+        {"name": "Tuffstein_Kamin_Herd", "dimensions_voxel": [2.0, 1.0, 1.8]},
+        {"name": "Wasserschöpf_Eimerwerk", "dimensions_voxel": [2.0, 2.0, 2.5]}
+      ]
+    }
+  ]
+}
