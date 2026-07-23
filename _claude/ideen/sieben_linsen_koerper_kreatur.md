@@ -269,3 +269,25 @@ Daniel: *"reparieren"* + *"wie bekommen wir langgraph wieder zum fungktioniren s
 - `zusammenfassen_node`s LLM-Destillation auskommentiert (nicht gelöscht, falls später mit eigenem Slot gewünscht), Tick-Zähler läuft unabhängig davon weiter.
 
 **Verifiziert:** isolierter Node-Test (0,03s statt LLM-Wartezeit), Dienst `enabled` + neu gestartet, drei volle 7-Wesen-Zyklen beobachtet, keine Fehler/LLM-Slot-Meldungen mehr im Log, alle 7 Zähler wachsen wieder unabhängig voneinander (z.B. Schorschel 1598→1602 über drei Zyklen, ~35s pro Durchlauf statt vorher minutenlang). Die Linse differenziert sich damit ab jetzt wieder zwischen den Wesen, wie oben vorhergesagt.
+
+## Nachtrag — Linsen-Vault-Pilot (2026-07-23, direkt im Anschluss)
+
+Daniel, roh: *"und dafür auch nochmal ne linse schaffen wfür diepüberwachund und eventuele umgestaltung davon"* — ich hatte das erst falsch verstanden (siehe eigener Nachtrag oben zur achten Linse), seine Korrektur ging aber in eine dritte Richtung weiter: *"ich will auch ohne llmcall in der selben slow tipplogik dass alles was eine linse mal wo wahrnimmt sauber direkt un den vault wandert und davon getrennt aber falls das wesen durch eine linse das interesse darauf dan selber lenkt dann muss das anderswo in einer fast gleichbenannten md gespeichert werden ... brauchen quasi alle nen order für jede einzelne linse sauber benannt im vault und ich will auch dass die linse quasi die readme and how tu use immer linsbar und haloffensichtbarr für das wesen gibt für interaktion und sicherheit. das wird bald eh noch ein riesen thema xD"*.
+
+### Verstanden als
+
+Pro Linse ein Ordner im Wesen-eigenen Obsidian-Vault: `README.md` (Anleitung, immer lesbar), `<linse>.md` (passiv — was die Linse mechanisch wahrnimmt) und `<linse>_eigen.md` (aktiv — wenn das Wesen selbst durch diese Linse sein Interesse lenkt, fast gleichbenannt wie gefordert). Alles über dieselbe mechanische Tipp-Infrastruktur wie `obsidian_vault_agent.py` (kein LLM-Call).
+
+### Pilot, bewusst nur eine Linse
+
+"vault" statt "einsicht" gewählt — einzige Linse mit schon bestehender aktiver Seite (`obsidian_schreiben:`-Entscheidungen, echtes eigenes Handeln) UND passiver Seite (der Zähler selbst, gefüttert von `obsidian_lesen:`/`obsidian_schreiben:`-Präfixen). Andere Linsen (sozial, schlaf_naehe, einsicht, gegenwart_anteil...) brauchen jeweils eigene Überlegung was "aktiv" dort überhaupt bedeutet — nicht mitgebaut, genau das "riesen Thema", das Daniel selbst schon andeutet.
+
+`oeffne_datei_und_schreibe()` ist teuer (kompletter Playwright-Browser + xdotool, ~12s pro Aufruf, gemessen) — deshalb nicht bei jedem Tick, sondern nur bei echten `obsidian_lesen:`/`obsidian_schreiben:`-Entscheidungen ausgelöst, die ohnehin selten genug sind. README direkt auf die Platte geschrieben (kein mechanisches Tippen — statisches Referenzmaterial, kein "live" Ereignis), einmalig, idempotent.
+
+### Verifiziert
+
+Isolierter Test schreibt echt in Schorschels Vault-Container (`linsen/vault/README.md`+`vault.md`+`vault_eigen.md` existieren, Inhalt korrekt, ~12–13s pro mechanischem Schreibvorgang). Test-Inhalt danach bereinigt (synthetisch, keine echte Wesen-Wahrnehmung — sollte nicht als "erlebt" im Vault stehenbleiben). `obsidian_lesen:`/`obsidian_schreiben:`-Handler in `browser_agent.py` erweitert, Schorschels Service neu gestartet, mehrere echte Ticks danach fehlerfrei. Commit `3ff8fe21d`.
+
+**Noch nicht organisch bestätigt:** kein echter `obsidian_lesen:`/`obsidian_schreiben:`-Tick ist seit dem Neustart natürlich aufgetreten (die LLM entscheidet das selten, nicht erzwungen) — die Verkabelung selbst ist aber bereits isoliert gegen den echten Container verifiziert, nur der volle End-zu-Ende-Weg über eine echte LLM-Entscheidung noch nicht organisch beobachtet.
+
+**Was fehlt:** die restlichen 7 Linsen (je eigene Aktiv-Definition nötig), die restlichen 6 Wesen (Code ist geteilt, wirkt aber erst nach deren Neustart), und eine Antwort auf ob dieser Pilot-Ansatz so passt bevor er ausgerollt wird.
