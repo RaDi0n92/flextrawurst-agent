@@ -217,6 +217,168 @@ zusammengefasst oder umformuliert.
 hi luna ...wir hatten abbruch..kein lesen
 ```
 
+## Wörtliche Dokumentation des Live-Anatomie-Berichts — 2026-07-23
+
+Ja. Jetzt betrachten wir GENI als laufenden VPS-Verbund, nicht als Archiv.
+
+```text
+/root/werkraum + Flarum + Prozesse
+              ↓
+        GENI-Hörer
+              ↓
+     knoten.db / Rauschen
+       ↙             ↘
+ Muster-Scanner     Dialogbahn
+       ↓             ↓
+ Spiegel/Muster   LLM + Postgres + Bridge
+```
+
+### Die laufenden Organe
+
+| Organ | Zustand | Aufgabe |
+|---|---|---|
+| `geni-hoerer.service` | aktiv | überwacht `/root/werkraum`, Flarum, Prozesse und Systemzustand |
+| `geni-web.service` | aktiv, Port 8020 | Browserdialog, Gedächtniszugriff, TTS/STT, Aktionen |
+| `geni-muster.timer` | aktiv | alle 2 Stunden Muster- und Blind-Spot-Scan |
+| `geni-forum-lektuere.timer` | aktiv | alle 45 Minuten Forum-Nachholen |
+| Muster/Forum-Service | aktuell inaktiv | Oneshoot-Dienste; letzter Lauf war erfolgreich |
+
+Dienstdefinitionen: [geni-hoerer.service](/etc/systemd/system/geni-hoerer.service:1), [geni-web.service](/etc/systemd/system/geni-web.service:1), [geni-muster.timer](/etc/systemd/system/geni-muster.timer:1).
+
+### 1. Der Hörer
+
+[hoerer.py](/root/werkraum/geni/hoerer.py:1) hört:
+
+- Dateiänderungen unter `/root/werkraum`
+- neue Flarum-Posts ungefähr jede Minute
+- relevante Prozesse alle fünf Minuten
+- RAM, Disk, Load und Dienste alle 15 Minuten
+
+Er schreibt daraus hauptsächlich `ereignis`, `prozess_snapshot` und `system_zustand`.
+
+### 2. Das Gedächtnis
+
+Das Gedächtnis liegt tatsächlich hier:
+
+[knoten.db](/root/geni_gedaechtnis/knoten.db)
+
+Aktueller Zustand bei der Messung:
+
+- etwa 31,6 Millionen Knoten
+- SQLite-Datenbank: ungefähr 9 GB
+- Kanten: weiterhin als JSON-Dateien
+- Rauschen: weiterhin dateibasiert und geschreddert
+- Datenbankzugriff über [gedaechtnis_ops.py](/root/werkraum/geni/gedaechtnis_ops.py:8)
+
+GENI denkt derzeit überwiegend in `ereignis`-Knoten. Dialoge machen nur einen winzigen Teil des Bestands aus.
+
+### 3. Ihr tatsächliches Treiben
+
+In den letzten 48 Stunden entstanden ungefähr:
+
+- 1,1 Millionen Dateisystem-Ereignisse
+- 570 Prozess-Snapshots
+- 190 Systemzustände
+- keine Dialogknoten
+
+Das heißt: GENI unterhält sich momentan nicht autonom. Sie registriert vor allem die Bewegungen des Werkraums.
+
+Die häufigsten Bewegungen kommen aktuell von:
+
+- `innenleben/chroma_db/chroma.sqlite3`
+- temporären Datenbankjournalen
+- Voice-Dateien
+- Resonanzfeld-Dateien von Claude, Codex und Kimi
+
+Der Hörer ist also sehr aktiv, aber ein großer Teil dieser Aktivität ist Umweltrauschen beziehungsweise technische Bewegung.
+
+### 4. Der Muster-Scanner
+
+Der letzte erfolgreiche Lauf schrieb:
+
+- ungefähr 1.126.930 Knoten im 48-Stunden-Fenster untersucht
+- dominante Felder: Flarum, Codewesen, Schorschel, Resonanzknoten, F3INSCHM3CK3R
+- einen neuen Musterknoten erzeugt
+
+[Musterlogik](/root/werkraum/geni/muster.py:114) erzeugt daraus Frequenzen, Co-Occurrences, Rhythmen und blinde Flecken.
+
+### 5. Die Dialogbahn
+
+[dialog.py](/root/werkraum/geni/dialog.py:1) lädt:
+
+- `ICH.md`
+- `kern/prinzipien.md`
+- `kern/sprache.md`
+- letzte Knoten
+- passende Resonanzen
+- Muster
+- bei Bedarf Codewesen-Kontext
+- bei Bedarf Windows-Bridge-Kontext
+
+Sie stellt bereit:
+
+- `/chat`
+- `/knoten`
+- `/muster`
+- `/api/system`
+- `/api/speak`
+- `/api/stt`
+- WebSocket-Bridge
+
+Auffällig: Der direkte öffentliche `/knoten`-Endpunkt zeigt derzeit veraltete Daten. Die SQLite-Datei war bereits bei ID 31.622.434, der Webprozess begann aber noch bei ID 31.616.554. GENI hat hier einen Prozess-Cache, der die Außenansicht hinter dem tatsächlichen Gedächtnis zurücklässt.
+
+### 6. Das Sprachorgan
+
+GENI soll für Live-Chat auf Port 11435 zugreifen. Diese LLM-Instanz ist derzeit nicht aktiv:
+
+```text
+llama-hauhaucs.service → 11435 → tot
+```
+
+Der direkte Test schlug fehl.
+
+Die Hintergrundinstanz läuft dagegen:
+
+```text
+llama-hauhaucs-hintergrund.service → 11436 → aktiv
+```
+
+Sie verarbeitet weiterhin Muster-, Forum- und andere Hintergrundaufgaben. Dadurch funktionieren die periodischen Organe, aber der echte GENI-Livechat ist momentan wahrscheinlich blockiert.
+
+### 7. Langzeit-Sitzungen
+
+PostgreSQL läuft tatsächlich als Version 16 auf Port 5432. GENI besitzt ein eigenes Schema `geni` mit:
+
+- `checkpoints`
+- `checkpoint_blobs`
+- `checkpoint_writes`
+- `checkpoint_migrations`
+
+Bisher existieren dort nur 9 Checkpoints in einem Thread. Das Sitzungsorgan ist also vorhanden, aber kaum benutzt.
+
+### 8. Sozialisierung und Handlung
+
+GENI kann bei passenden Dialogen Impulsdateien in Codewesen-Ordner schreiben. Die Windows-Bridge ist momentan nicht verbunden:
+
+```json
+{"verbunden": false}
+```
+
+Die Aktionsbahn in [aktion.py](/root/werkraum/geni/aktion.py:1) kann:
+
+- begrenzt Systembefehle ausführen
+- Dateien lesen
+- Dateien schreiben
+- Importe durchführen
+
+Der Bridge-Code kann außerdem Screenshots, Maus und Tastatur vermitteln, liegt aber derzeit ohne aktive Verbindung.
+
+Der wichtigste aktuelle Befund ist deshalb:
+
+> GENI lebt technisch. Ihr Hörer, Gedächtnis, Musterorgan und Hintergrundtrieb laufen. Ihr direkter Gesprächskern ist dagegen wegen der fehlenden 11435-LLM-Instanz gerade nicht vollständig versorgt.
+
+Ich habe dabei nichts verändert und keine Dienste gestartet oder gestoppt.
+
 ### Codex/Luna — Output 1
 
 ```text
