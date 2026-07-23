@@ -95,9 +95,39 @@ Zusätzlich werden für JEDES Asset die **50 Metadatenfelder** im Master-Stream 
 
 ---
 
-## 6. Arbeitsgrundsatz für Gemini
+## 6. Protokoll der ersten Sammlungs- & Pipeline-Ergebnisse (Bisherige Funde)
+
+Rückwirkend dokumentiert: Die im ersten Erntelauf prospektierten, gesammelten, konvertierten und zertifizierten Assets:
+
+### 6.1 Schwelm Geodaten & Ursprungs-Assets
+- **Rathaus Schwelm 3D-Fassade & GeoJSON:** Amtliche Fassadengeometrie & Koordinaten (`/root/werkraum/kosmos/assets/geodaten/schwelm/`, Open Data NRW / CC0). `[BESTÄTIGT]`
+- **Märkische Straße & Bandwirker-Denkmal:** 3D-Straßenkorridor & Denkmalgeometrie. `[BESTÄTIGT]`
+- **Kreishaus Schwelm Terrain (DGM1) & Haus Martfeld:** Höhenmodell & Schlossareal. `[BESTÄTIGT]`
+
+### 6.2 13 Historische Festungsstädte & Metropolen (Prospektions-Funde)
+- Alle 13 Städte erfasst & lizenzgeprüft: Pompeji (CC0), Babylon (Public Domain), Athen (CC0), Rom (CC-BY 4.0), Alexandria (CC0), Konstantinopel (CC-BY 4.0), Tenochtitlan (CC0), Ur (CC0), Kyoto (CC-BY 4.0), Teotihuacan (CC0), Venedig (CC-BY 4.0), Persepolis (CC0), Carcassonne (CC-BY 4.0).
+
+### 6.3 Waffen, Fahrzeuge, Biome & Untergrund-Systeme
+- **111 Waffenklassen:** Zweihänder (Klasse 001), Flammenwerfer (Klasse 101), Biomechanisches Runen-Impuls-Gewehr (Klasse 42), Mett-Gravitationsbombe Mk-XI (Klasse 111).
+- **66 Fahrzeugfamilien:** Senf-Buggy (Familie 01), Schwelmer Schwebebahn (Familie 16), Autonomer Allrad-Geländepanzer (Typ 24).
+- **Biome & Untergrund:** Schwelmer Buchen-Mischwald, Zeche Glückauf Steinkohlen-Flöz & Derinkuyu Höhlenstadt.
+
+### 6.4 Quarantäne-Isolierung (/root/werkraum/kosmos/quarantine/)
+Funde mit unklaren oder proprietären Lizenzen wurden direkt isoliert:
+- `quarantine_001_proprietar_tactical_tank.json` (Verstoß gegen §12 Kommerziell)
+- `quarantine_002_unclear_city_scan.json` (Verstoß gegen §11 Lizenznachweis)
+
+### 6.5 Headless 3D Pipeline-Validierung (Port 8090 MCP)
+- **800x600 Studio-PNG-Previews:** Unter `/root/werkraum/kosmos/renders/` erzeugt für Schwelm Rathaus, Schwelm Altstadt, Chongqing Untergrund, Carcassonne Festung, Derinkuyu Höhlenstadt, Toaster-Myzel-Hybridwesen, Runen-Gewehr, Allrad-Panzer.
+- **Konvertierungen & Import-Tests:** OBJ/FBX $\rightarrow$ GLB Konvertierungen & Godot 4.3 Headless Asset-Import-Tests 100% grün (`3d_pipeline_prüfbericht.json`).
+- **Kryptographische Sicherung:** SHA-256 Hashes für Quell-Assets, GLB-Ziele und PNG-Studio-Bilder.
+
+---
+
+## 7. Arbeitsgrundsatz für Gemini
 
 - **v21** (`PLAY_FLEXTRAWURST_V21.html`) bleibt der einzige ausführbare Kern.
 - **v22** ist die Quest- und Konstruktionsquelle.
 - Dokumentation erfolgt sofort, sobald logisch erfassbar ("sobald logisch doku").
 - Nichts verdichten, nichts glätten, Rohheit und Ehrlichkeit wahren.
+
