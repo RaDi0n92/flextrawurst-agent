@@ -417,7 +417,17 @@ class MCPHandler(BaseHTTPRequestHandler):
         if self.path in ("/mcp", "/rpc", "/"):
             method = body_data.get("method", "")
             params = body_data.get("params", {})
-            msg_id = body_data.get("id", 1)
+
+            # 2026-07-23 (gleicher Fund wie in vps_mcp_server.py): JSON-RPC-Notifications
+            # (kein "id"-Feld, z.B. notifications/initialized) erwarten laut Spec keine
+            # Antwort -- vorher antwortete der Server faelschlich mit einer Fehler-JSON,
+            # was den Handshake vermutlich abbrach bevor tools/list je aufgerufen wurde.
+            if "id" not in body_data:
+                self.send_response(202)
+                self._cors()
+                self.end_headers()
+                return
+            msg_id = body_data["id"]
 
             result_payload = {}
             if method == "initialize":
@@ -425,7 +435,7 @@ class MCPHandler(BaseHTTPRequestHandler):
                 # erwartet diesen Handshake vor tools/list/tools/call, sonst brechen konforme
                 # Clients (z.B. ChatGPTs nativer MCP-Connector) die Verbindung ab.
                 result_payload = {
-                    "protocolVersion": "2024-11-05",
+                    "protocolVersion": params.get("protocolVersion", "2024-11-05"),
                     "capabilities": {"tools": {}},
                     "serverInfo": {"name": "flextrawurst-3d-mcp", "version": "1.0.0"},
                 }
