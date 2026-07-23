@@ -379,35 +379,28 @@ def kontext_laden_node(zustand: WesensZustand) -> dict:
 
 def denken_handeln_node(zustand: WesensZustand) -> dict:
     """
-    Dispatcht Denk-Tick je nach Status:
-      - 'eingezogen' → ek.denk_tick() (voller Flextrawurst-Kontext)
-      - 'bereit'     → denk_tick_voreinzug() (ehrlicher Flarum-Kontext)
-    Serialisiert Zugriff auf den gemeinsamen Hintergrund-LLM-Slot via llm_scheduler.LLMSlot.
+    2026-07-23 (Daniels Auftrag: LangGraph-Ticks/Checkpoints wieder sauber am Laufen
+    halten, aber "am besten ohne llmcalls" -- Grund: dieser Dispatch rief bislang
+    ek.denk_tick()/denk_tick_voreinzug() auf, ein frischer LLM-Call pro Wesen pro
+    Tick ueber den gemeinsamen 'hintergrund'-Slot -- genau die dokumentierte
+    Kontention aus docs/systemdoku/31_llm_kontention_dienste_aufraeumung.md, die
+    vermutlich zum sauberen Stop dieses Diensts am 2026-07-21 gefuehrt hat, kurz
+    nachdem browser_agent.py die eigentliche Denkarbeit uebernommen hatte).
+
+    Ruft deshalb KEINEN LLM mehr auf. Liest stattdessen mechanisch den bereits von
+    browser_agent.py real generierten letzten Gedanken aus entity_thinking_log
+    (dieselbe Quelle wie kontext_laden_node) -- keine neuen LLM-Kosten, kein
+    erfundener Inhalt: der LangGraph-Checkpoint spiegelt einfach den echten,
+    anderswo bereits bezahlten Denk-Fortschritt des Wesens. Status-Filter bleibt
+    (nur eingezogene/bereite Wesen zaehlen als Denk-Tick), die alte "faellig"-
+    Drossel (fuer den LLM-Slot gedacht) entfaellt, da kein Slot mehr gebraucht wird.
     """
     name = zustand["wesen_name"]
-    status, faellig = _status_und_faellig(name)
-
-    if not faellig:
-        log.debug(f"[{name}] nicht fällig — überspringe Denk-Tick")
-        return {}
+    status, _ = _status_und_faellig(name)
 
     if status not in ("eingezogen", "bereit"):
         log.debug(f"[{name}] Status '{status}' — kein Denk-Tick")
         return {}
-
-    log.info(f"[{name}] Denk-Tick (status={status}) — warte auf LLM-Slot")
-    try:
-        with llm_scheduler.LLMSlot(server="hintergrund", prioritaet=llm_scheduler.PRIO_NIEDRIG,
-                                    rufer=f"lg_daemon:{name}", max_wartezeit=90, max_haltezeit=600):
-            log.info(f"[{name}] LLM-Slot erworben")
-            if status == "eingezogen":
-                ek.denk_tick(name)
-            else:
-                denk_tick_voreinzug(name)
-    except llm_scheduler.LLMSlotTimeout as e:
-        log.warning(f"[{name}] {e}")
-    except Exception as e:
-        log.error(f"[{name}] Denk-Tick fehlgeschlagen: {e}")
 
     gedanke = _letzten_gedanken_aus_db(name)
     updates: dict = {"denk_ticks": zustand.get("denk_ticks", 0) + 1}
@@ -417,61 +410,71 @@ def denken_handeln_node(zustand: WesensZustand) -> dict:
 
 
 def zusammenfassen_node(zustand: WesensZustand) -> dict:
-    """Destilliert akkumulierte Gedanken → Erinnerungen, alle N Denk-Ticks."""
+    """Zaehlt den LG-Tick weiter (lg_ticks, letzter_lg_tick).
+
+    2026-07-23 (Daniels Auftrag, "am besten ohne llmcalls"): die LLM-basierte
+    Destillation zu Erinnerungen (entity_profiles.lg_erinnerungen) ist deaktiviert
+    -- das war der zweite LLM-Aufruf in diesem Daemon, ebenfalls ueber den
+    gemeinsamen 'hintergrund'-Slot. Zaehler laufen weiter, keine neue
+    Erinnerungs-Generierung bis explizit wieder gewuenscht. Alter Code bewusst
+    nicht geloescht (auskommentiert unten), falls die Destillation spaeter mit
+    einem eigenen, unkritischen LLM-Slot zurueckkommen soll."""
     tick_update = {
         "lg_ticks": zustand.get("lg_ticks", 0) + 1,
         "letzter_lg_tick": datetime.now(timezone.utc).isoformat(),
     }
+    return tick_update
 
-    denk_ticks = zustand.get("denk_ticks", 0)
-    if denk_ticks == 0 or denk_ticks % ZUSAMMENFASSEN_NACH_N_DENKTICKS != 0:
-        return tick_update
-
-    gedanken = zustand.get("gedanken", [])
-    if len(gedanken) < 3:
-        return tick_update
-
-    name = zustand["wesen_name"]
-    wesen_md = CODEWESEN_BASE / name / "wesen.md"
-    wesen_text = wesen_md.read_text(encoding="utf-8")[:400] if wesen_md.exists() else ""
-
-    alle_gedanken = "\n".join(gedanken[-15:])
-    messages = [
-        {"role": "system", "content": f"Du bist {name}. {wesen_text}"},
-        {"role": "user", "content": (
-            f"Deine letzten Gedanken:\n{alle_gedanken}\n\n"
-            f"Destilliere in maximal {MAX_ERINNERUNGEN} kurzen Stichpunkten "
-            "was du dir für die Zukunft merken willst. Jeder Punkt eine Zeile, kein Präfix."
-        )},
-    ]
-
-    log.info(f"[{name}] Zusammenfassen nach {denk_ticks} Denk-Ticks")
-    try:
-        with llm_scheduler.LLMSlot(server="hintergrund", prioritaet=llm_scheduler.PRIO_NIEDRIG,
-                                    rufer=f"lg_daemon_zusammenfassen:{name}", max_wartezeit=90, max_haltezeit=120):
-            text = ek.hauhau_client.chat(messages, think=False, timeout=120.0).strip()
-            erinnerungen = [z.strip() for z in text.splitlines() if z.strip()][:MAX_ERINNERUNGEN]
-    except llm_scheduler.LLMSlotTimeout as e:
-        log.warning(f"[{name}] {e}")
-        return tick_update
-    except Exception as e:
-        log.warning(f"[{name}] Zusammenfassen fehlgeschlagen: {e}")
-        return tick_update
-
-    if erinnerungen:
-        try:
-            with psycopg.connect(DB_URI) as conn:
-                with conn.cursor() as cur:
-                    cur.execute(
-                        "UPDATE entity_profiles SET lg_erinnerungen = %s WHERE entity_id = %s",
-                        (json.dumps(erinnerungen), name),
-                    )
-                conn.commit()
-            log.info(f"[{name}] {len(erinnerungen)} Erinnerungen → entity_profiles")
-        except Exception as e:
-            log.warning(f"[{name}] Erinnerungen-Write fehlgeschlagen: {e}")
-
-    return {**tick_update, "erinnerungen": erinnerungen}
+    # -- Alte LLM-basierte Destillation, deaktiviert 2026-07-23 --
+    # denk_ticks = zustand.get("denk_ticks", 0)
+    # if denk_ticks == 0 or denk_ticks % ZUSAMMENFASSEN_NACH_N_DENKTICKS != 0:
+    #     return tick_update
+    #
+    # gedanken = zustand.get("gedanken", [])
+    # if len(gedanken) < 3:
+    #     return tick_update
+    #
+    # name = zustand["wesen_name"]
+    # wesen_md = CODEWESEN_BASE / name / "wesen.md"
+    # wesen_text = wesen_md.read_text(encoding="utf-8")[:400] if wesen_md.exists() else ""
+    #
+    # alle_gedanken = "\n".join(gedanken[-15:])
+    # messages = [
+    #     {"role": "system", "content": f"Du bist {name}. {wesen_text}"},
+    #     {"role": "user", "content": (
+    #         f"Deine letzten Gedanken:\n{alle_gedanken}\n\n"
+    #         f"Destilliere in maximal {MAX_ERINNERUNGEN} kurzen Stichpunkten "
+    #         "was du dir für die Zukunft merken willst. Jeder Punkt eine Zeile, kein Präfix."
+    #     )},
+    # ]
+    #
+    # log.info(f"[{name}] Zusammenfassen nach {denk_ticks} Denk-Ticks")
+    # try:
+    #     with llm_scheduler.LLMSlot(server="hintergrund", prioritaet=llm_scheduler.PRIO_NIEDRIG,
+    #                                 rufer=f"lg_daemon_zusammenfassen:{name}", max_wartezeit=90, max_haltezeit=120):
+    #         text = ek.hauhau_client.chat(messages, think=False, timeout=120.0).strip()
+    #         erinnerungen = [z.strip() for z in text.splitlines() if z.strip()][:MAX_ERINNERUNGEN]
+    # except llm_scheduler.LLMSlotTimeout as e:
+    #     log.warning(f"[{name}] {e}")
+    #     return tick_update
+    # except Exception as e:
+    #     log.warning(f"[{name}] Zusammenfassen fehlgeschlagen: {e}")
+    #     return tick_update
+    #
+    # if erinnerungen:
+    #     try:
+    #         with psycopg.connect(DB_URI) as conn:
+    #             with conn.cursor() as cur:
+    #                 cur.execute(
+    #                     "UPDATE entity_profiles SET lg_erinnerungen = %s WHERE entity_id = %s",
+    #                     (json.dumps(erinnerungen), name),
+    #                 )
+    #             conn.commit()
+    #         log.info(f"[{name}] {len(erinnerungen)} Erinnerungen → entity_profiles")
+    #     except Exception as e:
+    #         log.warning(f"[{name}] Erinnerungen-Write fehlgeschlagen: {e}")
+    #
+    # return {**tick_update, "erinnerungen": erinnerungen}
 
 
 # ── Graph ──────────────────────────────────────────────────────────────────────
