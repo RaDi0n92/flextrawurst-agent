@@ -257,3 +257,15 @@ Also deutlich einfacher als ich dachte: keine neue Aktion, nur ein achter, rein 
 Isolierter Test gegen echte Daten (Schorschel, dak+gord-system, namelessAI_1234) lieferte plausible, unterschiedliche Werte. Isolierter Playwright-Test des Körper-Canvas zeigt korrekt 7 Beine. `GET /entities/Schorschel/linsen` live geprüft. Alle 7 Services neu gestartet, mehrere echte Ticks fehlerfrei. Commit `3fd8c3140`.
 
 **Ehrlicher Befund, nicht versteckt:** `lg_ticks` liegt für alle 7 aktiven Wesen im fast selben Bereich (~1590–1845) und `letzter_lg_tick` datiert bei allen auf 2026-07-21 — der Zähler scheint seit zwei Tagen eingefroren, vermutlich weil der alte LangGraph-Tick-Prozess durch das neuere `browser_agent.py`-Tick-System abgelöst wurde (Grundgesetz 7: nicht angefasst, nur gelesen, keine Reparatur versucht ohne Auftrag). Die Linse ist dadurch aktuell zwischen den 7 Wesen wenig unterscheidungskräftig — aber ein echter, nicht erfundener Wert, und falls der Prozess je wieder anläuft, würde die Linse sich sofort wieder differenzieren.
+
+## Nachtrag — Einfrieren repariert (2026-07-23, direkt im Anschluss)
+
+Daniel: *"reparieren"* + *"wie bekommen wir langgraph wieder zum fungktioniren sauber? und am besten ohne llmcalls"*.
+
+**Erste Vermutung falsch, korrigiert:** nicht `codewesen_takt.py` (Grundgesetz 7, Flarum-Rhythmus) schreibt die Ticks, sondern der separate, nicht geschützte `codewesen-lg-daemon.service` (`codewesen_lg_daemon.py` — "ersetzt entity_kern.service"). Der war am 2026-07-21 17:42:58 sauber gestoppt worden, fast zeitgleich mit `codewesen-takt.service`, und `disabled` (kein Autostart). Seine letzten Logs vor dem Stopp zeigten durchgehend `LLM-Slot 'hintergrund' blockiert nach 90s` — die dokumentierte Kontention aus `docs/systemdoku/31_llm_kontention_dienste_aufraeumung.md`. Der Daemon rief pro Wesen pro Tick `ek.denk_tick()`/`denk_tick_voreinzug()` auf (ein frischer LLM-Call, wartete auf denselben Hintergrund-Slot wie andere Systeme) und alle 10 Denk-Ticks zusätzlich eine LLM-Destillation zu `entity_profiles.lg_erinnerungen`.
+
+**Fix (werkraum-Commit `cf8651f32`):** beide LLM-Aufrufe entfernt.
+- `denken_handeln_node` ruft keinen LLM mehr auf, liest stattdessen mechanisch den von `browser_agent.py` bereits real generierten letzten Gedanken aus `entity_thinking_log` (dieselbe Quelle wie `kontext_laden_node` schon nutzte) — kein erfundener Inhalt, keine neuen Kosten, der Checkpoint spiegelt einfach den echten, anderswo schon bezahlten Denk-Fortschritt.
+- `zusammenfassen_node`s LLM-Destillation auskommentiert (nicht gelöscht, falls später mit eigenem Slot gewünscht), Tick-Zähler läuft unabhängig davon weiter.
+
+**Verifiziert:** isolierter Node-Test (0,03s statt LLM-Wartezeit), Dienst `enabled` + neu gestartet, drei volle 7-Wesen-Zyklen beobachtet, keine Fehler/LLM-Slot-Meldungen mehr im Log, alle 7 Zähler wachsen wieder unabhängig voneinander (z.B. Schorschel 1598→1602 über drei Zyklen, ~35s pro Durchlauf statt vorher minutenlang). Die Linse differenziert sich damit ab jetzt wieder zwischen den Wesen, wie oben vorhergesagt.
