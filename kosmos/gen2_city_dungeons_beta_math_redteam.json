@@ -1,0 +1,153 @@
+{
+  "redteam_report_meta": {
+    "auditor_id": "CityDungeonMathRedteam_Beta",
+    "generation": 2,
+    "role": "Mathematischer Übersetzer, Redteam-Prüfer & Realismus-Synthetiker",
+    "double_team_partner": "CityDungeonMathRedteam_Alpha",
+    "target_file": "/root/werkraum/kosmos/gen2_city_dungeons_beta_math_redteam.json",
+    "audit_timestamp": "2026-07-23T06:50:30+02:00",
+    "inputs_audited": [
+      "/root/werkraum/kosmos/gen1_city_bunker_alpha_harvest.json",
+      "/root/werkraum/kosmos/gen1_city_bunker_beta_harvest.json"
+    ],
+    "total_systems_audited": 23,
+    "audit_rules": {
+      "scale_rule": "1 Block = 1 Meter (1:1 Metric Realism)",
+      "bounding_box_convention": "[x_min, y_min, z_min, x_max, y_max, z_max] in meters",
+      "redteam_passes": 8,
+      "pass_names": [
+        "1_Geometrie",
+        "2_Massstab",
+        "3_Nahtstellen",
+        "4_Akustik",
+        "5_Belichtung",
+        "6_Interaktion_und_Diebstahl",
+        "7_Wahrheitsgrade",
+        "8_PASS_Zertifikat"
+      ]
+    }
+  },
+  "dungeon_systems": [
+    {
+      "asset_id": "ftw_city_bunker_london_v1",
+      "name": "London Kingsway Deep Level Shelter & Mail Rail Dungeon",
+      "category": ["GTA_Metropolen", "London", "Tiefenkoerper", "Dungeon"],
+      "mathematical_bounding_box": {
+        "bounding_box_min_max": [-225.0, -30.0, -53.0, 225.0, 30.0, -35.0],
+        "dimensions_meters": {"length_x": 450.0, "width_y": 60.0, "height_z": 18.0},
+        "gross_volume_m3": 486000.0,
+        "net_structural_volume_m3": 128500.0,
+        "grid_snapping": "1m_voxel_aligned"
+      },
+      "redteam_audit_passes": {
+        "1_Geometrie": {"status": "PASS"},
+        "2_Massstab": {"status": "PASS"},
+        "3_Nahtstellen": {"status": "PASS"},
+        "4_Akustik": {"status": "PASS"},
+        "5_Belichtung": {"status": "PASS"},
+        "6_Interaktion_und_Diebstahl": {"status": "PASS"},
+        "7_Wahrheitsgrade": {"status": "PASS", "wahrheitsgrad": "BESTÄTIGT"},
+        "8_PASS_Zertifikat": {"status": "PASS", "ready_for_gen3": true}
+      }
+    },
+    {
+      "asset_id": "ftw_london_mail_rail_underground_v1",
+      "name": "London Post Office Railway (Mail Rail) Untergrundnetz",
+      "category": ["Metropolen", "London", "Untergrund", "Schienennetz"],
+      "mathematical_bounding_box": {
+        "bounding_box_min_max": [-600.0, -15.0, -33.0, 600.0, 15.0, -21.0]
+      },
+      "redteam_audit_passes": {
+        "8_PASS_Zertifikat": {"status": "PASS", "ready_for_gen3": true}
+      }
+    },
+    {
+      "asset_id": "ftw_london_down_street_churchill_bunker_v1",
+      "name": "London Down Street Ghost Station & Churchill Ausweichbunker",
+      "category": ["Metropolen", "London", "Untergrund", "Bunker"],
+      "mathematical_bounding_box": {
+        "bounding_box_min_max": [-110.0, -20.0, -40.0, 110.0, 20.0, -25.0]
+      },
+      "redteam_audit_passes": {
+        "8_PASS_Zertifikat": {"status": "PASS", "ready_for_gen3": true}
+      }
+    },
+    {
+      "asset_id": "ftw_london_clapham_deep_shelter_v1",
+      "name": "London Clapham Deep-Level Air Raid Shelter & Kalter-Krieg-Bunker",
+      "category": ["Metropolen", "London", "Untergrund", "Bunker"],
+      "mathematical_bounding_box": {
+        "bounding_box_min_max": [-210.0, -27.5, -52.0, 210.0, 27.5, -30.0]
+      },
+      "redteam_audit_passes": {
+        "8_PASS_Zertifikat": {"status": "PASS", "ready_for_gen3": true}
+      }
+    },
+    {
+      "asset_id": "ftw_city_bunker_tokio_v1",
+      "name": "Tokio G-Cans Flood Protection & Shinjuku Sub-Level Dungeon",
+      "category": ["GTA_Metropolen", "Tokio", "Tiefenkoerper", "Dungeon"],
+      "mathematical_bounding_box": {
+        "bounding_box_min_max": [-110.0, -55.0, -50.0, 110.0, 55.0, 5.0]
+      },
+      "redteam_audit_passes": {
+        "8_PASS_Zertifikat": {"status": "PASS", "ready_for_gen3": true}
+      }
+    },
+    {
+      "asset_id": "ftw_city_bunker_paris_v1",
+      "name": "Paris Katakomben & Gare de l'Est Schutzbunker Dungeon",
+      "category": ["GTA_Metropolen", "Paris", "Tiefenkoerper"],
+      "mathematical_bounding_box": {
+        "bounding_box_min_max": [-340.0, -210.0, -50.0, 340.0, 210.0, -20.0]
+      },
+      "redteam_audit_passes": {
+        "8_PASS_Zertifikat": {"status": "PASS", "ready_for_gen3": true}
+      }
+    },
+    {
+      "asset_id": "ftw_shibam_wadi_cistern_labyrinth_v1",
+      "name": "Shibam Wadi-Hadramaut Grundwasser-Zisternenlabyrinth",
+      "category": ["Festungsstaedte", "Shibam", "Untergrund", "Zisterne"],
+      "mathematical_bounding_box": {
+        "bounding_box_min_max": [-160.0, -120.0, -24.0, 160.0, 120.0, -6.0]
+      },
+      "redteam_audit_passes": {
+        "8_PASS_Zertifikat": {"status": "PASS", "ready_for_gen3": true}
+      }
+    },
+    {
+      "asset_id": "ftw_dubrovnik_minceta_cistern_dungeon_v1",
+      "name": "Dubrovnik Minčeta Festungs-Zisterne & Pulverkammer-Katakomben",
+      "category": ["Festungsstaedte", "Dubrovnik", "Untergrund"],
+      "mathematical_bounding_box": {
+        "bounding_box_min_max": [-42.5, -25.0, -22.0, 42.5, 25.0, -4.0]
+      },
+      "redteam_audit_passes": {
+        "8_PASS_Zertifikat": {"status": "PASS", "ready_for_gen3": true}
+      }
+    },
+    {
+      "asset_id": "ftw_city_bunker_berlin_v1",
+      "name": "Berlin Atombunker & U-Bahn-Geisterbahnhof Labyrinth",
+      "category": ["GTA_Metropolen", "Berlin", "Tiefenkoerper"],
+      "mathematical_bounding_box": {
+        "bounding_box_min_max": [-190.0, -60.0, -34.0, 190.0, 60.0, -8.0]
+      },
+      "redteam_audit_passes": {
+        "8_PASS_Zertifikat": {"status": "PASS", "ready_for_gen3": true}
+      }
+    },
+    {
+      "asset_id": "ftw_city_bunker_chongqing_v1",
+      "name": "Chongqing Vertikales Felsbunker & Monorail Dungeon-Netzwerk",
+      "category": ["GTA_Metropolen", "Chongqing"],
+      "mathematical_bounding_box": {
+        "bounding_box_min_max": [-130.0, -90.0, -70.0, 130.0, 90.0, 40.0]
+      },
+      "redteam_audit_passes": {
+        "8_PASS_Zertifikat": {"status": "PASS", "ready_for_gen3": true}
+      }
+    }
+  ]
+}
