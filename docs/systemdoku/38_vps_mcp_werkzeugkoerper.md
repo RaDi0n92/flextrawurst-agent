@@ -65,6 +65,14 @@ Nach den ersten beiden Fixes (Notification-Handling, Protokollversion) blieb das
 
 Verifiziert: der exakte Batch (`initialize`+`notification`+`tools/list` als Array) liefert jetzt eine korrekte Zwei-Element-Antwort, lokal und live über `https://flextrawurst.de/vps-mcp/` sowie `https://flextrawurst.de/3d-mcp/`, Einzel-Requests und Einzel-Notifications funktionieren unverändert weiter. Commits `ce82f5982` (vps-mcp) + `a0cc7ffaf` (3d-mcp).
 
+## 10b. Fünf Verfassungs-Dateien direkt in /root gezielt freigegeben
+
+Daniel: *"ich hab gesat chatgpt muss darauszugreifen und alles sehen und lesen können also musst du ihm doch das in den mcp geben oder?"* — Anlass war eine sehr lange ChatGPT/Gemini-Sitzung über das "Kosmos"-Weltenbau-Archiv (`/root/werkraum/kosmos/`, `gptspieleversuchzeigen/` usw.), die von mir gegengeprüft wurde: die Dateien existieren echt (9.292 Dateien/2,2 GB unter `/root/werkraum`, nahezu exakt was ChatGPT selbst berichtet hatte), aber `/root/GEMINI.md` — als "Verfassungs-Handbuch" referenziert — lag außerhalb aller vier erlaubten Wurzeln.
+
+Neue `ALLOWED_FILES`-Liste (bewusst einzelne Dateien, nicht `/root` als ganze Wurzel — das würde `.ssh`, andere Dienste und im selben Ordner liegende Sicherheitsaudit-Berichte mit öffnen): `GEMINI.md`, `CLAUDE.md`, `KIMI.md`, `grok.md`, `AGENTS.md`. Bewusst **nicht** freigegeben: `SECURITY_FINAL_REPORT_FLEXTRAWURST_20260530.md` und `SECRET_FINDINGS_REDACTED.md` (echte Sicherheitsaudit-Funde, u.a. der offene Punkt "Master-API-Key muss noch rotiert werden"), sowie `.aider.chat.history.md` (private Chat-Historie eines anderen Tools) — nicht angefragt, bewusst draußen gelassen, Daniel informiert.
+
+`vps.list_roots` liefert jetzt zusätzlich die Einzeldatei-Liste. Verifiziert: `GEMINI.md` lesbar, Security-Reports weiterhin korrekt blockiert, live bestätigt. Commit `416d6e140`.
+
 ## 10. scopes_supported ergänzt
 
 ChatGPTs Connector-UI zeigte beim Einrichten "Basis-Scopes"/"Standard-Scopes" mit dem Hinweis: "Die ermittelte OAuth-Konfiguration hat keine unterstützten Scopes zum Auswählen angegeben" — `scopes_supported` fehlte in beiden Discovery-Dokumenten. Ergänzt (`["tools"]`, ein einziger Scope für den kompletten, nur lesenden Werkzeugsatz — kein granulares Berechtigungsmodell in Phase 1). Commit `657dab1d0`, live verifiziert.
