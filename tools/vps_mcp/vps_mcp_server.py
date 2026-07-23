@@ -705,7 +705,8 @@ class VPSHandler(BaseHTTPRequestHandler):
 
         if path == "/.well-known/oauth-protected-resource":
             self._json(200, {"resource": f"{PUBLIC_BASE_URL}/mcp",
-                              "authorization_servers": [PUBLIC_BASE_URL]})
+                              "authorization_servers": [PUBLIC_BASE_URL],
+                              "scopes_supported": ["tools"]})
             return
 
         if path == "/.well-known/oauth-authorization-server":
@@ -718,6 +719,11 @@ class VPSHandler(BaseHTTPRequestHandler):
                 "grant_types_supported": ["authorization_code"],
                 "code_challenge_methods_supported": ["S256", "plain"],
                 "token_endpoint_auth_methods_supported": ["client_secret_post", "none"],
+                # 2026-07-23: ChatGPTs Connector-UI verlangte "Basis-Scopes"/"Standard-
+                # Scopes" und fand ohne dieses Feld "keine unterstuetzten Scopes zum
+                # Auswaehlen" -- Einzel-Nutzer-Server, keine granularen Berechtigungsstufen,
+                # ein einziger Scope fuer den kompletten (nur lesenden) Werkzeugsatz.
+                "scopes_supported": ["tools"],
             })
             return
 
