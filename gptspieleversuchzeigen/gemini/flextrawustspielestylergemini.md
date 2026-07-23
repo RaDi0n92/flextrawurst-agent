@@ -29,6 +29,13 @@ Schwelm (Hauptstraße 151) ist der kanonische Zündfunke und die erste Hochdetai
 3. **Natur- & Zwischenräume:**
    - Biome von Buchenwäldern bis Lavahöhlen, Myzelnetze, Flussläufe, Bergpässe, Vulkanzonen, versunkene Ruinen, Banditenlager.
 
+### 1.1 Dungeon-artige Tunnelsysteme, Bunker & Katakomben (Flextrawurst-Dungeons)
+Tunnelsysteme, Stollen, Geisterbahnhöfe, Katakomben und Bunkeranlagen sind **keine leeren Röhren**, sondern werden als **vollwertige Flextrawurst-Dungeons** konstruiert:
+- **Atmosphäre & Raumlabyrinthe:** Abzweigungen, eingestürzte Schächte, schummerige Notbeleuchtungen, knarzende Holzbalken, tropfendes Wasser und Raumhall.
+- **Rätsel & Interaktionen:** Druckventil-Rätsel, Stromkasten-Koppelungen, versperrte Druckluft-Türen, Schlossknacken und verborgene Schalter.
+- **Flextrawurst-Verstecke & Dust-Echos:** Geheime Kammern mit alten Werkstätten, Fritteusen-Prototypen, Toaster-Myzel-Verwicklungen, historischen Artefakten und schimmernden Dust-Echospuren.
+- **Spannung & Wesen-Spuren:** Geräusche in Dunkelheit, Narben an Schachtwänden, Notizen ehemaliger Bergleute/Bunkerbewohner und Präsenzspuren der 8 Entitäten.
+
 ---
 
 ## 2. Die Playwright 3D Spatial Archive Scan Engine
