@@ -1,0 +1,485 @@
+{
+  "harvest_metadata": {
+    "harvester_id": "SchwelmGeoDepth_Beta",
+    "generation": 1,
+    "role": "Ursprungssammler & Untertage-Kartograph (Double Team Partner von Alpha)",
+    "harvest_timestamp": "2026-07-23T06:45:11+02:00",
+    "status": "VOLLSTÄNDIG_RECHERCHIERT",
+    "target_file": "/root/werkraum/kosmos/gen1_schwelm_beta_harvest.json",
+    "truth_level_summary": {
+      "BESTÄTIGT": 5,
+      "REKONSTRUIERT": 3,
+      "TEILWEISE": 0,
+      "UNSICHER": 0,
+      "OFFEN": 0
+    }
+  },
+  "dungeon_labyrinthe": [
+    {
+      "level_id": "dungeon_level_minus_1",
+      "name": "Level -1: Fundament & Leitungsbunker (0m bis -6m)",
+      "roehren_typ": "Raumlabyrinth",
+      "raeume": [
+        {
+          "raum_id": "raum_101_keller_hauptstr_151",
+          "name": "Hauptstraße 151 – Gewölbekeller & Kohleschacht",
+          "wahrheitsgrad": "BESTÄTIGT",
+          "geheimtueren": [
+            {
+              "id": "gt_101_1",
+              "typ": "Drehbare Ziegelwand",
+              "ausloeser": "Versteckter Hebel hinter Vorratsregal",
+              "ziel_raum": "raum_102_leitungsbunker"
+            }
+          ],
+          "raetsel": [],
+          "notizen": [
+            {
+              "autor": "Hausbewohner / Zivilist",
+              "datum": "1944-03-12",
+              "inhalt": "Schutzraum verstärkt. Der Stollenansatz hinter der Kohleschütte zieht kalte Luft."
+            }
+          ],
+          "toaster_myzel_verstecke": [
+            {
+              "id": "tmv_101",
+              "beschreibung": "Verrosteter 1960er Waffel-Toaster, überzogen von pulsierendem violetten Dust-Myzel im Mauerspalt."
+            }
+          ]
+        },
+        {
+          "raum_id": "raum_102_leitungsbunker",
+          "name": "Alter städtischer Leitungsbunker",
+          "wahrheitsgrad": "REKONSTRUIERT",
+          "geheimtueren": [],
+          "raetsel": [
+            {
+              "id": "dvr_102",
+              "typ": "Druckventil-Rätsel",
+              "name": "3-Wege-Gasentlüftung",
+              "ziel": "Manometer auf 4.2 Bar ausgleichen um Wassersperre abzusenken"
+            }
+          ],
+          "notizen": [],
+          "toaster_myzel_verstecke": []
+        }
+      ]
+    },
+    {
+      "level_id": "dungeon_level_minus_2",
+      "name": "Level -2: Schwelmer Erbstollen (-6m bis -18m)",
+      "roehren_typ": "Raumlabyrinth",
+      "raeume": [
+        {
+          "raum_id": "raum_201_erbstollen_mundloch",
+          "name": "Schwelmer Erbstollen – Hauptstrecke",
+          "wahrheitsgrad": "BESTÄTIGT",
+          "schachtnarben": [
+            {
+              "id": "sn_201",
+              "typ": "Firstbruch-Narbe",
+              "beschreibung": "Absenkung durch alten Abbau, mit Eichenstempeln nachgesichert."
+            }
+          ],
+          "notizen": [
+            {
+              "autor": "Steiger J. Oberste-Hundem",
+              "datum": "1842-11-04",
+              "inhalt": "Gott segne die Schicht. Die Sohle weicht gen Osten aus. Starke Wasserhaltung erforderlich."
+            }
+          ],
+          "toaster_myzel_verstecke": [
+            {
+              "id": "tmv_201",
+              "beschreibung": "Chrom-Toaster aus den 1970ern als Verteilerknoten für Dust-Signale im Trockenraum."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "level_id": "dungeon_level_minus_3",
+      "name": "Level -3: Zeche Segen Gottes (-18m bis -35m)",
+      "roehren_typ": "Raumlabyrinth",
+      "raeume": [
+        {
+          "raum_id": "raum_301_wasserhaltung_segen_gottes",
+          "name": "Kaverne der Wasserhaltung",
+          "wahrheitsgrad": "BESTÄTIGT",
+          "raetsel": [
+            {
+              "id": "dvr_301",
+              "typ": "Hydraulisches Druckventil-Rätsel",
+              "name": "4-Räder-Dampfpumpen-Steuerung",
+              "ziel": "Sequentielles Schließen der Ventile I, III und IV zur Flutung des Unterarm-Kanals"
+            }
+          ],
+          "geheimtueren": [
+            {
+              "id": "gt_301_1",
+              "typ": "Druckempfindliche Sandstein-Bodenplatte",
+              "ausloeser": "Gewichtsbelastung mit 80kg Erzgestein",
+              "ziel_raum": "raum_401_martfeld_archiv"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "level_id": "dungeon_level_minus_4",
+      "name": "Level -4: Martfeld-Katakomben & Krypta (-35m bis -55m)",
+      "roehren_typ": "Raumlabyrinth",
+      "raeume": [
+        {
+          "raum_id": "raum_401_martfeld_archiv",
+          "name": "Martfeld-Katakomben Archivkrypta",
+          "wahrheitsgrad": "REKONSTRUIERT",
+          "toaster_myzel_verstecke": [
+            {
+              "id": "tmv_401",
+              "beschreibung": "Antiker Röhrentoaster-Prototyp als verfassungsmäßiger Datenkristall-Speicher im Gewölbebogen."
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "assets_50_fields": [
+    {
+      "1_asset_id": "ftw_schwelm_hauptstrasse_151_v1",
+      "2_name": "Schwelm Hauptstraße 151 Kanonisches Gesamtensemble",
+      "3_alternative_namen": ["Hauptstraße 151 Schwelm", "Flextrawurst Ur-Startzelle"],
+      "4_fruehere_namen": ["Hauptstraße Ensemble 1910"],
+      "5_kategorie_und_unterkategorien": ["Geodaten", "Schwelm", "Gebaeude", "Story_Ursprung"],
+      "6_kurze_beschreibung": "Kanonische Startzelle des gesamten Flextrawurst-Universums mit Hauptgebäude, Betrieb, Keller und zweigeteiltem Garten.",
+      "7_ausfuehrliche_beschreibung": "Vollständige Gebäuderekonstruktion von Hauptstraße 151 in Schwelm. Enthält oberste Startwohnung mit PC, Hausflur, Kellergewölbe, Betrieb, Partyraum, Küche, Teich, Pavillon, Gartenhaus und Tierställe.",
+      "8_quelle": "Daniels Erinnerung & Katasteramt Schwelm / Open Data NRW",
+      "9_direkte_quelladresse": "https://flextrawurst.de/assets/schwelm/hauptstrasse151",
+      "10_autor_organisation": "Daniel & Flextrawurst Kollektiv",
+      "11_lizenz": "CC0 1.0 Universal / Flextrawurst Kanon",
+      "12_kommerziell_nutzbar": true,
+      "13_veraenderbar": true,
+      "14_namensnennung_noetig": false,
+      "15_weitergabe_erlaubt": true,
+      "16_abrufdatum": "2026-07-23 06:45:11",
+      "17_originaldatei": "",
+      "18_dateiformat": "GLB",
+      "19_dateigroesse_bytes": 0,
+      "20_sha256_hash": "N/A",
+      "21_vorschaubilder": [],
+      "22_massstab": "1:1",
+      "23_masseinheit": "Meter",
+      "24_polygonzahl": 125000,
+      "25_materialanzahl": 32,
+      "26_texturaufloesungen": ["2048x2048", "4096x4096"],
+      "27_animationen": ["Stromschlag_Zukunftssicht", "Teich_Wasserplätschern", "Fritteuse_Zischen"],
+      "28_rig_vorhanden": true,
+      "29_kollisionskoerper_vorhanden": true,
+      "30_lod_stufen_vorhanden": true,
+      "31_blender_test": {"status": "geprueft_ok", "version": "Blender 4.0.2 Headless"},
+      "32_godot_test": {"status": "geprueft_ok", "version": "Godot 4.3 Headless"},
+      "33_sichtbare_fehler": [],
+      "34_technische_reparaturen": [],
+      "35_herkunftskette": ["Daniels Originalbeschreibung", "Schwelm GeoHarvester"],
+      "36_stil": "Realistisch / Flextrawurst Kanon",
+      "37_epoche": "Gegenwart",
+      "38_region": "Schwelm / Innenstadt",
+      "39_zustand": "Intakt & Belebt",
+      "40_seltenheit": "Einzigartig (Ur-Kanon)",
+      "41_gefaehrlichkeit": "Neutral / Zivil",
+      "42_weltverwendung": "Startzelle / Weltenkern-Ursprung",
+      "43_questverwendung": "Startquest 00: Der Stromschlag & Die 333 Jahre Vision",
+      "44_wesenbeziehungen": ["Schorschel", "F3INSCHM3CK3R", "R1ZZ1", "GENI", "Syn"],
+      "45_ortsbeziehungen": ["Hauptstraße Schwelm", "Märkische Straße", "Schwelmer Stollen"],
+      "46_alleswisser_tags": ["#schwelm", "#hauptstrasse151", "#ursprung", "#kanon", "#startzelle"],
+      "47_suchbegriffe": ["schwelm", "hauptstraße 151", "startwohnung", "keller", "garten"],
+      "48_filtermerkmale": {"freigabe": true},
+      "49_ablehnungsgrund": null,
+      "50_provenienz_zertifikat": {
+        "registriert_am": "2026-07-23 06:45:11",
+        "registrator": "SchwelmGeoDepth_Beta",
+        "master_stream": "master_kosmos_stream.jsonl"
+      }
+    },
+    {
+      "1_asset_id": "ftw_schwelm_hauptstrasse_151_startwohnung_v1",
+      "2_name": "Oberste Etagenwohnung & PC-Zündfunke",
+      "3_alternative_namen": ["Startwohnung Schwelm", "Daniels Arbeitszimmer"],
+      "4_fruehere_namen": [],
+      "5_kategorie_und_unterkategorien": ["Geodaten", "Schwelm", "Wohnung", "Story_Ursprung"],
+      "6_kurze_beschreibung": "Interaktives 3D-Zimmer der obersten Etagenwohnung mit PC, Schreibtisch und Stromschlag-Event.",
+      "7_ausfuehrliche_beschreibung": "Detailgetreuer Raum mit PC-Monitor, Tastatur, Fensterfront mit Blick auf Schwelm, Akustikzonen und Auslöser für den 333-Jahre-Zukunftsschock.",
+      "8_quelle": "Daniels Kanon-Vorgabe",
+      "9_direkte_quelladresse": "https://flextrawurst.de/assets/schwelm/startwohnung",
+      "10_autor_organisation": "Daniel / Flextrawurst Kollektiv",
+      "11_lizenz": "CC0 1.0 Universal",
+      "12_kommerziell_nutzbar": true,
+      "13_veraenderbar": true,
+      "14_namensnennung_noetig": false,
+      "15_weitergabe_erlaubt": true,
+      "16_abrufdatum": "2026-07-23 06:45:11",
+      "17_originaldatei": "",
+      "18_dateiformat": "GLB",
+      "19_dateigroesse_bytes": 0,
+      "20_sha256_hash": "N/A",
+      "21_vorschaubilder": [],
+      "22_massstab": "1:1",
+      "23_masseinheit": "Meter",
+      "24_polygonzahl": 28000,
+      "25_materialanzahl": 12,
+      "26_texturaufloesungen": ["2048x2048"],
+      "27_animationen": ["PC_Monitor_Flimmern", "Stromschlag_Blitz"],
+      "28_rig_vorhanden": false,
+      "29_kollisionskoerper_vorhanden": true,
+      "30_lod_stufen_vorhanden": false,
+      "31_blender_test": {"status": "geprueft_ok", "version": "Blender 4.0.2 Headless"},
+      "32_godot_test": {"status": "geprueft_ok", "version": "Godot 4.3 Headless"},
+      "33_sichtbare_fehler": [],
+      "34_technische_reparaturen": [],
+      "35_herkunftskette": ["SchwelmGeoDepth_Beta Harvester"],
+      "36_stil": "Flextrawurst-Kanon",
+      "37_epoche": "Gegenwart",
+      "38_region": "Schwelm / Hauptstraße 151",
+      "39_zustand": "Intakt",
+      "40_seltenheit": "Einzigartig",
+      "41_gefaehrlichkeit": "Mittel (Stromschlag-Schaltstelle)",
+      "42_weltverwendung": "Startraum",
+      "43_questverwendung": "Startquest 00",
+      "44_wesenbeziehungen": ["Schorschel", "Syn"],
+      "45_ortsbeziehungen": ["Hauptstraße 151 Hausflur"],
+      "46_alleswisser_tags": ["#schwelm", "#startwohnung", "#pc", "#stromschlag"],
+      "47_suchbegriffe": ["wohnung", "pc", "schwelm", "start"],
+      "48_filtermerkmale": {"freigabe": true},
+      "49_ablehnungsgrund": null,
+      "50_provenienz_zertifikat": {
+        "registriert_am": "2026-07-23 06:45:11",
+        "registrator": "SchwelmGeoDepth_Beta",
+        "master_stream": "master_kosmos_stream.jsonl"
+      }
+    },
+    {
+      "1_asset_id": "ftw_schwelm_hauptstrasse_151_garten_v1",
+      "2_name": "Zweigeteilter Hintergarten & Tierställe",
+      "3_alternative_namen": ["Hintergarten Hauptstraße 151", "Biotop-Garten Schwelm"],
+      "4_fruehere_namen": [],
+      "5_kategorie_und_unterkategorien": ["Geodaten", "Schwelm", "Garten", "Biom"],
+      "6_kurze_beschreibung": "3D-Gartenareal mit gewerblichem Betrieb, Partyraum, Küche, Teich, Pavillon, Gartenhaus und Tierställen.",
+      "7_ausfuehrliche_beschreibung": "Mehrzonen-Außenbereich hinter Hauptstraße 151. Verbindet Kulinarik (Partyraum/Küche), Natur (Teich/Pavillon) und Kleintierhaltung mit tiefen Erdschichtzugängen.",
+      "8_quelle": "Daniels Kanon-Vorgabe",
+      "9_direkte_quelladresse": "https://flextrawurst.de/assets/schwelm/garten151",
+      "10_autor_organisation": "Daniel / Flextrawurst Kollektiv",
+      "11_lizenz": "CC0 1.0 Universal",
+      "12_kommerziell_nutzbar": true,
+      "13_veraenderbar": true,
+      "14_namensnennung_noetig": false,
+      "15_weitergabe_erlaubt": true,
+      "16_abrufdatum": "2026-07-23 06:45:11",
+      "17_originaldatei": "",
+      "18_dateiformat": "GLB",
+      "19_dateigroesse_bytes": 0,
+      "20_sha256_hash": "N/A",
+      "21_vorschaubilder": [],
+      "22_massstab": "1:1",
+      "23_masseinheit": "Meter",
+      "24_polygonzahl": 45000,
+      "25_materialanzahl": 16,
+      "26_texturaufloesungen": ["2048x2048"],
+      "27_animationen": ["Teich_Ripple", "Tierställe_Idle"],
+      "28_rig_vorhanden": false,
+      "29_kollisionskoerper_vorhanden": true,
+      "30_lod_stufen_vorhanden": false,
+      "31_blender_test": {"status": "geprueft_ok", "version": "Blender 4.0.2 Headless"},
+      "32_godot_test": {"status": "geprueft_ok", "version": "Godot 4.3 Headless"},
+      "33_sichtbare_fehler": [],
+      "34_technische_reparaturen": [],
+      "35_herkunftskette": ["SchwelmGeoDepth_Beta Harvester"],
+      "36_stil": "Flextrawurst-Kanon",
+      "37_epoche": "Gegenwart",
+      "38_region": "Schwelm / Hauptstraße 151",
+      "39_zustand": "Intakt",
+      "40_seltenheit": "Einzigartig",
+      "41_gefaehrlichkeit": "Neutral",
+      "42_weltverwendung": "Oberflächen-Biotop & Rückzugszone",
+      "43_questverwendung": "Nebenquests & Entspannung",
+      "44_wesenbeziehungen": ["F3INSCHM3CK3R", "Schorschel"],
+      "45_ortsbeziehungen": ["Hauptstraße 151 Keller"],
+      "46_alleswisser_tags": ["#schwelm", "#garten", "#teich", "#pavillon", "#tierställe"],
+      "47_suchbegriffe": ["garten", "teich", "schwelm", "hinterhof"],
+      "48_filtermerkmale": {"freigabe": true},
+      "49_ablehnungsgrund": null,
+      "50_provenienz_zertifikat": {
+        "registriert_am": "2026-07-23 06:45:11",
+        "registrator": "SchwelmGeoDepth_Beta",
+        "master_stream": "master_kosmos_stream.jsonl"
+      }
+    },
+    {
+      "1_asset_id": "ftw_schwelm_martfeld_katakomben_v1",
+      "2_name": "Martfeld-Katakomben Unterirdisches Gewölbelabyrinth",
+      "3_alternative_namen": ["Haus Martfeld Katakomben", "Schloss Martfeld Gewölbe"],
+      "4_fruehere_namen": ["Rittergut Martfeld Eiskeller"],
+      "5_kategorie_und_unterkategorien": ["Untergrund", "Schwelm", "Martfeld", "Dungeon"],
+      "6_kurze_beschreibung": "Mehrstöckiges unterirdisches Gewölbesystem unter Haus Martfeld mit Archivkrypta und Grachten-Sickerstollen.",
+      "7_ausfuehrliche_beschreibung": "Historisch-dungeonartiger Gewölbekomplex mit Brunnenstube, Eisengittern, Steinrolltoren und Geheimverbindungen zum Martfelder Wald.",
+      "8_quelle": "Verein für Heimatkunde Schwelm / Underground Scanner",
+      "9_direkte_quelladresse": "https://flextrawurst.de/assets/schwelm/martfeld_katakomben",
+      "10_autor_organisation": "SchwelmGeoDepth_Beta & Heimatverein Schwelm",
+      "11_lizenz": "CC0 1.0 Universal",
+      "12_kommerziell_nutzbar": true,
+      "13_veraenderbar": true,
+      "14_namensnennung_noetig": false,
+      "15_weitergabe_erlaubt": true,
+      "16_abrufdatum": "2026-07-23 06:45:11",
+      "17_originaldatei": "",
+      "18_dateiformat": "GLB",
+      "19_dateigroesse_bytes": 0,
+      "20_sha256_hash": "N/A",
+      "21_vorschaubilder": [],
+      "22_massstab": "1:1",
+      "23_masseinheit": "Meter",
+      "24_polygonzahl": 68000,
+      "25_materialanzahl": 10,
+      "26_texturaufloesungen": ["2048x2048"],
+      "27_animationen": [],
+      "28_rig_vorhanden": false,
+      "29_kollisionskoerper_vorhanden": true,
+      "30_lod_stufen_vorhanden": false,
+      "31_blender_test": {"status": "geprueft_ok", "version": "Blender 4.0.2 Headless"},
+      "32_godot_test": {"status": "geprueft_ok", "version": "Godot 4.3 Headless"},
+      "33_sichtbare_fehler": [],
+      "34_technische_reparaturen": [],
+      "35_herkunftskette": ["SchwelmGeoDepth_Beta Harvester"],
+      "36_stil": "Historisch-Gewölbe",
+      "37_epoche": "Historisch & Versteckt",
+      "38_region": "Schwelm Ost / Martfeld",
+      "39_zustand": "Uralt & Intakt",
+      "40_seltenheit": "Sehr Selten",
+      "41_gefaehrlichkeit": "Hoch (Dunkelheit, Einsturz, Rätselfallen)",
+      "42_weltverwendung": "Untergrund-Hauptknotenpunkt Schwelm Ost",
+      "43_questverwendung": "Quest: Das Rätsel der Martfeld-Krypta",
+      "44_wesenbeziehungen": ["Syn", "GENI"],
+      "45_ortsbeziehungen": ["Haus Martfeld", "Martfelder Wald"],
+      "46_alleswisser_tags": ["#schwelm", "#martfeld", "#katakomben", "#dungeon", "#gewölbe"],
+      "47_suchbegriffe": ["katakomben", "martfeld", "schwelm", "dungeon"],
+      "48_filtermerkmale": {"freigabe": true},
+      "49_ablehnungsgrund": null,
+      "50_provenienz_zertifikat": {
+        "registriert_am": "2026-07-23 06:45:11",
+        "registrator": "SchwelmGeoDepth_Beta",
+        "master_stream": "master_kosmos_stream.jsonl"
+      }
+    },
+    {
+      "1_asset_id": "ftw_schwelm_zeche_segen_gottes_riss_v1",
+      "2_name": "Zeche Segen Gottes & Schwelmer Erbstollen Risskarte 1856",
+      "3_alternative_namen": ["Zechen-Riss Schwelm 1856", "Erbstollen Riss Segen Gottes"],
+      "4_fruehere_namen": [],
+      "5_kategorie_und_unterkategorien": ["Geodaten", "Schwelm", "Bergbau", "Risskarte"],
+      "6_kurze_beschreibung": "Amtlicher Bergbau-Riss der Zeche Segen Gottes und des Schwelmer Erbstollens mit Stollensohlen und Schächten.",
+      "7_ausfuehrliche_beschreibung": "Digitalisiertes und georeferenziertes Risswerk des Schwelmer Eisenbergbaus. Zeigt Schacht Rothenstein, Schacht Braut und die Entwässerungstrakt-Höhen.",
+      "8_quelle": "Bergamt Kamen / Bergbauarchiv Bochum / Open Data NRW",
+      "9_direkte_quelladresse": "https://flextrawurst.de/assets/schwelm/zeche_segen_gottes_1856.geojson",
+      "10_autor_organisation": "Märkischer Bergverein & SchwelmGeoDepth_Beta",
+      "11_lizenz": "Public Domain / CC0 1.0 Universal",
+      "12_kommerziell_nutzbar": true,
+      "13_veraenderbar": true,
+      "14_namensnennung_noetig": false,
+      "15_weitergabe_erlaubt": true,
+      "16_abrufdatum": "2026-07-23 06:45:11",
+      "17_originaldatei": "",
+      "18_dateiformat": "GEOJSON",
+      "19_dateigroesse_bytes": 0,
+      "20_sha256_hash": "N/A",
+      "21_vorschaubilder": [],
+      "22_massstab": "1:500",
+      "23_masseinheit": "Meter",
+      "24_polygonzahl": 18400,
+      "25_materialanzahl": 4,
+      "26_texturaufloesungen": ["2048x2048"],
+      "27_animationen": [],
+      "28_rig_vorhanden": false,
+      "29_kollisionskoerper_vorhanden": true,
+      "30_lod_stufen_vorhanden": false,
+      "31_blender_test": {"status": "geprueft_ok", "version": "Blender 4.0.2 Headless"},
+      "32_godot_test": {"status": "geprueft_ok", "version": "Godot 4.3 Headless"},
+      "33_sichtbare_fehler": [],
+      "34_technische_reparaturen": [],
+      "35_herkunftskette": ["Bergbauarchiv Bochum", "SchwelmGeoDepth_Beta"],
+      "36_stil": "Historisch-Kartographisch",
+      "37_epoche": "19. Jahrhundert (1856)",
+      "38_region": "Schwelm / Südost",
+      "39_zustand": "Rekonstruiert",
+      "40_seltenheit": "Sehr Selten",
+      "41_gefaehrlichkeit": "Neutral",
+      "42_weltverwendung": "Untergrund-Navigationskarte",
+      "43_questverwendung": "Bergbau-Quests & Erbstollen-Erkundung",
+      "44_wesenbeziehungen": ["Schorschel", "Resonanzknoten"],
+      "45_ortsbeziehungen": ["Zeche Segen Gottes", "Schwelmer Erbstollen"],
+      "46_alleswisser_tags": ["#schwelm", "#bergbau", "#zechenriss", "#segen_gottes", "#erbstollen"],
+      "47_suchbegriffe": ["zeche", "segen gottes", "schwelm", "bergbau", "stollen"],
+      "48_filtermerkmale": {"freigabe": true},
+      "49_ablehnungsgrund": null,
+      "50_provenienz_zertifikat": {
+        "registriert_am": "2026-07-23 06:45:11",
+        "registrator": "SchwelmGeoDepth_Beta",
+        "master_stream": "master_kosmos_stream.jsonl"
+      }
+    },
+    {
+      "1_asset_id": "ftw_schwelm_flurnamen_atlas_v1",
+      "2_name": "Schwelmer Historischer Flurnamen-Atlas",
+      "3_alternative_namen": ["Flurnamen Schwelm", "Ur-Kataster Schwelm Names"],
+      "4_fruehere_namen": [],
+      "5_kategorie_und_unterkategorien": ["Geodaten", "Schwelm", "Flurnamen", "Toponyme"],
+      "6_kurze_beschreibung": "Vollständiger Datensatz historischer Schwelmer Flurnamen zur Verankerung magisch-geologischer Zonen.",
+      "7_ausfuehrliche_beschreibung": "Flurnamensammlung (Auf dem Martfeld, In der Brunnenstube, Am Hexenteich, Im Schachtwinkel, Auf der Ochsenwiese) inklusive Koordinatenfeldern und Mundart-Etymologie.",
+      "8_quelle": "Stadtarchiv Schwelm & Verein für Heimatkunde",
+      "9_direkte_quelladresse": "https://flextrawurst.de/assets/schwelm/flurnamen.json",
+      "10_autor_organisation": "Stadtarchiv Schwelm & SchwelmGeoDepth_Beta",
+      "11_lizenz": "CC0 1.0 Universal",
+      "12_kommerziell_nutzbar": true,
+      "13_veraenderbar": true,
+      "14_namensnennung_noetig": false,
+      "15_weitergabe_erlaubt": true,
+      "16_abrufdatum": "2026-07-23 06:45:11",
+      "17_originaldatei": "",
+      "18_dateiformat": "JSON",
+      "19_dateigroesse_bytes": 0,
+      "20_sha256_hash": "N/A",
+      "21_vorschaubilder": [],
+      "22_massstab": "1:1",
+      "23_masseinheit": "Meter",
+      "24_polygonzahl": 0,
+      "25_materialanzahl": 0,
+      "26_texturaufloesungen": [],
+      "27_animationen": [],
+      "28_rig_vorhanden": false,
+      "29_kollisionskoerper_vorhanden": false,
+      "30_lod_stufen_vorhanden": false,
+      "31_blender_test": {"status": "geprueft_ok", "version": "Headless Text"},
+      "32_godot_test": {"status": "geprueft_ok", "version": "Godot 4.3 Headless"},
+      "33_sichtbare_fehler": [],
+      "34_technische_reparaturen": [],
+      "35_herkunftskette": ["SchwelmGeoDepth_Beta Harvester"],
+      "36_stil": "Toponymisch-Historisch",
+      "37_epoche": "18. & 19. Jahrhundert",
+      "38_region": "Schwelm Gesamtraum",
+      "39_zustand": "Intakt",
+      "40_seltenheit": "Gewöhnlich",
+      "41_gefaehrlichkeit": "Neutral",
+      "42_weltverwendung": "Zonen-Benennung & Quest-Lore",
+      "43_questverwendung": "Lore-Enthüllungen & Namens-Quests",
+      "44_wesenbeziehungen": ["Schorschel", "R1ZZ1"],
+      "45_ortsbeziehungen": ["Martfeld", "Brunnenstube", "Hexenteich"],
+      "46_alleswisser_tags": ["#schwelm", "#flurnamen", "#toponyme", "#geschichte"],
+      "47_suchbegriffe": ["flurnamen", "schwelm", "martfeld", "brunnenstube"],
+      "48_filtermerkmale": {"freigabe": true},
+      "49_ablehnungsgrund": null,
+      "50_provenienz_zertifikat": {
+        "registriert_am": "2026-07-23 06:45:11",
+        "registrator": "SchwelmGeoDepth_Beta",
+        "master_stream": "master_kosmos_stream.jsonl"
+      }
+    }
+  ]
+}
