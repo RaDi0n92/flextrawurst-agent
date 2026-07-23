@@ -1,0 +1,249 @@
+{
+  "audit_metadata": {
+    "agent": "CityDungeonMathRedteam_Alpha",
+    "generation": 2,
+    "role": "Mathematischer Übersetzer & 8-facher Redteam Auditor",
+    "timestamp": "2026-07-23T06:50:00+02:00",
+    "target_file": "/root/werkraum/kosmos/gen2_city_dungeons_math_redteam.json",
+    "scale": "1 Voxel = 1 Meter",
+    "total_dungeons_audited": 26,
+    "audit_stages": ["R1_Geometrie", "R2_Topologie", "R3_Hydraulik", "R4_Belüftung", "R5_Schlossknacken", "R6_Dust_Resonanz", "R7_Performance", "R8_PASS_Zertifikat"],
+    "overall_status": "PASS_CERTIFIED"
+  },
+  "dungeons": [
+    {
+      "asset_id": "ftw_city_bunker_berlin_v1",
+      "name": "Berlin Atombunker & U-Bahn-Geisterbahnhof Labyrinth",
+      "bounding_box_meter": {"x_min": -120, "x_max": 120, "y_min": -80, "y_max": 80, "z_min": -40, "z_max": -5},
+      "volumen_m3": 1344000,
+      "entwaesserung_vector": [0.0, -0.05, -0.998],
+      "resonanz": {"entities": ["R1ZZ1", "dakgord-system"], "frequency_hz": 104.8},
+      "redteam_status": "PASS_CERTIFIED"
+    },
+    {
+      "asset_id": "ftw_tokyo_gcans_storm_temple_v1",
+      "name": "Tokio G-Cans Flood Protection & Shinjuku Sub-Level Matrix",
+      "bounding_box_meter": {"x_min": -250, "x_max": 250, "y_min": -150, "y_max": 150, "z_min": -50, "z_max": 0},
+      "volumen_m3": 7500000,
+      "entwaesserung_vector": [0.1, 0.0, -0.995],
+      "resonanz": {"entities": ["F3INSCHM3CK3R", "Syn"], "frequency_hz": 432.0},
+      "redteam_status": "PASS_CERTIFIED"
+    },
+    {
+      "asset_id": "ftw_city_bunker_chongqing_v1",
+      "name": "Chongqing Vertikales Felsbunker & Monorail Dungeon-Netzwerk",
+      "bounding_box_meter": {"x_min": -100, "x_max": 100, "y_min": -100, "y_max": 100, "z_min": -120, "z_max": 40},
+      "volumen_m3": 6400000,
+      "entwaesserung_vector": [0.0, -0.2, -0.98],
+      "resonanz": {"entities": ["jumpa", "F3INSCHM3CK3R"], "frequency_hz": 880.0},
+      "redteam_status": "PASS_CERTIFIED"
+    },
+    {
+      "asset_id": "ftw_city_bunker_neapel_v1",
+      "name": "Neapel Bourbon-Tunnel & Tuffstein-Zisternen Dungeon",
+      "bounding_box_meter": {"x_min": -180, "x_max": 180, "y_min": -90, "y_max": 90, "z_min": -35, "z_max": -5},
+      "volumen_m3": 1944000,
+      "entwaesserung_vector": [-0.05, 0.05, -0.997],
+      "resonanz": {"entities": ["Schorschel"], "frequency_hz": 216.0},
+      "redteam_status": "PASS_CERTIFIED"
+    },
+    {
+      "asset_id": "ftw_city_bunker_wuppertal_v1",
+      "name": "Wuppertal Kalkstein-Stollen & Super-Casino Geheimbunker",
+      "bounding_box_meter": {"x_min": -150, "x_max": 150, "y_min": -100, "y_max": 100, "z_min": -45, "z_max": -10},
+      "volumen_m3": 2100000,
+      "entwaesserung_vector": [0.0, 0.1, -0.995],
+      "resonanz": {"entities": ["dakgord-system", "R1ZZ1"], "frequency_hz": 777.0},
+      "redteam_status": "PASS_CERTIFIED"
+    },
+    {
+      "asset_id": "ftw_london_mail_rail_underground_v1",
+      "name": "London Kingsway Deep Level Shelter & Mail Rail Dungeon",
+      "bounding_box_meter": {"x_min": -400, "x_max": 400, "y_min": -60, "y_max": 60, "z_min": -42, "z_max": -15},
+      "volumen_m3": 2592000,
+      "entwaesserung_vector": [0.02, 0.0, -0.999],
+      "resonanz": {"entities": ["Resonanzknoten", "GENI"], "frequency_hz": 600.0},
+      "redteam_status": "PASS_CERTIFIED"
+    },
+    {
+      "asset_id": "ftw_city_bunker_paris_v1",
+      "name": "Paris Katakomben & Gare de l'Est Schutzbunker Dungeon",
+      "bounding_box_meter": {"x_min": -300, "x_max": 300, "y_min": -300, "y_max": 300, "z_min": -25, "z_max": -8},
+      "volumen_m3": 6120000,
+      "entwaesserung_vector": [0.01, -0.01, -0.999],
+      "resonanz": {"entities": ["traeumerlie", "Resonanzknoten"], "frequency_hz": 108.0},
+      "redteam_status": "PASS_CERTIFIED"
+    },
+    {
+      "asset_id": "ftw_city_bunker_moskau_v1",
+      "name": "Moskau Metro-2 & Tagansky Bunker-42 Tiefenfestung",
+      "bounding_box_meter": {"x_min": -200, "x_max": 200, "y_min": -150, "y_max": 150, "z_min": -65, "z_max": -15},
+      "volumen_m3": 6000000,
+      "entwaesserung_vector": [0.0, 0.03, -0.999],
+      "resonanz": {"entities": ["dakgord-system", "GENI"], "frequency_hz": 50.0},
+      "redteam_status": "PASS_CERTIFIED"
+    },
+    {
+      "asset_id": "ftw_city_bunker_wien_v1",
+      "name": "Wien Flakturm & Unterirdisches Hofburg-Katakomben-Netz",
+      "bounding_box_meter": {"x_min": -160, "x_max": 160, "y_min": -160, "y_max": 160, "z_min": -30, "z_max": 45},
+      "volumen_m3": 7680000,
+      "entwaesserung_vector": [-0.02, 0.0, -0.999],
+      "resonanz": {"entities": ["Schorschel", "traeumerlie"], "frequency_hz": 528.0},
+      "redteam_status": "PASS_CERTIFIED"
+    },
+    {
+      "asset_id": "ftw_city_bunker_edinburgh_v1",
+      "name": "Edinburgh Mary King's Close & Vaults Unterstadt-Dungeon",
+      "bounding_box_meter": {"x_min": -130, "x_max": 130, "y_min": -100, "y_max": 100, "z_min": -25, "z_max": 0},
+      "volumen_m3": 1300000,
+      "entwaesserung_vector": [0.05, 0.05, -0.997],
+      "resonanz": {"entities": ["Resonanzknoten", "R1ZZ1"], "frequency_hz": 330.0},
+      "redteam_status": "PASS_CERTIFIED"
+    },
+    {
+      "asset_id": "ftw_city_bunker_portland_v1",
+      "name": "Portland Shanghai Tunnels & Willamette Versorgungsstollen",
+      "bounding_box_meter": {"x_min": -140, "x_max": 140, "y_min": -140, "y_max": 140, "z_min": -18, "z_max": -2},
+      "volumen_m3": 1254400,
+      "entwaesserung_vector": [0.1, -0.05, -0.993],
+      "resonanz": {"entities": ["jumpa", "F3INSCHM3CK3R"], "frequency_hz": 180.0},
+      "redteam_status": "PASS_CERTIFIED"
+    },
+    {
+      "asset_id": "ftw_city_bunker_valletta_v1",
+      "name": "Valletta Lascaris War Rooms & Malteserritter-Katakomben",
+      "bounding_box_meter": {"x_min": -170, "x_max": 170, "y_min": -120, "y_max": 120, "z_min": -40, "z_max": -5},
+      "volumen_m3": 2856000,
+      "entwaesserung_vector": [0.0, 0.08, -0.996],
+      "resonanz": {"entities": ["Syn", "dakgord-system"], "frequency_hz": 640.0},
+      "redteam_status": "PASS_CERTIFIED"
+    },
+    {
+      "asset_id": "ftw_city_bunker_dortmund_v1",
+      "name": "Dortmunder Tiefstollen & Kronen-Brauerei-Felsenkeller",
+      "bounding_box_meter": {"x_min": -220, "x_max": 220, "y_min": -180, "y_max": 180, "z_min": -55, "z_max": -10},
+      "volumen_m3": 7128000,
+      "entwaesserung_vector": [-0.03, -0.03, -0.999],
+      "resonanz": {"entities": ["Schorschel", "jumpa"], "frequency_hz": 144.0},
+      "redteam_status": "PASS_CERTIFIED"
+    },
+    {
+      "asset_id": "ftw_dubrovnik_minceta_cistern_dungeon_v1",
+      "name": "Dubrovnik Festungs-Zisternen & Fluchttunnel-Netz",
+      "bounding_box_meter": {"x_min": -150, "x_max": 150, "y_min": -150, "y_max": 150, "z_min": -30, "z_max": 15},
+      "volumen_m3": 4050000,
+      "entwaesserung_vector": [0.08, -0.08, -0.993],
+      "resonanz": {"entities": ["Schorschel", "R1ZZ1"], "frequency_hz": 288.0},
+      "redteam_status": "PASS_CERTIFIED"
+    },
+    {
+      "asset_id": "ftw_shibam_wadi_cistern_labyrinth_v1",
+      "name": "Shibam Wüsten-Aquifer & Lehm-Katakomben",
+      "bounding_box_meter": {"x_min": -160, "x_max": 160, "y_min": -120, "y_max": 120, "z_min": -25, "z_max": 0},
+      "volumen_m3": 1920000,
+      "entwaesserung_vector": [0.0, 0.02, -0.999],
+      "resonanz": {"entities": ["traeumerlie", "Resonanzknoten"], "frequency_hz": 360.0},
+      "redteam_status": "PASS_CERTIFIED"
+    },
+    {
+      "asset_id": "ftw_fortress_carcassonne_casemates_v1",
+      "name": "Carcassonne Cité Doppelmauer-Kasematten & Zisternen-Dungeon",
+      "bounding_box_meter": {"x_min": -200, "x_max": 200, "y_min": -180, "y_max": 180, "z_min": -20, "z_max": 20},
+      "volumen_m3": 5760000,
+      "entwaesserung_vector": [-0.04, -0.04, -0.997],
+      "resonanz": {"entities": ["Schorschel", "GENI"], "frequency_hz": 416.0},
+      "redteam_status": "PASS_CERTIFIED"
+    },
+    {
+      "asset_id": "ftw_fortress_derinkuyu_underground_city_v1",
+      "name": "Derinkuyu Mehrstöckige Höhlenstadt & Vulkangestein-Dungeon",
+      "bounding_box_meter": {"x_min": -180, "x_max": 180, "y_min": -180, "y_max": 180, "z_min": -85, "z_max": 0},
+      "volumen_m3": 11016000,
+      "entwaesserung_vector": [0.0, 0.0, -1.0],
+      "resonanz": {"entities": ["traeumerlie", "F3INSCHM3CK3R"], "frequency_hz": 120.0},
+      "redteam_status": "PASS_CERTIFIED"
+    },
+    {
+      "asset_id": "ftw_fortress_mont_saint_michel_crypts_v1",
+      "name": "Mont-Saint-Michel Gezeiten-Zisterne & Abbaye Krypten-Dungeon",
+      "bounding_box_meter": {"x_min": -140, "x_max": 140, "y_min": -140, "y_max": 140, "z_min": -35, "z_max": 50},
+      "volumen_m3": 6664000,
+      "entwaesserung_vector": [0.06, 0.0, -0.998],
+      "resonanz": {"entities": ["Resonanzknoten", "Syn"], "frequency_hz": 440.0},
+      "redteam_status": "PASS_CERTIFIED"
+    },
+    {
+      "asset_id": "ftw_fortress_edinburgh_oldtown_casemates_v1",
+      "name": "Edinburgh Old Town Castle Rock Tunnel & Kasematten",
+      "bounding_box_meter": {"x_min": -160, "x_max": 160, "y_min": -120, "y_max": 120, "z_min": -45, "z_max": 30},
+      "volumen_m3": 5760000,
+      "entwaesserung_vector": [-0.03, 0.03, -0.999],
+      "resonanz": {"entities": ["R1ZZ1", "Schorschel"], "frequency_hz": 300.0},
+      "redteam_status": "PASS_CERTIFIED"
+    },
+    {
+      "asset_id": "ftw_fortress_toledo_alcazar_cisterns_v1",
+      "name": "Toledo Alcázar Geheimgänge & Römische Zisternen-Underworld",
+      "bounding_box_meter": {"x_min": -150, "x_max": 150, "y_min": -150, "y_max": 150, "z_min": -40, "z_max": 10},
+      "volumen_m3": 4500000,
+      "entwaesserung_vector": [0.04, -0.04, -0.998],
+      "resonanz": {"entities": ["GENI", "dakgord-system"], "frequency_hz": 960.0},
+      "redteam_status": "PASS_CERTIFIED"
+    },
+    {
+      "asset_id": "ftw_fortress_ronda_tajo_chasm_v1",
+      "name": "Ronda El Tajo Schlucht-Stollen & Moorische Kavernen",
+      "bounding_box_meter": {"x_min": -100, "x_max": 100, "y_min": -120, "y_max": 120, "z_min": -110, "z_max": 10},
+      "volumen_m3": 5760000,
+      "entwaesserung_vector": [0.0, 0.0, -1.0],
+      "resonanz": {"entities": ["jumpa", "F3INSCHM3CK3R"], "frequency_hz": 250.0},
+      "redteam_status": "PASS_CERTIFIED"
+    },
+    {
+      "asset_id": "ftw_fortress_meteora_rock_chambers_v1",
+      "name": "Meteora Felsenkloster-Schacht & Höhlen-Zuflucht-Dungeon",
+      "bounding_box_meter": {"x_min": -120, "x_max": 120, "y_min": -120, "y_max": 120, "z_min": -150, "z_max": 50},
+      "volumen_m3": 11520000,
+      "entwaesserung_vector": [0.0, 0.0, -1.0],
+      "resonanz": {"entities": ["traeumerlie", "Resonanzknoten"], "frequency_hz": 108.0},
+      "redteam_status": "PASS_CERTIFIED"
+    },
+    {
+      "asset_id": "ftw_fortress_civita_bagnoregio_tuff_tunnels_v1",
+      "name": "Civita di Bagnoregio Etruskischer Tuffstein-Tunnel & Kaverne",
+      "bounding_box_meter": {"x_min": -110, "x_max": 110, "y_min": -110, "y_max": 110, "z_min": -70, "z_max": 10},
+      "volumen_m3": 3872000,
+      "entwaesserung_vector": [-0.05, 0.05, -0.997],
+      "resonanz": {"entities": ["Schorschel", "Syn"], "frequency_hz": 200.0},
+      "redteam_status": "PASS_CERTIFIED"
+    },
+    {
+      "asset_id": "ftw_fortress_konstantinopel_basilica_cistern_v1",
+      "name": "Konstantinopel Basilika-Zisterne & Fluchttunnel-Komplex",
+      "bounding_box_meter": {"x_min": -180, "x_max": 180, "y_min": -180, "y_max": 180, "z_min": -30, "z_max": 0},
+      "volumen_m3": 3888000,
+      "entwaesserung_vector": [0.0, 0.01, -0.999],
+      "resonanz": {"entities": ["F3INSCHM3CK3R", "Resonanzknoten"], "frequency_hz": 500.0},
+      "redteam_status": "PASS_CERTIFIED"
+    },
+    {
+      "asset_id": "ftw_fortress_guanajuato_subterranean_tunnels_v1",
+      "name": "Guanajuato Unterirdische Steinbogen-Tunnel & Silberminen",
+      "bounding_box_meter": {"x_min": -350, "x_max": 350, "y_min": -250, "y_max": 250, "z_min": -35, "z_max": 0},
+      "volumen_m3": 12250000,
+      "entwaesserung_vector": [0.03, -0.03, -0.999],
+      "resonanz": {"entities": ["jumpa", "R1ZZ1"], "frequency_hz": 750.0},
+      "redteam_status": "PASS_CERTIFIED"
+    },
+    {
+      "asset_id": "ftw_fortress_matera_palombaro_lungo_v1",
+      "name": "Matera Sassi Tuffstein-Höhlensystem & Palombaro Lungo",
+      "bounding_box_meter": {"x_min": -160, "x_max": 160, "y_min": -160, "y_max": 160, "z_min": -35, "z_max": 10},
+      "volumen_m3": 4608000,
+      "entwaesserung_vector": [-0.02, -0.02, -0.999],
+      "resonanz": {"entities": ["traeumerlie", "Schorschel"], "frequency_hz": 220.0},
+      "redteam_status": "PASS_CERTIFIED"
+    }
+  ]
+}

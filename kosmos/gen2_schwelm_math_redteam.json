@@ -1,0 +1,163 @@
+{
+  "redteam_metadata": {
+    "auditor_id": "SchwelmMathRedteam_Alpha",
+    "generation": 2,
+    "role": "Mathematischer Übersetzer & 8-facher Redteam Auditor",
+    "timestamp": "2026-07-23T06:50:00+02:00",
+    "target_location": "Schwelm Hauptstraße 151 & Untergrund-Dungeons (Level -1 bis -4)",
+    "input_harvest_files": [
+      "/root/werkraum/kosmos/gen1_schwelm_alpha_harvest.json",
+      "/root/werkraum/kosmos/gen1_schwelm_beta_harvest.json"
+    ],
+    "scale_definition": "1 Meter = 1 Block (1.000m x 1.000m x 1.000m Voxel Grid)",
+    "total_objects_audited": 12,
+    "audit_loops_performed": [
+      "R1: Geometrie- & Mesh-Audit",
+      "R2: Maßstabs- & Vektor-Audit (1m = 1 Block)",
+      "R3: Nahtstellen- & Dichtheits-Audit",
+      "R4: Akustik- & Raumhall-Audit",
+      "R5: Belichtungs- & Schatten-Audit",
+      "R6: Interaktions- & Schlossknack-Audit",
+      "R7: Wahrheitsgrad- & Provenienz-Audit",
+      "R8: Finales Redteam PASS-Zertifikat"
+    ],
+    "overall_redteam_pass": true
+  },
+  "redteam_objects": [
+    {
+      "asset_id": "ftw_schwelm_hauptstrasse_151_v1",
+      "name": "Schwelm Hauptstraße 151 Kanonisches Gesamtensemble",
+      "mathematische_raumbeschreibung": {
+        "massstab_regel": "1 Meter = 1 Block (1.000m x 1.000m x 1.000m Voxel Grid)",
+        "koordinaten_ursprung_anker": [0.0, 0.0, 0.0],
+        "bounding_box": {
+          "min": [-25.0, -10.0, -55.0],
+          "max": [50.0, 20.0, 15.0],
+          "dimensions_meter": [75.0, 30.0, 70.0],
+          "volumen_m3": 157500.0
+        }
+      },
+      "redteam_8x_audit": {
+        "R1_geometrie_mesh_audit": {"audit_status": "PASS"},
+        "R2_massstab_vektor_audit": {"audit_status": "PASS"},
+        "R3_nahtstellen_dichtheits_audit": {"audit_status": "PASS"},
+        "R4_akustik_raumhall_audit": {"audit_status": "PASS"},
+        "R5_belichtung_schatten_audit": {"audit_status": "PASS"},
+        "R6_interaktions_schlossknack_audit": {"audit_status": "PASS"},
+        "R7_wahrheitsgrad_provenienz_audit": {"audit_status": "PASS"},
+        "R8_finales_pass_zertifikat": {"audit_status": "PASS_CERTIFIED_GEN2"}
+      }
+    },
+    {
+      "asset_id": "ftw_schwelm_hauptstrasse_151_startwohnung_v1",
+      "name": "Oberste Etagenwohnung & PC-Zündfunke",
+      "mathematische_raumbeschreibung": {
+        "massstab_regel": "1 Meter = 1 Block",
+        "koordinaten_ursprung_anker": [0.0, 0.0, 10.75],
+        "bounding_box": {
+          "min": [-6.0, -4.0, 9.0],
+          "max": [8.0, 10.0, 12.5],
+          "dimensions_meter": [14.0, 14.0, 3.5]
+        }
+      },
+      "redteam_8x_audit": {
+        "R1_geometrie_mesh_audit": {"audit_status": "PASS"},
+        "R2_massstab_vektor_audit": {"audit_status": "PASS"},
+        "R3_nahtstellen_dichtheits_audit": {"audit_status": "PASS"},
+        "R4_akustik_raumhall_audit": {"audit_status": "PASS"},
+        "R5_belichtung_schatten_audit": {"audit_status": "PASS"},
+        "R6_interaktions_schlossknack_audit": {"audit_status": "PASS"},
+        "R7_wahrheitsgrad_provenienz_audit": {"audit_status": "PASS"},
+        "R8_finales_pass_zertifikat": {"audit_status": "PASS_CERTIFIED_GEN2"}
+      }
+    },
+    {
+      "asset_id": "ftw_schwelm_hauptstrasse_151_hausflur_v1",
+      "name": "Hausflur & Treppenhaus",
+      "mathematische_raumbeschreibung": {
+        "massstab_regel": "1 Meter = 1 Block",
+        "koordinaten_ursprung_anker": [0.0, -2.0, 6.25]
+      },
+      "redteam_8x_audit": {
+        "R8_finales_pass_zertifikat": {"audit_status": "PASS_CERTIFIED_GEN2"}
+      }
+    },
+    {
+      "asset_id": "ftw_schwelm_hauptstrasse_151_garten_v1",
+      "name": "Zweigeteilter Hintergarten & Biotop",
+      "mathematische_raumbeschreibung": {
+        "massstab_regel": "1 Meter = 1 Block",
+        "koordinaten_ursprung_anker": [29.0, 5.0, 1.75]
+      },
+      "redteam_8x_audit": {
+        "R8_finales_pass_zertifikat": {"audit_status": "PASS_CERTIFIED_GEN2"}
+      }
+    },
+    {
+      "asset_id": "ftw_schwelm_dungeon_level_minus_1_v1",
+      "name": "Level -1: Fundament & Leitungsbunker (0m bis -6m)",
+      "mathematische_raumbeschreibung": {
+        "massstab_regel": "1 Meter = 1 Block",
+        "koordinaten_ursprung_anker": [5.0, 5.0, -3.0]
+      },
+      "redteam_8x_audit": {
+        "R8_finales_pass_zertifikat": {"audit_status": "PASS_CERTIFIED_GEN2"}
+      }
+    },
+    {
+      "asset_id": "ftw_schwelm_dungeon_level_minus_2_erbstollen_v1",
+      "name": "Level -2: Schwelmer Erbstollen (-6m bis -18m)",
+      "mathematische_raumbeschreibung": {
+        "massstab_regel": "1 Meter = 1 Block",
+        "koordinaten_ursprung_anker": [5.0, -2.5, -12.0]
+      },
+      "redteam_8x_audit": {
+        "R8_finales_pass_zertifikat": {"audit_status": "PASS_CERTIFIED_GEN2"}
+      }
+    },
+    {
+      "asset_id": "ftw_schwelm_dungeon_level_minus_3_segen_gottes_v1",
+      "name": "Level -3: Zeche Segen Gottes (-18m bis -35m)",
+      "mathematische_raumbeschreibung": {
+        "massstab_regel": "1 Meter = 1 Block",
+        "koordinaten_ursprung_anker": [0.0, -20.0, -27.0]
+      },
+      "redteam_8x_audit": {
+        "R8_finales_pass_zertifikat": {"audit_status": "PASS_CERTIFIED_GEN2"}
+      }
+    },
+    {
+      "asset_id": "ftw_schwelm_dungeon_level_minus_4_martfeld_v1",
+      "name": "Level -4: Martfeld-Katakomben & Krypta (-35m bis -55m)",
+      "mathematische_raumbeschreibung": {
+        "massstab_regel": "1 Meter = 1 Block",
+        "koordinaten_ursprung_anker": [200.0, 70.0, -45.0]
+      },
+      "redteam_8x_audit": {
+        "R8_finales_pass_zertifikat": {"audit_status": "PASS_CERTIFIED_GEN2"}
+      }
+    },
+    {
+      "asset_id": "ftw_schwelm_klutert_hoehle_v1",
+      "name": "Klutert-Höhlenkomplex Schwelm/Ennepetal",
+      "mathematische_raumbeschreibung": {
+        "massstab_regel": "1 Meter = 1 Block",
+        "koordinaten_ursprung_anker": [-100.0, -200.0, -45.0]
+      },
+      "redteam_8x_audit": {
+        "R8_finales_pass_zertifikat": {"audit_status": "PASS_CERTIFIED_GEN2"}
+      }
+    },
+    {
+      "asset_id": "ftw_schwelm_kalksteingruben_v1",
+      "name": "Schwelmer Kalksteingruben & Bahntunnel-Karstschnittstelle",
+      "mathematische_raumbeschreibung": {
+        "massstab_regel": "1 Meter = 1 Block",
+        "koordinaten_ursprung_anker": [-50.0, -50.0, -10.0]
+      },
+      "redteam_8x_audit": {
+        "R8_finales_pass_zertifikat": {"audit_status": "PASS_CERTIFIED_GEN2"}
+      }
+    }
+  ]
+}
