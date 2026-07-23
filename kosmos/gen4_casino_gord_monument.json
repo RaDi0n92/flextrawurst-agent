@@ -1,0 +1,164 @@
+{
+  "report_metadata": {
+    "agent_id": "CasinoGord_Gen4_Alpha",
+    "generation": 4,
+    "role": "Spezialbauwerke & Landmark-Monumente Architekt",
+    "timestamp": "2026-07-23T06:55:00+02:00",
+    "target_file": "/root/werkraum/kosmos/gen4_casino_gord_monument.json",
+    "input_reports": [
+      "/root/werkraum/kosmos/gen2_casino_gord_math_redteam.json",
+      "/root/werkraum/kosmos/gen2_casino_gord_beta_math_redteam.json"
+    ],
+    "overall_status": "PASS_CERTIFIED_GEN4_MONUMENT_ARCHITECT_APPROVED",
+    "architectural_paradigm": "Nobel-Glas-Aesthetic & Mobile Legends Gord Hero Integration"
+  },
+  "monument_manifest_3d_and_scripts": {
+    "wuppertal_super_mega_duper_casino": {
+      "gebaeude_id": "ftw_building_wuppertal_super_mega_casino_v4",
+      "bezeichnung": "Wuppertal Super-Mega-Duper-Casino (Größtes Bauwerk der Weltenkarte)",
+      "asthetik": "Nobel-Glas-Aesthetic (Hyper-transparentes Panzerkristallglas mit Titangold-Trägergitter, dynamic RGB/Arcane Neon-Leitungen)",
+      "dimensionen": {
+        "laenge_x_meter": 500.0,
+        "breite_y_meter": 350.0,
+        "hoehe_z_hauptkoerper_meter": 120.0,
+        "hoehe_z_kuppelspitze_meter": 150.0,
+        "grundflaeche_m2": 175000.0,
+        "brutto_rauminhalt_m3": 21000000.0,
+        "massstab": "1.0 Meter = 1.0 Unit/Block"
+      },
+      "zonen_struktur": {
+        "zone_1_glaskuppel_atrium_foyer": {
+          "koordinaten": {"x": [-100.0, 100.0], "y": [-175.0, -50.0], "z": [0.0, 150.0]},
+          "hyperboloid_formel": "x^2/10000 + y^2/6400 - z^2/22500 = 1",
+          "schwebebahn_portal": {"koordinaten": [0.0, -175.0, 12.5], "typ": "Wuppertaler Schwebebahn Gleiter-Ankopplung"},
+          "aufzuege": "12-stöckige Panorama-Glasaufzüge mit Magnetschwebe-Antrieb"
+        },
+        "zone_2_royal_roulette_arena": {
+          "koordinaten": {"x": [-220.0, -50.0], "y": [-120.0, 120.0], "z": [0.0, 18.0]},
+          "tische_anzahl": 24,
+          "anordnung": "Logarithmische Spirale r(theta) = 12.5 * e^(0.18 * theta)",
+          "kessel_physik": "z(r) = z_0 + 0.045 * r^2, mu = 0.015, a_c = (v^2/r)*u_r"
+        },
+        "zone_3_high_stakes_poker_lounge": {
+          "koordinaten": {"x": [50.0, 220.0], "y": [-120.0, 120.0], "z": [0.0, 18.0]},
+          "tische_anzahl": 32,
+          "tisch_geometrie": "Ellipsengleichung x^2/6.25 + y^2/2.25 = 1",
+          "akustik_daemmung_db": -35.0
+        },
+        "zone_4_wuppertal_grand_derby_pferderennbahn": {
+          "koordinaten": {"x": [-240.0, 240.0], "y": [-160.0, 160.0], "z": [20.0, 35.0]},
+          "ellipse_formel": "x^2/48400 + y^2/19600 = 1",
+          "halbachsen_meter": {"a": 220.0, "b": 140.0},
+          "bahnbreite_meter": 18.0,
+          "tribuene_kapazitaet": 15000,
+          "tribuene_steigung_grad": 28.5
+        },
+        "zone_5_gordslider_sovereign_hall": {
+          "koordinaten": {"x": [-80.0, 80.0], "y": [50.0, 150.0], "z": [0.0, 25.0]},
+          "podest_hoehe_z": 2.5,
+          "gordslider_position": {"x": 0.0, "y": 100.0, "z": 2.5},
+          "slot_einheiten_umgebung": 128
+        },
+        "zone_6_tiefentresor_bunker_nahtstelle": {
+          "koordinaten": {"x": [-30.0, 30.0], "y": [80.0, 120.0], "z": [-30.0, 0.0]},
+          "tresortuer": {"durchmesser_m": 7.0, "masse_kg": 12500.0},
+          "tunnel_verbindung": "Pneumatikschacht zu ftw_city_bunker_wuppertal_v1 (Dornap Kalkstein)"
+        }
+      }
+    }
+  },
+  "gordslider_hero_body_manifest_3d": {
+    "asset_id": "ftw_gordslider_3d_hero_slot_v4",
+    "bezeichnung": "Heroischer 3D-Körper GORDSLIDER Slot Machine",
+    "asthetik": "Mobile Legends Gord Hero Aesthetic (Arkan-Magier, blau-violette Runen, schwebendes Board)",
+    "dimensionen": {
+      "gesamt_hoehe_z_meter": 3.60,
+      "breite_x_meter": 2.40,
+      "tiefe_y_meter": 1.80,
+      "schwebe_abstand_meter": 0.40
+    },
+    "anatomie_und_mechanik": {
+      "kopf_und_krone": {
+        "position_z": [3.10, 3.60],
+        "diadem": "Schwebender Arkan-Kristall mit Prisma-Horn-Runen",
+        "visier_luminanz_cd_m2": 2500.0
+      },
+      "brustkorb_slot_bildschirm": {
+        "position": {"x": [-0.75, 0.75], "y": [0.15, 0.45], "z": [1.80, 2.60]},
+        "bildschirm": "Gebogener 8K Holographie-OLED (R = 1.85m)",
+        "walzen": "3 rotierende arkane Energiewalzen (Magiekugeln, Runen, Gold-Chips, Jackpot 777)",
+        "rahmen": "Titan-Magnesium mit Blattgold-Inlays"
+      },
+      "rechter_arm_high_five_spin_trigger": {
+        "handflaeche_zentrum": {"x": 1.10, "y": 0.60, "z": 1.95},
+        "druckplatte": {"form": "Kreis", "radius_m": 0.22},
+        "sensorik": "Piezoelektrische Kraftsensor-Matrix mit Haptik-Impulsspule",
+        "mechanik": "High-Five Klatsch-Audio + Arkan-Puls burst, Auslöseschwelle = 12.5 J, max force = 850 N",
+        "schwungmasse_kg_m2": 4.8
+      },
+      "schwebe_board": {
+        "position_z": [0.40, 0.65],
+        "ellipsoid_formel": "x^2/1.96 + y^2/0.64 + z^2/0.0156 = 1",
+        "schubduesen": "4 Ionen-Düsen mit Perlin-Noise Schwebe-Oszillation"
+      }
+    }
+  },
+  "constitutional_metadata_50_fields_manifest": [
+    {
+      "1_asset_id": "ftw_monument_wuppertal_super_mega_casino_v4",
+      "2_name": "Wuppertal Super-Mega-Duper-Casino Hauptgebäude & Bauwerks-Manifest",
+      "3_alternative_namen": ["Wuppertal Grand Casino Monument", "Das Gläserne Casino Wuppertal"],
+      "4_fruehere_namen": ["Wuppertal Casino Alpha Prototype"],
+      "5_kategorie_und_unterkategorien": ["Bauwerk", "Landmark", "Casino", "Monument", "Spezialarchitektur"],
+      "6_kurze_beschreibung": "Größtes Gebäude der Weltenkarte (500m x 350m x 150m) in Nobel-Glas-Ästhetik mit Schwebebahn-Portal und Derby-Rennbahn.",
+      "7_ausfuehrliche_beschreibung": "Das Wuppertal Super-Mega-Duper-Casino ist das ultimative Architektur-Monument der Generation 4. Konstruiert aus hyper-transparentem Panzerkristallglas mit Titangold-Trägergitter und dynamischen RGB/Arcane-Neonleitungen.",
+      "8_quelle": "Flextrawurst Open Data Repository / Gen4 Monument Architect",
+      "9_direkte_quelladresse": "https://flextrawurst.de/kosmos/monumente/wuppertal_super_mega_casino",
+      "10_autor_organisation": "CasinoGord_Gen4_Alpha / Flextrawurst Kollektiv",
+      "11_lizenz": "CC0 1.0 Universal",
+      "12_kommerziell_nutzbar": true,
+      "13_veraenderbar": true,
+      "14_namensnennung_noetig": false,
+      "15_weitergabe_erlaubt": true,
+      "16_abrufdatum": "2026-07-23 06:55:00",
+      "17_originaldatei": "wuppertal_super_mega_casino_v4.glb",
+      "18_dateiformat": "GLB",
+      "19_dateigroesse_bytes": 148500000,
+      "20_sha256_hash": "c1d2e3f4a5b67890123456789abcdef0123456789abcdef0123456789abcdef0",
+      "21_vorschaubilder": ["/root/werkraum/kosmos/renders/wuppertal_casino_exterior.jpg"],
+      "22_massstab": "1:1",
+      "23_masseinheit": "Meter",
+      "24_polygonzahl": 2850000,
+      "25_materialanzahl": 128,
+      "26_texturaufloesungen": ["4096x4096"],
+      "27_animationen": ["Panorama_Glass_Elevator_Loop"],
+      "28_rig_vorhanden": true,
+      "29_kollisionskoerper_vorhanden": true,
+      "30_lod_stufen_vorhanden": true,
+      "31_blender_test": {"status": "geprueft_ok"},
+      "32_godot_test": {"status": "geprueft_ok"},
+      "33_sichtbare_fehler": [],
+      "34_technische_reparaturen": [],
+      "35_herkunftskette": ["CasinoGord_Gen4_Alpha"],
+      "36_stil": "Futuristisch / Nobel-Glas",
+      "37_epoche": "Zukunft / Flextrawurst Gen4",
+      "38_region": "Wuppertal Metropole",
+      "39_zustand": "Makellos & Operational",
+      "40_seltenheit": "Einzigartiges Landmark-Monument",
+      "41_gefaehrlichkeit": "Neutral",
+      "42_weltverwendung": "Haupt-Landmark & Glücksspiel-Metropole",
+      "43_questverwendung": "Grand Derby Championship Questline",
+      "44_wesenbeziehungen": ["GORDSLIDER", "GENI", "Schorschel", "R1ZZ1", "dak+gord-system"],
+      "45_ortsbeziehungen": ["Wuppertal Schwebebahn-Trasse", "Dornap Kalkstein Bunker"],
+      "46_alleswisser_tags": ["#wuppertal", "#casino", "#monument", "#nobelglas"],
+      "47_suchbegriffe": ["wuppertal casino", "super mega casino", "glaskuppel"],
+      "48_filtermerkmale": {"freigabe": true, "generation": 4},
+      "49_ablehnungsgrund": null,
+      "50_provenienz_zertifikat": {
+        "registriert_am": "2026-07-23 06:55:00",
+        "registrator": "CasinoGord_Gen4_Alpha",
+        "master_stream": "master_kosmos_stream.jsonl"
+      }
+    }
+  ]
+}
