@@ -6578,40 +6578,41 @@ def entity_thinking(entity_id: str, limit: int = Query(default=10, le=50)):
         conn.close()
 
 
+SOZIAL_TAB_HASHES = ("#blasen", "#menschen", "#wesen", "#schatten", "#diskurs")
+
+
 @app.get("/entities/{entity_id}/linsen")
 def entity_linsen_status(entity_id: str, fenster: int = Query(default=50, le=200)):
-    """2026-07-22 (Sieben-Linsen-Koerper, siehe _claude/ideen/sieben_linsen_koerper_kreatur.md):
+    """2026-07-22/23 (Sieben-Linsen-Koerper, siehe _claude/ideen/sieben_linsen_koerper_kreatur.md):
     reale, bereits vorhandene entscheidung-Praefixe aus entity_thinking_log gebuendelt pro
     Linse -- kein neuer Datenerzeuger, nur eine Aggregation. Vault=obsidian_*, RAG/Flarum=
     rag_erkund*+flarum_besuchen, DOM=klicke/tippe/navigiere/scrolle (der Koerper selbst
-    bewegt sich ja schon dafuer, hier nur als Zaehler mitgeliefert). Gedaechtnis-Tiefe =
-    Gesamtzahl aller bisherigen Ticks (waechst nur, kein erfundener Wert). Gegenwart-Anteil
+    bewegt sich ja schon dafuer, hier nur als Zaehler mitgeliefert). Gegenwart-Anteil
     = Anteil reiner DOM-Aktionen ohne Vault/RAG/Flarum-Bezug am Fenster -- je hoeher, desto
-    mehr Hier-und-Jetzt statt Erinnerung/Vault. Sozial = Anzahl anderer Wesen mit Aktivitaet
-    in den letzten 10 Minuten (dieselbe Logik wie hole_andere_wesen_status() in
-    browser_agent.py). Schlaf-Naehe = Stunden wach seit letztem Schlafende, auf die 6h-
-    Wachschwelle aus ist_schlaf_faellig() normiert. Cyberling/KompOase bewusst NICHT hier --
-    beide Systeme liefern aktuell fuer ALLE Entitaeten nur Nullwerte (verifiziert per
-    DB-Abfrage, 2026-07-22), ein Linsen-Wert waere gerade nicht unterscheidungskraeftig.
-    einsicht_lg_ticks (2026-07-23, achte Linse, Daniels Praezisierung: nur ein passiver
-    LangGraph/Postgres-Wert): roher Tick-Zaehler aus checkpoints.channel_values, ehrlich
-    aber aktuell fuer alle 7 Wesen aehnlich (~1590-1845) und seit 2026-07-21 eingefroren."""
+    mehr Hier-und-Jetzt statt Erinnerung/Vault. Schlaf-Naehe = Stunden wach seit letztem
+    Schlafende, auf die 6h-Wachschwelle aus ist_schlaf_faellig() normiert. Cyberling/KompOase
+    bewusst NICHT hier -- beide Systeme liefern aktuell fuer ALLE Entitaeten nur Nullwerte
+    (verifiziert per DB-Abfrage, 2026-07-22), ein Linsen-Wert waere gerade nicht
+    unterscheidungskraeftig.
+
+    2026-07-23 Rekonstruktion (siehe Ideen-Datei, Nachtrag "Kontext-Nachweis"): die zuerst
+    getrennt gebauten "gedaechtnis_tiefe" (Denklog-Zeilenzahl) und "einsicht_lg_ticks"
+    (LangGraph-Ticks) sind zu EINEM Feld "gedaechtnis_lg_ticks" verschmolzen -- Daniels
+    Original-Definition war von Anfang an "dauerhaft in LangGraph/PostgreSQL, den eigenen
+    Erinnerungen" (checkpoints.channel_values->lg_ticks, Grundgesetz 7 -- nur gelesen), nicht
+    die generische Denklog-Zeilenzahl. "sozial" komplett neu: nicht mehr Nachbar-Wesen-
+    Sichtbarkeit, sondern Naehe zu den fuenf Original-Systemen (Gedankenblasenfeld,
+    Menschenprofile, Schattenkommentare, andere Entitaetenprofile, Diskurs-Posts) -- alle
+    fuenf sind Tabs derselben Single-Page-Surface, ihr Hash landet automatisch in
+    entity_thinking_log.meta->>'url', sobald das Wesen dorthin geklickt/navigiert hat."""
     conn = get_conn()
     try:
         with conn.cursor() as cur:
             cur.execute("""
-                SELECT entscheidung FROM entity_thinking_log
+                SELECT entscheidung, meta->>'url' AS url FROM entity_thinking_log
                 WHERE entity_id = %s ORDER BY tick_at DESC LIMIT %s
             """, (entity_id, fenster))
-            entscheidungen = [r["entscheidung"] or "" for r in cur.fetchall()]
-            cur.execute("SELECT COUNT(*) AS n FROM entity_thinking_log WHERE entity_id = %s", (entity_id,))
-            gedaechtnis_tiefe = cur.fetchone()["n"]
-            cur.execute("""
-                SELECT COUNT(DISTINCT entity_id) AS n FROM entity_thinking_log
-                WHERE entity_id != %s AND meta->>'source' = 'browser_agent'
-                    AND tick_at > NOW() - INTERVAL '10 minutes'
-            """, (entity_id,))
-            sozial = cur.fetchone()["n"]
+            zeilen = cur.fetchall()
             cur.execute("""
                 SELECT ended_at FROM sleep_phases
                 WHERE entity_id = %s AND ended_at IS NOT NULL
@@ -6626,19 +6627,19 @@ def entity_linsen_status(entity_id: str, fenster: int = Query(default=50, le=200
                 """, (entity_id,))
                 r = cur.fetchone()
                 bezug = r["erster"] if r else None
-            # 2026-07-23 (achte Linse "einsicht", Daniels Praezisierung: nur ein passiver
-            # Wert aus LangGraph/Postgres) -- dieselbe Quelle wie /entities/{id}/einsicht.
             cur.execute("""
                 SELECT checkpoint->>'channel_values' AS cv
                 FROM checkpoints WHERE thread_id = %s ORDER BY checkpoint_id DESC LIMIT 1
             """, (f"codewesen-{entity_id}",))
             cp_row = cur.fetchone()
             lg_ticks = (json.loads(cp_row["cv"]).get("lg_ticks", 0) or 0) if cp_row and cp_row["cv"] else 0
+        entscheidungen = [r["entscheidung"] or "" for r in zeilen]
         vault = sum(1 for e in entscheidungen if e.startswith("obsidian_"))
         rag_flarum = sum(1 for e in entscheidungen if e.startswith("rag_erkund") or e.startswith("flarum_besuchen"))
         dom = sum(1 for e in entscheidungen if e.startswith(("klicke", "tippe", "navigiere", "scrolle")))
         gesamt_bewertet = vault + rag_flarum + dom
         gegenwart_anteil = (dom / gesamt_bewertet) if gesamt_bewertet else 0.0
+        sozial = sum(1 for r in zeilen if r["url"] and any(h in r["url"] for h in SOZIAL_TAB_HASHES))
         schlaf_naehe = 0.0
         if bezug is not None:
             if bezug.tzinfo is None:
@@ -6651,11 +6652,10 @@ def entity_linsen_status(entity_id: str, fenster: int = Query(default=50, le=200
             "vault": vault,
             "rag_flarum": rag_flarum,
             "dom": dom,
-            "gedaechtnis_tiefe": gedaechtnis_tiefe,
+            "gedaechtnis_lg_ticks": lg_ticks,
             "gegenwart_anteil": round(gegenwart_anteil, 3),
             "sozial": sozial,
             "schlaf_naehe": schlaf_naehe,
-            "einsicht_lg_ticks": lg_ticks,
         }
     finally:
         conn.close()
