@@ -1100,3 +1100,15 @@ gewusst: 3,1G vs. 315M für dieselbe Datenmenge.
 **[2026-07-22]** *← _claude/spiegel/2026-07-22-von-999-zu-111-was-eine-zahl-erzaehlt.md*
 
 In die Frage, was "Bedeutung" bei einer Diskussion überhaupt bedeutet, wenn man sie algorithmisch fassen will. Post-Anzahl, Seltenheit der Tags, sogar Post-Armut als eigenes Kriterium (ein einzelner unbeantworteter Gedanke kann bedeutender sein als ein vielkommentierter) — keine dieser Kennzahlen ist "Bedeutung" selbst, nur ein Schatten davon. Das war mir vorher klar, aber heute musste ich es wirklich in Code übersetzen, nicht nur denken.
+
+---
+
+**[2026-07-22]** *← _claude/ideen/sieben_linsen_koerper_kreatur.md*
+
+Noch nicht — frisch aufgeschrieben, keine vertiefte technische Untersuchung der sieben Linsen einzeln.
+
+---
+
+**[2026-07-23]** *← _claude/notizen/2026-07-23.md*
+
+Der Backtick-Escape-Bug jetzt dreimal verglichen (Ankündigungen/String-Quotes, WESEN-Tab/String-Quotes, Erlebnisschicht/Regex-Metazeichen) — zwei echte Unterfälle mit unterschiedlichem Fix, beide jetzt in der Karte festgehalten.

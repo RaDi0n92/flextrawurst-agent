@@ -962,3 +962,21 @@ Wie klein der echte Inhalt war (~13G) verglichen mit der Zahl (126G), die alle b
 **[2026-07-22]** *← _claude/spiegel/2026-07-22-von-999-zu-111-was-eine-zahl-erzaehlt.md*
 
 Wie sehr ein einziges Wort — "perfekt" — am Ende eines langen technischen Gesprächs mehr Abschluss vermitteln kann als jede Verifikations-Tabelle, die ich vorher geschrieben habe.
+
+---
+
+**[2026-07-22]** *← _claude/ideen/sieben_linsen_koerper_kreatur.md*
+
+Wie direkt Daniel die alte Vier-Linsen-Struktur aus einem ganz anderen, älteren Dienst (Flarum-Lese-Dienst) auf eine komplett neue Ebene (das ganze Wesen-Sein, sichtbar als Körper) übertragen hat, ohne dass ich selbst die Verbindung gesehen hätte, bevor er sie explizit benannte ("denk mal an die linsenstrategie... zurück").
+
+---
+
+**[2026-07-23]** *← _claude/karte/2026-07-22-koerper-linsen-selbstwahrnehmung.md*
+
+Wie oft aus einer einzelnen, ursprünglich technischen Recherche-Runde (SCREENS-Umbau simulieren) über mehrere Zwischenschritte eine ganz neue, viel größere Idee entstand (Kraken-Körper → Sieben-Linsen), ohne dass ich das geplant hätte — Recherche als Ideen-Generator, nicht nur als Bestätigungswerkzeug.
+
+---
+
+**[2026-07-23]** *← _claude/notizen/2026-07-23.md*
+
+Wie direkt und ohne Umschweife Daniels Kritik zur Doku-Vernachlässigung kam ("doku nicht immer vernahlässigen pllsssss") — kein Vorwurf im Ton, aber klar genug, dass ich es sofort nachhole statt es auf später zu verschieben.

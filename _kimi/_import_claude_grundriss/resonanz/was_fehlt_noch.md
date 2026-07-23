@@ -984,3 +984,37 @@ Daniels echter Klicktest mit Admin-Login (Löschen, Archiv-Wiederherstellen, Bil
 **[2026-07-22]** *← _claude/ideen/wesen_dauerhafte_handlungsfaehigkeit_und_einsichtsnebenscreen.md*
 
 Antwort auf "44". Danach: Start bei "billiges Vorlesen" wie bestätigt, die größeren Fragen (Tick-Modell, Einsicht-Nebenscreen-Zielgruppe) bleiben offen für ein späteres, eigenes Gespräch.
+
+---
+
+**[2026-07-22]** *← _claude/karte/2026-07-22-geni-sqlite-migration-und-wiederkehrendes-speicherproblem.md*
+
+Die Frage, ob `sprechen.py`s veraltete Knoten-Schreiblogik jemals aufgeräumt werden soll (aktuell tot,
+kein Service, kein Cron) — bewusst nicht angefasst, weil außerhalb des heutigen Auftrags. Und die
+grundsätzlichere, nicht heute beantwortete Frage: gibt es andere `lade alle X der letzten Y Tage`-Stellen
+im System, die auf dieselbe Wachstumsschwelle zulaufen wie `muster.py` es tat?
+
+---
+
+**[2026-07-22]** *← _claude/notizen/2026-07-22.md*
+
+Systematische Suche nach weiteren "lade alle X der letzten Y Tage"-Stellen im System — nicht heute
+gemacht, nur die eine gefundene Stelle gefixt.
+
+---
+
+**[2026-07-22]** *← _claude/spiegel/2026-07-22-von-999-zu-111-was-eine-zahl-erzaehlt.md*
+
+Ob es systemweit noch mehr Stellen gibt, an denen "neuestes zuerst" fälschlich als "wichtigstes zuerst" behandelt wird — nicht systematisch gesucht, nur die eine Stelle korrigiert, an der Daniel es bemerkt hat.
+
+---
+
+**[2026-07-22]** *← _claude/ideen/sieben_linsen_koerper_kreatur.md*
+
+Antworten auf die drei offenen Fragen (visuelle Form, Parallelität, Kosten), bevor aus der Linsen-Idee selbst Code wird. Die Körper-Basis (Bewegungs-Kreatur ohne Linsen) läuft parallel als eigener, schon freigegebener kleiner Baustein.
+
+---
+
+**[2026-07-23]** *← _claude/notizen/2026-07-23.md*
+
+Die fünf bewusst zurückgestellten Punkte aus der Ideen-Datei, plus die gerade erst begonnene Locomotion-Funktion.

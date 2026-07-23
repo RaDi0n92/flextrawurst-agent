@@ -1,0 +1,1737 @@
+[
+  {
+    "path": "00_START_HIER/00_README_ZUERST.md",
+    "bytes": 2602,
+    "sha256": "7e0e7e95ac1164a097b7cfa816c6c072a9ff1c86985c3199aadec207a17d6fe0"
+  },
+  {
+    "path": "00_START_HIER/01_WAHRHEITSGRADE.md",
+    "bytes": 821,
+    "sha256": "f9626b64196111d5a4b06e3487a2bdfe7c10e5239747b63e917762e52970d4c0"
+  },
+  {
+    "path": "00_START_HIER/02_NAVIGATION_UND_LINKLOGIK.md",
+    "bytes": 784,
+    "sha256": "24268f6b586d1aa03663240b46a318fd61e2c5fe055de1d279aed2eeeb0e8204"
+  },
+  {
+    "path": "00_START_HIER/03_ORDNERKARTE.md",
+    "bytes": 905,
+    "sha256": "d49c44191664ea958bfea29d4891054dd3f02653df539b171edc5003aec5c288"
+  },
+  {
+    "path": "00_START_HIER/04_PRUEFVERTRAG.md",
+    "bytes": 796,
+    "sha256": "ce5c9aaede2dd95e11ae57807dc84563408b2133722faba5857b684df50712b8"
+  },
+  {
+    "path": "00_START_HIER/PRUEFBERICHT.json",
+    "bytes": 436,
+    "sha256": "3a752592f3c089dba5c82f9d408c87d7d2372cd7cea02ff15282ea1a673f17c4"
+  },
+  {
+    "path": "01_PLAN_REDTEAM_TREE_OF_TRUTH/00_ZIEL_METAPROMPT.md",
+    "bytes": 820,
+    "sha256": "f4a0f178fe70da63f739374952499a35f42860a13bf3712704b0f3465c2d4778"
+  },
+  {
+    "path": "01_PLAN_REDTEAM_TREE_OF_TRUTH/01_HARTE_CONSTRAINTS.md",
+    "bytes": 894,
+    "sha256": "d0c1de31ee7b14eec701d3e6b5d0ff9c9901efd2132db99f04bd05f6390c8f33"
+  },
+  {
+    "path": "01_PLAN_REDTEAM_TREE_OF_TRUTH/02_NEGATIVREGELN_NETT_ABER_HART.md",
+    "bytes": 843,
+    "sha256": "77277b85f0508f36c9374d532887f58d2b27afde7200781e8902d4bb1e75ed46"
+  },
+  {
+    "path": "01_PLAN_REDTEAM_TREE_OF_TRUTH/03_PLAN_ENTWURF_1.md",
+    "bytes": 768,
+    "sha256": "b377114ea71620f3bd8b1fa2665951bdfb341d9820743089d48f0baf01392a7f"
+  },
+  {
+    "path": "01_PLAN_REDTEAM_TREE_OF_TRUTH/04_REDTEAM_1_UND_VERBESSERUNG.md",
+    "bytes": 778,
+    "sha256": "51501ec3910cf0e716c2ba870acbdb718be6f358ac0f888e520073affad7a10f"
+  },
+  {
+    "path": "01_PLAN_REDTEAM_TREE_OF_TRUTH/05_PLAN_ENTWURF_2.md",
+    "bytes": 708,
+    "sha256": "e0b693e45e090a5854ce896fa27bb27b7adfcd2795e921a56f892f595679eed2"
+  },
+  {
+    "path": "01_PLAN_REDTEAM_TREE_OF_TRUTH/06_REDTEAM_2_UND_VERBESSERUNG.md",
+    "bytes": 766,
+    "sha256": "935b403f1484d43d84f54c5f9529585fbd47c866baeea27e840e8e96f2f21ff4"
+  },
+  {
+    "path": "01_PLAN_REDTEAM_TREE_OF_TRUTH/07_PLAN_ENTWURF_3.md",
+    "bytes": 786,
+    "sha256": "793fd5f7a23b53e6119196d54e2770249c59e194e4cabb722b90f6d9c9d4dd40"
+  },
+  {
+    "path": "01_PLAN_REDTEAM_TREE_OF_TRUTH/08_REDTEAM_3_UND_VERBESSERUNG.md",
+    "bytes": 790,
+    "sha256": "cb1f5508683fb26c93ce41b03434129f84052b18220bddd8c4c1295f9446446e"
+  },
+  {
+    "path": "01_PLAN_REDTEAM_TREE_OF_TRUTH/09_TREE_OF_TRUTH_VARIANTENBEWERTUNG.md",
+    "bytes": 1127,
+    "sha256": "fc7a8d3e657623e2fcee9696d5b9eb352c9595e21f15350ababaa1cb64b6a382"
+  },
+  {
+    "path": "01_PLAN_REDTEAM_TREE_OF_TRUTH/10_FINALER_AUSFUEHRUNGSPLAN.md",
+    "bytes": 1109,
+    "sha256": "288bdad8a2469303db46063c64aa070c1f2159bf5a38ff1fc4df975759b47cd6"
+  },
+  {
+    "path": "02_DANIELS_ROHTEXTE_ISOLIERT/00_INDEX.md",
+    "bytes": 4972,
+    "sha256": "ab308348f612ee66b9bf89d1700f21497f450ab8520ecdedc6509b05091fbab7"
+  },
+  {
+    "path": "02_DANIELS_ROHTEXTE_ISOLIERT/FW-RAW-001__ROHINPUT_R21_Questkosmos_111.111_Quests_und_99_Simulationen.md",
+    "bytes": 4902,
+    "sha256": "2b9cf32f4e6a47573b98b0b0d8a4130d4af1ef41e801642c400761a3685c5cd4"
+  },
+  {
+    "path": "02_DANIELS_ROHTEXTE_ISOLIERT/FW-RAW-002__ROHINPUT_R22_Das_Dust-Echo-Quest-System.md",
+    "bytes": 4695,
+    "sha256": "e711dac318989b3978d1221b8a5f91bf8dbb030e519dcd576be4ed917ccc5604"
+  },
+  {
+    "path": "02_DANIELS_ROHTEXTE_ISOLIERT/FW-RAW-003__ROHINPUT_R23_Der_Staub_erinnert_sich_Das_Spiel_spielt_dich.md",
+    "bytes": 4665,
+    "sha256": "0ed14976dd342e28451664589659d7bd5a5cb32cf72365e2492d20830b80dc57"
+  },
+  {
+    "path": "02_DANIELS_ROHTEXTE_ISOLIERT/FW-RAW-004__ROHINPUT_R23_Der_Staub_erinnert_sich_Das_Spiel_spielt_dich.md",
+    "bytes": 2559,
+    "sha256": "b399b35b3cd59b19102157b5bb7e4c12303bc53b339524efcee481d8b99dfbe1"
+  },
+  {
+    "path": "02_DANIELS_ROHTEXTE_ISOLIERT/FW-RAW-005__ROHINPUT_R25_maximal_volatile_Questokonomie.md",
+    "bytes": 2583,
+    "sha256": "9d0c66be0195417ac49f5443a2138c0b43897589ecf5ba768c05027a5e49d022"
+  },
+  {
+    "path": "02_DANIELS_ROHTEXTE_ISOLIERT/FW-RAW-006__ROHINPUT_R26_Tag_Nacht_Jahreszeiten_Wetterextreme_und_Naturkatastrophen.md",
+    "bytes": 2978,
+    "sha256": "f3b06393277f132abe52eade9238262485933ecd4feca8def44e7f91b3beb4ba"
+  },
+  {
+    "path": "02_DANIELS_ROHTEXTE_ISOLIERT/FW-RAW-007__R20_Skillbaume_Gesamtlevel_Skillpunkte_und_AI-Fahigkeiten_wortnaher_Rohinput.md",
+    "bytes": 5208,
+    "sha256": "5ca7b919662f988695fe20ef2966359c48e97fffb869cc9e868e152f0b4be7a2"
+  },
+  {
+    "path": "02_DANIELS_ROHTEXTE_ISOLIERT/FW-RAW-CURRENT-001__CURRENT_001_RETTUNGSAUFTRAG_UND_NEUE_R22_R23_TEXTE.md",
+    "bytes": 6724,
+    "sha256": "6bda1e157c96b25ddbfbe052406ccbc1d3ab2e559d46619cda3c628ad4feb5da"
+  },
+  {
+    "path": "02_DANIELS_ROHTEXTE_ISOLIERT/FW-RAW-CURRENT-002__CURRENT_002_VORHERIGE_SESSION_MAXIMAL_ERNST_REKONSTRUIEREN.md",
+    "bytes": 1566,
+    "sha256": "1b5ac0277e445eb2ae88159345702c6d88c38e2b3dc21b1893619b1e852ed365"
+  },
+  {
+    "path": "02_DANIELS_ROHTEXTE_ISOLIERT/FW-RAW-CURRENT-003__CURRENT_003_STRUKTUR_RUECKSCHRITT.md",
+    "bytes": 1591,
+    "sha256": "d52a31568a7bf73a18c339a825e248057656fe31dd1e2f054de0fa126486b92e"
+  },
+  {
+    "path": "02_DANIELS_ROHTEXTE_ISOLIERT/FW-RAW-CURRENT-004__CURRENT_004_MACH_ES_GUT.md",
+    "bytes": 1436,
+    "sha256": "1c073458cc8db8de538b73d329df27c888adb67f69e6ca9a27c3e7b60a30808a"
+  },
+  {
+    "path": "02_DANIELS_ROHTEXTE_ISOLIERT/FW-RAW-CURRENT-005__CURRENT_005_MENSCHENLESBAR_ROHTEXTE_ISOLIERT.md",
+    "bytes": 1522,
+    "sha256": "fd29f94ce7aa603b960cd46110765e4388705271df498888fc8358fa7e05923f"
+  },
+  {
+    "path": "02_DANIELS_ROHTEXTE_ISOLIERT/FW-RAW-CURRENT-006__CURRENT_006_FRUEHER_300_MDS_STATT_TEXTSUMPF.md",
+    "bytes": 1666,
+    "sha256": "8f31a2fcf1a89121632a49d798135360ad65dcd636a3ab353d97ec9563b72d05"
+  },
+  {
+    "path": "02_DANIELS_ROHTEXTE_ISOLIERT/FW-RAW-CURRENT-007__CURRENT_007_SESSIONBEGINN_WAR_GLASKLAR.md",
+    "bytes": 1456,
+    "sha256": "a1b1a6a09ebbf059f49a509f5c1a8e5fc7ccc2dd80d48b454f2645df4494944f"
+  },
+  {
+    "path": "02_DANIELS_ROHTEXTE_ISOLIERT/FW-RAW-CURRENT-008__CURRENT_008_NICHT_17_SONDERN_333_MDS.md",
+    "bytes": 1420,
+    "sha256": "527eb6dd4094b2e571f4d1bd1894b6a9261a28e6e3da90c71aeaed765816b189"
+  },
+  {
+    "path": "02_DANIELS_ROHTEXTE_ISOLIERT/FW-RAW-CURRENT-009__CURRENT_009_UEBER_ZWEI_STUNDEN.md",
+    "bytes": 1419,
+    "sha256": "b18a2c7997bdca703dcb9499ac97e365d47e1567731426dfe3d3536229676319"
+  },
+  {
+    "path": "02_DANIELS_ROHTEXTE_ISOLIERT/FW-RAW-CURRENT-010__CURRENT_010_JETZT_RICHTIG_MACHEN.md",
+    "bytes": 1428,
+    "sha256": "3d98145fd0453e90eaa3584ac1504ac6b185d92209883c7881856e48f63b532b"
+  },
+  {
+    "path": "02_DANIELS_ROHTEXTE_ISOLIERT/FW-RAW-CURRENT-011__CURRENT_011_ERST_LESEN_PLAN_DREI_REDTEAMS_TREE_OF_TRUTH.md",
+    "bytes": 1650,
+    "sha256": "a631d1bfbcdfc71f8b73032306c472047a0e5f3dc01221d97e46ded52bbd3892"
+  },
+  {
+    "path": "02_DANIELS_ROHTEXTE_ISOLIERT/FW-RAW-CURRENT-012__CURRENT_012_SEQUENZIELLER_REDTEAM_CONSTRAINTS_NEGATIVPROMPT_METAPROMPT.md",
+    "bytes": 1790,
+    "sha256": "6c73476806ae91efb009bdfa6265561d83cb6b6de8fd408e476155d438e19fe6"
+  },
+  {
+    "path": "02_DANIELS_ROHTEXTE_ISOLIERT/FW-RAW-CURRENT-013__CURRENT_013_ALLES_GELINKT_UND_VERNETZT.md",
+    "bytes": 1469,
+    "sha256": "1a3014d04c71d34b8a91521c7f0ed9dc1bf78291c21146fde53d9f9b47847384"
+  },
+  {
+    "path": "02_DANIELS_ROHTEXTE_ISOLIERT/FW-RAW-CURRENT-014__PREVIOUS_SESSION_001_GERETTETER_SESSIONREST_VOLLSTAENDIG.md",
+    "bytes": 17709,
+    "sha256": "0b3aab07927f80c672eb5e6fb1e327f675afc3be46fa0e8a684f7220314f4fe5"
+  },
+  {
+    "path": "03_SESSION_UND_VERSIONENSPUR/00_INDEX.md",
+    "bytes": 3959,
+    "sha256": "1a429c17d451d714c12888e1e006e5801bd40d2e671e79cac5fdc6a78da8479b"
+  },
+  {
+    "path": "03_SESSION_UND_VERSIONENSPUR/FW-VER-001__Build-Marker_und_weitere_Statusabschnitte.md",
+    "bytes": 7154,
+    "sha256": "38db7600b237071b7353f6aa9f7c2c8481f1d34f7b7efed8d3867af1dec649c4"
+  },
+  {
+    "path": "03_SESSION_UND_VERSIONENSPUR/FW-VER-002__Verbesserungsring_nach_Redteam_v14.0_v14.1.md",
+    "bytes": 4221,
+    "sha256": "061839c981da9713905d20bda744fb602922ad9424a1c0a6a11b9c143e4e315c"
+  },
+  {
+    "path": "03_SESSION_UND_VERSIONENSPUR/FW-VER-003__v14-Erneutanalyse_vor_Bauring_2.md",
+    "bytes": 3779,
+    "sha256": "301cfa87969a955c9b5c9f7f12ed11b96d5f3465c63daeafb7d371d2b5bf8188"
+  },
+  {
+    "path": "03_SESSION_UND_VERSIONENSPUR/FW-VER-004__Verbesserungsring_v14.2.md",
+    "bytes": 3204,
+    "sha256": "e2a040f36d2c896859e1d9984e84955d2bdd2963235c8790d26c26769f9aa814"
+  },
+  {
+    "path": "03_SESSION_UND_VERSIONENSPUR/FW-VER-005__Bauring_2_Umsetzung_nach_dem_MAXUS++++++++++++++++++++-Auftrag.md",
+    "bytes": 3601,
+    "sha256": "e6b2a8df0ec14487d599da21801e62a69ffafea7d6806dbcf6e225ead270072f"
+  },
+  {
+    "path": "03_SESSION_UND_VERSIONENSPUR/FW-VERSION-01__VERSIONSKARTE_V1.md",
+    "bytes": 2812,
+    "sha256": "1eb826dc2c510daa616589cfe274069845997b4e4e229e257ae5c9df879bdb55"
+  },
+  {
+    "path": "03_SESSION_UND_VERSIONENSPUR/FW-VERSION-02__VERSIONSKARTE_V2.md",
+    "bytes": 1193,
+    "sha256": "d8071051dc976b4bf5fe7210682f18a2bfe578f97e1284ba133cfde846b3f0a1"
+  },
+  {
+    "path": "03_SESSION_UND_VERSIONENSPUR/FW-VERSION-03__VERSIONSKARTE_V3.md",
+    "bytes": 1193,
+    "sha256": "977754f7bd01e346a2854cc5e4d915deab3a302a44a89966443da3a757440409"
+  },
+  {
+    "path": "03_SESSION_UND_VERSIONENSPUR/FW-VERSION-04__VERSIONSKARTE_V4.md",
+    "bytes": 1193,
+    "sha256": "518efde6c9a7cea2ba55e1f3ec6f3b3528691892d6f2b5ee5e7ed784b9e5b1aa"
+  },
+  {
+    "path": "03_SESSION_UND_VERSIONENSPUR/FW-VERSION-05__VERSIONSKARTE_V5.md",
+    "bytes": 1193,
+    "sha256": "e9adc23ee29fa12f5789826c3ac513df47348b36e44bdd3641c4e3fab8e9afa7"
+  },
+  {
+    "path": "03_SESSION_UND_VERSIONENSPUR/FW-VERSION-06__VERSIONSKARTE_V6.md",
+    "bytes": 1193,
+    "sha256": "0136c8122858554f4fbf67f39f0b61b67a8b9f4652fb1ac9b46a30b3ca396bd0"
+  },
+  {
+    "path": "03_SESSION_UND_VERSIONENSPUR/FW-VERSION-07__VERSIONSKARTE_V7.md",
+    "bytes": 1193,
+    "sha256": "938f2a14a39e742116f9156b87c649382c76a8b5fd94bb47692fd3a30e849ab0"
+  },
+  {
+    "path": "03_SESSION_UND_VERSIONENSPUR/FW-VERSION-08__VERSIONSKARTE_V8.md",
+    "bytes": 2462,
+    "sha256": "7ed49ac9832861f9ee8b2ee125b473fdc09e94d6433588661574e5f82219cd01"
+  },
+  {
+    "path": "03_SESSION_UND_VERSIONENSPUR/FW-VERSION-09__VERSIONSKARTE_V9.md",
+    "bytes": 3190,
+    "sha256": "c01f0ad950140492bf4d4c4a3b5b3cfd9215a6d0352ca7d27a35028201d3c90b"
+  },
+  {
+    "path": "03_SESSION_UND_VERSIONENSPUR/FW-VERSION-10__VERSIONSKARTE_V10.md",
+    "bytes": 2608,
+    "sha256": "de67a0e9579e5dbbfb3da1c26d641cf8e61208e907b8e971862ee95c4b6723af"
+  },
+  {
+    "path": "03_SESSION_UND_VERSIONENSPUR/FW-VERSION-11__VERSIONSKARTE_V11.md",
+    "bytes": 2023,
+    "sha256": "0df3898061992930c4102b17e52b1360d4cf9508bb5420b1732247c57963adbc"
+  },
+  {
+    "path": "03_SESSION_UND_VERSIONENSPUR/FW-VERSION-12__VERSIONSKARTE_V12.md",
+    "bytes": 2749,
+    "sha256": "b777d7531c0db03c153f00bcf8e1348e0980bd50a7545f6be0a2943d706a3b85"
+  },
+  {
+    "path": "03_SESSION_UND_VERSIONENSPUR/FW-VERSION-13__VERSIONSKARTE_V13.md",
+    "bytes": 4166,
+    "sha256": "4a09a36f316a8413309648b404ffebaa487256982ab796e47ff1e3bea948d00f"
+  },
+  {
+    "path": "03_SESSION_UND_VERSIONENSPUR/FW-VERSION-14__VERSIONSKARTE_V14.md",
+    "bytes": 3943,
+    "sha256": "3f5217ac516eeeec5dba5e780d618011905c7a0516b13d31594e8ad1053660e7"
+  },
+  {
+    "path": "03_SESSION_UND_VERSIONENSPUR/FW-VERSION-15__VERSIONSKARTE_V15.md",
+    "bytes": 3943,
+    "sha256": "bbe3ef0edef70d633d2bc1aaf3cb5e5e1a5a0f2ea2fda382469a8bafbd9f426a"
+  },
+  {
+    "path": "03_SESSION_UND_VERSIONENSPUR/FW-VERSION-16__VERSIONSKARTE_V16.md",
+    "bytes": 1309,
+    "sha256": "21c6b48e1acad46fe5a936179b163f21d341b8ac3242d47d404f188595405f6d"
+  },
+  {
+    "path": "03_SESSION_UND_VERSIONENSPUR/FW-VERSION-17__VERSIONSKARTE_V17.md",
+    "bytes": 3944,
+    "sha256": "6b22a712ac9aed11a8b2de42479d6a3c01ffe17c9231801351b8a063d0d96c92"
+  },
+  {
+    "path": "03_SESSION_UND_VERSIONENSPUR/FW-VERSION-18__VERSIONSKARTE_V18.md",
+    "bytes": 2610,
+    "sha256": "90defd4db7019b3a195e7df9601499b3ba2eb66f576dff7d90407f5556861bb6"
+  },
+  {
+    "path": "03_SESSION_UND_VERSIONENSPUR/FW-VERSION-19__VERSIONSKARTE_V19.md",
+    "bytes": 3336,
+    "sha256": "a2c24b83b194dc802ec17cdb5376de76d8f938caac7e180633dc9817e0fdb684"
+  },
+  {
+    "path": "03_SESSION_UND_VERSIONENSPUR/FW-VERSION-20__VERSIONSKARTE_V20.md",
+    "bytes": 3944,
+    "sha256": "8daeb381d574cdb7541728b3f1467acfafedd074f72a7f5ee3bce30e14939b30"
+  },
+  {
+    "path": "03_SESSION_UND_VERSIONENSPUR/FW-VERSION-21__VERSIONSKARTE_V21.md",
+    "bytes": 4046,
+    "sha256": "048f5ce39593ddf16ddd26cd7bc7b97f4f93024049634c8ced2723f648391478"
+  },
+  {
+    "path": "03_SESSION_UND_VERSIONENSPUR/FW-VERSION-22__VERSIONSKARTE_V22.md",
+    "bytes": 4695,
+    "sha256": "e588baf2d3404a33ec43a82579e007faf2225853289a9453cfad1d4bce735fa7"
+  },
+  {
+    "path": "04_SPIELIDENTITAET_UND_ZWOELF_ORGANE/00_INDEX.md",
+    "bytes": 3460,
+    "sha256": "3651518ab7df597a1ac30b6f1967d5e3fe0c6782533e8c7c43d6cd5cc19ea588"
+  },
+  {
+    "path": "04_SPIELIDENTITAET_UND_ZWOELF_ORGANE/FW-ORG-001__Integration_der_zwolf_Spielorgane_in_jede_Questfamilie_und_weitere_Statusabsch.md",
+    "bytes": 4463,
+    "sha256": "ca1cfa1cf591f2aebfac5ee8c3493c039d5efb52f33149909de93bd0646d9d1e"
+  },
+  {
+    "path": "04_SPIELIDENTITAET_UND_ZWOELF_ORGANE/FW-ORG-002__MAXUS++++++++++++++++_Dustokologie_Start-_und_Freigabevertrag.md",
+    "bytes": 3473,
+    "sha256": "42b800389fb771e13f426b869025599823768cda3b5ca985e9b874f38f00d488"
+  },
+  {
+    "path": "04_SPIELIDENTITAET_UND_ZWOELF_ORGANE/FW-ORG-003__Zwolf_analysierte_Spiele_Durchsetzungsvertrag_fur_Bauring_3_und_weitere_Status.md",
+    "bytes": 5666,
+    "sha256": "548873e5693005509001c648057fafccb39dc57cc0719667c944bd684d8cbb3d"
+  },
+  {
+    "path": "04_SPIELIDENTITAET_UND_ZWOELF_ORGANE/FW-ORG-004__Anti-Pokemon-Fanart-_und_Eigenidentitats-Gate.md",
+    "bytes": 3157,
+    "sha256": "55e36d2882e4bf18cc06e5db86f73d754203767cbb58f5d6f9cfad63059fc048"
+  },
+  {
+    "path": "04_SPIELIDENTITAET_UND_ZWOELF_ORGANE/FW-ORG-005__Flextrawurst_MAXUS++++++++++++++++_Bauauftrag_fur_Bauring_2_v15.md",
+    "bytes": 3527,
+    "sha256": "133a083523e7f01e5003d36d558963cea1ba6d37ee11837d80edf203211cdb72"
+  },
+  {
+    "path": "04_SPIELIDENTITAET_UND_ZWOELF_ORGANE/FW-ORG-006__Zwolf-Spiele-Blindtest.md",
+    "bytes": 3922,
+    "sha256": "b7e6942efc38be23db7a4491ed22f94c88d20a2d6485071d81e65cd75681823e"
+  },
+  {
+    "path": "04_SPIELIDENTITAET_UND_ZWOELF_ORGANE/FW-ORG-007__MAXUS-Bauring_1_3_33_Die_erste_lebende_Schleife.md",
+    "bytes": 4303,
+    "sha256": "b3c3efb9f349b494fc671323b570c7816c962a162b9bff3b7660d4ff5089beb8"
+  },
+  {
+    "path": "04_SPIELIDENTITAET_UND_ZWOELF_ORGANE/FW-ORG-008__Die_zwolf_Spielorgane_konkreter_Nachweis_im_Ring.md",
+    "bytes": 3594,
+    "sha256": "e0ccad60db6b1e7c76d0af718f5a1972df9222e2fc30489b5a430d44d52e4315"
+  },
+  {
+    "path": "04_SPIELIDENTITAET_UND_ZWOELF_ORGANE/FW-ORG-009__Audit_der_zwolf_analysierten_Spiele.md",
+    "bytes": 5312,
+    "sha256": "9c66bc2983fe27ae844b414969be26878f122ad8b6ce03afe3cbdcf9b0ba2e46"
+  },
+  {
+    "path": "04_SPIELIDENTITAET_UND_ZWOELF_ORGANE/FW-ORG-010__Pokemon-Fanart-Risiko_und_Flextrawurst-Eigenidentitat.md",
+    "bytes": 4396,
+    "sha256": "9a695069611185aeaf762f1b961337ad0ab2c7341c94257f69824603d99dd6cd"
+  },
+  {
+    "path": "04_SPIELIDENTITAET_UND_ZWOELF_ORGANE/FW-ORG-011__Gate_00_Baseline-Neulesung_und_unveranderte_v17-Prufung.md",
+    "bytes": 27530,
+    "sha256": "8c3b99ab0a473c71fac81e959879c66e8b61ab759ec737d00e2c07a05289a73d"
+  },
+  {
+    "path": "04_SPIELIDENTITAET_UND_ZWOELF_ORGANE/FW-ORG-012__Nachbau-Gegenprufung.md",
+    "bytes": 32402,
+    "sha256": "d58a0745fc228dde03906868f2414ff4df37a52e9bdebea86a5c2760b865be5a"
+  },
+  {
+    "path": "04_SPIELIDENTITAET_UND_ZWOELF_ORGANE/FW-ORG-013__Gate_01_Eingangsfrage_Endzukunftsschock_und_Kontaktbruch.md",
+    "bytes": 34896,
+    "sha256": "e9c53b47ee87e9a8c98b4713c5aed21c528f38f3064dcca3987b02343ed8c701"
+  },
+  {
+    "path": "04_SPIELIDENTITAET_UND_ZWOELF_ORGANE/FW-ORG-014__Nachbau-Gegenprufung.md",
+    "bytes": 42999,
+    "sha256": "dc417d0aa44f1400be94dfd48241529e847853dd721c4732331b6f0784faa1c8"
+  },
+  {
+    "path": "04_SPIELIDENTITAET_UND_ZWOELF_ORGANE/FW-ORG-015__Quellabschnitt.md",
+    "bytes": 1522,
+    "sha256": "408a8f136469aa6f5907e6d6bc61a7d262882a9024b8e70443fdadbc76820070"
+  },
+  {
+    "path": "04_SPIELIDENTITAET_UND_ZWOELF_ORGANE/FW-ORG-016__Quellabschnitt.md",
+    "bytes": 1569,
+    "sha256": "37aa1483d499295da5858bccdb9b45b7180a240c7196110c959e0a3beaa242d9"
+  },
+  {
+    "path": "05_DUST_WESEN_BEZIEHUNGEN/00_INDEX.md",
+    "bytes": 4862,
+    "sha256": "6647d6896e20aa1db33fba6d013ba1f931debd715d77256283dabc2ce3904839"
+  },
+  {
+    "path": "05_DUST_WESEN_BEZIEHUNGEN/FW-DUST-001__Primarsetzung_Dust_und_mindestens_88.888_Wesen.md",
+    "bytes": 3932,
+    "sha256": "70c7cdd21b6fbbc3607a73a4cab0a5ad86409a685bd9c2b25fe75cc8de97e37a"
+  },
+  {
+    "path": "05_DUST_WESEN_BEZIEHUNGEN/FW-DUST-002__Flextrawurst_MAXUS++++++++++++++++_Dustokologie_Bauring_3_und_weitere_Statusab.md",
+    "bytes": 13704,
+    "sha256": "35bb85c436d11b6dee4cc3b8eeede61147924a7b9d54efd42e756bed358b6a9c"
+  },
+  {
+    "path": "05_DUST_WESEN_BEZIEHUNGEN/FW-DUST-003__Gate_00_Baseline_vor_dem_neuen_Bau.md",
+    "bytes": 3093,
+    "sha256": "1cf8b547367c57b0632ba96c0cfa5b951a0bfa4a6edd8fd214e6f72c0692d8fd"
+  },
+  {
+    "path": "05_DUST_WESEN_BEZIEHUNGEN/FW-DUST-004__F-1350_TEILWEISE.md",
+    "bytes": 39626,
+    "sha256": "bdaa61aab94ac3bac2d354c2219f109803415bbb5bb354cba689f4e7f94307c5"
+  },
+  {
+    "path": "05_DUST_WESEN_BEZIEHUNGEN/FW-DUST-005__F-1398_TEILWEISE.md",
+    "bytes": 39930,
+    "sha256": "590b5af56a7613f9acac928712a04bc9d319e4cdaa78dfa85227700b91650369"
+  },
+  {
+    "path": "05_DUST_WESEN_BEZIEHUNGEN/FW-DUST-006__F-1447_TEILWEISE.md",
+    "bytes": 39860,
+    "sha256": "1d02c800228ce7c8aed4846a00fa136df4ca9f19c3e4eb04701527865a3cbbe1"
+  },
+  {
+    "path": "05_DUST_WESEN_BEZIEHUNGEN/FW-DUST-007__F-1499_TEILWEISE.md",
+    "bytes": 40046,
+    "sha256": "e513124a3489e6c02fdea72b11fabf505caf8ac736a70149f14f9e7bcfb159f9"
+  },
+  {
+    "path": "05_DUST_WESEN_BEZIEHUNGEN/FW-DUST-008__F-1549_TEILWEISE.md",
+    "bytes": 39631,
+    "sha256": "4f9d5f726c55cca743997099709f4b38ae48a2aef1e2e612233165f89099e9b3"
+  },
+  {
+    "path": "05_DUST_WESEN_BEZIEHUNGEN/FW-DUST-009__F-1648_TEILWEISE.md",
+    "bytes": 40005,
+    "sha256": "2eb082f7b4756862b138ee4f69e171d3cbb515b8fd1f382c93dfbab794c7ff5d"
+  },
+  {
+    "path": "05_DUST_WESEN_BEZIEHUNGEN/FW-DUST-010__F-1748_TEILWEISE.md",
+    "bytes": 39900,
+    "sha256": "841f2fcd031f19a093f2d3d068ee361c9f3feef49269d34583e1d28a97b3aae7"
+  },
+  {
+    "path": "05_DUST_WESEN_BEZIEHUNGEN/FW-DUST-011__F-1954_TEILWEISE.md",
+    "bytes": 39742,
+    "sha256": "26e7224e165fae21d4f9e5a366706e9c64de5bd2355047f9c32e6b351d5720f6"
+  },
+  {
+    "path": "05_DUST_WESEN_BEZIEHUNGEN/FW-DUST-012__F-2002_TEILWEISE.md",
+    "bytes": 40069,
+    "sha256": "1bbd5be7157e9b86990b7b1052a735d00034ef187c8e0172f9afd11cc11773ae"
+  },
+  {
+    "path": "05_DUST_WESEN_BEZIEHUNGEN/FW-DUST-013__F-2051_TEILWEISE.md",
+    "bytes": 39991,
+    "sha256": "cf767c4019bdb5afa7bbed240034881405f729ca3b9df8a2198df4c212ffa8b6"
+  },
+  {
+    "path": "05_DUST_WESEN_BEZIEHUNGEN/FW-DUST-014__F-2101_TEILWEISE.md",
+    "bytes": 40080,
+    "sha256": "37376143b5c2612ab1304f03a13debe858b3112ac0466afde0b9233c188c1bc2"
+  },
+  {
+    "path": "05_DUST_WESEN_BEZIEHUNGEN/FW-DUST-015__F-2151_TEILWEISE.md",
+    "bytes": 39551,
+    "sha256": "4246b08cedd29f59fbe070de359b5944f5dd3892c67891b8c2ed29d8e3aa1fb3"
+  },
+  {
+    "path": "05_DUST_WESEN_BEZIEHUNGEN/FW-DUST-016__F-2252_TEILWEISE.md",
+    "bytes": 40112,
+    "sha256": "4d20208d225253320c455bb6b6cb24a325f568b49970cc0e271fa90c03f375e5"
+  },
+  {
+    "path": "05_DUST_WESEN_BEZIEHUNGEN/FW-DUST-017__F-2351_TEILWEISE.md",
+    "bytes": 39617,
+    "sha256": "6a35286a305f41794058a534e4612bfbea201278a8ed55897dcaaff83a1b9573"
+  },
+  {
+    "path": "05_DUST_WESEN_BEZIEHUNGEN/FW-DUST-018__F-2447_TEILWEISE.md",
+    "bytes": 39527,
+    "sha256": "925866f780b25919d4c8104d52bf79b69f846ff375a8b3535ab44a4ebeac765e"
+  },
+  {
+    "path": "05_DUST_WESEN_BEZIEHUNGEN/FW-DUST-019__F-2547_TEILWEISE.md",
+    "bytes": 39803,
+    "sha256": "9c1b6ad659013b5cf02075c422d82001ffd944bbb84bb16f17831c47f3d918cd"
+  },
+  {
+    "path": "05_DUST_WESEN_BEZIEHUNGEN/FW-DUST-020__D017-Q07_Nachbauprufung.md",
+    "bytes": 39877,
+    "sha256": "d0c4e2723468b14e53456ccebb5f60ac5addf981c2591556a9f435d3ef148c2d"
+  },
+  {
+    "path": "05_DUST_WESEN_BEZIEHUNGEN/FW-DUST-021__D136-Q01_Nachbauprufung.md",
+    "bytes": 40260,
+    "sha256": "00eb470a4183ef69b14a7f9d119f6e2c0930a9bd1335e9ff999a528f05df023b"
+  },
+  {
+    "path": "05_DUST_WESEN_BEZIEHUNGEN/FW-DUST-022__D136-Q06_D136_Playwright_Automation.md",
+    "bytes": 40281,
+    "sha256": "a5f9f0d29d836f79a549309bda3780f7fb81fe8596b5fa9a664810f0eb7880e3"
+  },
+  {
+    "path": "05_DUST_WESEN_BEZIEHUNGEN/FW-DUST-023__Gate_06_88.888_Wesen_Dialoge_Geheimnisse_Beziehungen_und_Perspektivabspaltung.md",
+    "bytes": 40066,
+    "sha256": "f92bbe4c345c500265d368754e6b592231ef5b950c3ba48e4077c99d3c0cdcdc"
+  },
+  {
+    "path": "05_DUST_WESEN_BEZIEHUNGEN/FW-DUST-024__K200-Q1_Nachbauprufung.md",
+    "bytes": 4566,
+    "sha256": "e468ea0d4da48c0d7f35bee5616831e2f4d0b5dda29daa408450ab37c9dc538d"
+  },
+  {
+    "path": "05_DUST_WESEN_BEZIEHUNGEN/FW-DUST-025__D033_Gegenwartshauptwelt.md",
+    "bytes": 39592,
+    "sha256": "81c87524ec72cb86992d3e9cad7e519c71e06db1b97f56f94f3c7091b986d4a0"
+  },
+  {
+    "path": "05_DUST_WESEN_BEZIEHUNGEN/FW-DUST-026__D099_Prozedurale_Ferne.md",
+    "bytes": 39709,
+    "sha256": "527699260cf8293f89f70ddb147d260e719bdc046ef1fa43a3f74d8a0b9b5e88"
+  },
+  {
+    "path": "05_DUST_WESEN_BEZIEHUNGEN/FW-DUST-027__D132_Vergessen_und_Loschen.md",
+    "bytes": 23444,
+    "sha256": "452a0ae32df86db6fe0768abe9753d5fd1595a15826f40451e617b496bc5eb92"
+  },
+  {
+    "path": "05_DUST_WESEN_BEZIEHUNGEN/FW-DUST-028__Domanenspezifische_Pflichtfragen_150_Bereiche.md",
+    "bytes": 39322,
+    "sha256": "1dbe151c560ccad3ebf3b477aa629ad52a2243753be10ebc56b4523f975f402a"
+  },
+  {
+    "path": "06_WELT_GEOGRAFIE_ZEIT_KLIMA/00_INDEX.md",
+    "bytes": 2683,
+    "sha256": "7a26e8e3db2ef6f26099d4ed5f276caa45f0ea8821a825add736e12b4b102651"
+  },
+  {
+    "path": "06_WELT_GEOGRAFIE_ZEIT_KLIMA/FW-WORLD-001__F-1302_TEILWEISE.md",
+    "bytes": 39450,
+    "sha256": "afdf3bf9b55fecfd6982247d5671be3edb21fa21678ab1ee232230e2a5f4a224"
+  },
+  {
+    "path": "06_WELT_GEOGRAFIE_ZEIT_KLIMA/FW-WORLD-002__F-1599_TEILWEISE.md",
+    "bytes": 39548,
+    "sha256": "c659cfb0bc1fec55629f3a2e123536a1ec7159c59c0312d748e2347430fbe6e0"
+  },
+  {
+    "path": "06_WELT_GEOGRAFIE_ZEIT_KLIMA/FW-WORLD-003__F-2201_TEILWEISE.md",
+    "bytes": 39893,
+    "sha256": "dd7e83df28dc729965db68096157510dae6347d81cfbdb9e9e8d1453da7f7aad"
+  },
+  {
+    "path": "06_WELT_GEOGRAFIE_ZEIT_KLIMA/FW-WORLD-004__F-2301_TEILWEISE.md",
+    "bytes": 39722,
+    "sha256": "0e01c2c660fa1700f7dbbfcb7a0db2a0f7529cc35180b58e0f71a409326f62b9"
+  },
+  {
+    "path": "06_WELT_GEOGRAFIE_ZEIT_KLIMA/FW-WORLD-005__F-2499_TEILWEISE.md",
+    "bytes": 39480,
+    "sha256": "5a509e895c7f519286e1d652c4d643c97ab29bb5f1f4213d9f16ba0601024393"
+  },
+  {
+    "path": "06_WELT_GEOGRAFIE_ZEIT_KLIMA/FW-WORLD-006__D037-Q01_Nachbauprufung.md",
+    "bytes": 39968,
+    "sha256": "d6b2a9d415059ea857dccbc4eacb48058d08b8ab8da7363b4d6fe4a5d354e5bc"
+  },
+  {
+    "path": "06_WELT_GEOGRAFIE_ZEIT_KLIMA/FW-WORLD-007__Gate_04_Untergrund_Hohlen_Dungeons_Erze_und_Tiefenbau.md",
+    "bytes": 40009,
+    "sha256": "3da534f708c9fe283862a60c82cd86fae57db3dc5905040a19ce3ccc77ba7adf"
+  },
+  {
+    "path": "06_WELT_GEOGRAFIE_ZEIT_KLIMA/FW-WORLD-008__K066-Q3_Nachbauprufung.md",
+    "bytes": 8857,
+    "sha256": "a26bb1243ae5248cb506a7553390e85fba2e176f64356761f4e1a882ab21a350"
+  },
+  {
+    "path": "06_WELT_GEOGRAFIE_ZEIT_KLIMA/FW-WORLD-009__D137-Q02_Nachbauprufung.md",
+    "bytes": 27291,
+    "sha256": "607ac21ae2228975d8f0f0860c9d24381c51a47698c5c3f66f05c9b65f26d271"
+  },
+  {
+    "path": "06_WELT_GEOGRAFIE_ZEIT_KLIMA/FW-WORLD-010__Gate_07_4.096_Vergangenheitsadressen_und_333_ruckwarts_gelesene_Zukunftsschrit.md",
+    "bytes": 39771,
+    "sha256": "2ecf7526ca1f7999f1f084cbb9d75ef67cc20865c7b61c04b0c32f6490c92b54"
+  },
+  {
+    "path": "06_WELT_GEOGRAFIE_ZEIT_KLIMA/FW-WORLD-011__K065-Q4_K065_UI_Erklarung_Zeit.md",
+    "bytes": 39627,
+    "sha256": "bb275a09c5886404163fba78e23bc4ec335cbb6e1cd886d2c89b672be9b39795"
+  },
+  {
+    "path": "06_WELT_GEOGRAFIE_ZEIT_KLIMA/FW-WORLD-012__D048-Q08_Nachbauprufung.md",
+    "bytes": 37025,
+    "sha256": "649a7555192789a76ab2a9c8db0a610869bf6ae165db7fff9c40c87fea7c9a9f"
+  },
+  {
+    "path": "06_WELT_GEOGRAFIE_ZEIT_KLIMA/FW-WORLD-013__Gate_10_Epische_Grogeografie_Stadte_Dorfer_und_Tiefeneingange.md",
+    "bytes": 40068,
+    "sha256": "2e440045b19981dde73e1268565592c3f22089601989d130c00ff9bce48aef77"
+  },
+  {
+    "path": "06_WELT_GEOGRAFIE_ZEIT_KLIMA/FW-WORLD-014__K035-Q3_K035_Fahrzeuge_Prozedurale_Ferne.md",
+    "bytes": 40014,
+    "sha256": "04086b378623967ca476c8a711bdeeb4d173409ce2e89a2f130b5c044416fa4d"
+  },
+  {
+    "path": "07_BEWEGUNG_FAHRZEUGE_KAMPF_LOOT/00_INDEX.md",
+    "bytes": 4282,
+    "sha256": "1c2bea390634c0b114d1ad63c05dd49e4183bbb39da3cd4c03f28cf1f8348a59"
+  },
+  {
+    "path": "07_BEWEGUNG_FAHRZEUGE_KAMPF_LOOT/FW-MOVE-001__Test_Redteam_Abnahme.md",
+    "bytes": 20940,
+    "sha256": "1612b5f33eba072dba655d5a318ddea01306017ac65d2756e1fff1d041729b59"
+  },
+  {
+    "path": "07_BEWEGUNG_FAHRZEUGE_KAMPF_LOOT/FW-MOVE-002__Pflichtfragenmatrix_120_konkrete_Fragen_und_weitere_Statusabschnitte.md",
+    "bytes": 8784,
+    "sha256": "3b719eded0387f1e02ebbd803efb5a377a6c95ac1517eeb66df55c4afe10c227"
+  },
+  {
+    "path": "07_BEWEGUNG_FAHRZEUGE_KAMPF_LOOT/FW-MOVE-003__Wesentliche_Systemkollisionen_vier_Wege_und_Entscheidung.md",
+    "bytes": 4733,
+    "sha256": "500ccc825f07af21494f8946bb68bf0606024be7c140da7135f579494242d785"
+  },
+  {
+    "path": "07_BEWEGUNG_FAHRZEUGE_KAMPF_LOOT/FW-MOVE-004__Architektur_und_Datenmodelle.md",
+    "bytes": 2947,
+    "sha256": "3d235e39f99cd862efe2027ee21d76cd76b0ffb84699180d2c8c111bd6b5c747"
+  },
+  {
+    "path": "07_BEWEGUNG_FAHRZEUGE_KAMPF_LOOT/FW-MOVE-005__F-0197_BESTANDEN.md",
+    "bytes": 39591,
+    "sha256": "029612a314eb1e2b7a196c1007946f82ef02f308e5c2609ecbb2f8422851bf47"
+  },
+  {
+    "path": "07_BEWEGUNG_FAHRZEUGE_KAMPF_LOOT/FW-MOVE-006__F-0631_BESTANDEN.md",
+    "bytes": 40039,
+    "sha256": "3aec215ec15fc000b28a991bb3237a8a98e207de48280f6c6c102d2e8e2f27e7"
+  },
+  {
+    "path": "07_BEWEGUNG_FAHRZEUGE_KAMPF_LOOT/FW-MOVE-007__F-0678_TEILWEISE.md",
+    "bytes": 40152,
+    "sha256": "20d9f79200471f9f304123ade58cbd381330a9ff50e63088b5bc9e7acf819c3f"
+  },
+  {
+    "path": "07_BEWEGUNG_FAHRZEUGE_KAMPF_LOOT/FW-MOVE-008__F-1061_TEILWEISE.md",
+    "bytes": 39232,
+    "sha256": "57067b3dbb837c6a2f9c33c7647998e35d590aaf30703b236150d1fa487b115a"
+  },
+  {
+    "path": "07_BEWEGUNG_FAHRZEUGE_KAMPF_LOOT/FW-MOVE-009__F-1253_TEILWEISE.md",
+    "bytes": 39639,
+    "sha256": "d2d917ce821c3d90f08ff55df3e27ab7c931dc33b8d7205180434e8d50802ce4"
+  },
+  {
+    "path": "07_BEWEGUNG_FAHRZEUGE_KAMPF_LOOT/FW-MOVE-010__F-1697_TEILWEISE.md",
+    "bytes": 40051,
+    "sha256": "0061e48efe0b59bc600fd2b3ca8a59719730514c57a5e73f78a9cb753ab9267b"
+  },
+  {
+    "path": "07_BEWEGUNG_FAHRZEUGE_KAMPF_LOOT/FW-MOVE-011__F-1798_TEILWEISE.md",
+    "bytes": 39554,
+    "sha256": "dfc7cb181ed5035052747ff426a55bb7e1dbd8b421c550aee89001ffe24ed51a"
+  },
+  {
+    "path": "07_BEWEGUNG_FAHRZEUGE_KAMPF_LOOT/FW-MOVE-012__F-1853_TEILWEISE.md",
+    "bytes": 40034,
+    "sha256": "b56efffdf3fe18cb7881172d331793c770ba19df0df38c32624badf9d11fb516"
+  },
+  {
+    "path": "07_BEWEGUNG_FAHRZEUGE_KAMPF_LOOT/FW-MOVE-013__F-1904_TEILWEISE.md",
+    "bytes": 39806,
+    "sha256": "b5a352e9fadb678fbc32165dd91a240c546adf08a629817f166084c9c9fdb419"
+  },
+  {
+    "path": "07_BEWEGUNG_FAHRZEUGE_KAMPF_LOOT/FW-MOVE-014__F-2399_TEILWEISE.md",
+    "bytes": 39255,
+    "sha256": "88a03711b590d422b1df26f094e65b63baf639fbe2db7ae2092c5c99fc93b3e8"
+  },
+  {
+    "path": "07_BEWEGUNG_FAHRZEUGE_KAMPF_LOOT/FW-MOVE-015__Gate_02_Krallenhaken_Fallschirm_und_physikgekoppeltes_Traversal.md",
+    "bytes": 33548,
+    "sha256": "ade15505b9c91d17dae087587da1f2796bfe2a47804bf93be4cf8d190175bbbe"
+  },
+  {
+    "path": "07_BEWEGUNG_FAHRZEUGE_KAMPF_LOOT/FW-MOVE-016__Nachbau-Gegenprufung.md",
+    "bytes": 40328,
+    "sha256": "6ede9b2943f46a8f3fb182d7ba24db10986673ef37abef4840003be7a154c5a2"
+  },
+  {
+    "path": "07_BEWEGUNG_FAHRZEUGE_KAMPF_LOOT/FW-MOVE-017__D062-Q05_Nachbauprufung.md",
+    "bytes": 40004,
+    "sha256": "895d82128172ffe14bafdcf84e1f56ed63505065803308cb0d35729bfcef6f3e"
+  },
+  {
+    "path": "07_BEWEGUNG_FAHRZEUGE_KAMPF_LOOT/FW-MOVE-018__Gate_05_Fahrzeugfamilien_und_raumliche_Fahrzeug-Testzone.md",
+    "bytes": 39847,
+    "sha256": "29005afa439c72341a220c7b6af4f94448e64bc11608d3d7a42b8d274fab5d33"
+  },
+  {
+    "path": "07_BEWEGUNG_FAHRZEUGE_KAMPF_LOOT/FW-MOVE-019__K032-Q4_K032_Wasserfahrzeuge_Okologie.md",
+    "bytes": 39755,
+    "sha256": "d24cc1639d6f0fd57f78cabc84d03addbce02b6b887a9f1b9736496aef126171"
+  },
+  {
+    "path": "07_BEWEGUNG_FAHRZEUGE_KAMPF_LOOT/FW-MOVE-020__K033-Q1_Nachbauprufung.md",
+    "bytes": 34391,
+    "sha256": "07fff480fb14e2157b8a709fb75c0115eaac0b888baa9429c082d44c8632ea90"
+  },
+  {
+    "path": "07_BEWEGUNG_FAHRZEUGE_KAMPF_LOOT/FW-MOVE-021__D130-Q01_Nachbauprufung.md",
+    "bytes": 36093,
+    "sha256": "fe2b91ffd617ce54e440b5c91d59eb211fcd89d5e10746b26fcb1e8408ada849"
+  },
+  {
+    "path": "07_BEWEGUNG_FAHRZEUGE_KAMPF_LOOT/FW-MOVE-022__Gate_09_Taktische_Pause_Ausrustung_Kampf_Loot_und_dialogreiche_Nebenquests.md",
+    "bytes": 40144,
+    "sha256": "9de927ca0d039674518454f4d860b68c5b9844c5370728dcab16c67f989ff189"
+  },
+  {
+    "path": "07_BEWEGUNG_FAHRZEUGE_KAMPF_LOOT/FW-MOVE-023__K045-Q5_K045_Fehlurteil_Beziehungen.md",
+    "bytes": 40155,
+    "sha256": "ed4329432bbe256d59e7fb2cd0c603a0a39ffd2ebc78851fa62f59f9b2795455"
+  },
+  {
+    "path": "07_BEWEGUNG_FAHRZEUGE_KAMPF_LOOT/FW-MOVE-024__Cross-System-Kollisionsmatrix_200_Paare.md",
+    "bytes": 39644,
+    "sha256": "c124208c31a3db1e2549af9a182911a2e4f794c1e541f4a2a1561dbec575ce55"
+  },
+  {
+    "path": "07_BEWEGUNG_FAHRZEUGE_KAMPF_LOOT/FW-MOVE-025__D066_Fahrzeugbiografie.md",
+    "bytes": 39084,
+    "sha256": "3a45714ee5a49616412dc9c1e33b8a08811c827374ba1be33f046a1b504bd605"
+  },
+  {
+    "path": "08_BAUEN_HANDWERK_MODULARITAET/00_INDEX.md",
+    "bytes": 4787,
+    "sha256": "176e6341b6cca1ad4609df0e9604a31208cb7ba17e62b48f93e67d999a8091ab"
+  },
+  {
+    "path": "08_BAUEN_HANDWERK_MODULARITAET/FW-BUILD-001__222_Pflichtfragen_beantwortet_vor_dem_Bau.md",
+    "bytes": 38750,
+    "sha256": "a705ff9adf04a9d4228410c9688777ddcbb5463bb78b794dfd4434ee15715cda"
+  },
+  {
+    "path": "08_BAUEN_HANDWERK_MODULARITAET/FW-BUILD-002__Architektur_vor_dem_Bau.md",
+    "bytes": 3328,
+    "sha256": "6511167a487b8065ccf00d4bc98de8e7e2ac5a636c01b555b0a62a9a6e263fb0"
+  },
+  {
+    "path": "08_BAUEN_HANDWERK_MODULARITAET/FW-BUILD-003__F-0051_TEILWEISE.md",
+    "bytes": 39298,
+    "sha256": "e3192065c2c156406330b089c127a23682a8b75f84e14a9e859e4cd2388f5fb3"
+  },
+  {
+    "path": "08_BAUEN_HANDWERK_MODULARITAET/FW-BUILD-004__F-0102_TEILWEISE.md",
+    "bytes": 39486,
+    "sha256": "35df7022ebde41d7db8dd78baac1255a0592e4456b2f46464d58334b03eefabb"
+  },
+  {
+    "path": "08_BAUEN_HANDWERK_MODULARITAET/FW-BUILD-005__F-0150_TEILWEISE.md",
+    "bytes": 39330,
+    "sha256": "211fddd7c8d2f7b4b1ea554216048343d4446a0cce899a3d27cac41ce244cdeb"
+  },
+  {
+    "path": "08_BAUEN_HANDWERK_MODULARITAET/FW-BUILD-006__F-0245_TEILWEISE.md",
+    "bytes": 39703,
+    "sha256": "2f1461b1a8c38fecd968b36e537fbae8a06da9daff5074180845c2dc541c30d3"
+  },
+  {
+    "path": "08_BAUEN_HANDWERK_MODULARITAET/FW-BUILD-007__F-0298_TEILWEISE.md",
+    "bytes": 39023,
+    "sha256": "b28067718b6791addca63aa9db4a0d3b0412eaa7a5ea744e680aad2aab033ded"
+  },
+  {
+    "path": "08_BAUEN_HANDWERK_MODULARITAET/FW-BUILD-008__F-0439_TEILWEISE.md",
+    "bytes": 39942,
+    "sha256": "b15dac6911aa485026f3faef39115d72180ced51aa2e65ef4ab95f02ae29e985"
+  },
+  {
+    "path": "08_BAUEN_HANDWERK_MODULARITAET/FW-BUILD-009__F-0488_TEILWEISE.md",
+    "bytes": 39701,
+    "sha256": "66193a8f13325a3a9ed0dd9e908a6aa7ff43e4c810ef98ca9709cf3252bada58"
+  },
+  {
+    "path": "08_BAUEN_HANDWERK_MODULARITAET/FW-BUILD-010__F-0537_TEILWEISE.md",
+    "bytes": 39795,
+    "sha256": "7c4512e782dad7a9d6ee2446a1a64ca7d70f0fc0884c20770ff6543f8ab0adb4"
+  },
+  {
+    "path": "08_BAUEN_HANDWERK_MODULARITAET/FW-BUILD-011__F-0823_TEILWEISE.md",
+    "bytes": 39729,
+    "sha256": "82bc2b8ec0197df59c1edde32be4465fc607d25bf7a8ba5f8a1290edee31b382"
+  },
+  {
+    "path": "08_BAUEN_HANDWERK_MODULARITAET/FW-BUILD-012__F-0870_TEILWEISE.md",
+    "bytes": 39435,
+    "sha256": "747c21b19bd362b9b55caf70d5656f52de713bbb4f533116e33fda5156e36969"
+  },
+  {
+    "path": "08_BAUEN_HANDWERK_MODULARITAET/FW-BUILD-013__F-0917_TEILWEISE.md",
+    "bytes": 39706,
+    "sha256": "07f0c5441be577d79f106a9ec66203be752d78d7bd8be335dc0fd4f6d171e2c3"
+  },
+  {
+    "path": "08_BAUEN_HANDWERK_MODULARITAET/FW-BUILD-014__F-0965_TEILWEISE.md",
+    "bytes": 39224,
+    "sha256": "ea40ec910e08ad2782a25ba1920f75e3c130bae23298f490191f39789db34021"
+  },
+  {
+    "path": "08_BAUEN_HANDWERK_MODULARITAET/FW-BUILD-015__F-1013_TEILWEISE.md",
+    "bytes": 39884,
+    "sha256": "d67cefb134fc979cd9a75e804f4d67c650e3ae332f88f143d5dde9f62fb9290c"
+  },
+  {
+    "path": "08_BAUEN_HANDWERK_MODULARITAET/FW-BUILD-016__F-1109_TEILWEISE.md",
+    "bytes": 39669,
+    "sha256": "cfdeaf29f7e88cc02cdaa9f983c098e202f5eb273e4a49f20a022da10df07bc3"
+  },
+  {
+    "path": "08_BAUEN_HANDWERK_MODULARITAET/FW-BUILD-017__F-1156_TEILWEISE.md",
+    "bytes": 39712,
+    "sha256": "426427e4d36ce2f76dcbc5698cb4cce41b94ce5918b673decff22c6f3fc1c05f"
+  },
+  {
+    "path": "08_BAUEN_HANDWERK_MODULARITAET/FW-BUILD-018__Vollstandiger_Fragenkorper_Zuordnung_und_Nachbauantworten.md",
+    "bytes": 39385,
+    "sha256": "d4b83f65b00fb6fe88e7311c92d366baef18dce3d82346f227384c81573f6671"
+  },
+  {
+    "path": "08_BAUEN_HANDWERK_MODULARITAET/FW-BUILD-019__D054-Q08_Nachbauprufung.md",
+    "bytes": 39845,
+    "sha256": "112ef77483695f60f0a6fe7455286c0f2c1e34c45e674604e45db62aa311e1c3"
+  },
+  {
+    "path": "08_BAUEN_HANDWERK_MODULARITAET/FW-BUILD-020__D134-Q05_D134_Testmodus.md",
+    "bytes": 40271,
+    "sha256": "8b8c1d8f1fe5e2cb39a86e240fa5f87cc75dc9d4479d0cc2dd7b18ff042bf6c5"
+  },
+  {
+    "path": "08_BAUEN_HANDWERK_MODULARITAET/FW-BUILD-021__D136-Q05_Nachbauprufung.md",
+    "bytes": 30899,
+    "sha256": "3c6c9581305f058a98c32636b3ad4c5f6266894c13cd1e61f0c28b8205655543"
+  },
+  {
+    "path": "08_BAUEN_HANDWERK_MODULARITAET/FW-BUILD-022__Gate_11_Modulare_Fahrzeuge_Waffen_Kleidung_und_Rustungen.md",
+    "bytes": 39858,
+    "sha256": "3751dcf96c819e91e76e895f85b2c13793072a3b687c6842160419319754d94e"
+  },
+  {
+    "path": "08_BAUEN_HANDWERK_MODULARITAET/FW-BUILD-023__D062-Q06_Nachbauprufung.md",
+    "bytes": 39763,
+    "sha256": "31679b411fa7f4fc4b75f21ca0c950f8b38d4f5c6dd1a71b897a02a575141724"
+  },
+  {
+    "path": "08_BAUEN_HANDWERK_MODULARITAET/FW-BUILD-024__D104-Q06_D104_Zeitadressen.md",
+    "bytes": 39980,
+    "sha256": "77f67e1c1ad01ecb5c6aae119a531aba4ae64969b5ceaa10dc368d7c7e91d6d0"
+  },
+  {
+    "path": "08_BAUEN_HANDWERK_MODULARITAET/FW-BUILD-025__D135-Q05_Nachbauprufung.md",
+    "bytes": 39761,
+    "sha256": "243016c133967734597343deef9147e5178994b58ffc380b45f9ef39882307a2"
+  },
+  {
+    "path": "08_BAUEN_HANDWERK_MODULARITAET/FW-BUILD-026__Fortschreibung_nach_Gate_13H.md",
+    "bytes": 40295,
+    "sha256": "7cf0499ae41799c3133e793d9c10e2ae69c9503d8dce1f147fa36e91b57b8d0e"
+  },
+  {
+    "path": "08_BAUEN_HANDWERK_MODULARITAET/FW-BUILD-027__K103-Q5_K103_Okologie_Luftfahrzeuge.md",
+    "bytes": 39650,
+    "sha256": "cd8abbb95acfa8ec8402bc57635af0cab0d9dee85577ad69207504af5dda333d"
+  },
+  {
+    "path": "08_BAUEN_HANDWERK_MODULARITAET/FW-BUILD-028__K120-Q1_Nachbauprufung.md",
+    "bytes": 13029,
+    "sha256": "44b3337420a8af274d72b7357320a0c5fc5cffb9dde036fc0af9f5cbb464db0e"
+  },
+  {
+    "path": "08_BAUEN_HANDWERK_MODULARITAET/FW-BUILD-029__K044_Ermittlung_Historische_Rekonstruktion.md",
+    "bytes": 39015,
+    "sha256": "9a6da40dc19859d0f5a84cdb3857911e783871ff31c095cf22babd56cf5ea11d"
+  },
+  {
+    "path": "08_BAUEN_HANDWERK_MODULARITAET/FW-BUILD-030__K085_Beziehungsabbilder_Wesensatlas.md",
+    "bytes": 39544,
+    "sha256": "13453026e16ad43efa5e089717bbc80ed38f112b87cb801cc68e33b8fe93f5d0"
+  },
+  {
+    "path": "08_BAUEN_HANDWERK_MODULARITAET/FW-BUILD-031__K168_Abspaltungen_Reintegration.md",
+    "bytes": 31427,
+    "sha256": "c3632e1efc54e25bd7aa8ea5d47045f0ab671dd5e2c55b07464b4f358da41cd3"
+  },
+  {
+    "path": "09_SKILLS_MASTERIES_MAGIE_AI/00_INDEX.md",
+    "bytes": 5590,
+    "sha256": "8940c6121b7fb76d19974cbd214f2d5b4b3d6303f5e79749a4bc6ddea17975a2"
+  },
+  {
+    "path": "09_SKILLS_MASTERIES_MAGIE_AI/FW-SKILL-001__Ringrelevante_Pflichtfragen_beantworteter_MAXUS-Auszug_und_weitere_Statusabsch.md",
+    "bytes": 13048,
+    "sha256": "3225779238e3cd39cc6ea1dba347930733c69df3d7cb1f625b9e87722f6f481a"
+  },
+  {
+    "path": "09_SKILLS_MASTERIES_MAGIE_AI/FW-SKILL-002__Datei-fur-Datei-Lesenachweis.md",
+    "bytes": 41717,
+    "sha256": "7e4b897e965ba31d836816072c3ba9c099521c316be51b133c42d0bc483507bc"
+  },
+  {
+    "path": "09_SKILLS_MASTERIES_MAGIE_AI/FW-SKILL-003__Vollstandige_Neulesung_des_v20-Dateikorpers.md",
+    "bytes": 17968,
+    "sha256": "dfc9995e33c99136c9290be75118c5faa4461df20bfa42ffe5f158d4ee7b99d0"
+  },
+  {
+    "path": "09_SKILLS_MASTERIES_MAGIE_AI/FW-SKILL-004__Skillbaum-Architektur_Gebrauch_Einzelstufen_Gesamtlevel_und_frei_investierbare.md",
+    "bytes": 8244,
+    "sha256": "c8a9772e42af1bb2becd4394511342bc5b1c036b10e953001fa164fb0dab3f69"
+  },
+  {
+    "path": "09_SKILLS_MASTERIES_MAGIE_AI/FW-SKILL-005__Skillbaum-Katalog_fur_klassische_technische_magische_weltliche_und_AI-artige_F.md",
+    "bytes": 11226,
+    "sha256": "71dacb6b028ceb4e4b00d9b543dfd3d82b4f80b1f21a98fbbbbbc9aaa5d8dbc8"
+  },
+  {
+    "path": "09_SKILLS_MASTERIES_MAGIE_AI/FW-SKILL-006__F-0394_BESTANDEN.md",
+    "bytes": 40135,
+    "sha256": "073656daf3c496fd2d3949edd95eb33a7b966c76757f19f58cbbb31fb25bb216"
+  },
+  {
+    "path": "09_SKILLS_MASTERIES_MAGIE_AI/FW-SKILL-007__F-0586_TEILWEISE.md",
+    "bytes": 39748,
+    "sha256": "97b129fc426803ac4f75b8b1995975f72efd461bfe5b9c9e165d8f903e855ab4"
+  },
+  {
+    "path": "09_SKILLS_MASTERIES_MAGIE_AI/FW-SKILL-008__D073-Q08_Nachbauprufung.md",
+    "bytes": 39851,
+    "sha256": "35f2e94bf9f19ebe1b5141dbbce765f7ae2534b546806e57a2537fd53e32b223"
+  },
+  {
+    "path": "09_SKILLS_MASTERIES_MAGIE_AI/FW-SKILL-009__Gate_03_Gebrauchsmastery_Skillbaume_Handwerk_Verzauberung_und_echte_Dust-Magie.md",
+    "bytes": 40220,
+    "sha256": "d9e78b8acbfdcdc37c14b4b954a49f426023b120f810ef067e5aff305180c06d"
+  },
+  {
+    "path": "09_SKILLS_MASTERIES_MAGIE_AI/FW-SKILL-010__K024-Q1_K024_Bauen_Ressourcen.md",
+    "bytes": 39798,
+    "sha256": "9dc3398ca5537bac2bc585adae979ef8f56743230852f24872f7a70304d40378"
+  },
+  {
+    "path": "09_SKILLS_MASTERIES_MAGIE_AI/FW-SKILL-011__Gate_13A_Gesamtlevel_freie_Skillpunkte_und_universeller_Skillkatalog.md",
+    "bytes": 4588,
+    "sha256": "3bc03f970de75fa2e19585f3e51f0eb797f992202bf3c37be640637af182d5c9"
+  },
+  {
+    "path": "09_SKILLS_MASTERIES_MAGIE_AI/FW-SKILL-012__Gate_13B_Kuratierte_Skillbaume_und_Knotengraphen.md",
+    "bytes": 3730,
+    "sha256": "ffcd01a25d0d87e7b8fa8a60d5e827b354e8858c133d5c84937d83c4369cccbd"
+  },
+  {
+    "path": "09_SKILLS_MASTERIES_MAGIE_AI/FW-SKILL-013__Gate_13C_Reale_passive_und_aktive_Skillwirkungen.md",
+    "bytes": 3173,
+    "sha256": "e7470800535b020c0e840070ec49ab2f4b4446d56bd81a4714285aa3cafdb859"
+  },
+  {
+    "path": "09_SKILLS_MASTERIES_MAGIE_AI/FW-SKILL-014__Gate_13D_AI-Fahigkeiten_als_echte_Arbeitskorper.md",
+    "bytes": 4736,
+    "sha256": "e06cad9bcccefc5cd37dd01e479d344e52834df5e8e0334aa1029be25cb970f9"
+  },
+  {
+    "path": "09_SKILLS_MASTERIES_MAGIE_AI/FW-SKILL-015__Gate_13E_Reale_Handlungsrouten_der_Skillbaume.md",
+    "bytes": 5892,
+    "sha256": "7f554bd3f793e4e5fcd135a4e1a906f0fa7cf24e09254f1cd88921ae519148a0"
+  },
+  {
+    "path": "09_SKILLS_MASTERIES_MAGIE_AI/FW-SKILL-016__Gate_13F_Eigene_Handlungskorper_fur_die_neun_offenen_Skillbaume.md",
+    "bytes": 5730,
+    "sha256": "a136cf4367525436c0ba89096c15327532e82249720a2310332220bf49e9fea8"
+  },
+  {
+    "path": "09_SKILLS_MASTERIES_MAGIE_AI/FW-SKILL-017__Gate_13G_Einheitliche_Skillpunktokonomie_und_Legacy-Wirkung.md",
+    "bytes": 4083,
+    "sha256": "715583381d29a71ff5a47795e52b8b4e82aa6b6ad34758917a381a0f8773f99e"
+  },
+  {
+    "path": "09_SKILLS_MASTERIES_MAGIE_AI/FW-SKILL-018__Gate_13H_Vollstandige_individuelle_Knoten_und_operative_Wirkungen.md",
+    "bytes": 5429,
+    "sha256": "0d39078e5240939160b1c6c236cb68ebc9fdac7c299d9596e7ef1727778a64ca"
+  },
+  {
+    "path": "09_SKILLS_MASTERIES_MAGIE_AI/FW-SKILL-019__1._Dust-Ontologie.md",
+    "bytes": 38730,
+    "sha256": "94f1a4b188b02913f2c6af3f5c94669549be3b4b65968dbbf42cf62713c89770"
+  },
+  {
+    "path": "09_SKILLS_MASTERIES_MAGIE_AI/FW-SKILL-020__22._Was_Dwarf_Fortress_besonders_gut_kann.md",
+    "bytes": 38630,
+    "sha256": "0bf5036e7e89ec83d2b81b0f85c6a366fd72440bbcf3e980b78d327aebfe50a9"
+  },
+  {
+    "path": "09_SKILLS_MASTERIES_MAGIE_AI/FW-SKILL-021__8._Daniels_Ideen-Redteam.md",
+    "bytes": 5987,
+    "sha256": "6cca1419f34ba353f5eae616903cc239d25c7ddbf824107f45aaa3fe34f6efae"
+  },
+  {
+    "path": "09_SKILLS_MASTERIES_MAGIE_AI/FW-SKILL-022__FLEXTRAWURST_FINALER_SUPERMAXIMALMAXIKINGMEGA++++++++++++++++++++-PROMPT.md",
+    "bytes": 40700,
+    "sha256": "c1fd2a085c9812f3bf87b25d6cbf926b82869bbda1dc7afb65b051c03c111ba2"
+  },
+  {
+    "path": "10_CREATORWELTEN_EREIGNISSE_ARCHIVE/00_INDEX.md",
+    "bytes": 2390,
+    "sha256": "0b1aa550d7779e5ed766801ae5de0a5a95aeccb48ffaeb14a740ed48a30d9d33"
+  },
+  {
+    "path": "10_CREATORWELTEN_EREIGNISSE_ARCHIVE/FW-CREATOR-001__COPY-PASTE-MASTERPROMPT_MAXUS++++++++++++++++_Bauring_2.md",
+    "bytes": 14182,
+    "sha256": "ef52657f219423193eefa82951967535fbd16805f7ab5eef02d327bd7a8ec754"
+  },
+  {
+    "path": "10_CREATORWELTEN_EREIGNISSE_ARCHIVE/FW-CREATOR-002__MAXUS++++++++++++++++++++_Masterauftrag_fur_Bauring_2.md",
+    "bytes": 8106,
+    "sha256": "8bc69e8f1710194305a3b4ddd8d81cf47df0ba71eb4470a752b8852ca57e5bdd"
+  },
+  {
+    "path": "10_CREATORWELTEN_EREIGNISSE_ARCHIVE/FW-CREATOR-003__F-0347_TEILWEISE.md",
+    "bytes": 39665,
+    "sha256": "86ba24177279ea25f82670e90a84d1188f1dfd513276a8bdda645e48f2ce33f2"
+  },
+  {
+    "path": "10_CREATORWELTEN_EREIGNISSE_ARCHIVE/FW-CREATOR-004__F-0724_OFFEN.md",
+    "bytes": 39630,
+    "sha256": "7c131fdae70922d538560d9f3f80914462124145bf72ccce738a6f8e4fe605be"
+  },
+  {
+    "path": "10_CREATORWELTEN_EREIGNISSE_ARCHIVE/FW-CREATOR-005__F-0776_OFFEN.md",
+    "bytes": 39770,
+    "sha256": "64844e228d5b76f6e2a555dc622dc481d9f2bebf35ce21af18459dbbce0ede68"
+  },
+  {
+    "path": "10_CREATORWELTEN_EREIGNISSE_ARCHIVE/FW-CREATOR-006__F-1204_TEILWEISE.md",
+    "bytes": 40417,
+    "sha256": "83c77476d8212bf6f5aa915c6720108f0b5e531c79ca1f7c422acc2004bdb695"
+  },
+  {
+    "path": "10_CREATORWELTEN_EREIGNISSE_ARCHIVE/FW-CREATOR-007__Gate_08_Creator-Welten_editierbares_Bauen_Konzerte_und_Ereignisarchive.md",
+    "bytes": 34105,
+    "sha256": "621338f074cfe4858c0fdcf8acae9b9506998cada064de45b24bf4b3aeea232f"
+  },
+  {
+    "path": "10_CREATORWELTEN_EREIGNISSE_ARCHIVE/FW-CREATOR-008__Nachbau-Gegenprufung.md",
+    "bytes": 40148,
+    "sha256": "7439328a6c77e87bedc2a1c22f128ceb5900058131df6297cbb461a55c70fdf3"
+  },
+  {
+    "path": "10_CREATORWELTEN_EREIGNISSE_ARCHIVE/FW-CREATOR-009__K127_Niederlage_Wirtschaft.md",
+    "bytes": 39331,
+    "sha256": "2f54b933bca729e523c83575a535393c935374582b9c52b447006da349547c4b"
+  },
+  {
+    "path": "11_QUESTKOSMOS_ECHOS_SPIELERSPIEGEL/00_INDEX.md",
+    "bytes": 4001,
+    "sha256": "76835079131043b45c6aa935108e5807ee5cf9b0650d9cc6cb288bccdc0541a6"
+  },
+  {
+    "path": "11_QUESTKOSMOS_ECHOS_SPIELERSPIEGEL/FW-QUEST-001__Dust-Echo-Grundgesetz_des_Questkosmos_und_weitere_Statusabschnitte.md",
+    "bytes": 13851,
+    "sha256": "3dc7af92af0d05517dbbfd7f4240058639f87795c0e861da411b61b2cd3e7b34"
+  },
+  {
+    "path": "11_QUESTKOSMOS_ECHOS_SPIELERSPIEGEL/FW-QUEST-002__Echo-Datenmodell_und_Kristallisierung.md",
+    "bytes": 4164,
+    "sha256": "e72564555972a1cbaa37f0337ca89e761bb695f346e05ccc795890783a8353ea"
+  },
+  {
+    "path": "11_QUESTKOSMOS_ECHOS_SPIELERSPIEGEL/FW-QUEST-003__Lebenszyklus_eines_Questkorpers.md",
+    "bytes": 4234,
+    "sha256": "52cc6fd9033a9baf2aeb3b00aa7f357d2fffd15717cb58529bf65992f07ac8e9"
+  },
+  {
+    "path": "11_QUESTKOSMOS_ECHOS_SPIELERSPIEGEL/FW-QUEST-004__Acht_kanonische_Questfamilien_und_ihre_Mischformen.md",
+    "bytes": 3493,
+    "sha256": "31a27c1de4c53259ca65c4bdeda8ea3dcd905b661d7e1fc07b9644f2d9c146aa"
+  },
+  {
+    "path": "11_QUESTKOSMOS_ECHOS_SPIELERSPIEGEL/FW-QUEST-005__Autonome_Fortsetzung_und_Spielerabwesenheit.md",
+    "bytes": 3015,
+    "sha256": "b3cc175f8053dfc5e6bbba7a928f9f7077e9ec2651d3efff58c275c0ce77633f"
+  },
+  {
+    "path": "11_QUESTKOSMOS_ECHOS_SPIELERSPIEGEL/FW-QUEST-006__Mehrpfadige_Entwurfsbaume.md",
+    "bytes": 3391,
+    "sha256": "1c329870afdd5f34840df46364351d6616a01ad03fb180c8b430584d1444fa31"
+  },
+  {
+    "path": "11_QUESTKOSMOS_ECHOS_SPIELERSPIEGEL/FW-QUEST-007__Belohnungen_Masteries_und_Freischaltungen.md",
+    "bytes": 3180,
+    "sha256": "a6127026f21cc07537ca253a49d17d74f7221f8e04a8dcc4830034387a8a9498"
+  },
+  {
+    "path": "11_QUESTKOSMOS_ECHOS_SPIELERSPIEGEL/FW-QUEST-008__Schutz_gegen_Fetchquests_Grind_und_Scheinvielfalt.md",
+    "bytes": 3037,
+    "sha256": "7c396b0595d78551dbd3f319100a2e0036e5f82086076ccd33811744bee0a4cd"
+  },
+  {
+    "path": "11_QUESTKOSMOS_ECHOS_SPIELERSPIEGEL/FW-QUEST-009__Der_Staub_erinnert_sich_Spielerspiegel-Grundgesetz.md",
+    "bytes": 3610,
+    "sha256": "0677cec022d5246dcd1bd9dc2c70da6bd4967e189b43da25a39ad00a36a01c2e"
+  },
+  {
+    "path": "11_QUESTKOSMOS_ECHOS_SPIELERSPIEGEL/FW-QUEST-010__Manipulative_Dust-Rhetorik_Prophezeiung_und_Macht.md",
+    "bytes": 4477,
+    "sha256": "d75a4ff1722673d397cce302f27be2a0ecc87895f3dc08190a3b5fffaea65c60"
+  },
+  {
+    "path": "11_QUESTKOSMOS_ECHOS_SPIELERSPIEGEL/FW-QUEST-011__Spielerprofil_Sensorik_Verhalten_und_Widerspruch.md",
+    "bytes": 3497,
+    "sha256": "dd0ac812ae1464fe54ad1fb0d50d543f1a2c83bdac3fb2322a673d7e1bad9cc2"
+  },
+  {
+    "path": "11_QUESTKOSMOS_ECHOS_SPIELERSPIEGEL/FW-QUEST-012__Positiver_Virus_Spielverhalten_und_Realweltbrucke.md",
+    "bytes": 3808,
+    "sha256": "e58a09c7ce16ca546d22ad3d49ec9f12826182da3bb000d884e8cbd1a05d8c28"
+  },
+  {
+    "path": "11_QUESTKOSMOS_ECHOS_SPIELERSPIEGEL/FW-QUEST-013__Dust-Spielerspiegel_als_Questorgan.md",
+    "bytes": 3431,
+    "sha256": "e5313a76e722a812d00accb6fa047a6551062f9fb3ca2ea9640566c207a31f79"
+  },
+  {
+    "path": "11_QUESTKOSMOS_ECHOS_SPIELERSPIEGEL/FW-QUEST-014__24-Stunden-Weltzeit_vier_Jahreszeiten_Wetterextreme_und_Naturkatastrophen.md",
+    "bytes": 4401,
+    "sha256": "08c5e41410e269f39ba18b41c5c84cf6e6cb42a183596383c98b53b8aaa475ed"
+  },
+  {
+    "path": "11_QUESTKOSMOS_ECHOS_SPIELERSPIEGEL/FW-QUEST-015__Volatile_Questokonomie.md",
+    "bytes": 3785,
+    "sha256": "a594d21def442f961e87f3b83e7830498d4b8ad36c6f7d09fc083a94426b560f"
+  },
+  {
+    "path": "11_QUESTKOSMOS_ECHOS_SPIELERSPIEGEL/FW-QUEST-016__Questkosmos_Gesamtbericht.md",
+    "bytes": 2981,
+    "sha256": "19642d647293d5aea02c2cefe39ac450daa588dbc8f89e1240388b8fde61e3bc"
+  },
+  {
+    "path": "12_FRAGEN_KOLLISIONEN_ENTSCHEIDUNGEN/00_INDEX.md",
+    "bytes": 1383,
+    "sha256": "5768d070b541f2f91467af07d9d2c14bd3a7f92c7c4f7bf223fd3126506eab83"
+  },
+  {
+    "path": "12_FRAGEN_KOLLISIONEN_ENTSCHEIDUNGEN/FW-QUESTION-001__D13_Eskalation.md",
+    "bytes": 40000,
+    "sha256": "f0ad38fb8e5eaf4502f95646e8b52ce93e62cd6fd5cb4890e62bf4921a29bfaa"
+  },
+  {
+    "path": "12_FRAGEN_KOLLISIONEN_ENTSCHEIDUNGEN/FW-QUESTION-002__D25_Liquiditat_und_Markte.md",
+    "bytes": 37164,
+    "sha256": "c8e767e34c5cc4feec4ef46711e861433312a9ae24072dd84159a004b4163dfc"
+  },
+  {
+    "path": "12_FRAGEN_KOLLISIONEN_ENTSCHEIDUNGEN/FW-QUESTION-003__D36_Save_Load_und_Determinismus.md",
+    "bytes": 8413,
+    "sha256": "a329bbcbf9479341974f5518653606506ab33e41cf6c3603f5321c51b47dd779"
+  },
+  {
+    "path": "12_FRAGEN_KOLLISIONEN_ENTSCHEIDUNGEN/FW-QUESTION-004__Questfragenkorper_777_Fragen.md",
+    "bytes": 38017,
+    "sha256": "6aa32a2f2ac73a199a4bd48740fa2cecc339438cba7a070a1551305b9f0c7bfe"
+  },
+  {
+    "path": "12_FRAGEN_KOLLISIONEN_ENTSCHEIDUNGEN/FW-QUESTION-005__111_maschinenlesbare_Questchecks.md",
+    "bytes": 15502,
+    "sha256": "4e0e24d1203fd5926652e37adf90e1222aed96cda016be7ddfbc50177e91f253"
+  },
+  {
+    "path": "12_FRAGEN_KOLLISIONEN_ENTSCHEIDUNGEN/FW-QUESTION-006__Mehrpfadige_Entwurfsbaume_99_geprufte_Zweige.md",
+    "bytes": 26538,
+    "sha256": "85abb36026227d5ae96de6a31cdd58a78fddacc59aad4aa03186d4e070867047"
+  },
+  {
+    "path": "13_REDTEAM_SIMULATION_TESTS_BELEGE/00_INDEX.md",
+    "bytes": 6106,
+    "sha256": "5d3eb4182800b50d9cdde8e6f9f9b80c8de47157c61ccca6fb7c4845c94d9ee3"
+  },
+  {
+    "path": "13_REDTEAM_SIMULATION_TESTS_BELEGE/FW-TEST-001__Audit_aller_auffindbaren_Simulations-_und_Redteam-Artefakte_vor_v22_und_weiter.md",
+    "bytes": 12554,
+    "sha256": "5d8a54316449fc3148a6d7a5bad4a7e0a0d6644c49df6652f251bfc5b7a76fa9"
+  },
+  {
+    "path": "13_REDTEAM_SIMULATION_TESTS_BELEGE/FW-TEST-002__Einzelakten_Redteam_aller_auffindbaren_fruheren_Simulations-_und_Prufartefakte.md",
+    "bytes": 40465,
+    "sha256": "5d814fcb676c6f2f91374e760c1b010a2ed85dbe1d5e262f4fac6770eb1c7e50"
+  },
+  {
+    "path": "13_REDTEAM_SIMULATION_TESTS_BELEGE/FW-TEST-003__99_Varianten.md",
+    "bytes": 7247,
+    "sha256": "08d849e1d3885e93e438cd8ceacd690c6927df82c7b7f12c884aed1550aa9cbf"
+  },
+  {
+    "path": "13_REDTEAM_SIMULATION_TESTS_BELEGE/FW-TEST-004__Redteam_manipulativer_Dust-Spielerspiegel.md",
+    "bytes": 3916,
+    "sha256": "d6fc0e0f756841deeec33bc8949fbd46ed1adf9333d660b7406d77b84fe0ab2d"
+  },
+  {
+    "path": "13_REDTEAM_SIMULATION_TESTS_BELEGE/FW-TEST-005__Dust-Ontologie_und_Simulationstiefen.md",
+    "bytes": 4398,
+    "sha256": "924052dfe61bb86ee8fac659bf799c6dd7f0a51f8964fb06e1d005cce3d37c7a"
+  },
+  {
+    "path": "13_REDTEAM_SIMULATION_TESTS_BELEGE/FW-TEST-006__Playwright-_und_Systemtestplan_vor_dem_Bau.md",
+    "bytes": 3956,
+    "sha256": "479026bbe3fbf7045f3f7f46f0f57ead0da8f887404dd83a7e098b40e69c848b"
+  },
+  {
+    "path": "13_REDTEAM_SIMULATION_TESTS_BELEGE/FW-TEST-007__Redteam_vor_dem_Bau.md",
+    "bytes": 3797,
+    "sha256": "2dc9064075d0ae2bb2f22f91b19213e03d825fb8b48d8cb270eb20baa5552b27"
+  },
+  {
+    "path": "13_REDTEAM_SIMULATION_TESTS_BELEGE/FW-TEST-008__Abnahmekriterien_Bauring_3_und_weitere_Statusabschnitte.md",
+    "bytes": 17911,
+    "sha256": "d54e6c6932e840c4639609583d73b194c14ddc62affedc7b6e73b64bf69682df"
+  },
+  {
+    "path": "13_REDTEAM_SIMULATION_TESTS_BELEGE/FW-TEST-009__Testplan_vor_dem_Bau.md",
+    "bytes": 2987,
+    "sha256": "f5d4b200187f8b0c1ae4aca4663728be30068ccdf0a962b1beecaff87f64c994"
+  },
+  {
+    "path": "13_REDTEAM_SIMULATION_TESTS_BELEGE/FW-TEST-010__Abnahmekriterien_Bauring_2_und_weitere_Statusabschnitte.md",
+    "bytes": 15494,
+    "sha256": "dd67d8087bbfa78f5137295bb8d33c83696eb6c07458247056fb0bab0747b240"
+  },
+  {
+    "path": "13_REDTEAM_SIMULATION_TESTS_BELEGE/FW-TEST-011__Testplan_vor_dem_Bau.md",
+    "bytes": 3225,
+    "sha256": "06c96a1add282ed74742016b374110388f823ee572d377b0d0d9a5b68baf6975"
+  },
+  {
+    "path": "13_REDTEAM_SIMULATION_TESTS_BELEGE/FW-TEST-012__Playwright-Gesamttest_MAXUS-Bauring_1_v14.1.md",
+    "bytes": 6553,
+    "sha256": "961bcddad4ccf7108cf8a0478e60772d84f6f4760fe10aecf63d077b897bce7b"
+  },
+  {
+    "path": "13_REDTEAM_SIMULATION_TESTS_BELEGE/FW-TEST-013__Zweiter_Gesamtaudit_von_MAXUS-Bauring_1_v14.1.md",
+    "bytes": 5134,
+    "sha256": "eb4e47d86e955c6502fe7eaf6fa33a927c8c286d79dde48cfeb8687afeca5c15"
+  },
+  {
+    "path": "13_REDTEAM_SIMULATION_TESTS_BELEGE/FW-TEST-014__Redteam_vor_dem_MAXUS++++++++++++++++++++-Auftrag.md",
+    "bytes": 3392,
+    "sha256": "e1dafaba3523d811a05d330a80a95129d31613166857ef98a76e961568bcd192"
+  },
+  {
+    "path": "13_REDTEAM_SIMULATION_TESTS_BELEGE/FW-TEST-015__Redteam_zweiter_Pass_gegen_v14.1.md",
+    "bytes": 3458,
+    "sha256": "b2ce4726e06860ac4c9bea486aec571300bbf82ec47c54dea46deb4eb5d52371"
+  },
+  {
+    "path": "13_REDTEAM_SIMULATION_TESTS_BELEGE/FW-TEST-016__Selbst-Redteam_des_MAXUS++++++++++++++++++++-Auftrags.md",
+    "bytes": 2912,
+    "sha256": "147a72cd0eb40e0258b594c6cf634ee4c4734a4d8ca1f8030099306f4441092a"
+  },
+  {
+    "path": "13_REDTEAM_SIMULATION_TESTS_BELEGE/FW-TEST-017__Skillbaum-Simulations-_und_Redteamplan.md",
+    "bytes": 5698,
+    "sha256": "f2947129337721a8960eb50b26ad2b91dc5a9e9fa456646c8b4806e2cc7ba339"
+  },
+  {
+    "path": "13_REDTEAM_SIMULATION_TESTS_BELEGE/FW-TEST-018__Skilluniversum-Simulation_v21.md",
+    "bytes": 3803,
+    "sha256": "c7df4c284960d0874d295703610a8b5fc3c2843cb40722c2b74e6bbfb1d7e95a"
+  },
+  {
+    "path": "13_REDTEAM_SIMULATION_TESTS_BELEGE/FW-TEST-019__Groe_Welt-Simulationen_nach_Bau_und_Redteam.md",
+    "bytes": 2854,
+    "sha256": "91d31f4b8824f8b72e5321ce04d8de387ec6722105b3050ff7e8153b4dec82aa"
+  },
+  {
+    "path": "14_VERLUSTE_GRENZEN_KANON_PROVENIENZ/00_INDEX.md",
+    "bytes": 1835,
+    "sha256": "2f8de1cd6f64897a975bc71c5d150950001e8935cf676b81e550d448be303adb"
+  },
+  {
+    "path": "14_VERLUSTE_GRENZEN_KANON_PROVENIENZ/FW-LIMIT-001__Bekannte_Grenzen.md",
+    "bytes": 2488,
+    "sha256": "fe517519410cecc2603d55055ea2bf4830fba9ce1a26349855e14ca4e2272e1c"
+  },
+  {
+    "path": "14_VERLUSTE_GRENZEN_KANON_PROVENIENZ/FW-LIMIT-002__Quellen-_und_Fragenmatrix.md",
+    "bytes": 4835,
+    "sha256": "7fb7af684d9c2417305cbb6e6f9ab7c82e69bf373c27f254e0e8f7d7fd971062"
+  },
+  {
+    "path": "14_VERLUSTE_GRENZEN_KANON_PROVENIENZ/FW-LIMIT-003__Bekannte_Grenzen_ehrlich_markiert_und_weitere_Statusabschnitte.md",
+    "bytes": 6695,
+    "sha256": "f029c8fbc3f38e4e9a77d0343f82c299ff5e149f874ad1698ab3c72524094a46"
+  },
+  {
+    "path": "14_VERLUSTE_GRENZEN_KANON_PROVENIENZ/FW-LIMIT-004__MAXUS-Ruckverfolgbarkeit_Setzung_System_Wirkung_Test.md",
+    "bytes": 4533,
+    "sha256": "07a88f2ffa0a0837821243b418e0abe11c4dbf9f0f9c5074ef27f5e720c67116"
+  },
+  {
+    "path": "14_VERLUSTE_GRENZEN_KANON_PROVENIENZ/FW-LIMIT-005__Bekannte_Grenzen_v15.md",
+    "bytes": 3141,
+    "sha256": "b69ad324e0f8ff1cad6ee9999725222ef87cf2f7153ea8f59780a614674f41eb"
+  },
+  {
+    "path": "14_VERLUSTE_GRENZEN_KANON_PROVENIENZ/FW-LIMIT-006__Ruckverfolgbarkeit_v15.md",
+    "bytes": 3124,
+    "sha256": "6b4305231c3a033e42c62102522ffc024ff580dfad12c79c222637ad9023529e"
+  },
+  {
+    "path": "14_VERLUSTE_GRENZEN_KANON_PROVENIENZ/FW-LIMIT-007__Offene_Entscheidungen_vor_der_Skillbaum-Erweiterung.md",
+    "bytes": 4046,
+    "sha256": "27a6c8a96e8cc3852f7c54ff8ae6aed6b3666d55c98ccc5338c1bcc1c5997262"
+  },
+  {
+    "path": "14_VERLUSTE_GRENZEN_KANON_PROVENIENZ/FW-LIMIT-008__Bekannte_Grenzen_v21.md",
+    "bytes": 3081,
+    "sha256": "41b60d06ca6a5f83ec53cf6b6cdcf063089e542e8b76ceb8e478c8300e49084a"
+  },
+  {
+    "path": "15_NETZWERK_INDIZES_QUERVERWEISE/00_INDEX.md",
+    "bytes": 9480,
+    "sha256": "11d1728ef9eda3dece24fe70ad0df82b7ae26ab492f7b4ac32bc3f92130a4c87"
+  },
+  {
+    "path": "15_NETZWERK_INDIZES_QUERVERWEISE/EDGES.json",
+    "bytes": 358166,
+    "sha256": "58d7adfb7c3edca8d4211485ca56d104e1054a4fc7644fc78c87394d96193b83"
+  },
+  {
+    "path": "15_NETZWERK_INDIZES_QUERVERWEISE/FW-NET-001__Changelog_v21_final_und_weitere_Statusabschnitte.md",
+    "bytes": 6679,
+    "sha256": "091d99bf3a87a58764a75836fea26f76fb7db8f0a57cf662482a8125bc349a52"
+  },
+  {
+    "path": "15_NETZWERK_INDIZES_QUERVERWEISE/FW-NET-002__Manifest_und_weitere_Statusabschnitte.md",
+    "bytes": 21607,
+    "sha256": "189e8fbd7a52f5e4e385914071017087d8aec7e56da1fb02cacf448b31481ef6"
+  },
+  {
+    "path": "15_NETZWERK_INDIZES_QUERVERWEISE/FW-NET-003__Quellabschnitt.md",
+    "bytes": 1474,
+    "sha256": "27635829edaa0640c5112f4a509fe8a34bd7319926fe91a8100f28fd9a579ea8"
+  },
+  {
+    "path": "15_NETZWERK_INDIZES_QUERVERWEISE/FW-NET-004__Quellabschnitt.md",
+    "bytes": 1413,
+    "sha256": "5c132f3d489470917db33a5ff439ad500efcb5d757f53e60a9ab3c75ec1529e8"
+  },
+  {
+    "path": "15_NETZWERK_INDIZES_QUERVERWEISE/FW-NET-005__Quellabschnitt.md",
+    "bytes": 1456,
+    "sha256": "a059da487aeb0b030f74aeed0ce668b17234ec886c791bcaab0844bd7d86be86"
+  },
+  {
+    "path": "15_NETZWERK_INDIZES_QUERVERWEISE/FW-NET-006__Quellabschnitt.md",
+    "bytes": 1417,
+    "sha256": "6068ede48997b8043895cc2d59a91e5695f94e31bbef3be4b44477bfb823c891"
+  },
+  {
+    "path": "15_NETZWERK_INDIZES_QUERVERWEISE/FW-NET-007__Quellabschnitt.md",
+    "bytes": 1276,
+    "sha256": "4ada75a9bb0cf388839bf396ee360f2c7cb46a2920e2d62fa643484e3244d180"
+  },
+  {
+    "path": "15_NETZWERK_INDIZES_QUERVERWEISE/FW-NET-008__Quellabschnitt.md",
+    "bytes": 1421,
+    "sha256": "6dd7c069b5cd9f376e57cb0214d4686b735298cab3da0e7a03b7e604ab1ebb87"
+  },
+  {
+    "path": "15_NETZWERK_INDIZES_QUERVERWEISE/FW-NET-009__Quellabschnitt.md",
+    "bytes": 1275,
+    "sha256": "3ce7ce35b80554441e08cca33ebe393d5448639350134a79314a5f907b84aa57"
+  },
+  {
+    "path": "15_NETZWERK_INDIZES_QUERVERWEISE/FW-NET-010__Quellabschnitt.md",
+    "bytes": 1426,
+    "sha256": "acf690cbc2e5fe5955fc104aa46113a034ef719844a21ed117eab5d11709ba04"
+  },
+  {
+    "path": "15_NETZWERK_INDIZES_QUERVERWEISE/FW-NET-011__Quellabschnitt.md",
+    "bytes": 1570,
+    "sha256": "16ab966fde827e84532b5285bb11bb57920373aa5cca0ba2f672a37cb2b91eb5"
+  },
+  {
+    "path": "15_NETZWERK_INDIZES_QUERVERWEISE/FW-NET-012__Quellabschnitt.md",
+    "bytes": 1429,
+    "sha256": "e0b00a6da3e54b07b80be2a7f8c4dc2793f103013c756f316c06cd8f45b2ee6d"
+  },
+  {
+    "path": "15_NETZWERK_INDIZES_QUERVERWEISE/FW-NET-013__Quellabschnitt.md",
+    "bytes": 1337,
+    "sha256": "67ed9d70f8c1f2f8b0f5ccf44a032a52bb502f67515a0d5a3bef91fff1934f61"
+  },
+  {
+    "path": "15_NETZWERK_INDIZES_QUERVERWEISE/FW-NET-014__Quellabschnitt.md",
+    "bytes": 1606,
+    "sha256": "ba3510d223860efc1f26beff042e4c6102cff91a76cf513c9a8abde21ae05ba6"
+  },
+  {
+    "path": "15_NETZWERK_INDIZES_QUERVERWEISE/FW-NET-015__Quellabschnitt.md",
+    "bytes": 1334,
+    "sha256": "b4f1b7a697f1c0c0bc0ea146254772add7a19a62ac250f549718282f322bb15f"
+  },
+  {
+    "path": "15_NETZWERK_INDIZES_QUERVERWEISE/FW-NET-016__Quellabschnitt.md",
+    "bytes": 1345,
+    "sha256": "f5b9c0ab3651104762e140c303bf0332ed4d1aa6ebf0b5694ad02d9d8d9944f5"
+  },
+  {
+    "path": "15_NETZWERK_INDIZES_QUERVERWEISE/FW-NET-017__Quellabschnitt.md",
+    "bytes": 1437,
+    "sha256": "061342c670e1dddd2f76565101cdb98ba322600dbf87c89e9945b06b8f94285c"
+  },
+  {
+    "path": "15_NETZWERK_INDIZES_QUERVERWEISE/FW-NET-018__Quellabschnitt.md",
+    "bytes": 1343,
+    "sha256": "efb015c217adb01870c01ee0b6f1d12ec18406baa2244bc01c3f4b50cf366415"
+  },
+  {
+    "path": "15_NETZWERK_INDIZES_QUERVERWEISE/FW-NET-019__Quellabschnitt.md",
+    "bytes": 1441,
+    "sha256": "d512bd31763dd7359bc53bdda72998960c81b535541087ead5e177193a03497b"
+  },
+  {
+    "path": "15_NETZWERK_INDIZES_QUERVERWEISE/FW-NET-020__Quellabschnitt.md",
+    "bytes": 1342,
+    "sha256": "5936c9126054944fc88fa8a1231f96f630656fcebae2936bd6c67dbbde1b2f1b"
+  },
+  {
+    "path": "15_NETZWERK_INDIZES_QUERVERWEISE/FW-NET-021__Quellabschnitt.md",
+    "bytes": 1457,
+    "sha256": "f70561c3f82bad4918a870e3fe3ee01e12b39e85ccbe0babe1f5d30f9d89abe1"
+  },
+  {
+    "path": "15_NETZWERK_INDIZES_QUERVERWEISE/FW-NET-022__Quellabschnitt.md",
+    "bytes": 1350,
+    "sha256": "1609a3db9ec12611b412407dc5a04bf4d4734bb0182054ca973af1af93975d32"
+  },
+  {
+    "path": "15_NETZWERK_INDIZES_QUERVERWEISE/FW-NET-023__Quellabschnitt.md",
+    "bytes": 1961,
+    "sha256": "375713a460dce01e46feb14ada770d5b9385d38b0f0273f328f65a60e11aab43"
+  },
+  {
+    "path": "15_NETZWERK_INDIZES_QUERVERWEISE/FW-NET-024__Quellabschnitt.md",
+    "bytes": 1352,
+    "sha256": "1a80ddaa77959ede09505ac37886ba3f6f1184e392bbb99aef439998ccffd08f"
+  },
+  {
+    "path": "15_NETZWERK_INDIZES_QUERVERWEISE/FW-NET-025__Quellabschnitt.md",
+    "bytes": 1359,
+    "sha256": "4fb11b548757a713ef9d3b1a4464753c64bbbc1896e495b668101c5b99f40b20"
+  },
+  {
+    "path": "15_NETZWERK_INDIZES_QUERVERWEISE/FW-NET-026__Quellabschnitt.md",
+    "bytes": 1819,
+    "sha256": "d845e1f9fe2a3d3a2ca39ffd77ab157879f77a59a2631b726084da1a5bf87975"
+  },
+  {
+    "path": "15_NETZWERK_INDIZES_QUERVERWEISE/FW-NET-027__Quellabschnitt.md",
+    "bytes": 1355,
+    "sha256": "c69d4d1bc70cb221b06a38c716e0dc5028c5faa71c9eeff083131a602f7231d5"
+  },
+  {
+    "path": "15_NETZWERK_INDIZES_QUERVERWEISE/FW-NET-028__Quellabschnitt.md",
+    "bytes": 1463,
+    "sha256": "1e1471d67c374fa10d1fb8f74ad524a7e405679610c78868fd67e837dc4e6d3e"
+  },
+  {
+    "path": "15_NETZWERK_INDIZES_QUERVERWEISE/FW-NET-029__Quellabschnitt.md",
+    "bytes": 1490,
+    "sha256": "1d445ff26d5d2303f5cd0aeba7a8a814a01f6177ac8fc0ee43cf0777beae5a28"
+  },
+  {
+    "path": "15_NETZWERK_INDIZES_QUERVERWEISE/FW-NET-030__Quellabschnitt.md",
+    "bytes": 1469,
+    "sha256": "185fc638a2311004fb0ed20b9cc7d20976fa0b1ae3eef6bf6ec450f9806160e8"
+  },
+  {
+    "path": "15_NETZWERK_INDIZES_QUERVERWEISE/FW-NET-031__Quellabschnitt.md",
+    "bytes": 1359,
+    "sha256": "9193aa35a6a86d38101006ae370168d120af59b4fc1081a9e45e9775278cec0e"
+  },
+  {
+    "path": "15_NETZWERK_INDIZES_QUERVERWEISE/FW-NET-032__Quellabschnitt.md",
+    "bytes": 2158,
+    "sha256": "140c0e8b1c8ae2964c6c57390a71fb899188875d2d8a3140697871a28701af5a"
+  },
+  {
+    "path": "15_NETZWERK_INDIZES_QUERVERWEISE/FW-NET-033__Quellabschnitt.md",
+    "bytes": 1566,
+    "sha256": "d22f7b1dec3b051d18d24acc76f8ab54f2b4589d67730e78b10540c0f6a619d2"
+  },
+  {
+    "path": "15_NETZWERK_INDIZES_QUERVERWEISE/FW-NET-034__Quellabschnitt.md",
+    "bytes": 1625,
+    "sha256": "12a91b3bd86d858a0c54ea7925b117812d0c0dfd4e673c2dec01297be2a81b96"
+  },
+  {
+    "path": "15_NETZWERK_INDIZES_QUERVERWEISE/FW-NET-035__Quellabschnitt.md",
+    "bytes": 22836,
+    "sha256": "5bba4ebe80769c665c01924f59a4692b08660bc20cba593be7a24146567628e1"
+  },
+  {
+    "path": "15_NETZWERK_INDIZES_QUERVERWEISE/FW-NET-036__Quellabschnitt.md",
+    "bytes": 22795,
+    "sha256": "34b5204bd57fdd25944e3a6825e929f8f7e89845ea6d4f9d292d48318c525cc0"
+  },
+  {
+    "path": "15_NETZWERK_INDIZES_QUERVERWEISE/FW-NET-037__Quellabschnitt.md",
+    "bytes": 1371,
+    "sha256": "c0a89a12f736faeab359b65798fe655d4211b6218573919ae7b380a7fa97aa8a"
+  },
+  {
+    "path": "15_NETZWERK_INDIZES_QUERVERWEISE/FW-NET-038__Quellabschnitt.md",
+    "bytes": 1377,
+    "sha256": "8a6f59b7a179ff03a6dca8cbfcf4eec54ea0f24611c2e1106d02c86f2139976c"
+  },
+  {
+    "path": "15_NETZWERK_INDIZES_QUERVERWEISE/FW-NET-039__Quellabschnitt.md",
+    "bytes": 1383,
+    "sha256": "19000990e17ca79087d4cf90fd61aa004fb49fffa693d919ae68fbbc47cb76c1"
+  },
+  {
+    "path": "15_NETZWERK_INDIZES_QUERVERWEISE/FW-NET-040__Quellabschnitt.md",
+    "bytes": 1383,
+    "sha256": "07b066235e2fa97c337ac26bed561936d9be804cbbcd7f1e0709c3ff273adc27"
+  },
+  {
+    "path": "15_NETZWERK_INDIZES_QUERVERWEISE/FW-NET-041__Quellabschnitt.md",
+    "bytes": 43183,
+    "sha256": "b203cbcd1c5e9b3b52c1ceec2d18cba757c00db9efb41766defd135090911deb"
+  },
+  {
+    "path": "15_NETZWERK_INDIZES_QUERVERWEISE/FW-NET-042__Quellabschnitt.md",
+    "bytes": 1542,
+    "sha256": "582f729357d476e498fc955801e20e990be6db7b71bb1da9be0eb19fbc57d1b6"
+  },
+  {
+    "path": "15_NETZWERK_INDIZES_QUERVERWEISE/FW-NET-043__030_PLAY_FLEXTRAWURST_V15_1.html.md",
+    "bytes": 39947,
+    "sha256": "793a28855d22a016c7e195f574cc8025632f765a6845aa5fcdd13815261f2a36"
+  },
+  {
+    "path": "15_NETZWERK_INDIZES_QUERVERWEISE/FW-NET-044__050_06_ergebnisse_08_BEKANNTE_GRENZEN.md.md",
+    "bytes": 39677,
+    "sha256": "1b13e47015093747a34b4064424172ae01b5940658eec731f6d3f2fb7ba32267"
+  },
+  {
+    "path": "15_NETZWERK_INDIZES_QUERVERWEISE/FW-NET-045__059_docs_17_PLAYWRIGHT_V14_2_BERICHT.md.md",
+    "bytes": 39284,
+    "sha256": "f96d9959c6dfc58f093a07d3a973517bd059354f0709c70f0ae615d250827eb8"
+  },
+  {
+    "path": "15_NETZWERK_INDIZES_QUERVERWEISE/FW-NET-046__087_docs_v21_45_MODULARER_UND_EIN_DATEI_EINSTIEG.md.md",
+    "bytes": 39634,
+    "sha256": "77b30082990058c1694a3bdee25190d9f3142af15dee80a2b6dc8c1ee92f3a63"
+  },
+  {
+    "path": "15_NETZWERK_INDIZES_QUERVERWEISE/FW-NET-047__098_source_v21_flextrawurst_spielewelt_supermaximal_bauring4_v21_PLAY_FLEXTRAW.md",
+    "bytes": 39610,
+    "sha256": "3aed5824fde31bd36612c45dd4dba6709c831b2326eb6a00c5e0b17780d87210"
+  },
+  {
+    "path": "15_NETZWERK_INDIZES_QUERVERWEISE/FW-NET-048__115_screenshots_01_world_start.png.md",
+    "bytes": 39317,
+    "sha256": "f78a2f6544ef3cabb74158d4f70ca8ea2a24e004b3731267effbb35fa6840fa1"
+  },
+  {
+    "path": "15_NETZWERK_INDIZES_QUERVERWEISE/FW-NET-049__143_source_v21_flextrawurst_spielewelt_supermaximal_bauring4_v21_docs_v21_35_S.md",
+    "bytes": 39944,
+    "sha256": "d34b723117c6d94f493f34054f9216174cbae412123b2409a0cd055041c5fa2a"
+  },
+  {
+    "path": "15_NETZWERK_INDIZES_QUERVERWEISE/FW-NET-050__146_screenshots_v21_gate13e_skill_routing.png.md",
+    "bytes": 38954,
+    "sha256": "a23e3c531776d894037661dbabcfcd6c269a52c3b3bf301e39d8c9c7a4151331"
+  },
+  {
+    "path": "15_NETZWERK_INDIZES_QUERVERWEISE/FW-NET-051__175_src_v21_skill_nodes.js.md",
+    "bytes": 39596,
+    "sha256": "5dea0e675870664d1958c6ab57f90be32edb2dd5de78e1a08044aba15555cc15"
+  },
+  {
+    "path": "15_NETZWERK_INDIZES_QUERVERWEISE/FW-NET-052__188_source_v21_flextrawurst_spielewelt_supermaximal_bauring4_v21_screenshots_0.md",
+    "bytes": 39695,
+    "sha256": "58b36af55118846aa64bf051cb4726da48796e0988fb9bb17e8c248a295632ea"
+  },
+  {
+    "path": "15_NETZWERK_INDIZES_QUERVERWEISE/FW-NET-053__205_tests_v21_GATE_11_RESULT.json.md",
+    "bytes": 39702,
+    "sha256": "c4154711fa6e34867bdb45d77bc177c45b06293a296bf36b763dc2657ad822f4"
+  },
+  {
+    "path": "15_NETZWERK_INDIZES_QUERVERWEISE/FW-NET-054__233_source_v21_flextrawurst_spielewelt_supermaximal_bauring4_v21_src_v21_exper.md",
+    "bytes": 40423,
+    "sha256": "0005b626e3fad9a501a85b0b9d0f09fe7d6b95180528541080fe6a86013b9ae9"
+  },
+  {
+    "path": "15_NETZWERK_INDIZES_QUERVERWEISE/FW-NET-055__236_tests_v21_regression_logs_complete_test_gate_05_fleet_testzone.log.md",
+    "bytes": 39117,
+    "sha256": "b4f6457ff847ca94263c256328cfecb6db8971c0eee9575753026281c4257cfb"
+  },
+  {
+    "path": "15_NETZWERK_INDIZES_QUERVERWEISE/FW-NET-056__266_tests_v21_simulations_POSTBUILD_WORLD_SIMULATIONS_V21.json.md",
+    "bytes": 40022,
+    "sha256": "c89318b1d130efa70ccb458d0f89adfc14f9bb0097c5f0c7a9e424cac0b316c7"
+  },
+  {
+    "path": "15_NETZWERK_INDIZES_QUERVERWEISE/FW-NET-057__279_source_v21_flextrawurst_spielewelt_supermaximal_bauring4_v21_tests_v21_GAT.md",
+    "bytes": 39962,
+    "sha256": "6ed30cef3ee195dfb1467a89331f653edf29022a5b05948b2051d64a6d91f21e"
+  },
+  {
+    "path": "15_NETZWERK_INDIZES_QUERVERWEISE/FW-NET-058__323_source_v21_flextrawurst_spielewelt_supermaximal_bauring4_v21_tests_v21_reg.md",
+    "bytes": 38310,
+    "sha256": "a57ce09f978fa18d0b15d8a140a66f7abac9f9929b8cf8f4ba616a68db119096"
+  },
+  {
+    "path": "15_NETZWERK_INDIZES_QUERVERWEISE/FW-NET-059__OUTRO_Resonanzfeld_des_vollstandigen_Dust-Echo-Questkosmos.md",
+    "bytes": 40172,
+    "sha256": "f026965a2c39e26fa8609255c5de220a1755b33dee26b1dd86f8055efd8ecaa6"
+  },
+  {
+    "path": "15_NETZWERK_INDIZES_QUERVERWEISE/FW-NET-060__OUTRO.md_Resonanzfeld_des_gesamten_v21-Dateikorpers.md",
+    "bytes": 38818,
+    "sha256": "f6ca5c8686252266e48b44b158b2750a79c6d83ad3e02230214ddd05f71b86ba"
+  },
+  {
+    "path": "15_NETZWERK_INDIZES_QUERVERWEISE/KANTEN.csv",
+    "bytes": 194708,
+    "sha256": "44acc70dc1dfb9355d97360e92f0fd685e9482c84ae33e96566665ea9e8d512c"
+  },
+  {
+    "path": "15_NETZWERK_INDIZES_QUERVERWEISE/KNOTEN.csv",
+    "bytes": 52571,
+    "sha256": "43e254a46e1f0de28a6ee71275d77cd83f4a37ff5574361d57bff7243cae9842"
+  },
+  {
+    "path": "15_NETZWERK_INDIZES_QUERVERWEISE/LINKCHECK.json",
+    "bytes": 29726,
+    "sha256": "cd5b81cabc58027512c3a3eef64bf43d63cc33bfd1357451409a6c92d3724cb8"
+  },
+  {
+    "path": "15_NETZWERK_INDIZES_QUERVERWEISE/NODES.json",
+    "bytes": 151394,
+    "sha256": "f5bf620be1b81be8e8287cb6a1a2439aa300dd3e1efba105890186520e5881e2"
+  },
+  {
+    "path": "15_NETZWERK_INDIZES_QUERVERWEISE/SOURCE_COVERAGE.json",
+    "bytes": 57630,
+    "sha256": "ed5cbaa00e1f8f659af838d50580cb76085085f0d64a26ed5c77d691acfe4d9e"
+  },
+  {
+    "path": "16_QUELLEN_ORIGINALE_UNVERAENDERT/00_INDEX.md",
+    "bytes": 933,
+    "sha256": "4a6f05e28f97b9bceab9d99415479b7888cba1629079a407ff7910fcfc693158"
+  },
+  {
+    "path": "16_QUELLEN_ORIGINALE_UNVERAENDERT/FEHLVERSUCHE_AUDIT.json",
+    "bytes": 1108,
+    "sha256": "1384fb8df03639fb4485a547edcd9921a5d09aa0fc956d32233f0b5179deba72"
+  },
+  {
+    "path": "16_QUELLEN_ORIGINALE_UNVERAENDERT/ORIGINALE/Eingefügter Text(98).txt",
+    "bytes": 16688,
+    "sha256": "209b5fe8b3e3b95e36d2dd9a47ad51df0d62877af69cd9ce50bc9f87f282bc7a"
+  },
+  {
+    "path": "16_QUELLEN_ORIGINALE_UNVERAENDERT/ORIGINALE/das neuuusteee(1).zip",
+    "bytes": 29262058,
+    "sha256": "5fedd4a9176b2a0403f1b37e2a9287433dc5d0e64ed18ef6dc59c3c52be283c1"
+  },
+  {
+    "path": "16_QUELLEN_ORIGINALE_UNVERAENDERT/ORIGINALE/das neuuusteee-0.5(1).zip",
+    "bytes": 55654475,
+    "sha256": "92c155af39045c9a45fb2a2641153c926a892a6d9bfcfebaf5ee9eb8a5696f0c"
+  },
+  {
+    "path": "16_QUELLEN_ORIGINALE_UNVERAENDERT/ORIGINALE/flextrawurst_dust_echo_questkosmos_v22_final_2(das neuste-1.0.zip",
+    "bytes": 45408264,
+    "sha256": "16852cb8ed65e4f52ef9159ef5c1676b84530d9731f9f13020b9ca272b0e8e01"
+  },
+  {
+    "path": "16_QUELLEN_ORIGINALE_UNVERAENDERT/SHA256SUMS.txt",
+    "bytes": 404,
+    "sha256": "6889ff297227cbc7ea07fe42fd60291cd5a1e700d2c55729c8a119216e6b02d3"
+  },
+  {
+    "path": "INDEX.html",
+    "bytes": 58236,
+    "sha256": "b33fa8d91eb0cdb9d05bfd29a7e9a75ad52a2d04b7f3922baf87e3ff2a33ccc1"
+  }
+]

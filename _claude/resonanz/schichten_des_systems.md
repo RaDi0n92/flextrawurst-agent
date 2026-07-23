@@ -1185,3 +1185,15 @@ eines universellen "gib mir alles").
 **[2026-07-22]** *← _claude/spiegel/2026-07-22-von-999-zu-111-was-eine-zahl-erzaehlt.md*
 
 Eine neue, nicht-technische Schicht sichtbar geworden: die Erzählschicht, in der Daniel die Arbeit für sich selbst einordnet. Sie liegt über allem anderen (Code, Daten, Services) und ist genauso real wie die technischen Schichten — vielleicht sogar die, die am längsten hält, wenn die Zahlen längst wieder anders sind.
+
+---
+
+**[2026-07-22]** *← _claude/ideen/sieben_linsen_koerper_kreatur.md*
+
+Ganz unten: die einzelnen Datenquellen (Vault-Dateien, DOM-Zustand, RAG-Treffer, LangGraph/Postgres-Erinnerungen). Darüber, bisher: ein Tick-Rhythmus, der zwischen diesen Quellen wechselt. Diese Idee fügt eine neue Schicht obendrauf: ein einziger, immer sichtbarer Körper, der alle diese Quellen gleichzeitig repräsentiert, egal welche gerade "aktiv" ist.
+
+---
+
+**[2026-07-23]** *← _claude/notizen/2026-07-23.md*
+
+Der Körper ist inzwischen die dichteste Schicht des ganzen SCREENS-Systems geworden: er trägt Bewegung (Talker), Zustand (sechs Linsen), Selbstwahrnehmung (Prompt-Rückkopplung) und bald Verhalten (Locomotion) — alles in einem einzigen, injizierten Canvas-Element.

@@ -1,0 +1,17 @@
+{
+  "markdown_count": 333,
+  "total_files": 343,
+  "markdown_bytes": 5940198,
+  "max_markdown_bytes": 43183,
+  "median_markdown_bytes": 5429,
+  "tiny_under_1k": 14,
+  "broken_markdown_links": [],
+  "source_files_checked": 146,
+  "source_reconstruction_failures": [],
+  "original_copy_failures": [],
+  "exact_markdown_duplicate_groups": [],
+  "graph_nodes": 333,
+  "graph_edges": 3209,
+  "graph_islands": [],
+  "constraints_pass": true
+}

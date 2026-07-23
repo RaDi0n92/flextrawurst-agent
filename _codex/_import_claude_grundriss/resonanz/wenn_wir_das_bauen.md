@@ -1841,3 +1841,41 @@ daraus je gebaut wird.
 **Vision-Schicht:** siehe oben.
 
 **Code-Skizze:** siehe oben — noch zu früh für mehr, drei offene Fragen zuerst.
+
+---
+
+**[2026-07-22]** *← _claude/karte/2026-07-22-geni-sqlite-migration-und-wiederkehrendes-speicherproblem.md*
+
+**Vision-Schicht:** Bereits gebaut, kein "wenn" mehr für die Migration selbst. Für die Verdichtungs-Idee
+oben: das wäre ein eigenes, eigenständiges Gespräch mit Daniel wert, kein impliziter Auftrag aus
+heutiger Arbeit.
+
+**Code-Skizze:** siehe oben unter "Datenstruktur die ich mir vorstelle" — bewusst nur Skizze, nicht
+Auftrag.
+
+---
+
+**[2026-07-22]** *← _claude/notizen/2026-07-22.md*
+
+Bereits gebaut — kein "wenn" mehr für die Migration selbst. Die Verdichtungs-Idee (alte Knoten zu
+Aggregaten, Rohform im kalten Archiv) ist Skizze, kein Auftrag.
+
+---
+
+**[2026-07-22]** *← _claude/spiegel/2026-07-22-von-999-zu-111-was-eine-zahl-erzaehlt.md*
+
+Die Resonanz-basierte Bedeutungsschätzung oben ist eine Idee, kein Auftrag — sollte nur verfolgt werden, wenn Daniel sie tatsächlich will.
+
+---
+
+**[2026-07-22]** *← _claude/ideen/sieben_linsen_koerper_kreatur.md*
+
+**Vision-Schicht:** siehe oben.
+
+**Code-Skizze:** siehe oben — nur die Bewegungs-Basis, die sieben Linsen brauchen erst Antworten auf die offenen Fragen.
+
+---
+
+**[2026-07-23]** *← _claude/notizen/2026-07-23.md*
+
+Nächster Schritt: DOM-Habitat-Locomotion nach Daniels Lupe/Taschenlampe/Kescher-Metapher, direkt im Anschluss an diese Notiz.

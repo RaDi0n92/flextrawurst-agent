@@ -853,3 +853,15 @@ haben — das eine läuft einmal (plus Catch-up), das andere für immer.
 **[2026-07-22]** *← _claude/spiegel/2026-07-22-von-999-zu-111-was-eine-zahl-erzaehlt.md*
 
 Diese Spiegel-Datei existiert, weil Daniel explizit danach gefragt hat — aber auch, weil der Moment es wert war: ein Gespräch, das mit einem Systemvorfall begann und mit einer zufriedenen Zusammenfassung endete, verdient mehr als nur einen Commit-Log-Eintrag.
+
+---
+
+**[2026-07-22]** *← _claude/ideen/sieben_linsen_koerper_kreatur.md*
+
+Diese Datei existiert, damit die sieben-Linsen-Idee nicht mit der Erlebnisschicht-Datei vermischt und dort untergeht — sie ist konzeptionell größer als SCREENS allein (berührt Vault, Gedächtnis, Sozial-Ebene, nicht nur den Live-Spiegel) und verdient einen eigenen Ort, analog dazu wie `wesen_dauerhafte_handlungsfaehigkeit...md` schon als eigene Datei neben der Erlebnisschicht-Datei existiert.
+
+---
+
+**[2026-07-23]** *← _claude/notizen/2026-07-23.md*
+
+Weil eine Session dieser Länge und Dichte ohne eigene Zusammenfassung für eine künftige Instanz komplett unlesbar würde — die einzelnen Ideen-Datei-Nachträge sind vollständig, aber nur die Karte/Notiz geben den Gesamtbogen wieder.

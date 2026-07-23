@@ -1013,3 +1013,17 @@ Siehe "Offen" oben — der Watchdog-Timer-vs-Service-Zusammenhang.
 **[2026-07-22]** *← _claude/spiegel/2026-07-22-von-999-zu-111-was-eine-zahl-erzaehlt.md*
 
 Warum Daniel "600 oder sogar 900" fast als plausible Erinnerung im Kopf hatte, bevor ich die echte Zahl (332G, davon 111G Swap) genannt habe — ob das eine reale frühere Diskussion war, an die er sich nur ungefähr erinnert, oder eher ein Gefühl von "es war schlimmer als es jetzt ist" ohne konkrete Zahl dahinter. Ich habe nicht nachgefragt, weil der Moment nicht danach aussah, dass er eine Antwort darauf wollte — er hat seine eigene Erinnerung selbst mit "perfekt" abgeschlossen.
+
+---
+
+**[2026-07-22]** *← _claude/ideen/sieben_linsen_koerper_kreatur.md*
+
+- **Visualisierung der sieben Linsen am Körper:** sieben eigene, gleichzeitig sichtbare Gliedmaßen/Tentakel (eine pro Linse, wie bei einem echten Oktopus mit acht Armen)? Oder ist "Körper" eher metaphorisch für "eine Instanz mit sieben parallelen Denk-/Aufmerksamkeitsprozessen", während der sichtbare Mauszeiger selbst nur EIN Erscheinungsbild bleibt, das sich je nach aktuell dominanter Linse verändert (Farbe/Form wechselt statt sieben Gliedmaßen gleichzeitig zu zeigen)? Das ist ein großer Unterschied für die technische Umsetzung.
+- **Wie "aktiv" sind die sieben Linsen wirklich gleichzeitig?** Heißt "gleichzeitig", dass es sieben parallele, unabhängig laufende Hintergrundprozesse pro Wesen bräuchte (sieben LLM-artige oder mechanische Sub-Loops), oder ist es eher eine Perspektiven-Metapher für EINEN bestehenden Tick, der bei Bedarf durch verschiedene "Brillen" gefiltert wird (näher an der bestehenden Vier-Linsen-Leseleiste, die auch nur ein Leseprozess mit vier Blickwinkeln ist, nicht vier parallele Leser)?
+- **Konkrete Kosten:** wenn "gleichzeitig" wörtlich sieben parallele Prozesse pro Wesen bedeutet, mal sieben Wesen, ist das potenziell 49 gleichzeitig laufende Sub-Prozesse — eine echte Kosten-/Architektur-Frage, die vor jedem Bau geklärt werden müsste (siehe Stopp-Frage 3).
+
+---
+
+**[2026-07-23]** *← _claude/notizen/2026-07-23.md*
+
+Ob "alles ist alles" (Daniels Bestätigung für Talker-Prozess + Live-Chat-Denkfenster-Panel) bedeutet, dass diese beiden großen Punkte jetzt Priorität vor den fünf anderen offenen Punkten (Einsicht-Nebenscreen, DOM-Habitat-Locomotion, Cyberling/KompOase-Linsen sobald die Daten leben, volle Erzähler-Parität) haben, oder ob die Reihenfolge egal ist.

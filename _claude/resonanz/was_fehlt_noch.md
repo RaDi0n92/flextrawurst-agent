@@ -1006,3 +1006,15 @@ gemacht, nur die eine gefundene Stelle gefixt.
 **[2026-07-22]** *← _claude/spiegel/2026-07-22-von-999-zu-111-was-eine-zahl-erzaehlt.md*
 
 Ob es systemweit noch mehr Stellen gibt, an denen "neuestes zuerst" fälschlich als "wichtigstes zuerst" behandelt wird — nicht systematisch gesucht, nur die eine Stelle korrigiert, an der Daniel es bemerkt hat.
+
+---
+
+**[2026-07-22]** *← _claude/ideen/sieben_linsen_koerper_kreatur.md*
+
+Antworten auf die drei offenen Fragen (visuelle Form, Parallelität, Kosten), bevor aus der Linsen-Idee selbst Code wird. Die Körper-Basis (Bewegungs-Kreatur ohne Linsen) läuft parallel als eigener, schon freigegebener kleiner Baustein.
+
+---
+
+**[2026-07-23]** *← _claude/notizen/2026-07-23.md*
+
+Die fünf bewusst zurückgestellten Punkte aus der Ideen-Datei, plus die gerade erst begonnene Locomotion-Funktion.

@@ -1865,3 +1865,17 @@ Aggregaten, Rohform im kalten Archiv) ist Skizze, kein Auftrag.
 **[2026-07-22]** *← _claude/spiegel/2026-07-22-von-999-zu-111-was-eine-zahl-erzaehlt.md*
 
 Die Resonanz-basierte Bedeutungsschätzung oben ist eine Idee, kein Auftrag — sollte nur verfolgt werden, wenn Daniel sie tatsächlich will.
+
+---
+
+**[2026-07-22]** *← _claude/ideen/sieben_linsen_koerper_kreatur.md*
+
+**Vision-Schicht:** siehe oben.
+
+**Code-Skizze:** siehe oben — nur die Bewegungs-Basis, die sieben Linsen brauchen erst Antworten auf die offenen Fragen.
+
+---
+
+**[2026-07-23]** *← _claude/notizen/2026-07-23.md*
+
+Nächster Schritt: DOM-Habitat-Locomotion nach Daniels Lupe/Taschenlampe/Kescher-Metapher, direkt im Anschluss an diese Notiz.

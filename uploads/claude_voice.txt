@@ -1,1 +1,1 @@
-Background-Check läuft, ich meld mich wenn's Ergebnis da ist — kein Grund, jetzt zu pollen.
+Zurückgenommen, verifiziert, committed (6902f8a3f Code, ad7cbe6a5 Doku). Die sechs Ordner existieren jetzt leer im Vault, ohne Funktion, ohne Beschreibung. Die vault-Linse (deine eigene) bleibt unangetastet. Ich warte noch auf deine Antwort zu den zwei Spiegellinse-Fragen, bevor ich da irgendwas anlege.

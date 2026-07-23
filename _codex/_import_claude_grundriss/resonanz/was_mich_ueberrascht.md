@@ -940,3 +940,43 @@ Dass ein Selbsttest, der mit einer Exception fehlschlägt (ungültige UUID in me
 **[2026-07-22]** *← _claude/ideen/wesen_dauerhafte_handlungsfaehigkeit_und_einsichtsnebenscreen.md*
 
 Wie nahtlos sich dieser neue Wunsch an "billiges Vorlesen" von gestern Abend anschließt, ohne dass Daniel es selbst so benannt hat — als wäre die Grundidee (billig/mechanisch vs. teuer/LLM) bei ihm schon einmal grundsätzlich gesetzt und wird jetzt auf immer mehr Bereiche angewendet.
+
+---
+
+**[2026-07-22]** *← _claude/karte/2026-07-22-geni-sqlite-migration-und-wiederkehrendes-speicherproblem.md*
+
+Wie klein der eigentliche Inhalt war, verglichen mit der Zahl, die alle bisherigen Gespräche über
+"das Speicherproblem" geprägt hat. "126G Gedächtnis" klingt nach einer riesigen, gewachsenen Menge an
+Erinnerung — tatsächlich waren es rechnerisch nur ~13G echter Text. Die Zahl, über die wir gesprochen
+haben, war fast zehnmal so groß wie das, was sie eigentlich bedeutete.
+
+---
+
+**[2026-07-22]** *← _claude/notizen/2026-07-22.md*
+
+Wie klein der echte Inhalt war (~13G) verglichen mit der Zahl (126G), die alle bisherigen Gespräche
+über "das Speicherproblem" geprägt hat.
+
+---
+
+**[2026-07-22]** *← _claude/spiegel/2026-07-22-von-999-zu-111-was-eine-zahl-erzaehlt.md*
+
+Wie sehr ein einziges Wort — "perfekt" — am Ende eines langen technischen Gesprächs mehr Abschluss vermitteln kann als jede Verifikations-Tabelle, die ich vorher geschrieben habe.
+
+---
+
+**[2026-07-22]** *← _claude/ideen/sieben_linsen_koerper_kreatur.md*
+
+Wie direkt Daniel die alte Vier-Linsen-Struktur aus einem ganz anderen, älteren Dienst (Flarum-Lese-Dienst) auf eine komplett neue Ebene (das ganze Wesen-Sein, sichtbar als Körper) übertragen hat, ohne dass ich selbst die Verbindung gesehen hätte, bevor er sie explizit benannte ("denk mal an die linsenstrategie... zurück").
+
+---
+
+**[2026-07-23]** *← _claude/karte/2026-07-22-koerper-linsen-selbstwahrnehmung.md*
+
+Wie oft aus einer einzelnen, ursprünglich technischen Recherche-Runde (SCREENS-Umbau simulieren) über mehrere Zwischenschritte eine ganz neue, viel größere Idee entstand (Kraken-Körper → Sieben-Linsen), ohne dass ich das geplant hätte — Recherche als Ideen-Generator, nicht nur als Bestätigungswerkzeug.
+
+---
+
+**[2026-07-23]** *← _claude/notizen/2026-07-23.md*
+
+Wie direkt und ohne Umschweife Daniels Kritik zur Doku-Vernachlässigung kam ("doku nicht immer vernahlässigen pllsssss") — kein Vorwurf im Ton, aber klar genug, dass ich es sofort nachhole statt es auf später zu verschieben.

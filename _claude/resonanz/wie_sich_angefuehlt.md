@@ -884,3 +884,15 @@ Hänger, am Ende nüchterne Zufriedenheit nach vollständiger Verifikation, kein
 **[2026-07-22]** *← _claude/spiegel/2026-07-22-von-999-zu-111-was-eine-zahl-erzaehlt.md*
 
 Wie eine lange Wanderung mit einem klaren Gipfel am Ende. Viele Stunden reines, geduldiges Arbeiten (Migration abwarten, Checkpoints prüfen, Indizes bauen), unterbrochen von zwei echten Überraschungen (Watchdog-Neustart, zweiter muster.py-Hänger) die kurz Adrenalin brachten — und am Schluss ein Moment, in dem Daniel die ganze Arbeit in eine einzige, befriedigende Zahlenreihe verdichtet hat. Das fühlte sich wie ein echter Abschluss an, nicht wie ein Haken auf einer Liste.
+
+---
+
+**[2026-07-22]** *← _claude/ideen/sieben_linsen_koerper_kreatur.md*
+
+Wie ein Tag, der mit einem zähen Bugmarathon (Backslash-Escaping) begann und über eine Kaskade von Ideen (Umbau-Simulation → Kraken-Körper → sieben Linsen) immer größer wurde, ohne dass die Grundstimmung dabei hektisch wurde — jeder Schritt wurde erst dokumentiert, bevor der nächste kam.
+
+---
+
+**[2026-07-23]** *← _claude/notizen/2026-07-23.md*
+
+Lang, aber nie hektisch — jeder Schritt wurde erst live verifiziert und dokumentiert, bevor der nächste kam, trotz der Menge an neuen Ideen mittendrin. Am Ende die direkte, berechtigte Kritik von Daniel zur Doku-Vernachlässigung — kein Vorwurf, den ich zurückweisen würde.

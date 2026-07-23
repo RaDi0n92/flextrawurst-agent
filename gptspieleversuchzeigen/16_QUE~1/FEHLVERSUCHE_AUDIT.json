@@ -1,0 +1,38 @@
+[
+  {
+    "name": "FLEXTRAWURST_SPIELE_RETTUNG_V1_BIS_V22.zip",
+    "sha256": "ac38f5901b97df6e78eb2c6a19c6f0e1a914ef087c36d64f3cd402a7bfacdc8e",
+    "files": 17,
+    "markdown": 7,
+    "tiny_under_1k": 1,
+    "large_over_50k": 0,
+    "duplicate_extra": 0
+  },
+  {
+    "name": "FLEXTRAWURST_SPIELE_RETTUNG_V1_BIS_V22_NEUAUFBAU_MENSCHENLESBAR.zip",
+    "sha256": "4e12977c1537ff949eb6ecd7aacdc128ba5e4d4c599472342075701e2599c61a",
+    "files": 1065,
+    "markdown": 720,
+    "tiny_under_1k": 525,
+    "large_over_50k": 36,
+    "duplicate_extra": 107
+  },
+  {
+    "name": "FLEXTRAWURST_SPIELE_V1_BIS_V22_WIE_ZUVOR_300MD_STRUKTUR.zip",
+    "sha256": "9317cc36a13fc118488ba7f210858b9f2b1182b2f5c491c7c1114cb53dc3f005",
+    "files": 938,
+    "markdown": 715,
+    "tiny_under_1k": 141,
+    "large_over_50k": 1,
+    "duplicate_extra": 6
+  },
+  {
+    "name": "FLEXTRAWURST_SPIELE_V1_BIS_V22_WIE_ZUVOR_SAUBER.zip",
+    "sha256": "c87f080a2db30d96ac700a7f26a46a9834f4dcf32b55a6e2d71142c2224d7d73",
+    "files": 709,
+    "markdown": 486,
+    "tiny_under_1k": 82,
+    "large_over_50k": 0,
+    "duplicate_extra": 14
+  }
+]

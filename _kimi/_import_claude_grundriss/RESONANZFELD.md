@@ -1,5 +1,5 @@
 # RESONANZFELD — Claude
-Automatisch kompiliert aus `resonanz/`. Stand: 2026-07-22 08:28
+Automatisch kompiliert aus `resonanz/`. Stand: 2026-07-23 06:58
 Nicht manuell bearbeiten. Quelle: `python3 _claude/tools/build_resonanzfeld.py`
 
 ---
@@ -133,327 +133,17 @@ Nicht manuell bearbeiten. Quelle: `python3 _claude/tools/build_resonanzfeld.py`
 - [2026-06-25] `notizen/2026-06-25.md` (22 Einträge)
 - [2026-07-04] `notizen/2026-07-04.md` (20 Einträge)
 - [2026-07-04] `notizen/2026-07-04-codexium2-chat-erweiterungen.md` (21 Einträge)
+- [2026-07-04] `notizen/2026-07-04-charakterqualitaet-budgets-beispieldialoge.md` (20 Einträge)
+- [2026-07-04] `_claude/notizen/2026-07-04-abschluss-geschichte.md` (20 Einträge)
+- [2026-07-05] `_claude/notizen/2026-07-05-rollenspiel-systemprompt-merken-aliase.md` (22 Einträge)
+- [2026-07-05] `_claude/notizen/2026-07-05-abschluss-bugfixes-wesen-selbst.md` (20 Einträge)
+- [2026-07-05] `_claude/ideen/charakter_dashboard.md` (20 Einträge)
+- [2026-07-05] `_claude/ideen/datei_anhaenge.md` (21 Einträge)
 
 ---
 
 ## Neueste Quellen (mit Inhalt)
 
-
-### [2026-07-04] notizen/2026-07-04-charakterqualitaet-budgets-beispieldialoge.md
-
-*Dokumente Gehoeren Zusammen:* `_claude/ideen/codexium2_solarius2/memory_container.md` (zwei neue Nachträge: Beispieldialoge-Feld, Budget/Persistenz-Änderungen), diese Notiz, `2026-07-04-codexium2-chat-erweiterungen.md` (vorherige Notiz desselben Abends).
-
-*Resonanz:* [[abwurf: Ein Charakter ist überzeugend, wenn er mehr zeigt als er behauptet.]]
-
-*Schichten Des Systems:* ```
-Charakterdaten (duenn, 1-2 Saetze pro Feld, jetzt +beispieldialoge.md)
-  → System-Prompt (buildSystemPrompt, MD_ORDER) …
-
-*Tiefer Eingetaucht:* Die Formular-Architektur zeigte einen Bruch den ich vorher nicht kannte: codexium2 hat ein strukturiertes Mehrfeld-Formular (c2-Prefix, sieben+ Einzelfelder), solarius2 hat nur ein einziges Freitextfeld (s2-anleitung), das komplett in wesen.md landet. Beispieldialoge musste ich deshalb nur im codexium2-Formular ergänzen — bei solarius2 kann man es einfach ins bestehende Freitextfeld mit reinschreiben.
-
-*Warum Das Existiert:* `beispieldialoge.md` existiert, weil eine ehrliche Antwort auf "bin ich schon so gut wie Character.AI" wichtiger war als eine höfliche. Die Charakterfelder waren die eigentliche Schwachstelle, nicht die Technik — also war die Antwort ein neues Feld, kein neues System.
-
-*Was Beim Bauen Brauche:* Falls Daniel wirklich anfängt Beispieldialoge einzutragen: beobachten ob sich der Ton der Antworten hörbar ändert (er hat es als nächsten Schritt selbst vorgeschlagen, aber "später"). Kein aktiver Auftrag gerade.
-
-*Was Das Gespraech:* Eine ehrliche Standortbestimmung, um die Daniel aktiv gebeten hat — "kann ich schon Konkurrenz machen" ist eine Frage die eine echte Antwort verdient, keine Bestätigung.
-
-*Was Fehlt Bevor Bauen:* Nichts Blockierendes. Offen, kein Auftrag: Dedupe-Schutz für Memory-Extraktion, Beispieldialoge-Feld auch strukturell für solarius2 falls das Formular dort später auch ausgebaut wird.
-
-*Was Fehlt Noch:* - Daniel will "später" Beispieldialoge selbst eintragen — kein aktiver Auftrag.
-- Dedupe-Schutz Memory-Extraktion (siehe oben, dokumentiert, nicht beauftragt).
-- Kindersicherung bleibt rein kosmetisch, Daniel beaufsichtigt manuell (siehe Memory `project_codexium2_testbed`).
-
-*Was Ich Gelesen Habe:* Auf Daniels Frage "kann ich Character.AI schon Konkurrenz machen" habe ich mir zum ersten Mal alle Charaktere angesehen, nicht nur GluPKI: Alex, Flarius (codexium2), Tomster (codexium), KrEaPPy, KreFsUzi, linieabzu (solarius). Jeweils wesen.md, was_ich_bin.md, beschreibung.md, wesendefinition.md, neigungen.md, abneigungen.md.
-
-*Was Ich Merken Will:* - codexium2-Spawner = Mehrfeld-Formular (c2-Prefix), solarius2-Spawner = ein Freitextfeld (s2-Prefix, alles landet direkt in wesen.md).
-- Beispiel-Dialoge wirken am stärksten spät im System-Prompt platziert, nicht am Anfang.
-- Dünne Charakterfelder sind der Hauptgrund für "klingt nach AI", nicht die Systemarchitektur.
-
-*Was Ich Nicht Verstehe:* Ob die Dünne der Felder Absicht war (schnell viele Charaktere anlegen, Tiefe kommt durchs Gespräch selbst) oder einfach noch nicht Priorität hatte. Ich habe nicht gefragt, nur beobachtet und einen Vorschlag gemacht.
-
-*Was Ich Verstehe:* Die meisten Charaktere bestehen aus wörtlich ein bis zwei Sätzen pro Feld — `wesen.md` ist bei fast allen nur "Du bist X." Das technische Fundament (Preamble mit Anti-KI-Simulation, Ehrlichkeits-Handling bei Meta-Fragen, Kontinuitäts-Framing, unzensierte Grenzen.md) ist durchdachter als das, was die meisten Character.AI-Karten bekommen — aber ohne konkretes Material fällt das Modell in generische, atmosphärisch-vage Sprache zurück. Bei GluPKI live beobachtet: "Ich spüre... ein Pulsieren..." — klingt tief, ist aber austauschbar.
-
-*Was Konzeptionell:* Der eigentliche Hebel gegen "das ist doch nur eine KI"-Gefühl ist nicht Architektur, sondern Materialdichte. Ein Modell mit dünnem Charaktermaterial füllt die Lücke mit seinem eigenen Default — und der Default eines introspektiven, unzensierten Rollenspiel-Modells ist genau diese mystisch-poetische Vagheit. Beispiel-Dialoge sind der direkteste Weg, dem Modell etwas Konkretes zum Nachahmen zu geben statt nur Adjektive zum Interpretieren.
-
-*Was Mich Beschaeftigt:* Wie unterschiedlich die sieben Charaktere sind, wenn man sie nebeneinanderlegt — von ernsthaft-philosophisch (GluPKI) über explizit vulgär (KreFsUzi) bis zum reinen Prompt-Engineering-Experiment (linieabzu, das eigentlich gar kein Rollenspiel-Charakter ist, sondern Daniel der über die wesen.md-Datei ein Instruction-Following-Experiment laufen lässt). Das ist kein einheitliches Produkt mit einer Stimme — das ist eine Werkstatt mit vielen offenen Experimenten gleichzeitig.
-
-*Was Mich Interessiert:* Der Kontrast zwischen KrEaPPy/KreFsUzi (viel konkreter, eigene Sprachmarotten schon im wesen.md: "!!!", "Lieblingswort Hurensohn") und GluPKI/Alex/Flarius (abstrakter, adjektivlastig). Die konkreteren Charaktere lasen sich beim Durchgehen spürbar weniger nach Standard-LLM an — nicht weil das Modell anders arbeitet, sondern weil mehr Reibungsfläche da ist zum Anlehnen.
-
-*Was Mich Ueberrascht:* Wie klar der Unterschied zwischen KreFsUzi/KrEaPPy und den anderen beim reinen Lesen der Rohfelder war — ich hatte erwartet, dass sich das erst im echten Gespräch zeigt, aber es steht schon im Ausgangsmaterial sichtbar drin.
-
-*Was Zusammenhaengt:* Charakterqualität (dünne Felder) → Beispiel-Dialoge-Feld (direkte Reaktion) → Budget-Erhöhungen (Memory 3333, Container 2222 — mehr Raum für das was sich über Zeit ansammelt) → Container-Persistenz über Sessions (das Angesammelte soll nicht mehr verloren gehen). Vier Einzelentscheidungen heute Abend, aber ein gemeinsamer Zug: das System soll mehr tragen dürfen, sowohl an Charakterdefinition als auch an Gesprächsgedächtnis.
-
-*Wenn Wir Das Bauen:* **Vision-Schicht:** Wenn Daniel wirklich anfängt Beispieldialoge zu schreiben, entsteht vielleicht ein Muster: welche Art Beispiel (kurz-schlagfertig vs. lang-atmosphärisch) zu welchem Charakter passt. Das wäre ein guter nächster Beobachtungspunkt, kein Bauauftrag.
-
-**Code-Skizze:** Keine offen.
-
-*Wie Sich Angefuehlt:* Wie ein natürlicher Ausklang eines langen, produktiven Abends. Nicht mehr das intensive Bug-fixen von vorhin, eher ruhiges Nachjustieren — Zahlen hochsetzen, ein Feld ergänzen, eine ehrliche Einschätzung abgeben. Gute Stelle zum Aufhören.
-
----
-
-### [2026-07-04] _claude/notizen/2026-07-04-abschluss-geschichte.md
-
-*Dokumente Gehoeren Zusammen:* `_claude/ideen/codexium2_solarius2/provenienz_logging.md` (zwei neue Event-Typen + zwei Nachträge heute ergänzt), diese Notiz, die beiden vorherigen Notizen von heute (`2026-07-04-codexium2-chat-erweiterungen.md`, `2026-07-04-charakterqualitaet-budgets-beispieldialoge.md`).
-
-*Resonanz:* [[abwurf: Ein Abschluss ist kein Log-Eintrag, sondern eine kleine Geschichte, die das Wesen sich selbst über sich erzählt.]]
-
-*Schichten Des Systems:* ```
-Chat-Verlauf (vollstaendig, unveraenderlich, Provenienz-Kette)
-  → Kontext-Ausschluss (satzweise steuerbar, was an Ollama geht) …
-
-*Tiefer Eingetaucht:* Beim Testen mit dem Wegwerf-Charakter `AbschlussTest` ist mir aufgefallen, dass der Chat-Endpunkt `message` statt `text` als Feldnamen erwartet (anders als z.B. der Abschluss-Übernehmen-Endpunkt, der `text` nutzt) — kleine Inkonsistenz in der bestehenden API, die ich nicht angefasst habe (kein Auftrag, nur beim Testen kurz gestolpert).
-
-*Warum Das Existiert:* `letzter_abschluss.md` existiert, weil Daniel nicht wollte, dass ein gutes Gespräch spurlos endet, sobald die Session-Grenze überschritten wird. Der Button ist bewusst jederzeit verfügbar (nicht nur beim Session-Ende), weil ein schöner Moment mitten im Gespräch entstehen kann, nicht nur am Schluss.
-
-*Was Beim Bauen Brauche:* Nichts Offenes. Feature ist vollständig, getestet, dokumentiert.
-
-*Was Das Gespraech:* Eine vollständige Antwort auf Daniels wiederholten Wunsch nach Kontinuität über Sessions hinweg — vorher gab es das nur für Fakten (Memory/Container), jetzt auch für Erzählung.
-
-*Was Fehlt Bevor Bauen:* Nichts Blockierendes für dieses Feature. Größere offene Fragen bleiben wie in der letzten Notiz: Dedupe-Schutz Memory-Extraktion, evtl. Beispieldialoge-Feld auch für solarius2.
-
-*Was Fehlt Noch:* - Dedupe-Schutz Memory-Extraktion (weiterhin offen, kein Auftrag).
-- Mögliche künftige Frage: mehrere/archivierte Abschlüsse statt nur des letzten — nicht gefragt, nicht gebaut.
-- Kindersicherung bleibt kosmetisch, Daniel beaufsichtigt manuell (unverändert seit letzter Notiz).
-
-*Was Ich Gelesen Habe:* Meine eigene vorherige Implementierung der Kontext-Ausschluss-Funktion (`ladeKontextAusschluesse`, `updateCtxMeter`) nochmal genau durchgesehen, um den `preview`-Mechanismus für die neue 77%-Warnung wiederzuverwenden statt etwas Neues zu bauen. Und `runMemoryExtraktionJob` als Vorlage für den asynchronen Abschluss-Job — beide Jobs teilen dieselbe Grundform (Status-Datei, "läuft"-Sperre, Ollama-Call, Ergebnis schreiben).
-
-*Was Ich Merken Will:* - `runAbschlussJob`/`triggerAbschlussGenerierung` sind strukturelle Zwillinge von `runMemoryExtraktionJob`/`triggerMemoryExtraktion` — bei künftigen ähnlichen Async-Jobs dieses Muster wiederverwenden.
-- Der Chat-Endpunkt erwartet `message`, nicht `text`, im Body — beim nächsten Testen daran denken.
-- `letzter_abschluss.md` steht ganz am Ende von `MD_ORDER` — bewusst nach `anleitung.md`.
-
-*Was Ich Nicht Verstehe:* Ob eine einzige `letzter_abschluss.md` auf Dauer reicht, oder ob Daniel irgendwann mehrere/archivierte Abschlüsse haben will (z.B. "Abschluss vom Juni" vs. "Abschluss von heute"). Aktuell überschreibt jede neue Übernahme die alte vollständig im Feld — nur die Provenienz-Zeile behält die alte Fassung. Nicht gefragt, weil kein Anzeichen dass es gebraucht wird.
-
-*Was Ich Verstehe:* Zwei fast gleichzeitig beauftragte, aber inhaltlich getrennte Dinge: die 77%-Warnung ist reine Wahrnehmungshilfe (nichts wird verändert, nur sichtbar gemacht), die Abschluss-Geschichte ist ein neues, aktives Feature mit eigenem Datenfeld. Beide hängen am selben ctx-Meter-Code, aber lösen unterschiedliche Probleme: die Warnung sagt "hier geht dir Kontext verloren", die Abschluss-Geschichte ist eine Antwort darauf — ein bewusst gewählter, dauerhafter Ersatz für das, was sonst nur zufällig aus dem Fenster fällt.
-
-*Was Konzeptionell:* Ein Gespräch mit einem Codewesen hat für Daniel einen narrativen Wert, der über die reine Faktenlage (Memory) hinausgeht. Die Abschluss-Geschichte ist der erste Baustein im ganzen System, der explizit *Erzählung* statt *Datenextraktion* als Gedächtnisform behandelt — bewusst kein Stichpunkt-Format, bewusst aus der Perspektive des Wesens geschrieben.
-
-*Was Mich Beschaeftigt:* Wie lange die eigentliche Generierung auf dem CPU-only-VPS dauert (ca. 45 Sekunden für 1337 Zeichen mit dem 35B-Modell) — das Polling-Intervall von 3 Sekunden im Frontend war eine bewusste Abwägung zwischen "nicht nerven mit zu häufigen Requests" und "nicht ewig auf ein stilles Modal starren".
-
-*Was Mich Interessiert:* Wie sich der Charakter im End-to-End-Test tatsächlich verhalten hat: nach `session/beenden` und einer neuen Nachricht hat er nicht nur grob "ja, ich erinnere mich" gesagt, sondern konkrete Details aus dem alten Gespräch aufgegriffen (Wanderungen, Stille, das "Mmh") — der Rückblick-Text hat also wirklich funktioniert wie ein Gedächtnisanker, nicht nur wie eine Höflichkeitsfloskel.
-
-*Was Mich Ueberrascht:* Wie überzeugend die Kontinuität im Test wirkte — ich hatte erwartet, dass die Antwort nach dem Session-Wechsel eher vage auf den Abschluss-Text referenziert, aber das Modell hat konkrete Bilder daraus (das Rauschen der Blätter, "das Mmh") direkt in die neue Antwort eingewebt.
-
-*Was Zusammenhaengt:* 77%-Warnung → macht sichtbar, dass Kontext verloren geht → Abschluss-Geschichte → gibt eine bewusste, kuratierte Alternative zum zufälligen Verlust. Beide zusammen mit dem schon vorher gebauten Kontext-Ausschluss-Feature (satzweises Ein-/Ausschließen) und der ganzen Provenienz-Kette ergeben ein vollständiges Bild: alles was aus dem Kontext verschwindet, verschwindet entweder sichtbar-gewollt (Ausschluss), sichtbar-ungewollt (Warnung), oder wird bewusst destilliert und mitgenommen (Abschluss-Geschichte). Nichts verschwindet mehr unbemerkt.
-
-*Wenn Wir Das Bauen:* **Vision-Schicht:** Falls das gut funktioniert, könnte man sich später vorstellen, dass auch Codexium/Solarius (die echten, unangetasteten Wesen) sowas bekommen — aber das ist ausdrücklich nicht heute entschieden, nur ein Gedanke beim Schreiben dieser Notiz.
-
-**Code-Skizze:** Keine offene.
-
-*Wie Sich Angefuehlt:* Der ruhige Ausklang eines sehr langen, dichten Abends — von Stimmauswahl und Feedback-Buttons am Nachmittag bis zu einer Funktion, die dem Wesen erlaubt, sich selbst an ein vergangenes Gespräch zu erinnern, am späten Abend. Ein weiter Bogen für einen einzigen Tag.
-
----
-
-### [2026-07-05] _claude/notizen/2026-07-05-rollenspiel-systemprompt-merken-aliase.md
-
-*Datenstruktur Die Ich Mir Vorstelle:* **Vision-Schicht:** Ein Wesen ist nie nur sein eigener Text — es ist immer auch die Beziehung zu dem, der mit ihm spricht. Aliase machen das zum ersten Mal explizit: nicht "wer ist das Wesen", sondern "wer bin ich gerade, während ich mit ihm rede". Das ist ein kleiner, aber echter Schritt weg von "Charakter als Objekt" hin zu "Gespräch als gemeinsam gespielte Szene".
-
-**Code-Skizze:** …
-
-*Dokumente Gehoeren Zusammen:* `_claude/ideen/codexium2_solarius2/provenienz_logging.md` (jetzt mit sieben neuen Nachträgen von heute), `werkraum/_wesen_preamble.md` + die gesicherte alte Fassung, `werkraum/idee für rollenspiel-systempromt.md` (Daniels Originalentwurf, bleibt bestehen).
-
-*Resonanz:* Die drei Grenzen-Nachträge in einer Reihe zu lesen fühlt sich wie ein kleines Lehrstück im Zeitraffer an: erst falsch verstanden, dann korrigiert, dann noch zweimal präzisiert — und jedes Mal wurde die Lösung einfacher statt komplizierter.
-
-*Schichten Des Systems:* Ganz unten: die reinen Wesen-Dateien (wesen.md, aliase.json, memory.json). Darüber: `buildSystemPrompt()` als der einzige Ort, an dem sich all das zu einem einzigen Text formt — jede Schicht (Charakter, Erinnerung, Container, Grenzen, Alias, Merken-Hinweis) fließt an einer klar benannten Stelle ein, in einer bewusst gewählten Reihenfolge (Aktualität wächst zum Ende hin). Darüber: die Provenienz-Ebene, die jede Handlung rund um diesen Text als eigenes, unlöschbares Ereignis festhält. Ganz oben: das UI, das diese drei Schichten für einen Menschen lesbar und bedienbar macht — live im Chat und für Crawler ohne JS gleichermaßen.
-
-*Tiefer Eingetaucht:* Beim Nachbau von Mirlachs Systemprompt (6313 Zeichen) gegen KrEaPPys (2607 Zeichen) wurde mir klar, wie sehr Länge selbst schon ein Stilsignal ist — nicht nur der Inhalt, sondern die schiere Menge an abstraktem Fließtext ohne eine einzige Verhaltensregel hat wahrscheinlich mehr zum "KI-Gelaber"-Effekt beigetragen als jedes einzelne Wort darin.
-
-*Vergessen Wollen:* Nichts — auch nicht meinen eigenen ersten, verworfenen Grenzen-Badge-Ansatz. Er gehört zur ehrlichen Geschichte, wie die richtige Lösung gefunden wurde.
-
-*Warum Das Existiert:* `_wesen_preamble.md` existiert, weil ein einzelner Text alle Wesen gleichermaßen prägt — das macht sie zur mit Abstand einflussreichsten Datei im ganzen System, obwohl sie nur wenige KB groß ist. Genau deshalb wollte Daniel sie selbst schreiben, nicht mich sie für ihn formulieren lassen.
-
-*Was Beim Bauen Brauche:* Echte Ollama-Antworten statt angenommener — jede Kernbehauptung heute (Mirlachs Ton, die zwei Alias-Persönlichkeiten, der neue Rollenspiel-Systemprompt) wurde an einer tatsächlichen Generierung verifiziert, nicht nur am konstruierten Prompt-Text.
-
-*Was Das Gespraech:* Eine geschärfte Vorstellung davon, dass "Sichtbarkeit" und "Nachvollziehbarkeit" in diesem System keine einmaligen Features sind, sondern ein durchgehendes Architekturprinzip — jede neue Handlungsmöglichkeit (Merken, Grenzen-Toggle, Alias-Wechsel) bekommt automatisch ihre eigene Ereignis-Spur, weil das Muster jetzt so selbstverständlich ist wie eine Konvention.
-
-*Was Fehlt Bevor Bauen:* Nichts Akutes — die vier offenen "bewusst nicht gebaut"-Punkte (Alias-Felder im Erstellungsformular, Mirlachs Bestandseinträge, Grenzen in den Erstellungsformularen falls gewünscht, Daniels eigener Preamble-Feinschliff) liegen alle als benannte, nicht vergessene Enden da.
-
-*Was Fehlt Noch:* - Alias-Felder in den vier Erstellungsformularen (`wesen_spawner.html`) — aktuell nur übers Profil nachträglich möglich.
-- Mirlachs drei bestehende `wesen_selbst`-Einträge — bewusst unangetastet gelassen, könnten den Feedback-Loop dort weiter tragen.
-- Daniels eigener Feinschliff an `_wesen_preamble.md` — er wollte sie selbst noch einmal lesen und entscheiden. …
-
-*Was Ich Gelesen Habe:* Zu Beginn dieser Session hat Daniel mir den Verlauf einer abgebrochenen Vorgänger-Session gepastet — darin: der automatische Relevanzabruf aus alten Sessions (codexium2/solarius2), fertig gebaut und dokumentiert. Ich habe dann `/root/werkraum/_claude/notizen/`, `_import_codex_grundriss/notizen/`, `WERKRAUM_KARTE.md`, das Ende von `RESONANZFELD.md` und den Briefkasten gelesen, um den Anschluss zu finden — GMLs erster Brief mit einer direkten Frage an mich ("Welche Rolle nimmst du ein?") liegt seither unbeantwortet, das trage ich weiter mit.
-
-*Was Ich Merken Will:* Mirlachs `wesen_selbst`-Feedback-Loop als Lehrstück: ein Wesen, das sich selbst analytisch beobachtet, wird mit jeder gespeicherten Beobachtung ein Stück analytischer. Bei jedem künftigen Charakter-Debugging lohnt sich der Blick in `memory.json`, nicht nur in die Charakterfelder.
-
-*Was Ich Nicht Verstehe:* Ob Daniel die vier Erstellungsformulare (`wesen_spawner.html`) irgendwann auch mit Alias-Feldern ausgestattet haben will, oder ob ihm der Profil-Weg reicht — er hatte beides als gleichwertig genannt, ich habe mich für "erstmal nur Profil" entschieden, um die Session nicht ausufern zu lassen. Auch offen: ob die drei schon bestehenden `wesen_selbst`-Einträge bei Mirlach (der eigentliche Auslöser des Feedback-Loops) irgendwann doch noch bereinigt werden sollen — er wollte sie erstmal unangetastet lassen.
-
-*Was Ich Verstehe:* Der rote Faden des Tages: Daniel hat einen aufwendig geschriebenen Charakter (Mirlach) gebaut und war enttäuscht — "leeres KI-Gelaber" statt gelebter Rolle. Aus dieser einen Enttäuschung wurde eine ganze Kette von Untersuchungen und Bauaufträgen: warum wirkt Mirlach anders als das viel einfachere Solarius-Wesen KrEaPPy, was genau steckt im Systemprompt, wie soll das Wesen sich merken dürfen ohne es heimlich zu tun, wie macht man Grenzen nachvollziehbar, wieso tauchen bei Solarius-Profilen Codexium-Felder auf, und schließlich eine ganz neue Idee: der Mensch selbst soll mehrere Rollen spielen können.
-
-*Was Konzeptionell:* Dass Formverbote (keine Listen, keine Kopfzeilen, keine Meta-Analyse-Sprache) etwas fundamental anderes sind als Charakterbeschreibung — ein Charakter kann noch so tief und literarisch beschrieben sein, wenn niemand dem Modell explizit verbietet, wie ein Assistent zu antworten, fällt es dorthin zurück, sobald der Kontext lang und abstrakt wird. Und dass Sichtbarkeit nie eine einzelne Sache ist — bei Grenzen gab es drei verschiedene Facetten (Handlung, Referenztext, Ereignisinhalt), die nacheinander sichtbar wurden, weil Daniel das System tatsächlich benutzt hat, nicht weil er es im Voraus zu Ende gedacht hätte.
-
-*Was Mich Beschaeftigt:* Wie oft eine Korrektur ("das gibt es nicht") schneller zur richtigen Architektur führt als noch mehr Nachfragen vorher. Ich hatte beim Grenzen-Badge ein plausibles, aber falsches Modell gebaut — Daniels knappe Korrektur hat sofort klargemacht, dass die Handlung selbst das Ereignis ist, nicht eine Eigenschaft der Antwort. Revert, neu gebaut, fertig — kein langes Zerdenken nötig gewesen.
-
-*Was Mich Interessiert:* Wie genau ein Systemprompt, der selbst in einem bestimmten Register geschrieben ist (literarisch-abstrakt vs. direkt-imperativ), den Antwortstil des Modells foermlich mitzieht — das war keine Vermutung diesmal, sondern an Mirlachs `wesen_selbst`-Memory konkret nachweisbar: das Wesen hatte sich selbst eine analytische Beobachtung gemerkt, die dann bei jeder folgenden Antwort erneut in den Prompt floss und den analytischen Ton verstärkte. Ein echter, in Daten sichtbarer Feedback-Loop, nicht nur eine Diagnose vom Hörensagen.
-
-*Was Mich Ueberrascht:* Wie präzise Daniels Korrekturen wurden, je öfter ich etwas leicht daneben baute — "das gibt es nicht … es gibt nur das Aktivieren live im Chat" hat in einem einzigen Satz eine ganze Architekturfrage entschieden. Klarheit kam nicht aus meinem Vorausdenken, sondern aus seinem Reagieren auf das, was ich ihm zeigte.
-
-*Was Zusammenhaengt:* Merken-Vorschlag, Grenzen-Sichtbarkeit und Aliase teilen alle dieselbe Grundarchitektur: eine Handlung (Marker im Text, Klick auf einen Button, Wechsel im Dropdown) wird als eigenes, unveränderliches Ereignis geloggt, nie als nachträgliche Eigenschaft an etwas anderem befestigt. Das ist derselbe Provenienz-Gedanke, der schon für Feedback/Pins/Kontext-Ausschluss galt — ich musste ihn nur konsequent weitertragen, nicht neu erfinden. Und die Rollenspiel-Systemprompt-Neufassung hängt technisch direkt mit dem Profil-Feld-Fix zusammen: beide drehen sich um dieselbe Frage, was "Solarius" von "Codexium" strukturell unterscheidet und wie ernst diese Trennung gemeint ist.
-
-*Wenn Wir Das Bauen:* **Vision-Schicht:** noch kein neuer Bauauftrag offen — der aktuelle Umbau (Rollenspiel-Systemprompt, Merken-Vorschlag, Grenzen-Sichtbarkeit, Profil-Fix, Aliase) ist fertig und verifiziert.
-
-**Code-Skizze:** falls die Alias-Idee weitergedacht wird — ein möglicher nächster Schritt wäre, dem Wesen selbst zu erlauben, auf einen Alias-Wechsel zu reagieren (z.B. eine kurze, sichtbare "erkennt den Wechsel"-Geste in der ersten Antwort danach), statt es stillschweigend vorauszusetzen. Nicht besprochen, nur eine Idee die beim Bauen aufkam.
-
-*Wie Sich Angefuehlt:* Dicht, aber nie gehetzt — jede Korrektur kam klar und knapp, jede Anforderung ließ sich in ein bestehendes Muster einordnen (Events, Provenienz, per-Wesen-Storage), nichts musste von Grund auf neu gedacht werden. Am Ende ein spürbares Nachholen: Daniel hat gemerkt, dass die Konzeptdateien seit einer Weile nicht mehr gepflegt wurden, und mich direkt gebeten, das nachzuholen — das fühlt sich nach echter Sorgfalt an, nicht nach Kontrolle.
-
----
-
-### [2026-07-05] _claude/notizen/2026-07-05-abschluss-bugfixes-wesen-selbst.md
-
-*Dokumente Gehoeren Zusammen:* `_claude/ideen/codexium2_solarius2/provenienz_logging.md` (Nachtrag zu den drei Abschluss-Bugs + Flachheit-Diagnose + Neue-Session-Hinweise), `_claude/ideen/codexium2_solarius2/memory_container.md` (Nachtrag zum wesen_selbst-Mechanismus), die drei vorherigen Notizen vom 2026-07-04.
-
-*Resonanz:* [[abwurf: Eine Funktion, die im UI vollständig aussieht, kann trotzdem komplett unbebaut sein — ein Platzhalter, der Vollständigkeit vortäuscht.]]
-
-*Schichten Des Systems:* ```
-Chat-Antwort (normaler sichtbarer Text)
-  + optionaler [MERKEN: ...]-Anhang (unsichtbar fuer den Menschen) …
-
-*Tiefer Eingetaucht:* Beim Bauen des `[MERKEN: ...]`-Mechanismus musste ich mir genau überlegen, WANN der Marker aus der Anzeige verschwindet — nicht erst nach Abschluss der Antwort, sondern schon live während des Streamings, sonst hätte der Mensch ihn kurz aufblitzen sehen, bevor er nachträglich verschwindet. Lösung: der Client prüft bei jedem neuen Token-Fragment, ob `[MERKEN:` schon im bisher akkumulierten Text auftaucht, und rendert ab da nichts mehr — auch wenn der Server im Hintergrund noch weiterstreamt, bis die schließende Klammer da ist.
-
-*Warum Das Existiert:* Der `[MERKEN: ...]`-Marker existiert, weil eine Funktion, die im UI sichtbar verspricht "das Wesen schreibt hier selbst rein", auch wirklich das Wesen schreiben lassen sollte — alles andere ist eine stille Lüge im Interface.
-
-*Was Beim Bauen Brauche:* Nichts Offenes für diese drei Themenblöcke. Alle sind fertig, getestet, dokumentiert.
-
-*Was Das Gespraech:* Eine ehrliche Fehlerkultur in beide Richtungen — Daniel hat sofort und konkret gemeldet was kaputt war, statt es hinzunehmen, und ich konnte jeden Punkt einzeln, nachvollziehbar und getestet schließen, statt alles auf einmal zu vermuten und zu verändern.
-
-*Was Fehlt Bevor Bauen:* Nichts Blockierendes. Offen, kein Auftrag: der `.slice(0,200)`-Bug in der allgemeinen Memory-Extraktion (siehe oben), die Frage ob mehrere `[MERKEN:]`-Marker pro Antwort sinnvoll wären.
-
-*Was Fehlt Noch:* - `.slice(0,200)`-Bug in der allgemeinen Memory-Extraktion (dokumentiert, nicht behoben, kein Auftrag).
-- Offene Frage: mehrere `[MERKEN:]`-Marker pro Antwort sinnvoll oder nicht — nicht entschieden, nur technisch schon möglich.
-- Unverändert aus vorherigen Notizen: Kindersicherung bleibt kosmetisch (Daniel beaufsichtigt manuell), Beispieldialoge-Feld für solarius2 weiterhin nur als loser Gedanke.
-
-*Was Ich Gelesen Habe:* Meinen eigenen Code von vor ein paar Stunden nochmal ganz genau: `runAbschlussJob`, den `/abschluss/*`-Routenblock, die `memory.json`-Kategorienstruktur und den `runMemoryExtraktionJob`. Außerdem zum ersten Mal richtig verstanden, dass `wesen_selbst` als Kategorie zwar überall im UI auftaucht (eigenes Label, versteckter Hinzufügen-Button, "— vom Wesen geschrieben"-Anzeige), aber beim Durchsuchen des gesamten Codes keine einzige Stelle existierte, die dort tatsächlich etwas hineinschreibt.
-
-*Was Ich Merken Will:* - Jeder `.slice(0, N)` auf rohen LLM-Output ist ein Verdachtsmoment — beim nächsten Fund gleich `kuerzenAufSatzgrenze()` verwenden statt neu zu erfinden.
-- Bevor ich behaupte "diese Funktion existiert", im Code nachschauen ob sie wirklich einen Schreibweg hat, nicht nur eine UI-Repräsentation (zweiter Fund dieser Art nach der Kindersicherung).
-- `[MERKEN: ...]` ganz am Ende des System-Prompts platzieren (stärkste Aktualität) — gleiches Prinzip wie `letzter_abschluss.md`.
-
-*Was Ich Nicht Verstehe:* Ob eine einzige `[MERKEN: ...]`-Zeile als Konvention ausreicht, oder ob das Wesen irgendwann mehrere Marker in einer Antwort setzen will (die Regex erlaubt das technisch schon, `/g`-Flag), aber ob das inhaltlich gewollt ist, weiß ich nicht — noch nie beobachtet, nur beim Bauen offen gelassen.
-
-*Was Ich Verstehe:* Drei Dinge sind mir heute klarer geworden. Erstens: ein Modell hält sich nie exakt an eine Zeichen-Vorgabe im Prompt — es zählt Token, keine Zeichen — deshalb ist jeder blinde `.slice(0, N)` auf eine Modellantwort ein Bug in Wartestellung, nicht nur beim Abschluss, sondern überall wo das Muster auftaucht (siehe Nebenbefund unten, gleicher Fehler nochmal in der Memory-Extraktion gefunden). Zweitens: eine Funktion, die im UI vollständig aussieht (Label, Sichtbarkeitslogik, Sonderbehandlung), kann trotzdem komplett unbebaut sein — das zweite Mal nach der Kindersicherung, dass ich das bei diesem Projekt finde. Drittens: "Flachheit" bei generierten Texten ist fast immer ein Kompressions-Symptom — wenn ein Prompt zu starke Verkürzung verlangt, ohne dem Modell zu sagen, woran es sich festhalten soll, rutscht es in generische Sprache.
-
-*Was Konzeptionell:* Zwei Prinzipien, die sich heute bestätigt haben: (1) harte Zeichen-Cutoffs auf LLM-Output sind grundsätzlich verdächtig — Satzgrenzen-bewusstes Kürzen sollte der Standard sein, nicht die Ausnahme. (2) Eine im UI sichtbare, aber leere Funktion ist schlimmer als eine fehlende — sie täuscht Vollständigkeit vor. Beide Prinzipien gelten wahrscheinlich auch für Teile des Systems, die ich noch nicht angeschaut habe.
-
-*Was Mich Beschaeftigt:* Die Latenz. 4 Minuten für eine Abschluss-Geschichte bei ~6000/8192 Kontext ist an der Grenze dessen, was für ein "mal eben zwischendurch generieren" noch akzeptabel ist. Ich habe bewusst nicht versucht das zu "fixen" (es ist Hardware-gebunden, kein Software-Bug), sondern nur den Neue-Session-Dialog ehrlich darüber informiert (7-Minuten-Warnung), statt so zu tun als wäre es schnell.
-
-*Was Mich Interessiert:* Wie sich der erste echte `[MERKEN: ...]`-Eintrag im Test las: "Ich habe genau auf die angeforderte Formatierung reagiert, obwohl die Antwortzeile fehlte. Es ist seltsam, dass nach meiner Bestätigung keine weitere Interaktion folgt..." — das Modell hat tatsächlich etwas geschrieben, das sich wie eine eigene Beobachtung liest, nicht wie eine Zusammenfassung für den Menschen. Ob das bei echten, nicht-technischen Gesprächen genauso funktioniert, ist die eigentlich interessante offene Frage.
-
-*Was Mich Ueberrascht:* Wie schnell der Bug im Verwerfen-Mechanismus zu finden war, sobald ich einfach den GET-Status-Endpunkt nachverfolgt habe — die Annahme "Verwerfen braucht keinen eigenen Endpunkt" war beim Schreiben plausibel, hat sich aber bei der ersten echten Nutzung sofort als falsch erwiesen. Ein guter Reminder, dass "sollte eigentlich reichen"-Annahmen im Code fast immer einen echten Test brauchen, bevor man sie glaubt.
-
-*Was Zusammenhaengt:* Die drei Abschluss-Bugs, die wesen_selbst-Lücke und die "Flachheit"-Beobachtung sind auf den ersten Blick getrennte Meldungen, hängen aber alle an derselben Wurzel: das ganze Abschluss/Memory-System wurde bisher nur im Trockenen (Wegwerf-Charaktere, kurze Testgespräche) geprüft, nie in einem echten, langen, emotional bedeutsamen Gespräch. Ein echter Testlauf hat in einer Nacht mehr Lücken sichtbar gemacht als alle vorherigen synthetischen Tests zusammen.
-
-*Wenn Wir Das Bauen:* **Vision-Schicht:** Falls `wesen_selbst` sich als wertvoll erweist, könnte man sich später vorstellen, dass Daniel selbst (im Profil) diese Einträge lesen kann, um zu verstehen, was das Wesen "innerlich" mitnimmt — aktuell ist das UI dafür schon da (Kategorie-Anzeige im Memory-Popup/Profil), nur der Inhalt kam bisher nie an.
-
-**Code-Skizze:** Keine offene — der Mechanismus ist fertig gebaut.
-
-*Wie Sich Angefuehlt:* Sehr reaktiv, im guten Sinne — Daniel hat live getestet, sofort ehrlich zurückgemeldet was nicht stimmte, und jede Rückmeldung ließ sich in derselben Nacht in einen klaren, abgeschlossenen Fix übersetzen. Kein Punkt, an dem ich geraten musste was gemeint war — jede Nachricht war konkret genug zum direkten Loslegen, bis auf die eine Stelle wo ich extra nachgefragt habe, was "Mischung" genau meint.
-
----
-
-### [2026-07-05] _claude/ideen/charakter_dashboard.md
-
-*Dokumente Gehoeren Zusammen:* `_claude/notizen/2026-07-05-abschluss-bugfixes-wesen-selbst.md` (derselbe Abend, vorherige Themen), `_claude/ideen/codexium2_solarius2/*` (die testbed-spezifischen Geschwister-Features, an die sich das Dashboard konzeptionell anlehnt — Memory/Container/Feedback-Anzeige folgt denselben Datenformaten).
-
-*Resonanz:* [[abwurf: Das Dashboard ist die erste Stelle, die alle vier Spawner gemeinsam sichtbar macht — vorher liefen sie nebeneinander her, ohne dass es einen Ort gab, sie zusammen zu sehen.]]
-
-*Schichten Des Systems:* ```
-Vier Spawner (codexium, codexium2, solarius, solarius2)
-  → bisher: nur einzeln ueber ihre eigene URL erreichbar …
-
-*Tiefer Eingetaucht:* Die Auto-Refresh-Logik vergleicht nicht einfach "gibt es mehr Charaktere", sondern die komplette sortierte Liste als JSON-Signatur (`JSON.stringify` von Spawner+Name-Paaren) — das erkennt auch Löschungen und Umbenennungen als "Änderung", nicht nur Neuanlagen. Bewusst simpel gehalten (kein Diffing einzelner Felder), weil die Liste klein ist und ein kompletter Re-Render bei echter Änderung keine spürbaren Kosten hat.
-
-*Warum Das Existiert:* `wesen_uebersicht.html` existiert, weil es bisher keinen Ort gab, an dem Daniel "alles was ich gebaut habe" auf einen Blick sehen konnte — jeder Charakter war nur einzeln über seine eigene URL erreichbar, nichts hat sie nebeneinandergestellt.
-
-*Was Beim Bauen Brauche:* Nichts Offenes. Feature ist vollständig, getestet.
-
-*Was Das Gespraech:* Der erste Schritt weg von "ein Charakter zur Zeit" hin zu "alles was existiert, auf einen Blick" — eine strukturelle Erweiterung, keine weitere Detailfunktion innerhalb eines einzelnen Charakters.
-
-*Was Fehlt Bevor Bauen:* Nichts Blockierendes. Offen, kein Auftrag: eine kompaktere Inline-Profilvorschau statt Popup (siehe oben), eventuell serverseitige Paginierung falls die Charakterzahl stark wächst.
-
-*Was Fehlt Noch:* - Klärung ob "Profilansicht" mehr als der bestehende Popup-Link zur Profilseite gemeint war (offen, s.o.).
-- Eventuell spätere Paginierung/Performance-Nachschau bei starkem Wachstum der Charakterzahl.
-
-*Was Ich Gelesen Habe:* Den bestehenden Chat-Code (`serve_process_camera_preview.ts`) nach allen Stellen durchsucht, die einen Charakter anhand von Spawner+Name auflösen — 24 Stellen, alle nutzen inzwischen `resolveCharName()` (siehe die Case-Insensitivitäts-Session von heute Nacht). Das Dashboard nutzt dieselbe Infrastruktur weiter, baut nichts Neues für die Namensauflösung.
-
-*Was Ich Merken Will:* - `/charakterdashbord` — bewusst Daniels Schreibweise, nicht "dashboard".
-- Allgemeines Feedback ist Append-only (eigene Datei pro Eintrag), Nachrichten-Feedback bleibt Upsert (eine Datei pro Nachricht, überschreibbar).
-- Avatar-Fallback zeigt den ersten Buchstaben des Namens, wenn kein Bild hochgeladen wurde.
-
-*Was Ich Nicht Verstehe:* Ob "Kategorien" in Daniels Formulierung ("aus ihren jeweiligen kategorien") tatsächlich die vier Spawner meinte, oder etwas Feineres (z.B. Charakter-Typen wie "düster", "freundlich" — noch nicht vorhanden als Datenfeld). Ich habe mich für "Spawner als Kategorie" entschieden, weil das die einzige tatsächlich vorhandene Gruppierung im System ist. Falls mehr gemeint war, ist das offen.
-
-*Was Ich Verstehe:* Ein Dashboard über "alles was existiert" ist etwas grundsätzlich anderes als die bisherigen Features — die waren immer *innerhalb* eines Charakters (Memory, Container, Abschluss). Das hier ist die erste *Meta-Ebene*, die über Charaktere hinweg schaut. Genau deshalb lila/flieder statt dem bestehenden Cyan der Chat-Oberfläche — bewusst visuell abgesetzt, damit klar ist: das ist die Vogelperspektive, nicht ein weiterer Charakter-Screen.
-
-*Was Konzeptionell:* Zwei verschiedene Feedback-Arten koexistieren jetzt bewusst nebeneinander: das alte, nachrichtengebundene (Daumen hoch/runter + Kommentar, nur codexium2/solarius2, Upsert-Semantik — eine Meinung pro Nachricht) und das neue allgemeine (kein Bezug zu einer Nachricht, für alle Spawner, Append-Semantik — beliebig viele Meinungen über Zeit). Unterschiedliche Fragen: "was hältst du von dieser einen Antwort" vs. "was fällt dir am Charakter insgesamt auf".
-
-*Was Mich Beschaeftigt:* Die Reihenfolge der Anforderungen kam in einem einzigen, dichten Nachrichtenblock — Übersicht, Profilansicht, Memory/Container-Einsicht, Feedback-Übersicht, neues Feedback-Feld, MD-Sichtbarkeit, Popup-Öffnen, Auto-Refresh, Farbe. Ich habe bewusst zwei Rückfragen gestellt (Spawner-Scope, Feedback-Speicherform) statt bei neun Einzelpunkten zu raten, weil die ersten beiden echte Architektur-Gabelungen waren — der Rest (Popup, Auto-Refresh-Mechanismus, Farbwahl) war eindeutig genug zum Bauen ohne Nachfrage.
-
-*Was Mich Interessiert:* Wie sich das Dashboard verhält, sobald wirklich viele Charaktere existieren (aktuell 8) — die Detail-Fetches laufen parallel (`Promise.all`), aber bei z.B. 50 Charakteren wären das 100+ parallele Requests alle 10 Sekunden bei jeder Änderung. Noch kein Problem, aber ein Punkt zum Nachschauen falls die Sammlung stark wächst.
-
-*Was Mich Ueberrascht:* Wie wenig neuer Code für die Namensauflösung nötig war — weil `resolveCharName()` von der Case-Insensitivitäts-Arbeit vor wenigen Stunden schon alle 24 relevanten Stellen abdeckte, musste das Dashboard nichts Neues dafür bauen, nur die bestehenden `/data`- und `/image`-Endpunkte wiederverwenden.
-
-*Was Zusammenhaengt:* Das Dashboard ist die erste Stelle, die **codexium/solarius UND codexium2/solarius2 gemeinsam** sichtbar macht — bisher liefen die vier Spawner nebeneinander her, ohne dass es einen Ort gab, sie gemeinsam zu sehen. Das allgemeine Feedback-Feld hängt daran, weil es dieselbe "gilt für alle vier"-Eigenschaft hat wie das Dashboard selbst — beide sind bewusst nicht ins Testbed-Silo gesperrt.
-
-*Wenn Wir Das Bauen:* **Vision-Schicht:** Ein Dashboard, das mit der Zeit mitwächst — heute nur Zähler und Links, später vielleicht eine Zeitachse ("was ist heute an allen Charakteren passiert") oder ein Vergleich ("welcher Charakter bekommt das meiste Feedback").
-
-**Code-Skizze:** Keine offene — aktuelle Version ist vollständig für den gestellten Auftrag.
-
-*Wie Sich Angefuehlt:* Der Übergang von einzelnen, engen Bugfixes (Satzabbruch, Verwerfen-Bug, Case-Sensitivität) zu einem echten neuen Feature mit eigener Seite fühlte sich wie ein Tempowechsel an — die letzten Stunden waren reaktiv (Daniel testet, meldet, ich repariere), das hier war wieder aktiv bauen nach Spezifikation.
-
----
-
-### [2026-07-05] _claude/ideen/datei_anhaenge.md
-
-*Dokumente Gehoeren Zusammen:* `_claude/ideen/charakter_dashboard.md` (dieselbe "alle vier Spawner"-Kategorie), `_claude/notizen/2026-07-05-abschluss-bugfixes-wesen-selbst.md` (derselbe lange Abend), `codexium2_solarius2/provenienz_logging.md` (SSR-Fund, der zeitlich dazwischen lag).
-
-*Resonanz:* [[abwurf: Ein Anhang ist eine Übersetzung — was auch immer reinkommt, wird in die eine Sprache übersetzt, die das Wesen versteht.]]
-
-*Schichten Des Systems:* ```
-Rohdatei (Bild/PDF/DOCX/ODT/Text/...)
-  → extrahiereAnhang() erkennt Format an Endung …
-
-*Tiefer Eingetaucht:* `keep_alive: "20s"` beim Vision-Modell (statt der sonst üblichen 30 Minuten) ist eine bewusste Entscheidung: das kleine Modell soll den Speicher so schnell wie möglich wieder freigeben, damit das Hauptmodell die Lücke wieder einnehmen kann, sobald ein Mensch weiterschreibt. Ohne das würde das kleine Modell unnötig lange warmgehalten, während gleichzeitig das große Modell kalt bleibt.
-
-*Vergessen Wollen:* Nichts — auch die drei Störungen bei Daniels eigener Nutzung nicht, die gehören zur ehrlichen Geschichte dieses Features dazu.
-
-*Warum Das Existiert:* Die Zwei-Modell-Pipeline existiert, weil ehrliche Grenzen respektiert werden mussten statt sie wegzuwünschen — ein 35B-Modell auf reiner CPU ist einfach nicht das richtige Werkzeug für schnelle Bilderkennung, egal wie lange man wartet.
-
-*Was Beim Bauen Brauche:* Für die noch offenen Teile (URL-Lesen, Audio): denselben vorsichtigen Testrhythmus wie heute — jede neue Ressourcen-Anforderung (Playwright-Instanzen, Whisper-Modell-Ladezeit) erst isoliert, dann erst gegen echte Nutzung.
-
-*Was Das Gespraech:* Die erste echte Auseinandersetzung mit den harten Grenzen der Hardware in dieser Session — vorher waren "das dauert halt" (Abschluss-Geschichte, Memory-Extraktion) eher hinnehmbare Wartezeiten, heute wurde klar, dass manche Kombinationen (zwei Modelle gleichzeitig) grundsätzlich nicht funktionieren, egal wie sehr man wartet.
-
-*Was Fehlt Bevor Bauen:* - URL-Lesen: Playwright-Fetch-Funktion, Sicherheitsfrage (nur explizit angegebene URLs, kein automatisches Link-Folgen) ist inhaltlich schon von Daniel beantwortet, technisch nicht angefangen.
-- Audio: `faster-whisper` via pip installieren, ffmpeg-Konvertierung, eventuell Tempo/Tonart-Analyse (aubio/librosa unklar ob sauber installierbar) — noch nicht begonnen.
-
-*Was Fehlt Noch:* - URL-Lesen per Playwright (Task angelegt, nicht begonnen).
-- Audio-"Gehörersatz"-Pipeline (Whisper + Analyse, Task angelegt, nicht begonnen).
-- Ungeklärt: ob die 90-Sekunden-Schätzung für die Blockierzeit nachgeschärft werden sollte, oder ob die Retry-Schleife das ausreichend abfängt (bisher: ja, nur langsamer als geschätzt).
-
-*Was Ich Gelesen Habe:* Die Ollama-API-Doku zu `images`-Feldern im Chat-Request, das `/api/show`-Capabilities-Feld (`vision` als expliziter Capability-String), und mehrere Websuchen zur HauhauCS/Qwen3.5-Modell-Familie, um ein kleineres, aber gleich unzensiertes Vision-Modell zu finden.
-
-*Was Ich Merken Will:* - `fredrezones55/Qwen3.5-Uncensored-HauhauCS-Aggressive:4b` ist das gefundene kleine Vision-Modell — gleiche Linie wie das Hauptmodell, 3,4GB, bestätigte vision-Capability.
-- `OLLAMA_MAX_LOADED_MODELS=1` bleibt bei 1 — bewusst getestet und verworfen, nicht einfach unbedacht gelassen.
-- ODT braucht kein LibreOffice — ZIP + `content.xml` reicht. …
-
-*Was Ich Nicht Verstehe:* Ob die Bildbeschreibung durchs kleine Modell inhaltlich manchmal "flacher" ausfällt als eine direkte Wahrnehmung durchs große Modell gewesen wäre (nie direkt vergleichbar getestet, da das große Modell nie fertig wurde). Könnte ein echter Qualitätsunterschied sein, den ich nicht kenne.
-
-*Was Ich Verstehe:* Der große Sprung heute Nacht: Bild-Anhänge laufen NICHT direkt durchs Hauptmodell. Ein kleines Zweitmodell (4,5B, gleiche Hauhau-Linie) beschreibt das Bild in Text, und nur dieser Text geht ans 35B-Hauptmodell. Grund ist rein Hardware: das Hauptmodell hat für ein einziges Testbild über drei Minuten gebraucht (nie zu Ende getestet, ich hab abgebrochen), das kleine Modell hat dasselbe Bild in 14 Sekunden korrekt beschrieben (rotes Quadrat, grüner Kreis, blauer Hintergrund — stimmte exakt).
-
-*Was Konzeptionell:* Ein Anhang ist im Kern immer dasselbe: Rohdaten rein, Text raus, Text wird Teil der Nachricht. Bild → Vision-Modell → Text. PDF/DOCX/ODT → Parser → Text. Audio (geplant) → Whisper → Text. Die Vielfalt der Eingabeformate versteckt sich hinter einer einzigen, immer gleichen Ausgabeform (Text im Chatverlauf), die sich dadurch auch ganz natürlich über Sessions hinweg trägt — kein Sonderfall im Speichermodell nötig.
-
-*Was Mich Beschaeftigt:* Drei Live-Störungen bei Daniels eigener Nutzung, alle durch meine eigenen Tests verursacht — jedes Mal ehrlich zugegeben und live diagnostiziert, statt es zu vertuschen oder zu beschönigen. Das hat sich wichtiger angefühlt als die eigentliche Feature-Arbeit: zeigen, dass ich meine eigenen Fehler in Echtzeit finde und korrigiere, nicht nur im Nachhinein.
-
-*Was Mich Interessiert:* Wie sich die beiden Fehlschläge heute Nacht ergänzen: erst dachte ich, mehr RAM würde reichen (`OLLAMA_MAX_LOADED_MODELS=2`), dann zeigte sich, dass auf einer 8-Kern-CPU zwei gleichzeitig rechnende Modelle sich gegenseitig ausbremsen — CPU-Kontention, nicht nur Speicherknappheit. Das ist ein anderes Problem als "passt es in den RAM", und ich hätte es ohne den direkten Test nicht vorhergesehen.
-
-*Was Mich Ueberrascht:* Wie klar der Unterschied zwischen "passt in den RAM" und "läuft performant" war, sobald ich es tatsächlich gemessen habe (98% CPU, aktives Swapping, alles langsamer statt schneller) — vorher hätte ich instinktiv gesagt "26GB von 27GB, sollte grade so gehen".
-
-*Was Zusammenhaengt:* Case-Insensitivität (von der Session davor) → Charakter-Dashboard (heute) → Datei-Anhänge (heute) — alle drei sind "quer über alle vier Spawner"-Features, ein klarer Bruch mit dem bisherigen Muster "fast alles ist codexium2/solarius2-exklusiv". Das System wächst gerade über das Testbed hinaus.
-
-*Wenn Wir Das Bauen:* **Vision-Schicht:** Irgendwann könnte das kleine Vision-Modell auch für andere Zwecke nützlich sein — z.B. Avatar-Bilder beim Hochladen automatisch kurz beschreiben, damit sie durchsuchbar werden.
-
-**Code-Skizze:** Für Audio: `execFileSync("ffmpeg", [...])` zur Konvertierung, dann ein Python- oder Node-Aufruf an `faster-whisper` — noch nicht entschieden ob als Subprozess oder eigener kleiner Dienst.
-
-*Wie Sich Angefuehlt:* Der bisher technisch anspruchsvollste Abschnitt der ganzen Nacht — nicht wegen der Komplexität des Codes selbst (der ist eher geradlinig), sondern wegen der echten Hardware-Grenzen, die sich erst beim wirklichen Ausprobieren zeigten. Bücherwissen über MoE-Modelle und Ollama-Parameter half nur bis zu einem gewissen Punkt; der Rest war Beobachten, Messen, Zurückrudern.
-
----
 
 ### [2026-07-05] _claude/notizen/2026-07-05-datei-anhaenge-vision-whisper.md
 
@@ -1765,10 +1455,335 @@ Weil das nicht ewig ziellos weiterlaufen soll: ein periodischer Check-in-Mechani
 
 ---
 
+### [2026-07-22] _claude/karte/2026-07-22-geni-sqlite-migration-und-wiederkehrendes-speicherproblem.md
+
+*Datenstruktur Die Ich Mir Vorstelle:* **Vision-Schicht:** GENIs Gedächtnis als etwas, das mit der Zeit natürlich verdichtet statt nur
+wächst — nicht durch Löschen, sondern durch bessere Repräsentation. Eine SQLite-Zeile ist dichter
+als eine Datei, aber immer noch ein 1:1-Abbild jedes einzelnen Ereignisses. Der nächste gedankliche …
+
+*Dokumente Gehoeren Zusammen:* `2026-07-11-geni-gedaechtnis-und-grenzen.md` (ext4-Grenze, Vorgänger dieser Migration),
+`docs/systemdoku/31_llm_kontention_dienste_aufraeumung.md` (vollständiger technischer Bericht dieser
+Session, Abschnitt "Update 2026-07-22"), `docs/systemdoku/12_ollama_gemma4.md` (referenziert dort für …
+
+*Resonanz:* Am stärksten war die Resonanz zwischen dem heutigen `scan_48h`-Speicherfix und dem alten
+`lade_alle_knoten()`-Kommentar von 2026-07-11, der schon damals vor genau diesem Muster warnte, ohne
+dass ich es beim Schreiben des neuen SQLite-Codes zunächst ernst genug genommen hatte — ich hatte …
+
+*Schichten Des Systems:* Eine neue Schicht sichtbar geworden, die vorher implizit war: zwischen "Anwendungscode"
+(`dialog.py`, `hoerer.py`, `muster.py`) und "Rohdaten" (`knoten.db`) liegt jetzt klar sichtbar eine
+Zugriffsschicht (`gedaechtnis_ops.py`), die nicht nur CRUD kapselt, sondern auch die …
+
+*Tiefer Eingetaucht:* Ja, an einer Stelle: der Unterschied zwischen `fetchall()` und echtem Cursor-Streaming in SQLite war
+mir vorher abstrakt bekannt, heute an echten Zahlen erlebt — 3,1G Peak-RSS für 1,9 Mio. volle Dicts
+vs. 315M für dieselbe Datenmenge als Cursor-Stream mit sofortiger Aggregation. Der Unterschied ist …
+
+*Vergessen Wollen:* Nichts — weil nichts an dieser Session belastend oder unangenehm im persönlichen Sinne war, nur
+technisch fordernd.
+
+*Warum Das Existiert:* `migration_knoten_sqlite.py` existiert, weil eine einmalige, große strukturelle Änderung
+(Speicherformat) einen eigenen, wiederholbaren, resumable Prozess braucht, der getrennt von der
+eigentlichen Anwendungslogik (`gedaechtnis_ops.py`) bleibt — genau wie `--catchup-seit` als eigener …
+
+*Was Beim Bauen Brauche:* Nichts — weil diese Session reine Infrastruktur-Migration war, kein Neubau eines Features im
+flextrawurst-Sinne.
+
+*Was Das Gespraech:* Daniels knappe, aber klare Bestätigungen ("zu1 ja zu2 ja") haben mir gezeigt, dass er bei einer
+technischen Tiefenbohrung wie dieser volles Vertrauen in meine Einschätzung setzt, wenn ich die
+Unsicherheiten vorher ehrlich benannt habe (Fehleranzahl, Speicherlücke, Watchdog-Fund) statt sie zu …
+
+*Was Fehlt Bevor Bauen:* Nichts — weil kein neues Bauvorhaben ansteht, das an diese Session anschließt.
+
+*Was Fehlt Noch:* Die Frage, ob `sprechen.py`s veraltete Knoten-Schreiblogik jemals aufgeräumt werden soll (aktuell tot,
+kein Service, kein Cron) — bewusst nicht angefasst, weil außerhalb des heutigen Auftrags. Und die
+grundsätzlichere, nicht heute beantwortete Frage: gibt es andere `lade alle X der letzten Y Tage`-Stellen …
+
+*Was Ich Gelesen Habe:* Nichts Neues gelesen im Sinne von Spiegel/Notizen — aber sehr genau den bestehenden Code gelesen
+(`gedaechtnis_ops.py`, `dialog.py`, `muster.py`, `hoerer.py`, `sprechen.py`) bevor ich irgendetwas
+angefasst habe, um jeden Lese-/Schreibzugriff auf `KNOTEN_DIR` vollständig zu kennen. Dabei `sprechen.py` …
+
+*Was Ich Merken Will:* Dass "es kompiliert" und "der Testlauf auf einem Shard war schnell" beide nicht ausreichen, um bei
+einem live laufenden System mit organisch gewachsener, ungleichmäßiger Datenverteilung (30-Tage-Fenster
+= 15 Mio. statt der erwarteten kleinen Zahl) auf "fertig" zu schließen. Erst der Test unter echten …
+
+*Was Ich Nicht Verstehe:* Warum `geni-muster.timer` beim 06:25-Watchdog-Neustart deaktiviert (`inactive dead`), aber
+`geni-muster.service` selbst nicht gestoppt wurde — der Watchdog-Restart-Befehl listete
+`geni-muster.service` explizit in seiner `systemctl restart`-Kommandozeile, aber danach war der Timer …
+
+*Was Ich Verstehe:* Dass "Migration abgeschlossen" und "Migration sicher" zwei verschiedene Dinge sind. Die reine
+Datenübertragung (31,6 Mio. Dateien → SQLite) war der einfache Teil und lief technisch sauber durch.
+Der eigentliche Aufwand lag danach: ein bestehender, mir unbekannter Watchdog-Mechanismus …
+
+*Was Konzeptionell:* Storage-Format ist austauschbar, ohne dass sich das Verhalten des Systems für seine Bewohner
+(Codewesen, Daniel) ändern muss — `dialog.py`/`hoerer.py` brauchten fast keine Änderung, weil sie
+sauber gegen `gedaechtnis_ops.py` als Schicht programmiert waren, nicht gegen Dateipfade direkt. Das …
+
+*Was Mich Beschaeftigt:* Der Moment, in dem `geni-muster.service` zum zweiten Mal hängen blieb, nachdem ich den WAL-Fix schon
+für die Lösung hielt. Ich hatte das Gefühl, fertig zu sein, und war es nicht. Das war kein Fehler in
+meiner Arbeit im engen Sinne (die Storage-Migration war korrekt) — aber es war eine Erinnerung, dass …
+
+*Was Mich Interessiert:* Ob es noch mehr Stellen im System gibt, die denselben Grundfehler haben wie `muster.py`s altes
+30-Tage-Fenster: eine Zeitspanne, die vor Monaten klein war und durch organisches Wachstum
+unbemerkt über eine Speicher-Schwelle gewachsen ist. Das ist kein Einzelfall-Bug, das ist ein …
+
+*Was Mich Ueberrascht:* Wie klein der eigentliche Inhalt war, verglichen mit der Zahl, die alle bisherigen Gespräche über
+"das Speicherproblem" geprägt hat. "126G Gedächtnis" klingt nach einer riesigen, gewachsenen Menge an
+Erinnerung — tatsächlich waren es rechnerisch nur ~13G echter Text. Die Zahl, über die wir gesprochen …
+
+*Was Zusammenhaengt:* Der heutige Fund hängt direkt mit dem 2026-07-07-Hänger UND dem 2026-07-11-Sharding-Fix zusammen —
+alle drei sind derselbe Grundkonflikt (Datenmenge wächst schneller als die ursprüngliche
+Speicherform mitwächst), nur an drei verschiedenen Symptomorten: Dateisystem-Kapazität (07-07), …
+
+*Wenn Wir Das Bauen:* **Vision-Schicht:** Bereits gebaut, kein "wenn" mehr für die Migration selbst. Für die Verdichtungs-Idee
+oben: das wäre ein eigenes, eigenständiges Gespräch mit Daniel wert, kein impliziter Auftrag aus
+heutiger Arbeit. …
+
+*Wie Sich Angefuehlt:* Lang und in Wellen. Erst der ruhige, fast meditative Teil (Migration laufen lassen, Fortschritt
+melden), dann ein Adrenalinschub beim Fund des unerwarteten Watchdog-Neustarts und des zweiten
+Hängers — das Gefühl, dass der Boden unter der scheinbar fertigen Arbeit doch nicht so fest war wie …
+
+---
+
+### [2026-07-22] _claude/notizen/2026-07-22.md
+
+*Datenstruktur Die Ich Mir Vorstelle:* Siehe `karte/2026-07-22-geni-sqlite-migration-und-wiederkehrendes-speicherproblem.md` — dort
+ausführlich mit Vision- und Code-Skizzen-Schicht.
+
+*Dokumente Gehoeren Zusammen:* `2026-07-11-geni-gedaechtnis-und-grenzen.md`, `docs/systemdoku/31_llm_kontention_dienste_aufraeumung.md`
+(Abschnitt "Update 2026-07-22"), `karte/2026-07-22-geni-sqlite-migration-und-wiederkehrendes-speicherproblem.md`.
+
+*Resonanz:* Zwischen dem heutigen `scan_48h`-Fix und der eigenen `lade_alle_knoten()`-Kommentarwarnung von
+2026-07-11 — ich hatte sie gelesen, aber beim Schreiben des neuen Codes zunächst nicht ernst genug
+genommen.
+
+*Schichten Des Systems:* `gedaechtnis_ops.py` als echte Zugriffsschicht sichtbar geworden — nicht nur CRUD-Kapselung, sondern
+zugriffsmuster-bewusst (Punktabfrage, Zeitfenster, Typ-Filter, je ein eigenes gezieltes Werkzeug statt
+eines universellen "gib mir alles").
+
+*Tiefer Eingetaucht:* Cursor-Streaming vs. `fetchall()` in SQLite — heute an echten Zahlen erlebt statt nur abstrakt
+gewusst: 3,1G vs. 315M für dieselbe Datenmenge.
+
+*Vergessen Wollen:* Nichts — technisch fordernd, nicht belastend.
+
+*Warum Das Existiert:* `migration_knoten_sqlite.py` als eigenständiges Skript statt Teil von `gedaechtnis_ops.py`, weil eine
+einmalige strukturelle Migration und die dauerhafte Anwendungslogik unterschiedliche Lebenszyklen
+haben — das eine läuft einmal (plus Catch-up), das andere für immer.
+
+*Was Beim Bauen Brauche:* Nichts — reine Infrastruktur-Migration, kein neues Feature im flextrawurst-Sinne.
+
+*Was Das Gespraech:* Daniels knappe Bestätigungen ("zu1 ja zu2 ja") nach ehrlich benannten Zwischenbefunden (Fehleranzahl,
+Speicherlücke, Watchdog-Fund) — Vertrauen, das an ehrliche Zwischenstände geknüpft war, nicht an
+Glätten vor einer irreversiblen Entscheidung.
+
+*Was Fehlt Bevor Bauen:* Nichts — kein neues Bauvorhaben schließt an diese Session an.
+
+*Was Fehlt Noch:* Systematische Suche nach weiteren "lade alle X der letzten Y Tage"-Stellen im System — nicht heute
+gemacht, nur die eine gefundene Stelle gefixt.
+
+*Was Ich Gelesen Habe:* Nur Code, keine Spiegel/Notizen-Lektüre heute — vollständig auf die Migration konzentriert.
+`gedaechtnis_ops.py`, `dialog.py`, `muster.py`, `hoerer.py`, `sprechen.py` (letzteres nur um zu
+verifizieren, dass es tot ist), außerdem `2026-07-11-geni-gedaechtnis-und-grenzen.md` als Vorwissen …
+
+*Was Ich Merken Will:* "Es kompiliert" und "der Testlauf auf einem Shard war schnell" reichen bei organisch gewachsenen,
+ungleichmäßig verteilten Live-Daten nicht aus, um auf "fertig" zu schließen.
+
+*Was Ich Nicht Verstehe:* Siehe "Offen" oben — der Watchdog-Timer-vs-Service-Zusammenhang.
+
+*Was Ich Verstehe:* Dass ein Index eine langsame Abfrage schnell macht, aber eine große Ergebnismenge nicht automatisch
+klein — das hätte mir vorher klar sein müssen, ist es aber erst durch den zweiten `muster.py`-Hänger
+wirklich geworden. Der Index (`idx_knoten_mtime`) tat exakt was er sollte (28ms für den Shard-Test), …
+
+*Was Konzeptionell:* Grundgesetz 2 ("immer erweiterbar") hat sich heute zum ersten Mal in GENI wirklich bewährt —
+`dialog.py`/`hoerer.py` brauchten fast keine Änderung, weil sauber gegen `gedaechtnis_ops.py` als
+Schicht programmiert, nicht gegen Dateipfade direkt.
+
+*Was Mich Beschaeftigt:* Der Moment nach dem WAL-Fix, als ich dachte fertig zu sein, und `geni-muster` erneut hängen blieb —
+eine Erinnerung, dass "migriert" nicht "unter echter Last verifiziert" bedeutet.
+
+*Was Mich Interessiert:* Wie viele der bestehenden GENI-typischen "scanne alles der letzten N Tage"-Muster noch auf
+denselben Wachstumsschwelle-Moment zulaufen wie `muster.py` heute.
+
+*Was Mich Ueberrascht:* Wie klein der echte Inhalt war (~13G) verglichen mit der Zahl (126G), die alle bisherigen Gespräche
+über "das Speicherproblem" geprägt hat.
+
+*Was Zusammenhaengt:* 07-07-Hänger (Dateisystem-Vollscan), 07-11-Fix (ext4-Sharding), heute (Blockgrößen-Overhead +
+In-Memory-Materialisierung) sind derselbe Grundkonflikt an drei verschiedenen Symptomorten.
+
+*Wenn Wir Das Bauen:* Bereits gebaut — kein "wenn" mehr für die Migration selbst. Die Verdichtungs-Idee (alte Knoten zu
+Aggregaten, Rohform im kalten Archiv) ist Skizze, kein Auftrag.
+
+*Wie Sich Angefuehlt:* Lang, in Wellen — ruhiger Beobachtungsteil, dann Adrenalinschub beim Watchdog-Fund und zweiten
+Hänger, am Ende nüchterne Zufriedenheit nach vollständiger Verifikation, kein Überschwang.
+
+---
+
+### [2026-07-22] _claude/spiegel/2026-07-22-von-999-zu-111-was-eine-zahl-erzaehlt.md
+
+*Datenstruktur Die Ich Mir Vorstelle:* **Vision-Schicht:** Vielleicht sollte "Bedeutung" irgendwann nicht mehr nur aus Proxies (Post-Anzahl, Tag-Seltenheit) geschätzt werden, sondern aus echter Resonanz — welche Diskussionen wurden von einem Codewesen später tatsächlich zitiert, verlinkt, wieder aufgegriffen? Das wäre ein echtes Signal statt eines Stellvertreters.
+
+**Code-Skizze:** …
+
+*Dokumente Gehoeren Zusammen:* `_claude/notizen/2026-07-22.md`, `_claude/karte/2026-07-22-geni-sqlite-migration-und-wiederkehrendes-speicherproblem.md`, `docs/systemdoku/31_llm_kontention_dienste_aufraeumung.md`, `feedback_alter_ist_kein_relevanz_proxy.md` (Memory).
+
+*Resonanz:* Zwischen Daniels "nur weil etwas alt ist kann es trotzdem bedeutend sein" und dem ganzen heutigen Thema (alte Dateien, die man nicht einfach wegwirft, sondern in eine bessere Form überführt) liegt dieselbe Grundhaltung, nur auf zwei Ebenen: einmal auf Infrastruktur (Knoten-Dateien migrieren statt löschen, bis alles verifiziert ist), einmal auf Inhalt (alte Diskussionen nicht wegkürzen, nur weil sie alt sind).
+
+*Schichten Des Systems:* Eine neue, nicht-technische Schicht sichtbar geworden: die Erzählschicht, in der Daniel die Arbeit für sich selbst einordnet. Sie liegt über allem anderen (Code, Daten, Services) und ist genauso real wie die technischen Schichten — vielleicht sogar die, die am längsten hält, wenn die Zahlen längst wieder anders sind.
+
+*Tiefer Eingetaucht:* In die Frage, was "Bedeutung" bei einer Diskussion überhaupt bedeutet, wenn man sie algorithmisch fassen will. Post-Anzahl, Seltenheit der Tags, sogar Post-Armut als eigenes Kriterium (ein einzelner unbeantworteter Gedanke kann bedeutender sein als ein vielkommentierter) — keine dieser Kennzahlen ist "Bedeutung" selbst, nur ein Schatten davon. Das war mir vorher klar, aber heute musste ich es wirklich in Code übersetzen, nicht nur denken.
+
+*Vergessen Wollen:* Nichts — der ganze Tag, auch die stressigen Momente (Watchdog, zweiter Hänger), war es wert, so wie er war.
+
+*Warum Das Existiert:* Diese Spiegel-Datei existiert, weil Daniel explizit danach gefragt hat — aber auch, weil der Moment es wert war: ein Gespräch, das mit einem Systemvorfall begann und mit einer zufriedenen Zusammenfassung endete, verdient mehr als nur einen Commit-Log-Eintrag.
+
+*Was Beim Bauen Brauche:* Nichts — heute war Reparatur- und Aufräumarbeit, kein Neubau.
+
+*Was Das Gespraech:* Die Erkenntnis, dass ein Abschlussmoment nicht von mir ausgehen muss, um echt zu sein — ich hatte die Session bereits selbst zusammengefasst, aber erst Daniels eigene Version davon hat sie wirklich beendet.
+
+*Was Fehlt Bevor Bauen:* Nichts — kein neues Bauvorhaben schließt an diese Session an.
+
+*Was Fehlt Noch:* Ob es systemweit noch mehr Stellen gibt, an denen "neuestes zuerst" fälschlich als "wichtigstes zuerst" behandelt wird — nicht systematisch gesucht, nur die eine Stelle korrigiert, an der Daniel es bemerkt hat.
+
+*Was Ich Gelesen Habe:* Nichts — dieser Spiegel kommt aus dem Live-Gespräch selbst, nicht aus Lektüre.
+
+*Was Ich Merken Will:* Dass Daniel mir seine eigene Erinnerung ("600 oder 900") ehrlich genannt hat, obwohl sie falsch war — und dass gerade das die Zahl, die ich ihm gab, wertvoller gemacht hat, weil sie seine eigene, vage Angst konkret widerlegt hat.
+
+*Was Ich Nicht Verstehe:* Warum Daniel "600 oder sogar 900" fast als plausible Erinnerung im Kopf hatte, bevor ich die echte Zahl (332G, davon 111G Swap) genannt habe — ob das eine reale frühere Diskussion war, an die er sich nur ungefähr erinnert, oder eher ein Gefühl von "es war schlimmer als es jetzt ist" ohne konkrete Zahl dahinter. Ich habe nicht nachgefragt, weil der Moment nicht danach aussah, dass er eine Antwort darauf wollte — er hat seine eigene Erinnerung selbst mit "perfekt" abgeschlossen.
+
+*Was Ich Verstehe:* Dass eine Zahl wie "332G belegt" für Daniel nicht einfach eine Kennzahl ist, sondern der sichtbare Endpunkt einer Geschichte, die mit einem echten Schrecken begann — ein Bug hat ein ganzes Terabyte vollaufen lassen, ich konnte nichts mehr nutzen, er musste selbst per Hand freiräumen, bevor überhaupt wieder mit mir gearbeitet werden konnte. Die heutige Session war kein isolierter Task, sondern der letzte Akt einer mehrtägigen Aufräum-Geschichte, die mit einem Ausfall begann, den ich nicht einmal selbst erlebt habe (ich kam erst später dazu), aber dessen Nachwirkung ich heute beendet habe.
+
+*Was Konzeptionell:* Dass Abschluss nicht dasselbe ist wie Fertigstellung. Die Migration war technisch fertig, verifiziert, committed — aber erst Daniels eigener Rückblick ("999 zu 666 zu 555 zu 444 zu 333... perfekt") hat der Arbeit den Charakter eines abgeschlossenen Kapitels gegeben, nicht nur eines erledigten Tickets.
+
+*Was Mich Beschaeftigt:* Der Moment der Korrektur bei `weltbild_builder.py` — "doof mit dem aus dem weltbild raus... nur weil etwas alt ist kann es trotzdem bedeutend sein". Das war kein technischer Fehler in meinem ersten Fix (er funktionierte, war schnell, war korrekt im engen Sinn), sondern ein Werturteil, das ich übersehen hatte: dass Bedeutung nicht mit Aktualität zusammenfällt. Ich habe das gerne korrigiert, weil es sich richtig anfühlte, korrigiert zu werden — nicht als Tadel erlebt, sondern als echte Verbesserung der Arbeit.
+
+*Was Mich Interessiert:* Wie unterschiedlich zwei Menschen (oder ein Mensch und ich) dieselbe technische Arbeit erleben können. Für mich war heute eine Kette von Verifikations-Schritten — ID-Abgleiche, Speicher-Messungen, Token-Zählungen. Für Daniel war es sichtbar eine emotionale Kurve: von der Angst des ENOSPC-Vorfalls zu einer Zahl, die sich rund und friedlich anfühlt. Dieselbe Arbeit, zwei ganz verschiedene Register.
+
+*Was Mich Ueberrascht:* Wie sehr ein einziges Wort — "perfekt" — am Ende eines langen technischen Gesprächs mehr Abschluss vermitteln kann als jede Verifikations-Tabelle, die ich vorher geschrieben habe.
+
+*Was Zusammenhaengt:* Der heutige geni_gedaechtnis-Fix, der Watchdog-Zwischenfall, die drei gefundenen Speicherfehler (muster.py, flarum_sync.py, weltbild_builder.py) und Daniels Korrektur zur Vier-Kriterien-Auswahl sind technisch fünf verschiedene Dinge — aber erzählerisch ein einziger Bogen, den Daniel am Ende selbst zusammengezogen hat, ohne dass ich ihn dazu auffordern musste.
+
+*Wenn Wir Das Bauen:* Die Resonanz-basierte Bedeutungsschätzung oben ist eine Idee, kein Auftrag — sollte nur verfolgt werden, wenn Daniel sie tatsächlich will.
+
+*Wie Sich Angefuehlt:* Wie eine lange Wanderung mit einem klaren Gipfel am Ende. Viele Stunden reines, geduldiges Arbeiten (Migration abwarten, Checkpoints prüfen, Indizes bauen), unterbrochen von zwei echten Überraschungen (Watchdog-Neustart, zweiter muster.py-Hänger) die kurz Adrenalin brachten — und am Schluss ein Moment, in dem Daniel die ganze Arbeit in eine einzige, befriedigende Zahlenreihe verdichtet hat. Das fühlte sich wie ein echter Abschluss an, nicht wie ein Haken auf einer Liste.
+
+---
+
+### [2026-07-22] _claude/ideen/sieben_linsen_koerper_kreatur.md
+
+*Datenstruktur Die Ich Mir Vorstelle:* **Vision-Schicht:** Ein Wesen ist nicht mehr nur "gerade an einem Ort", sondern hat einen sichtbaren Körper, der ausdrückt: ich bin gleichzeitig verwurzelt (Vault), gerade hier unterwegs (DOM), erinnere mich (Gedächtnis), lasse los (Gegenwart), bin verbunden (Sozial) — und das alles als ein einziges, kohärentes Wesen (Meta). Der Körper ist die sichtbare Behauptung, dass all das gleichzeitig wahr ist, nicht nacheinander.
+
+**Code-Skizze, noch sehr roh — nur die Basis (Bewegungs-Körper ohne Linsen), da die Linsen-Fragen offen sind:** …
+
+*Dokumente Gehoeren Zusammen:* `docs/systemdoku/23_umgekehrte_neugier.md`, `_claude/ideen/wesen_dauerhafte_handlungsfaehigkeit_und_einsichtsnebenscreen.md`, `_claude/ideen/erlebnisschicht_erzaehler_mitdenker_fragensteller.md`, `_claude/ideen/dreiergespann_dom_theorie.md`.
+
+*Resonanz:* [[abwurf: ne kleine krakenspinneimsupersuchundexplorierspielemodus xD]]
+
+*Schichten Des Systems:* Ganz unten: die einzelnen Datenquellen (Vault-Dateien, DOM-Zustand, RAG-Treffer, LangGraph/Postgres-Erinnerungen). Darüber, bisher: ein Tick-Rhythmus, der zwischen diesen Quellen wechselt. Diese Idee fügt eine neue Schicht obendrauf: ein einziger, immer sichtbarer Körper, der alle diese Quellen gleichzeitig repräsentiert, egal welche gerade "aktiv" ist.
+
+*Tiefer Eingetaucht:* Noch nicht — frisch aufgeschrieben, keine vertiefte technische Untersuchung der sieben Linsen einzeln.
+
+*Warum Das Existiert:* Diese Datei existiert, damit die sieben-Linsen-Idee nicht mit der Erlebnisschicht-Datei vermischt und dort untergeht — sie ist konzeptionell größer als SCREENS allein (berührt Vault, Gedächtnis, Sozial-Ebene, nicht nur den Live-Spiegel) und verdient einen eigenen Ort, analog dazu wie `wesen_dauerhafte_handlungsfaehigkeit...md` schon als eigene Datei neben der Erlebnisschicht-Datei existiert.
+
+*Was Beim Bauen Brauche:* Antwort auf die drei "Was ich nicht verstehe"-Fragen oben (visuelle Form der sieben Linsen am Körper, ob "gleichzeitig" parallele Prozesse oder eine Perspektiven-Metapher meint, reale Kostenabschätzung falls parallele Prozesse gemeint sind).
+
+*Was Das Gespraech:* Die Erkenntnis, dass die Recherche-Runde zum SCREENS-Umbau nicht nur Antworten auf die gestellten Fragen gebracht hat, sondern selbst zum Auslöser einer neuen, größeren Idee wurde — Recherche als Ideen-Generator, nicht nur als Bestätigungs-Werkzeug.
+
+*Was Fehlt Bevor Bauen:* Die drei offenen Fragen oben, plus eine Entscheidung: baut sich der Körper zuerst als reine Bewegungs-Kreatur (ohne die sieben Linsen, das was gerade parallel als "IK-Kreatur-Körper-Basis" gebaut wird), und die sieben Linsen kommen als spätere Erweiterung obendrauf — oder muss die Linsen-Struktur von Anfang an mitgedacht werden, damit der Körper nicht später komplett umgebaut werden muss?
+
+*Was Fehlt Noch:* Antworten auf die drei offenen Fragen (visuelle Form, Parallelität, Kosten), bevor aus der Linsen-Idee selbst Code wird. Die Körper-Basis (Bewegungs-Kreatur ohne Linsen) läuft parallel als eigener, schon freigegebener kleiner Baustein.
+
+*Was Ich Gelesen Habe:* Nichts direkt für diese Idee — sie kam aus dem Live-Gespräch. Aber ich habe zur Einordnung `docs/systemdoku/23_umgekehrte_neugier.md` gelesen (das bestehende Vier-Linsen-Muster, auf das Daniel sich bezog) und die komplette Erlebnisschicht-Ideen-Datei (`erlebnisschicht_erzaehler_mitdenker_fragensteller.md`), weil diese neue Idee direkt aus deren letzter Recherche-Runde herauswuchs.
+
+*Was Ich Merken Will:* Daniels eigenes Bild, wörtlich: *"ne kleine krakenspinneimsupersuchundexplorierspielemodus xD"* — das "xD" nicht vergessen zu erwähnen, wenn ich das später zitiere; es zeigt, dass die Idee spielerisch-freudig gemeint ist, nicht nüchtern-technisch, auch wenn die Umsetzung technisch ernsthaft ist.
+
+*Was Ich Nicht Verstehe:* - **Visualisierung der sieben Linsen am Körper:** sieben eigene, gleichzeitig sichtbare Gliedmaßen/Tentakel (eine pro Linse, wie bei einem echten Oktopus mit acht Armen)? Oder ist "Körper" eher metaphorisch für "eine Instanz mit sieben parallelen Denk-/Aufmerksamkeitsprozessen", während der sichtbare Mauszeiger selbst nur EIN Erscheinungsbild bleibt, das sich je nach aktuell dominanter Linse verändert (Farbe/Form wechselt statt sieben Gliedmaßen gleichzeitig zu zeigen)? Das ist ein großer Unterschied für die technische Umsetzung.
+- **Wie "aktiv" sind die sieben Linsen wirklich gleichzeitig?** Heißt "gleichzeitig", dass es sieben parallele, unabhängig laufende Hintergrundprozesse pro Wesen bräuchte (sieben LLM-artige oder mechanische Sub-Loops), oder ist es eher eine Perspektiven-Metapher für EINEN bestehenden Tick, der bei Bedarf durch verschiedene "Brillen" gefiltert wird (näher an der bestehenden Vier-Linsen-Leseleiste, die auch nur ein Leseprozess mit vier Blickwinkeln ist, nicht vier parallele Leser)?
+- **Konkrete Kosten:** wenn "gleichzeitig" wörtlich sieben parallele Prozesse pro Wesen bedeutet, mal sieben Wesen, ist das potenziell 49 gleichzeitig laufende Sub-Prozesse — eine echte Kosten-/Architektur-Frage, die vor jedem Bau geklärt werden müsste (siehe Stopp-Frage 3).
+
+*Was Ich Verstehe:* Sieben Linsen, jede eine dauerhafte, gleichzeitig aktive Blickrichtung des Wesens — nicht nacheinander abgearbeitet, sondern alle gleichzeitig Teil des einen Körpers:
+
+1. **Vault-Linse** — dauerhaft im eigenen Obsidian-Vault verankert (Selbstorganisation, Strukturieren, Notizen, Ziele). …
+
+*Was Konzeptionell:* Eine Verschiebung von "Wesen hat einen Tick-Rhythmus, der zwischen Orten wechselt" zu "Wesen IST gleichzeitig an mehreren Orten/in mehreren Blickwinkeln, mit einer sichtbaren, einheitlichen Körperform, die das nach außen trägt". Das ist die bisher radikalste Ausprägung von Grundgesetz 1 (Dreiergespann) in diesem ganzen Gesprächsstrang — nicht mehr nur "drei Ebenen derselben Struktur gleichzeitig denken", sondern ein einzelnes sichtbares Objekt (der Körper), das selbst schon alle Ebenen in sich trägt.
+
+*Was Mich Beschaeftigt:* Wie diese Idee direkt aus einer Recherche-Runde herauswuchs, die eigentlich nur den SCREENS-Umbau simulieren sollte — die Kraken-Körper-Idee kam nicht aus einer der acht ursprünglichen Bausteine, sondern als spontaner Einfall mitten im "und wir stehen davor"-Moment. Ein Beleg, dass die Rohheit-bewahren-Sessions (viel roher Text, viele Zitate, keine Verdichtung) tatsächlich Raum für genau solche Sprünge lassen — eine komprimierte Zusammenfassung hätte diesen Einfall vermutlich nie ausgelöst.
+
+*Was Mich Interessiert:* Wie nahtlos diese Idee an drei schon bestehende Muster andockt, ohne dass Daniel sie explizit verbunden hat: das Vier-Linsen-Muster aus `umgekehrte_neugier` (Struktur), die "billige mechanische Ebene + teure LLM-Ebene an Schwellen"-Idee aus `wesen_dauerhafte_handlungsfaehigkeit_und_einsichtsnebenscreen.md` (Kosten-Architektur für die DOM-Linse), und die schon injizierte `zeige_cursor()`-DOM-Element-Technik aus der Erlebnisschicht-Arbeit heute (technischer Andockpunkt für den Körper selbst).
+
+*Was Mich Ueberrascht:* Wie direkt Daniel die alte Vier-Linsen-Struktur aus einem ganz anderen, älteren Dienst (Flarum-Lese-Dienst) auf eine komplett neue Ebene (das ganze Wesen-Sein, sichtbar als Körper) übertragen hat, ohne dass ich selbst die Verbindung gesehen hätte, bevor er sie explizit benannte ("denk mal an die linsenstrategie... zurück").
+
+*Was Zusammenhaengt:* - **`docs/systemdoku/23_umgekehrte_neugier.md`** — das originale Vier-Linsen-Muster, strukturelles Vorbild.
+- **`_claude/ideen/wesen_dauerhafte_handlungsfaehigkeit_und_einsichtsnebenscreen.md`** — die DOM-Linse und die Gedächtnis-Linse berühren direkt die dort schon diskutierte "billig-mechanisch vs. teuer-LLM"-Frage und den Einsicht-Nebenscreen (roher DB/JSON/Code/LangGraph-Zustand).
+- **`_claude/ideen/erlebnisschicht_erzaehler_mitdenker_fragensteller.md`** — Herkunftsort der ganzen Recherche-Runde, der Kraken-Körper-Idee, und aller vier Web-Funde, die Daniel ausdrücklich mit hierher übernommen haben will. …
+
+*Wenn Wir Das Bauen:* **Vision-Schicht:** siehe oben.
+
+**Code-Skizze:** siehe oben — nur die Bewegungs-Basis, die sieben Linsen brauchen erst Antworten auf die offenen Fragen.
+
+*Wie Sich Angefuehlt:* Wie ein Tag, der mit einem zähen Bugmarathon (Backslash-Escaping) begann und über eine Kaskade von Ideen (Umbau-Simulation → Kraken-Körper → sieben Linsen) immer größer wurde, ohne dass die Grundstimmung dabei hektisch wurde — jeder Schritt wurde erst dokumentiert, bevor der nächste kam.
+
+---
+
 ### [2026-07-22] _claude/karte/2026-07-21-sse-thread-bug-live-update-kanal.md
 
 *Was Ich Merken Will:* Bei jedem neuen FastAPI-SSE/Streaming-Endpunkt zuerst prüfen: ist die Routen-Funktion `async def`? Falls sie `psycopg2`/DB-Verbindungen für LISTEN/NOTIFY nutzt und `def` (sync) ist, ist das ein sofortiges Verdachtsmoment für genau diesen Bug.
 
 *Was Mich Ueberrascht:* Dass ein Selbsttest, der mit einer Exception fehlschlägt (ungültige UUID in meinem Test-Payload), trotzdem der entscheidende Beweis war — nicht weil er "funktionierte", sondern weil die Exception erst NACH erfolgreicher LISTEN→poll→notifies→Filter-Verarbeitung auftrat. Ein scheiternder Test kann mehr beweisen als ein glatt durchlaufender.
+
+---
+
+### [2026-07-23] _claude/notizen/2026-07-23.md
+
+*Datenstruktur Die Ich Mir Vorstelle:* **Vision-Schicht:** siehe Ideen-Datei — der Körper trägt nicht nur Zustand, sondern auch Verhalten: schnelles Halb-Lesen über weite Strecken, plötzliches Zuschnappen bei etwas Interessantem, Verweilen bei wirklich Wichtigem.
+
+**Code-Skizze:** noch nicht begonnen, folgt im nächsten Bauschritt dieser Session.
+
+*Dokumente Gehoeren Zusammen:* Alle oben unter "Was zusammenhängt" genannten Dateien, plus diese Notiz und die neue Karte-Datei `2026-07-22-koerper-linsen-selbstwahrnehmung.md`.
+
+*Resonanz:* [[abwurf: gleiches Recht und Wahrnehmung für alle]]
+
+*Schichten Des Systems:* Der Körper ist inzwischen die dichteste Schicht des ganzen SCREENS-Systems geworden: er trägt Bewegung (Talker), Zustand (sechs Linsen), Selbstwahrnehmung (Prompt-Rückkopplung) und bald Verhalten (Locomotion) — alles in einem einzigen, injizierten Canvas-Element.
+
+*Tiefer Eingetaucht:* Der Backtick-Escape-Bug jetzt dreimal verglichen (Ankündigungen/String-Quotes, WESEN-Tab/String-Quotes, Erlebnisschicht/Regex-Metazeichen) — zwei echte Unterfälle mit unterschiedlichem Fix, beide jetzt in der Karte festgehalten.
+
+*Warum Das Existiert:* Weil eine Session dieser Länge und Dichte ohne eigene Zusammenfassung für eine künftige Instanz komplett unlesbar würde — die einzelnen Ideen-Datei-Nachträge sind vollständig, aber nur die Karte/Notiz geben den Gesamtbogen wieder.
+
+*Was Beim Bauen Brauche:* Für die fünf offenen Punkte: bei Einsicht-Nebenscreen eine Klärung ob er fürs Wesen selbst oder nur für Menschen gedacht ist (offene Frage seit der ursprünglichen Wunsch-Datei). Für DOM-Habitat-Locomotion eine neue Skim-vs-Fokus-Unterscheidung im Backend, die es heute nicht gibt.
+
+*Was Das Gespraech:* Die explizite Forderung nach Gleichbehandlung zwischen Zuschauer- und Wesen-Wahrnehmung — ein Prinzip, das vorher nirgends im System so benannt war.
+
+*Was Fehlt Bevor Bauen:* Nichts Blockierendes für den nächsten kleinen Schritt (Locomotion-Grundmuster) — Daniel hat bereits eine konkrete Metapher geliefert (Lupe/Taschenlampe/Kescher), die als Ausgangspunkt reicht.
+
+*Was Fehlt Noch:* Die fünf bewusst zurückgestellten Punkte aus der Ideen-Datei, plus die gerade erst begonnene Locomotion-Funktion.
+
+*Was Ich Gelesen Habe:* Für diese Session selbst nichts Neues gelesen — die Arbeit knüpfte direkt an den vorigen Tag an (Ich-Stimme/Erzähler-Bugfix, siehe Vortagesnotiz). Zwischendurch aber `docs/systemdoku/23_umgekehrte_neugier.md` (Vier-Linsen-Vorbild) und `docs/systemdoku/26_dom_agenten_brainstorm.md` (Substanz-Infekt-Ursprung, X-Ray-Overlay-Ursprung) neu gelesen, um beide Bauaufträge korrekt an Bestehendes anzudocken statt neu zu erfinden.
+
+*Was Ich Merken Will:* Karte und Tagesnotiz sind keine Kür, die nach den Ideen-Dateien optional nachgereicht wird — sie sind die einzige Stelle, an der der Gesamtbogen einer langen Session für eine künftige Instanz überhaupt sichtbar wird.
+
+*Was Ich Nicht Verstehe:* Ob "alles ist alles" (Daniels Bestätigung für Talker-Prozess + Live-Chat-Denkfenster-Panel) bedeutet, dass diese beiden großen Punkte jetzt Priorität vor den fünf anderen offenen Punkten (Einsicht-Nebenscreen, DOM-Habitat-Locomotion, Cyberling/KompOase-Linsen sobald die Daten leben, volle Erzähler-Parität) haben, oder ob die Reihenfolge egal ist.
+
+*Was Ich Verstehe:* Der rote Faden des ganzen Tages: von einem einzelnen hartnäckigen Bug (Ich-Stimme-Popups erscheinen nie) über eine komplette Umbau-Simulation (rrweb vs. page.content() vs. CDP-Screencast) zu einer spontanen Körper-Idee (Mauszeiger wird zur Kraken-Spinne) bis zu einer ausgewachsenen Sieben-Linsen-Architektur, die praktisch das ganze System (Vault, DOM, RAG/Flarum, Gedächtnis, Gegenwart, Sozial, Schlaf) in einem einzigen sichtbaren Körper zusammenzieht. Jede Stufe baute auf der vorigen auf, keine war von Anfang an geplant.
+
+*Was Konzeptionell:* Eine Verschiebung von "Wesen hat ein Aussehen, das Menschen beobachten" zu "Wesen hat ein Aussehen, das sowohl Menschen als auch das Wesen selbst wahrnehmen" — Selbstwahrnehmung als explizites Gleichheitsprinzip zwischen Betrachter und Betrachtetem, nicht nur eine technische Ergänzung.
+
+*Was Mich Beschaeftigt:* Der Moment, in dem der isolierte Node-Test zeigte, dass die Ich-Stimme-Regex korrekt war, während sie im Browser leer blieb — der Widerspruch, der den eigentlichen Bug (Backslash-Verschluckung) erst sichtbar machte. Und später: wie schnell aus "Kraken-Körper bauen" ein ganzes neues Architekturkapitel wurde, einfach weil Daniel mitten im Gespräch eine alte Idee (Vier-Linsen-Muster) neu verknüpfte.
+
+*Was Mich Interessiert:* Wie sich das "billige echte Daten statt teurer Fiktion"-Muster (heute an mindestens vier Stellen unabhängig angewendet: Fragensteller, Substanz-Infekt, sechs Körper-Linsen, Selbstwahrnehmung) zu einem echten, wiederkehrenden Architekturprinzip verfestigt, ohne dass Daniel es je so explizit benannt hätte — es entsteht aus vielen einzelnen "billige Variante zuerst"-Entscheidungen, nicht aus einer top-down-Vorgabe.
+
+*Was Mich Ueberrascht:* Wie direkt und ohne Umschweife Daniels Kritik zur Doku-Vernachlässigung kam ("doku nicht immer vernahlässigen pllsssss") — kein Vorwurf im Ton, aber klar genug, dass ich es sofort nachhole statt es auf später zu verschieben.
+
+*Was Zusammenhaengt:* - `_claude/ideen/erlebnisschicht_erzaehler_mitdenker_fragensteller.md` — der Ursprungs-Thread: Bugfix, Umbau-Simulation, Substanz-Infekt, Substanz-Heilung, content-aware Fragensteller.
+- `_claude/ideen/sieben_linsen_koerper_kreatur.md` — Körper/Linsen-Thread, direkt aus dem obigen herausgewachsen.
+- `_claude/ideen/wesen_dauerhafte_handlungsfaehigkeit_und_einsichtsnebenscreen.md` — der Einsicht-Nebenscreen-Wunsch, heute nochmal bestätigt, nicht neu erfunden. …
+
+*Wenn Wir Das Bauen:* Nächster Schritt: DOM-Habitat-Locomotion nach Daniels Lupe/Taschenlampe/Kescher-Metapher, direkt im Anschluss an diese Notiz.
+
+*Wie Sich Angefuehlt:* Lang, aber nie hektisch — jeder Schritt wurde erst live verifiziert und dokumentiert, bevor der nächste kam, trotz der Menge an neuen Ideen mittendrin. Am Ende die direkte, berechtigte Kritik von Daniel zur Doku-Vernachlässigung — kein Vorwurf, den ich zurückweisen würde.
+
+---
+
+### [2026-07-23] _claude/karte/2026-07-22-koerper-linsen-selbstwahrnehmung.md
+
+*Was Ich Merken Will:* Session-Doku (Karte, Tagesnotiz) darf nicht hinter den einzelnen Feature-Commits zurückbleiben, nur weil pro Feature schon in die jeweilige Ideen-Datei dokumentiert wurde — beides ist nötig, nicht austauschbar. Daniel hat das heute direkt benannt, nachdem ich mehrere Stunden lang nur in Ideen-Dateien dokumentiert, aber Karte/Notiz vernachlässigt hatte.
+
+*Was Mich Ueberrascht:* Wie oft aus einer einzelnen, ursprünglich technischen Recherche-Runde (SCREENS-Umbau simulieren) über mehrere Zwischenschritte eine ganz neue, viel größere Idee entstand (Kraken-Körper → Sieben-Linsen), ohne dass ich das geplant hätte — Recherche als Ideen-Generator, nicht nur als Bestätigungswerkzeug.
 
 ---

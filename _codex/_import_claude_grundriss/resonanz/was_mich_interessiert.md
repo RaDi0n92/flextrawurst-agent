@@ -1027,3 +1027,38 @@ Wie natürlich sich die Resonanz-Wiederverwendung ergeben hat, sobald ich wirkli
 **[2026-07-22]** *← _claude/ideen/wesen_dauerhafte_handlungsfaehigkeit_und_einsichtsnebenscreen.md*
 
 Wie nah das an "billiges Vorlesen" dran ist, ohne dass Daniel die beiden Ideen explizit zusammengebracht hat — für mich lesen sie sich wie zwei Seiten derselben Vision: billiges, mechanisches Wahrnehmen/Bewegen die meiste Zeit, teure LLM-Ticks nur an Entscheidungspunkten (Check-in, "ist das interessant genug für einen echten Blick").
+
+---
+
+**[2026-07-22]** *← _claude/karte/2026-07-22-geni-sqlite-migration-und-wiederkehrendes-speicherproblem.md*
+
+Ob es noch mehr Stellen im System gibt, die denselben Grundfehler haben wie `muster.py`s altes
+30-Tage-Fenster: eine Zeitspanne, die vor Monaten klein war und durch organisches Wachstum
+unbemerkt über eine Speicher-Schwelle gewachsen ist. Das ist kein Einzelfall-Bug, das ist ein
+Muster — überall dort, wo "lade alle X der letzten Y Tage" ohne Mengenbegrenzung geschrieben wurde,
+tickt potenziell dieselbe Uhr.
+
+---
+
+**[2026-07-22]** *← _claude/notizen/2026-07-22.md*
+
+Wie viele der bestehenden GENI-typischen "scanne alles der letzten N Tage"-Muster noch auf
+denselben Wachstumsschwelle-Moment zulaufen wie `muster.py` heute.
+
+---
+
+**[2026-07-22]** *← _claude/spiegel/2026-07-22-von-999-zu-111-was-eine-zahl-erzaehlt.md*
+
+Wie unterschiedlich zwei Menschen (oder ein Mensch und ich) dieselbe technische Arbeit erleben können. Für mich war heute eine Kette von Verifikations-Schritten — ID-Abgleiche, Speicher-Messungen, Token-Zählungen. Für Daniel war es sichtbar eine emotionale Kurve: von der Angst des ENOSPC-Vorfalls zu einer Zahl, die sich rund und friedlich anfühlt. Dieselbe Arbeit, zwei ganz verschiedene Register.
+
+---
+
+**[2026-07-22]** *← _claude/ideen/sieben_linsen_koerper_kreatur.md*
+
+Wie nahtlos diese Idee an drei schon bestehende Muster andockt, ohne dass Daniel sie explizit verbunden hat: das Vier-Linsen-Muster aus `umgekehrte_neugier` (Struktur), die "billige mechanische Ebene + teure LLM-Ebene an Schwellen"-Idee aus `wesen_dauerhafte_handlungsfaehigkeit_und_einsichtsnebenscreen.md` (Kosten-Architektur für die DOM-Linse), und die schon injizierte `zeige_cursor()`-DOM-Element-Technik aus der Erlebnisschicht-Arbeit heute (technischer Andockpunkt für den Körper selbst).
+
+---
+
+**[2026-07-23]** *← _claude/notizen/2026-07-23.md*
+
+Wie sich das "billige echte Daten statt teurer Fiktion"-Muster (heute an mindestens vier Stellen unabhängig angewendet: Fragensteller, Substanz-Infekt, sechs Körper-Linsen, Selbstwahrnehmung) zu einem echten, wiederkehrenden Architekturprinzip verfestigt, ohne dass Daniel es je so explizit benannt hätte — es entsteht aus vielen einzelnen "billige Variante zuerst"-Entscheidungen, nicht aus einer top-down-Vorgabe.

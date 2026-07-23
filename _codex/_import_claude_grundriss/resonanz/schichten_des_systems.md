@@ -1161,3 +1161,39 @@ Eine neue Schicht wurde heute sichtbar, die vorher implizit war: "generische Bet
 **[2026-07-22]** *← _claude/ideen/wesen_dauerhafte_handlungsfaehigkeit_und_einsichtsnebenscreen.md*
 
 Nichts — dieser Abschnitt gehört eher in Reflexions-Dateien nach echtem Lesen/Bauen, nicht in eine reine Wunsch-Notiz.
+
+---
+
+**[2026-07-22]** *← _claude/karte/2026-07-22-geni-sqlite-migration-und-wiederkehrendes-speicherproblem.md*
+
+Eine neue Schicht sichtbar geworden, die vorher implizit war: zwischen "Anwendungscode"
+(`dialog.py`, `hoerer.py`, `muster.py`) und "Rohdaten" (`knoten.db`) liegt jetzt klar sichtbar eine
+Zugriffsschicht (`gedaechtnis_ops.py`), die nicht nur CRUD kapselt, sondern auch die
+Zugriffsmuster kennt (Punktabfrage, Zeitfenster, Typ-Filter) und für jedes ein eigenes, gezieltes
+Werkzeug anbietet statt eines universellen "gib mir alles"-Aufrufs.
+
+---
+
+**[2026-07-22]** *← _claude/notizen/2026-07-22.md*
+
+`gedaechtnis_ops.py` als echte Zugriffsschicht sichtbar geworden — nicht nur CRUD-Kapselung, sondern
+zugriffsmuster-bewusst (Punktabfrage, Zeitfenster, Typ-Filter, je ein eigenes gezieltes Werkzeug statt
+eines universellen "gib mir alles").
+
+---
+
+**[2026-07-22]** *← _claude/spiegel/2026-07-22-von-999-zu-111-was-eine-zahl-erzaehlt.md*
+
+Eine neue, nicht-technische Schicht sichtbar geworden: die Erzählschicht, in der Daniel die Arbeit für sich selbst einordnet. Sie liegt über allem anderen (Code, Daten, Services) und ist genauso real wie die technischen Schichten — vielleicht sogar die, die am längsten hält, wenn die Zahlen längst wieder anders sind.
+
+---
+
+**[2026-07-22]** *← _claude/ideen/sieben_linsen_koerper_kreatur.md*
+
+Ganz unten: die einzelnen Datenquellen (Vault-Dateien, DOM-Zustand, RAG-Treffer, LangGraph/Postgres-Erinnerungen). Darüber, bisher: ein Tick-Rhythmus, der zwischen diesen Quellen wechselt. Diese Idee fügt eine neue Schicht obendrauf: ein einziger, immer sichtbarer Körper, der alle diese Quellen gleichzeitig repräsentiert, egal welche gerade "aktiv" ist.
+
+---
+
+**[2026-07-23]** *← _claude/notizen/2026-07-23.md*
+
+Der Körper ist inzwischen die dichteste Schicht des ganzen SCREENS-Systems geworden: er trägt Bewegung (Talker), Zustand (sechs Linsen), Selbstwahrnehmung (Prompt-Rückkopplung) und bald Verhalten (Locomotion) — alles in einem einzigen, injizierten Canvas-Element.

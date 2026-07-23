@@ -1,0 +1,29 @@
+---
+id: FW-RAW-CURRENT-002
+status: BESTAETIGT
+typ: raw
+themenraum: RAW
+version: session
+tags: [daniel, rawtext, rettung, v21, v22]
+---
+
+# CURRENT 002  VORHERIGE SESSION MAXIMAL ERNST REKONSTRUIEREN
+> **Rohtext:** unverändert als eigener Gesprächskörper bewahrt.
+
+<!-- RAWTEXT_BEGIN -->
+bitte nimm auch das analysieren der vorherigen session auch so ernst wie möglich um eventuell deine schritte zu rekonstureien komplett aber auch von v1 zus zur letzten nochmal ess zu haben
+<!-- RAWTEXT_END -->
+
+---
+
+## Vernetzung
+
+- [Vorheriger Knoten](FW-RAW-CURRENT-001__CURRENT_001_RETTUNGSAUFTRAG_UND_NEUE_R22_R23_TEXTE.md) · `FW-RAW-CURRENT-001`
+- [Nächster Knoten](FW-RAW-CURRENT-003__CURRENT_003_STRUKTUR_RUECKSCHRITT.md) · `FW-RAW-CURRENT-003`
+- [Themenindex](00_INDEX.md) · `FW-INDEX-RAW`
+- [Verwandt: CURRENT 004  MACH ES GUT](FW-RAW-CURRENT-004__CURRENT_004_MACH_ES_GUT.md) · `FW-RAW-CURRENT-004`
+- [Verwandt: CURRENT 005  MENSCHENLESBAR ROHTEXTE ISOLIERT](FW-RAW-CURRENT-005__CURRENT_005_MENSCHENLESBAR_ROHTEXTE_ISOLIERT.md) · `FW-RAW-CURRENT-005`
+- [Verwandt: CURRENT 006  FRUEHER 300 MDS STATT TEXTSUMPF](FW-RAW-CURRENT-006__CURRENT_006_FRUEHER_300_MDS_STATT_TEXTSUMPF.md) · `FW-RAW-CURRENT-006`
+- [Verwandt: CURRENT 007  SESSIONBEGINN WAR GLASKLAR](FW-RAW-CURRENT-007__CURRENT_007_SESSIONBEGINN_WAR_GLASKLAR.md) · `FW-RAW-CURRENT-007`
+- [Versionsspur v21](../03_SESSION_UND_VERSIONENSPUR/FW-VERSION-21__VERSIONSKARTE_V21.md) · `FW-VERSION-21`
+- [Versionsspur v22](../03_SESSION_UND_VERSIONENSPUR/FW-VERSION-22__VERSIONSKARTE_V22.md) · `FW-VERSION-22`

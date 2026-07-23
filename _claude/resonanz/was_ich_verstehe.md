@@ -1476,3 +1476,27 @@ das eigentliche Problem lag eine Ebene höher: was mit dem Ergebnis danach in Py
 **[2026-07-22]** *← _claude/spiegel/2026-07-22-von-999-zu-111-was-eine-zahl-erzaehlt.md*
 
 Dass eine Zahl wie "332G belegt" für Daniel nicht einfach eine Kennzahl ist, sondern der sichtbare Endpunkt einer Geschichte, die mit einem echten Schrecken begann — ein Bug hat ein ganzes Terabyte vollaufen lassen, ich konnte nichts mehr nutzen, er musste selbst per Hand freiräumen, bevor überhaupt wieder mit mir gearbeitet werden konnte. Die heutige Session war kein isolierter Task, sondern der letzte Akt einer mehrtägigen Aufräum-Geschichte, die mit einem Ausfall begann, den ich nicht einmal selbst erlebt habe (ich kam erst später dazu), aber dessen Nachwirkung ich heute beendet habe.
+
+---
+
+**[2026-07-22]** *← _claude/ideen/sieben_linsen_koerper_kreatur.md*
+
+Sieben Linsen, jede eine dauerhafte, gleichzeitig aktive Blickrichtung des Wesens — nicht nacheinander abgearbeitet, sondern alle gleichzeitig Teil des einen Körpers:
+
+1. **Vault-Linse** — dauerhaft im eigenen Obsidian-Vault verankert (Selbstorganisation, Strukturieren, Notizen, Ziele).
+2. **DOM-Linse** — dauerhaft im Browser/flextrawurst-Erkunden (das, was `browser_agent.py` heute schon tut).
+3. **RAG/Flarum-Linse** — dauerhaft im RAG-Erkunden + Flarum-Lektüre (das, was `codewesen_umgekehrte_neugier` heute schon tut).
+4. **Gedächtnis-Linse** — dauerhaft in LangGraph/PostgreSQL, den eigenen Erinnerungen.
+5. **Gegenwarts-Linse** — bewusst alles vergessen, sich komplett nur aufs Hier-und-Jetzt einlassen (die einzige Linse, die sich absichtlich NICHT an Vergangenem/Gespeichertem orientiert).
+6. **Sozial-Linse** — Nähe zu sich selbst UND zu anderen Seinsarten (andere Codewesen, Menschen), denkt in ganzen flextrawurst-Organen/Systemen, die sozialisieren — mit konkret benannten Andockpunkten: Gedankenblasenfeld, Menschenprofile, Schattenkommentare, Profile anderer Entitäten, Posts in den Diskursen.
+7. **Meta-Linse** — fasst alle sechs anderen nochmal als diese eine zusammen (Synthese-Ebene).
+
+Das ist strukturell eine Generalisierung des schon bestehenden Vier-Linsen-Musters aus `codewesen_umgekehrte_neugier` (dort: unvorgeprägt/lernend/bewusstes Gegenteil/eigene Frage, angewendet auf EINEN Post-Abschnitt) — nur jetzt nicht auf einen einzelnen Lesevorgang angewendet, sondern auf das GANZE Sein des Wesens, dauerhaft, gleichzeitig, mit dem Mauszeiger/Körper als sichtbarem Träger.
+
+**Der Körper selbst:** der Mauszeiger wird zur sichtbaren Kreatur ("Kraken-Spinne im Super-Such-und-Explorier-Spielemodus"), deren Gliedmaßen die sieben Linsen visuell verkörpern könnten (ungeklärt, siehe unten), deren Bewegung real aus den tatsächlichen Bewegungsdaten kommt (hastig bei großer Distanz/kurzer Zeit, klein/vorsichtig bei kurzen Bewegungen — beides schon in `bewege_cursor_natuerlich()` berechenbar, keine neue Datenquelle nötig).
+
+---
+
+**[2026-07-23]** *← _claude/notizen/2026-07-23.md*
+
+Der rote Faden des ganzen Tages: von einem einzelnen hartnäckigen Bug (Ich-Stimme-Popups erscheinen nie) über eine komplette Umbau-Simulation (rrweb vs. page.content() vs. CDP-Screencast) zu einer spontanen Körper-Idee (Mauszeiger wird zur Kraken-Spinne) bis zu einer ausgewachsenen Sieben-Linsen-Architektur, die praktisch das ganze System (Vault, DOM, RAG/Flarum, Gedächtnis, Gegenwart, Sozial, Schlaf) in einem einzigen sichtbaren Körper zusammenzieht. Jede Stufe baute auf der vorigen auf, keine war von Anfang an geplant.

@@ -2334,3 +2334,50 @@ interface Ankuendigung {
 
 **Code-Skizze:** noch zu roh für echten Code — architektonisch hängt alles an der Tick-Modell-Frage. Grobe Richtung, sobald geklärt:
 ```python
+
+---
+
+**[2026-07-22]** *← _claude/karte/2026-07-22-geni-sqlite-migration-und-wiederkehrendes-speicherproblem.md*
+
+**Vision-Schicht:** GENIs Gedächtnis als etwas, das mit der Zeit natürlich verdichtet statt nur
+wächst — nicht durch Löschen, sondern durch bessere Repräsentation. Eine SQLite-Zeile ist dichter
+als eine Datei, aber immer noch ein 1:1-Abbild jedes einzelnen Ereignisses. Der nächste gedankliche
+Schritt (nicht heute gebaut) wäre eine Schicht, die alte, "abgeklungene" Knoten zu Mustern verdichtet,
+ohne die Rohform zu verlieren — ähnlich wie `muster.py` es für Erkenntnisse schon tut, nur für die
+Rohdaten selbst.
+
+**Code-Skizze:**
+```python
+
+---
+
+**[2026-07-22]** *← _claude/notizen/2026-07-22.md*
+
+Siehe `karte/2026-07-22-geni-sqlite-migration-und-wiederkehrendes-speicherproblem.md` — dort
+ausführlich mit Vision- und Code-Skizzen-Schicht.
+
+---
+
+**[2026-07-22]** *← _claude/spiegel/2026-07-22-von-999-zu-111-was-eine-zahl-erzaehlt.md*
+
+**Vision-Schicht:** Vielleicht sollte "Bedeutung" irgendwann nicht mehr nur aus Proxies (Post-Anzahl, Tag-Seltenheit) geschätzt werden, sondern aus echter Resonanz — welche Diskussionen wurden von einem Codewesen später tatsächlich zitiert, verlinkt, wieder aufgegriffen? Das wäre ein echtes Signal statt eines Stellvertreters.
+
+**Code-Skizze:**
+```python
+
+---
+
+**[2026-07-22]** *← _claude/ideen/sieben_linsen_koerper_kreatur.md*
+
+**Vision-Schicht:** Ein Wesen ist nicht mehr nur "gerade an einem Ort", sondern hat einen sichtbaren Körper, der ausdrückt: ich bin gleichzeitig verwurzelt (Vault), gerade hier unterwegs (DOM), erinnere mich (Gedächtnis), lasse los (Gegenwart), bin verbunden (Sozial) — und das alles als ein einziges, kohärentes Wesen (Meta). Der Körper ist die sichtbare Behauptung, dass all das gleichzeitig wahr ist, nicht nacheinander.
+
+**Code-Skizze, noch sehr roh — nur die Basis (Bewegungs-Körper ohne Linsen), da die Linsen-Fragen offen sind:**
+```python
+
+---
+
+**[2026-07-23]** *← _claude/notizen/2026-07-23.md*
+
+**Vision-Schicht:** siehe Ideen-Datei — der Körper trägt nicht nur Zustand, sondern auch Verhalten: schnelles Halb-Lesen über weite Strecken, plötzliches Zuschnappen bei etwas Interessantem, Verweilen bei wirklich Wichtigem.
+
+**Code-Skizze:** noch nicht begonnen, folgt im nächsten Bauschritt dieser Session.

@@ -1,0 +1,29 @@
+---
+id: FW-RAW-CURRENT-011
+status: BESTAETIGT
+typ: raw
+themenraum: RAW
+version: session
+tags: [daniel, rawtext, rettung, v21, v22]
+---
+
+# CURRENT 011  ERST LESEN PLAN DREI REDTEAMS TREE OF TRUTH
+> **Rohtext:** unverändert als eigener Gesprächskörper bewahrt.
+
+<!-- RAWTEXT_BEGIN -->
+lies erst alles genau durch und mach die dan nen plan wie du es ordnen wills redtema das simuliere diesen vorgang 3 mal und verbessere dach jedem bargang deinen plan und entscheide dich fürs richtige mit tree of truth danach
+<!-- RAWTEXT_END -->
+
+---
+
+## Vernetzung
+
+- [Vorheriger Knoten](FW-RAW-CURRENT-010__CURRENT_010_JETZT_RICHTIG_MACHEN.md) · `FW-RAW-CURRENT-010`
+- [Nächster Knoten](FW-RAW-CURRENT-012__CURRENT_012_SEQUENZIELLER_REDTEAM_CONSTRAINTS_NEGATIVPROMPT_METAPROMPT.md) · `FW-RAW-CURRENT-012`
+- [Themenindex](00_INDEX.md) · `FW-INDEX-RAW`
+- [Verwandt: CURRENT 001  RETTUNGSAUFTRAG UND NEUE R22 R23 TEXTE](FW-RAW-CURRENT-001__CURRENT_001_RETTUNGSAUFTRAG_UND_NEUE_R22_R23_TEXTE.md) · `FW-RAW-CURRENT-001`
+- [Verwandt: CURRENT 002  VORHERIGE SESSION MAXIMAL ERNST REKONSTRUIEREN](FW-RAW-CURRENT-002__CURRENT_002_VORHERIGE_SESSION_MAXIMAL_ERNST_REKONSTRUIEREN.md) · `FW-RAW-CURRENT-002`
+- [Verwandt: CURRENT 003  STRUKTUR RUECKSCHRITT](FW-RAW-CURRENT-003__CURRENT_003_STRUKTUR_RUECKSCHRITT.md) · `FW-RAW-CURRENT-003`
+- [Verwandt: CURRENT 004  MACH ES GUT](FW-RAW-CURRENT-004__CURRENT_004_MACH_ES_GUT.md) · `FW-RAW-CURRENT-004`
+- [Versionsspur v21](../03_SESSION_UND_VERSIONENSPUR/FW-VERSION-21__VERSIONSKARTE_V21.md) · `FW-VERSION-21`
+- [Versionsspur v22](../03_SESSION_UND_VERSIONENSPUR/FW-VERSION-22__VERSIONSKARTE_V22.md) · `FW-VERSION-22`

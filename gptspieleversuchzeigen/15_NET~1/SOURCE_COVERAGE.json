@@ -1,0 +1,1913 @@
+[
+  {
+    "version": "v21",
+    "path": "CHANGELOG.md",
+    "sha256": "cc3cab924b45cad4d5d7cf33e8a0a9b7758c489e399c379e15bbdc519600e869",
+    "bytes": 1166,
+    "parts": 1,
+    "reconstructed_sha256": "cc3cab924b45cad4d5d7cf33e8a0a9b7758c489e399c379e15bbdc519600e869",
+    "ok": true,
+    "canonical_nodes": [
+      "FW-NET-001"
+    ]
+  },
+  {
+    "version": "v21",
+    "path": "LINKPRUEFUNG.md",
+    "sha256": "45b1d684b73188f1aa2d70985a3fcf9dd5cd32365115bcc8f5060641000cf64a",
+    "bytes": 278,
+    "parts": 1,
+    "reconstructed_sha256": "45b1d684b73188f1aa2d70985a3fcf9dd5cd32365115bcc8f5060641000cf64a",
+    "ok": true,
+    "canonical_nodes": [
+      "FW-NET-001"
+    ]
+  },
+  {
+    "version": "v21",
+    "path": "MANIFEST.md",
+    "sha256": "b8ad9595ae505884c4b601b2297e3975fe191460880b1e5b787857d1078feb5a",
+    "bytes": 45058,
+    "parts": 2,
+    "reconstructed_sha256": "b8ad9595ae505884c4b601b2297e3975fe191460880b1e5b787857d1078feb5a",
+    "ok": true,
+    "canonical_nodes": [
+      "FW-NET-001",
+      "FW-NET-003",
+      "FW-NET-005",
+      "FW-NET-007",
+      "FW-NET-009",
+      "FW-NET-011",
+      "FW-NET-013",
+      "FW-NET-015",
+      "FW-NET-016",
+      "FW-NET-018",
+      "FW-NET-020",
+      "FW-NET-022",
+      "FW-NET-024",
+      "FW-NET-025",
+      "FW-NET-027",
+      "FW-NET-029",
+      "FW-NET-031",
+      "FW-NET-033",
+      "FW-NET-034",
+      "FW-NET-037",
+      "FW-NET-038",
+      "FW-NET-039",
+      "FW-NET-040",
+      "FW-NET-041",
+      "FW-NET-042"
+    ]
+  },
+  {
+    "version": "v21",
+    "path": "MAXUS_DUST_VERTRAG/00_START_UND_FREIGABEVERTRAG.md",
+    "sha256": "3395b5d663ffc373da6356145bcd518943a9c2a9cb518bfb208cb3f774ec4e18",
+    "bytes": 1625,
+    "parts": 1,
+    "reconstructed_sha256": "3395b5d663ffc373da6356145bcd518943a9c2a9cb518bfb208cb3f774ec4e18",
+    "ok": true,
+    "canonical_nodes": [
+      "FW-ORG-002"
+    ]
+  },
+  {
+    "version": "v21",
+    "path": "MAXUS_DUST_VERTRAG/01_PRIMAERSETZUNG_DUST_88888_WESEN.md",
+    "sha256": "5cb015605471e8abfd9df358cc0c00842a209f41de012e77bb9bb78df88e95a8",
+    "bytes": 2169,
+    "parts": 1,
+    "reconstructed_sha256": "5cb015605471e8abfd9df358cc0c00842a209f41de012e77bb9bb78df88e95a8",
+    "ok": true,
+    "canonical_nodes": [
+      "FW-DUST-001"
+    ]
+  },
+  {
+    "version": "v21",
+    "path": "MAXUS_DUST_VERTRAG/02_DUST_ONTOLOGIE_UND_SIMULATIONSTIEFEN.md",
+    "sha256": "87bf4a578761ae00375a44fc93f2ffab4ff4b5cbcaf02c98a18207204778b96d",
+    "bytes": 2749,
+    "parts": 1,
+    "reconstructed_sha256": "87bf4a578761ae00375a44fc93f2ffab4ff4b5cbcaf02c98a18207204778b96d",
+    "ok": true,
+    "canonical_nodes": [
+      "FW-TEST-005"
+    ]
+  },
+  {
+    "version": "v21",
+    "path": "MAXUS_DUST_VERTRAG/03_ZWOELF_SPIELE_DURCHSETZUNG_BAURING3.md",
+    "sha256": "f6f3ee62f2c6f22f920834a38dc31c7e050c56e84ccf6502d0d4b9f4eb280e85",
+    "bytes": 3474,
+    "parts": 1,
+    "reconstructed_sha256": "f6f3ee62f2c6f22f920834a38dc31c7e050c56e84ccf6502d0d4b9f4eb280e85",
+    "ok": true,
+    "canonical_nodes": [
+      "FW-ORG-003"
+    ]
+  },
+  {
+    "version": "v21",
+    "path": "MAXUS_DUST_VERTRAG/04_ANTI_POKEMON_FANART_GATE.md",
+    "sha256": "00a9f07930d12e22a424dc3fb85acb90fb054548a5983ffab37ecbc530275d4d",
+    "bytes": 1390,
+    "parts": 1,
+    "reconstructed_sha256": "00a9f07930d12e22a424dc3fb85acb90fb054548a5983ffab37ecbc530275d4d",
+    "ok": true,
+    "canonical_nodes": [
+      "FW-ORG-004"
+    ]
+  },
+  {
+    "version": "v21",
+    "path": "MAXUS_DUST_VERTRAG/05_PFLICHTFRAGEN_222_BEANTWORTET.md",
+    "sha256": "9b137955481e7a50094fa57229e10f84064fbc4dea69389d7697658e18349502",
+    "bytes": 56400,
+    "parts": 2,
+    "reconstructed_sha256": "9b137955481e7a50094fa57229e10f84064fbc4dea69389d7697658e18349502",
+    "ok": true,
+    "canonical_nodes": [
+      "FW-BUILD-001",
+      "FW-MOVE-001"
+    ]
+  },
+  {
+    "version": "v21",
+    "path": "MAXUS_DUST_VERTRAG/06_ARCHITEKTUR_VOR_BAU.md",
+    "sha256": "87f5f6a90a8f67de5e7c876de3c8b2cc8f7b470a513d40ff4660f54b7b3638eb",
+    "bytes": 1790,
+    "parts": 1,
+    "reconstructed_sha256": "87f5f6a90a8f67de5e7c876de3c8b2cc8f7b470a513d40ff4660f54b7b3638eb",
+    "ok": true,
+    "canonical_nodes": [
+      "FW-BUILD-002"
+    ]
+  },
+  {
+    "version": "v21",
+    "path": "MAXUS_DUST_VERTRAG/07_TESTPLAN_VOR_BAU.md",
+    "sha256": "ebf5c869dada7244e0dce122d91ccc4dfd9ff75150ea743f50433402ac6c2790",
+    "bytes": 2182,
+    "parts": 1,
+    "reconstructed_sha256": "ebf5c869dada7244e0dce122d91ccc4dfd9ff75150ea743f50433402ac6c2790",
+    "ok": true,
+    "canonical_nodes": [
+      "FW-TEST-006"
+    ]
+  },
+  {
+    "version": "v21",
+    "path": "MAXUS_DUST_VERTRAG/08_REDTEAM_VOR_BAU.md",
+    "sha256": "38f952e1ddc9a86f0165008ab152cfab2f2f8458dfba3ba74f696bef9b8a32fa",
+    "bytes": 2110,
+    "parts": 1,
+    "reconstructed_sha256": "38f952e1ddc9a86f0165008ab152cfab2f2f8458dfba3ba74f696bef9b8a32fa",
+    "ok": true,
+    "canonical_nodes": [
+      "FW-TEST-007"
+    ]
+  },
+  {
+    "version": "v21",
+    "path": "MAXUS_DUST_VERTRAG/09_ABNAHMEKRITERIEN.md",
+    "sha256": "a263595f66c1403144967f56009ff90362fea571733980330c1efe5b1b329399",
+    "bytes": 890,
+    "parts": 1,
+    "reconstructed_sha256": "a263595f66c1403144967f56009ff90362fea571733980330c1efe5b1b329399",
+    "ok": true,
+    "canonical_nodes": [
+      "FW-TEST-008"
+    ]
+  },
+  {
+    "version": "v21",
+    "path": "MAXUS_DUST_VERTRAG/10_BUILD_MARKER.md",
+    "sha256": "639c11f23ea45e69e7525479120462abe5ac3ccafdc7916f8cee45f59a1b8046",
+    "bytes": 279,
+    "parts": 1,
+    "reconstructed_sha256": "639c11f23ea45e69e7525479120462abe5ac3ccafdc7916f8cee45f59a1b8046",
+    "ok": true,
+    "canonical_nodes": [
+      "FW-VER-001"
+    ]
+  },
+  {
+    "version": "v21",
+    "path": "MAXUS_DUST_VERTRAG/README.md",
+    "sha256": "96ed6f70b6331d4b3b8f186bf521ba2f88e4a4a292b6da74792bfe4b9991f2d6",
+    "bytes": 580,
+    "parts": 1,
+    "reconstructed_sha256": "96ed6f70b6331d4b3b8f186bf521ba2f88e4a4a292b6da74792bfe4b9991f2d6",
+    "ok": true,
+    "canonical_nodes": [
+      "FW-DUST-002"
+    ]
+  },
+  {
+    "version": "v21",
+    "path": "MAXUS_PLUS_VERTRAG/00_START_UND_FREIGABEVERTRAG.md",
+    "sha256": "bcaa863886c51cadb35fd12130beb0788d7694a0013eedd485d18cead565266b",
+    "bytes": 1556,
+    "parts": 1,
+    "reconstructed_sha256": "bcaa863886c51cadb35fd12130beb0788d7694a0013eedd485d18cead565266b",
+    "ok": true,
+    "canonical_nodes": [
+      "FW-ORG-005"
+    ]
+  },
+  {
+    "version": "v21",
+    "path": "MAXUS_PLUS_VERTRAG/01_COPYPASTE_MAXUS_PLUS_MASTERPROMPT.md",
+    "sha256": "bd3153b976cd73e91e70be71ebfbf581232b081ffd3fefba0b0d9fc48f0f79fb",
+    "bytes": 12030,
+    "parts": 1,
+    "reconstructed_sha256": "bd3153b976cd73e91e70be71ebfbf581232b081ffd3fefba0b0d9fc48f0f79fb",
+    "ok": true,
+    "canonical_nodes": [
+      "FW-CREATOR-001"
+    ]
+  },
+  {
+    "version": "v21",
+    "path": "MAXUS_PLUS_VERTRAG/02_PFLICHTFRAGEN_120.md",
+    "sha256": "495e73e8cfb7c84598f753681ee4acf53f19a08857aafdd126b5ab260c15160e",
+    "bytes": 5153,
+    "parts": 1,
+    "reconstructed_sha256": "495e73e8cfb7c84598f753681ee4acf53f19a08857aafdd126b5ab260c15160e",
+    "ok": true,
+    "canonical_nodes": [
+      "FW-MOVE-002"
+    ]
+  },
+  {
+    "version": "v21",
+    "path": "MAXUS_PLUS_VERTRAG/03_ZWOELF_SPIELE_BLINDTEST.md",
+    "sha256": "c5c7e24c5faa50fd60ae398776308ec1d1cf75f9bc4f0f6de3818d524395b47d",
+    "bytes": 2088,
+    "parts": 1,
+    "reconstructed_sha256": "c5c7e24c5faa50fd60ae398776308ec1d1cf75f9bc4f0f6de3818d524395b47d",
+    "ok": true,
+    "canonical_nodes": [
+      "FW-ORG-006"
+    ]
+  },
+  {
+    "version": "v21",
+    "path": "MAXUS_PLUS_VERTRAG/04_ARCHITEKTUR_VOR_BAU.md",
+    "sha256": "19e3c1f03bacdfcc1077e7aa040584873383e79c7a13df27cf9bc4973b217a31",
+    "bytes": 1102,
+    "parts": 1,
+    "reconstructed_sha256": "19e3c1f03bacdfcc1077e7aa040584873383e79c7a13df27cf9bc4973b217a31",
+    "ok": true,
+    "canonical_nodes": [
+      "FW-MOVE-002"
+    ]
+  },
+  {
+    "version": "v21",
+    "path": "MAXUS_PLUS_VERTRAG/05_TESTPLAN_VOR_BAU.md",
+    "sha256": "24a0c3f4c711695ce4fac853fc2b930f5e561ded6b1b09794948c4ea642a5ce3",
+    "bytes": 1318,
+    "parts": 1,
+    "reconstructed_sha256": "24a0c3f4c711695ce4fac853fc2b930f5e561ded6b1b09794948c4ea642a5ce3",
+    "ok": true,
+    "canonical_nodes": [
+      "FW-TEST-009"
+    ]
+  },
+  {
+    "version": "v21",
+    "path": "MAXUS_PLUS_VERTRAG/06_REDTEAM_VOR_BAU.md",
+    "sha256": "03e8c2ed837d510790e2d23f7aa2f94b9e50d7aa273e0774ea272a08ec30ac9a",
+    "bytes": 786,
+    "parts": 1,
+    "reconstructed_sha256": "03e8c2ed837d510790e2d23f7aa2f94b9e50d7aa273e0774ea272a08ec30ac9a",
+    "ok": true,
+    "canonical_nodes": [
+      "FW-TEST-008"
+    ]
+  },
+  {
+    "version": "v21",
+    "path": "MAXUS_PLUS_VERTRAG/07_ABNAHMEKRITERIEN.md",
+    "sha256": "30e7e7d0336e7af9c69fa449a043944ca0348505cb6146d9b45d62ab2b36f2c0",
+    "bytes": 1180,
+    "parts": 1,
+    "reconstructed_sha256": "30e7e7d0336e7af9c69fa449a043944ca0348505cb6146d9b45d62ab2b36f2c0",
+    "ok": true,
+    "canonical_nodes": [
+      "FW-TEST-010"
+    ]
+  },
+  {
+    "version": "v21",
+    "path": "MAXUS_PLUS_VERTRAG/08_BUILD_MARKER.md",
+    "sha256": "8b63ed1cacd8d9a8887f18f19328b578eab60e962ce590b3968f8b878c7b867d",
+    "bytes": 201,
+    "parts": 1,
+    "reconstructed_sha256": "8b63ed1cacd8d9a8887f18f19328b578eab60e962ce590b3968f8b878c7b867d",
+    "ok": true,
+    "canonical_nodes": [
+      "FW-VER-001"
+    ]
+  },
+  {
+    "version": "v21",
+    "path": "OUTRO.md",
+    "sha256": "42fddc7c69eca77fb67698d27c511b3e82942029126c66d6cb2fa2fed9839103",
+    "bytes": 377900,
+    "parts": 10,
+    "reconstructed_sha256": "42fddc7c69eca77fb67698d27c511b3e82942029126c66d6cb2fa2fed9839103",
+    "ok": true,
+    "canonical_nodes": [
+      "FW-NET-043",
+      "FW-NET-045",
+      "FW-NET-046",
+      "FW-NET-048",
+      "FW-NET-050",
+      "FW-NET-051",
+      "FW-NET-053",
+      "FW-NET-055",
+      "FW-NET-056",
+      "FW-NET-060"
+    ]
+  },
+  {
+    "version": "v21",
+    "path": "README.md",
+    "sha256": "2ca1d1ca91e920706a01f324ab944ac3cb97d485791776a11f0cff8728f35099",
+    "bytes": 1790,
+    "parts": 1,
+    "reconstructed_sha256": "2ca1d1ca91e920706a01f324ab944ac3cb97d485791776a11f0cff8728f35099",
+    "ok": true,
+    "canonical_nodes": [
+      "FW-NET-001"
+    ]
+  },
+  {
+    "version": "v21",
+    "path": "docs/00_RINGZIEL_UND_NICHTZIELE.md",
+    "sha256": "d8b1cb3726b68e8e42a75afab287322de0bbc64cdaf0387eaa0c93bc7bc907c6",
+    "bytes": 2158,
+    "parts": 1,
+    "reconstructed_sha256": "d8b1cb3726b68e8e42a75afab287322de0bbc64cdaf0387eaa0c93bc7bc907c6",
+    "ok": true,
+    "canonical_nodes": [
+      "FW-ORG-007"
+    ]
+  },
+  {
+    "version": "v21",
+    "path": "docs/01_QUELLEN_UND_FRAGENMATRIX.md",
+    "sha256": "aff136a859289ecd0a23e15b7348ad23970d08364907a7a0d4f0538fd73c9bc6",
+    "bytes": 2652,
+    "parts": 1,
+    "reconstructed_sha256": "aff136a859289ecd0a23e15b7348ad23970d08364907a7a0d4f0538fd73c9bc6",
+    "ok": true,
+    "canonical_nodes": [
+      "FW-LIMIT-002"
+    ]
+  },
+  {
+    "version": "v21",
+    "path": "docs/02_PFLICHTFRAGEN_BEANTWORTET.md",
+    "sha256": "a7c36debff6081f0e91d8a87c5ff853f44a25b4df5391f7cc28b84542b46e446",
+    "bytes": 10062,
+    "parts": 1,
+    "reconstructed_sha256": "a7c36debff6081f0e91d8a87c5ff853f44a25b4df5391f7cc28b84542b46e446",
+    "ok": true,
+    "canonical_nodes": [
+      "FW-SKILL-001"
+    ]
+  },
+  {
+    "version": "v21",
+    "path": "docs/03_KOLLISIONEN_VIER_WEGE.md",
+    "sha256": "ff8fb919295f37b6740a5aa14e093ce4d11d87b954b4fcc38e5ea2e80be892e5",
+    "bytes": 3101,
+    "parts": 1,
+    "reconstructed_sha256": "ff8fb919295f37b6740a5aa14e093ce4d11d87b954b4fcc38e5ea2e80be892e5",
+    "ok": true,
+    "canonical_nodes": [
+      "FW-MOVE-003"
+    ]
+  },
+  {
+    "version": "v21",
+    "path": "docs/04_ZWOELF_ORGANE_NACHWEIS.md",
+    "sha256": "701b9e5e4fb531cbcdb86661107f7c889efb712f95b4f9cf8db188683b4ffdd1",
+    "bytes": 1833,
+    "parts": 1,
+    "reconstructed_sha256": "701b9e5e4fb531cbcdb86661107f7c889efb712f95b4f9cf8db188683b4ffdd1",
+    "ok": true,
+    "canonical_nodes": [
+      "FW-ORG-008"
+    ]
+  },
+  {
+    "version": "v21",
+    "path": "docs/05_ARCHITEKTUR_UND_DATENMODELLE.md",
+    "sha256": "1cfe6b61e7200dec0d6ae7f91ff33d9963e80a786f5d84237c7ec87a39edd7c2",
+    "bytes": 1334,
+    "parts": 1,
+    "reconstructed_sha256": "1cfe6b61e7200dec0d6ae7f91ff33d9963e80a786f5d84237c7ec87a39edd7c2",
+    "ok": true,
+    "canonical_nodes": [
+      "FW-MOVE-004"
+    ]
+  },
+  {
+    "version": "v21",
+    "path": "docs/06_TESTPLAN_VOR_BAU.md",
+    "sha256": "6402bd6792562f5389a2634d25972e8bcbab8661c5a74b0b3411815136038c9e",
+    "bytes": 1600,
+    "parts": 1,
+    "reconstructed_sha256": "6402bd6792562f5389a2634d25972e8bcbab8661c5a74b0b3411815136038c9e",
+    "ok": true,
+    "canonical_nodes": [
+      "FW-TEST-011"
+    ]
+  },
+  {
+    "version": "v21",
+    "path": "docs/07_REDTEAM_BERICHT.md",
+    "sha256": "ba42cd27a6186bf58de6403560e339134ada6a04590a90996496ab9021525c22",
+    "bytes": 6313,
+    "parts": 1,
+    "reconstructed_sha256": "ba42cd27a6186bf58de6403560e339134ada6a04590a90996496ab9021525c22",
+    "ok": true,
+    "canonical_nodes": [
+      "FW-TEST-010"
+    ]
+  },
+  {
+    "version": "v21",
+    "path": "docs/08_VERBESSERUNGSRING.md",
+    "sha256": "c4698d20c23499ce1443c5c899a8156bdb9cdf2062710a53f845cbc76adc86dd",
+    "bytes": 2432,
+    "parts": 1,
+    "reconstructed_sha256": "c4698d20c23499ce1443c5c899a8156bdb9cdf2062710a53f845cbc76adc86dd",
+    "ok": true,
+    "canonical_nodes": [
+      "FW-VER-002"
+    ]
+  },
+  {
+    "version": "v21",
+    "path": "docs/09_PLAYWRIGHT_TESTBERICHT.md",
+    "sha256": "b7220feac857fcd281e08d53d2e354016fc6fe265f91e60885e873b455c34891",
+    "bytes": 4739,
+    "parts": 1,
+    "reconstructed_sha256": "b7220feac857fcd281e08d53d2e354016fc6fe265f91e60885e873b455c34891",
+    "ok": true,
+    "canonical_nodes": [
+      "FW-TEST-012"
+    ]
+  },
+  {
+    "version": "v21",
+    "path": "docs/10_BEKANNTE_GRENZEN.md",
+    "sha256": "72d47c3c516a1304294fbe05db099a9332c310d298c1242ad14116f3ae494775",
+    "bytes": 3319,
+    "parts": 1,
+    "reconstructed_sha256": "72d47c3c516a1304294fbe05db099a9332c310d298c1242ad14116f3ae494775",
+    "ok": true,
+    "canonical_nodes": [
+      "FW-LIMIT-003"
+    ]
+  },
+  {
+    "version": "v21",
+    "path": "docs/11_MAXUS_RUECKVERFOLGBARKEIT.md",
+    "sha256": "230a181cccba4d9a5a78f9b424c650e9f018f6edc80b19e201bdbe3303aa1904",
+    "bytes": 2846,
+    "parts": 1,
+    "reconstructed_sha256": "230a181cccba4d9a5a78f9b424c650e9f018f6edc80b19e201bdbe3303aa1904",
+    "ok": true,
+    "canonical_nodes": [
+      "FW-LIMIT-004"
+    ]
+  },
+  {
+    "version": "v21",
+    "path": "docs/12_V14_ERNEUTANALYSE.md",
+    "sha256": "203a51ad6546e3f133a63286b695a681c47f4eb9ed46acd1e0a88430572c77a0",
+    "bytes": 1900,
+    "parts": 1,
+    "reconstructed_sha256": "203a51ad6546e3f133a63286b695a681c47f4eb9ed46acd1e0a88430572c77a0",
+    "ok": true,
+    "canonical_nodes": [
+      "FW-VER-003"
+    ]
+  },
+  {
+    "version": "v21",
+    "path": "docs/12_ZWEITER_GESAMTAUDIT_V14.md",
+    "sha256": "02ec8bc3278ab942c823d229f9bc8b278e502c6ee99af59213c993cef91d741c",
+    "bytes": 3322,
+    "parts": 1,
+    "reconstructed_sha256": "02ec8bc3278ab942c823d229f9bc8b278e502c6ee99af59213c993cef91d741c",
+    "ok": true,
+    "canonical_nodes": [
+      "FW-TEST-013"
+    ]
+  },
+  {
+    "version": "v21",
+    "path": "docs/13_PLAYWRIGHT_REAUDIT_66.md",
+    "sha256": "b835b0fd5cd59d197e8bcdb7813cd64bd6f32953b17fdbdcf7fabf66f07e9e73",
+    "bytes": 1155,
+    "parts": 1,
+    "reconstructed_sha256": "b835b0fd5cd59d197e8bcdb7813cd64bd6f32953b17fdbdcf7fabf66f07e9e73",
+    "ok": true,
+    "canonical_nodes": [
+      "FW-TEST-010"
+    ]
+  },
+  {
+    "version": "v21",
+    "path": "docs/13_ZWOELF_SPIELE_HARTAUSWERTUNG.md",
+    "sha256": "87abdd6049ba7ace1387af3f02404ec10280b0d82e2c1969a153fb3ff877167b",
+    "bytes": 3277,
+    "parts": 1,
+    "reconstructed_sha256": "87abdd6049ba7ace1387af3f02404ec10280b0d82e2c1969a153fb3ff877167b",
+    "ok": true,
+    "canonical_nodes": [
+      "FW-ORG-009"
+    ]
+  },
+  {
+    "version": "v21",
+    "path": "docs/14_POKEMON_FANART_UND_EIGENIDENTITAET.md",
+    "sha256": "50d714b944e2cd4a88e2af0f07ab982781171db48ddeace9dbef51ed0a8b5d3a",
+    "bytes": 2427,
+    "parts": 1,
+    "reconstructed_sha256": "50d714b944e2cd4a88e2af0f07ab982781171db48ddeace9dbef51ed0a8b5d3a",
+    "ok": true,
+    "canonical_nodes": [
+      "FW-ORG-010"
+    ]
+  },
+  {
+    "version": "v21",
+    "path": "docs/14_REDTEAM_VOR_MAXUS_PLUS.md",
+    "sha256": "53b6d0ff3d5c89bb3eed9aba998033779430d7a757da12a2c8fa3b7554735730",
+    "bytes": 1790,
+    "parts": 1,
+    "reconstructed_sha256": "53b6d0ff3d5c89bb3eed9aba998033779430d7a757da12a2c8fa3b7554735730",
+    "ok": true,
+    "canonical_nodes": [
+      "FW-TEST-014"
+    ]
+  },
+  {
+    "version": "v21",
+    "path": "docs/15_REDTEAM_ZWEITER_PASS.md",
+    "sha256": "2cc6909f558d84a12f0b67645b18eff65cb55b9282f7bc5fd2d462091815b8a3",
+    "bytes": 1663,
+    "parts": 1,
+    "reconstructed_sha256": "2cc6909f558d84a12f0b67645b18eff65cb55b9282f7bc5fd2d462091815b8a3",
+    "ok": true,
+    "canonical_nodes": [
+      "FW-TEST-015"
+    ]
+  },
+  {
+    "version": "v21",
+    "path": "docs/15_VERBESSERUNG_V14_2.md",
+    "sha256": "315780d0a7d6e0e95f08a7945569b564c236e638fe69c446d4438ce74568d41a",
+    "bytes": 868,
+    "parts": 1,
+    "reconstructed_sha256": "315780d0a7d6e0e95f08a7945569b564c236e638fe69c446d4438ce74568d41a",
+    "ok": true,
+    "canonical_nodes": [
+      "FW-VER-001"
+    ]
+  },
+  {
+    "version": "v21",
+    "path": "docs/16_MAXUS_PLUSPLUS_MASTERPROMPT.md",
+    "sha256": "11a25e1865ec8732179a98e24983eefdf6ab80e33a8fcfa4fd51b92d985b28d4",
+    "bytes": 5888,
+    "parts": 1,
+    "reconstructed_sha256": "11a25e1865ec8732179a98e24983eefdf6ab80e33a8fcfa4fd51b92d985b28d4",
+    "ok": true,
+    "canonical_nodes": [
+      "FW-CREATOR-002"
+    ]
+  },
+  {
+    "version": "v21",
+    "path": "docs/16_V14_2_VERBESSERUNGEN.md",
+    "sha256": "867ed1c0dc9e9a296f4cdb186b76e5f1c653313674ccd7ad2c3c52ff12692d3b",
+    "bytes": 1493,
+    "parts": 1,
+    "reconstructed_sha256": "867ed1c0dc9e9a296f4cdb186b76e5f1c653313674ccd7ad2c3c52ff12692d3b",
+    "ok": true,
+    "canonical_nodes": [
+      "FW-VER-004"
+    ]
+  },
+  {
+    "version": "v21",
+    "path": "docs/17_MAXUS_PLUS_SELBSTREDTEAM.md",
+    "sha256": "d738abc15207d20bf67c64888f4882e09cedea53295fec6ec6d0d28122f665b1",
+    "bytes": 1307,
+    "parts": 1,
+    "reconstructed_sha256": "d738abc15207d20bf67c64888f4882e09cedea53295fec6ec6d0d28122f665b1",
+    "ok": true,
+    "canonical_nodes": [
+      "FW-TEST-016"
+    ]
+  },
+  {
+    "version": "v21",
+    "path": "docs/17_PLAYWRIGHT_V14_2_BERICHT.md",
+    "sha256": "fc4d1d3aa7084fadc104b95389b5c1a3e8d21c0f761e9c8f3092fc9dfad5953f",
+    "bytes": 425,
+    "parts": 1,
+    "reconstructed_sha256": "fc4d1d3aa7084fadc104b95389b5c1a3e8d21c0f761e9c8f3092fc9dfad5953f",
+    "ok": true,
+    "canonical_nodes": [
+      "FW-TEST-008"
+    ]
+  },
+  {
+    "version": "v21",
+    "path": "docs/18_BAURING2_UMSETZUNG_NACH_MAXUS.md",
+    "sha256": "3edac9e715f43e12cfae8cb9e443c6e5aa265099e8cde19f0f3e0f312d48e59d",
+    "bytes": 1855,
+    "parts": 1,
+    "reconstructed_sha256": "3edac9e715f43e12cfae8cb9e443c6e5aa265099e8cde19f0f3e0f312d48e59d",
+    "ok": true,
+    "canonical_nodes": [
+      "FW-VER-005"
+    ]
+  },
+  {
+    "version": "v21",
+    "path": "docs/19_POSTBUILD_REDTEAM_UND_REPARATUR.md",
+    "sha256": "be43df4e2c33a2d81539fceccc3c0da3748add710041c2f2456bd78dd25436e1",
+    "bytes": 1182,
+    "parts": 1,
+    "reconstructed_sha256": "be43df4e2c33a2d81539fceccc3c0da3748add710041c2f2456bd78dd25436e1",
+    "ok": true,
+    "canonical_nodes": [
+      "FW-TEST-010"
+    ]
+  },
+  {
+    "version": "v21",
+    "path": "docs/20_PLAYWRIGHT_GESAMTBERICHT_73.md",
+    "sha256": "8f325db12adf18a85650f0973ec0f49999c3f0a97fcb17d2739a28648e01d1c5",
+    "bytes": 1043,
+    "parts": 1,
+    "reconstructed_sha256": "8f325db12adf18a85650f0973ec0f49999c3f0a97fcb17d2739a28648e01d1c5",
+    "ok": true,
+    "canonical_nodes": [
+      "FW-TEST-010"
+    ]
+  },
+  {
+    "version": "v21",
+    "path": "docs/21_BEKANNTE_GRENZEN_V15.md",
+    "sha256": "eda90727215c87928632533af0458208dfe7a14b6ff0460bcbfa9e10aefb9fdc",
+    "bytes": 1400,
+    "parts": 1,
+    "reconstructed_sha256": "eda90727215c87928632533af0458208dfe7a14b6ff0460bcbfa9e10aefb9fdc",
+    "ok": true,
+    "canonical_nodes": [
+      "FW-LIMIT-005"
+    ]
+  },
+  {
+    "version": "v21",
+    "path": "docs/22_MAXUS_PLUS_RUECKVERFOLGBARKEIT.md",
+    "sha256": "f1615dda3efcd0c9aff5b33a5e6641c0aec9373851017f7e375fea15738d2b7f",
+    "bytes": 1283,
+    "parts": 1,
+    "reconstructed_sha256": "f1615dda3efcd0c9aff5b33a5e6641c0aec9373851017f7e375fea15738d2b7f",
+    "ok": true,
+    "canonical_nodes": [
+      "FW-LIMIT-006"
+    ]
+  },
+  {
+    "version": "v21",
+    "path": "docs/v21_gates/00_AKTUELLE_NUTZERUEBERSCHREIBUNG.md",
+    "sha256": "6f1b7641a841a1ada5dea93539941f736a411c568b7dece1f4c455a42b7ee452",
+    "bytes": 1043,
+    "parts": 1,
+    "reconstructed_sha256": "6f1b7641a841a1ada5dea93539941f736a411c568b7dece1f4c455a42b7ee452",
+    "ok": true,
+    "canonical_nodes": [
+      "FW-DUST-002"
+    ]
+  },
+  {
+    "version": "v21",
+    "path": "docs/v21_gates/00_GATE_BASELINE_FRAGEN.md",
+    "sha256": "c36c4c4f2ab4d8291b52a345fb401aab419b1cedde7ba82b615d4977fd6cf4ff",
+    "bytes": 1657,
+    "parts": 1,
+    "reconstructed_sha256": "c36c4c4f2ab4d8291b52a345fb401aab419b1cedde7ba82b615d4977fd6cf4ff",
+    "ok": true,
+    "canonical_nodes": [
+      "FW-DUST-003"
+    ]
+  },
+  {
+    "version": "v21",
+    "path": "docs/v21_gates/00_VOLLSTAENDIGE_NEULESUNG_V20.md",
+    "sha256": "0d157e3f552ee954384f77b472d02b92ade3cdd1acc3bacc97a95930b5ab2a40",
+    "bytes": 55180,
+    "parts": 2,
+    "reconstructed_sha256": "0d157e3f552ee954384f77b472d02b92ade3cdd1acc3bacc97a95930b5ab2a40",
+    "ok": true,
+    "canonical_nodes": [
+      "FW-SKILL-002",
+      "FW-SKILL-003"
+    ]
+  },
+  {
+    "version": "v21",
+    "path": "docs_v21/00_BAUPROZESS_GATEVERTRAG.md",
+    "sha256": "e0cb71bf76e91ac4ae3316df6907947086d530f46ec82399a731c4cc58865a97",
+    "bytes": 3235,
+    "parts": 1,
+    "reconstructed_sha256": "e0cb71bf76e91ac4ae3316df6907947086d530f46ec82399a731c4cc58865a97",
+    "ok": true,
+    "canonical_nodes": [
+      "FW-VER-001"
+    ]
+  },
+  {
+    "version": "v21",
+    "path": "docs_v21/31_ROHINPUT_R20_SKILLBAEUME_LEVEL_AI_FAehIGKEITEN_WORTNAH.md",
+    "sha256": "b3303ddb8cf133f9236165e5c94247b62a7fac36009298075bc4653c62fedfee",
+    "bytes": 3649,
+    "parts": 1,
+    "reconstructed_sha256": "b3303ddb8cf133f9236165e5c94247b62a7fac36009298075bc4653c62fedfee",
+    "ok": true,
+    "canonical_nodes": [
+      "FW-RAW-007"
+    ]
+  },
+  {
+    "version": "v21",
+    "path": "docs_v21/32_SIMULATIONSPLAN_NACH_BAU_VOR_ABSCHLUSS.md",
+    "sha256": "eca639cda06357f006c0fa67cd88b2841efd34353ef5993fa5f918a0693cb41e",
+    "bytes": 9531,
+    "parts": 1,
+    "reconstructed_sha256": "eca639cda06357f006c0fa67cd88b2841efd34353ef5993fa5f918a0693cb41e",
+    "ok": true,
+    "canonical_nodes": [
+      "FW-TEST-008"
+    ]
+  },
+  {
+    "version": "v21",
+    "path": "docs_v21/33_SKILLBAUM_ARCHITEKTUR_GEBRAUCH_GESAMTLEVEL_PUNKTE.md",
+    "sha256": "4b8626d1cb34e80f858846f9f2a6d96f8065ae769136404c73ad1fa564068b52",
+    "bytes": 6388,
+    "parts": 1,
+    "reconstructed_sha256": "4b8626d1cb34e80f858846f9f2a6d96f8065ae769136404c73ad1fa564068b52",
+    "ok": true,
+    "canonical_nodes": [
+      "FW-SKILL-004"
+    ]
+  },
+  {
+    "version": "v21",
+    "path": "docs_v21/34_SKILLBAUM_KATALOG_KLASSISCH_TECHNISCH_MAGISCH_AI.md",
+    "sha256": "0014ab8781763f394c133a13f656b64f1f5020b236404cb22410f66e38057ec8",
+    "bytes": 9458,
+    "parts": 1,
+    "reconstructed_sha256": "0014ab8781763f394c133a13f656b64f1f5020b236404cb22410f66e38057ec8",
+    "ok": true,
+    "canonical_nodes": [
+      "FW-SKILL-005"
+    ]
+  },
+  {
+    "version": "v21",
+    "path": "docs_v21/35_SKILLBAUM_SIMULATIONS_UND_REDTEAMPLAN.md",
+    "sha256": "d3f2b2f75feda92fb57c9ffd000ccea719d814e65038437c8c05b244a88ee44a",
+    "bytes": 4000,
+    "parts": 1,
+    "reconstructed_sha256": "d3f2b2f75feda92fb57c9ffd000ccea719d814e65038437c8c05b244a88ee44a",
+    "ok": true,
+    "canonical_nodes": [
+      "FW-TEST-017"
+    ]
+  },
+  {
+    "version": "v21",
+    "path": "docs_v21/36_OFFENE_ENTSCHEIDUNGEN_SKILLS_MASTERIES_AI.md",
+    "sha256": "07825c08b186dd651b7e80390e1f6fc3ea3f8052adb7391ecb3a0140daea8dda",
+    "bytes": 2246,
+    "parts": 1,
+    "reconstructed_sha256": "07825c08b186dd651b7e80390e1f6fc3ea3f8052adb7391ecb3a0140daea8dda",
+    "ok": true,
+    "canonical_nodes": [
+      "FW-LIMIT-007"
+    ]
+  },
+  {
+    "version": "v21",
+    "path": "docs_v21/37_SKILL_UNIVERSE_SIMULATION_ERGEBNIS.md",
+    "sha256": "d6f55a306c1b2966137e3f6eec8f8d95cbc94d9431bb5d2e9fe1fa3fa04ce7ad",
+    "bytes": 2124,
+    "parts": 1,
+    "reconstructed_sha256": "d6f55a306c1b2966137e3f6eec8f8d95cbc94d9431bb5d2e9fe1fa3fa04ce7ad",
+    "ok": true,
+    "canonical_nodes": [
+      "FW-TEST-018"
+    ]
+  },
+  {
+    "version": "v21",
+    "path": "docs_v21/38_FINAL_GATE_REGRESSION.md",
+    "sha256": "8755ea1cdcb970428abf883d760a371762f1d9b2b1086dab4d0d6555e2b1fc66",
+    "bytes": 990,
+    "parts": 1,
+    "reconstructed_sha256": "8755ea1cdcb970428abf883d760a371762f1d9b2b1086dab4d0d6555e2b1fc66",
+    "ok": true,
+    "canonical_nodes": [
+      "FW-TEST-008"
+    ]
+  },
+  {
+    "version": "v21",
+    "path": "docs_v21/39_POSTBUILD_REDTEAM_FINAL.md",
+    "sha256": "addb11075eded30792fa21f47bdd007a5f105da62e6d3504213d1c34540fdb98",
+    "bytes": 691,
+    "parts": 1,
+    "reconstructed_sha256": "addb11075eded30792fa21f47bdd007a5f105da62e6d3504213d1c34540fdb98",
+    "ok": true,
+    "canonical_nodes": [
+      "FW-TEST-008"
+    ]
+  },
+  {
+    "version": "v21",
+    "path": "docs_v21/40_SKILL_REDTEAM_FINAL.md",
+    "sha256": "991b97f3966addd36bf0088efe78eeb4665dcdddfb1902ae8a2d00e66d98e4a5",
+    "bytes": 1006,
+    "parts": 1,
+    "reconstructed_sha256": "991b97f3966addd36bf0088efe78eeb4665dcdddfb1902ae8a2d00e66d98e4a5",
+    "ok": true,
+    "canonical_nodes": [
+      "FW-TEST-008"
+    ]
+  },
+  {
+    "version": "v21",
+    "path": "docs_v21/41_POSTBUILD_WORLD_SIMULATIONS_FINAL.md",
+    "sha256": "639cf081ec996d47ce2623864c649562be10d1eb55e10387bba5d6325f4f8b78",
+    "bytes": 1271,
+    "parts": 1,
+    "reconstructed_sha256": "639cf081ec996d47ce2623864c649562be10d1eb55e10387bba5d6325f4f8b78",
+    "ok": true,
+    "canonical_nodes": [
+      "FW-TEST-019"
+    ]
+  },
+  {
+    "version": "v21",
+    "path": "docs_v21/42_FINAL_ABNAHME_V21.md",
+    "sha256": "97523be93fadb8c34ba7bac4e67858a963b5db3519d76176fc3ea9551134b5b2",
+    "bytes": 1111,
+    "parts": 1,
+    "reconstructed_sha256": "97523be93fadb8c34ba7bac4e67858a963b5db3519d76176fc3ea9551134b5b2",
+    "ok": true,
+    "canonical_nodes": [
+      "FW-TEST-010"
+    ]
+  },
+  {
+    "version": "v21",
+    "path": "docs_v21/43_BEKANNTE_GRENZEN_V21.md",
+    "sha256": "c8e267ef39dd3d17620638667549ae2cbc90c999110dc0c448ec5b478203f1af",
+    "bytes": 1496,
+    "parts": 1,
+    "reconstructed_sha256": "c8e267ef39dd3d17620638667549ae2cbc90c999110dc0c448ec5b478203f1af",
+    "ok": true,
+    "canonical_nodes": [
+      "FW-LIMIT-008"
+    ]
+  },
+  {
+    "version": "v21",
+    "path": "docs_v21/44_FRAGENKORPUS_ABGLEICH_2607_ZU_2717.md",
+    "sha256": "c73d2ecc8ba0dd38d127db713620dff91c28baea84f4c2685b4f1fec6fbae6e3",
+    "bytes": 1125,
+    "parts": 1,
+    "reconstructed_sha256": "c73d2ecc8ba0dd38d127db713620dff91c28baea84f4c2685b4f1fec6fbae6e3",
+    "ok": true,
+    "canonical_nodes": [
+      "FW-LIMIT-003"
+    ]
+  },
+  {
+    "version": "v21",
+    "path": "docs_v21/45_MODULARER_UND_EIN_DATEI_EINSTIEG.md",
+    "sha256": "cc560aa464cde92963683cee32610fc658c4559f08392d7c36085a728df9f5ad",
+    "bytes": 836,
+    "parts": 1,
+    "reconstructed_sha256": "cc560aa464cde92963683cee32610fc658c4559f08392d7c36085a728df9f5ad",
+    "ok": true,
+    "canonical_nodes": [
+      "FW-NET-001"
+    ]
+  },
+  {
+    "version": "v21",
+    "path": "docs_v21/FRAGENKORPUS_ALLE_FRAGEN_ZUORDNUNG_UND_ANTWORTEN.md",
+    "sha256": "a87b2d2c6e28eefd378d8009cc17960d1b8306bb1360df87f4ff70f852ec87a3",
+    "bytes": 2030282,
+    "parts": 54,
+    "reconstructed_sha256": "a87b2d2c6e28eefd378d8009cc17960d1b8306bb1360df87f4ff70f852ec87a3",
+    "ok": true,
+    "canonical_nodes": [
+      "FW-BUILD-003",
+      "FW-BUILD-004",
+      "FW-BUILD-005",
+      "FW-BUILD-006",
+      "FW-BUILD-007",
+      "FW-BUILD-008",
+      "FW-BUILD-009",
+      "FW-BUILD-010",
+      "FW-BUILD-011",
+      "FW-BUILD-012",
+      "FW-BUILD-013",
+      "FW-BUILD-014",
+      "FW-BUILD-015",
+      "FW-BUILD-016",
+      "FW-BUILD-017",
+      "FW-BUILD-018",
+      "FW-CREATOR-003",
+      "FW-CREATOR-004",
+      "FW-CREATOR-005",
+      "FW-CREATOR-006",
+      "FW-DUST-002",
+      "FW-DUST-004",
+      "FW-DUST-005",
+      "FW-DUST-006",
+      "FW-DUST-007",
+      "FW-DUST-008",
+      "FW-DUST-009",
+      "FW-DUST-010",
+      "FW-DUST-011",
+      "FW-DUST-012",
+      "FW-DUST-013",
+      "FW-DUST-014",
+      "FW-DUST-015",
+      "FW-DUST-016",
+      "FW-DUST-017",
+      "FW-DUST-018",
+      "FW-DUST-019",
+      "FW-MOVE-005",
+      "FW-MOVE-006",
+      "FW-MOVE-007",
+      "FW-MOVE-008",
+      "FW-MOVE-009",
+      "FW-MOVE-010",
+      "FW-MOVE-011",
+      "FW-MOVE-012",
+      "FW-MOVE-013",
+      "FW-MOVE-014",
+      "FW-SKILL-006",
+      "FW-SKILL-007",
+      "FW-WORLD-001",
+      "FW-WORLD-002",
+      "FW-WORLD-003",
+      "FW-WORLD-004",
+      "FW-WORLD-005"
+    ]
+  },
+  {
+    "version": "v21",
+    "path": "docs_v21/GATE_00_FRAGEN_VORHER_NACHHER.md",
+    "sha256": "2c251bf2402b2d8714a1fd5127f5ad6c8bfb83abea632c552392ccc89e34a1d8",
+    "bytes": 56429,
+    "parts": 2,
+    "reconstructed_sha256": "2c251bf2402b2d8714a1fd5127f5ad6c8bfb83abea632c552392ccc89e34a1d8",
+    "ok": true,
+    "canonical_nodes": [
+      "FW-ORG-011",
+      "FW-ORG-012"
+    ]
+  },
+  {
+    "version": "v21",
+    "path": "docs_v21/GATE_01_FRAGEN_VORHER_NACHHER.md",
+    "sha256": "08037069724364b95468fec7d1807d28da843d427b2334c97eadc8a18093f31a",
+    "bytes": 74985,
+    "parts": 3,
+    "reconstructed_sha256": "08037069724364b95468fec7d1807d28da843d427b2334c97eadc8a18093f31a",
+    "ok": true,
+    "canonical_nodes": [
+      "FW-ORG-003",
+      "FW-ORG-013",
+      "FW-ORG-014",
+      "FW-ORG-015",
+      "FW-ORG-016"
+    ]
+  },
+  {
+    "version": "v21",
+    "path": "docs_v21/GATE_02_FRAGEN_VORHER_NACHHER.md",
+    "sha256": "cd5af55a75e4b17cf2ea75c5043e80ae5c4a8527d477c741a0aef5ccb85247e8",
+    "bytes": 70599,
+    "parts": 3,
+    "reconstructed_sha256": "cd5af55a75e4b17cf2ea75c5043e80ae5c4a8527d477c741a0aef5ccb85247e8",
+    "ok": true,
+    "canonical_nodes": [
+      "FW-MOVE-002",
+      "FW-MOVE-015",
+      "FW-MOVE-016"
+    ]
+  },
+  {
+    "version": "v21",
+    "path": "docs_v21/GATE_03_FRAGEN_VORHER_NACHHER.md",
+    "sha256": "aa51f0091c746f54c98c142e61b1a75232ee5d926b355380f46ea0955c483fbc",
+    "bytes": 115345,
+    "parts": 4,
+    "reconstructed_sha256": "aa51f0091c746f54c98c142e61b1a75232ee5d926b355380f46ea0955c483fbc",
+    "ok": true,
+    "canonical_nodes": [
+      "FW-SKILL-001",
+      "FW-SKILL-008",
+      "FW-SKILL-009",
+      "FW-SKILL-010"
+    ]
+  },
+  {
+    "version": "v21",
+    "path": "docs_v21/GATE_04_FRAGEN_VORHER_NACHHER.md",
+    "sha256": "2c9a85cf54594d6c19221b079a0e03593044591fcbd7349b8a765ed39b0c3b60",
+    "bytes": 83976,
+    "parts": 3,
+    "reconstructed_sha256": "2c9a85cf54594d6c19221b079a0e03593044591fcbd7349b8a765ed39b0c3b60",
+    "ok": true,
+    "canonical_nodes": [
+      "FW-WORLD-006",
+      "FW-WORLD-007",
+      "FW-WORLD-008"
+    ]
+  },
+  {
+    "version": "v21",
+    "path": "docs_v21/GATE_05_FRAGEN_VORHER_NACHHER.md",
+    "sha256": "20b7038291a82d515213ac18cad2ea50bfd4f1233c7e1c5b6dc7fc8f01051449",
+    "bytes": 147332,
+    "parts": 4,
+    "reconstructed_sha256": "20b7038291a82d515213ac18cad2ea50bfd4f1233c7e1c5b6dc7fc8f01051449",
+    "ok": true,
+    "canonical_nodes": [
+      "FW-MOVE-017",
+      "FW-MOVE-018",
+      "FW-MOVE-019",
+      "FW-MOVE-020"
+    ]
+  },
+  {
+    "version": "v21",
+    "path": "docs_v21/GATE_06_FRAGEN_VORHER_NACHHER.md",
+    "sha256": "bc0105b88595e58fc0cf95eb5f6bf793621042656325f7230a447ecdbc843536",
+    "bytes": 156396,
+    "parts": 5,
+    "reconstructed_sha256": "bc0105b88595e58fc0cf95eb5f6bf793621042656325f7230a447ecdbc843536",
+    "ok": true,
+    "canonical_nodes": [
+      "FW-DUST-020",
+      "FW-DUST-021",
+      "FW-DUST-022",
+      "FW-DUST-023",
+      "FW-DUST-024"
+    ]
+  },
+  {
+    "version": "v21",
+    "path": "docs_v21/GATE_07_FRAGEN_VORHER_NACHHER.md",
+    "sha256": "104d44fb18ff605d98a2ec6e40fb461c2b6cd62bd808a08bca74dec8de72e4c3",
+    "bytes": 101676,
+    "parts": 3,
+    "reconstructed_sha256": "104d44fb18ff605d98a2ec6e40fb461c2b6cd62bd808a08bca74dec8de72e4c3",
+    "ok": true,
+    "canonical_nodes": [
+      "FW-WORLD-009",
+      "FW-WORLD-010",
+      "FW-WORLD-011"
+    ]
+  },
+  {
+    "version": "v21",
+    "path": "docs_v21/GATE_08_FRAGEN_VORHER_NACHHER.md",
+    "sha256": "76720ea3e87757d4dfbfa76695129a0f8f438d123eb9a0dd13896b95a458f4b7",
+    "bytes": 70763,
+    "parts": 2,
+    "reconstructed_sha256": "76720ea3e87757d4dfbfa76695129a0f8f438d123eb9a0dd13896b95a458f4b7",
+    "ok": true,
+    "canonical_nodes": [
+      "FW-CREATOR-007",
+      "FW-CREATOR-008"
+    ]
+  },
+  {
+    "version": "v21",
+    "path": "docs_v21/GATE_09_FRAGEN_VORHER_NACHHER.md",
+    "sha256": "2de5b0fdf0248753b5824045428a6ce095944e20e9d3dc59b54aa98bb5c4bdb0",
+    "bytes": 111012,
+    "parts": 3,
+    "reconstructed_sha256": "2de5b0fdf0248753b5824045428a6ce095944e20e9d3dc59b54aa98bb5c4bdb0",
+    "ok": true,
+    "canonical_nodes": [
+      "FW-MOVE-021",
+      "FW-MOVE-022",
+      "FW-MOVE-023"
+    ]
+  },
+  {
+    "version": "v21",
+    "path": "docs_v21/GATE_10_FRAGEN_VORHER_NACHHER.md",
+    "sha256": "69c6544b696c77c52752ae17e627b5c4a30e9f10f0734db811316e1d7db4742e",
+    "bytes": 112052,
+    "parts": 3,
+    "reconstructed_sha256": "69c6544b696c77c52752ae17e627b5c4a30e9f10f0734db811316e1d7db4742e",
+    "ok": true,
+    "canonical_nodes": [
+      "FW-WORLD-012",
+      "FW-WORLD-013",
+      "FW-WORLD-014"
+    ]
+  },
+  {
+    "version": "v21",
+    "path": "docs_v21/GATE_11_FRAGEN_VORHER_NACHHER.md",
+    "sha256": "f459b6d1115ec38091de9ca063363259d473964675ceabdae4b421ef9e534579",
+    "bytes": 144220,
+    "parts": 4,
+    "reconstructed_sha256": "f459b6d1115ec38091de9ca063363259d473964675ceabdae4b421ef9e534579",
+    "ok": true,
+    "canonical_nodes": [
+      "FW-BUILD-019",
+      "FW-BUILD-020",
+      "FW-BUILD-021",
+      "FW-BUILD-022"
+    ]
+  },
+  {
+    "version": "v21",
+    "path": "docs_v21/GATE_12_FRAGEN_VORHER_NACHHER.md",
+    "sha256": "b617e04ad5915d528571fe1ef44eaf34bbc1b5493e9e2008388ad0b079973634",
+    "bytes": 202439,
+    "parts": 6,
+    "reconstructed_sha256": "b617e04ad5915d528571fe1ef44eaf34bbc1b5493e9e2008388ad0b079973634",
+    "ok": true,
+    "canonical_nodes": [
+      "FW-BUILD-023",
+      "FW-BUILD-024",
+      "FW-BUILD-025",
+      "FW-BUILD-026",
+      "FW-BUILD-027",
+      "FW-BUILD-028"
+    ]
+  },
+  {
+    "version": "v21",
+    "path": "docs_v21/GATE_13A_FRAGEN_VORHER_NACHHER.md",
+    "sha256": "bf70119bde9911c93de41bf2b0b9adc4ae5b50509370c19de763bee142aebc8f",
+    "bytes": 2818,
+    "parts": 1,
+    "reconstructed_sha256": "bf70119bde9911c93de41bf2b0b9adc4ae5b50509370c19de763bee142aebc8f",
+    "ok": true,
+    "canonical_nodes": [
+      "FW-SKILL-011"
+    ]
+  },
+  {
+    "version": "v21",
+    "path": "docs_v21/GATE_13B_FRAGEN_VORHER_NACHHER.md",
+    "sha256": "996029909fa0576f6325902e6325f86f25eee4a78f6a2f322fd1e82b87e98c85",
+    "bytes": 2121,
+    "parts": 1,
+    "reconstructed_sha256": "996029909fa0576f6325902e6325f86f25eee4a78f6a2f322fd1e82b87e98c85",
+    "ok": true,
+    "canonical_nodes": [
+      "FW-SKILL-012"
+    ]
+  },
+  {
+    "version": "v21",
+    "path": "docs_v21/GATE_13C_FRAGEN_VORHER_NACHHER.md",
+    "sha256": "d8e86e570ccaa773ef8971b8b89a2a145a9eb7b8d5af4ae2f3188b4579d85ad9",
+    "bytes": 1597,
+    "parts": 1,
+    "reconstructed_sha256": "d8e86e570ccaa773ef8971b8b89a2a145a9eb7b8d5af4ae2f3188b4579d85ad9",
+    "ok": true,
+    "canonical_nodes": [
+      "FW-SKILL-013"
+    ]
+  },
+  {
+    "version": "v21",
+    "path": "docs_v21/GATE_13D_FRAGEN_VORHER_NACHHER.md",
+    "sha256": "2fd9548c72b8e09062ef68deab44df6018bc943df7753592eca981aa73e4a910",
+    "bytes": 3061,
+    "parts": 1,
+    "reconstructed_sha256": "2fd9548c72b8e09062ef68deab44df6018bc943df7753592eca981aa73e4a910",
+    "ok": true,
+    "canonical_nodes": [
+      "FW-SKILL-014"
+    ]
+  },
+  {
+    "version": "v21",
+    "path": "docs_v21/GATE_13E_FRAGEN_VORHER_NACHHER.md",
+    "sha256": "d7c5f5b401313e6bd065169d94f2a5396b9b89cf32a8abce2773a7457bd20a1d",
+    "bytes": 4094,
+    "parts": 1,
+    "reconstructed_sha256": "d7c5f5b401313e6bd065169d94f2a5396b9b89cf32a8abce2773a7457bd20a1d",
+    "ok": true,
+    "canonical_nodes": [
+      "FW-SKILL-015"
+    ]
+  },
+  {
+    "version": "v21",
+    "path": "docs_v21/GATE_13F_FRAGEN_VORHER_NACHHER.md",
+    "sha256": "bca702a4d8bb33c61c42b2f7e29ff5272f14896fbea5bc3bf754afdf2df2fd2b",
+    "bytes": 3843,
+    "parts": 1,
+    "reconstructed_sha256": "bca702a4d8bb33c61c42b2f7e29ff5272f14896fbea5bc3bf754afdf2df2fd2b",
+    "ok": true,
+    "canonical_nodes": [
+      "FW-SKILL-016"
+    ]
+  },
+  {
+    "version": "v21",
+    "path": "docs_v21/GATE_13G_FRAGEN_VORHER_NACHHER.md",
+    "sha256": "96b7d3e70763a243ff244da37229da95c7910e5d5705799b388d1dfcbc708994",
+    "bytes": 2503,
+    "parts": 1,
+    "reconstructed_sha256": "96b7d3e70763a243ff244da37229da95c7910e5d5705799b388d1dfcbc708994",
+    "ok": true,
+    "canonical_nodes": [
+      "FW-SKILL-017"
+    ]
+  },
+  {
+    "version": "v21",
+    "path": "docs_v21/GATE_13H_FRAGEN_VORHER_NACHHER.md",
+    "sha256": "52e03db4145cf32ff0829831eeb07363b9bb1747e398611b882627ff6c8335df",
+    "bytes": 3576,
+    "parts": 1,
+    "reconstructed_sha256": "52e03db4145cf32ff0829831eeb07363b9bb1747e398611b882627ff6c8335df",
+    "ok": true,
+    "canonical_nodes": [
+      "FW-SKILL-018"
+    ]
+  },
+  {
+    "version": "v21",
+    "path": "source_contract/00_CROSS_SYSTEM_200_PAARE_1200_FRAGEN.md",
+    "sha256": "9d917bd503f64bb7e89c315a5fa618045ec5e53813a29f2c38aa141a150de43a",
+    "bytes": 181731,
+    "parts": 5,
+    "reconstructed_sha256": "9d917bd503f64bb7e89c315a5fa618045ec5e53813a29f2c38aa141a150de43a",
+    "ok": true,
+    "canonical_nodes": [
+      "FW-BUILD-029",
+      "FW-BUILD-030",
+      "FW-BUILD-031",
+      "FW-CREATOR-009",
+      "FW-MOVE-024"
+    ]
+  },
+  {
+    "version": "v21",
+    "path": "source_contract/05_FINALER_SUPERMAXIMALMAXIKINGMEGA_PROMPT.md",
+    "sha256": "01d3a1ef814a5663c21f2d21beeb661499096bff12b5a1321fe72936f94fc81e",
+    "bytes": 115727,
+    "parts": 4,
+    "reconstructed_sha256": "01d3a1ef814a5663c21f2d21beeb661499096bff12b5a1321fe72936f94fc81e",
+    "ok": true,
+    "canonical_nodes": [
+      "FW-SKILL-019",
+      "FW-SKILL-020",
+      "FW-SKILL-021",
+      "FW-SKILL-022"
+    ]
+  },
+  {
+    "version": "v21",
+    "path": "source_contract/12_DOMAENFRAGEN_150_BEREICHE.md",
+    "sha256": "a2e07a2aafe4cf9f018fb82e005e2b9b74e9d0de99ee5e9d10851aebc9aba68f",
+    "bytes": 173618,
+    "parts": 5,
+    "reconstructed_sha256": "a2e07a2aafe4cf9f018fb82e005e2b9b74e9d0de99ee5e9d10851aebc9aba68f",
+    "ok": true,
+    "canonical_nodes": [
+      "FW-DUST-025",
+      "FW-DUST-026",
+      "FW-DUST-027",
+      "FW-DUST-028",
+      "FW-MOVE-025"
+    ]
+  },
+  {
+    "version": "v22",
+    "path": "00_rohinput/01_ROHINPUT_R21_QUESTKOSMOS_WORTNAH.md",
+    "sha256": "db3db4c59a4cca684a9d05095a905ed964fb3cf88baf7cb10970e72a29cfae26",
+    "bytes": 3024,
+    "parts": 1,
+    "reconstructed_sha256": "db3db4c59a4cca684a9d05095a905ed964fb3cf88baf7cb10970e72a29cfae26",
+    "ok": true,
+    "canonical_nodes": [
+      "FW-RAW-001"
+    ]
+  },
+  {
+    "version": "v22",
+    "path": "00_rohinput/02_ROHINPUT_R22_DUST_ECHO_WORTNAH.md",
+    "sha256": "6f8f8471e283cbff463cf34aef105c6189b7315f18fff683d681c23403fad15a",
+    "bytes": 2857,
+    "parts": 1,
+    "reconstructed_sha256": "6f8f8471e283cbff463cf34aef105c6189b7315f18fff683d681c23403fad15a",
+    "ok": true,
+    "canonical_nodes": [
+      "FW-RAW-002"
+    ]
+  },
+  {
+    "version": "v22",
+    "path": "00_rohinput/03_ROHINPUT_R23_DER_STAUB_ERINNERT_SICH_WORTNAH.md",
+    "sha256": "46237cc903bd037c1f991388e0926cc6cb08e742e6f937e6f6888a4a7db12177",
+    "bytes": 2908,
+    "parts": 1,
+    "reconstructed_sha256": "46237cc903bd037c1f991388e0926cc6cb08e742e6f937e6f6888a4a7db12177",
+    "ok": true,
+    "canonical_nodes": [
+      "FW-RAW-003"
+    ]
+  },
+  {
+    "version": "v22",
+    "path": "00_rohinput/04_ROHINPUT_R24_DUST_MANIPULIERT_UND_BEHAUPTET_DICH_ZU_KENNEN_WORTNAH.md",
+    "sha256": "8276ea14afeef7fe05811a03eee0de242c8b01690619280a4c5540198aa39d3f",
+    "bytes": 988,
+    "parts": 1,
+    "reconstructed_sha256": "8276ea14afeef7fe05811a03eee0de242c8b01690619280a4c5540198aa39d3f",
+    "ok": true,
+    "canonical_nodes": [
+      "FW-RAW-004"
+    ]
+  },
+  {
+    "version": "v22",
+    "path": "00_rohinput/05_ROHINPUT_R25_VOLATILE_QUESTOEKONOMIE_WORTNAH.md",
+    "sha256": "03cf8492ad04bbf9ceabde8daed63bb0caa1b55d192e4e3e604e8edefae0cef9",
+    "bytes": 737,
+    "parts": 1,
+    "reconstructed_sha256": "03cf8492ad04bbf9ceabde8daed63bb0caa1b55d192e4e3e604e8edefae0cef9",
+    "ok": true,
+    "canonical_nodes": [
+      "FW-RAW-005"
+    ]
+  },
+  {
+    "version": "v22",
+    "path": "00_rohinput/06_ROHINPUT_R26_TAG_NACHT_JAHRESZEITEN_WETTER_KATASTROPHEN_WORTNAH.md",
+    "sha256": "181912b745ccb7e33583f7726a14905559a35f220f3949e718e7fa5cb502262d",
+    "bytes": 971,
+    "parts": 1,
+    "reconstructed_sha256": "181912b745ccb7e33583f7726a14905559a35f220f3949e718e7fa5cb502262d",
+    "ok": true,
+    "canonical_nodes": [
+      "FW-RAW-006"
+    ]
+  },
+  {
+    "version": "v22",
+    "path": "01_audit/02_PRIOR_SIMULATION_REDTEAM_GESAMTBEFUND.md",
+    "sha256": "7c4440f7e725da57d03f1503ba2402268c16c58d8a9d6ebd7b122c8f3ab7832a",
+    "bytes": 5362,
+    "parts": 1,
+    "reconstructed_sha256": "7c4440f7e725da57d03f1503ba2402268c16c58d8a9d6ebd7b122c8f3ab7832a",
+    "ok": true,
+    "canonical_nodes": [
+      "FW-TEST-001"
+    ]
+  },
+  {
+    "version": "v22",
+    "path": "01_audit/03_PRIOR_SIMULATION_REDTEAM_62_EINZELAKTEN.md",
+    "sha256": "316276109c82e370ae46b5277ce9530fd8379f00916523f590514e1a00d09f15",
+    "bytes": 38171,
+    "parts": 1,
+    "reconstructed_sha256": "316276109c82e370ae46b5277ce9530fd8379f00916523f590514e1a00d09f15",
+    "ok": true,
+    "canonical_nodes": [
+      "FW-TEST-002"
+    ]
+  },
+  {
+    "version": "v22",
+    "path": "02_questarchitektur/01_DUST_ECHO_GRUNDGESETZ.md",
+    "sha256": "05ad391b500a71b8cc657fad6b1d3b1e3b19543f2b609ce05fe1be028dec7ea6",
+    "bytes": 3019,
+    "parts": 1,
+    "reconstructed_sha256": "05ad391b500a71b8cc657fad6b1d3b1e3b19543f2b609ce05fe1be028dec7ea6",
+    "ok": true,
+    "canonical_nodes": [
+      "FW-QUEST-001"
+    ]
+  },
+  {
+    "version": "v22",
+    "path": "02_questarchitektur/02_ECHO_DATENMODELL_UND_KRISTALLISIERUNG.md",
+    "sha256": "16559d920988891581884e4943ffa81aa7ade8ff9c745e3b597f8851472f3082",
+    "bytes": 2456,
+    "parts": 1,
+    "reconstructed_sha256": "16559d920988891581884e4943ffa81aa7ade8ff9c745e3b597f8851472f3082",
+    "ok": true,
+    "canonical_nodes": [
+      "FW-QUEST-002"
+    ]
+  },
+  {
+    "version": "v22",
+    "path": "02_questarchitektur/03_QUESTKOERPER_LEBENSZYKLUS.md",
+    "sha256": "518e7a0df42e2b9e22f7e89810df12f462ef5a2208eecca28414a26cc0e74745",
+    "bytes": 2422,
+    "parts": 1,
+    "reconstructed_sha256": "518e7a0df42e2b9e22f7e89810df12f462ef5a2208eecca28414a26cc0e74745",
+    "ok": true,
+    "canonical_nodes": [
+      "FW-QUEST-003"
+    ]
+  },
+  {
+    "version": "v22",
+    "path": "02_questarchitektur/04_ZWOELF_ORGANE_INTEGRATION.md",
+    "sha256": "4c9010067f3b30b2def41ac4778bc5acbbef16f45815b25493cfce095c9bc557",
+    "bytes": 1931,
+    "parts": 1,
+    "reconstructed_sha256": "4c9010067f3b30b2def41ac4778bc5acbbef16f45815b25493cfce095c9bc557",
+    "ok": true,
+    "canonical_nodes": [
+      "FW-ORG-001"
+    ]
+  },
+  {
+    "version": "v22",
+    "path": "02_questarchitektur/05_QUESTFAMILIEN_UND_MISCHFORMEN.md",
+    "sha256": "9b945a5681201aec3a1de9a19a077fde8a28689a73f880cf5d6010b0af303e61",
+    "bytes": 1617,
+    "parts": 1,
+    "reconstructed_sha256": "9b945a5681201aec3a1de9a19a077fde8a28689a73f880cf5d6010b0af303e61",
+    "ok": true,
+    "canonical_nodes": [
+      "FW-QUEST-004"
+    ]
+  },
+  {
+    "version": "v22",
+    "path": "02_questarchitektur/06_BOSS_UND_UMWELTLOGIK.md",
+    "sha256": "c8a90d3c183179cbcb85c0c86f8929e077afef2a5efc75090b6afacc247f4f3a",
+    "bytes": 1144,
+    "parts": 1,
+    "reconstructed_sha256": "c8a90d3c183179cbcb85c0c86f8929e077afef2a5efc75090b6afacc247f4f3a",
+    "ok": true,
+    "canonical_nodes": [
+      "FW-QUEST-001"
+    ]
+  },
+  {
+    "version": "v22",
+    "path": "02_questarchitektur/07_AUTONOME_FORTSETZUNG_UND_ABWESENHEIT.md",
+    "sha256": "25dcc2c0d8195ab1cea14ea3d63122e74be5f67f0dfda780451907704a176477",
+    "bytes": 1342,
+    "parts": 1,
+    "reconstructed_sha256": "25dcc2c0d8195ab1cea14ea3d63122e74be5f67f0dfda780451907704a176477",
+    "ok": true,
+    "canonical_nodes": [
+      "FW-QUEST-005"
+    ]
+  },
+  {
+    "version": "v22",
+    "path": "02_questarchitektur/08_MEHRPFADIGE_ENTWURFSBAEUME.md",
+    "sha256": "36ecb78dbd8d39fb4ca511e45395234fa625247d17f4eb58c55e0e6fc30e7955",
+    "bytes": 1683,
+    "parts": 1,
+    "reconstructed_sha256": "36ecb78dbd8d39fb4ca511e45395234fa625247d17f4eb58c55e0e6fc30e7955",
+    "ok": true,
+    "canonical_nodes": [
+      "FW-QUEST-006"
+    ]
+  },
+  {
+    "version": "v22",
+    "path": "02_questarchitektur/09_BELOHNUNGEN_MASTERIES_UND_FREISCHALTUNGEN.md",
+    "sha256": "71184ccbc717e8b11732b33aadfa7cace9b6c2a096ef2da9df3ac304654034fb",
+    "bytes": 1360,
+    "parts": 1,
+    "reconstructed_sha256": "71184ccbc717e8b11732b33aadfa7cace9b6c2a096ef2da9df3ac304654034fb",
+    "ok": true,
+    "canonical_nodes": [
+      "FW-QUEST-007"
+    ]
+  },
+  {
+    "version": "v22",
+    "path": "02_questarchitektur/10_SPANNUNG_UND_DRAMATURGIE.md",
+    "sha256": "e73cf98a908ea9a5ba9d52c70b60c880041034d0a9c11ccaedcdc8358b69efc7",
+    "bytes": 1097,
+    "parts": 1,
+    "reconstructed_sha256": "e73cf98a908ea9a5ba9d52c70b60c880041034d0a9c11ccaedcdc8358b69efc7",
+    "ok": true,
+    "canonical_nodes": [
+      "FW-QUEST-001"
+    ]
+  },
+  {
+    "version": "v22",
+    "path": "02_questarchitektur/11_ANTI_FETCH_ANTI_GRIND.md",
+    "sha256": "015c58d9c480fc69abbd841806ca328d9fbd042b2004278552cf0fbe7c7aef46",
+    "bytes": 1225,
+    "parts": 1,
+    "reconstructed_sha256": "015c58d9c480fc69abbd841806ca328d9fbd042b2004278552cf0fbe7c7aef46",
+    "ok": true,
+    "canonical_nodes": [
+      "FW-QUEST-008"
+    ]
+  },
+  {
+    "version": "v22",
+    "path": "02_questarchitektur/12_PROVENIENZ_SAVE_LOAD_UND_TESTBARKEIT.md",
+    "sha256": "46e37c223724e42880c2d6b62fcb491aaa3ace26edf38a79a2c0797ae5b90e19",
+    "bytes": 945,
+    "parts": 1,
+    "reconstructed_sha256": "46e37c223724e42880c2d6b62fcb491aaa3ace26edf38a79a2c0797ae5b90e19",
+    "ok": true,
+    "canonical_nodes": [
+      "FW-QUEST-001"
+    ]
+  },
+  {
+    "version": "v22",
+    "path": "02_questarchitektur/13_DER_STAUB_ERINNERT_SICH_SPIELERSPIEGEL_GRUNDGESETZ.md",
+    "sha256": "0a7e096f2ddcb3299b80eed00ab8d653073a25786fe6cff8a8c0656295207294",
+    "bytes": 1749,
+    "parts": 1,
+    "reconstructed_sha256": "0a7e096f2ddcb3299b80eed00ab8d653073a25786fe6cff8a8c0656295207294",
+    "ok": true,
+    "canonical_nodes": [
+      "FW-QUEST-009"
+    ]
+  },
+  {
+    "version": "v22",
+    "path": "02_questarchitektur/14_MANIPULATIVE_DUST_RHETORIK_PROPHETIE_UND_MACHT.md",
+    "sha256": "90966273365d367019663c1a4d6c3f3640516ed7cb8415d50dd3fe9a54f5a04a",
+    "bytes": 2645,
+    "parts": 1,
+    "reconstructed_sha256": "90966273365d367019663c1a4d6c3f3640516ed7cb8415d50dd3fe9a54f5a04a",
+    "ok": true,
+    "canonical_nodes": [
+      "FW-QUEST-010"
+    ]
+  },
+  {
+    "version": "v22",
+    "path": "02_questarchitektur/15_SPIELERPROFIL_SENSORIK_VERHALTEN_UND_WIDERSPRUCH.md",
+    "sha256": "ffaf5ce394f27fdba6e5531ca7878f438a6f2bc426ca2926624879ee3e26dfe0",
+    "bytes": 1594,
+    "parts": 1,
+    "reconstructed_sha256": "ffaf5ce394f27fdba6e5531ca7878f438a6f2bc426ca2926624879ee3e26dfe0",
+    "ok": true,
+    "canonical_nodes": [
+      "FW-QUEST-011"
+    ]
+  },
+  {
+    "version": "v22",
+    "path": "02_questarchitektur/16_POSITIVER_VIRUS_SPIELVERHALTEN_UND_REALWELTBRUECKE.md",
+    "sha256": "156e263f1bb9e62f7f0b175aa38540685a8caa3f76f27dfd1bc6dd58dc915074",
+    "bytes": 1938,
+    "parts": 1,
+    "reconstructed_sha256": "156e263f1bb9e62f7f0b175aa38540685a8caa3f76f27dfd1bc6dd58dc915074",
+    "ok": true,
+    "canonical_nodes": [
+      "FW-QUEST-012"
+    ]
+  },
+  {
+    "version": "v22",
+    "path": "02_questarchitektur/17_DUST_SPIELERSPIEGEL_QUESTINTEGRATION.md",
+    "sha256": "fee0f289b410daf504389293a80fa14860e1f8016d02d8e68af6c53c9e7f0837",
+    "bytes": 1652,
+    "parts": 1,
+    "reconstructed_sha256": "fee0f289b410daf504389293a80fa14860e1f8016d02d8e68af6c53c9e7f0837",
+    "ok": true,
+    "canonical_nodes": [
+      "FW-QUEST-013"
+    ]
+  },
+  {
+    "version": "v22",
+    "path": "02_questarchitektur/18_24H_TAG_NACHT_4_JAHRESZEITEN_WETTER_UND_NATURKATASTROPHEN.md",
+    "sha256": "002e602a5c463cc1ceda8bf7e9bc124bbeb195ae333ed848b398d5f8cd544c67",
+    "bytes": 2462,
+    "parts": 1,
+    "reconstructed_sha256": "002e602a5c463cc1ceda8bf7e9bc124bbeb195ae333ed848b398d5f8cd544c67",
+    "ok": true,
+    "canonical_nodes": [
+      "FW-QUEST-014"
+    ]
+  },
+  {
+    "version": "v22",
+    "path": "02_questarchitektur/19_VOLATILE_WIRTSCHAFT_GELDVERBRAUCH_GEWINN_UND_KAPITALBINDUNG.md",
+    "sha256": "60888c902f4781edeb05b50257cc9efb437fa536bc4a82f085b47d2f608920f2",
+    "bytes": 1800,
+    "parts": 1,
+    "reconstructed_sha256": "60888c902f4781edeb05b50257cc9efb437fa536bc4a82f085b47d2f608920f2",
+    "ok": true,
+    "canonical_nodes": [
+      "FW-QUEST-015"
+    ]
+  },
+  {
+    "version": "v22",
+    "path": "02_questarchitektur/20_15873_SIEBEN_AKT_QUESTKETTEN.md",
+    "sha256": "2301a82cd7d31d2dd14e51f7ff84954a6775b094998e65a1105653e3314bb8e2",
+    "bytes": 989,
+    "parts": 1,
+    "reconstructed_sha256": "2301a82cd7d31d2dd14e51f7ff84954a6775b094998e65a1105653e3314bb8e2",
+    "ok": true,
+    "canonical_nodes": [
+      "FW-QUEST-001"
+    ]
+  },
+  {
+    "version": "v22",
+    "path": "03_fragenkoerper/01_QUESTFRAGEN_777.md",
+    "sha256": "6f01ef96723fe0897d396343791bbc6b75ceb7513c31bb83ebfaddacdb844b24",
+    "bytes": 117043,
+    "parts": 4,
+    "reconstructed_sha256": "6f01ef96723fe0897d396343791bbc6b75ceb7513c31bb83ebfaddacdb844b24",
+    "ok": true,
+    "canonical_nodes": [
+      "FW-QUESTION-001",
+      "FW-QUESTION-002",
+      "FW-QUESTION-003",
+      "FW-QUESTION-004"
+    ]
+  },
+  {
+    "version": "v22",
+    "path": "03_fragenkoerper/02_QUESTCHECKS_111.md",
+    "sha256": "03b1140b5ec6bbfaf6d38b1c77f906cec645b18a43386cced64ceb5f35cd5c08",
+    "bytes": 13709,
+    "parts": 1,
+    "reconstructed_sha256": "03b1140b5ec6bbfaf6d38b1c77f906cec645b18a43386cced64ceb5f35cd5c08",
+    "ok": true,
+    "canonical_nodes": [
+      "FW-QUESTION-005"
+    ]
+  },
+  {
+    "version": "v22",
+    "path": "03_fragenkoerper/03_MEHRPFADIGE_ENTWURFSBAEUME_99_ZWEIGE.md",
+    "sha256": "af5c11b0a258696115b5688f07c646b2651001a34b2bf5021e90395d66c02566",
+    "bytes": 24872,
+    "parts": 1,
+    "reconstructed_sha256": "af5c11b0a258696115b5688f07c646b2651001a34b2bf5021e90395d66c02566",
+    "ok": true,
+    "canonical_nodes": [
+      "FW-QUESTION-006"
+    ]
+  },
+  {
+    "version": "v22",
+    "path": "04_simulation/01_SIMULATIONSMODELL_111111_X_99.md",
+    "sha256": "a38eee275cee6f62b38c27ca19cef677edcf64c3c408ec749b3cfec1df68c42b",
+    "bytes": 1042,
+    "parts": 1,
+    "reconstructed_sha256": "a38eee275cee6f62b38c27ca19cef677edcf64c3c408ec749b3cfec1df68c42b",
+    "ok": true,
+    "canonical_nodes": [
+      "FW-TEST-001"
+    ]
+  },
+  {
+    "version": "v22",
+    "path": "04_simulation/02_99_VARIANTEN_MATRIX.md",
+    "sha256": "fc7532ff054bbdf14e92b0f82218d4f912886bd7f4167c6de691f962b11761e4",
+    "bytes": 4087,
+    "parts": 1,
+    "reconstructed_sha256": "fc7532ff054bbdf14e92b0f82218d4f912886bd7f4167c6de691f962b11761e4",
+    "ok": true,
+    "canonical_nodes": [
+      "FW-TEST-003"
+    ]
+  },
+  {
+    "version": "v22",
+    "path": "05_redteam/01_DUST_SPIELERSPIEGEL_MANIPULATIONS_REDTEAM.md",
+    "sha256": "c384e184a22e3dc977f66896214ebffdc36f200ab1c05f24658d994ca875f324",
+    "bytes": 2206,
+    "parts": 1,
+    "reconstructed_sha256": "c384e184a22e3dc977f66896214ebffdc36f200ab1c05f24658d994ca875f324",
+    "ok": true,
+    "canonical_nodes": [
+      "FW-TEST-004"
+    ]
+  },
+  {
+    "version": "v22",
+    "path": "05_redteam/04_QUESTKOSMOS_FINAL_REDTEAM.md",
+    "sha256": "49d5b028dd1f6e26ed30194c65954ba494ccbf5e836b4e8217e3fabd34fcd814",
+    "bytes": 949,
+    "parts": 1,
+    "reconstructed_sha256": "49d5b028dd1f6e26ed30194c65954ba494ccbf5e836b4e8217e3fabd34fcd814",
+    "ok": true,
+    "canonical_nodes": [
+      "FW-TEST-001"
+    ]
+  },
+  {
+    "version": "v22",
+    "path": "06_ergebnisse/01_QUESTKOSMOS_GESAMTBERICHT.md",
+    "sha256": "0fb9ff550e966fbf726d484ce13952b31eac4fd186ec4e54e1d84680d99873d9",
+    "bytes": 1332,
+    "parts": 1,
+    "reconstructed_sha256": "0fb9ff550e966fbf726d484ce13952b31eac4fd186ec4e54e1d84680d99873d9",
+    "ok": true,
+    "canonical_nodes": [
+      "FW-QUEST-016"
+    ]
+  },
+  {
+    "version": "v22",
+    "path": "06_ergebnisse/02_QUEST_REDTEAM_UND_SCHAERFUNGEN.md",
+    "sha256": "46ccc6b5d98307cd2618ee4e094ec536d1fc29fb9ae1800fd0d25fcaae78afcd",
+    "bytes": 501,
+    "parts": 1,
+    "reconstructed_sha256": "46ccc6b5d98307cd2618ee4e094ec536d1fc29fb9ae1800fd0d25fcaae78afcd",
+    "ok": true,
+    "canonical_nodes": [
+      "FW-TEST-001"
+    ]
+  },
+  {
+    "version": "v22",
+    "path": "06_ergebnisse/03_WIRTSCHAFT_VOLATILITAET_BERICHT.md",
+    "sha256": "e33771d6bd9ca49b739e71df6deb9e04527780382d9d0685815478a86809c92a",
+    "bytes": 623,
+    "parts": 1,
+    "reconstructed_sha256": "e33771d6bd9ca49b739e71df6deb9e04527780382d9d0685815478a86809c92a",
+    "ok": true,
+    "canonical_nodes": [
+      "FW-QUEST-001"
+    ]
+  },
+  {
+    "version": "v22",
+    "path": "06_ergebnisse/04_ZEIT_KLIMA_KATASTROPHEN_BERICHT.md",
+    "sha256": "dbbbcf7621a3fa5091b8a10b00086d1ce1c7985e3cb4c240cc75161e3417ec51",
+    "bytes": 688,
+    "parts": 1,
+    "reconstructed_sha256": "dbbbcf7621a3fa5091b8a10b00086d1ce1c7985e3cb4c240cc75161e3417ec51",
+    "ok": true,
+    "canonical_nodes": [
+      "FW-QUEST-001"
+    ]
+  },
+  {
+    "version": "v22",
+    "path": "06_ergebnisse/05_QUESTKETTEN_UND_BOSSLOGIK.md",
+    "sha256": "a4bb4d4cd2b60e2c7910844fad9bcf5781865a76683624cb5095110e8d0ec96c",
+    "bytes": 622,
+    "parts": 1,
+    "reconstructed_sha256": "a4bb4d4cd2b60e2c7910844fad9bcf5781865a76683624cb5095110e8d0ec96c",
+    "ok": true,
+    "canonical_nodes": [
+      "FW-QUEST-001"
+    ]
+  },
+  {
+    "version": "v22",
+    "path": "06_ergebnisse/06_ZWOELF_ORGANE_COVERAGE.md",
+    "sha256": "0017eba715e4412061526cd46c34ebde7eafde020e59bd03d2e09974be073e70",
+    "bytes": 626,
+    "parts": 1,
+    "reconstructed_sha256": "0017eba715e4412061526cd46c34ebde7eafde020e59bd03d2e09974be073e70",
+    "ok": true,
+    "canonical_nodes": [
+      "FW-ORG-001"
+    ]
+  },
+  {
+    "version": "v22",
+    "path": "06_ergebnisse/07_88888_WESEN_ABDECKUNG.md",
+    "sha256": "03e4d16575840ca4222e4550e59b37498d4fb1971a21784fe9c7b776d7a89260",
+    "bytes": 515,
+    "parts": 1,
+    "reconstructed_sha256": "03e4d16575840ca4222e4550e59b37498d4fb1971a21784fe9c7b776d7a89260",
+    "ok": true,
+    "canonical_nodes": [
+      "FW-QUEST-001"
+    ]
+  },
+  {
+    "version": "v22",
+    "path": "06_ergebnisse/08_BEKANNTE_GRENZEN.md",
+    "sha256": "ecad6aea1362e286ae2a8b665f5ecdf0c1e41a8a29ee709479680f19c3b8a441",
+    "bytes": 892,
+    "parts": 1,
+    "reconstructed_sha256": "ecad6aea1362e286ae2a8b665f5ecdf0c1e41a8a29ee709479680f19c3b8a441",
+    "ok": true,
+    "canonical_nodes": [
+      "FW-LIMIT-001"
+    ]
+  },
+  {
+    "version": "v22",
+    "path": "06_ergebnisse/09_PROOF_OF_RUN.md",
+    "sha256": "7e2390fc176bc4cb6ef421d9e2537a72b301283cc942e64cfc93f883707aa6af",
+    "bytes": 770,
+    "parts": 1,
+    "reconstructed_sha256": "7e2390fc176bc4cb6ef421d9e2537a72b301283cc942e64cfc93f883707aa6af",
+    "ok": true,
+    "canonical_nodes": [
+      "FW-TEST-001"
+    ]
+  },
+  {
+    "version": "v22",
+    "path": "MANIFEST.md",
+    "sha256": "34d35e5bae81074b79ef9f589faceb9561e392a5720345e3e85be15bd3843c6d",
+    "bytes": 63502,
+    "parts": 3,
+    "reconstructed_sha256": "34d35e5bae81074b79ef9f589faceb9561e392a5720345e3e85be15bd3843c6d",
+    "ok": true,
+    "canonical_nodes": [
+      "FW-NET-002",
+      "FW-NET-004",
+      "FW-NET-006",
+      "FW-NET-008",
+      "FW-NET-010",
+      "FW-NET-012",
+      "FW-NET-014",
+      "FW-NET-017",
+      "FW-NET-019",
+      "FW-NET-021",
+      "FW-NET-023",
+      "FW-NET-026",
+      "FW-NET-028",
+      "FW-NET-030",
+      "FW-NET-032",
+      "FW-NET-035",
+      "FW-NET-036"
+    ]
+  },
+  {
+    "version": "v22",
+    "path": "OUTRO.md",
+    "sha256": "cdcb5fc3eaebf3daf2982b9566c0586825357eeb47b0eac53098f967105cab85",
+    "bytes": 303463,
+    "parts": 8,
+    "reconstructed_sha256": "cdcb5fc3eaebf3daf2982b9566c0586825357eeb47b0eac53098f967105cab85",
+    "ok": true,
+    "canonical_nodes": [
+      "FW-NET-044",
+      "FW-NET-047",
+      "FW-NET-049",
+      "FW-NET-052",
+      "FW-NET-054",
+      "FW-NET-057",
+      "FW-NET-058",
+      "FW-NET-059"
+    ]
+  },
+  {
+    "version": "v22",
+    "path": "README.md",
+    "sha256": "358b147da29683433dc1d8e3709719c868f62cc80ffc4088c93233e940b8797e",
+    "bytes": 859,
+    "parts": 1,
+    "reconstructed_sha256": "358b147da29683433dc1d8e3709719c868f62cc80ffc4088c93233e940b8797e",
+    "ok": true,
+    "canonical_nodes": [
+      "FW-NET-002"
+    ]
+  }
+]

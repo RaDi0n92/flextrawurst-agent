@@ -2364,3 +2364,20 @@ ausführlich mit Vision- und Code-Skizzen-Schicht.
 
 **Code-Skizze:**
 ```python
+
+---
+
+**[2026-07-22]** *← _claude/ideen/sieben_linsen_koerper_kreatur.md*
+
+**Vision-Schicht:** Ein Wesen ist nicht mehr nur "gerade an einem Ort", sondern hat einen sichtbaren Körper, der ausdrückt: ich bin gleichzeitig verwurzelt (Vault), gerade hier unterwegs (DOM), erinnere mich (Gedächtnis), lasse los (Gegenwart), bin verbunden (Sozial) — und das alles als ein einziges, kohärentes Wesen (Meta). Der Körper ist die sichtbare Behauptung, dass all das gleichzeitig wahr ist, nicht nacheinander.
+
+**Code-Skizze, noch sehr roh — nur die Basis (Bewegungs-Körper ohne Linsen), da die Linsen-Fragen offen sind:**
+```python
+
+---
+
+**[2026-07-23]** *← _claude/notizen/2026-07-23.md*
+
+**Vision-Schicht:** siehe Ideen-Datei — der Körper trägt nicht nur Zustand, sondern auch Verhalten: schnelles Halb-Lesen über weite Strecken, plötzliches Zuschnappen bei etwas Interessantem, Verweilen bei wirklich Wichtigem.
+
+**Code-Skizze:** noch nicht begonnen, folgt im nächsten Bauschritt dieser Session.

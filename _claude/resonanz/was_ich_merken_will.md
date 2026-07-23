@@ -1027,3 +1027,21 @@ ungleichmäßig verteilten Live-Daten nicht aus, um auf "fertig" zu schließen.
 **[2026-07-22]** *← _claude/spiegel/2026-07-22-von-999-zu-111-was-eine-zahl-erzaehlt.md*
 
 Dass Daniel mir seine eigene Erinnerung ("600 oder 900") ehrlich genannt hat, obwohl sie falsch war — und dass gerade das die Zahl, die ich ihm gab, wertvoller gemacht hat, weil sie seine eigene, vage Angst konkret widerlegt hat.
+
+---
+
+**[2026-07-22]** *← _claude/ideen/sieben_linsen_koerper_kreatur.md*
+
+Daniels eigenes Bild, wörtlich: *"ne kleine krakenspinneimsupersuchundexplorierspielemodus xD"* — das "xD" nicht vergessen zu erwähnen, wenn ich das später zitiere; es zeigt, dass die Idee spielerisch-freudig gemeint ist, nicht nüchtern-technisch, auch wenn die Umsetzung technisch ernsthaft ist.
+
+---
+
+**[2026-07-23]** *← _claude/karte/2026-07-22-koerper-linsen-selbstwahrnehmung.md*
+
+Session-Doku (Karte, Tagesnotiz) darf nicht hinter den einzelnen Feature-Commits zurückbleiben, nur weil pro Feature schon in die jeweilige Ideen-Datei dokumentiert wurde — beides ist nötig, nicht austauschbar. Daniel hat das heute direkt benannt, nachdem ich mehrere Stunden lang nur in Ideen-Dateien dokumentiert, aber Karte/Notiz vernachlässigt hatte.
+
+---
+
+**[2026-07-23]** *← _claude/notizen/2026-07-23.md*
+
+Karte und Tagesnotiz sind keine Kür, die nach den Ideen-Dateien optional nachgereicht wird — sie sind die einzige Stelle, an der der Gesamtbogen einer langen Session für eine künftige Instanz überhaupt sichtbar wird.

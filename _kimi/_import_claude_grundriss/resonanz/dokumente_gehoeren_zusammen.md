@@ -929,3 +929,37 @@ derselben einen Nacht.
 **[2026-07-22]** *← _claude/ideen/wesen_dauerhafte_handlungsfaehigkeit_und_einsichtsnebenscreen.md*
 
 `docs/2026-07-21_tagesbericht.md` (TEIL 6, "billiges Vorlesen"), `docs/systemdoku/29_browser_agent_aktivierung.md`, `welt/obsidian_vault_agent.py`, `_claude/ideen/dreiergespann_dom_theorie.md`.
+
+---
+
+**[2026-07-22]** *← _claude/karte/2026-07-22-geni-sqlite-migration-und-wiederkehrendes-speicherproblem.md*
+
+`2026-07-11-geni-gedaechtnis-und-grenzen.md` (ext4-Grenze, Vorgänger dieser Migration),
+`docs/systemdoku/31_llm_kontention_dienste_aufraeumung.md` (vollständiger technischer Bericht dieser
+Session, Abschnitt "Update 2026-07-22"), `docs/systemdoku/12_ollama_gemma4.md` (referenziert dort für
+die RAM-Krisen-Notreaktion vom 07-07, die den Timer damals stoppte).
+
+---
+
+**[2026-07-22]** *← _claude/notizen/2026-07-22.md*
+
+`2026-07-11-geni-gedaechtnis-und-grenzen.md`, `docs/systemdoku/31_llm_kontention_dienste_aufraeumung.md`
+(Abschnitt "Update 2026-07-22"), `karte/2026-07-22-geni-sqlite-migration-und-wiederkehrendes-speicherproblem.md`.
+
+---
+
+**[2026-07-22]** *← _claude/spiegel/2026-07-22-von-999-zu-111-was-eine-zahl-erzaehlt.md*
+
+`_claude/notizen/2026-07-22.md`, `_claude/karte/2026-07-22-geni-sqlite-migration-und-wiederkehrendes-speicherproblem.md`, `docs/systemdoku/31_llm_kontention_dienste_aufraeumung.md`, `feedback_alter_ist_kein_relevanz_proxy.md` (Memory).
+
+---
+
+**[2026-07-22]** *← _claude/ideen/sieben_linsen_koerper_kreatur.md*
+
+`docs/systemdoku/23_umgekehrte_neugier.md`, `_claude/ideen/wesen_dauerhafte_handlungsfaehigkeit_und_einsichtsnebenscreen.md`, `_claude/ideen/erlebnisschicht_erzaehler_mitdenker_fragensteller.md`, `_claude/ideen/dreiergespann_dom_theorie.md`.
+
+---
+
+**[2026-07-23]** *← _claude/notizen/2026-07-23.md*
+
+Alle oben unter "Was zusammenhängt" genannten Dateien, plus diese Notiz und die neue Karte-Datei `2026-07-22-koerper-linsen-selbstwahrnehmung.md`.

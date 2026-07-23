@@ -977,3 +977,15 @@ Nichts — kein neues Bauvorhaben schließt an diese Session an.
 **[2026-07-22]** *← _claude/spiegel/2026-07-22-von-999-zu-111-was-eine-zahl-erzaehlt.md*
 
 Nichts — kein neues Bauvorhaben schließt an diese Session an.
+
+---
+
+**[2026-07-22]** *← _claude/ideen/sieben_linsen_koerper_kreatur.md*
+
+Die drei offenen Fragen oben, plus eine Entscheidung: baut sich der Körper zuerst als reine Bewegungs-Kreatur (ohne die sieben Linsen, das was gerade parallel als "IK-Kreatur-Körper-Basis" gebaut wird), und die sieben Linsen kommen als spätere Erweiterung obendrauf — oder muss die Linsen-Struktur von Anfang an mitgedacht werden, damit der Körper nicht später komplett umgebaut werden muss?
+
+---
+
+**[2026-07-23]** *← _claude/notizen/2026-07-23.md*
+
+Nichts Blockierendes für den nächsten kleinen Schritt (Locomotion-Grundmuster) — Daniel hat bereits eine konkrete Metapher geliefert (Lupe/Taschenlampe/Kescher), die als Ausgangspunkt reicht.

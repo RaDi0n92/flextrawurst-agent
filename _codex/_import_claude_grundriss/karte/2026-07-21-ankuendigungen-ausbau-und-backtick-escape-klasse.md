@@ -22,3 +22,13 @@ Dass ein Feature, das ich als "außerhalb des Auftrags, nicht anfassen" dokument
 ## Was ich mir merken will
 
 Vor dem nächsten Griff zu "neue Tabelle bauen": kurz durch bestehende generische Systeme (resonanzen, events, meta JSONB) gehen, ob es schon passt.
+
+## Nachtrag 2026-07-22 — dritter Fall, diesmal Regex statt String-Quote
+
+Dieselbe Fehlerklasse, aber eine Variante die ich vorher nicht auf dem Schirm hatte: nicht `\'` in einem `onclick=`-String, sondern `\s`/`[\s\S]` in einem Regex-Literal, das ich selbst neu in `_erlVerarbeiteDenkstreamChunk`/`_erlZerlegeSaetze` (Erlebnisschicht, SCREENS-Tab) geschrieben hatte. Gleicher Mechanismus (äußere Backtick-Auswertung frisst den Backslash lautlos), aber der oben dokumentierte Fix ("Fragmente mit anderem Quote-Zeichen statt Backslash") passt hier nicht — bei Regex-Metazeichen ist die richtige Lösung **doppelter Backslash** (`\s` → `\\s`), nicht Fragment-Konkatenation. Bestehender Code an derselben Stelle (`replace(/^Bearer\\s+/,'')`) macht das schon lange richtig — hätte ich vorher als Muster suchen sollen, statt die Regex naiv wie in einer normalen `.ts`-Datei zu schreiben.
+
+**Konkrete Lehre für mich:** diese Fehlerklasse hat zwei Unterfälle mit unterschiedlichem Fix, je nachdem was der Backslash einleitet:
+- String-Escape für ein Quote-Zeichen (`\'`) → Fragmente mit dem jeweils anderen Anführungszeichen, keine Backslashes.
+- Regex-Metazeichen (`\s`, `\d`, `\w`, `\n` als Teil eines Regex-Literals) → doppelter Backslash (`\\s`), damit nach der äußeren Auswertung ein einzelner Backslash übrigbleibt.
+
+Beide Fälle brauchen denselben Reflex: JEDER Backslash, den ich innerhalb des riesigen `generateGruppenView()`-Template-Literal-Blocks (Zeile ~8650-10259 in `build_surface.ts`, praktisch der komplette Surface-Script-Code) neu hinschreibe, ist verdächtig — sofort im gebauten `out/surface/flextrawurst_surface.html` per `grep` gegenprüfen, nicht erst wenn ein Feature stumm nicht funktioniert. Diesmal hat mich das über mehrere Live-Test-Zyklen (jeweils 100-260s) getäuscht, weil ich zuerst an Timing/Häufigkeit geglaubt habe statt an einen Syntaxfehler in der Auslieferung — die isolierte Node-Gegenprobe (Regex funktioniert einwandfrei außerhalb der Datei) war der Moment, der den Widerspruch sichtbar gemacht hat. Volle Fehlersuche: [[project_flextrawurst]], `_claude/ideen/erlebnisschicht_erzaehler_mitdenker_fragensteller.md`.

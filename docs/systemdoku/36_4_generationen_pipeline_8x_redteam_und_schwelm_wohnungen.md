@@ -73,3 +73,36 @@ Jedes mathematische 3D-Modell muss 8 aufeinanderfolgende Qualitätsprüfungen be
   - `gen2_city_dungeons_math_redteam.json` (`PASS_CERTIFIED`)
   - `gen2_casino_gord_math_redteam.json` (`PASS_CERTIFIED_GEN2_REDTEAM_APPROVED`)
   - `gen2_casino_gord_beta_math_redteam.json` (`PASS_VERIFIED_GEN2_BETA`)
+
+---
+
+## 4. Innenausstattung & Spezialbauwerke (Generation 3 & 4)
+
+- **Gen 3 Ausstattungsberichte:**
+  - `gen3_schwelm_housing_interior.json` (100% custom: PC-Stromschlag, Toaster tmv_101, Ziegelwand-Cache, Oszilloskop, Teich & Ställe)
+  - `gen3_schwelm_beta_interior.json`
+  - `gen3_world_dungeons_interior.json` (26 Dungeon-Interiors: Berlin Atombunker, Tokio G-Cans, London Mail Rail, Paris Katakomben)
+  - `gen3_world_dungeons_beta_interior.json`
+
+- **Gen 4 Landmark-Monumente:**
+  - `gen4_casino_gord_monument.json` & `gen4_casino_gord_beta_monument.json` (Wuppertal Super-Casino & GORDSLIDER 3D Hero Body, SHA256 PASS)
+  - `gen4_nordschleife_replica.json` & `gen4_nordschleife_beta_replica.json` (1:1 Nordschleife Replica, 20.832km Hermite Spline, SHA256 PASS)
+
+---
+
+## 5. Surface-Integration & KOSMOS 3D Explorer (Port 8787)
+
+Die verfassungsmäßige Surface-Integration wurde nach den Grundgesetzen (`Surface-Gesetz` & `i18n-Gesetz`) vollzogen:
+
+1. **Surface Tab:** Neuer Tab `KOSMOS 3D` (`#kosmos`, `view-kosmos`) in `build_surface.ts` integriert.
+2. **Interactive Explorer:**
+   - 4-Generationen Fortschritts- & Statusbalken (Gen 1 Harvester, Gen 2 Math 8x Redteam, Gen 3 Schwelm Housing & Dungeons, Gen 4 Landmark Monuments).
+   - Filterleiste per Komponente (Schwelm Hauptstraße 151, Katakomben & Tunnels, Wuppertal Super-Casino, GORDSLIDER 3D Hero Body, Nürburgring Nordschleife 1:1).
+   - Kryptographische SHA256-Prüfsiegel & 50-Metadaten-Inspektor.
+3. **i18n Zweisprachigkeit:** Vollständige Übersetzungs-Keys in `UI_TR.de` und `UI_TR.en` hinterlegt (`tab.kosmos`, `ksm.title`, etc.).
+4. **Verifikation & Testabdeckung:**
+   - Build-Skript `scripts/build_surface.ts` erfolgreich ausgeführt.
+   - Testabdeckung in `tests/surface_ring_23.test.ts` auf 88 Tests erweitert.
+   - Testlauf `npx tsx --test tests/surface_ring_23.test.ts` verifiziert: **88/88 Tests GREEN**.
+   - Prozess-Kamera Artefakt synchronisiert: `out/surface/flextrawurst_surface.html` → `out/process_camera/flextrawurst_surface.html`.
+

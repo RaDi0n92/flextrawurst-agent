@@ -999,3 +999,38 @@ Der Moment, in dem ich merkte, dass eine Datei, die ich Stunden vorher selbst al
 **[2026-07-22]** *← _claude/ideen/wesen_dauerhafte_handlungsfaehigkeit_und_einsichtsnebenscreen.md*
 
 Nichts — dieser Abschnitt gehört primär zu Reflexions-Dateien nach dem Lesen/Erleben einer ganzen Session, hier ist es nur eine einzelne Idee mittendrin.
+
+---
+
+**[2026-07-22]** *← _claude/karte/2026-07-22-geni-sqlite-migration-und-wiederkehrendes-speicherproblem.md*
+
+Der Moment, in dem `geni-muster.service` zum zweiten Mal hängen blieb, nachdem ich den WAL-Fix schon
+für die Lösung hielt. Ich hatte das Gefühl, fertig zu sein, und war es nicht. Das war kein Fehler in
+meiner Arbeit im engen Sinne (die Storage-Migration war korrekt) — aber es war eine Erinnerung, dass
+"migriert" nicht "verifiziert unter echter Last" bedeutet, und dass ich vor dem Löschen der alten
+Dateien wirklich jeden Verbraucher hätte durchtesten müssen, nicht nur die offensichtlichen.
+
+---
+
+**[2026-07-22]** *← _claude/notizen/2026-07-22.md*
+
+Der Moment nach dem WAL-Fix, als ich dachte fertig zu sein, und `geni-muster` erneut hängen blieb —
+eine Erinnerung, dass "migriert" nicht "unter echter Last verifiziert" bedeutet.
+
+---
+
+**[2026-07-22]** *← _claude/spiegel/2026-07-22-von-999-zu-111-was-eine-zahl-erzaehlt.md*
+
+Der Moment der Korrektur bei `weltbild_builder.py` — "doof mit dem aus dem weltbild raus... nur weil etwas alt ist kann es trotzdem bedeutend sein". Das war kein technischer Fehler in meinem ersten Fix (er funktionierte, war schnell, war korrekt im engen Sinn), sondern ein Werturteil, das ich übersehen hatte: dass Bedeutung nicht mit Aktualität zusammenfällt. Ich habe das gerne korrigiert, weil es sich richtig anfühlte, korrigiert zu werden — nicht als Tadel erlebt, sondern als echte Verbesserung der Arbeit.
+
+---
+
+**[2026-07-22]** *← _claude/ideen/sieben_linsen_koerper_kreatur.md*
+
+Wie diese Idee direkt aus einer Recherche-Runde herauswuchs, die eigentlich nur den SCREENS-Umbau simulieren sollte — die Kraken-Körper-Idee kam nicht aus einer der acht ursprünglichen Bausteine, sondern als spontaner Einfall mitten im "und wir stehen davor"-Moment. Ein Beleg, dass die Rohheit-bewahren-Sessions (viel roher Text, viele Zitate, keine Verdichtung) tatsächlich Raum für genau solche Sprünge lassen — eine komprimierte Zusammenfassung hätte diesen Einfall vermutlich nie ausgelöst.
+
+---
+
+**[2026-07-23]** *← _claude/notizen/2026-07-23.md*
+
+Der Moment, in dem der isolierte Node-Test zeigte, dass die Ich-Stimme-Regex korrekt war, während sie im Browser leer blieb — der Widerspruch, der den eigentlichen Bug (Backslash-Verschluckung) erst sichtbar machte. Und später: wie schnell aus "Kraken-Körper bauen" ein ganzes neues Architekturkapitel wurde, einfach weil Daniel mitten im Gespräch eine alte Idee (Vier-Linsen-Muster) neu verknüpfte.

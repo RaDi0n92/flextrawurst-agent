@@ -1647,3 +1647,40 @@ Nichts. Drei Fragen in einem einzigen Gesprächsstrang, kurz bevor Daniel schlaf
 **[2026-07-22]** *← _claude/ideen/wesen_dauerhafte_handlungsfaehigkeit_und_einsichtsnebenscreen.md*
 
 Nichts — diese Idee kam aus dem Live-Gespräch, nicht aus Lektüre.
+
+---
+
+**[2026-07-22]** *← _claude/karte/2026-07-22-geni-sqlite-migration-und-wiederkehrendes-speicherproblem.md*
+
+Nichts Neues gelesen im Sinne von Spiegel/Notizen — aber sehr genau den bestehenden Code gelesen
+(`gedaechtnis_ops.py`, `dialog.py`, `muster.py`, `hoerer.py`, `sprechen.py`) bevor ich irgendetwas
+angefasst habe, um jeden Lese-/Schreibzugriff auf `KNOTEN_DIR` vollständig zu kennen. Dabei `sprechen.py`
+gefunden — eine tote, nie als Service laufende Datei mit einer veralteten Kopie der Knoten-Schreiblogik
+von vor dem Juli-11-Sharding-Fix. Nicht angefasst, aber jetzt bekannt.
+
+---
+
+**[2026-07-22]** *← _claude/notizen/2026-07-22.md*
+
+Nur Code, keine Spiegel/Notizen-Lektüre heute — vollständig auf die Migration konzentriert.
+`gedaechtnis_ops.py`, `dialog.py`, `muster.py`, `hoerer.py`, `sprechen.py` (letzteres nur um zu
+verifizieren, dass es tot ist), außerdem `2026-07-11-geni-gedaechtnis-und-grenzen.md` als Vorwissen
+zur ext4-Grenze, die dieser Migration vorausging.
+
+---
+
+**[2026-07-22]** *← _claude/spiegel/2026-07-22-von-999-zu-111-was-eine-zahl-erzaehlt.md*
+
+Nichts — dieser Spiegel kommt aus dem Live-Gespräch selbst, nicht aus Lektüre.
+
+---
+
+**[2026-07-22]** *← _claude/ideen/sieben_linsen_koerper_kreatur.md*
+
+Nichts direkt für diese Idee — sie kam aus dem Live-Gespräch. Aber ich habe zur Einordnung `docs/systemdoku/23_umgekehrte_neugier.md` gelesen (das bestehende Vier-Linsen-Muster, auf das Daniel sich bezog) und die komplette Erlebnisschicht-Ideen-Datei (`erlebnisschicht_erzaehler_mitdenker_fragensteller.md`), weil diese neue Idee direkt aus deren letzter Recherche-Runde herauswuchs.
+
+---
+
+**[2026-07-23]** *← _claude/notizen/2026-07-23.md*
+
+Für diese Session selbst nichts Neues gelesen — die Arbeit knüpfte direkt an den vorigen Tag an (Ich-Stimme/Erzähler-Bugfix, siehe Vortagesnotiz). Zwischendurch aber `docs/systemdoku/23_umgekehrte_neugier.md` (Vier-Linsen-Vorbild) und `docs/systemdoku/26_dom_agenten_brainstorm.md` (Substanz-Infekt-Ursprung, X-Ray-Overlay-Ursprung) neu gelesen, um beide Bauaufträge korrekt an Bestehendes anzudocken statt neu zu erfinden.

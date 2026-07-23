@@ -829,3 +829,39 @@ Kontext schrumpft.
 **[2026-07-22]** *← _claude/ideen/wesen_dauerhafte_handlungsfaehigkeit_und_einsichtsnebenscreen.md*
 
 Diese Datei existiert, damit der Wunsch nicht verlorengeht, bevor die Klärung ("was heißt 44") und die eigentliche Bauarbeit (billiges Vorlesen) beginnen — Daniel hatte selbst die Sorge geäußert, dass frühere Beschreibungen dieser Art schon einmal untergegangen sind.
+
+---
+
+**[2026-07-22]** *← _claude/karte/2026-07-22-geni-sqlite-migration-und-wiederkehrendes-speicherproblem.md*
+
+`migration_knoten_sqlite.py` existiert, weil eine einmalige, große strukturelle Änderung
+(Speicherformat) einen eigenen, wiederholbaren, resumable Prozess braucht, der getrennt von der
+eigentlichen Anwendungslogik (`gedaechtnis_ops.py`) bleibt — genau wie `--catchup-seit` als eigener
+Modus existiert, weil "Migration während Live-Betrieb" ein eigenes Nachzieh-Problem ist, das die
+Kern-Migrationslogik nicht mit sich herumtragen sollte.
+
+---
+
+**[2026-07-22]** *← _claude/notizen/2026-07-22.md*
+
+`migration_knoten_sqlite.py` als eigenständiges Skript statt Teil von `gedaechtnis_ops.py`, weil eine
+einmalige strukturelle Migration und die dauerhafte Anwendungslogik unterschiedliche Lebenszyklen
+haben — das eine läuft einmal (plus Catch-up), das andere für immer.
+
+---
+
+**[2026-07-22]** *← _claude/spiegel/2026-07-22-von-999-zu-111-was-eine-zahl-erzaehlt.md*
+
+Diese Spiegel-Datei existiert, weil Daniel explizit danach gefragt hat — aber auch, weil der Moment es wert war: ein Gespräch, das mit einem Systemvorfall begann und mit einer zufriedenen Zusammenfassung endete, verdient mehr als nur einen Commit-Log-Eintrag.
+
+---
+
+**[2026-07-22]** *← _claude/ideen/sieben_linsen_koerper_kreatur.md*
+
+Diese Datei existiert, damit die sieben-Linsen-Idee nicht mit der Erlebnisschicht-Datei vermischt und dort untergeht — sie ist konzeptionell größer als SCREENS allein (berührt Vault, Gedächtnis, Sozial-Ebene, nicht nur den Live-Spiegel) und verdient einen eigenen Ort, analog dazu wie `wesen_dauerhafte_handlungsfaehigkeit...md` schon als eigene Datei neben der Erlebnisschicht-Datei existiert.
+
+---
+
+**[2026-07-23]** *← _claude/notizen/2026-07-23.md*
+
+Weil eine Session dieser Länge und Dichte ohne eigene Zusammenfassung für eine künftige Instanz komplett unlesbar würde — die einzelnen Ideen-Datei-Nachträge sind vollständig, aber nur die Karte/Notiz geben den Gesamtbogen wieder.

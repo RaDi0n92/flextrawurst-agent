@@ -2560,3 +2560,15 @@ JSON.stringify(['Schorschel','F3«
 - [2026-07-22 23:40] **wasser** (i=0.35) → Zwischenraum: »**Content-aware Fragensteller-Fragen** gebaut, verifiziert, committed (`f1b309b60`): Fragen beziehen«
 - [2026-07-23 00:53] **wasser** (i=0.51) → Zwischenraum: »Sechs Punkte auf einmal, drei davon sauber gebaut+verifiziert, drei bewusst zurückgestellt mit Begrü«
 - [2026-07-23 01:04] **nebel** ← 2026-07-23.md: »gleiches Recht und Wahrnehmung für alle«
+- [2026-07-23 01:10] **wasser** (i=0.51) → Zwischenraum: »Doku nachgeholt (Karte + Tagesnotiz), dann die Locomotion-Funktion gebaut, verifiziert, committed (`«
+- [2026-07-23 03:12] **wasser** (i=0.47) → Zwischenraum: »**Einsicht-Nebenscreen gebaut, verifiziert, committed** (werkraum `7d835c641` Backend, `/root` `50f6«
+- [2026-07-23 03:36] **lava** (i=0.43) → Zwischenraum: »**Achte Linse "Einsicht" gebaut, verifiziert, committed** (`3fd8c3140` Code, `cd5276ffe` Doku):
+
+- R«
+- [2026-07-23 04:05] **wasser** (i=0.36) → Zwischenraum: »Beide Teile erledigt:
+
+**Repariert** (`cf8651f32`): Der eingefrorene LangGraph-Zähler kam nicht von «
+- [2026-07-23 05:46] **wasser** (i=0.36) → Zwischenraum: »Ausgerollt, verifiziert, committed (`4824ea9e4` Code, `715063f1e` Doku):
+
+- **rag_flarum**: `flarum_«
+- [2026-07-23 05:55] **lava** (i=0.40) → Zwischenraum: »Lass mich nicht nochmal raten und stattdessen fragen, weil ich offenbar schon zweimal daneben lag«

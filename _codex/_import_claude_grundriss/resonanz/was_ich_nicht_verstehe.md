@@ -991,3 +991,39 @@ Warum `ankuendigungen` beim ursprünglichen Bau schon einen `GRANT ... TO dak` h
 Die Zahl "44" — Sekunden? Klicks? Scrollvorgänge? Ticks? Ohne die Einheit kann ich den Check-in-Rhythmus nicht bauen, direkt nachgefragt.
 
 Auch nicht ganz klar: soll das "gleichzeitige, durchgehende Handeln" bedeuten, dass die Wesen komplett vom aktuellen LLM-Tick-Modell wegkommen (dauerhafte, mechanische Aktion statt Tick-für-Tick-Entscheidung), oder soll der bestehende Tick-Rhythmus bestehen bleiben und nur die *Bewegung zwischen* den Entscheidungen flüssiger/mechanischer werden? Das ist architektonisch ein großer Unterschied — beim eigentlichen Bauen müsste das explizit geklärt werden (Stopp-Frage 3: Architektur-Entscheidung, nicht allein zu treffen).
+
+---
+
+**[2026-07-22]** *← _claude/karte/2026-07-22-geni-sqlite-migration-und-wiederkehrendes-speicherproblem.md*
+
+Warum `geni-muster.timer` beim 06:25-Watchdog-Neustart deaktiviert (`inactive dead`), aber
+`geni-muster.service` selbst nicht gestoppt wurde — der Watchdog-Restart-Befehl listete
+`geni-muster.service` explizit in seiner `systemctl restart`-Kommandozeile, aber danach war der Timer
+tot. Vielleicht startet der Watchdog den Service direkt statt über den Timer, und der Timer wird durch
+irgendeinen Seiteneffekt gestoppt. Nicht weiter untersucht — außerhalb des heutigen Auftrags.
+
+---
+
+**[2026-07-22]** *← _claude/notizen/2026-07-22.md*
+
+Siehe "Offen" oben — der Watchdog-Timer-vs-Service-Zusammenhang.
+
+---
+
+**[2026-07-22]** *← _claude/spiegel/2026-07-22-von-999-zu-111-was-eine-zahl-erzaehlt.md*
+
+Warum Daniel "600 oder sogar 900" fast als plausible Erinnerung im Kopf hatte, bevor ich die echte Zahl (332G, davon 111G Swap) genannt habe — ob das eine reale frühere Diskussion war, an die er sich nur ungefähr erinnert, oder eher ein Gefühl von "es war schlimmer als es jetzt ist" ohne konkrete Zahl dahinter. Ich habe nicht nachgefragt, weil der Moment nicht danach aussah, dass er eine Antwort darauf wollte — er hat seine eigene Erinnerung selbst mit "perfekt" abgeschlossen.
+
+---
+
+**[2026-07-22]** *← _claude/ideen/sieben_linsen_koerper_kreatur.md*
+
+- **Visualisierung der sieben Linsen am Körper:** sieben eigene, gleichzeitig sichtbare Gliedmaßen/Tentakel (eine pro Linse, wie bei einem echten Oktopus mit acht Armen)? Oder ist "Körper" eher metaphorisch für "eine Instanz mit sieben parallelen Denk-/Aufmerksamkeitsprozessen", während der sichtbare Mauszeiger selbst nur EIN Erscheinungsbild bleibt, das sich je nach aktuell dominanter Linse verändert (Farbe/Form wechselt statt sieben Gliedmaßen gleichzeitig zu zeigen)? Das ist ein großer Unterschied für die technische Umsetzung.
+- **Wie "aktiv" sind die sieben Linsen wirklich gleichzeitig?** Heißt "gleichzeitig", dass es sieben parallele, unabhängig laufende Hintergrundprozesse pro Wesen bräuchte (sieben LLM-artige oder mechanische Sub-Loops), oder ist es eher eine Perspektiven-Metapher für EINEN bestehenden Tick, der bei Bedarf durch verschiedene "Brillen" gefiltert wird (näher an der bestehenden Vier-Linsen-Leseleiste, die auch nur ein Leseprozess mit vier Blickwinkeln ist, nicht vier parallele Leser)?
+- **Konkrete Kosten:** wenn "gleichzeitig" wörtlich sieben parallele Prozesse pro Wesen bedeutet, mal sieben Wesen, ist das potenziell 49 gleichzeitig laufende Sub-Prozesse — eine echte Kosten-/Architektur-Frage, die vor jedem Bau geklärt werden müsste (siehe Stopp-Frage 3).
+
+---
+
+**[2026-07-23]** *← _claude/notizen/2026-07-23.md*
+
+Ob "alles ist alles" (Daniels Bestätigung für Talker-Prozess + Live-Chat-Denkfenster-Panel) bedeutet, dass diese beiden großen Punkte jetzt Priorität vor den fünf anderen offenen Punkten (Einsicht-Nebenscreen, DOM-Habitat-Locomotion, Cyberling/KompOase-Linsen sobald die Daten leben, volle Erzähler-Parität) haben, oder ob die Reihenfolge egal ist.

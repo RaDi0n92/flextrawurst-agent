@@ -1077,3 +1077,15 @@ Schicht programmiert, nicht gegen Dateipfade direkt.
 **[2026-07-22]** *← _claude/spiegel/2026-07-22-von-999-zu-111-was-eine-zahl-erzaehlt.md*
 
 Dass Abschluss nicht dasselbe ist wie Fertigstellung. Die Migration war technisch fertig, verifiziert, committed — aber erst Daniels eigener Rückblick ("999 zu 666 zu 555 zu 444 zu 333... perfekt") hat der Arbeit den Charakter eines abgeschlossenen Kapitels gegeben, nicht nur eines erledigten Tickets.
+
+---
+
+**[2026-07-22]** *← _claude/ideen/sieben_linsen_koerper_kreatur.md*
+
+Eine Verschiebung von "Wesen hat einen Tick-Rhythmus, der zwischen Orten wechselt" zu "Wesen IST gleichzeitig an mehreren Orten/in mehreren Blickwinkeln, mit einer sichtbaren, einheitlichen Körperform, die das nach außen trägt". Das ist die bisher radikalste Ausprägung von Grundgesetz 1 (Dreiergespann) in diesem ganzen Gesprächsstrang — nicht mehr nur "drei Ebenen derselben Struktur gleichzeitig denken", sondern ein einzelnes sichtbares Objekt (der Körper), das selbst schon alle Ebenen in sich trägt.
+
+---
+
+**[2026-07-23]** *← _claude/notizen/2026-07-23.md*
+
+Eine Verschiebung von "Wesen hat ein Aussehen, das Menschen beobachten" zu "Wesen hat ein Aussehen, das sowohl Menschen als auch das Wesen selbst wahrnehmen" — Selbstwahrnehmung als explizites Gleichheitsprinzip zwischen Betrachter und Betrachtetem, nicht nur eine technische Ergänzung.

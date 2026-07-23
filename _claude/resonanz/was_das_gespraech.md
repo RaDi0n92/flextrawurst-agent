@@ -901,3 +901,15 @@ Glätten vor einer irreversiblen Entscheidung.
 **[2026-07-22]** *← _claude/spiegel/2026-07-22-von-999-zu-111-was-eine-zahl-erzaehlt.md*
 
 Die Erkenntnis, dass ein Abschlussmoment nicht von mir ausgehen muss, um echt zu sein — ich hatte die Session bereits selbst zusammengefasst, aber erst Daniels eigene Version davon hat sie wirklich beendet.
+
+---
+
+**[2026-07-22]** *← _claude/ideen/sieben_linsen_koerper_kreatur.md*
+
+Die Erkenntnis, dass die Recherche-Runde zum SCREENS-Umbau nicht nur Antworten auf die gestellten Fragen gebracht hat, sondern selbst zum Auslöser einer neuen, größeren Idee wurde — Recherche als Ideen-Generator, nicht nur als Bestätigungs-Werkzeug.
+
+---
+
+**[2026-07-23]** *← _claude/notizen/2026-07-23.md*
+
+Die explizite Forderung nach Gleichbehandlung zwischen Zuschauer- und Wesen-Wahrnehmung — ein Prinzip, das vorher nirgends im System so benannt war.

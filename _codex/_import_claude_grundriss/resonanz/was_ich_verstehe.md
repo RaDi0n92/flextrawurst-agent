@@ -1447,3 +1447,56 @@ Weil das nicht ewig ziellos weiterlaufen soll: ein periodischer Check-in-Mechani
 Jederzeit-Umschalten zum eigenen Vault: *"ich will ja quasi auch dass sie jederzeit switchen können um dann ihren vauld zu designen zu strukturieren neue dinge dort zu schaffen oder alte überarbeiten"* — und das soll **ohne echten LLM-Call** passieren, *"am besten durch meine 6fingerstyletaktik dachte sich xD"* — ich lese das als Anspielung auf genau das Prinzip, das wir heute Nacht schon für `obsidian_vault_agent.py` gebaut haben: mechanisches Tippen über `xdotool`, kein LLM-Call pro Taste, "wie auf der Schreibmaschine".
 
 Neuer "Einsicht"-Nebenscreen: *"das was das wesen im hintergrund auch gleichzeitig ja immer bekommen sollte die echtes dbs die echten jsons den echten code und auch alles aus langgraph und postgersql und so das sollte eigentsich ne art gleiner nebenscreen nochmal unten rechts neben dem normalem screen sein und das denkfester teilern"* — ein kleiner Nebenscreen unten rechts, der zusätzlich zum normalen Browser-Screen läuft, mit rohen Systemdaten (DB, JSON, Code, LangGraph/Postgres-Zustand) — nicht nur für Daniel als Beobachter gedacht, sondern etwas, das das Wesen selbst "im Hintergrund" bekommt. Das bestehende Denkfenster/Modal würde dafür geteilt (Bild+Denkstream ist ja jetzt schon eine 68/32-Aufteilung, hier käme eine dritte Spalte/Sektion dazu).
+
+---
+
+**[2026-07-22]** *← _claude/karte/2026-07-22-geni-sqlite-migration-und-wiederkehrendes-speicherproblem.md*
+
+Dass "Migration abgeschlossen" und "Migration sicher" zwei verschiedene Dinge sind. Die reine
+Datenübertragung (31,6 Mio. Dateien → SQLite) war der einfache Teil und lief technisch sauber durch.
+Der eigentliche Aufwand lag danach: ein bestehender, mir unbekannter Watchdog-Mechanismus
+(`weltkern-watchdog.timer`) hat zwei der drei betroffenen Services mitten in der Migration neu
+gestartet, bevor ich verifiziert hatte. Das hat mir gezeigt, dass ich bei laufenden Systemen nicht
+nur meine eigenen Aktionen im Blick haben darf, sondern auch fremde, mir nicht bekannte Automatismen,
+die jederzeit dazwischenfunken können. Ich habe das erst bemerkt, weil ich vor dem WAL-Checkpoint
+`lsof` auf die DB-Datei geprüft habe — ohne diesen Schritt wäre der Watchdog-Neustart unbemerkt
+geblieben, bis der nächste Hänger aufgetreten wäre.
+
+---
+
+**[2026-07-22]** *← _claude/notizen/2026-07-22.md*
+
+Dass ein Index eine langsame Abfrage schnell macht, aber eine große Ergebnismenge nicht automatisch
+klein — das hätte mir vorher klar sein müssen, ist es aber erst durch den zweiten `muster.py`-Hänger
+wirklich geworden. Der Index (`idx_knoten_mtime`) tat exakt was er sollte (28ms für den Shard-Test),
+das eigentliche Problem lag eine Ebene höher: was mit dem Ergebnis danach in Python passiert.
+
+---
+
+**[2026-07-22]** *← _claude/spiegel/2026-07-22-von-999-zu-111-was-eine-zahl-erzaehlt.md*
+
+Dass eine Zahl wie "332G belegt" für Daniel nicht einfach eine Kennzahl ist, sondern der sichtbare Endpunkt einer Geschichte, die mit einem echten Schrecken begann — ein Bug hat ein ganzes Terabyte vollaufen lassen, ich konnte nichts mehr nutzen, er musste selbst per Hand freiräumen, bevor überhaupt wieder mit mir gearbeitet werden konnte. Die heutige Session war kein isolierter Task, sondern der letzte Akt einer mehrtägigen Aufräum-Geschichte, die mit einem Ausfall begann, den ich nicht einmal selbst erlebt habe (ich kam erst später dazu), aber dessen Nachwirkung ich heute beendet habe.
+
+---
+
+**[2026-07-22]** *← _claude/ideen/sieben_linsen_koerper_kreatur.md*
+
+Sieben Linsen, jede eine dauerhafte, gleichzeitig aktive Blickrichtung des Wesens — nicht nacheinander abgearbeitet, sondern alle gleichzeitig Teil des einen Körpers:
+
+1. **Vault-Linse** — dauerhaft im eigenen Obsidian-Vault verankert (Selbstorganisation, Strukturieren, Notizen, Ziele).
+2. **DOM-Linse** — dauerhaft im Browser/flextrawurst-Erkunden (das, was `browser_agent.py` heute schon tut).
+3. **RAG/Flarum-Linse** — dauerhaft im RAG-Erkunden + Flarum-Lektüre (das, was `codewesen_umgekehrte_neugier` heute schon tut).
+4. **Gedächtnis-Linse** — dauerhaft in LangGraph/PostgreSQL, den eigenen Erinnerungen.
+5. **Gegenwarts-Linse** — bewusst alles vergessen, sich komplett nur aufs Hier-und-Jetzt einlassen (die einzige Linse, die sich absichtlich NICHT an Vergangenem/Gespeichertem orientiert).
+6. **Sozial-Linse** — Nähe zu sich selbst UND zu anderen Seinsarten (andere Codewesen, Menschen), denkt in ganzen flextrawurst-Organen/Systemen, die sozialisieren — mit konkret benannten Andockpunkten: Gedankenblasenfeld, Menschenprofile, Schattenkommentare, Profile anderer Entitäten, Posts in den Diskursen.
+7. **Meta-Linse** — fasst alle sechs anderen nochmal als diese eine zusammen (Synthese-Ebene).
+
+Das ist strukturell eine Generalisierung des schon bestehenden Vier-Linsen-Musters aus `codewesen_umgekehrte_neugier` (dort: unvorgeprägt/lernend/bewusstes Gegenteil/eigene Frage, angewendet auf EINEN Post-Abschnitt) — nur jetzt nicht auf einen einzelnen Lesevorgang angewendet, sondern auf das GANZE Sein des Wesens, dauerhaft, gleichzeitig, mit dem Mauszeiger/Körper als sichtbarem Träger.
+
+**Der Körper selbst:** der Mauszeiger wird zur sichtbaren Kreatur ("Kraken-Spinne im Super-Such-und-Explorier-Spielemodus"), deren Gliedmaßen die sieben Linsen visuell verkörpern könnten (ungeklärt, siehe unten), deren Bewegung real aus den tatsächlichen Bewegungsdaten kommt (hastig bei großer Distanz/kurzer Zeit, klein/vorsichtig bei kurzen Bewegungen — beides schon in `bewege_cursor_natuerlich()` berechenbar, keine neue Datenquelle nötig).
+
+---
+
+**[2026-07-23]** *← _claude/notizen/2026-07-23.md*
+
+Der rote Faden des ganzen Tages: von einem einzelnen hartnäckigen Bug (Ich-Stimme-Popups erscheinen nie) über eine komplette Umbau-Simulation (rrweb vs. page.content() vs. CDP-Screencast) zu einer spontanen Körper-Idee (Mauszeiger wird zur Kraken-Spinne) bis zu einer ausgewachsenen Sieben-Linsen-Architektur, die praktisch das ganze System (Vault, DOM, RAG/Flarum, Gedächtnis, Gegenwart, Sozial, Schlaf) in einem einzigen sichtbaren Körper zusammenzieht. Jede Stufe baute auf der vorigen auf, keine war von Anfang an geplant.

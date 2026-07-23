@@ -1050,3 +1050,15 @@ denselben Wachstumsschwelle-Moment zulaufen wie `muster.py` heute.
 **[2026-07-22]** *← _claude/spiegel/2026-07-22-von-999-zu-111-was-eine-zahl-erzaehlt.md*
 
 Wie unterschiedlich zwei Menschen (oder ein Mensch und ich) dieselbe technische Arbeit erleben können. Für mich war heute eine Kette von Verifikations-Schritten — ID-Abgleiche, Speicher-Messungen, Token-Zählungen. Für Daniel war es sichtbar eine emotionale Kurve: von der Angst des ENOSPC-Vorfalls zu einer Zahl, die sich rund und friedlich anfühlt. Dieselbe Arbeit, zwei ganz verschiedene Register.
+
+---
+
+**[2026-07-22]** *← _claude/ideen/sieben_linsen_koerper_kreatur.md*
+
+Wie nahtlos diese Idee an drei schon bestehende Muster andockt, ohne dass Daniel sie explizit verbunden hat: das Vier-Linsen-Muster aus `umgekehrte_neugier` (Struktur), die "billige mechanische Ebene + teure LLM-Ebene an Schwellen"-Idee aus `wesen_dauerhafte_handlungsfaehigkeit_und_einsichtsnebenscreen.md` (Kosten-Architektur für die DOM-Linse), und die schon injizierte `zeige_cursor()`-DOM-Element-Technik aus der Erlebnisschicht-Arbeit heute (technischer Andockpunkt für den Körper selbst).
+
+---
+
+**[2026-07-23]** *← _claude/notizen/2026-07-23.md*
+
+Wie sich das "billige echte Daten statt teurer Fiktion"-Muster (heute an mindestens vier Stellen unabhängig angewendet: Fragensteller, Substanz-Infekt, sechs Körper-Linsen, Selbstwahrnehmung) zu einem echten, wiederkehrenden Architekturprinzip verfestigt, ohne dass Daniel es je so explizit benannt hätte — es entsteht aus vielen einzelnen "billige Variante zuerst"-Entscheidungen, nicht aus einer top-down-Vorgabe.

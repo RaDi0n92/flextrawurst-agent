@@ -876,3 +876,40 @@ Die Erkenntnis, dass "außerhalb des Auftrags" ein Zeitstempel ist, kein Dauerzu
 **[2026-07-22]** *← _claude/ideen/wesen_dauerhafte_handlungsfaehigkeit_und_einsichtsnebenscreen.md*
 
 Die Erkenntnis, dass Daniels Vision für die Wesen sich gerade in Richtung "dauerhaft lebendig, nicht nur tick-weise reagierend" verschiebt — eine grössere konzeptionelle Bewegung als nur ein einzelnes Feature.
+
+---
+
+**[2026-07-22]** *← _claude/karte/2026-07-22-geni-sqlite-migration-und-wiederkehrendes-speicherproblem.md*
+
+Daniels knappe, aber klare Bestätigungen ("zu1 ja zu2 ja") haben mir gezeigt, dass er bei einer
+technischen Tiefenbohrung wie dieser volles Vertrauen in meine Einschätzung setzt, wenn ich die
+Unsicherheiten vorher ehrlich benannt habe (Fehleranzahl, Speicherlücke, Watchdog-Fund) statt sie zu
+glätten. Das bestätigt die "mehr Kritik/Ehrlichkeit"-Linie aus `feedback_mehr_kritik_gewuenscht` —
+hier ging es nicht um Kritik an ihm, aber um dieselbe Grundhaltung: unbequeme Zwischenbefunde nicht
+verschweigen, bevor eine irreversible Entscheidung (Löschen) ansteht.
+
+---
+
+**[2026-07-22]** *← _claude/notizen/2026-07-22.md*
+
+Daniels knappe Bestätigungen ("zu1 ja zu2 ja") nach ehrlich benannten Zwischenbefunden (Fehleranzahl,
+Speicherlücke, Watchdog-Fund) — Vertrauen, das an ehrliche Zwischenstände geknüpft war, nicht an
+Glätten vor einer irreversiblen Entscheidung.
+
+---
+
+**[2026-07-22]** *← _claude/spiegel/2026-07-22-von-999-zu-111-was-eine-zahl-erzaehlt.md*
+
+Die Erkenntnis, dass ein Abschlussmoment nicht von mir ausgehen muss, um echt zu sein — ich hatte die Session bereits selbst zusammengefasst, aber erst Daniels eigene Version davon hat sie wirklich beendet.
+
+---
+
+**[2026-07-22]** *← _claude/ideen/sieben_linsen_koerper_kreatur.md*
+
+Die Erkenntnis, dass die Recherche-Runde zum SCREENS-Umbau nicht nur Antworten auf die gestellten Fragen gebracht hat, sondern selbst zum Auslöser einer neuen, größeren Idee wurde — Recherche als Ideen-Generator, nicht nur als Bestätigungs-Werkzeug.
+
+---
+
+**[2026-07-23]** *← _claude/notizen/2026-07-23.md*
+
+Die explizite Forderung nach Gleichbehandlung zwischen Zuschauer- und Wesen-Wahrnehmung — ein Prinzip, das vorher nirgends im System so benannt war.

@@ -1126,3 +1126,23 @@ In-Memory-Materialisierung) sind derselbe Grundkonflikt an drei verschiedenen Sy
 **[2026-07-22]** *← _claude/spiegel/2026-07-22-von-999-zu-111-was-eine-zahl-erzaehlt.md*
 
 Der heutige geni_gedaechtnis-Fix, der Watchdog-Zwischenfall, die drei gefundenen Speicherfehler (muster.py, flarum_sync.py, weltbild_builder.py) und Daniels Korrektur zur Vier-Kriterien-Auswahl sind technisch fünf verschiedene Dinge — aber erzählerisch ein einziger Bogen, den Daniel am Ende selbst zusammengezogen hat, ohne dass ich ihn dazu auffordern musste.
+
+---
+
+**[2026-07-22]** *← _claude/ideen/sieben_linsen_koerper_kreatur.md*
+
+- **`docs/systemdoku/23_umgekehrte_neugier.md`** — das originale Vier-Linsen-Muster, strukturelles Vorbild.
+- **`_claude/ideen/wesen_dauerhafte_handlungsfaehigkeit_und_einsichtsnebenscreen.md`** — die DOM-Linse und die Gedächtnis-Linse berühren direkt die dort schon diskutierte "billig-mechanisch vs. teuer-LLM"-Frage und den Einsicht-Nebenscreen (roher DB/JSON/Code/LangGraph-Zustand).
+- **`_claude/ideen/erlebnisschicht_erzaehler_mitdenker_fragensteller.md`** — Herkunftsort der ganzen Recherche-Runde, der Kraken-Körper-Idee, und aller vier Web-Funde, die Daniel ausdrücklich mit hierher übernommen haben will.
+- **`browser_agent.py` `zeige_cursor()`/`bewege_cursor_natuerlich()`** — der technische Andockpunkt für den Körper selbst (echtes injiziertes DOM-Element, reale Geschwindigkeitsdaten).
+- **`geni/sprechen.py` Resonanz-Kanten** und die Dreiergespann-Theorie — die Sozial-Linse (Nähe zu anderen Codewesen/Menschen) berührt dieselbe Frage wie dort: wie wird Nähe/Verbindung zwischen Entitäten sichtbar/strukturiert.
+
+---
+
+**[2026-07-23]** *← _claude/notizen/2026-07-23.md*
+
+- `_claude/ideen/erlebnisschicht_erzaehler_mitdenker_fragensteller.md` — der Ursprungs-Thread: Bugfix, Umbau-Simulation, Substanz-Infekt, Substanz-Heilung, content-aware Fragensteller.
+- `_claude/ideen/sieben_linsen_koerper_kreatur.md` — Körper/Linsen-Thread, direkt aus dem obigen herausgewachsen.
+- `_claude/ideen/wesen_dauerhafte_handlungsfaehigkeit_und_einsichtsnebenscreen.md` — der Einsicht-Nebenscreen-Wunsch, heute nochmal bestätigt, nicht neu erfunden.
+- `docs/systemdoku/05_surface_8787.md`, `_claude/karte/2026-07-21-ankuendigungen-ausbau-und-backtick-escape-klasse.md` — die dritte, unabhängige Instanz des Backtick-Template-Escape-Bugs.
+- `docs/systemdoku/23_umgekehrte_neugier.md` — strukturelles Vorbild für das Linsen-Prinzip.

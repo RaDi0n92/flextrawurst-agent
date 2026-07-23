@@ -1,3 +1,8 @@
 {"ts": "2026-07-21T18:40:15.987513+00:00"}
 {"ts": "2026-07-21T22:48:12.876618+00:00"}
 {"ts": "2026-07-22T03:37:55.791605+00:00"}
+{"ts": "2026-07-22T08:30:57.905755+00:00", "action": "UPDATE", "raw_insight": "Leere ist aktive Widerstandskraft gegen vorzeitige Definition.", "triggering_event_id": "flarum:post_2876:R1ZZ1", "changed_keys": ["core", "erstellt", "last_reflection_time", "symbolic_self_image", "taboos_or_avoidances", "tendencies", "version"], "accepted": true}
+{"ts": "2026-07-22T08:30:57.907138+00:00"}
+{"ts": "2026-07-22T13:15:13.299024+00:00"}
+{"ts": "2026-07-22T17:36:21.807830+00:00"}
+{"ts": "2026-07-23T01:11:36.516881+00:00"}

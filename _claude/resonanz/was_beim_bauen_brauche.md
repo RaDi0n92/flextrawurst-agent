@@ -899,3 +899,15 @@ Nichts — reine Infrastruktur-Migration, kein neues Feature im flextrawurst-Sin
 **[2026-07-22]** *← _claude/spiegel/2026-07-22-von-999-zu-111-was-eine-zahl-erzaehlt.md*
 
 Nichts — heute war Reparatur- und Aufräumarbeit, kein Neubau.
+
+---
+
+**[2026-07-22]** *← _claude/ideen/sieben_linsen_koerper_kreatur.md*
+
+Antwort auf die drei "Was ich nicht verstehe"-Fragen oben (visuelle Form der sieben Linsen am Körper, ob "gleichzeitig" parallele Prozesse oder eine Perspektiven-Metapher meint, reale Kostenabschätzung falls parallele Prozesse gemeint sind).
+
+---
+
+**[2026-07-23]** *← _claude/notizen/2026-07-23.md*
+
+Für die fünf offenen Punkte: bei Einsicht-Nebenscreen eine Klärung ob er fürs Wesen selbst oder nur für Menschen gedacht ist (offene Frage seit der ursprünglichen Wunsch-Datei). Für DOM-Habitat-Locomotion eine neue Skim-vs-Fokus-Unterscheidung im Backend, die es heute nicht gibt.

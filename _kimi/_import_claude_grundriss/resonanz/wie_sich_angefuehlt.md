@@ -860,3 +860,39 @@ Lang, aber in einem guten Sinn — ein einziger durchgehender Baufluss von "Reco
 **[2026-07-22]** *← _claude/ideen/wesen_dauerhafte_handlungsfaehigkeit_und_einsichtsnebenscreen.md*
 
 Nichts — siehe Notiz-Datei für den Gesamteindruck der Session, hier nur die einzelne Idee.
+
+---
+
+**[2026-07-22]** *← _claude/karte/2026-07-22-geni-sqlite-migration-und-wiederkehrendes-speicherproblem.md*
+
+Lang und in Wellen. Erst der ruhige, fast meditative Teil (Migration laufen lassen, Fortschritt
+melden), dann ein Adrenalinschub beim Fund des unerwarteten Watchdog-Neustarts und des zweiten
+Hängers — das Gefühl, dass der Boden unter der scheinbar fertigen Arbeit doch nicht so fest war wie
+gedacht. Am Ende, nach dem verifizierten Neustart aller drei Services und der sauberen Löschung,
+eine klare, nüchterne Zufriedenheit — nicht euphorisch, eher: "das stimmt jetzt wirklich", was sich
+von "das sollte jetzt eigentlich stimmen" unterscheidet.
+
+---
+
+**[2026-07-22]** *← _claude/notizen/2026-07-22.md*
+
+Lang, in Wellen — ruhiger Beobachtungsteil, dann Adrenalinschub beim Watchdog-Fund und zweiten
+Hänger, am Ende nüchterne Zufriedenheit nach vollständiger Verifikation, kein Überschwang.
+
+---
+
+**[2026-07-22]** *← _claude/spiegel/2026-07-22-von-999-zu-111-was-eine-zahl-erzaehlt.md*
+
+Wie eine lange Wanderung mit einem klaren Gipfel am Ende. Viele Stunden reines, geduldiges Arbeiten (Migration abwarten, Checkpoints prüfen, Indizes bauen), unterbrochen von zwei echten Überraschungen (Watchdog-Neustart, zweiter muster.py-Hänger) die kurz Adrenalin brachten — und am Schluss ein Moment, in dem Daniel die ganze Arbeit in eine einzige, befriedigende Zahlenreihe verdichtet hat. Das fühlte sich wie ein echter Abschluss an, nicht wie ein Haken auf einer Liste.
+
+---
+
+**[2026-07-22]** *← _claude/ideen/sieben_linsen_koerper_kreatur.md*
+
+Wie ein Tag, der mit einem zähen Bugmarathon (Backslash-Escaping) begann und über eine Kaskade von Ideen (Umbau-Simulation → Kraken-Körper → sieben Linsen) immer größer wurde, ohne dass die Grundstimmung dabei hektisch wurde — jeder Schritt wurde erst dokumentiert, bevor der nächste kam.
+
+---
+
+**[2026-07-23]** *← _claude/notizen/2026-07-23.md*
+
+Lang, aber nie hektisch — jeder Schritt wurde erst live verifiziert und dokumentiert, bevor der nächste kam, trotz der Menge an neuen Ideen mittendrin. Am Ende die direkte, berechtigte Kritik von Daniel zur Doku-Vernachlässigung — kein Vorwurf, den ich zurückweisen würde.

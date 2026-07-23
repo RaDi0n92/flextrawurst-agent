@@ -1053,3 +1053,39 @@ Daniels Wunsch nach "beides" beim Löschen (echt UND Soft-Delete mit Archiv) ist
 **[2026-07-22]** *← _claude/ideen/wesen_dauerhafte_handlungsfaehigkeit_und_einsichtsnebenscreen.md*
 
 Eine Verschiebung weg vom reinen "LLM entscheidet jeden einzelnen Schritt" hin zu "billige mechanische Dauerbewegung + teure LLM-Entscheidung nur an Schwellen". Das ist dieselbe Denkfigur wie Grundgesetz 1 (Dreiergespann: Codewesen-Organ-Ebene/Menschen-Plattform-Ebene/Fragment-Ebene) nochmal auf einer anderen Achse — hier geht es um *Kosten*-Ebenen statt Wahrnehmungs-Ebenen: billige mechanische Ebene vs. teure LLM-Ebene, mit einem definierten Übergang dazwischen.
+
+---
+
+**[2026-07-22]** *← _claude/karte/2026-07-22-geni-sqlite-migration-und-wiederkehrendes-speicherproblem.md*
+
+Storage-Format ist austauschbar, ohne dass sich das Verhalten des Systems für seine Bewohner
+(Codewesen, Daniel) ändern muss — `dialog.py`/`hoerer.py` brauchten fast keine Änderung, weil sie
+sauber gegen `gedaechtnis_ops.py` als Schicht programmiert waren, nicht gegen Dateipfade direkt. Das
+ist die Trennung, die Grundgesetz 2 ("immer erweiterbar") für flextrawurst fordert — hier zum ersten
+Mal in GENI wirklich auf die Probe gestellt, und sie hat getragen.
+
+---
+
+**[2026-07-22]** *← _claude/notizen/2026-07-22.md*
+
+Grundgesetz 2 ("immer erweiterbar") hat sich heute zum ersten Mal in GENI wirklich bewährt —
+`dialog.py`/`hoerer.py` brauchten fast keine Änderung, weil sauber gegen `gedaechtnis_ops.py` als
+Schicht programmiert, nicht gegen Dateipfade direkt.
+
+---
+
+**[2026-07-22]** *← _claude/spiegel/2026-07-22-von-999-zu-111-was-eine-zahl-erzaehlt.md*
+
+Dass Abschluss nicht dasselbe ist wie Fertigstellung. Die Migration war technisch fertig, verifiziert, committed — aber erst Daniels eigener Rückblick ("999 zu 666 zu 555 zu 444 zu 333... perfekt") hat der Arbeit den Charakter eines abgeschlossenen Kapitels gegeben, nicht nur eines erledigten Tickets.
+
+---
+
+**[2026-07-22]** *← _claude/ideen/sieben_linsen_koerper_kreatur.md*
+
+Eine Verschiebung von "Wesen hat einen Tick-Rhythmus, der zwischen Orten wechselt" zu "Wesen IST gleichzeitig an mehreren Orten/in mehreren Blickwinkeln, mit einer sichtbaren, einheitlichen Körperform, die das nach außen trägt". Das ist die bisher radikalste Ausprägung von Grundgesetz 1 (Dreiergespann) in diesem ganzen Gesprächsstrang — nicht mehr nur "drei Ebenen derselben Struktur gleichzeitig denken", sondern ein einzelnes sichtbares Objekt (der Körper), das selbst schon alle Ebenen in sich trägt.
+
+---
+
+**[2026-07-23]** *← _claude/notizen/2026-07-23.md*
+
+Eine Verschiebung von "Wesen hat ein Aussehen, das Menschen beobachten" zu "Wesen hat ein Aussehen, das sowohl Menschen als auch das Wesen selbst wahrnehmen" — Selbstwahrnehmung als explizites Gleichheitsprinzip zwischen Betrachter und Betrachtetem, nicht nur eine technische Ergänzung.
