@@ -200,9 +200,76 @@ Gemäß Daniels Direktive arbeiten alle Subagenten paarweise in **Double Teams**
 
 ---
 
-## 9. Arbeitsgrundsatz für Gemini
+## 9. Stufen-Pipeline der 4 Agenten-Generationen (Der Phasen-Lebenszyklus)
+
+Gemäß Daniels Präzisierung verlaufen die Subagenten-Einsätze nicht in einem einzigen chaotischen Rutsch, sondern in **4 aufeinanderfolgenden Generationen**, bei denen frühere Agenten nach Erfüllung ihrer Aufgabe abtreten ("Dasein verwirkt") und von spezialisierten Folge-Agenten abgelöst werden:
+
+```text
+┌─────────────────────────────────────────────────────────────────────────────┐
+│ GENERATION 1: Die Ursprungssammler & Material-Ernter ("Supersammler Gen 1") │
+│ - Reines Material-Ernten (Geodaten, Scans, Archive, Audio, Bestände)        │
+│ - VOLLZUGRIFF auf die Ursprungssammlung (master_kosmos_stream.jsonl etc.)   │
+└─────────────────────────────────────┬───────────────────────────────────────┘
+                                      │ (Material da -> Gen 1 verwirkt)
+                                      ▼
+┌─────────────────────────────────────────────────────────────────────────────┐
+│ GENERATION 2: Mathematische Übersetzer, Malerei & Realismus-Synthese        │
+│ - Analyse des Rohmaterials; Übersetzung in eigene Math-Formen & Procedural  │
+│ - STRIKTER 8-RUNDEN REDTEAM-LOOP (Erstellen ➔ Redteam ➔ Fix ➔ 8x Iteration) │
+└─────────────────────────────────────┬───────────────────────────────────────┘
+                                      │ (8-facher Redteam PASS erteilt)
+                                      ▼
+┌─────────────────────────────────────────────────────────────────────────────┐
+│ GENERATION 3: Wohnungs- & Innenraum-Erschaffer (Schwelm-First & Detail)     │
+│ - Zugriff auf komplette Objekt- & Materialliste, Individualisierung Möbel  │
+│ - SCHWELM SCHWELM SCHWELM: Jede einzelne Wohnung mit 100% Tiefe ausstatten! │
+│ - GTA & Skyrim-Städte: Zunächst wichtigste Kernstandorte bestücken          │
+└─────────────────────────────────────┬───────────────────────────────────────┘
+                                      │ (Wohnungen verankert & möbliert)
+                                      ▼
+┌─────────────────────────────────────────────────────────────────────────────┐
+│ GENERATION 4: Spezial-Gebäude, Läden, Burgen, Casino & Nordschleife          │
+│ - Läden, Behörden, Praxen, Burgen, Schlösser, Bahnhöfe, Helipads            │
+│ - Wuppertal Super-Mega-Duper-Casino (GORDSLIDER Slot) & Nordschleife        │
+└─────────────────────────────────────────────────────────────────────────────┘
+```
+
+---
+
+## 10. Der strikte 8-Runden Redteam-Loop (Generation 2)
+
+In Generation 2 durchläuft jedes mathematische Modell, jede Fassade und jeder Tunnelabschnitt exakt **8 aufeinanderfolgende Redteam-Schleifen**, bevor die Erlaubnis zur Übergabe an Generation 3 (Wohnungseinrichtung) erteilt wird:
+
+1. **Runde 1:** Erstsynthese & Geometrie-Prüfung (Keine schwebenden Polygone?).
+2. **Runde 2:** Maßstabs- & Vektor-Audit (Strikt 1m = 1 Block?).
+3. **Runde 3:** Nahtstellen- & Höhleneingangs-Audit (Keller/Tunnel-Verbindungen dicht?).
+4. **Runde 4:** Akustischer & Raumfunktions-Prüfpass.
+5. **Runde 5:** Belichtungs- & Schatten-Prüfpass.
+6. **Runde 6:** Interaktions- & Kollisions-Audit (Schlossknacken/Diebstahl-Vektoren frei?).
+7. **Runde 7:** Wahrheitsgrad- & Provenienz-Verifikation (Wahrheitsgrad 1-5 korrekt?).
+8. **Runde 8:** Finales Redteam PASS-Zertifikat.
+
+---
+
+## 11. Ursprungssammlung ("Supersammler") Access & Schwelm-First Wohnungsregel
+
+- **Ursprungssammlung ("Supersammler"):** Alle Agenten-Generationen erhalten unbeschränkten Zugriff auf die bestehende Master-Registratur:
+  - `/root/werkraum/kosmos/master_kosmos_stream.jsonl` (Master JSONL Stream)
+  - `/root/werkraum/kosmos/alleswisser_akten/` (Obsidian Akten)
+  - `/root/werkraum/kosmos/renders/3d_pipeline_prüfbericht.json` (SHA-256 Hashes)
+  - `/root/werkraum/tools/kosmos_registrar.py` & `harvest_kosmos_assets.py`
+  - `/root/werkraum/gptspieleversuchzeigen/` (333 MDs der v1-v22 Rekonstruktion)
+
+- **Schwelm-First Wohnungsstrategie:**
+  - In **Schwelm** wird **JEDE EINZELNE WOHNUNG** in jedem einzelnen Haus vollständig, individuell und facettenreich mit echten 3D-Alltagsgegenständen möbliert (Hauptstraße 151, Märkische Straße, Altstadt, etc.).
+  - In den 13 Metropolen und 13 Festungsstädten werden im ersten Schritt die stadtbildprägenden / strategischen Wohnungen eingerichtet, um Kapazitäten für die 8-fache Redteam-Validierung freizuhalten.
+
+---
+
+## 12. Arbeitsgrundsatz für Gemini
 
 - **v21** (`PLAY_FLEXTRAWURST_V21.html`) bleibt der einzige ausführbare Kern.
 - **v22** ist die Quest- und Konstruktionsquelle.
 - Dokumentation erfolgt sofort, sobald logisch erfassbar ("sobald logisch doku").
 - Nichts verdichten, nichts glätten, Rohheit und Ehrlichkeit wahren.
+
