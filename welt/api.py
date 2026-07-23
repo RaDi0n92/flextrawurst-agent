@@ -6592,7 +6592,10 @@ def entity_linsen_status(entity_id: str, fenster: int = Query(default=50, le=200
     browser_agent.py). Schlaf-Naehe = Stunden wach seit letztem Schlafende, auf die 6h-
     Wachschwelle aus ist_schlaf_faellig() normiert. Cyberling/KompOase bewusst NICHT hier --
     beide Systeme liefern aktuell fuer ALLE Entitaeten nur Nullwerte (verifiziert per
-    DB-Abfrage, 2026-07-22), ein Linsen-Wert waere gerade nicht unterscheidungskraeftig."""
+    DB-Abfrage, 2026-07-22), ein Linsen-Wert waere gerade nicht unterscheidungskraeftig.
+    einsicht_lg_ticks (2026-07-23, achte Linse, Daniels Praezisierung: nur ein passiver
+    LangGraph/Postgres-Wert): roher Tick-Zaehler aus checkpoints.channel_values, ehrlich
+    aber aktuell fuer alle 7 Wesen aehnlich (~1590-1845) und seit 2026-07-21 eingefroren."""
     conn = get_conn()
     try:
         with conn.cursor() as cur:
@@ -6623,6 +6626,14 @@ def entity_linsen_status(entity_id: str, fenster: int = Query(default=50, le=200
                 """, (entity_id,))
                 r = cur.fetchone()
                 bezug = r["erster"] if r else None
+            # 2026-07-23 (achte Linse "einsicht", Daniels Praezisierung: nur ein passiver
+            # Wert aus LangGraph/Postgres) -- dieselbe Quelle wie /entities/{id}/einsicht.
+            cur.execute("""
+                SELECT checkpoint->>'channel_values' AS cv
+                FROM checkpoints WHERE thread_id = %s ORDER BY checkpoint_id DESC LIMIT 1
+            """, (f"codewesen-{entity_id}",))
+            cp_row = cur.fetchone()
+            lg_ticks = (json.loads(cp_row["cv"]).get("lg_ticks", 0) or 0) if cp_row and cp_row["cv"] else 0
         vault = sum(1 for e in entscheidungen if e.startswith("obsidian_"))
         rag_flarum = sum(1 for e in entscheidungen if e.startswith("rag_erkund") or e.startswith("flarum_besuchen"))
         dom = sum(1 for e in entscheidungen if e.startswith(("klicke", "tippe", "navigiere", "scrolle")))
@@ -6644,6 +6655,7 @@ def entity_linsen_status(entity_id: str, fenster: int = Query(default=50, le=200
             "gegenwart_anteil": round(gegenwart_anteil, 3),
             "sozial": sozial,
             "schlaf_naehe": schlaf_naehe,
+            "einsicht_lg_ticks": lg_ticks,
         }
     finally:
         conn.close()

@@ -189,6 +189,7 @@ _KOERPER_JS = """
     { key: 'gegenwart_anteil', farbe: '#f8fafc' },
     { key: 'sozial', farbe: '#22c55e' },
     { key: 'schlaf_naehe', farbe: '#f59e0b' },
+    { key: 'einsicht', farbe: '#d946ef' },
   ];
   // Cyberling- und KompOase-Linse (Daniels Nachtrag) bewusst NOCH KEIN eigenes Bein --
   // cyberlinge.status='tot'/alle Werte 0 und entity_splitter_stats komplett 0 fuer ALLE
@@ -984,13 +985,21 @@ def hole_andere_wesen_status(conn, eigene_id: str) -> list[dict]:
 
 
 def hole_linsen_status(conn, entity_id: str) -> dict:
-    """2026-07-22 (Sieben-Linsen-Koerper, siehe _claude/ideen/sieben_linsen_koerper_kreatur.md
-    -- Daniels "ja ich will alles und komplett"): fuenf der sieben Linsen ehrlich aus bereits
-    vorhandenen Daten gespeist, keine erfundenen Werte. DOM-Linse braucht keinen eigenen Wert
-    -- der Koerper selbst IST die DOM-Bewegung. Meta-Linse braucht keinen eigenen Wert -- der
-    Koerperkern selbst steht dafuer. Dieselbe entscheidung-Praefix-Logik wie im neuen
-    /entities/{id}/linsen-API-Endpunkt, hier aber direkt per vorhandener DB-Verbindung
-    (kein HTTP-Umweg noetig, browser_agent.py hat conn schon offen)."""
+    """2026-07-22/23 (Sieben-Linsen-Koerper, siehe _claude/ideen/sieben_linsen_koerper_kreatur.md
+    -- Daniels "ja ich will alles und komplett"): Linsen ehrlich aus bereits vorhandenen Daten
+    gespeist, keine erfundenen Werte. DOM-Linse braucht keinen eigenen Wert -- der Koerper
+    selbst IST die DOM-Bewegung. Meta-Linse braucht keinen eigenen Wert -- der Koerperkern
+    selbst steht dafuer. Dieselbe entscheidung-Praefix-Logik wie im /entities/{id}/linsen-API-
+    Endpunkt, hier aber direkt per vorhandener DB-Verbindung (kein HTTP-Umweg noetig,
+    browser_agent.py hat conn schon offen). Achte Linse "einsicht" (2026-07-23, Daniels
+    Praezisierung nach der ersten, zu weit gedachten Rueckfrage: explizit NUR ein passiver
+    Wert aus LangGraph/Postgres, keine neue Wesen-Aktion) -- log-skalierter LangGraph-
+    Tick-Zaehler (checkpoints.channel_values->lg_ticks), dieselbe Datenquelle wie im
+    Einsicht-Nebenscreen (hole_einsicht_snapshot()). Ehrlicher Hinweis: lg_ticks liegt bei
+    allen 7 Wesen zwischen ~1590-1845 und letzter_lg_tick datiert auf 2026-07-21 -- der
+    Zaehler scheint seit zwei Tagen eingefroren (vermutlich abgeloester alter Tick-Prozess,
+    siehe Grundgesetz 7 -- nicht angefasst, nur gelesen). Linse ist deshalb aktuell fuer alle
+    Wesen aehnlich hoch und wenig unterscheidungskraeftig, aber real, nicht erfunden."""
     try:
         with conn.cursor() as cur:
             cur.execute("""
@@ -1000,6 +1009,18 @@ def hole_linsen_status(conn, entity_id: str) -> dict:
             entscheidungen = [(r["entscheidung"] or "") for r in cur.fetchall()]
             cur.execute("SELECT COUNT(*) AS n FROM entity_thinking_log WHERE entity_id = %s", (entity_id,))
             gedaechtnis_tiefe = cur.fetchone()["n"]
+            # 2026-07-23 (achte Linse "Einsicht", Daniels Praezisierung: nur ein passiver Wert
+            # aus LangGraph/Postgres, keine neue Wesen-Aktion) -- derselbe Checkpoint-Zustand
+            # wie in hole_einsicht_snapshot(), hier separat abgefragt weil dort ein eigener,
+            # gecachter Schnappschuss entsteht und diese Funktion pro Tick unabhaengig laeuft.
+            cur.execute("""
+                SELECT checkpoint->>'channel_values' AS cv
+                FROM checkpoints WHERE thread_id = %s ORDER BY checkpoint_id DESC LIMIT 1
+            """, (f"codewesen-{entity_id}",))
+            cp_row = cur.fetchone()
+            lg_ticks = 0
+            if cp_row and cp_row["cv"]:
+                lg_ticks = json.loads(cp_row["cv"]).get("lg_ticks", 0) or 0
         conn.commit()
         vault = sum(1 for e in entscheidungen if e.startswith("obsidian_"))
         rag_flarum = sum(1 for e in entscheidungen if e.startswith("rag_erkund") or e.startswith("flarum_besuchen"))
@@ -1017,13 +1038,14 @@ def hole_linsen_status(conn, entity_id: str) -> dict:
             "gegenwart_anteil": gegenwart_anteil,
             "sozial": min(1.0, sozial / 6.0),
             "schlaf_naehe": schlaf_naehe,
+            "einsicht": min(1.0, math.log10(lg_ticks + 1) / 4.0),
         }
     except Exception:
         try:
             conn.rollback()
         except Exception:
             pass
-        return {"vault": 0, "rag_flarum": 0, "gedaechtnis_tiefe": 0, "gegenwart_anteil": 0.0,
+        return {"vault": 0, "rag_flarum": 0, "gedaechtnis_tiefe": 0, "gegenwart_anteil": 0.0, "einsicht": 0,
                 "sozial": 0, "schlaf_naehe": 0.0}
 
 
