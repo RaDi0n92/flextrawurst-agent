@@ -415,93 +415,19 @@ class MCPHandler(BaseHTTPRequestHandler):
 
         # 4. JSON-RPC Standard MCP Endpoint (/mcp oder /rpc)
         if self.path in ("/mcp", "/rpc", "/"):
-            method = body_data.get("method", "")
-            params = body_data.get("params", {})
+            # 2026-07-23 (journalctl bestaetigt denselben Absturz wie in vps_mcp_server.py:
+            # "AttributeError: 'list' object has no attribute 'get'"): ChatGPTs MCP-Client
+            # schickt initialize+notifications/initialized+tools/list offenbar als EIN
+            # JSON-RPC-Batch (Array), nicht einzeln. Jetzt: einzelne Nachricht ODER Batch.
+            nachrichten = body_data if isinstance(body_data, list) else [body_data]
+            antworten = [a for a in (self._verarbeite_rpc(n) for n in nachrichten) if a is not None]
 
-            # 2026-07-23 (gleicher Fund wie in vps_mcp_server.py): JSON-RPC-Notifications
-            # (kein "id"-Feld, z.B. notifications/initialized) erwarten laut Spec keine
-            # Antwort -- vorher antwortete der Server faelschlich mit einer Fehler-JSON,
-            # was den Handshake vermutlich abbrach bevor tools/list je aufgerufen wurde.
-            if "id" not in body_data:
+            if not antworten:
                 self.send_response(202)
                 self._cors()
                 self.end_headers()
                 return
-            msg_id = body_data["id"]
-
-            result_payload = {}
-            if method == "initialize":
-                # 2026-07-23: fehlte bisher -- das offizielle MCP-Protokoll (Streamable HTTP)
-                # erwartet diesen Handshake vor tools/list/tools/call, sonst brechen konforme
-                # Clients (z.B. ChatGPTs nativer MCP-Connector) die Verbindung ab.
-                result_payload = {
-                    "protocolVersion": params.get("protocolVersion", "2024-11-05"),
-                    "capabilities": {"tools": {}},
-                    "serverInfo": {"name": "flextrawurst-3d-mcp", "version": "1.0.0"},
-                }
-            elif method in ("tools/list", "mcp.list_tools"):
-                # 2026-07-23: "3 validation errors for ListToolsResult ... inputSchema
-                # Field required" -- MCP-Spezifikation verlangt pro Tool ein JSON-Schema
-                # der Parameter, ChatGPTs Pydantic-Client validiert strikt dagegen.
-                # Dieselben Felder wie im OpenAPI-Schema oben, nur im JSON-Schema-Format.
-                result_payload = {
-                    "tools": [
-                        {
-                            "name": "mcp__convert_3d_model",
-                            "description": "Konvertiert 3D Modelle via Blender Headless",
-                            "inputSchema": {
-                                "type": "object",
-                                "properties": {
-                                    "input_path": {"type": "string"},
-                                    "output_path": {"type": "string"},
-                                },
-                                "required": ["input_path", "output_path"],
-                            },
-                        },
-                        {
-                            "name": "mcp__render_3d_preview",
-                            "description": "Erzeugt Studio PNG Renderbild via Blender",
-                            "inputSchema": {
-                                "type": "object",
-                                "properties": {
-                                    "model_path": {"type": "string"},
-                                    "image_output": {"type": "string"},
-                                },
-                                "required": ["model_path", "image_output"],
-                            },
-                        },
-                        {
-                            "name": "mcp__godot_import_and_test",
-                            "description": "Führt Godot 4.3 Headless Asset-Import & Szenentest aus",
-                            "inputSchema": {
-                                "type": "object",
-                                "properties": {
-                                    "project_dir": {"type": "string"},
-                                },
-                                "required": ["project_dir"],
-                            },
-                        },
-                    ]
-                }
-            elif method in ("tools/call", "mcp.call_tool"):
-                tool_name = params.get("name", "")
-                args = params.get("arguments", {})
-                if tool_name == "mcp__convert_3d_model":
-                    res = blender_pipeline.convert_model_headless(args.get("input_path", ""), args.get("output_path", ""))
-                elif tool_name == "mcp__render_3d_preview":
-                    res = blender_pipeline.render_preview_headless(args.get("model_path", ""), args.get("image_output", ""))
-                elif tool_name == "mcp__godot_import_and_test":
-                    res = godot_pipeline.godot_import_and_test(args.get("project_dir", ""))
-                else:
-                    res = {"error": f"Unbekanntes MCP Tool: {tool_name}"}
-                result_payload = {"content": [{"type": "text", "text": json.dumps(res, ensure_ascii=False)}]}
-
-            rpc_response = {
-                "jsonrpc": "2.0",
-                "id": msg_id,
-                "result": result_payload
-            }
-            body = json.dumps(rpc_response, ensure_ascii=False).encode("utf-8")
+            body = json.dumps(antworten if isinstance(body_data, list) else antworten[0], ensure_ascii=False).encode("utf-8")
             self.send_response(200)
             self._cors()
             self.send_header("Content-Type", "application/json; charset=utf-8")
@@ -512,6 +438,83 @@ class MCPHandler(BaseHTTPRequestHandler):
 
         self.send_response(404)
         self.end_headers()
+
+    def _verarbeite_rpc(self, nachricht) -> dict | None:
+        """Verarbeitet EINE JSON-RPC-Nachricht. None fuer Notifications (kein 'id')."""
+        if not isinstance(nachricht, dict) or "id" not in nachricht:
+            return None
+        msg_id = nachricht["id"]
+        method = nachricht.get("method", "")
+        params = nachricht.get("params", {})
+
+        result_payload = {}
+        if method == "initialize":
+            # 2026-07-23: fehlte bisher -- das offizielle MCP-Protokoll (Streamable HTTP)
+            # erwartet diesen Handshake vor tools/list/tools/call, sonst brechen konforme
+            # Clients (z.B. ChatGPTs nativer MCP-Connector) die Verbindung ab.
+            result_payload = {
+                "protocolVersion": params.get("protocolVersion", "2024-11-05"),
+                "capabilities": {"tools": {}},
+                "serverInfo": {"name": "flextrawurst-3d-mcp", "version": "1.0.0"},
+            }
+        elif method in ("tools/list", "mcp.list_tools"):
+            # 2026-07-23: "3 validation errors for ListToolsResult ... inputSchema
+            # Field required" -- MCP-Spezifikation verlangt pro Tool ein JSON-Schema
+            # der Parameter, ChatGPTs Pydantic-Client validiert strikt dagegen.
+            # Dieselben Felder wie im OpenAPI-Schema oben, nur im JSON-Schema-Format.
+            result_payload = {
+                "tools": [
+                    {
+                        "name": "mcp__convert_3d_model",
+                        "description": "Konvertiert 3D Modelle via Blender Headless",
+                        "inputSchema": {
+                            "type": "object",
+                            "properties": {
+                                "input_path": {"type": "string"},
+                                "output_path": {"type": "string"},
+                            },
+                            "required": ["input_path", "output_path"],
+                        },
+                    },
+                    {
+                        "name": "mcp__render_3d_preview",
+                        "description": "Erzeugt Studio PNG Renderbild via Blender",
+                        "inputSchema": {
+                            "type": "object",
+                            "properties": {
+                                "model_path": {"type": "string"},
+                                "image_output": {"type": "string"},
+                            },
+                            "required": ["model_path", "image_output"],
+                        },
+                    },
+                    {
+                        "name": "mcp__godot_import_and_test",
+                        "description": "Führt Godot 4.3 Headless Asset-Import & Szenentest aus",
+                        "inputSchema": {
+                            "type": "object",
+                            "properties": {
+                                "project_dir": {"type": "string"},
+                            },
+                            "required": ["project_dir"],
+                        },
+                    },
+                ]
+            }
+        elif method in ("tools/call", "mcp.call_tool"):
+            tool_name = params.get("name", "")
+            args = params.get("arguments", {})
+            if tool_name == "mcp__convert_3d_model":
+                res = blender_pipeline.convert_model_headless(args.get("input_path", ""), args.get("output_path", ""))
+            elif tool_name == "mcp__render_3d_preview":
+                res = blender_pipeline.render_preview_headless(args.get("model_path", ""), args.get("image_output", ""))
+            elif tool_name == "mcp__godot_import_and_test":
+                res = godot_pipeline.godot_import_and_test(args.get("project_dir", ""))
+            else:
+                res = {"error": f"Unbekanntes MCP Tool: {tool_name}"}
+            result_payload = {"content": [{"type": "text", "text": json.dumps(res, ensure_ascii=False)}]}
+
+        return {"jsonrpc": "2.0", "id": msg_id, "result": result_payload}
 
 
 class ReusableHTTPServer(HTTPServer):
