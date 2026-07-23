@@ -1,0 +1,34 @@
+name: Flextrawurst Open Asset Harvester
+
+on:
+  push:
+    branches:
+      - asset-harvester-v1
+    paths:
+      - '.github/workflows/asset-harvester.yml'
+      - 'tools/asset_harvester.sh'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+
+jobs:
+  harvest:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - name: Checkout harvester
+        uses: actions/checkout@v4
+      - name: Harvest and validate open assets
+        run: bash tools/asset_harvester.sh
+      - name: Upload harvested asset corpus
+        uses: actions/upload-artifact@v4
+        with:
+          name: FLEXTRAWURST_OPEN_ASSETS_V1
+          path: out/FLEXTRAWURST_OPEN_ASSETS_V1.zip
+          if-no-files-found: error
+          compression-level: 0
+          retention-days: 30
