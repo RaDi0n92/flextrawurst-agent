@@ -313,3 +313,13 @@ Daniels Reaktion auf die Korrektur, seine Worte: *"natürlich und zum glück has
 **Verifiziert:** isolierter `hole_linsen_status()`-Test gegen echte Daten, API-Endpunkt live geprüft, Playwright-Test zeigt korrekt 6 Beine, alle 7 Services neu gestartet, mehrere Ticks fehlerfrei.
 
 **Wichtig für mich selbst zum Merken:** bei Verwirrung/Drift nicht aus dem laufenden Gespräch heraus weiter-raten, sondern zur allerersten Rohfassung zurück — genau das hat Daniel hier eingefordert, und es hat den eigentlichen Fehler sofort sichtbar gemacht. Siehe auch [[feedback_keine_askuserquestion_buttons]] (Claude-Memory) — Rückfragen künftig als offener Chat-Text, nicht als Klick-Buttons.
+
+## Nachtrag — Sozial-Linsen doch einzeln, nicht summiert (2026-07-23, direkt im Anschluss)
+
+Kaum war die zusammengefasste "sozial"-Linse fertig, kam Daniels Korrektur: *"ich glaube ich wollte eigentlich die sozialen linsen jeweils als einzelne für sich selbst"*.
+
+Statt einer Summe über alle fünf Systeme jetzt fünf eigene Linsen/Beine — `gedankenblasenfeld`, `menschenprofile`, `entitaetenprofile`, `schattenkommentare`, `diskurs` — jede einzeln aus ihrem eigenen Tab-Hash gezählt (`#blasen`/`#menschen`/`#wesen`/`#schatten`/`#diskurs`), gleiche Datenquelle wie vorher, nur nicht mehr addiert. Körper hat jetzt **10 Beine** statt 6: vault, rag_flarum, gedaechtnis, gegenwart_anteil, schlaf_naehe + die fünf Sozial-Linsen. Farben: gedankenblasenfeld Teal `#2dd4bf`, menschenprofile Orange `#fb923c`, entitaetenprofile Grün `#22c55e`, schattenkommentare Indigo `#818cf8`, diskurs Pink `#f472b6`.
+
+**Verifiziert:** isolierter `hole_linsen_status()`-Test zeigt korrekt 10 Schlüssel, API-Endpunkt liefert `sozial_*`-Präfix-Felder einzeln, Playwright-Test zeigt 10 unterscheidbare Beine, alle 7 Services neu gestartet, mehrere Ticks fehlerfrei. Commit `85a6a6893`.
+
+**Noch offen:** ob 10 gleichzeitig sichtbare Beine visuell noch als "ein Wesen" lesbar sind oder zu überladen wirken — das kann nur ein echter Blick auf den laufenden Live-Spiegel beantworten, nicht ein isolierter Test.
