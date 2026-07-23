@@ -365,6 +365,49 @@ def tool_services_logs(args: dict) -> dict:
         return _ergebnis(False, error=str(ex))
 
 
+def tool_find_recent_files(args: dict) -> dict:
+    """2026-07-23: Daniels/ChatGPTs erster vorgeschlagener Test ("die zehn zuletzt
+    geaenderten Dateien im Werkraum") brauchte dieses Tool -- war in Phase 1 zuerst
+    vergessen, vps.list_files sortiert nur alphabetisch, nicht nach Aenderungsdatum."""
+    roots = args.get("roots") or [str(r) for r in ALLOWED_ROOTS]
+    seit = args.get("since")
+    extensions = args.get("extensions")
+    limit = min(int(args.get("limit", 10)), 200)
+
+    seit_ts = None
+    if seit:
+        try:
+            seit_ts = datetime.fromisoformat(seit.replace("Z", "+00:00")).timestamp()
+        except Exception:
+            return _ergebnis(False, error="since muss ISO-8601 sein, z.B. 2026-07-20T00:00:00Z")
+
+    treffer = []
+    for roh_root in roots:
+        basis = _pfad_erlaubt(roh_root)
+        if basis is None:
+            continue
+        for dirpath, _, filenames in os.walk(basis):
+            for name in filenames:
+                if extensions and not any(name.endswith(e) for e in extensions):
+                    continue
+                p = Path(dirpath) / name
+                if _ist_geheim(p):
+                    continue
+                try:
+                    mtime = p.stat().st_mtime
+                except Exception:
+                    continue
+                if seit_ts and mtime < seit_ts:
+                    continue
+                treffer.append((mtime, p))
+
+    treffer.sort(key=lambda t: t[0], reverse=True)
+    seite = treffer[:limit]
+    data = [{"path": str(p), "modified_at": datetime.fromtimestamp(m, tz=timezone.utc).isoformat()}
+            for m, p in seite]
+    return _ergebnis(True, data=data, truncated=len(treffer) > limit)
+
+
 def tool_system_snapshot(_args: dict) -> dict:
     daten = {}
     try:
@@ -533,6 +576,19 @@ TOOLS = {
             "type": "object",
             "properties": {"name": {"type": "string"}, "lines": {"type": "integer"}},
             "required": ["name"],
+        },
+    },
+    "vps.find_recent_files": {
+        "fn": tool_find_recent_files,
+        "description": "Findet die zuletzt geaenderten Dateien in erlaubten Wurzeln.",
+        "inputSchema": {
+            "type": "object",
+            "properties": {
+                "roots": {"type": "array", "items": {"type": "string"}},
+                "since": {"type": "string"},
+                "extensions": {"type": "array", "items": {"type": "string"}},
+                "limit": {"type": "integer"},
+            },
         },
     },
     "system.snapshot": {
@@ -792,11 +848,27 @@ class VPSHandler(BaseHTTPRequestHandler):
         if path in ("/mcp", "/rpc", "/"):
             method = body_data.get("method", "")
             params = body_data.get("params", {})
-            msg_id = body_data.get("id", 1)
+
+            # 2026-07-23: "App-Verknuepfung erkannt, Tool-Weitergabe noch nicht" -- der
+            # Client schickt nach initialize eine JSON-RPC-NOTIFICATION (kein "id"-Feld,
+            # z.B. notifications/initialized). Notifications erwarten laut JSON-RPC-2.0-
+            # Spec KEINE Antwort -- der Server antwortete bisher trotzdem mit einer
+            # Fehler-JSON ("Method not found"), was den Handshake vermutlich genau hier
+            # abbrach, bevor tools/list je aufgerufen wurde.
+            if "id" not in body_data:
+                self.send_response(202)
+                self._cors()
+                self.end_headers()
+                return
+            msg_id = body_data["id"]
 
             if method == "initialize":
+                # 2026-07-23: Protokollversion des Clients spiegeln statt starr
+                # "2024-11-05" zu behaupten -- maximiert Kompatibilitaet, falls ChatGPT
+                # eine andere/neuere Version anfragt.
+                client_version = params.get("protocolVersion", "2024-11-05")
                 result_payload = {
-                    "protocolVersion": "2024-11-05",
+                    "protocolVersion": client_version,
                     "capabilities": {"tools": {}},
                     "serverInfo": {"name": "flextrawurst-vps-mcp", "version": "1.0.0"},
                 }
