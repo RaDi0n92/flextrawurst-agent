@@ -178,23 +178,33 @@ _KOERPER_JS = """
   const x = p[0], y = p[1], speed = p[2] || 0, linsen = p[3] || {};
   // 2026-07-22/23 (Sieben-Linsen-Koerper, siehe _claude/ideen/sieben_linsen_koerper_kreatur.md,
   // Daniels "ja ich will alles und komplett" + 2026-07-23 Rekonstruktion gegen die
-  // Original-Definition): sechs der sieben Linsen (Original: Vault/DOM/RAG-Flarum/
-  // Gedaechtnis/Gegenwart/Sozial/Meta) bekommen je ein eigenes Bein mit fester Farbe,
-  // Ausschlag skaliert mit dem echten, aus hole_linsen_status() berechneten Wert (0..1) --
-  // keine erfundenen Zustaende. DOM-Linse braucht kein eigenes Bein (der ganze Koerper IST
-  // die DOM-Bewegung, ueber speed schon abgedeckt). Meta-Linse ist der Koerperkern selbst --
-  // Glow-Staerke aus dem Mittelwert aller sechs. "gedaechtnis" war zwischenzeitlich in zwei
-  // getrennte, sich ueberschneidende Linsen ("gedaechtnis_tiefe" + "einsicht") aufgespalten --
-  // 2026-07-23 wieder zu einer zusammengefuehrt (siehe Ideen-Datei), da Daniels Original-
-  // Definition von Anfang an "LangGraph/PostgreSQL, eigene Erinnerungen" war, nicht die
-  // generische Denklog-Zeilenzahl.
+  // Original-Definition): zehn Beine mit fester Farbe, Ausschlag skaliert mit dem echten,
+  // aus hole_linsen_status() berechneten Wert (0..1) -- keine erfundenen Zustaende.
+  // Original-Struktur: Vault/DOM/RAG-Flarum/Gedaechtnis/Gegenwart/Sozial/Meta -- die
+  // Sozial-Linse war urspruenglich EINE Linse mit fuenf Andockpunkten (Gedankenblasenfeld/
+  // Menschenprofile/Schattenkommentare/andere Entitaetenprofile/Diskurs-Posts), Daniel
+  // wollte sie dann aber als fuenf eigene, einzelne Beine statt einer Summe (Korrektur
+  // 2026-07-23, direkt nachdem die zusammengefasste Version schon gebaut war). DOM-Linse
+  // braucht kein eigenes Bein (der ganze Koerper IST die DOM-Bewegung, ueber speed schon
+  // abgedeckt). Meta-Linse ist der Koerperkern selbst -- Glow-Staerke aus dem Mittelwert
+  // aller zehn. "gedaechtnis" war zwischenzeitlich in zwei getrennte, sich ueberschneidende
+  // Linsen ("gedaechtnis_tiefe" + "einsicht") aufgespalten -- 2026-07-23 wieder zu einer
+  // zusammengefuehrt (siehe Ideen-Datei), da Daniels Original-Definition von Anfang an
+  // "LangGraph/PostgreSQL, eigene Erinnerungen" war, nicht die generische Denklog-Zeilenzahl.
   const LINSEN_DEF = [
     { key: 'vault', farbe: '#a855f7' },
     { key: 'rag_flarum', farbe: '#22d3ee' },
     { key: 'gedaechtnis', farbe: '#3b82f6' },
     { key: 'gegenwart_anteil', farbe: '#f8fafc' },
-    { key: 'sozial', farbe: '#22c55e' },
     { key: 'schlaf_naehe', farbe: '#f59e0b' },
+    // 2026-07-23: die fuenf Sozial-Systeme aus Daniels Original-Definition, jedes als
+    // eigenes Bein statt einer zusammengefassten "sozial"-Linse (seine Korrektur:
+    // "ich glaube ich wollte eigentlich die sozialen linsen jeweils als einzelne").
+    { key: 'gedankenblasenfeld', farbe: '#2dd4bf' },
+    { key: 'menschenprofile', farbe: '#fb923c' },
+    { key: 'entitaetenprofile', farbe: '#22c55e' },
+    { key: 'schattenkommentare', farbe: '#818cf8' },
+    { key: 'diskurs', farbe: '#f472b6' },
   ];
   // Cyberling- und KompOase-Linse (Daniels Nachtrag) bewusst NOCH KEIN eigenes Bein --
   // cyberlinge.status='tot'/alle Werte 0 und entity_splitter_stats komplett 0 fuer ALLE
@@ -589,7 +599,7 @@ def baue_prompt(entity_id: str, seite: dict, letzter_gedanke: str,
         # bekommst du auch selbst zu wissen -- ehrlich aus denselben Werten, keine Fiktion.
         meta_glow = sum(linsen_status.values()) / len(linsen_status) if linsen_status else 0.0
         ich_satz = _extrahiere_ich_satz(letzter_gedanke)
-        zeilen = [f"- Dein Körper glüht gerade zu {round(meta_glow * 100)}% (Vault/RAG-Flarum/Gedächtnis/Gegenwart/Sozial zusammen)."]
+        zeilen = [f"- Dein Körper glüht gerade zu {round(meta_glow * 100)}% (Vault/RAG-Flarum/Gedächtnis/Gegenwart/Schlaf/die fünf Sozial-Linsen zusammen)."]
         if ich_satz:
             zeilen.append(f"- Menschen sehen gerade vielleicht diesen Satz von dir aufploppen: „{ich_satz}“")
         if einsicht_snapshot:
@@ -1000,12 +1010,21 @@ def hole_andere_wesen_status(conn, eigene_id: str) -> list[dict]:
 # sieben_linsen_koerper_kreatur.md): Daniels Original-Sozial-Linse (2026-07-22, roh) war
 # nie "wie viele andere Wesen sind gerade aktiv", sondern Naehe zu fuenf konkreten Systemen:
 # Gedankenblasenfeld, Menschenprofile, Schattenkommentare, Profile anderer Entitaeten, Posts
-# in den Diskursen. Alle fuenf sind Tabs in derselben Single-Page-Surface (switchView() ruft
+# in den Diskursen. Erst als EINE zusammengefasste "sozial"-Linse gebaut, dann Daniels
+# Korrektur (2026-07-23, direkt im Anschluss): "ich glaube ich wollte eigentlich die
+# sozialen linsen jeweils als einzelne für sich selbst" -- fuenf eigene Linsen statt einer
+# Summe. Alle fuenf sind Tabs in derselben Single-Page-Surface (switchView() ruft
 # history.pushState(null,'','#'+id) -- die URL traegt den Tab-Hash), landen also automatisch
 # in entity_thinking_log.meta->>'url', sobald das Wesen per klicke:/navigiere: dorthin
 # gewechselt hat -- kein neuer Wesen-Mechanismus noetig, nur eine andere Auswertung
 # derselben schon vorhandenen Denklog-Daten.
-SOZIAL_TAB_HASHES = ("#blasen", "#menschen", "#wesen", "#schatten", "#diskurs")
+SOZIAL_LINSEN_HASHES = {
+    "gedankenblasenfeld": "#blasen",
+    "menschenprofile": "#menschen",
+    "entitaetenprofile": "#wesen",
+    "schattenkommentare": "#schatten",
+    "diskurs": "#diskurs",
+}
 
 
 def hole_linsen_status(conn, entity_id: str) -> dict:
@@ -1023,8 +1042,9 @@ def hole_linsen_status(conn, entity_id: str) -> dict:
     Definition war von Anfang an "dauerhaft in LangGraph/PostgreSQL, den eigenen
     Erinnerungen", nicht die generische Denklog-Zeilenzahl. lg_ticks (checkpoints.
     channel_values, Grundgesetz 7 -- nur gelesen) ist die richtige, einzige Quelle.
-    "sozial" komplett neu aus den fuenf Original-Systemen gebaut (siehe SOZIAL_TAB_HASHES
-    oben), nicht mehr aus der Nachbar-Wesen-Sichtbarkeit."""
+    Die fuenf Sozial-Systeme (siehe SOZIAL_LINSEN_HASHES oben) erst als EINE "sozial"-
+    Linse summiert, dann Daniels Korrektur (direkt im Anschluss): fuenf eigene Linsen
+    statt einer Summe -- jedes System zaehlt jetzt fuer sich."""
     try:
         with conn.cursor() as cur:
             cur.execute("""
@@ -1047,17 +1067,22 @@ def hole_linsen_status(conn, entity_id: str) -> dict:
         dom = sum(1 for e in entscheidungen if e.startswith(("klicke", "tippe", "navigiere", "scrolle")))
         gesamt_bewertet = vault + rag_flarum + dom
         gegenwart_anteil = (dom / gesamt_bewertet) if gesamt_bewertet else 0.0
-        sozial = sum(1 for r in zeilen if r["url"] and any(h in r["url"] for h in SOZIAL_TAB_HASHES))
+        sozial_werte = {}
+        for name, hash_ in SOZIAL_LINSEN_HASHES.items():
+            n = sum(1 for r in zeilen if r["url"] and hash_ in r["url"])
+            sozial_werte[name] = min(1.0, n / 5.0)
         schlaf_naehe = _hole_schlaf_naehe(conn, entity_id)
         # Auf 0..1 normiert fuers Koerper-Rendering -- log-skaliert wo unbegrenzt wachsend
-        # (sonst waere jedes Wesen nach kurzer Zeit "voll").
+        # (sonst waere jedes Wesen nach kurzer Zeit "voll"). Sozial-Linsen auf /5 statt
+        # /20 wie vault/rag_flarum -- deutlich seltenere Aktionen, sonst faellt das Bein
+        # praktisch immer flach aus.
         return {
             "vault": min(1.0, vault / 20.0),
             "rag_flarum": min(1.0, rag_flarum / 20.0),
             "gedaechtnis": min(1.0, math.log10(lg_ticks + 1) / 4.0),
             "gegenwart_anteil": gegenwart_anteil,
-            "sozial": min(1.0, sozial / 10.0),
             "schlaf_naehe": schlaf_naehe,
+            **sozial_werte,
         }
     except Exception:
         try:
@@ -1065,7 +1090,7 @@ def hole_linsen_status(conn, entity_id: str) -> dict:
         except Exception:
             pass
         return {"vault": 0, "rag_flarum": 0, "gedaechtnis": 0, "gegenwart_anteil": 0.0,
-                "sozial": 0, "schlaf_naehe": 0.0}
+                "schlaf_naehe": 0.0, **{name: 0 for name in SOZIAL_LINSEN_HASHES}}
 
 
 def hole_einsicht_snapshot(conn, entity_id: str) -> dict:

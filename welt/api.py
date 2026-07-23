@@ -6578,7 +6578,13 @@ def entity_thinking(entity_id: str, limit: int = Query(default=10, le=50)):
         conn.close()
 
 
-SOZIAL_TAB_HASHES = ("#blasen", "#menschen", "#wesen", "#schatten", "#diskurs")
+SOZIAL_LINSEN_HASHES = {
+    "gedankenblasenfeld": "#blasen",
+    "menschenprofile": "#menschen",
+    "entitaetenprofile": "#wesen",
+    "schattenkommentare": "#schatten",
+    "diskurs": "#diskurs",
+}
 
 
 @app.get("/entities/{entity_id}/linsen")
@@ -6600,11 +6606,12 @@ def entity_linsen_status(entity_id: str, fenster: int = Query(default=50, le=200
     (LangGraph-Ticks) sind zu EINEM Feld "gedaechtnis_lg_ticks" verschmolzen -- Daniels
     Original-Definition war von Anfang an "dauerhaft in LangGraph/PostgreSQL, den eigenen
     Erinnerungen" (checkpoints.channel_values->lg_ticks, Grundgesetz 7 -- nur gelesen), nicht
-    die generische Denklog-Zeilenzahl. "sozial" komplett neu: nicht mehr Nachbar-Wesen-
-    Sichtbarkeit, sondern Naehe zu den fuenf Original-Systemen (Gedankenblasenfeld,
-    Menschenprofile, Schattenkommentare, andere Entitaetenprofile, Diskurs-Posts) -- alle
-    fuenf sind Tabs derselben Single-Page-Surface, ihr Hash landet automatisch in
-    entity_thinking_log.meta->>'url', sobald das Wesen dorthin geklickt/navigiert hat."""
+    die generische Denklog-Zeilenzahl. Die fuenf Sozial-Systeme (Gedankenblasenfeld,
+    Menschenprofile, Schattenkommentare, andere Entitaetenprofile, Diskurs-Posts) waren
+    kurzzeitig zu EINEM "sozial"-Feld summiert -- Daniels Korrektur direkt im Anschluss:
+    fuenf eigene Felder statt einer Summe. Alle fuenf sind Tabs derselben Single-Page-
+    Surface, ihr Hash landet automatisch in entity_thinking_log.meta->>'url', sobald das
+    Wesen dorthin geklickt/navigiert hat."""
     conn = get_conn()
     try:
         with conn.cursor() as cur:
@@ -6639,7 +6646,10 @@ def entity_linsen_status(entity_id: str, fenster: int = Query(default=50, le=200
         dom = sum(1 for e in entscheidungen if e.startswith(("klicke", "tippe", "navigiere", "scrolle")))
         gesamt_bewertet = vault + rag_flarum + dom
         gegenwart_anteil = (dom / gesamt_bewertet) if gesamt_bewertet else 0.0
-        sozial = sum(1 for r in zeilen if r["url"] and any(h in r["url"] for h in SOZIAL_TAB_HASHES))
+        sozial_werte = {
+            f"sozial_{name}": sum(1 for r in zeilen if r["url"] and hash_ in r["url"])
+            for name, hash_ in SOZIAL_LINSEN_HASHES.items()
+        }
         schlaf_naehe = 0.0
         if bezug is not None:
             if bezug.tzinfo is None:
@@ -6654,8 +6664,8 @@ def entity_linsen_status(entity_id: str, fenster: int = Query(default=50, le=200
             "dom": dom,
             "gedaechtnis_lg_ticks": lg_ticks,
             "gegenwart_anteil": round(gegenwart_anteil, 3),
-            "sozial": sozial,
             "schlaf_naehe": schlaf_naehe,
+            **sozial_werte,
         }
     finally:
         conn.close()
