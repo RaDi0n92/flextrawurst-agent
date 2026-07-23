@@ -54,3 +54,12 @@ Jedes Tool liefert `{ok, data, source_refs, warnings, truncated, next_cursor, er
 - API-Key (Zustimmungs-Schritt): `VPS_MCP_KEY`
 - Client ID: `vps-mcp`
 - Client Secret: `VPS_MCP_CLIENT_SECRET`
+
+Rotiert am 2026-07-23 (die urspruenglichen Werte waren vollstaendig im ChatGPT-Chat gelandet). `_ACCESS_TOKENS`/`_AUTH_CODES` sind In-Memory -- jeder Dienst-Neustart (auch fuer Rotation) macht bereits verbundene Connector-Sitzungen ungueltig, die Verbindung muss danach immer komplett neu aufgebaut werden.
+
+## 8. Zwei Nachbesserungen beim echten Verbinden
+
+1. **"App-Verknüpfung erkannt, Tool-Weitergabe noch nicht"** — der Server beantwortete JSON-RPC-**Notifications** (Nachrichten ohne `id`-Feld, z.B. `notifications/initialized`, die der Client nach `initialize` schickt) fälschlich mit einer Fehler-JSON statt gar nicht zu antworten (JSON-RPC 2.0 verlangt für Notifications keine Antwort). Das brach den Handshake vermutlich ab, bevor `tools/list` je aufgerufen wurde. Behoben: Notifications liefern jetzt einen leeren `202 Accepted`. Zusätzlich spiegelt `initialize` jetzt die vom Client angefragte `protocolVersion` statt starr `2024-11-05` zu behaupten. Gleicher Fix auch in `flextrawurst_3d_mcp.py` angewandt (derselbe kopierte Code, gleicher Bug). Commits `585d91306` (vps-mcp) + `ec59651f0` (3d-mcp).
+2. **`vps.find_recent_files` ergänzt** — der von Daniel/ChatGPT selbst vorgeschlagene erste Test ("die zehn zuletzt geänderten Dateien im Werkraum") brauchte ein Tool, das in Phase 1 zunächst vergessen wurde (`vps.list_files` sortiert nur alphabetisch). Jetzt 13 Tools statt 12.
+
+Verifiziert live: Notification liefert leeren 202er, `initialize` spiegelt angefragte Version, `tools/list` liefert 13 Tools, alter API-Key nach Rotation korrekt abgelehnt (401), neuer Key funktioniert.
