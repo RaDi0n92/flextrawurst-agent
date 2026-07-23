@@ -79,6 +79,9 @@ Vollständige technische und konzeptionelle Dokumentation des flextrawurst-Syste
 | [[30_wesen_eigene_obsidian_vaults]] | Wesen-eigene Obsidian-Vaults (2026-07-21): 7 Container, rrweb Aufnahme+Wiedergabe, Röntgenblick-Overlay |
 | [[31_llm_kontention_dienste_aufraeumung]] | LLM-Slot-Kontention + Dienste-Aufräumung (2026-07-21): 22 Alt-Dienste pausiert/disabled, Firewall-Fix, innenleben-feeder repariert, geni-muster-31,5-Mio-Dateien-Problem offen |
 
+| [[35_flextrawurst_mega_sammelauftrag_und_subagenten]] | Mega-Sammelauftrag (29 Kapitel, 50 Metadatenfelder), Subagenten & Alleswisser |
+| [[36_4_generationen_pipeline_8x_redteam_und_schwelm_wohnungen]] | 4-Generationen Pipeline, 8-facher Redteam-Loop (R1-R8) & Schwelm-First Wohnungsstrategie |
+
 ---
 
 ## Schnellreferenz
