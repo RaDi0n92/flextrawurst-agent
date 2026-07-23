@@ -79,9 +79,11 @@ Beim gezielten Nachprüfen einzelner von ChatGPT/Gemini referenzierter Pfade (Da
 
 `/root/werkraum` hat mehrere solcher Top-Level-Symlinks auf `werkraum_*`-Geschwisterordner (Disk-Layout-Entscheidung, nicht meine). Geprüft und hinzugefügt: `werkraum_bilder` (568M Bilder), `werkraum_geni` (GENI-System), `werkraum_codewesen` (Wesen-Profile), `werkraum_agent` (Kooperations-Doku), `werkraum_erkenntnis` (Konzept-Doku) — alle eindeutig Projekt-Inhalt ohne fremde Personendaten.
 
-**Bewusst nicht hinzugefügt, Daniel gefragt statt geraten:** `werkraum_flarum` (enthält einen `nutzer/`-Ordner — vermutlich echte Daten realer Flarum-Forennutzer, nicht nur Daniels eigenes Material) und `werkraum_logs` (395MB rohe Laufzeit-Logs, wenig Inhaltswert). Reine Abhängigkeits-Ordner (venv/node_modules/watchdog_venv) ebenfalls nicht — kein Projekt-Inhalt, nur Bibliotheks-Ballast.
+**Zunächst nicht hinzugefügt, Daniel gefragt statt geraten:** `werkraum_flarum` (enthält einen `nutzer/`-Ordner — vermutlich echte Daten realer Flarum-Forennutzer) und `werkraum_logs` (395MB rohe Laufzeit-Logs, wenig Inhaltswert). Reine Abhängigkeits-Ordner (venv/node_modules/watchdog_venv) weiterhin nicht — kein Projekt-Inhalt, nur Bibliotheks-Ballast, kein Auftrag dafür.
 
 Verifiziert: alle fünf neuen Wurzeln lesbar, `_api_tokens.json` innerhalb `werkraum_codewesen` bleibt durch `SECRET_MUSTER` korrekt blockiert, live bestätigt. Commit `e7e4e8219`.
+
+**Nachtrag:** Daniels Antwort auf die Rückfrage: *"teil des schiffes teil der crew sagte ich ja alles"* — `werkraum_flarum` und `werkraum_logs` danach ebenfalls hinzugefügt. Insgesamt jetzt 11 Wurzeln + 5 Einzeldateien. Commit `50ecf0df8`.
 
 ## 10. scopes_supported ergänzt
 
