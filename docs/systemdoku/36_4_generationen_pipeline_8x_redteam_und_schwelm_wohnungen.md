@@ -28,7 +28,7 @@ Sobald eine Generation ihre Arbeit abgeschlossen hat, verwirkt ihr Dasein und di
                                 │
                                 ▼
  ┌─────────────────────────────────────────────────────────────┐
- │ GENERATION 3: Innenausstattung & Schwelm-First Wohnungen    │ (PERIMETER FREIGEGEBEN)
+ │ GENERATION 3: Innenausstattung & Schwelm-First Wohnungen    │ (ABGESCHLOSSEN: 4 JSON Berichte)
  │ - Schwelm: 100% detaillierte, individuelle Wohnungen       │
  │ - Restliche Welt: Modulares Raum- & Möbel-Gitter           │
  └──────────────────────────────┬──────────────────────────────┘
