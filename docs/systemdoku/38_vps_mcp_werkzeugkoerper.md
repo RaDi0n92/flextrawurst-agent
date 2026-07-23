@@ -57,6 +57,14 @@ Jedes Tool liefert `{ok, data, source_refs, warnings, truncated, next_cursor, er
 
 Rotiert am 2026-07-23 (die urspruenglichen Werte waren vollstaendig im ChatGPT-Chat gelandet). `_ACCESS_TOKENS`/`_AUTH_CODES` sind In-Memory -- jeder Dienst-Neustart (auch fuer Rotation) macht bereits verbundene Connector-Sitzungen ungueltig, die Verbindung muss danach immer komplett neu aufgebaut werden.
 
+## 9. Der eigentliche Blocker: JSON-RPC-Batch-Requests (2026-07-23)
+
+Nach den ersten beiden Fixes (Notification-Handling, Protokollversion) blieb das Problem: "App-Verknüpfung erkannt, Tool-Weitergabe noch nicht". `journalctl -u vps-mcp.service` zeigte den echten Absturz: `AttributeError: 'list' object has no attribute 'get'` — ChatGPTs MCP-Client schickt `initialize` + `notifications/initialized` + `tools/list` offenbar als **ein JSON-RPC-Batch** (JSON-Array mehrerer Nachrichten in einem POST-Body), nicht als einzelne Requests. Der Server erwartete immer ein einzelnes Objekt und crashte beim ersten Array-Body — nginx zeigte `502 Bad Gateway`, ChatGPT sah nie eine gültige Antwort.
+
+**Fix:** `_verarbeite_rpc()` verarbeitet jetzt eine einzelne Nachricht; `do_POST` ruft das entweder einmal (Einzel-Request) oder pro Element eines Arrays (Batch) auf. Notifications liefern kein Element in der Batch-Antwort (korrekte JSON-RPC-2.0-Batch-Semantik) — falls ein Batch ausschließlich aus Notifications besteht, liefert der Server einen leeren `202`. Gleicher Fix auch in `flextrawurst_3d_mcp.py` angewandt (dabei versehentlich ein Einrückungsfehler eingebaut, der zwei Neustarts fehlschlagen ließ und einen verwaisten Prozess auf Port 8090 hinterließ — behoben, Prozess manuell beendet).
+
+Verifiziert: der exakte Batch (`initialize`+`notification`+`tools/list` als Array) liefert jetzt eine korrekte Zwei-Element-Antwort, lokal und live über `https://flextrawurst.de/vps-mcp/` sowie `https://flextrawurst.de/3d-mcp/`, Einzel-Requests und Einzel-Notifications funktionieren unverändert weiter. Commits `ce82f5982` (vps-mcp) + `a0cc7ffaf` (3d-mcp).
+
 ## 8. Zwei Nachbesserungen beim echten Verbinden
 
 1. **"App-Verknüpfung erkannt, Tool-Weitergabe noch nicht"** — der Server beantwortete JSON-RPC-**Notifications** (Nachrichten ohne `id`-Feld, z.B. `notifications/initialized`, die der Client nach `initialize` schickt) fälschlich mit einer Fehler-JSON statt gar nicht zu antworten (JSON-RPC 2.0 verlangt für Notifications keine Antwort). Das brach den Handshake vermutlich ab, bevor `tools/list` je aufgerufen wurde. Behoben: Notifications liefern jetzt einen leeren `202 Accepted`. Zusätzlich spiegelt `initialize` jetzt die vom Client angefragte `protocolVersion` statt starr `2024-11-05` zu behaupten. Gleicher Fix auch in `flextrawurst_3d_mcp.py` angewandt (derselbe kopierte Code, gleicher Bug). Commits `585d91306` (vps-mcp) + `ec59651f0` (3d-mcp).
