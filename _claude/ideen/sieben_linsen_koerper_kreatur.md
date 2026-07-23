@@ -291,3 +291,25 @@ Isolierter Test schreibt echt in Schorschels Vault-Container (`linsen/vault/READ
 **Noch nicht organisch bestätigt:** kein echter `obsidian_lesen:`/`obsidian_schreiben:`-Tick ist seit dem Neustart natürlich aufgetreten (die LLM entscheidet das selten, nicht erzwungen) — die Verkabelung selbst ist aber bereits isoliert gegen den echten Container verifiziert, nur der volle End-zu-Ende-Weg über eine echte LLM-Entscheidung noch nicht organisch beobachtet.
 
 **Was fehlt:** die restlichen 7 Linsen (je eigene Aktiv-Definition nötig), die restlichen 6 Wesen (Code ist geteilt, wirkt aber erst nach deren Neustart), und eine Antwort auf ob dieser Pilot-Ansatz so passt bevor er ausgerollt wird.
+
+## Nachtrag — Kontext-Nachweis: ich war komplett vom Thema abgekommen (2026-07-23)
+
+Daniel, auf meinen Vorschlag zur Aktiv/Passiv-Zuordnung der restlichen Linsen: *"ich sagte alles nich nur die eine liste und ich will richtig im chat fragen und niecht diese doofen zum nklikcken"* — und vorher, als Antwort auf meine Frage zur Sozial-Linse: *"ich sagte alles nich nur die eine liste... hol das alles aus kontext und doku wider zurück vorher"*.
+
+Ich bin zurück zur allerersten Sieben-Linsen-Datei (ganz oben in dieser Datei, 2026-07-22, Daniels rohe Ur-Worte) gegangen, statt weiter aus dem Kopf zu raten — und fand einen Fehler, der sich über zwei Bau-Runden eingeschlichen hatte, nicht nur bei Sozial:
+
+**Gedächtnis-Linse vs. "Einsicht"-Linse:** Daniels Original-Definition (Zeile 29 oben) war von Anfang an *"Gedächtnis-Linse — dauerhaft in LangGraph/PostgreSQL, den eigenen Erinnerungen"*. Ich hatte am 22.07. stattdessen `gedaechtnis_tiefe` aus einer simplen `entity_thinking_log`-Zeilenzahl gebaut — gar nicht aus LangGraph/Postgres. Als Daniel dann am 23.07. nach einer Linse "auf langgraph und postgresql" fragte, habe ich das fälschlich als komplett NEUE, achte Linse "Einsicht" gebaut, statt zu erkennen: das war seine ursprüngliche Gedächtnis-Linse, die ich von Anfang an falsch implementiert hatte.
+
+**Sozial-Linse:** wie oben schon festgehalten — Original war fünf konkrete Systeme (Gedankenblasenfeld/Menschenprofile/Schattenkommentare/andere Entitätenprofile/Diskurs-Posts), ich hatte einen simplen Nachbar-Zähler gebaut.
+
+Daniels Reaktion auf die Korrektur, seine Worte: *"natürlich und zum glück hast du grade so ne scheisse vorgeschlagen dass ich etwas rage war und diese kontext und doku nachweis forderte xD ggwp"* — er bestätigt: gut, dass sein Widerspruch mich zum sauberen Nachweis gezwungen hat, statt dass ich einfach weitergebaut hätte.
+
+### Reparatur (werkraum-Commit `ab482deba`)
+
+- `gedaechtnis_tiefe` + `einsicht` zu EINER Linse `gedaechtnis` verschmolzen — reine LangGraph-Tick-Quelle (`checkpoints.channel_values->lg_ticks`), log-skaliert wie vorher.
+- `sozial` komplett neu gebaut: Zähler über `entity_thinking_log.meta->>'url'` für die fünf Tab-Hashes `#blasen`/`#menschen`/`#wesen`/`#schatten`/`#diskurs` (funktioniert, weil `switchView()` im Frontend `history.pushState(null,'','#'+id)` macht — der Tab-Hash landet automatisch in der schon vorhandenen URL-Aufzeichnung, kein neuer Wesen-Mechanismus nötig). Verifiziert: echte historische Treffer existieren (11× `#wesen`, 3× `#diskurs` über alle 7 Wesen bisher), `#blasen`/`#menschen`/`#schatten` bisher ehrlich `0` (noch nie besucht).
+- Körper-Canvas von 7 auf 6 Beine reduziert (vault, rag_flarum, gedaechtnis, gegenwart_anteil, sozial, schlaf_naehe) — entspricht wieder exakt Daniels ursprünglicher Struktur (DOM+Meta ohne eigenes Bein, schlaf_naehe als legitime spätere Ergänzung obendrauf).
+
+**Verifiziert:** isolierter `hole_linsen_status()`-Test gegen echte Daten, API-Endpunkt live geprüft, Playwright-Test zeigt korrekt 6 Beine, alle 7 Services neu gestartet, mehrere Ticks fehlerfrei.
+
+**Wichtig für mich selbst zum Merken:** bei Verwirrung/Drift nicht aus dem laufenden Gespräch heraus weiter-raten, sondern zur allerersten Rohfassung zurück — genau das hat Daniel hier eingefordert, und es hat den eigentlichen Fehler sofort sichtbar gemacht. Siehe auch [[feedback_keine_askuserquestion_buttons]] (Claude-Memory) — Rückfragen künftig als offener Chat-Text, nicht als Klick-Buttons.
