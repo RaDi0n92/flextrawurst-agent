@@ -307,10 +307,19 @@ class MCPHandler(BaseHTTPRequestHandler):
         # dem Autorisierungs-Check -- man braucht ja erst einen Token, bevor man einen
         # Bearer-Header mitschicken kann.
         if path == "/oauth/register":
+            # 2026-07-23: "doesn't support RFC 7591 Dynamic Client Registration" --
+            # client_secret_expires_at fehlte, laut RFC 7591 Section 3.2.1 PFLICHTFELD
+            # sobald ein client_secret ausgegeben wird (0 = laeuft nie ab). client_name/
+            # grant_types/response_types werden aus dem Request gespiegelt, wie von der
+            # Spec erwartet (nicht nur der Teil den ich selbst brauche).
             self._json(201, {
                 "client_id": OAUTH_CLIENT_ID,
                 "client_secret": OAUTH_CLIENT_SECRET,
+                "client_id_issued_at": int(time.time()),
+                "client_secret_expires_at": 0,
                 "redirect_uris": body_data.get("redirect_uris", []),
+                "grant_types": body_data.get("grant_types", ["authorization_code"]),
+                "response_types": body_data.get("response_types", ["code"]),
                 "token_endpoint_auth_method": "client_secret_post" if OAUTH_CLIENT_SECRET else "none",
             })
             return
