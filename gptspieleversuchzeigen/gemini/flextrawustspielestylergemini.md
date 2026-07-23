@@ -124,10 +124,43 @@ Funde mit unklaren oder proprietären Lizenzen wurden direkt isoliert:
 
 ---
 
-## 7. Arbeitsgrundsatz für Gemini
+## 7. Das Wuppertal Super-Mega-Duper-Casino, GORDSLIDER, Skyrim-Begehbarkeit & Nordschleife
+
+Rückwirkend und kanonisch verankert gemäß Daniels Direktiven:
+
+### 7.1 Begehbare & Voll Eingerichtete Gebäude (Skyrim-Aspekt)
+- **100% Begehbarkeit:** Alle Gebäude in Städten und Dörfern besitzen vollständige Innenräume.
+- **Echte 3D-Gegenstände:** Jede Wohnung, jedes Büro und jedes Geschäft ist mit greifbaren, physikalischen 3D-Alltagsgegenständen (Möbel, Tassen, Schlüssel, Dokumente, Schmuck, Werkzeuge) ausgestattet.
+- **Interaktionen:** Vollständige Unterstützung für **Taschendiebstahl** (Pocket-picking) und **Schlossknacken** (Lockpicking).
+- **Funktionsgebäude & Servicepersonal:** Läden, Behörden, Praxen, Bahnhöfe und Werkstätten besitzen reales Servicepersonal, Inventar und kaufbare/stehlbare Produkte.
+
+### 7.2 Globale Infrastruktur: Bahnhöfe, Flughäfen, Bootsstege & Helipads
+- **Bahnhöfe:** Voll funktionierendes Schienen- & Zugnetz in ALLEN Städten.
+- **Fluss- & Meer-Infrastruktur:** Funktionierende Bootsstege, Docks, Frachthäfen und Flusssysteme weltweit.
+- **Flughäfen & Helipads:** Funktionierende Flughäfen und strategisch platzierte Helipads auf passenden Hochhäusern und Gebäuden – stets mit begehbaren Aufstiegsleitern und Treppenzugängen.
+
+### 7.3 Das Wuppertal Super-Mega-Duper-Casino (Das größte Gebäude der Welt)
+- **Standort:** Wuppertal.
+- **Ausmaße:** Das **absolut größte Bauwerk der gesamten Weltenkarte**!
+- **Ästhetik:** Ultrastylisch, schnike, anziehend, Nobel-Glas/Licht-Architektur.
+- **Spielangebot:** Pferderennen, Higher-Lower, Roulette, Blackjack, Poker Omaha, Poker Texas Hold'em.
+- **Die GORDSLIDER Slot-Maschine:**
+  - **Inspiration:** Gord (Mobile Legends: Bang Bang / MLBB Hero, Daniels OTP Main mit 2.500+ Rank-Games).
+  - **Körper:** Heroischer 3D-Körper von Gord (Hoverboard-Magier-Aesthetic, blaue/violette arkan-mystische Energie).
+  - **Bildschirm:** Der Slot-Bildschirm befindet sich direkt im Oberkörper (Brustbereich) des 3D-Gord-Körpers!
+  - **Spin-Trigger:** Um die Slot-Maschine zu drehen, gibt der Spieler Gord ein **High-Five**! ✋🔥
+
+### 7.4 Nürburgring Nordschleife 1:1 Replica (Schwelm / Wuppertal Übergang)
+- **Standort:** Zwischen Schwelm und Wuppertal (Höhe Dieselstraße / EDE-Gebäude / Dieselstraße-Schleife Bus-Haltestelle).
+- **Ausführung:** Die komplette **Nürburgring Nordschleife 1:1 perfekt nachgebaut** im Gelände als frei befahr- und begehbare Open-World-Rennstrecke!
+
+---
+
+## 8. Arbeitsgrundsatz für Gemini
 
 - **v21** (`PLAY_FLEXTRAWURST_V21.html`) bleibt der einzige ausführbare Kern.
 - **v22** ist die Quest- und Konstruktionsquelle.
 - Dokumentation erfolgt sofort, sobald logisch erfassbar ("sobald logisch doku").
 - Nichts verdichten, nichts glätten, Rohheit und Ehrlichkeit wahren.
+
 
