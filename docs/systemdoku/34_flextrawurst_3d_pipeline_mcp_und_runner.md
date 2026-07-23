@@ -111,3 +111,10 @@ Der einfache Bearer-Key reicht für ChatGPTs nativen MCP-Connector nicht — der
 - API-Key (für den Zustimmungs-Schritt): liegt in `FLEXTRAWURST_3D_MCP_KEY`
 
 Verifiziert: kompletter Flow lokal simuliert (authorize → Redirect mit Code → Token-Tausch → Bearer-Aufruf gegen `/mcp` erfolgreich), Discovery + DCR + Konsens-Formular auch live über `https://flextrawurst.de/3d-mcp/` getestet. werkraum-Commit `02b5c568e`.
+
+### 5c. Zwei Nachbesserungen beim echten Verbinden in ChatGPT
+
+1. **"doesn't support RFC 7591 Dynamic Client Registration"** — `/oauth/register` fehlte das laut RFC 7591 §3.2.1 Pflichtfeld `client_secret_expires_at` (verpflichtend sobald ein `client_secret` ausgegeben wird). Ergänzt (`0` = läuft nie ab), `grant_types`/`response_types` werden jetzt zusätzlich aus dem Request gespiegelt. Commit `a7007b8c5`.
+2. **"MCP server ... does not implement OAuth"** — der 401-Antwort auf `/mcp` fehlte der `WWW-Authenticate`-Header (RFC 9728/RFC 6750 §3), der einem konformen Client sagt, wo die Protected-Resource-Metadaten liegen. Zusätzlich beantworteten `/.well-known/oauth-protected-resource` und `/.well-known/oauth-authorization-server` bislang fälschlich dasselbe Dokument, obwohl sie laut RFC 9728 vs. RFC 8414 unterschiedliche Felder brauchen — jetzt korrekt getrennt. Commit `a1f633a3b`.
+
+Beide live über `https://flextrawurst.de/3d-mcp/` nachverifiziert.
