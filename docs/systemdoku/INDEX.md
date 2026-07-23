@@ -81,6 +81,7 @@ Vollständige technische und konzeptionelle Dokumentation des flextrawurst-Syste
 
 | [[35_flextrawurst_mega_sammelauftrag_und_subagenten]] | Mega-Sammelauftrag (29 Kapitel, 50 Metadatenfelder), Subagenten & Alleswisser |
 | [[36_4_generationen_pipeline_8x_redteam_und_schwelm_wohnungen]] | 4-Generationen Pipeline, 8-facher Redteam-Loop (R1-R8) & Schwelm-First Wohnungsstrategie |
+| [[37_13_gta_metropolen_und_13_skyrim_festungsstaedte_kosmos]] | 13 GTA-Metropolen & 13 Skyrim-Festungsstädte in der 4-Generationen Pipeline |
 
 ---
 

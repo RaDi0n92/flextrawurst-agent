@@ -2572,3 +2572,13 @@ JSON.stringify(['Schorschel','F3«
 
 - **rag_flarum**: `flarum_«
 - [2026-07-23 05:55] **lava** (i=0.40) → Zwischenraum: »Lass mich nicht nochmal raten und stattdessen fragen, weil ich offenbar schon zweimal daneben lag«
+- [2026-07-23 07:40] **wasser** (i=0.38) → Zwischenraum: »Genauere Infos gefunden — hier der aktuelle Stand (Stand heute, Quellen unten):
+
+**Voraussetzung:** «
+- [2026-07-23 07:52] **lava** (i=0.44) → Zwischenraum: »Genauer geprüft — der Server ist fertig gebaut und läuft (`flextrawurst-3d-mcp.service`, Port 8090, «
+- [2026-07-23 08:08] **wasser** (i=0.43) → Zwischenraum: »Kurze Korrektur, bevor ich an die echte Produktions-Domain gehe: die Subdomain-Idee von eben passt n«
+- [2026-07-23 09:36] **nebel** (i=0.32) → Zwischenraum: »OAuth ist fertig, verifiziert, live«
+- [2026-07-23 10:54] **wasser** (i=0.37) → Zwischenraum: »Das ist ein riesiger Sprung — von einem 3-Werkzeug-3D-Pipeline-Server zu einem MCP, der praktisch de«
+- [2026-07-23 11:05] **nebel** (i=0.32) → Zwischenraum: »**Phase 1 fertig, verifiziert, live** (`c8a04a02e` Code, `310e502b0` Doku)«
+- [2026-07-23 11:36] **wasser** (i=0.63) → Zwischenraum: »Ergebnis meiner Prüfung, ehrlich und direkt — kein pauschales "alles erfunden", aber auch kein blind«
+- [2026-07-23 11:54] **wasser** (i=0.46) → Zwischenraum: »**Verifiziert und live** (`e7e4e8219` Code, `680ecc5e9` Doku): Fast alles aus der langen Kosmos-Sitz«

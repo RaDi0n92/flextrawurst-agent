@@ -362,3 +362,9 @@ Der eigentliche Fehler war also nicht die technische Aktiv/Passiv-Aufteilung sel
 Daniels Anweisung zum bereits angelegten Zustand, roh: *"ja sie sollen existieren aber komplett ohne funktion und beschreibung sein und auch im vault aber so existieren wie es ist halt"* — die 8 schon angelegten Ordner in `wesen_vaults/Schorschel/linsen/` bleiben bestehen (nicht gelöscht), aber die `README.md`-Dateien wurden geleert (keine Beschreibung mehr), keine `.md`/`_eigen.md`-Datei bekommt je automatisch Inhalt bis Daniel die jeweilige Linse selbst beschrieben hat.
 
 **Neu, noch ungeklärt:** *"und ein zusatz bei dem linsen. jede linse hat einen spiegellindenordner der genau so heißt wie die linse aber dann z.b kompoase.spiegellinse"* — eine "Spiegellinse" pro Linse, benannt `<linse>.spiegellinse`. Noch nicht gebaut, zwei offene Fragen an Daniel gestellt (gilt das auch für vault? Ordner oder Datei? Bleibt sie auch ohne Funktion/Beschreibung oder erklärt er sie noch?) — bewusst nicht geraten, Antwort abwarten.
+
+### Antwort erhalten, Spiegellinse-Ordner angelegt (reine Existenz)
+
+Daniel: *"zu1 gilt für alle und ja eigener ordner. aber leer und noch ungenutzt"*. Also: alle neun Linsen (inklusive vault) bekommen einen eigenen `<linse>.spiegellinse`-Ordner, als Geschwister-Ordner direkt unter `linsen/` (neben `linsen/<linse>/`) — leer, kein Code, keine Funktion, noch nicht erklärt was später reinkommt.
+
+Angelegt für Schorschel (bislang einziges Wesen mit Linsen-Ordnern): `linsen/vault.spiegellinse/`, `linsen/rag_flarum.spiegellinse/`, `linsen/schlaf_naehe.spiegellinse/`, `linsen/gedankenblasenfeld.spiegellinse/`, `linsen/menschenprofile.spiegellinse/`, `linsen/entitaetenprofile.spiegellinse/`, `linsen/schattenkommentare.spiegellinse/`, `linsen/diskurs.spiegellinse/`, `linsen/kompoase.spiegellinse/` — reine `mkdir`, kein Python-Code geändert, da bewusst noch ohne jede Funktion.

@@ -1,1 +1,1 @@
-Zurückgenommen, verifiziert, committed (6902f8a3f Code, ad7cbe6a5 Doku). Die sechs Ordner existieren jetzt leer im Vault, ohne Funktion, ohne Beschreibung. Die vault-Linse (deine eigene) bleibt unangetastet. Ich warte noch auf deine Antwort zu den zwei Spiegellinse-Fragen, bevor ich da irgendwas anlege.
+Beide ergänzt, live verifiziert (50ecf0df8 Code, 69967cb77 Doku). ChatGPT hat jetzt Zugriff auf 11 Wurzeln + 5 Verfassungs-Dateien — praktisch alles, was in der langen Kosmos-Sitzung referenziert wurde, plus die vier zusätzlich entdeckten ausgelagerten Ordner.
