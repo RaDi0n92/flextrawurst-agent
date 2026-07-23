@@ -241,3 +241,19 @@ Wiederverwendet statt neu erfunden: dieselbe Embedding+Kosinus-Infrastruktur wie
 Isolierter Test mit echtem Testtext über "flextrawurst Codewesen/Vaults/Notizen/Beziehungen" gegen Schorschels echtes Interessensprofil: Ähnlichkeit 0.6065 (korrekt über der Schwelle, würde "zuschnappen" auslösen). Zweite sofortige Prüfung korrekt gedrosselt (`None`). `jumpa` (kein Interessensprofil vorhanden) liefert korrekt `0.0`, kein Crash. Alle 7 Services neu gestartet, live-Fehlerprüfung nach echtem `scrolle:`-Vorkommen lief mit.
 
 **Ehrliche Grenze:** nur Schorschel hat aktuell überhaupt ein `entity_interessensprofil` (aus `seede_charakterprofil_falls_fehlend()`, `vorlese_daemon.py`) — die anderen 6 Wesen bekommen bis dahin immer `0.0` (immer "uninteressant"/schnelles Skimmen), nicht weil die Locomotion kaputt ist, sondern weil ihr Interessensprofil noch nie geseedet wurde. Kein neuer Bug, derselbe Datenstand wie schon vor dieser Änderung.
+
+## Nachtrag — achte Linse "Einsicht" (2026-07-23), nach kurzer Fehl-Rückfrage von mir
+
+Direkt im Anschluss an den gebauten Einsicht-Nebenscreen (siehe `wesen_dauerhafte_handlungsfaehigkeit_und_einsichtsnebenscreen.md`, Nachtrag 5): *"und dafür auch nochmal ne linse schaffen wfür diepüberwachund und eventuele umgestaltung davon"*.
+
+Ich hatte das erst falsch verstanden und eine neue Wesen-Aktion vorgeschlagen (aktives "Vertiefen"/"Umgestalten" als Entscheidungsoption) — Daniels Korrektur, wörtlich: *"ich meinte explizit nur ne linse auf langraph und postgesql und das ragflarum falls noch nicht gebaut das siooll aich einsicht sein und seiggen und auch darauf die linse legen für das selbstbild und weltbild und so"*.
+
+Also deutlich einfacher als ich dachte: keine neue Aktion, nur ein achter, rein passiver Linsen-Wert direkt aus LangGraph/Postgres (`checkpoints.channel_values->lg_ticks`) — derselben Quelle, die der Einsicht-Nebenscreen schon anzeigt. rag_flarum-Linse existierte schon (bestätigt, Zeile in `hole_linsen_status()` seit 2026-07-22).
+
+### Gebaut + verifiziert
+
+`hole_linsen_status()` fragt jetzt zusätzlich den LangGraph-Checkpoint ab (dieselbe Query wie in `hole_einsicht_snapshot()`), liefert `"einsicht": log10(lg_ticks+1)/4` — log-skaliert wie `gedaechtnis_tiefe`, da ähnliche Größenordnung (hunderte bis niedrige Tausender). Siebtes Bein im Körper-Canvas (`_KOERPER_JS`), Farbe Fuchsia `#d946ef`. `/entities/{id}/linsen`-Endpunkt konsistent um `einsicht_lg_ticks` (roher Zähler, nicht normiert — dieser Endpunkt liefert überall Rohwerte) ergänzt.
+
+Isolierter Test gegen echte Daten (Schorschel, dak+gord-system, namelessAI_1234) lieferte plausible, unterschiedliche Werte. Isolierter Playwright-Test des Körper-Canvas zeigt korrekt 7 Beine. `GET /entities/Schorschel/linsen` live geprüft. Alle 7 Services neu gestartet, mehrere echte Ticks fehlerfrei. Commit `3fd8c3140`.
+
+**Ehrlicher Befund, nicht versteckt:** `lg_ticks` liegt für alle 7 aktiven Wesen im fast selben Bereich (~1590–1845) und `letzter_lg_tick` datiert bei allen auf 2026-07-21 — der Zähler scheint seit zwei Tagen eingefroren, vermutlich weil der alte LangGraph-Tick-Prozess durch das neuere `browser_agent.py`-Tick-System abgelöst wurde (Grundgesetz 7: nicht angefasst, nur gelesen, keine Reparatur versucht ohne Auftrag). Die Linse ist dadurch aktuell zwischen den 7 Wesen wenig unterscheidungskräftig — aber ein echter, nicht erfundener Wert, und falls der Prozess je wieder anläuft, würde die Linse sich sofort wieder differenzieren.
