@@ -333,3 +333,16 @@ Erst geprüft statt blind gebaut: `entity_splitter_stats` (splitter_abgegeben/au
 **Gebaut:** `kompoase`-Linse nach demselben Tab-Hash-Zählmuster wie die fünf Sozial-Linsen (`entity_thinking_log.meta->>'url'` enthält `#theater`), elftes Bein am Körper, Farbe Gelb `#eab308`. Cyberling bleibt weiterhin ohne eigenes Bein (`status='tot'` für alle 7 echten Wesen, unverändert).
 
 **Verifiziert:** isolierter `hole_linsen_status()`-Test zeigt echte Differenzierung zwischen Wesen (Schorschel 0.2, andere 0.0 im aktuellen 50er-Fenster — ältere Theater-Besuche liegen bei manchen Wesen schon außerhalb des Fensters, ehrlich, kein Bug), API-Endpunkt live geprüft, Playwright-Test zeigt 11 Beine, alle 7 Services neu gestartet, mehrere Ticks fehlerfrei. Commit `acdfaf4b4`.
+
+## Nachtrag — Linsen-Vault-Rollout auf alle Linsen mit echtem Auslöser (2026-07-23)
+
+Daniel: *"so und die könne ale so in vault schreiben wie das andere ohne llmcall?"* — bezogen auf den "vault"-Piloten (README + passiv/aktiv, mechanisch getippt, kein LLM-Call).
+
+**Ausgerollt, jeweils mit echtem, vorhandenem Auslöser statt einer erfundenen neuen Wesen-Aktion:**
+- `rag_flarum`: `flarum_besuchen:` → passiv (nur Lesen), `rag_erkunden:` → passiv UND aktiv (das Wesen formuliert die Anfrage selbst — echtes eigenes Lenken).
+- `schlaf_naehe`: nur aktiv, ausgelöst durch die `schlafen`-Entscheidung selbst. Keine passive Seite — die Stunden-wach-Zählung läuft kontinuierlich, nicht ereignisbasiert, ein mechanischer ~12s-Schreibvorgang bei jedem Tick wäre viel zu teuer.
+- Die fünf Sozial-Linsen + KompOase: passiv, per **Änderungs-Erkennung** im Haupt-Tick-Loop (neuer Cache `_letzter_tab_linse` pro Wesen) — einmal pro Ankunft auf dem jeweiligen Tab, nicht bei jedem Tick solange das Wesen dort bleibt. Sonst hätte ein längerer Aufenthalt auf `#theater` z.B. eine teure mechanische Schreibaktion pro Tick ausgelöst.
+
+**Bewusst NICHT ausgerollt:** `gedaechtnis` (reiner LangGraph-Zähler, keine Wesen-Aktion dahinter) und `gegenwart_anteil` (ein Verhältnis aus anderen Werten, keine eigene Aktion) — für beide existiert kein natürlicher Auslöser, ohne eine neue Wesen-Aktion zu erfinden, was Daniel für die Gedächtnis-Linse schon einmal explizit abgelehnt hatte (siehe Nachtrag "Kontext-Nachweis" oben).
+
+**Verifiziert:** README-Erzeugung für alle 8 neuen Linsen getestet, ein echter mechanischer Schreibvorgang gegen Schorschels realen Vault-Container (9 Linsen-Ordner korrekt angelegt unter `wesen_vaults/Schorschel/linsen/`), Testinhalt danach bereinigt. Schorschel zuerst einzeln neu gestartet und beobachtet (die vielen `TargetClosedError`-Zeilen im Log waren nur Aufräum-Rauschen des alten, sauber gestoppten Prozesses, keine echten Fehler), danach alle 7 Services neu gestartet, mehrere Ticks fehlerfrei. Commit `4824ea9e4`.
