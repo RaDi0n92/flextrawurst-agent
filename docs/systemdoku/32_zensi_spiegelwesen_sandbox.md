@@ -245,4 +245,29 @@ In `/root/zensi/index.html` wurden die 3 Frontend-Elemente für die neue Kogniti
    - Unter allen Bot-Nachrichten wird ein visualisiertes Schatten-Biopsie Thermografie-Band eingeblendet.
    - Baut ein farbliches Varianz-Spektrum (blau für kohärente Stabilisation, gelb für moderate Spannung, rot für hohe Logit-Varianz).
 
+---
+
+## 15. Lückenlose Provenienz, Markdown Session Export/Import & LangGraph/DB Master Audit
+
+Um volle Transparenz, Nachvollziehbarkeit und unverkürzte Datenintegrität sicherzustellen, wurden das Backend (`server.py`), der History-Daemon (`zensi_history_daemon.py`) und die Benutzeroberfläche (`index.html`) erweitert:
+
+1. **Unverkürztes Provenienz-Logging (`logge_chat_turn`):**
+   - Jeder einzelne Chat-Turn (inkl. vollständigem System-Prompt mit VPS-Körperstimme, User-Prompt, KI-Antwort & Biopsie-EKG) wird lückenlos und ohne Textabschneidung in `zensi_history_stream.jsonl` sowie im Obsidian Vault unter `/history/` archiviert.
+
+2. **Session Markdown Export & Import (`/api/export/session/md` & `/api/import/session/md`):**
+   - **`GET /api/export/session/md?session_id=...`**: Exportiert eine komplette Zensi-Session als transparentes, unverkürztes Markdown-Archiv mit YAML-Frontmatter (Provenienz, VPS-Physiologie), System-Prompt-Sektion, chronologischem Verlauf und Ereignis-Audit.
+   - **`POST /api/import/session/md`**: Rehydriert und rekonstruiert eine aus einer Markdown-Datei importierte Session im Server und fügt sie nahtlos wieder in die UI ein.
+
+3. **LangGraph Workflow & PostgreSQL Master Audit Export (`/api/export/langgraph_db`):**
+   - **`GET /api/export/langgraph_db?format=md|json|sql`**: Exportiert den vollständigen LangGraph-State, alle aktiven Workflow-Knoten und die gesamte Event-Historie wahlweise als strukturierte Markdown-Chronik, JSON-Masterstream oder native SQL-Insert Statements.
+   - **`POST /api/import/langgraph_db`**: Rehydriert importierte Master-Events und LangGraph-Zustände aus `.md`, `.json` oder `.sql`.
+
+4. **UI-Integration (`index.html`):**
+   - Im Session-Bar befinden sich nun 3 neue Buttons:
+     - `📥 Export MD`: Sofortiger Markdown-Download der aktuellen Session.
+     - `📤 Import MD`: Datei-Upload zum Rehydrieren von Sessions aus `.md`-Dateien.
+     - `📊 Audit MD`: Download des gesamten LangGraph & DB Master-Audits.
+   - 100% verifiziert durch automatisierte Backend-Testsuite (`test_provenienz_and_export.py`) und Playwright Browser E2E Suite (`test_playwright_provenienz_e2e.py`).
+
+
 
