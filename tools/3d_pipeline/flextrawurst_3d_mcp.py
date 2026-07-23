@@ -20,6 +20,18 @@ import godot_pipeline
 PORT = int(os.environ.get("FLEXTRAWURST_3D_MCP_PORT", "8090"))
 BASE_DIR = Path("/root/werkraum/tools/3d_pipeline")
 
+# 2026-07-23 (Daniels Auftrag: oeffentlich ueber flextrawurst.de/3d-mcp/ erreichbar machen,
+# fuer ChatGPT Custom-GPT-Actions + nativen MCP-Connector): der Server nahm bislang
+# input_path/output_path/project_dir ungeprueft entgegen, komplett ohne Authentifizierung --
+# oeffentlich erreichbar waere das beliebiges Datei-Lesen/Schreiben fuer jeden im Internet.
+# API_KEY greift nur, wenn gesetzt (lokale/Antigravity-CLI-Nutzung ohne Env-Var bleibt
+# unveraendert unauthentifiziert, wie bisher).
+API_KEY = os.environ.get("FLEXTRAWURST_3D_MCP_KEY", "")
+# 2026-07-23: oeffentliche Basis-URL fuer das OpenAPI-Schema (Custom GPT Actions lesen
+# "servers"/"url" daraus, um zu wissen wohin sie ihre Requests schicken sollen) --
+# ohne diese Variable wuerde das Schema weiterhin faelschlich 127.0.0.1 nennen.
+PUBLIC_BASE_URL = os.environ.get("FLEXTRAWURST_3D_MCP_PUBLIC_URL", f"http://127.0.0.1:{PORT}")
+
 def get_openapi_schema():
     """Generiert ein valides OpenAPI v3 Schema für ChatGPT Actions / Custom GPTs."""
     return {
@@ -29,7 +41,7 @@ def get_openapi_schema():
             "version": "1.0.0",
             "description": "Headless Blender & Godot 3D Pipeline Actions für Flextrawurst"
         },
-        "servers": [{"url": f"http://127.0.0.1:{PORT}"}],
+        "servers": [{"url": PUBLIC_BASE_URL}],
         "paths": {
             "/api/3d/convert": {
                 "post": {
@@ -110,6 +122,23 @@ class MCPHandler(BaseHTTPRequestHandler):
         self.send_header("Access-Control-Allow-Methods", "GET, POST, OPTIONS")
         self.send_header("Access-Control-Allow-Headers", "Content-Type, Authorization")
 
+    def _autorisiert(self) -> bool:
+        """2026-07-23: nur relevant sobald FLEXTRAWURST_3D_MCP_KEY gesetzt ist (oeffentliche
+        Freischaltung) -- erwartet 'Authorization: Bearer <key>'."""
+        if not API_KEY:
+            return True
+        auth = self.headers.get("Authorization", "")
+        return auth == f"Bearer {API_KEY}"
+
+    def _unauthorized(self):
+        body = json.dumps({"error": "unauthorized"}).encode("utf-8")
+        self.send_response(401)
+        self._cors()
+        self.send_header("Content-Type", "application/json; charset=utf-8")
+        self.send_header("Content-Length", str(len(body)))
+        self.end_headers()
+        self.wfile.write(body)
+
     def do_OPTIONS(self):
         self.send_response(200)
         self._cors()
@@ -156,6 +185,10 @@ class MCPHandler(BaseHTTPRequestHandler):
         path = urlparse(self.path).path.rstrip("/") or "/"
         length = int(self.headers.get("Content-Length", 0))
         body_data = json.loads(self.rfile.read(length)) if length > 0 else {}
+
+        if not self._autorisiert():
+            self._unauthorized()
+            return
 
         # 1. REST Endpoint: Konvertierung
         if path in ("/api/3d/convert", "/convert"):
@@ -205,7 +238,16 @@ class MCPHandler(BaseHTTPRequestHandler):
             msg_id = body_data.get("id", 1)
 
             result_payload = {}
-            if method in ("tools/list", "mcp.list_tools"):
+            if method == "initialize":
+                # 2026-07-23: fehlte bisher -- das offizielle MCP-Protokoll (Streamable HTTP)
+                # erwartet diesen Handshake vor tools/list/tools/call, sonst brechen konforme
+                # Clients (z.B. ChatGPTs nativer MCP-Connector) die Verbindung ab.
+                result_payload = {
+                    "protocolVersion": "2024-11-05",
+                    "capabilities": {"tools": {}},
+                    "serverInfo": {"name": "flextrawurst-3d-mcp", "version": "1.0.0"},
+                }
+            elif method in ("tools/list", "mcp.list_tools"):
                 result_payload = {
                     "tools": [
                         {"name": "mcp__convert_3d_model", "description": "Konvertiert 3D Modelle via Blender Headless"},
