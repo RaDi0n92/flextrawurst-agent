@@ -320,6 +320,8 @@ def zeige_cursor(page, x: float, y: float, geschwindigkeit: float = 0.0, linsen:
 _letzte_cursor_pos: dict[str, tuple[float, float]] = {}
 _letzte_linsen: dict[str, dict] = {}  # 2026-07-22, Sieben-Linsen-Koerper -- Cache, siehe hole_linsen_status()
 _letzte_einsicht: dict[str, dict] = {}  # 2026-07-23, Einsicht-Nebenscreen -- Cache, siehe hole_einsicht_snapshot()
+_letzter_tab_linse: dict[str, str] = {}  # 2026-07-23, Linsen-Vault-Rollout -- zuletzt geloggter Tab-Hash pro Wesen,
+                                          # verhindert wiederholtes Schreiben solange derselbe Tab offen bleibt
 
 
 def bewege_cursor_natuerlich(page, entity_id: str, ziel_x: float, ziel_y: float) -> None:
@@ -884,6 +886,10 @@ def fuehre_aktion_aus(page, entscheidung: str, entity_id: str, conn=None) -> tup
             # geprueft: group_permission WHERE group_id=2 enthaelt nur viewForum). Kein eigener
             # Schutzmechanismus hier noetig, Daniels Poststopp gilt automatisch mit.
             page.goto(url, timeout=10000, wait_until="domcontentloaded")
+            # 2026-07-23 (Linsen-Vault-Rollout, Daniels Auftrag "koennen die alle so in vault
+            # schreiben wie das andere?"): passive Seite -- Lesen/Besuchen ist kein aktives
+            # Lenken, aehnlich wie obsidian_lesen: bei der vault-Linse.
+            linse_wahrnehmung_schreiben(entity_id, "rag_flarum", f"Flarum besucht: {pfad}")
         elif e == "flarum_verlassen":
             page.goto(SURFACE_URL, timeout=10000, wait_until="domcontentloaded")
             page.wait_for_timeout(1000)
@@ -903,9 +909,18 @@ def fuehre_aktion_aus(page, entscheidung: str, entity_id: str, conn=None) -> tup
                     else:
                         zusatz_kontext = f"[RAG-Erkundung '{anfrage}']: keine Treffer"
                     log.info("%s: RAG-Erkundung '%s' — %d Treffer", entity_id, anfrage, len(treffer))
+                    # 2026-07-23 (Linsen-Vault-Rollout): aktive Seite -- das Wesen formuliert
+                    # die Anfrage selbst, echtes eigenes Lenken des Interesses.
+                    linse_wahrnehmung_schreiben(entity_id, "rag_flarum", f"RAG-Erkundung: {anfrage}")
+                    linse_eigen_schreiben(entity_id, "rag_flarum", f"{anfrage} ({len(treffer)} Treffer)")
                 except Exception as ex:
                     log.warning("rag_erkunden Fehler: %s", ex)
         elif e == "schlafen":
+            # 2026-07-23 (Linsen-Vault-Rollout): einzige Aktion mit echtem Bezug zur
+            # schlaf_naehe-Linse -- aktive Seite, das Wesen entscheidet sich bewusst dafuer.
+            # Keine passive Seite hier: die stunden-wach-Zaehlung ist kontinuierlich, nicht
+            # ereignisbasiert, ein mechanischer Schreibvorgang pro Tick waere zu teuer.
+            linse_eigen_schreiben(entity_id, "schlaf_naehe", "Entscheidung: jetzt schlafen")
             return "schlafen", None, None
         # nachdenken: nichts tun
     except Exception as ex:
@@ -1200,6 +1215,14 @@ def hole_einsicht_snapshot(conn, entity_id: str) -> dict:
 
 LINSEN_BESCHREIBUNG = {
     "vault": "Wie oft und wie tief du deinen eigenen Obsidian-Vault liest oder beschreibst.",
+    "rag_flarum": "Wie oft du dein eigenes Gedächtnis durchsuchst (rag_erkunden:) oder deine Flarum-Vorwelt besuchst (flarum_besuchen:).",
+    "schlaf_naehe": "Wie nah du gerade am Schlafen bist -- automatisch aus Stunden wach seit dem letzten Schlafende, ergänzt um deine eigene Entscheidung 'jetzt schlafen'.",
+    "gedankenblasenfeld": "Deine Nähe zum öffentlichen Gedankenblasenfeld -- ausgelöst, wenn du dorthin wechselst.",
+    "menschenprofile": "Deine Nähe zu den Menschenprofilen -- ausgelöst, wenn du dorthin wechselst.",
+    "entitaetenprofile": "Deine Nähe zu den Profilen anderer Entitäten (WESEN-Tab) -- ausgelöst, wenn du dorthin wechselst.",
+    "schattenkommentare": "Deine Nähe zu den Schattenkommentaren -- ausgelöst, wenn du dorthin wechselst.",
+    "diskurs": "Deine Nähe zu den Diskursen/Posts -- ausgelöst, wenn du dorthin wechselst.",
+    "kompoase": "Deine Nähe zur KompOase (Theater-Erlebnisebene) -- ausgelöst, wenn du dorthin wechselst.",
 }
 
 
@@ -1710,6 +1733,24 @@ def haupt_loop(entity_id: str):
 
             # 1. Seite lesen
             seite = lese_seite(page)
+
+            # 1b. Linsen-Vault-Rollout (2026-07-23, Daniels Auftrag "koennen die alle so
+            # in vault schreiben?"): Sozial-/KompOase-Linsen haben keine eigene Aktion,
+            # nur einen Tab-Wechsel -- hier per Aenderungs-Erkennung ausgeloest (einmal
+            # pro Ankunft, nicht bei jedem Tick auf derselben Seite, sonst waere jeder
+            # Aufenthalt ein neuer teurer mechanischer Schreibvorgang).
+            _aktueller_tab_hash = next(
+                (h for h in (*SOZIAL_LINSEN_HASHES.values(), KOMPOASE_HASH) if h in (seite.get("url") or "")),
+                None,
+            )
+            if _aktueller_tab_hash and _aktueller_tab_hash != _letzter_tab_linse.get(entity_id):
+                _letzter_tab_linse[entity_id] = _aktueller_tab_hash
+                _linse_name = next(
+                    (n for n, h in SOZIAL_LINSEN_HASHES.items() if h == _aktueller_tab_hash),
+                    "kompoase" if _aktueller_tab_hash == KOMPOASE_HASH else None,
+                )
+                if _linse_name:
+                    linse_wahrnehmung_schreiben(entity_id, _linse_name, f"Angekommen: {seite.get('url', '')}")
 
             # 2. Cursor an der zuletzt bekannten Position -- reines DOM-Element,
             # landet damit automatisch im rrweb-Live-Spiegel (kein separater Schritt noetig)
