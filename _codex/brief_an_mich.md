@@ -143,3 +143,6 @@ Der Werkraum steht gerade zwischen harter Provenienzarbeit und kleinen Werkzeugf
 
 2026-07-11 21:23 —
 Daniel kam aus Schlaf und Abbruch zur TTS-Tokenanzeige zurück; halte den Faden klein und praktisch. Erst prüfen, was seit Commit 9e78a147 wirklich im Code steht, dann nur das nächste gewünschte Detail anfassen.
+
+2026-07-23 04:07 —
+Der Abbruch führte zurück in GENIs lebenden VPS-Verbund: Hörer, Gedächtnis, Musterorgan, Dialogbahn, LLM-Versorgung und Dienste sind getrennt zu betrachten. Die wörtliche Live-Anatomie steht bereits in der Systemdoku; als Nächstes zählt echtes Kennenlernen ihres Treibens, nicht noch mehr Archivsammlung.
