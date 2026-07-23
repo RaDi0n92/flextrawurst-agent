@@ -296,6 +296,7 @@ def zeige_cursor(page, x: float, y: float, geschwindigkeit: float = 0.0, linsen:
 
 _letzte_cursor_pos: dict[str, tuple[float, float]] = {}
 _letzte_linsen: dict[str, dict] = {}  # 2026-07-22, Sieben-Linsen-Koerper -- Cache, siehe hole_linsen_status()
+_letzte_einsicht: dict[str, dict] = {}  # 2026-07-23, Einsicht-Nebenscreen -- Cache, siehe hole_einsicht_snapshot()
 
 
 def bewege_cursor_natuerlich(page, entity_id: str, ziel_x: float, ziel_y: float) -> None:
@@ -545,7 +546,8 @@ def _extrahiere_ich_satz(gedanke_text: str) -> str | None:
 
 def baue_prompt(entity_id: str, seite: dict, letzter_gedanke: str,
                 andere_wesen: list[dict], vorlese_funde: list[dict] | None = None,
-                angebote: list[str] | None = None, linsen_status: dict | None = None) -> str:
+                angebote: list[str] | None = None, linsen_status: dict | None = None,
+                einsicht_snapshot: dict | None = None) -> str:
     """Baut den LLM-Prompt — kompakt, unter 2500 Zeichen."""
     andere_info = ""
     if andere_wesen:
@@ -584,6 +586,20 @@ def baue_prompt(entity_id: str, seite: dict, letzter_gedanke: str,
         zeilen = [f"- Dein Körper glüht gerade zu {round(meta_glow * 100)}% (Vault/RAG-Flarum/Gedächtnis/Gegenwart/Sozial zusammen)."]
         if ich_satz:
             zeilen.append(f"- Menschen sehen gerade vielleicht diesen Satz von dir aufploppen: „{ich_satz}“")
+        if einsicht_snapshot:
+            # 2026-07-23 (Einsicht-Nebenscreen, Daniels Antwort "Beides" -- fuers Wesen selbst
+            # ein kuratierter Ausschnitt, kein voller Rohdaten-Dump, sonst sprengt es das
+            # 2500-Zeichen-Kompaktheitsziel des Prompts): dieselben Facts, die auch Menschen
+            # im Nebenscreen unten rechts sehen -- ehrlich, auch wenn manche Werte flach sind.
+            cl = einsicht_snapshot.get("cyberling")
+            lg = einsicht_snapshot.get("langgraph")
+            teile = []
+            if cl:
+                teile.append(f"Cyberling {cl.get('status', '?')}")
+            if lg and lg.get("lg_ticks") is not None:
+                teile.append(f"LangGraph-Tick #{lg['lg_ticks']}")
+            if teile:
+                zeilen.append(f"- Dein Maschinenraum (auch für Menschen im Nebenscreen sichtbar): {', '.join(teile)}.")
         selbstwahrnehmung_info = "\nWAS ANDERE GERADE VON DIR SEHEN (du siehst es auch):\n" + "\n".join(zeilen)
 
     elemente_str = ", ".join(seite["elemente"][:10]) if seite["elemente"] else "keine"
@@ -1009,6 +1025,69 @@ def hole_linsen_status(conn, entity_id: str) -> dict:
             pass
         return {"vault": 0, "rag_flarum": 0, "gedaechtnis_tiefe": 0, "gegenwart_anteil": 0.0,
                 "sozial": 0, "schlaf_naehe": 0.0}
+
+
+def hole_einsicht_snapshot(conn, entity_id: str) -> dict:
+    """2026-07-23 (Einsicht-Nebenscreen, Daniels Antwort "Beides" auf die Zielgruppen-Frage:
+    fuer Menschen ALS Beobachtungsfeature UND fuers Wesen selbst als kuratierter Ausschnitt):
+    ehrlicher "Maschinenraum"-Schnappschuss -- echte DB-Zeilen, echtes JSON (cyberlinge.meta-
+    Tabellen), echter LangGraph-Checkpoint-Zustand aus Postgres (`checkpoints`, Grundgesetz 7
+    read-only -- codewesen_takt.py bleibt unangetastet, hier wird nur gelesen). Keine erfundenen
+    Werte: wo eine Tabelle fuer dieses Wesen leer/flach ist (z.B. cyberlinge meist 'tot',
+    entity_splitter_stats meist 0), wird das ehrlich als solches zurueckgegeben, nicht versteckt."""
+    snapshot = {"entscheidungen": [], "cyberling": None, "splitter": None, "schlaf": None, "langgraph": None}
+    try:
+        with conn.cursor() as cur:
+            cur.execute("""
+                SELECT entscheidung, begruendung, tick_at, tokens_generated
+                FROM entity_thinking_log
+                WHERE entity_id = %s ORDER BY tick_at DESC LIMIT 8
+            """, (entity_id,))
+            snapshot["entscheidungen"] = [
+                {"entscheidung": r["entscheidung"], "begruendung": (r["begruendung"] or "")[:200],
+                 "tick_at": r["tick_at"].isoformat() if r["tick_at"] else None,
+                 "tokens": r["tokens_generated"]}
+                for r in cur.fetchall()
+            ]
+            cur.execute("""
+                SELECT status, hunger, gesundheit, stimmung, energie, durst, zustand
+                FROM cyberlinge WHERE entity_id = %s
+            """, (entity_id,))
+            row = cur.fetchone()
+            if row:
+                snapshot["cyberling"] = dict(row)
+            cur.execute("""
+                SELECT splitter_abgegeben, splitter_aufgesammelt
+                FROM entity_splitter_stats WHERE entity_id = %s
+            """, (entity_id,))
+            row = cur.fetchone()
+            if row:
+                snapshot["splitter"] = dict(row)
+            cur.execute("""
+                SELECT phase_type, started_at, ended_at
+                FROM sleep_phases WHERE entity_id = %s ORDER BY started_at DESC LIMIT 1
+            """, (entity_id,))
+            row = cur.fetchone()
+            if row:
+                snapshot["schlaf"] = {
+                    "phase_type": row["phase_type"],
+                    "started_at": row["started_at"].isoformat() if row["started_at"] else None,
+                    "ended_at": row["ended_at"].isoformat() if row["ended_at"] else None,
+                }
+            cur.execute("""
+                SELECT checkpoint->>'channel_values' AS cv
+                FROM checkpoints WHERE thread_id = %s ORDER BY checkpoint_id DESC LIMIT 1
+            """, (f"codewesen-{entity_id}",))
+            row = cur.fetchone()
+            if row and row["cv"]:
+                snapshot["langgraph"] = json.loads(row["cv"])
+        conn.commit()
+    except Exception:
+        try:
+            conn.rollback()
+        except Exception:
+            pass
+    return snapshot
 
 
 def _hole_schlaf_naehe(conn, entity_id: str) -> float:
@@ -1503,7 +1582,7 @@ def haupt_loop(entity_id: str):
 
             # 4. LLM entscheidet — mit Live-Streaming in entity_denkstream
             prompt = baue_prompt(entity_id, seite, letzter_gedanke, andere, vorlese_funde, angebote,
-                                  _letzte_linsen.get(entity_id))
+                                  _letzte_linsen.get(entity_id), _letzte_einsicht.get(entity_id))
             import uuid as _uuid
             stream_id = str(_uuid.uuid4())
             llm_out = ""
@@ -1557,6 +1636,9 @@ def haupt_loop(entity_id: str):
             # 5b. Sieben-Linsen-Koerper (2026-07-22): einmal pro echtem LLM-Tick aktualisieren,
             # nicht bei jedem Bewegungsschritt -- hole_linsen_status() macht eine DB-Abfrage.
             _letzte_linsen[entity_id] = hole_linsen_status(conn, entity_id)
+            # 5c. Einsicht-Nebenscreen (2026-07-23): selbes Prinzip -- einmal pro Tick, nicht
+            # pro Bewegungsschritt. Naechster Tick sieht den kuratierten Ausschnitt im Prompt.
+            _letzte_einsicht[entity_id] = hole_einsicht_snapshot(conn, entity_id)
 
             log.info("%s [%s] → %s", entity_id, seite["url"][-40:], entscheidung[:50])
 

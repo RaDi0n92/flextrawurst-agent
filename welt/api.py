@@ -6649,6 +6649,74 @@ def entity_linsen_status(entity_id: str, fenster: int = Query(default=50, le=200
         conn.close()
 
 
+@app.get("/entities/{entity_id}/einsicht")
+def entity_einsicht_snapshot(entity_id: str):
+    """2026-07-23 (Einsicht-Nebenscreen, siehe _claude/ideen/
+    wesen_dauerhafte_handlungsfaehigkeit_und_einsichtsnebenscreen.md -- Daniels Antwort
+    "Beides" auf die Zielgruppen-Frage): derselbe "Maschinenraum"-Schnappschuss wie
+    hole_einsicht_snapshot() in browser_agent.py (dort fuer den Prompt des Wesens selbst
+    genutzt), hier fuer den Menschen-Nebenscreen in SCREENS. Kein zweiter Datenerzeuger --
+    dieselben Tabellen (entity_thinking_log, cyberlinge, entity_splitter_stats,
+    sleep_phases, checkpoints/LangGraph aus Postgres), nur eigenstaendig abgefragt (api.py
+    und browser_agent.py sind getrennte Prozesse, teilen keine Python-Funktionen).
+    Cyberling/Splitter bewusst ehrlich mitgeliefert auch wenn meist 'tot'/0 -- kein
+    Verstecken flacher Werte, siehe /linsen-Endpunkt-Begruendung oben."""
+    conn = get_conn()
+    try:
+        with conn.cursor() as cur:
+            cur.execute("""
+                SELECT entscheidung, begruendung, tick_at, tokens_generated
+                FROM entity_thinking_log
+                WHERE entity_id = %s ORDER BY tick_at DESC LIMIT 8
+            """, (entity_id,))
+            entscheidungen = [
+                {"entscheidung": r["entscheidung"], "begruendung": (r["begruendung"] or "")[:200],
+                 "tick_at": r["tick_at"].isoformat() if r["tick_at"] else None,
+                 "tokens": r["tokens_generated"]}
+                for r in cur.fetchall()
+            ]
+            cur.execute("""
+                SELECT status, hunger, gesundheit, stimmung, energie, durst, zustand
+                FROM cyberlinge WHERE entity_id = %s
+            """, (entity_id,))
+            row = cur.fetchone()
+            cyberling = dict(row) if row else None
+            cur.execute("""
+                SELECT splitter_abgegeben, splitter_aufgesammelt
+                FROM entity_splitter_stats WHERE entity_id = %s
+            """, (entity_id,))
+            row = cur.fetchone()
+            splitter = dict(row) if row else None
+            cur.execute("""
+                SELECT phase_type, started_at, ended_at
+                FROM sleep_phases WHERE entity_id = %s ORDER BY started_at DESC LIMIT 1
+            """, (entity_id,))
+            row = cur.fetchone()
+            schlaf = None
+            if row:
+                schlaf = {
+                    "phase_type": row["phase_type"],
+                    "started_at": row["started_at"].isoformat() if row["started_at"] else None,
+                    "ended_at": row["ended_at"].isoformat() if row["ended_at"] else None,
+                }
+            cur.execute("""
+                SELECT checkpoint->>'channel_values' AS cv
+                FROM checkpoints WHERE thread_id = %s ORDER BY checkpoint_id DESC LIMIT 1
+            """, (f"codewesen-{entity_id}",))
+            row = cur.fetchone()
+            langgraph = json.loads(row["cv"]) if row and row["cv"] else None
+        return {
+            "entity_id": entity_id,
+            "entscheidungen": entscheidungen,
+            "cyberling": cyberling,
+            "splitter": splitter,
+            "schlaf": schlaf,
+            "langgraph": langgraph,
+        }
+    finally:
+        conn.close()
+
+
 @app.get("/entities/{entity_id}/denkstrom")
 def entity_denkstrom_aktuell(entity_id: str):
     """Gibt den aktuellen Denkstrom-Buffer zurück (polling-basiert)."""
