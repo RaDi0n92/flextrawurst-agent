@@ -168,9 +168,17 @@ class MCPHandler(BaseHTTPRequestHandler):
         return False
 
     def _unauthorized(self):
+        # 2026-07-23: "MCP server ... does not implement OAuth" -- ohne den
+        # WWW-Authenticate-Header (RFC 9728 / RFC 6750 Section 3) weiss ein konformer
+        # Client nicht, wo er die Protected-Resource-Metadaten findet, und geht davon
+        # aus, dass der Server ueberhaupt kein OAuth kann.
         body = json.dumps({"error": "unauthorized"}).encode("utf-8")
         self.send_response(401)
         self._cors()
+        self.send_header(
+            "WWW-Authenticate",
+            f'Bearer resource_metadata="{PUBLIC_BASE_URL}/.well-known/oauth-protected-resource"',
+        )
         self.send_header("Content-Type", "application/json; charset=utf-8")
         self.send_header("Content-Length", str(len(body)))
         self.end_headers()
@@ -195,10 +203,21 @@ class MCPHandler(BaseHTTPRequestHandler):
         parsed = urlparse(self.path)
         path = parsed.path.rstrip("/") or "/"
 
-        # 2026-07-23 (OAuth-Discovery, RFC 8414 / RFC 9728): ChatGPT sucht diese Metadaten-
-        # Datei automatisch, um Authorization-/Token-/Registration-Endpunkt zu finden --
-        # ohne sie muesste Daniel jede URL einzeln von Hand eintragen.
-        if path in ("/.well-known/oauth-authorization-server", "/.well-known/oauth-protected-resource"):
+        # 2026-07-23 (OAuth-Discovery): zwei WIRKLICH verschiedene Dokumente, vorher
+        # faelschlich identisch beantwortet -- protected-resource (RFC 9728) beschreibt
+        # die MCP-Ressource selbst + auf welchem Autorisierungsserver sie vertraut;
+        # authorization-server (RFC 8414) beschreibt den Autorisierungsserver selbst.
+        # ChatGPTs Fehler "does not implement OAuth" kam vom fehlenden WWW-Authenticate-
+        # Header (siehe _unauthorized()), nicht direkt von hier -- trotzdem inhaltlich
+        # korrekt getrennt, damit Clients die per RFC vorgesehenen Felder wirklich finden.
+        if path == "/.well-known/oauth-protected-resource":
+            self._json(200, {
+                "resource": f"{PUBLIC_BASE_URL}/mcp",
+                "authorization_servers": [PUBLIC_BASE_URL],
+            })
+            return
+
+        if path == "/.well-known/oauth-authorization-server":
             self._json(200, {
                 "issuer": PUBLIC_BASE_URL,
                 "authorization_endpoint": f"{PUBLIC_BASE_URL}/oauth/authorize",
