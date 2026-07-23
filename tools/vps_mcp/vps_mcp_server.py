@@ -50,6 +50,22 @@ ALLOWED_ROOTS = [
 # /etc/systemd/system/ nur lesend, separat behandelt (kein freier Datei-Zugriff,
 # nur ueber services.status/services.logs via systemctl/journalctl).
 
+# 2026-07-23 (Daniel: "chatgpt muss darauszugreifen und alles sehen und lesen
+# koennen"): einzelne "Verfassungs"-Dateien direkt in /root, ausserhalb der
+# Wurzel-Ordner -- bewusst als kleine, EXPLIZITE Datei-Liste statt "/root" als
+# Wurzel zuzulassen (das wuerde .ssh, andere Dienste und die gerade in diesem
+# Ordner liegenden Sicherheits-Audit-Berichte mit oeffnen). SECURITY_*.md,
+# SECRET_FINDINGS_REDACTED.md und .aider.chat.history.md bewusst NICHT
+# aufgenommen -- echte Sicherheitsaudit-Funde bzw. private Chat-Historie,
+# nicht angefragt.
+ALLOWED_FILES = [
+    Path("/root/GEMINI.md"),
+    Path("/root/CLAUDE.md"),
+    Path("/root/KIMI.md"),
+    Path("/root/grok.md"),
+    Path("/root/AGENTS.md"),
+]
+
 # ── Ausgeschlossen: Geheimnisse (gilt auch INNERHALB erlaubter Wurzeln) ─────────
 SECRET_MUSTER = [
     "*.env", "*.env.*", ".env*",
@@ -67,11 +83,14 @@ def _ist_geheim(pfad: Path) -> bool:
 
 def _pfad_erlaubt(roh_pfad: str) -> Path | None:
     """Gibt den aufgeloesten Pfad zurueck wenn er innerhalb einer erlaubten Wurzel
-    liegt UND kein Geheimnis-Muster trifft, sonst None."""
+    ODER in der expliziten ALLOWED_FILES-Liste liegt UND kein Geheimnis-Muster
+    trifft, sonst None."""
     try:
         p = Path(roh_pfad).resolve()
     except Exception:
         return None
+    if p in ALLOWED_FILES:
+        return p
     if not any(p == root or root in p.parents for root in ALLOWED_ROOTS):
         return None
     if _ist_geheim(p):
@@ -145,7 +164,10 @@ def _ergebnis(ok: bool, data=None, source_refs=None, warnings=None,
 # ── Tool-Implementierungen (Phase 1) ────────────────────────────────────────────
 
 def tool_list_roots(_args: dict) -> dict:
-    return _ergebnis(True, data=[str(r) for r in ALLOWED_ROOTS])
+    return _ergebnis(True, data={
+        "roots": [str(r) for r in ALLOWED_ROOTS],
+        "einzeldateien": [str(f) for f in ALLOWED_FILES if f.exists()],
+    })
 
 
 def tool_list_files(args: dict) -> dict:
