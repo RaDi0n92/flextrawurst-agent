@@ -430,11 +430,47 @@ class MCPHandler(BaseHTTPRequestHandler):
                     "serverInfo": {"name": "flextrawurst-3d-mcp", "version": "1.0.0"},
                 }
             elif method in ("tools/list", "mcp.list_tools"):
+                # 2026-07-23: "3 validation errors for ListToolsResult ... inputSchema
+                # Field required" -- MCP-Spezifikation verlangt pro Tool ein JSON-Schema
+                # der Parameter, ChatGPTs Pydantic-Client validiert strikt dagegen.
+                # Dieselben Felder wie im OpenAPI-Schema oben, nur im JSON-Schema-Format.
                 result_payload = {
                     "tools": [
-                        {"name": "mcp__convert_3d_model", "description": "Konvertiert 3D Modelle via Blender Headless"},
-                        {"name": "mcp__render_3d_preview", "description": "Erzeugt Studio PNG Renderbild via Blender"},
-                        {"name": "mcp__godot_import_and_test", "description": "Führt Godot 4.3 Headless Asset-Import & Szenentest aus"}
+                        {
+                            "name": "mcp__convert_3d_model",
+                            "description": "Konvertiert 3D Modelle via Blender Headless",
+                            "inputSchema": {
+                                "type": "object",
+                                "properties": {
+                                    "input_path": {"type": "string"},
+                                    "output_path": {"type": "string"},
+                                },
+                                "required": ["input_path", "output_path"],
+                            },
+                        },
+                        {
+                            "name": "mcp__render_3d_preview",
+                            "description": "Erzeugt Studio PNG Renderbild via Blender",
+                            "inputSchema": {
+                                "type": "object",
+                                "properties": {
+                                    "model_path": {"type": "string"},
+                                    "image_output": {"type": "string"},
+                                },
+                                "required": ["model_path", "image_output"],
+                            },
+                        },
+                        {
+                            "name": "mcp__godot_import_and_test",
+                            "description": "Führt Godot 4.3 Headless Asset-Import & Szenentest aus",
+                            "inputSchema": {
+                                "type": "object",
+                                "properties": {
+                                    "project_dir": {"type": "string"},
+                                },
+                                "required": ["project_dir"],
+                            },
+                        },
                     ]
                 }
             elif method in ("tools/call", "mcp.call_tool"):
