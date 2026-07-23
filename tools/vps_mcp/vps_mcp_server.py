@@ -846,60 +846,72 @@ class VPSHandler(BaseHTTPRequestHandler):
             return
 
         if path in ("/mcp", "/rpc", "/"):
-            method = body_data.get("method", "")
-            params = body_data.get("params", {})
+            # 2026-07-23: "App-Verknuepfung erkannt, Tool-Weitergabe noch nicht" (Teil 2) --
+            # ChatGPTs MCP-Client schickt initialize+notifications/initialized offenbar als
+            # JSON-RPC-BATCH (ein JSON-Array mehrerer Nachrichten in einem POST), nicht als
+            # einzelne Requests. Der Server erwartete bisher IMMER ein einzelnes Objekt --
+            # bei einem Array crashte body_data.get(...) mit AttributeError (bestaetigt im
+            # journalctl-Log: "'list' object has no attribute 'get'"), nginx zeigte 502.
+            # Jetzt: einzelne Nachricht ODER Batch (Liste von Nachrichten), pro Nachricht
+            # verarbeitet, Notifications liefern KEIN Element in der Antwort (JSON-RPC-2.0-
+            # Batch-Regel: nur Antworten zu Requests, nie zu Notifications).
+            nachrichten = body_data if isinstance(body_data, list) else [body_data]
+            antworten = [a for a in (self._verarbeite_rpc(n) for n in nachrichten) if a is not None]
 
-            # 2026-07-23: "App-Verknuepfung erkannt, Tool-Weitergabe noch nicht" -- der
-            # Client schickt nach initialize eine JSON-RPC-NOTIFICATION (kein "id"-Feld,
-            # z.B. notifications/initialized). Notifications erwarten laut JSON-RPC-2.0-
-            # Spec KEINE Antwort -- der Server antwortete bisher trotzdem mit einer
-            # Fehler-JSON ("Method not found"), was den Handshake vermutlich genau hier
-            # abbrach, bevor tools/list je aufgerufen wurde.
-            if "id" not in body_data:
+            if not antworten:
+                # alles Notifications gewesen -- keine Antwort noetig
                 self.send_response(202)
                 self._cors()
                 self.end_headers()
                 return
-            msg_id = body_data["id"]
-
-            if method == "initialize":
-                # 2026-07-23: Protokollversion des Clients spiegeln statt starr
-                # "2024-11-05" zu behaupten -- maximiert Kompatibilitaet, falls ChatGPT
-                # eine andere/neuere Version anfragt.
-                client_version = params.get("protocolVersion", "2024-11-05")
-                result_payload = {
-                    "protocolVersion": client_version,
-                    "capabilities": {"tools": {}},
-                    "serverInfo": {"name": "flextrawurst-vps-mcp", "version": "1.0.0"},
-                }
-            elif method in ("tools/list", "mcp.list_tools"):
-                result_payload = {
-                    "tools": [
-                        {"name": n, "description": s["description"], "inputSchema": s["inputSchema"]}
-                        for n, s in TOOLS.items()
-                    ]
-                }
-            elif method in ("tools/call", "mcp.call_tool"):
-                tool_name = params.get("name", "")
-                args = params.get("arguments", {})
-                spec = TOOLS.get(tool_name)
-                if not spec:
-                    result_payload = {"content": [{"type": "text", "text": json.dumps({"error": f"Unbekanntes Tool: {tool_name}"})}]}
-                else:
-                    try:
-                        res = spec["fn"](args)
-                    except Exception as ex:
-                        res = _ergebnis(False, error=str(ex))
-                    result_payload = {"content": [{"type": "text", "text": json.dumps(res, ensure_ascii=False)}]}
+            if isinstance(body_data, list):
+                self._json(200, antworten)
             else:
-                self._json(400, {"jsonrpc": "2.0", "id": msg_id, "error": {"code": -32601, "message": "Method not found"}})
-                return
-
-            self._json(200, {"jsonrpc": "2.0", "id": msg_id, "result": result_payload})
+                self._json(200, antworten[0])
             return
 
         self.send_response(404)
         self.end_headers()
+
+    def _verarbeite_rpc(self, nachricht) -> dict | None:
+        """Verarbeitet EINE JSON-RPC-Nachricht. Gibt None zurueck fuer Notifications
+        (kein 'id'-Feld) -- die bekommen laut Spec keine Antwort."""
+        if not isinstance(nachricht, dict) or "id" not in nachricht:
+            return None
+        msg_id = nachricht["id"]
+        method = nachricht.get("method", "")
+        params = nachricht.get("params", {})
+
+        if method == "initialize":
+            client_version = params.get("protocolVersion", "2024-11-05")
+            result_payload = {
+                "protocolVersion": client_version,
+                "capabilities": {"tools": {}},
+                "serverInfo": {"name": "flextrawurst-vps-mcp", "version": "1.0.0"},
+            }
+        elif method in ("tools/list", "mcp.list_tools"):
+            result_payload = {
+                "tools": [
+                    {"name": n, "description": s["description"], "inputSchema": s["inputSchema"]}
+                    for n, s in TOOLS.items()
+                ]
+            }
+        elif method in ("tools/call", "mcp.call_tool"):
+            tool_name = params.get("name", "")
+            args = params.get("arguments", {})
+            spec = TOOLS.get(tool_name)
+            if not spec:
+                result_payload = {"content": [{"type": "text", "text": json.dumps({"error": f"Unbekanntes Tool: {tool_name}"})}]}
+            else:
+                try:
+                    res = spec["fn"](args)
+                except Exception as ex:
+                    res = _ergebnis(False, error=str(ex))
+                result_payload = {"content": [{"type": "text", "text": json.dumps(res, ensure_ascii=False)}]}
+        else:
+            return {"jsonrpc": "2.0", "id": msg_id, "error": {"code": -32601, "message": "Method not found"}}
+
+        return {"jsonrpc": "2.0", "id": msg_id, "result": result_payload}
 
 
 class ReusableHTTPServer(HTTPServer):
