@@ -4,6 +4,7 @@ set -euo pipefail
 OUT="$GITHUB_WORKSPACE/out/FLEXTRAWURST_OPEN_ASSETS_V1"
 SRC="$GITHUB_WORKSPACE/work"
 mkdir -p "$OUT/assets" "$OUT/licenses" "$OUT/manifests" "$SRC"
+printf 'workflow_sha\t%s\n' "${GITHUB_SHA:-unknown}" > "$OUT/manifests/workflow.tsv"
 
 repos=(
   "KenneyNL/Starter-Kit-City-Builder"
