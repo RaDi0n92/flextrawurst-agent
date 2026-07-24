@@ -2,7 +2,8 @@
 """Local append-only bridge between the Godot vertical slice and the VPS world body.
 
 The service intentionally binds to 127.0.0.1 only. Public exposure is a later,
-separately authenticated ring.
+separately authenticated ring. Ports 8090 and 8091 belong to the existing 3D-MCP
+and 95-tool VPS-MCP bodies and are never used by this bridge.
 """
 from __future__ import annotations
 
@@ -18,7 +19,7 @@ from pathlib import Path
 from urllib.parse import parse_qs, urlparse
 
 HOST = os.environ.get("FLEXTRAWURST_GODOT_BRIDGE_HOST", "127.0.0.1")
-PORT = int(os.environ.get("FLEXTRAWURST_GODOT_BRIDGE_PORT", "8091"))
+PORT = int(os.environ.get("FLEXTRAWURST_GODOT_BRIDGE_PORT", "18092"))
 DATA_DIR = Path(
     os.environ.get(
         "FLEXTRAWURST_GODOT_BRIDGE_DATA",
@@ -215,6 +216,8 @@ class Handler(BaseHTTPRequestHandler):
 
 
 def main() -> int:
+    if PORT in {8090, 8091}:
+        raise SystemExit(f"Port {PORT} ist für vorhandene Flextrawurst-MCP-Dienste reserviert")
     ensure_store()
     server = ThreadingHTTPServer((HOST, PORT), Handler)
     print(
@@ -225,6 +228,7 @@ def main() -> int:
                 "bind": f"{HOST}:{PORT}",
                 "data_dir": str(DATA_DIR),
                 "public": False,
+                "reserved_ports_untouched": [8090, 8091],
             },
             ensure_ascii=False,
         ),
