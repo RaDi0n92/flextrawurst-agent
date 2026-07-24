@@ -41,7 +41,7 @@ jobs:
           import configparser
           from pathlib import Path
           path = Path("engine/godot-vertical-slice/deploy/flextrawurst-godot-world-bridge.service")
-          parser = configparser.ConfigParser(interpolation=None)
+          parser = configparser.ConfigParser(interpolation=None, strict=False)
           parser.optionxform = str
           parser.read(path, encoding="utf-8")
           assert parser["Service"]["ExecStart"].endswith("/deploy/world_bridge_server.py")
