@@ -1,0 +1,40 @@
+{
+  "schema_version": "1.0.0",
+  "world_id": "flextrawurst.engine.slice.001",
+  "title": "Flextrawurst Engine Vertical Slice 001",
+  "truth_status": "REAL_GEBAUT_NOCH_NICHT_IM_AGENT_REPO_HEADLESS_BEWIESEN",
+  "origin": {
+    "project": "Flextrawurst",
+    "source_body": "flextrawurst-agent als bewusster Spiel-, Agenten-, 3D-, 2D-, Screenshot- und Baukörper",
+    "integration_kind": "separates Engine-Organ im Agentenarbeitskörper",
+    "replaces_html_game": false,
+    "public_description_repo": "RaDi0n92/Flextrawurst",
+    "working_repo": "RaDi0n92/flextrawurst-agent"
+  },
+  "region": {
+    "id": "region.schwelm.origin",
+    "name": "Schwelm · Ursprungsregion",
+    "geometry_status": "PLATZHALTER_BIS_BESTAETIGTER_GEODATENIMPORT",
+    "coordinate_system": "lokaler Godot-Testmaßstab",
+    "provenance_required": true
+  },
+  "player_spawn": {
+    "x": 0.0,
+    "y": 1.0,
+    "z": 5.0
+  },
+  "bridge": {
+    "enabled": false,
+    "base_url": "",
+    "sync_interval_seconds": 5.0,
+    "status": "BLOCKIERT_BIS_BESTAETIGTE_VPS_ROUTE_EINGETRAGEN_IST"
+  },
+  "constraints": [
+    "Keine erfundenen Live-Daten",
+    "Keine automatische Kanonisierung eingehender Ereignisse",
+    "Jede VPS-Antwort braucht Herkunft und Welt-ID",
+    "Die bestehende Single-HTML bleibt unverändert erhalten",
+    "Keine Codewesen-Aktivierung durch diesen Vertikalschnitt",
+    "Der öffentliche Beschreibungsrepo bleibt vom Engine-Arbeitskörper getrennt"
+  ]
+}
