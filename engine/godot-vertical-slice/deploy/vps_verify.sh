@@ -50,8 +50,15 @@ PY
 )"
 
 echo "Bridge-Cursor vor Godot: $BEFORE_CURSOR"
-"$GODOT_BIN" --headless --path "$PROJECT_DIR" --quit-after 5 \
+set +e
+"$GODOT_BIN" --headless --path "$PROJECT_DIR" \
+  --script res://tests/live_bridge_probe.gd \
   2>&1 | tee "$PROOF_DIR/godot-live.log"
+GODOT_BRIDGE_STATUS=${PIPESTATUS[0]}
+set -e
+[[ "$GODOT_BRIDGE_STATUS" -eq 0 ]] || fail "Godot-Bridge-Probe beendet mit Status $GODOT_BRIDGE_STATUS"
+grep -q "FLEXTRAWURST_GODOT_LIVE_BRIDGE_PROBE_PASS" "$PROOF_DIR/godot-live.log" \
+  || fail "Bridge-Probe-Marker fehlt"
 
 curl --fail --silent \
   "$BRIDGE_URL/worlds/$WORLD_ID/events?after=$BEFORE_CURSOR" \
@@ -66,7 +73,7 @@ events = data.get("events", [])
 assert events, data
 event = events[-1]
 assert event["world_id"] == "flextrawurst.engine.slice.001", event
-assert event["event_type"] == "GODOT_ENGINE_SLICE_STARTED", event
+assert event["event_type"] == "GODOT_VPS_BRIDGE_PROBE", event
 assert event["origin"] == "RaDi0n92/flextrawurst-agent", event
 assert event["truth_status"] == "REAL_VPS_RUNTIME_EVENT", event
 assert event["payload"]["asset_id"] == "alleswisser.asset.3d.test-cube.001", event
@@ -148,6 +155,7 @@ proof = {
         "roundtrip": "PASS",
         "append_only": True,
         "public": False,
+        "probe_event_type": "GODOT_VPS_BRIDGE_PROBE",
     },
     "existing_3d_pipeline": "PASS",
     "structural_smoke": "PASS",
