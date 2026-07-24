@@ -24,7 +24,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Validate deployment bodies
+      - name: Validate deployment and MCP bodies
         shell: bash
         run: |
           set -euo pipefail
@@ -38,16 +38,32 @@ jobs:
             "$PROJECT/deploy/world_bridge_server.py" \
             "$PROJECT/tests/test_world_bridge.py"
           python3 - <<'PY'
-          import configparser
+          import json
           from pathlib import Path
-          path = Path("engine/godot-vertical-slice/deploy/flextrawurst-godot-world-bridge.service")
-          parser = configparser.ConfigParser(interpolation=None, strict=False)
-          parser.optionxform = str
-          parser.read(path, encoding="utf-8")
-          assert parser["Service"]["ExecStart"].endswith("/deploy/world_bridge_server.py")
-          assert parser["Service"]["ReadWritePaths"] == "/root/werkraum/engine_runtime/godot-vertical-slice"
-          assert parser["Service"]["NoNewPrivileges"] == "true"
-          print("FLEXTRAWURST_VPS_DEPLOYMENT_BODIES_PASS")
+
+          root = Path("engine/godot-vertical-slice")
+          unit = (root / "deploy/flextrawurst-godot-world-bridge.service").read_text(encoding="utf-8")
+          server = (root / "deploy/world_bridge_server.py").read_text(encoding="utf-8")
+          installer = (root / "deploy/vps_install.sh").read_text(encoding="utf-8")
+          verifier = (root / "deploy/vps_verify.sh").read_text(encoding="utf-8")
+          contract = json.loads((root / "deploy/CHATGPT_VPS_EXECUTION_CONTRACT.json").read_text(encoding="utf-8"))
+          plan = json.loads((root / "deploy/MCP_DEPLOYMENT_PLAN.json").read_text(encoding="utf-8"))
+
+          assert "ExecStart=/usr/bin/python3 /root/werkraum/engine/godot-vertical-slice/deploy/world_bridge_server.py" in unit
+          assert "ReadWritePaths=/root/werkraum/engine_runtime/godot-vertical-slice" in unit
+          assert "NoNewPrivileges=true" in unit
+          assert "FLEXTRAWURST_GODOT_BRIDGE_PORT=18092" in unit
+          assert "FLEXTRAWURST_GODOT_BRIDGE_PORT=8091" not in unit
+          assert '"18092"' in server
+          assert "PORT in {8090, 8091}" in server
+          assert "BRIDGE_PORT:-18092" in installer
+          assert "BRIDGE_URL:-http://127.0.0.1:18092" in verifier
+          assert contract["ports"]["existing_vps_mcp_reserved"] == 8091
+          assert contract["ports"]["godot_bridge_default"] == 18092
+          assert plan["reserved_ports"]["8091"].startswith("bestehender 95-Tool")
+          assert "vps.write_file" in plan["tools"]["required"]
+          assert "tests/mcp_text_only_smoke.gd" in plan["transfer_files"]
+          print("FLEXTRAWURST_VPS_AND_MCP_DEPLOYMENT_BODIES_PASS")
           PY
 
       - name: Install proof dependencies
@@ -56,18 +72,6 @@ jobs:
           set -euo pipefail
           sudo apt-get update -qq
           sudo apt-get install -y -qq xvfb
-
-      - name: Reconstruct and verify GLB assets
-        shell: bash
-        run: |
-          set -euo pipefail
-          python3 engine/godot-vertical-slice/tools/prepare_assets.py
-
-      - name: Test append-only bridge contract
-        shell: bash
-        run: |
-          set -euo pipefail
-          python3 engine/godot-vertical-slice/tests/test_world_bridge.py
 
       - name: Install Godot 4.3 stable matching VPS
         shell: bash
@@ -81,6 +85,44 @@ jobs:
           unzip -q /tmp/godot.zip -d /tmp/godot
           chmod +x /tmp/godot/Godot_v4.3-stable_linux.x86_64
           /tmp/godot/Godot_v4.3-stable_linux.x86_64 --version
+
+      - name: Prove MCP text-only GLB path
+        shell: bash
+        run: |
+          set -euo pipefail
+          rm -f engine/godot-vertical-slice/assets/test_cube.glb
+          /tmp/godot/Godot_v4.3-stable_linux.x86_64 \
+            --headless \
+            --path engine/godot-vertical-slice \
+            --script res://tests/mcp_text_only_smoke.gd
+
+      - name: Reconstruct and verify GLB assets
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 engine/godot-vertical-slice/tools/prepare_assets.py
+
+      - name: Test append-only bridge contract
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 engine/godot-vertical-slice/tests/test_world_bridge.py
+
+      - name: Reject reserved MCP ports
+        shell: bash
+        run: |
+          set -euo pipefail
+          set +e
+          FLEXTRAWURST_GODOT_BRIDGE_PORT=8091 \
+          FLEXTRAWURST_GODOT_BRIDGE_DATA=/tmp/flextrawurst-reserved-port-test \
+            python3 engine/godot-vertical-slice/deploy/world_bridge_server.py \
+            > /tmp/flextrawurst-reserved-port.log 2>&1
+          STATUS=$?
+          set -e
+          test "$STATUS" -ne 0
+          grep -q "reserviert" /tmp/flextrawurst-reserved-port.log
+          cat /tmp/flextrawurst-reserved-port.log
+          echo "FLEXTRAWURST_RESERVED_MCP_PORT_REJECTION_PASS"
 
       - name: Import GLB in Godot headlessly
         shell: bash
@@ -107,10 +149,11 @@ jobs:
           set -euo pipefail
           PROJECT="$PWD/engine/godot-vertical-slice"
           OUT="$PWD/out/godot-vps-proof"
+          BRIDGE_URL="http://127.0.0.1:18092"
           mkdir -p "$OUT" /tmp/flextrawurst-bridge-ci
 
           FLEXTRAWURST_GODOT_BRIDGE_HOST=127.0.0.1 \
-          FLEXTRAWURST_GODOT_BRIDGE_PORT=18091 \
+          FLEXTRAWURST_GODOT_BRIDGE_PORT=18092 \
           FLEXTRAWURST_GODOT_BRIDGE_DATA=/tmp/flextrawurst-bridge-ci \
           PYTHONUNBUFFERED=1 \
             python3 "$PROJECT/deploy/world_bridge_server.py" > "$OUT/bridge.log" 2>&1 &
@@ -118,19 +161,19 @@ jobs:
           trap 'kill "$BRIDGE_PID" 2>/dev/null || true' EXIT
 
           for _ in $(seq 1 50); do
-            if curl --fail --silent http://127.0.0.1:18091/health > "$OUT/health.json"; then
+            if curl --fail --silent "$BRIDGE_URL/health" > "$OUT/health.json"; then
               break
             fi
             sleep 0.1
           done
-          curl --fail --silent http://127.0.0.1:18091/health > "$OUT/health.json"
+          curl --fail --silent "$BRIDGE_URL/health" > "$OUT/health.json"
 
           cat > "$PROJECT/data/world_seed.runtime.json" <<'JSON'
           {
             "truth_status": "REAL_CI_VPS_EQUIVALENT_RUNTIME",
             "bridge": {
               "enabled": true,
-              "base_url": "http://127.0.0.1:18091",
+              "base_url": "http://127.0.0.1:18092",
               "sync_interval_seconds": 1.0,
               "proof_event_on_start": false,
               "status": "CI_VPS_EQUIVALENT_BRIDGE_ACTIVE"
@@ -148,19 +191,21 @@ jobs:
           set -e
 
           curl --fail --silent \
-            "http://127.0.0.1:18091/worlds/flextrawurst.engine.slice.001/events?after=0" \
+            "$BRIDGE_URL/worlds/flextrawurst.engine.slice.001/events?after=0" \
             > "$OUT/events.json"
 
           cat "$OUT/godot-live.log"
           cat "$OUT/bridge.log"
           cat "$OUT/events.json"
-          [[ "$GODOT_STATUS" -eq 0 ]]
+          test "$GODOT_STATUS" -eq 0
           grep -q "FLEXTRAWURST_GODOT_LIVE_BRIDGE_PROBE_PASS" "$OUT/godot-live.log"
 
-          python3 - "$OUT/events.json" <<'PY'
+          python3 - "$OUT/events.json" "$OUT/health.json" <<'PY'
           import json, sys
           data = json.load(open(sys.argv[1], encoding="utf-8"))
+          health = json.load(open(sys.argv[2], encoding="utf-8"))
           events = data.get("events", [])
+          assert health["bind"] == "127.0.0.1:18092", health
           assert events, data
           event = events[-1]
           assert event["event_type"] == "GODOT_VPS_BRIDGE_PROBE", event
