@@ -1,0 +1,44 @@
+name: ChatGPT Repository Export
+
+on:
+  pull_request:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  export:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Create exact tracked snapshot of original main commit
+        shell: bash
+        run: |
+          set -euo pipefail
+          COMMIT="c61f7d1d38e8a76e6dc5fce5b821d8303f6085cf"
+          ARCHIVE="RaDi0n92_flextrawurst-agent_${COMMIT}.zip"
+          git archive --format=zip --output="$ARCHIVE" "$COMMIT"
+          sha256sum "$ARCHIVE" > "${ARCHIVE}.sha256"
+          git show -s --format=fuller "$COMMIT" > ORIGINAL_COMMIT.txt
+          printf '%s\n' "$COMMIT" > ORIGINAL_COMMIT_SHA.txt
+
+      - name: Upload exact repository archive
+        uses: actions/upload-artifact@v4
+        with:
+          name: flextrawurst-agent-exact-original-c61f7d1
+          path: |
+            RaDi0n92_flextrawurst-agent_c61f7d1d38e8a76e6dc5fce5b821d8303f6085cf.zip
+            RaDi0n92_flextrawurst-agent_c61f7d1d38e8a76e6dc5fce5b821d8303f6085cf.zip.sha256
+            ORIGINAL_COMMIT.txt
+            ORIGINAL_COMMIT_SHA.txt
+          compression-level: 0
+          if-no-files-found: error
+          retention-days: 1
