@@ -106,20 +106,30 @@ jobs:
               "enabled": true,
               "base_url": "http://127.0.0.1:18091",
               "sync_interval_seconds": 1.0,
-              "proof_event_on_start": true,
+              "proof_event_on_start": false,
               "status": "CI_VPS_EQUIVALENT_BRIDGE_ACTIVE"
             }
           }
           JSON
 
+          set +e
           /tmp/godot/Godot_v4.3-stable_linux.x86_64 \
             --headless \
             --path "$PROJECT" \
-            --quit-after 4 2>&1 | tee "$OUT/godot-live.log"
+            --script res://tests/live_bridge_probe.gd \
+            2>&1 | tee "$OUT/godot-live.log"
+          GODOT_STATUS=${PIPESTATUS[0]}
+          set -e
 
           curl --fail --silent \
             "http://127.0.0.1:18091/worlds/flextrawurst.engine.slice.001/events?after=0" \
             > "$OUT/events.json"
+
+          cat "$OUT/godot-live.log"
+          cat "$OUT/bridge.log"
+          cat "$OUT/events.json"
+          [[ "$GODOT_STATUS" -eq 0 ]]
+          grep -q "FLEXTRAWURST_GODOT_LIVE_BRIDGE_PROBE_PASS" "$OUT/godot-live.log"
 
           python3 - "$OUT/events.json" <<'PY'
           import json, sys
@@ -127,7 +137,7 @@ jobs:
           events = data.get("events", [])
           assert events, data
           event = events[-1]
-          assert event["event_type"] == "GODOT_ENGINE_SLICE_STARTED", event
+          assert event["event_type"] == "GODOT_VPS_BRIDGE_PROBE", event
           assert event["payload"]["asset_id"] == "alleswisser.asset.3d.test-cube.001", event
           assert len(event["event_sha256"]) == 64, event
           print("FLEXTRAWURST_GODOT_TO_VPS_BRIDGE_PASS")
@@ -157,8 +167,9 @@ jobs:
           PY
 
       - name: Upload engine proof body
+        if: always()
         uses: actions/upload-artifact@v4
         with:
           name: flextrawurst-godot-vps-equivalent-proof
           path: out/godot-vps-proof/
-          if-no-files-found: error
+          if-no-files-found: warn
