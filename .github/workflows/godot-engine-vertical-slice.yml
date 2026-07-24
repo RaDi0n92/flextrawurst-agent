@@ -17,38 +17,148 @@ permissions:
   contents: read
 
 jobs:
-  headless-smoke:
+  vps-equivalent-proof:
     runs-on: ubuntu-latest
-    timeout-minutes: 10
+    timeout-minutes: 15
     steps:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Install Godot 4.7.1 stable
+      - name: Install proof dependencies
+        shell: bash
+        run: |
+          set -euo pipefail
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq xvfb
+
+      - name: Reconstruct and verify GLB assets
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 engine/godot-vertical-slice/tools/prepare_assets.py
+
+      - name: Test append-only bridge contract
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 engine/godot-vertical-slice/tests/test_world_bridge.py
+
+      - name: Install Godot 4.3 stable matching VPS
         shell: bash
         run: |
           set -euo pipefail
           curl --fail --location --retry 3 \
-            "https://godot-releases.nbg1.your-objectstorage.com/4.7.1-stable/Godot_v4.7.1-stable_linux.x86_64.zip" \
+            "https://github.com/godotengine/godot-builds/releases/download/4.3-stable/Godot_v4.3-stable_linux.x86_64.zip" \
             --output /tmp/godot.zip
+          rm -rf /tmp/godot
+          mkdir -p /tmp/godot
           unzip -q /tmp/godot.zip -d /tmp/godot
-          chmod +x /tmp/godot/Godot_v4.7.1-stable_linux.x86_64
-          /tmp/godot/Godot_v4.7.1-stable_linux.x86_64 --version
+          chmod +x /tmp/godot/Godot_v4.3-stable_linux.x86_64
+          /tmp/godot/Godot_v4.3-stable_linux.x86_64 --version
 
-      - name: Run structural smoke test
+      - name: Import GLB in Godot headlessly
         shell: bash
         run: |
           set -euo pipefail
-          /tmp/godot/Godot_v4.7.1-stable_linux.x86_64 \
+          /tmp/godot/Godot_v4.3-stable_linux.x86_64 \
+            --headless \
+            --editor \
+            --quit \
+            --path engine/godot-vertical-slice
+
+      - name: Run structural and provenance smoke test
+        shell: bash
+        run: |
+          set -euo pipefail
+          /tmp/godot/Godot_v4.3-stable_linux.x86_64 \
             --headless \
             --path engine/godot-vertical-slice \
             --script res://tests/headless_smoke.gd
 
-      - name: Boot main scene headlessly
+      - name: Prove Godot to VPS bridge roundtrip
         shell: bash
         run: |
           set -euo pipefail
-          /tmp/godot/Godot_v4.7.1-stable_linux.x86_64 \
+          PROJECT="$PWD/engine/godot-vertical-slice"
+          OUT="$PWD/out/godot-vps-proof"
+          mkdir -p "$OUT" /tmp/flextrawurst-bridge-ci
+
+          FLEXTRAWURST_GODOT_BRIDGE_HOST=127.0.0.1 \
+          FLEXTRAWURST_GODOT_BRIDGE_PORT=18091 \
+          FLEXTRAWURST_GODOT_BRIDGE_DATA=/tmp/flextrawurst-bridge-ci \
+          PYTHONUNBUFFERED=1 \
+            python3 "$PROJECT/deploy/world_bridge_server.py" > "$OUT/bridge.log" 2>&1 &
+          BRIDGE_PID=$!
+          trap 'kill "$BRIDGE_PID" 2>/dev/null || true' EXIT
+
+          for _ in $(seq 1 50); do
+            if curl --fail --silent http://127.0.0.1:18091/health > "$OUT/health.json"; then
+              break
+            fi
+            sleep 0.1
+          done
+          curl --fail --silent http://127.0.0.1:18091/health > "$OUT/health.json"
+
+          cat > "$PROJECT/data/world_seed.runtime.json" <<'JSON'
+          {
+            "truth_status": "REAL_CI_VPS_EQUIVALENT_RUNTIME",
+            "bridge": {
+              "enabled": true,
+              "base_url": "http://127.0.0.1:18091",
+              "sync_interval_seconds": 1.0,
+              "proof_event_on_start": true,
+              "status": "CI_VPS_EQUIVALENT_BRIDGE_ACTIVE"
+            }
+          }
+          JSON
+
+          /tmp/godot/Godot_v4.3-stable_linux.x86_64 \
             --headless \
+            --path "$PROJECT" \
+            --quit-after 4 2>&1 | tee "$OUT/godot-live.log"
+
+          curl --fail --silent \
+            "http://127.0.0.1:18091/worlds/flextrawurst.engine.slice.001/events?after=0" \
+            > "$OUT/events.json"
+
+          python3 - "$OUT/events.json" <<'PY'
+          import json, sys
+          data = json.load(open(sys.argv[1], encoding="utf-8"))
+          events = data.get("events", [])
+          assert events, data
+          event = events[-1]
+          assert event["event_type"] == "GODOT_ENGINE_SLICE_STARTED", event
+          assert event["payload"]["asset_id"] == "alleswisser.asset.3d.test-cube.001", event
+          assert len(event["event_sha256"]) == 64, event
+          print("FLEXTRAWURST_GODOT_TO_VPS_BRIDGE_PASS")
+          PY
+
+          rm -f "$PROJECT/data/world_seed.runtime.json"
+          kill "$BRIDGE_PID"
+          wait "$BRIDGE_PID" || true
+          trap - EXIT
+
+      - name: Render screenshot proof through Xvfb
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p out/godot-vps-proof
+          xvfb-run -a /tmp/godot/Godot_v4.3-stable_linux.x86_64 \
             --path engine/godot-vertical-slice \
-            --quit-after 3
+            --script res://tests/capture_proof.gd \
+            -- --output="$PWD/out/godot-vps-proof/engine-proof.png"
+          python3 - <<'PY'
+          from pathlib import Path
+          path = Path("out/godot-vps-proof/engine-proof.png")
+          data = path.read_bytes()
+          assert data.startswith(b"\x89PNG\r\n\x1a\n")
+          assert len(data) > 1000
+          print(f"FLEXTRAWURST_ENGINE_PNG_PASS {path} {len(data)}")
+          PY
+
+      - name: Upload engine proof body
+        uses: actions/upload-artifact@v4
+        with:
+          name: flextrawurst-godot-vps-equivalent-proof
+          path: out/godot-vps-proof/
+          if-no-files-found: error
