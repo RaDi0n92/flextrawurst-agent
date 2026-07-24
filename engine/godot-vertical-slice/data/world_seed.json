@@ -2,7 +2,7 @@
   "schema_version": "1.0.0",
   "world_id": "flextrawurst.engine.slice.001",
   "title": "Flextrawurst Engine Vertical Slice 001",
-  "truth_status": "REAL_GEBAUT_NOCH_NICHT_IM_AGENT_REPO_HEADLESS_BEWIESEN",
+  "truth_status": "REAL_GEBAUT_UND_IM_AGENT_REPO_HEADLESS_BEWIESEN",
   "origin": {
     "project": "Flextrawurst",
     "source_body": "flextrawurst-agent als bewusster Spiel-, Agenten-, 3D-, 2D-, Screenshot- und Baukörper",
@@ -10,6 +10,13 @@
     "replaces_html_game": false,
     "public_description_repo": "RaDi0n92/Flextrawurst",
     "working_repo": "RaDi0n92/flextrawurst-agent"
+  },
+  "verification": {
+    "provider": "GitHub Actions",
+    "run_id": 30128623567,
+    "godot": "4.7.1-stable",
+    "structural_smoke": "PASS",
+    "main_scene_headless_boot": "PASS"
   },
   "region": {
     "id": "region.schwelm.origin",
