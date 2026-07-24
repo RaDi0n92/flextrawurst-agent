@@ -1,0 +1,142 @@
+{
+  "schema_version": "1.0.0",
+  "plan_id": "flextrawurst.godot.mcp-deployment.001",
+  "purpose": "Den Godot-Vertikalschnitt mit den tatsächlich vorhandenen ChatGPT-VPS-MCP-Werkzeugen nach /root/werkraum übertragen und über die bestehende 3D-MCP-Schicht prüfen, ohne Shell-, systemd- oder /etc-Rechte vorzutäuschen.",
+  "repository": "RaDi0n92/flextrawurst-agent",
+  "branch": "engine/godot-vertical-slice-001",
+  "target_root": "/root/werkraum/engine/godot-vertical-slice",
+  "runtime_root": "/root/werkraum/engine_runtime/godot-vertical-slice",
+  "transport": {
+    "kind": "text_only_via_vps_write_file_and_edit_file",
+    "binary_strategy": "test_cube.glb.b64 wird als Text übertragen; Godot 4.3 liest die GLB-Bytes zur Laufzeit über Marshalls.base64_to_raw und GLTFDocument.append_from_buffer.",
+    "single_file_limit_bytes": 10485760,
+    "backup_per_write": true,
+    "append_only_write_audit": true
+  },
+  "reserved_ports": {
+    "8090": "bestehende Flextrawurst-3D-MCP-Schicht",
+    "8091": "bestehender 95-Tool-VPS-MCP-Werkzeugkörper"
+  },
+  "future_persistent_bridge": {
+    "default_port": 18092,
+    "bind": "127.0.0.1",
+    "activation_requires": "Root-Shell oder ein später ausdrücklich gebautes kuratiertes Dienststeuerungswerkzeug",
+    "status_after_mcp_file_deploy": "NICHT_AUTOMATISCH_AKTIV"
+  },
+  "tools": {
+    "required": [
+      "vps.read_file",
+      "vps.file_metadata",
+      "vps.write_file",
+      "vps.edit_file",
+      "assets.validate_3d_model",
+      "assets.extract_3d_metadata",
+      "assets.render_3d_preview",
+      "assets.get_file"
+    ],
+    "optional_separate_3d_app": [
+      "GET /api/3d/health",
+      "POST /api/3d/godot-import"
+    ],
+    "not_available_and_never_assumed": [
+      "beliebige Shell-Ausführung",
+      "systemctl start/restart/enable",
+      "Schreiben nach /etc",
+      "Portbelegung live verändern"
+    ]
+  },
+  "transfer_files": [
+    "project.godot",
+    "main.tscn",
+    "README.md",
+    "assets/test_cube.glb.b64",
+    "data/asset_manifest.json",
+    "data/world_seed.json",
+    "scripts/main.gd",
+    "scripts/world_bridge.gd",
+    "tests/headless_smoke.gd",
+    "tests/mcp_text_only_smoke.gd",
+    "tests/live_bridge_probe.gd",
+    "tests/capture_proof.gd",
+    "deploy/world_bridge_server.py",
+    "deploy/vps_verify.sh",
+    "deploy/vps_install.sh",
+    "deploy/vps_rollback.sh",
+    "deploy/flextrawurst-godot-world-bridge.service",
+    "deploy/CHATGPT_VPS_EXECUTION_CONTRACT.json",
+    "deploy/MCP_DEPLOYMENT_PLAN.json",
+    "tools/prepare_assets.py"
+  ],
+  "phases": [
+    {
+      "id": "MCP-0",
+      "name": "Werkzeug- und Zielboden",
+      "actions": [
+        "tools/list muss die erforderlichen Werkzeuge real liefern",
+        "vps.file_metadata auf /root/werkraum und Zielpfad",
+        "vorhandene Zieldateien vollständig lesen und ihre Hashes speichern",
+        "keine Git-Rebase im Werkraum verändern"
+      ],
+      "pass_marker": "FLEXTRAWURST_MCP_TARGET_AUDIT_PASS"
+    },
+    {
+      "id": "MCP-1",
+      "name": "Textkörper übertragen",
+      "actions": [
+        "fehlende Dateien mit vps.write_file erzeugen",
+        "bestehende Dateien zuerst vollständig lesen und danach mit eindeutigem vps.edit_file ersetzen",
+        "jede Toolantwort auf ok=true, Backup-Referenz und Schreibevent prüfen",
+        "keine erzeugte test_cube.glb-Datei voraussetzen"
+      ],
+      "failure_marker": "FLEXTRAWURST_MCP_FILE_DEPLOY_BLOCKED",
+      "pass_marker": "FLEXTRAWURST_MCP_FILE_DEPLOY_PASS"
+    },
+    {
+      "id": "MCP-2",
+      "name": "Byte- und Herkunftsvergleich",
+      "actions": [
+        "jede übertragene Datei über vps.read_file erneut lesen",
+        "SHA-256 beziehungsweise Git-Blob-Inhalt gegen den Branchkörper vergleichen",
+        "asset_manifest-ID und Base64-Quellhash separat prüfen"
+      ],
+      "pass_marker": "FLEXTRAWURST_MCP_FILE_HASH_PASS"
+    },
+    {
+      "id": "MCP-3",
+      "name": "3D- und Godot-Prüfung",
+      "actions": [
+        "3D-MCP-Health real prüfen",
+        "Godot-Import/Szenentest gegen target_root ausführen",
+        "Text-only GLB-Pfad muss ohne vorab erzeugte Binärdatei funktionieren",
+        "Vorschau oder Screenshot als Datei zurückholen"
+      ],
+      "pass_marker": "FLEXTRAWURST_MCP_GODOT_IMPORT_PASS"
+    },
+    {
+      "id": "MCP-4",
+      "name": "Ehrlicher Abschluss",
+      "actions": [
+        "MCP-Installationsmanifest unter runtime_root schreiben",
+        "Datei- und Godot-Beweise in den Chat zurückführen",
+        "Bridge-Dienststatus ausdrücklich als nicht aktiviert markieren, solange kein realer Prozess läuft"
+      ],
+      "pass_marker": "FLEXTRAWURST_GODOT_VPS_MCP_DEPLOY_PASS",
+      "non_marker": "FLEXTRAWURST_GODOT_VPS_INSTALL_PASS darf erst nach echtem persistentem Bridge-Rundlauf verwendet werden"
+    }
+  ],
+  "truth_states": {
+    "files_present": "MCP_FILE_DEPLOYED",
+    "godot_checked": "MCP_GODOT_IMPORT_VERIFIED",
+    "bridge_process_running": "REQUIRES_SEPARATE_REAL_PROOF",
+    "systemd_installed": "REQUIRES_ROOT_SHELL_PROOF",
+    "full_vps_install": "ONLY_AFTER_ALL_REAL_PROOFS"
+  },
+  "hard_gates": [
+    "8090 und 8091 bleiben unverändert",
+    "Single-HTML bleibt unverändert",
+    "RaDi0n92/Flextrawurst bleibt ohne Engine-Code",
+    "keine Codewesen-Aktivierung",
+    "kein Erfolg aus CI oder Dokumentation ableiten",
+    "bei fehlendem Tool-Namespace nicht auf GitHub-Ausführung als Ersatz ausweichen"
+  ]
+}
