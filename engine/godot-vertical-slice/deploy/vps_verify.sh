@@ -3,7 +3,7 @@ set -euo pipefail
 
 PROJECT_DIR="${FLEXTRAWURST_GODOT_PROJECT_DIR:-/root/werkraum/engine/godot-vertical-slice}"
 RUNTIME_DIR="${FLEXTRAWURST_GODOT_RUNTIME_DIR:-/root/werkraum/engine_runtime/godot-vertical-slice}"
-BRIDGE_URL="${FLEXTRAWURST_GODOT_BRIDGE_URL:-http://127.0.0.1:8091}"
+BRIDGE_URL="${FLEXTRAWURST_GODOT_BRIDGE_URL:-http://127.0.0.1:18092}"
 GODOT_BIN="${FLEXTRAWURST_GODOT_BIN:-$(command -v godot || true)}"
 STAMP="$(date -u +%Y%m%dT%H%M%SZ)"
 PROOF_DIR="${FLEXTRAWURST_GODOT_PROOF_DIR:-$RUNTIME_DIR/proofs/$STAMP}"
@@ -22,6 +22,8 @@ fail() {
 command -v python3 >/dev/null || fail "python3 fehlt"
 command -v curl >/dev/null || fail "curl fehlt"
 command -v sha256sum >/dev/null || fail "sha256sum fehlt"
+[[ "$BRIDGE_URL" != "http://127.0.0.1:8090" ]] || fail "8090 gehört dem bestehenden 3D-MCP"
+[[ "$BRIDGE_URL" != "http://127.0.0.1:8091" ]] || fail "8091 gehört dem bestehenden 95-Tool-VPS-MCP"
 
 GODOT_VERSION="$($GODOT_BIN --version | head -n1)"
 echo "Godot: $GODOT_VERSION"
@@ -121,11 +123,12 @@ python3 - \
   "$ACTUAL_GLB_HASH" \
   "$SCREENSHOT_STATUS" \
   "$SCREENSHOT_PATH" \
-  "$BEFORE_CURSOR" <<'PY'
+  "$BEFORE_CURSOR" \
+  "$BRIDGE_URL" <<'PY'
 import hashlib, json, os, sys
 from datetime import datetime, timezone
 
-out, project, godot, glb_hash, screenshot_status, screenshot_path, before_cursor = sys.argv[1:]
+out, project, godot, glb_hash, screenshot_status, screenshot_path, before_cursor, bridge_url = sys.argv[1:]
 
 def sha(path):
     if not os.path.isfile(path):
@@ -137,7 +140,7 @@ def sha(path):
     return h.hexdigest()
 
 proof = {
-    "schema_version": "1.0.0",
+    "schema_version": "1.1.0",
     "status": "PASS" if screenshot_status == "PASS" else "PASS_OHNE_SCREENSHOT",
     "timestamp": datetime.now(timezone.utc).isoformat(),
     "project_dir": project,
@@ -150,7 +153,8 @@ proof = {
     },
     "bridge": {
         "service": "flextrawurst-godot-world-bridge.service",
-        "url": "http://127.0.0.1:8091",
+        "url": bridge_url,
+        "reserved_ports_untouched": [8090, 8091],
         "before_cursor": int(before_cursor),
         "roundtrip": "PASS",
         "append_only": True,
