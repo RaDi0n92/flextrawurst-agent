@@ -24,6 +24,32 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      - name: Validate deployment bodies
+        shell: bash
+        run: |
+          set -euo pipefail
+          PROJECT="engine/godot-vertical-slice"
+          bash -n \
+            "$PROJECT/deploy/vps_install.sh" \
+            "$PROJECT/deploy/vps_verify.sh" \
+            "$PROJECT/deploy/vps_rollback.sh"
+          python3 -m py_compile \
+            "$PROJECT/tools/prepare_assets.py" \
+            "$PROJECT/deploy/world_bridge_server.py" \
+            "$PROJECT/tests/test_world_bridge.py"
+          python3 - <<'PY'
+          import configparser
+          from pathlib import Path
+          path = Path("engine/godot-vertical-slice/deploy/flextrawurst-godot-world-bridge.service")
+          parser = configparser.ConfigParser(interpolation=None)
+          parser.optionxform = str
+          parser.read(path, encoding="utf-8")
+          assert parser["Service"]["ExecStart"].endswith("/deploy/world_bridge_server.py")
+          assert parser["Service"]["ReadWritePaths"] == "/root/werkraum/engine_runtime/godot-vertical-slice"
+          assert parser["Service"]["NoNewPrivileges"] == "true"
+          print("FLEXTRAWURST_VPS_DEPLOYMENT_BODIES_PASS")
+          PY
+
       - name: Install proof dependencies
         shell: bash
         run: |
