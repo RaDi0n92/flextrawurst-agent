@@ -1,5 +1,5 @@
 {
-  "schema_version": "1.0.0",
+  "schema_version": "1.0.1",
   "request_id": "flextrawurst.godot.vps.install.001",
   "intent": "ChatGPT soll den geprüften Godot-Vertikalschnitt über die verbundene Flextrawurst-VPS-Werkzeug-App tatsächlich auf Daniels VPS installieren, verifizieren und die Beweise in den Chat zurückholen.",
   "repository": "RaDi0n92/flextrawurst-agent",
@@ -19,6 +19,7 @@
   ],
   "execution": {
     "installer_path_in_repo": "engine/godot-vertical-slice/deploy/vps_install.sh",
+    "entry_command_file": "engine/godot-vertical-slice/deploy/VPS_INSTALL_COMMAND.txt",
     "installer_behavior": "snapshot_then_atomic_install_then_verify_or_automatic_rollback",
     "required_final_marker": "FLEXTRAWURST_GODOT_VPS_INSTALL_PASS"
   },
