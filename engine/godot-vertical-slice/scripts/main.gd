@@ -3,6 +3,7 @@ extends Node3D
 const WORLD_SEED_PATH := "res://data/world_seed.json"
 const RUNTIME_SEED_PATH := "res://data/world_seed.runtime.json"
 const ASSET_PATH := "res://assets/test_cube.glb"
+const ASSET_B64_PATH := "res://assets/test_cube.glb.b64"
 const ASSET_MANIFEST_PATH := "res://data/asset_manifest.json"
 const MOVE_SPEED := 7.0
 const GRAVITY := 24.0
@@ -115,15 +116,11 @@ func _load_provenance_asset() -> void:
 	var asset_entry := assets[0] as Dictionary
 	loaded_asset_id = str(asset_entry.get("asset_id", "unbekannt"))
 
-	if not ResourceLoader.exists(ASSET_PATH):
-		push_error("Vorbereitetes GLB fehlt: %s" % ASSET_PATH)
+	var instance := _load_asset_scene()
+	if instance == null:
+		push_error("GLB konnte weder importiert noch aus dem Textkörper geladen werden")
 		status_label.text += "\nGLB: FEHLT · %s" % loaded_asset_id
 		return
-	var packed := ResourceLoader.load(ASSET_PATH) as PackedScene
-	if packed == null:
-		push_error("GLB konnte nicht als PackedScene geladen werden")
-		return
-	var instance := packed.instantiate()
 	instance.name = "AlleswisserProvenanceAsset"
 	instance.position = Vector3(0.0, 1.25, -8.0)
 	instance.scale = Vector3(2.0, 2.0, 2.0)
@@ -132,6 +129,35 @@ func _load_provenance_asset() -> void:
 	add_child(instance)
 	$OriginAnchor.visible = false
 	status_label.text += "\nGLB: GELADEN · %s" % loaded_asset_id
+
+func _load_asset_scene() -> Node:
+	if ResourceLoader.exists(ASSET_PATH):
+		var packed := ResourceLoader.load(ASSET_PATH) as PackedScene
+		if packed != null:
+			return packed.instantiate()
+
+	if not FileAccess.file_exists(ASSET_B64_PATH):
+		push_error("Weder importiertes GLB noch Base64-Quellkörper vorhanden")
+		return null
+	var encoded_file := FileAccess.open(ASSET_B64_PATH, FileAccess.READ)
+	if encoded_file == null:
+		push_error("Base64-Quellkörper konnte nicht geöffnet werden")
+		return null
+	var raw_bytes := Marshalls.base64_to_raw(encoded_file.get_as_text().strip_edges())
+	if raw_bytes.is_empty():
+		push_error("Base64-Quellkörper ergab keine GLB-Bytes")
+		return null
+
+	var document := GLTFDocument.new()
+	var state := GLTFState.new()
+	var error := document.append_from_buffer(raw_bytes, "", state)
+	if error != OK:
+		push_error("GLB-Puffer konnte nicht gelesen werden: %s" % error_string(error))
+		return null
+	var generated := document.generate_scene(state)
+	if generated == null:
+		push_error("GLB-Puffer erzeugte keine Szene")
+	return generated
 
 func _queue_startup_proof() -> void:
 	await get_tree().create_timer(0.25).timeout
