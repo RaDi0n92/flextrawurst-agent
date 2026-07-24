@@ -23,7 +23,11 @@ func _run() -> void:
 		push_error("WorldBridge-Script fehlt")
 		quit(1)
 		return
-	var bridge := bridge_script.new()
+	var bridge: Node = bridge_script.new() as Node
+	if bridge == null:
+		push_error("WorldBridge konnte nicht instanziiert werden")
+		quit(1)
+		return
 	root.add_child(bridge)
 	await process_frame
 
