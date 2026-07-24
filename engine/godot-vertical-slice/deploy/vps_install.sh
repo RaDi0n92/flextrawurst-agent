@@ -9,6 +9,8 @@ RUNTIME="$WERKRAUM/engine_runtime/godot-vertical-slice"
 BACKUP_ROOT="$WERKRAUM/backups/godot-vertical-slice"
 UNIT_NAME="flextrawurst-godot-world-bridge.service"
 UNIT_PATH="/etc/systemd/system/$UNIT_NAME"
+BRIDGE_PORT="${FLEXTRAWURST_GODOT_BRIDGE_PORT:-18092}"
+BRIDGE_URL="http://127.0.0.1:$BRIDGE_PORT"
 STAMP="$(date -u +%Y%m%dT%H%M%SZ)"
 BACKUP_DIR="$BACKUP_ROOT/$STAMP"
 STAGE="$(mktemp -d /tmp/flextrawurst-godot-install.XXXXXX)"
@@ -18,6 +20,10 @@ mkdir -p "$LOG_DIR" "$BACKUP_DIR"
 exec > >(tee "$LOG_DIR/install.log") 2>&1
 
 [[ "$(id -u)" -eq 0 ]] || { echo "Muss als root laufen" >&2; exit 1; }
+[[ "$BRIDGE_PORT" =~ ^[0-9]+$ ]] || { echo "Bridge-Port ist keine Zahl: $BRIDGE_PORT" >&2; exit 1; }
+[[ "$BRIDGE_PORT" -ge 1024 && "$BRIDGE_PORT" -le 65535 ]] || { echo "Bridge-Port außerhalb 1024-65535: $BRIDGE_PORT" >&2; exit 1; }
+[[ "$BRIDGE_PORT" -ne 8090 ]] || { echo "Port 8090 gehört der bestehenden 3D-MCP-Schicht" >&2; exit 1; }
+[[ "$BRIDGE_PORT" -ne 8091 ]] || { echo "Port 8091 gehört dem bestehenden 95-Tool-VPS-MCP" >&2; exit 1; }
 
 require_command() {
   command -v "$1" >/dev/null || { echo "Pflichtkommando fehlt: $1" >&2; exit 1; }
@@ -69,6 +75,7 @@ cat > "$BACKUP_DIR/snapshot.json" <<JSON
   "unit_existed": $UNIT_EXISTED,
   "unit_was_active": $UNIT_WAS_ACTIVE,
   "unit_was_enabled": $UNIT_WAS_ENABLED,
+  "bridge_port": $BRIDGE_PORT,
   "branch": "$BRANCH"
 }
 JSON
@@ -136,7 +143,7 @@ cat > "$TARGET/data/world_seed.runtime.json" <<JSON
   },
   "bridge": {
     "enabled": true,
-    "base_url": "http://127.0.0.1:8091",
+    "base_url": "$BRIDGE_URL",
     "sync_interval_seconds": 1.0,
     "proof_event_on_start": true,
     "status": "REAL_LOCAL_VPS_BRIDGE_ACTIVE"
@@ -145,23 +152,25 @@ cat > "$TARGET/data/world_seed.runtime.json" <<JSON
 JSON
 
 echo "[5/9] Systemd-Bridge"
-if command -v ss >/dev/null && ss -ltnH | awk '{print $4}' | grep -Eq '(^|:)8091$'; then
+if command -v ss >/dev/null && ss -ltnH | awk '{print $4}' | grep -Eq "(^|:)$BRIDGE_PORT$"; then
   if ! systemctl is-active --quiet "$UNIT_NAME"; then
-    echo "Port 8091 ist durch einen unbekannten Dienst belegt; Abbruch statt Überfahren" >&2
+    echo "Port $BRIDGE_PORT ist durch einen unbekannten Dienst belegt; Abbruch statt Überfahren" >&2
     false
   fi
 fi
-install -m 0644 "$TARGET/deploy/$UNIT_NAME" "$UNIT_PATH"
+sed "s/FLEXTRAWURST_GODOT_BRIDGE_PORT=18092/FLEXTRAWURST_GODOT_BRIDGE_PORT=$BRIDGE_PORT/" \
+  "$TARGET/deploy/$UNIT_NAME" > "$STAGE/$UNIT_NAME"
+install -m 0644 "$STAGE/$UNIT_NAME" "$UNIT_PATH"
 systemctl daemon-reload
 systemctl enable --now "$UNIT_NAME"
 
 for _ in $(seq 1 50); do
-  if curl --fail --silent http://127.0.0.1:8091/health > "$LOG_DIR/bridge-health.json"; then
+  if curl --fail --silent "$BRIDGE_URL/health" > "$LOG_DIR/bridge-health.json"; then
     break
   fi
   sleep 0.2
 done
-curl --fail --silent http://127.0.0.1:8091/health > "$LOG_DIR/bridge-health.json"
+curl --fail --silent "$BRIDGE_URL/health" > "$LOG_DIR/bridge-health.json"
 
 echo "[6/9] Bestehende 3D-Pipeline bleibt unberührt"
 [[ -f "$WERKRAUM/tools/3d_pipeline/godot_pipeline.py" ]] || {
@@ -177,15 +186,16 @@ echo "[7/9] Vollständiger VPS-Beweis"
 FLEXTRAWURST_GODOT_BIN="$GODOT_BIN" \
 FLEXTRAWURST_GODOT_PROJECT_DIR="$TARGET" \
 FLEXTRAWURST_GODOT_RUNTIME_DIR="$RUNTIME" \
+FLEXTRAWURST_GODOT_BRIDGE_URL="$BRIDGE_URL" \
   "$TARGET/deploy/vps_verify.sh" | tee "$LOG_DIR/vps-verify-entry.log"
 
 echo "[8/9] Installationsmanifest"
-python3 - "$LOG_DIR/installation.json" "$DEPLOYED_COMMIT" "$GODOT_VERSION" "$BACKUP_DIR" <<'PY'
+python3 - "$LOG_DIR/installation.json" "$DEPLOYED_COMMIT" "$GODOT_VERSION" "$BACKUP_DIR" "$BRIDGE_PORT" <<'PY'
 import json, sys
 from datetime import datetime, timezone
-out, commit, godot, backup = sys.argv[1:]
+out, commit, godot, backup, bridge_port = sys.argv[1:]
 value = {
-    "schema_version": "1.0.0",
+    "schema_version": "1.1.0",
     "status": "PASS",
     "timestamp": datetime.now(timezone.utc).isoformat(),
     "repository": "RaDi0n92/flextrawurst-agent",
@@ -195,7 +205,8 @@ value = {
     "runtime": "/root/werkraum/engine_runtime/godot-vertical-slice",
     "godot_version": godot,
     "bridge_service": "flextrawurst-godot-world-bridge.service",
-    "bridge_url": "http://127.0.0.1:8091",
+    "bridge_url": f"http://127.0.0.1:{int(bridge_port)}",
+    "reserved_ports_untouched": [8090, 8091],
     "snapshot": backup,
     "single_html_changed": False,
     "existing_3d_pipeline_changed": False,
@@ -211,5 +222,6 @@ rm -rf "$STAGE"
 echo "FLEXTRAWURST_GODOT_VPS_INSTALL_PASS"
 echo "Projekt: $TARGET"
 echo "Runtime: $RUNTIME"
+echo "Bridge: $BRIDGE_URL"
 echo "Beweise: $LOG_DIR"
 echo "Snapshot: $BACKUP_DIR"
