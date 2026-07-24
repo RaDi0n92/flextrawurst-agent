@@ -1,8 +1,8 @@
 {
-  "schema_version": "1.0.0",
+  "schema_version": "1.1.0",
   "world_id": "flextrawurst.engine.slice.001",
   "title": "Flextrawurst Engine Vertical Slice 001",
-  "truth_status": "REAL_GEBAUT_UND_IM_AGENT_REPO_HEADLESS_BEWIESEN",
+  "truth_status": "REAL_GEBAUT_UND_VPS_AEQUIVALENTER_GESAMTRUNDLAUF_BEWIESEN",
   "origin": {
     "project": "Flextrawurst",
     "source_body": "flextrawurst-agent als bewusster Spiel-, Agenten-, 3D-, 2D-, Screenshot- und Baukörper",
@@ -13,10 +13,20 @@
   },
   "verification": {
     "provider": "GitHub Actions",
-    "run_id": 30128623567,
-    "godot": "4.7.1-stable",
+    "run_id": 30131077298,
+    "artifact_id": 8611114081,
+    "artifact_digest": "sha256:e5e6121a3b5f7b51a97ce9cdbabef884f68b89155fde00b533b97d5c8e0b095d",
+    "godot": "4.3-stable",
+    "asset_reconstruction": "PASS",
+    "asset_sha256": "ca481b86fb41d80f59af4b3714ea34c0798adf2acd9d871d4bf563861e17ca00",
+    "godot_glb_import": "PASS",
     "structural_smoke": "PASS",
-    "main_scene_headless_boot": "PASS"
+    "main_scene_headless_boot": "PASS",
+    "append_only_bridge_contract": "PASS",
+    "godot_to_bridge_roundtrip": "PASS",
+    "rendered_png": "PASS",
+    "rendered_png_sha256": "7cfa2f36ceac5bf5b686fcdcc4f6b78f813f1833bd816077a5c032d701c8eb8e",
+    "actual_vps_installation": "NOCH_NICHT_AUSGEFUEHRT_WEIL_PLUGIN_WERKZEUGMOUNT_IN_DIESER_SESSION_FEHLT"
   },
   "region": {
     "id": "region.schwelm.origin",
@@ -34,7 +44,7 @@
     "enabled": false,
     "base_url": "",
     "sync_interval_seconds": 5.0,
-    "status": "BLOCKIERT_BIS_BESTAETIGTE_VPS_ROUTE_EINGETRAGEN_IST"
+    "status": "REPO_GRUNDSEED_ABSICHTLICH_DEAKTIVIERT_VPS_RUNTIME_OVERRIDE_AKTIVIERT_LOKALHOST_ROUTE"
   },
   "constraints": [
     "Keine erfundenen Live-Daten",
@@ -42,6 +52,7 @@
     "Jede VPS-Antwort braucht Herkunft und Welt-ID",
     "Die bestehende Single-HTML bleibt unverändert erhalten",
     "Keine Codewesen-Aktivierung durch diesen Vertikalschnitt",
-    "Der öffentliche Beschreibungsrepo bleibt vom Engine-Arbeitskörper getrennt"
+    "Der öffentliche Beschreibungsrepo bleibt vom Engine-Arbeitskörper getrennt",
+    "Ein VPS-äquivalenter CI-Beweis ist noch keine tatsächlich ausgeführte VPS-Installation"
   ]
 }
