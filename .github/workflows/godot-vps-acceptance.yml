@@ -1,0 +1,73 @@
+name: Godot VPS acceptance and completion
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/godot-vps-acceptance.yml'
+      - 'tools/godot_vps_acceptance/**'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: godot-vps-acceptance
+  cancel-in-progress: false
+
+jobs:
+  accept-and-complete:
+    name: Verify and complete Godot bridge on Werkraum VPS
+    runs-on: self-hosted
+    timeout-minutes: 35
+    steps:
+      - name: Checkout exact main state
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Confirm Werkraum VPS runner
+        shell: bash
+        run: |
+          set -euo pipefail
+          test -d /root/werkraum
+          test -d /root/werkraum/engine
+          hostname
+          id
+
+      - name: Run isolated Godot acceptance body
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 tools/godot_vps_acceptance/accept_and_complete.py
+
+      - name: Commit VPS proof report
+        shell: bash
+        run: |
+          set -euo pipefail
+          test -f ops/proofs/godot-vps-acceptance.json
+          git config user.name 'gpt5.6-sol-high-godot-vps-runner'
+          git config user.email 'gpt56-sol-high@users.noreply.github.com'
+          git add ops/proofs/godot-vps-acceptance.json
+          if git diff --cached --quiet; then
+            echo 'Proof report unchanged'
+          else
+            git commit -m 'proof: Godot VPS acceptance report'
+            git pull --rebase origin main
+            git push origin HEAD:main
+          fi
+
+      - name: Enforce completed acceptance
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          import json
+          from pathlib import Path
+          proof = json.loads(Path('ops/proofs/godot-vps-acceptance.json').read_text(encoding='utf-8'))
+          print(json.dumps({
+              'status': proof.get('status'),
+              'critical_failures': proof.get('critical_failures', []),
+              'missing': proof.get('missing', []),
+          }, ensure_ascii=False, indent=2))
+          raise SystemExit(0 if proof.get('status') == 'COMPLETE' else 1)
+          PY
