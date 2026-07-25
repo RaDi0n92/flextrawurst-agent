@@ -9,7 +9,7 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: read
+  contents: write
 
 concurrency:
   group: gpt56-sol-high-house-vps
@@ -23,6 +23,8 @@ jobs:
     steps:
       - name: Checkout exact main state
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       - name: Confirm this runner is the Werkraum VPS
         shell: bash
@@ -72,3 +74,66 @@ jobs:
           $ROOT systemctl is-active --quiet gpt56-sol-high-house-sync.service
           $ROOT cat /root/werkraum/_gpt5.6-sol-high/.house/install_report.json
           $ROOT cat /root/werkraum/_gpt5.6-sol-high/.house/verification.json
+
+      - name: Commit verified VPS proof
+        shell: bash
+        env:
+          RUN_ID: ${{ github.run_id }}
+          RUN_ATTEMPT: ${{ github.run_attempt }}
+          TRIGGER_SHA: ${{ github.sha }}
+        run: |
+          set -euo pipefail
+          if [ "$(id -u)" -eq 0 ]; then
+            ROOT=''
+          else
+            ROOT='sudo -n'
+          fi
+          mkdir -p ops/proofs "$RUNNER_TEMP/gpt56-house-proof"
+          $ROOT cat /root/werkraum/_gpt5.6-sol-high/.house/install_report.json > "$RUNNER_TEMP/gpt56-house-proof/install_report.json"
+          $ROOT cat /root/werkraum/_gpt5.6-sol-high/.house/verification.json > "$RUNNER_TEMP/gpt56-house-proof/verification.json"
+          python3 - <<'PY'
+          import json
+          import os
+          import socket
+          import subprocess
+          from datetime import datetime, timezone
+          from pathlib import Path
+
+          tmp = Path(os.environ['RUNNER_TEMP']) / 'gpt56-house-proof'
+          install = json.loads((tmp / 'install_report.json').read_text(encoding='utf-8'))
+          verification = json.loads((tmp / 'verification.json').read_text(encoding='utf-8'))
+          service = subprocess.run(
+              ['systemctl', 'is-active', 'gpt56-sol-high-house-sync.service'],
+              capture_output=True, text=True
+          )
+          proof = {
+              'status': 'VERIFIED_ON_VPS' if verification.get('ok') and service.returncode == 0 else 'FAILED',
+              'recorded_at': datetime.now(timezone.utc).isoformat(),
+              'host': socket.gethostname(),
+              'house': '/root/werkraum/_gpt5.6-sol-high',
+              'service': {
+                  'name': 'gpt56-sol-high-house-sync.service',
+                  'active': service.returncode == 0,
+                  'state': service.stdout.strip(),
+              },
+              'github': {
+                  'run_id': os.environ['RUN_ID'],
+                  'run_attempt': os.environ['RUN_ATTEMPT'],
+                  'trigger_sha': os.environ['TRIGGER_SHA'],
+              },
+              'install_report': install,
+              'verification': verification,
+          }
+          if proof['status'] != 'VERIFIED_ON_VPS':
+              raise SystemExit('VPS proof was not verified')
+          Path('ops/proofs/gpt56-sol-high-house-vps.json').write_text(
+              json.dumps(proof, ensure_ascii=False, indent=2) + '\n',
+              encoding='utf-8'
+          )
+          PY
+          git config user.name 'gpt5.6-sol-high-vps-runner'
+          git config user.email 'gpt56-sol-high@users.noreply.github.com'
+          git add ops/proofs/gpt56-sol-high-house-vps.json
+          git commit -m 'proof: gpt5.6-sol-high Haus auf VPS verifiziert'
+          git pull --rebase origin main
+          git push origin HEAD:main
