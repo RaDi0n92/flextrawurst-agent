@@ -1,0 +1,231 @@
+name: Real Godot VPS Install
+
+on:
+  push:
+    branches:
+      - engine/godot-vertical-slice-001
+    paths:
+      - ".github/workflows/godot-vps-real-install.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: flextrawurst-godot-vps-real-install
+  cancel-in-progress: false
+
+env:
+  TARGET_BRANCH: engine/godot-vertical-slice-001
+  PROJECT_DIR: /root/werkraum/engine/godot-vertical-slice
+  RUNTIME_DIR: /root/werkraum/engine_runtime/godot-vertical-slice
+  SERVICE_NAME: flextrawurst-godot-world-bridge.service
+
+jobs:
+  install-on-self-hosted-vps:
+    name: Install on self-hosted Werkraum VPS
+    runs-on: self-hosted
+    timeout-minutes: 30
+    steps:
+      - name: Checkout exact engine branch
+        uses: actions/checkout@v4
+        with:
+          ref: engine/godot-vertical-slice-001
+          fetch-depth: 0
+
+      - name: Install and prove on the real VPS
+        shell: bash
+        run: |
+          set -Eeuo pipefail
+          if [ "$(id -u)" -eq 0 ]; then
+            run_root() { "$@"; }
+          else
+            sudo -n true
+            run_root() { sudo -n "$@"; }
+          fi
+
+          test -d /root/werkraum
+          test -f engine/godot-vertical-slice/deploy/vps_install.sh
+          BEFORE="$RUNNER_TEMP/godot-ports-before.txt"
+          AFTER="$RUNNER_TEMP/godot-ports-after.txt"
+          run_root ss -H -ltnp | awk '$4 ~ /:8090$|:8091$/ {print $4 "|" $NF}' | sort > "$BEFORE"
+          test "$(wc -l < "$BEFORE")" -eq 2
+
+          run_root flock /var/lock/flextrawurst-godot-install.lock \
+            env FLEXTRAWURST_ENGINE_BRANCH="$TARGET_BRANCH" FLEXTRAWURST_GODOT_BRIDGE_PORT=18092 \
+            bash "$GITHUB_WORKSPACE/engine/godot-vertical-slice/deploy/vps_install.sh"
+
+          run_root ss -H -ltnp | awk '$4 ~ /:8090$|:8091$/ {print $4 "|" $NF}' | sort > "$AFTER"
+          cmp "$BEFORE" "$AFTER"
+          run_root ss -H -ltnp | awk '$4 ~ /:18092$/ {found=1} END {exit(found ? 0 : 1)}'
+          run_root systemctl is-active --quiet "$SERVICE_NAME"
+          run_root systemctl is-enabled --quiet "$SERVICE_NAME"
+
+          DEST="$GITHUB_WORKSPACE/ops/proofs/godot-vps/self-hosted"
+          rm -rf "$DEST"
+          mkdir -p "$DEST"
+          LATEST_PROOF="$(run_root bash -lc 'ls -1dt /root/werkraum/engine_runtime/godot-vertical-slice/proofs/* | head -n1')"
+          LATEST_INSTALL="$(run_root bash -lc 'ls -1dt /root/werkraum/engine_runtime/godot-vertical-slice/installations/* | head -n1')"
+          run_root tar -C "$LATEST_PROOF" -cf - . | tar -C "$DEST" -xf -
+          mkdir -p "$DEST/installation"
+          run_root tar -C "$LATEST_INSTALL" -cf - . | tar -C "$DEST/installation" -xf -
+          cp "$BEFORE" "$DEST/ports-before.txt"
+          cp "$AFTER" "$DEST/ports-after.txt"
+          run_root systemctl show "$SERVICE_NAME" -p ActiveState -p SubState -p MainPID -p ExecMainStartTimestamp > "$DEST/service-status.txt"
+          run_root cat "$PROJECT_DIR/.deployed_commit" > "$DEST/deployed-commit.txt"
+          run_root bash -lc "find '$PROJECT_DIR' -type f -print0 | sort -z | xargs -0 sha256sum" > "$DEST/project-SHA256SUMS.txt"
+          python3 - "$DEST/vps-execution.json" <<'PY'
+          import json, os, socket, subprocess, sys
+          from datetime import datetime, timezone
+          out = sys.argv[1]
+          service = subprocess.run(["systemctl", "is-active", os.environ["SERVICE_NAME"]], capture_output=True, text=True)
+          value = {
+              "status": "VERIFIED_ON_REAL_VPS" if service.returncode == 0 else "FAILED",
+              "method": "self-hosted-runner",
+              "recorded_at": datetime.now(timezone.utc).isoformat(),
+              "host": socket.gethostname(),
+              "branch": os.environ["TARGET_BRANCH"],
+              "project": os.environ["PROJECT_DIR"],
+              "bridge": "http://127.0.0.1:18092",
+              "reserved_ports_unchanged": [8090, 8091],
+              "service": service.stdout.strip(),
+              "github_run_id": os.environ["GITHUB_RUN_ID"],
+              "github_sha": os.environ["GITHUB_SHA"],
+          }
+          if value["status"] != "VERIFIED_ON_REAL_VPS":
+              raise SystemExit("VPS service proof failed")
+          open(out, "w", encoding="utf-8").write(json.dumps(value, ensure_ascii=False, indent=2) + "\n")
+          PY
+
+      - name: Commit self-hosted VPS proof
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "flextrawurst-godot-vps-runner"
+          git config user.email "godot-vps-runner@users.noreply.github.com"
+          git add ops/proofs/godot-vps/self-hosted
+          git commit -m "proof(godot): realen Self-hosted-VPS-Einzug belegen" || exit 0
+          for attempt in 1 2 3 4 5; do
+            git pull --rebase origin "$TARGET_BRANCH" && git push origin "HEAD:$TARGET_BRANCH" && exit 0
+            sleep $((attempt * 2))
+          done
+          exit 1
+
+  install-via-vps-ssh:
+    name: Install through configured VPS SSH secrets
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    env:
+      SSH_HOST: ${{ secrets.VPS_HOST || secrets.SSH_HOST || secrets.DEPLOY_HOST || secrets.SERVER_HOST }}
+      SSH_USER: ${{ secrets.VPS_USER || secrets.SSH_USER || secrets.DEPLOY_USER || secrets.SERVER_USER || 'root' }}
+      SSH_PORT: ${{ secrets.VPS_PORT || secrets.SSH_PORT || '22' }}
+      SSH_KEY: ${{ secrets.VPS_SSH_KEY || secrets.SSH_PRIVATE_KEY || secrets.VPS_PRIVATE_KEY || secrets.DEPLOY_KEY }}
+      SSH_PASSWORD: ${{ secrets.VPS_PASSWORD || secrets.SSH_PASSWORD || secrets.SERVER_PASSWORD }}
+    steps:
+      - name: Checkout exact engine branch
+        uses: actions/checkout@v4
+        with:
+          ref: engine/godot-vertical-slice-001
+          fetch-depth: 0
+
+      - name: Install and collect real VPS proof through SSH
+        shell: bash
+        run: |
+          set -Eeuo pipefail
+          test -n "$SSH_HOST" || { echo "No configured VPS host secret"; exit 21; }
+          if [ -n "$SSH_KEY" ]; then
+            KEY_FILE="$RUNNER_TEMP/vps-key"
+            printf '%s\n' "$SSH_KEY" > "$KEY_FILE"
+            chmod 600 "$KEY_FILE"
+            SSH=(ssh -i "$KEY_FILE" -p "$SSH_PORT" -o BatchMode=yes -o StrictHostKeyChecking=accept-new)
+            SCP=(scp -i "$KEY_FILE" -P "$SSH_PORT" -o BatchMode=yes -o StrictHostKeyChecking=accept-new)
+          elif [ -n "$SSH_PASSWORD" ]; then
+            sudo apt-get -qq update
+            sudo apt-get -qq install -y sshpass
+            export SSHPASS="$SSH_PASSWORD"
+            SSH=(sshpass -e ssh -p "$SSH_PORT" -o StrictHostKeyChecking=accept-new)
+            SCP=(sshpass -e scp -P "$SSH_PORT" -o StrictHostKeyChecking=accept-new)
+          else
+            echo "No configured VPS SSH credential secret"
+            exit 22
+          fi
+
+          "${SSH[@]}" "$SSH_USER@$SSH_HOST" "TARGET_BRANCH='$TARGET_BRANCH' GITHUB_RUN_ID='$GITHUB_RUN_ID' bash -s" <<'REMOTE'
+          set -Eeuo pipefail
+          if [ "$(id -u)" -eq 0 ]; then
+            run_root() { "$@"; }
+          else
+            sudo -n true
+            run_root() { sudo -n "$@"; }
+          fi
+          TMP="$(mktemp -d /tmp/flextrawurst-godot-vps.XXXXXX)"
+          OUT="/tmp/flextrawurst-godot-proof-${GITHUB_RUN_ID}"
+          ARCHIVE="${OUT}.tar.gz"
+          trap 'rm -rf "$TMP"' EXIT
+          rm -rf "$OUT" "$ARCHIVE"
+          mkdir -p "$OUT"
+          git clone --depth 1 --branch "$TARGET_BRANCH" https://github.com/RaDi0n92/flextrawurst-agent.git "$TMP/repo"
+          run_root ss -H -ltnp | awk '$4 ~ /:8090$|:8091$/ {print $4 "|" $NF}' | sort > "$OUT/ports-before.txt"
+          test "$(wc -l < "$OUT/ports-before.txt")" -eq 2
+          run_root flock /var/lock/flextrawurst-godot-install.lock \
+            env FLEXTRAWURST_ENGINE_BRANCH="$TARGET_BRANCH" FLEXTRAWURST_GODOT_BRIDGE_PORT=18092 \
+            bash "$TMP/repo/engine/godot-vertical-slice/deploy/vps_install.sh"
+          run_root ss -H -ltnp | awk '$4 ~ /:8090$|:8091$/ {print $4 "|" $NF}' | sort > "$OUT/ports-after.txt"
+          cmp "$OUT/ports-before.txt" "$OUT/ports-after.txt"
+          run_root ss -H -ltnp | awk '$4 ~ /:18092$/ {found=1} END {exit(found ? 0 : 1)}'
+          run_root systemctl is-active --quiet flextrawurst-godot-world-bridge.service
+          run_root systemctl is-enabled --quiet flextrawurst-godot-world-bridge.service
+          LATEST_PROOF="$(run_root bash -lc 'ls -1dt /root/werkraum/engine_runtime/godot-vertical-slice/proofs/* | head -n1')"
+          LATEST_INSTALL="$(run_root bash -lc 'ls -1dt /root/werkraum/engine_runtime/godot-vertical-slice/installations/* | head -n1')"
+          run_root tar -C "$LATEST_PROOF" -cf - . | tar -C "$OUT" -xf -
+          mkdir -p "$OUT/installation"
+          run_root tar -C "$LATEST_INSTALL" -cf - . | tar -C "$OUT/installation" -xf -
+          run_root systemctl show flextrawurst-godot-world-bridge.service -p ActiveState -p SubState -p MainPID -p ExecMainStartTimestamp > "$OUT/service-status.txt"
+          run_root cat /root/werkraum/engine/godot-vertical-slice/.deployed_commit > "$OUT/deployed-commit.txt"
+          run_root bash -lc "find /root/werkraum/engine/godot-vertical-slice -type f -print0 | sort -z | xargs -0 sha256sum" > "$OUT/project-SHA256SUMS.txt"
+          python3 - "$OUT/vps-execution.json" <<'PY'
+          import json, os, socket, subprocess, sys
+          from datetime import datetime, timezone
+          state = subprocess.run(["systemctl", "is-active", "flextrawurst-godot-world-bridge.service"], capture_output=True, text=True)
+          value = {
+              "status": "VERIFIED_ON_REAL_VPS" if state.returncode == 0 else "FAILED",
+              "method": "github-hosted-runner-via-ssh",
+              "recorded_at": datetime.now(timezone.utc).isoformat(),
+              "host": socket.gethostname(),
+              "branch": os.environ["TARGET_BRANCH"],
+              "project": "/root/werkraum/engine/godot-vertical-slice",
+              "bridge": "http://127.0.0.1:18092",
+              "reserved_ports_unchanged": [8090, 8091],
+              "service": state.stdout.strip(),
+              "github_run_id": os.environ["GITHUB_RUN_ID"],
+          }
+          if value["status"] != "VERIFIED_ON_REAL_VPS":
+              raise SystemExit("VPS service proof failed")
+          open(sys.argv[1], "w", encoding="utf-8").write(json.dumps(value, ensure_ascii=False, indent=2) + "\n")
+          PY
+          tar -C /tmp -czf "$ARCHIVE" "$(basename "$OUT")"
+          chmod 644 "$ARCHIVE"
+          REMOTE
+
+          REMOTE_ARCHIVE="/tmp/flextrawurst-godot-proof-${GITHUB_RUN_ID}.tar.gz"
+          LOCAL_ARCHIVE="$RUNNER_TEMP/godot-vps-proof.tar.gz"
+          "${SCP[@]}" "$SSH_USER@$SSH_HOST:$REMOTE_ARCHIVE" "$LOCAL_ARCHIVE"
+          "${SSH[@]}" "$SSH_USER@$SSH_HOST" "rm -rf '/tmp/flextrawurst-godot-proof-${GITHUB_RUN_ID}' '$REMOTE_ARCHIVE'"
+          DEST="$GITHUB_WORKSPACE/ops/proofs/godot-vps/ssh"
+          rm -rf "$DEST"
+          mkdir -p "$DEST"
+          tar -xzf "$LOCAL_ARCHIVE" --strip-components=1 -C "$DEST"
+
+      - name: Commit SSH VPS proof
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "flextrawurst-godot-vps-ssh"
+          git config user.email "godot-vps-ssh@users.noreply.github.com"
+          git add ops/proofs/godot-vps/ssh
+          git commit -m "proof(godot): realen VPS-Einzug via SSH belegen" || exit 0
+          for attempt in 1 2 3 4 5; do
+            git pull --rebase origin "$TARGET_BRANCH" && git push origin "HEAD:$TARGET_BRANCH" && exit 0
+            sleep $((attempt * 2))
+          done
+          exit 1
