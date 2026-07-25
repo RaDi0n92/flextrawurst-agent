@@ -16,8 +16,8 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
-  install-and-verify:
-    name: Install and verify on Werkraum VPS
+  install-on-self-hosted:
+    name: Install on self-hosted Werkraum runner
     runs-on: self-hosted
     timeout-minutes: 20
     steps:
@@ -36,7 +36,7 @@ jobs:
           printf 'Runner host: '; hostname
           printf 'Werkraum source: '; stat -c '%n %U:%G %a' /root/werkraum/_claude
 
-      - name: Install gpt5.6-sol-high house
+      - name: Install and verify gpt5.6-sol-high house
         shell: bash
         run: |
           set -euo pipefail
@@ -47,35 +47,13 @@ jobs:
             ROOT='sudo -n'
           fi
           $ROOT bash tools/gpt56_sol_high_house/install.sh
-
-      - name: Run destructive-safe mirror acceptance probe
-        shell: bash
-        run: |
-          set -euo pipefail
-          if [ "$(id -u)" -eq 0 ]; then
-            ROOT=''
-          else
-            ROOT='sudo -n'
-          fi
           $ROOT python3 tools/gpt56_sol_high_house/build_house.py verify
-
-      - name: Prove persistent house and service
-        shell: bash
-        run: |
-          set -euo pipefail
-          if [ "$(id -u)" -eq 0 ]; then
-            ROOT=''
-          else
-            ROOT='sudo -n'
-          fi
           $ROOT test -d /root/werkraum/_gpt5.6-sol-high
           $ROOT test -f /root/werkraum/_gpt5.6-sol-high/.house/install_report.json
           $ROOT test -f /root/werkraum/_gpt5.6-sol-high/.house/verification.json
           $ROOT systemctl is-active --quiet gpt56-sol-high-house-sync.service
-          $ROOT cat /root/werkraum/_gpt5.6-sol-high/.house/install_report.json
-          $ROOT cat /root/werkraum/_gpt5.6-sol-high/.house/verification.json
 
-      - name: Commit verified VPS proof
+      - name: Commit verified self-hosted VPS proof
         shell: bash
         env:
           RUN_ID: ${{ github.run_id }}
@@ -83,57 +61,148 @@ jobs:
           TRIGGER_SHA: ${{ github.sha }}
         run: |
           set -euo pipefail
-          if [ "$(id -u)" -eq 0 ]; then
-            ROOT=''
-          else
-            ROOT='sudo -n'
-          fi
+          if [ "$(id -u)" -eq 0 ]; then ROOT=''; else ROOT='sudo -n'; fi
           mkdir -p ops/proofs "$RUNNER_TEMP/gpt56-house-proof"
           $ROOT cat /root/werkraum/_gpt5.6-sol-high/.house/install_report.json > "$RUNNER_TEMP/gpt56-house-proof/install_report.json"
           $ROOT cat /root/werkraum/_gpt5.6-sol-high/.house/verification.json > "$RUNNER_TEMP/gpt56-house-proof/verification.json"
           python3 - <<'PY'
-          import json
-          import os
-          import socket
-          import subprocess
+          import json, os, socket, subprocess
           from datetime import datetime, timezone
           from pathlib import Path
-
           tmp = Path(os.environ['RUNNER_TEMP']) / 'gpt56-house-proof'
           install = json.loads((tmp / 'install_report.json').read_text(encoding='utf-8'))
           verification = json.loads((tmp / 'verification.json').read_text(encoding='utf-8'))
-          service = subprocess.run(
-              ['systemctl', 'is-active', 'gpt56-sol-high-house-sync.service'],
-              capture_output=True, text=True
-          )
+          service = subprocess.run(['systemctl','is-active','gpt56-sol-high-house-sync.service'], capture_output=True, text=True)
           proof = {
               'status': 'VERIFIED_ON_VPS' if verification.get('ok') and service.returncode == 0 else 'FAILED',
+              'method': 'self-hosted-runner',
               'recorded_at': datetime.now(timezone.utc).isoformat(),
               'host': socket.gethostname(),
               'house': '/root/werkraum/_gpt5.6-sol-high',
-              'service': {
-                  'name': 'gpt56-sol-high-house-sync.service',
-                  'active': service.returncode == 0,
-                  'state': service.stdout.strip(),
-              },
-              'github': {
-                  'run_id': os.environ['RUN_ID'],
-                  'run_attempt': os.environ['RUN_ATTEMPT'],
-                  'trigger_sha': os.environ['TRIGGER_SHA'],
-              },
+              'service': {'active': service.returncode == 0, 'state': service.stdout.strip()},
+              'github': {'run_id': os.environ['RUN_ID'], 'run_attempt': os.environ['RUN_ATTEMPT'], 'trigger_sha': os.environ['TRIGGER_SHA']},
               'install_report': install,
               'verification': verification,
           }
-          if proof['status'] != 'VERIFIED_ON_VPS':
-              raise SystemExit('VPS proof was not verified')
-          Path('ops/proofs/gpt56-sol-high-house-vps.json').write_text(
-              json.dumps(proof, ensure_ascii=False, indent=2) + '\n',
-              encoding='utf-8'
-          )
+          if proof['status'] != 'VERIFIED_ON_VPS': raise SystemExit('VPS proof was not verified')
+          Path('ops/proofs/gpt56-sol-high-house-vps.json').write_text(json.dumps(proof, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
           PY
           git config user.name 'gpt5.6-sol-high-vps-runner'
           git config user.email 'gpt56-sol-high@users.noreply.github.com'
           git add ops/proofs/gpt56-sol-high-house-vps.json
           git commit -m 'proof: gpt5.6-sol-high Haus auf VPS verifiziert'
+          git pull --rebase origin main
+          git push origin HEAD:main
+
+  install-via-ssh:
+    name: Install through configured VPS SSH secrets
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    env:
+      SSH_HOST: ${{ secrets.VPS_HOST || secrets.SSH_HOST || secrets.DEPLOY_HOST || secrets.SERVER_HOST }}
+      SSH_USER: ${{ secrets.VPS_USER || secrets.SSH_USER || secrets.DEPLOY_USER || secrets.SERVER_USER || 'root' }}
+      SSH_PORT: ${{ secrets.VPS_PORT || secrets.SSH_PORT || '22' }}
+      SSH_KEY: ${{ secrets.VPS_SSH_KEY || secrets.SSH_PRIVATE_KEY || secrets.VPS_PRIVATE_KEY || secrets.DEPLOY_KEY }}
+      SSH_PASSWORD: ${{ secrets.VPS_PASSWORD || secrets.SSH_PASSWORD || secrets.SERVER_PASSWORD }}
+    steps:
+      - name: Checkout exact main state
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Install on VPS and collect proof reports
+        shell: bash
+        run: |
+          set -euo pipefail
+          test -n "$SSH_HOST" || { echo 'No configured VPS/SSH host secret'; exit 21; }
+          mkdir -p "$RUNNER_TEMP/gpt56-house-proof-ssh"
+
+          if [ -n "$SSH_KEY" ]; then
+            KEY_FILE="$RUNNER_TEMP/vps_key"
+            printf '%s\n' "$SSH_KEY" > "$KEY_FILE"
+            chmod 600 "$KEY_FILE"
+            SSH=(ssh -i "$KEY_FILE" -p "$SSH_PORT" -o BatchMode=yes -o StrictHostKeyChecking=accept-new)
+            SCP=(scp -i "$KEY_FILE" -P "$SSH_PORT" -o BatchMode=yes -o StrictHostKeyChecking=accept-new)
+          elif [ -n "$SSH_PASSWORD" ]; then
+            sudo apt-get -qq update
+            sudo apt-get -qq install -y sshpass
+            export SSHPASS="$SSH_PASSWORD"
+            SSH=(sshpass -e ssh -p "$SSH_PORT" -o StrictHostKeyChecking=accept-new)
+            SCP=(sshpass -e scp -P "$SSH_PORT" -o StrictHostKeyChecking=accept-new)
+          else
+            echo 'No configured VPS SSH key or password secret'
+            exit 22
+          fi
+
+          "${SSH[@]}" "$SSH_USER@$SSH_HOST" "GITHUB_RUN_ID='$GITHUB_RUN_ID' bash -s" <<'REMOTE'
+          set -euo pipefail
+          test -d /root/werkraum/_claude
+          command -v git >/dev/null
+          TMP="$(mktemp -d /tmp/gpt56-house-install.XXXXXX)"
+          PROOF_DIR="/tmp/gpt56-house-proof-${GITHUB_RUN_ID}"
+          rm -rf "$PROOF_DIR"
+          mkdir -p "$PROOF_DIR"
+          trap 'rm -rf "$TMP"' EXIT
+          git clone --depth 1 --branch main https://github.com/RaDi0n92/flextrawurst-agent.git "$TMP/repo"
+          if [ "$(id -u)" -eq 0 ]; then
+            run_root() { "$@"; }
+          else
+            sudo -n true
+            run_root() { sudo -n "$@"; }
+          fi
+          run_root bash "$TMP/repo/tools/gpt56_sol_high_house/install.sh"
+          run_root python3 "$TMP/repo/tools/gpt56_sol_high_house/build_house.py" verify
+          run_root test -d /root/werkraum/_gpt5.6-sol-high
+          run_root systemctl is-active --quiet gpt56-sol-high-house-sync.service
+          run_root cat /root/werkraum/_gpt5.6-sol-high/.house/install_report.json > "$PROOF_DIR/install_report.json"
+          run_root cat /root/werkraum/_gpt5.6-sol-high/.house/verification.json > "$PROOF_DIR/verification.json"
+          hostname > "$PROOF_DIR/hostname.txt"
+          systemctl is-active gpt56-sol-high-house-sync.service > "$PROOF_DIR/service_state.txt"
+          chmod 644 "$PROOF_DIR"/*
+          REMOTE
+
+          REMOTE_PROOF="/tmp/gpt56-house-proof-${GITHUB_RUN_ID}"
+          "${SCP[@]}" "$SSH_USER@$SSH_HOST:$REMOTE_PROOF/install_report.json" "$RUNNER_TEMP/gpt56-house-proof-ssh/install_report.json"
+          "${SCP[@]}" "$SSH_USER@$SSH_HOST:$REMOTE_PROOF/verification.json" "$RUNNER_TEMP/gpt56-house-proof-ssh/verification.json"
+          "${SCP[@]}" "$SSH_USER@$SSH_HOST:$REMOTE_PROOF/hostname.txt" "$RUNNER_TEMP/gpt56-house-proof-ssh/hostname.txt"
+          "${SCP[@]}" "$SSH_USER@$SSH_HOST:$REMOTE_PROOF/service_state.txt" "$RUNNER_TEMP/gpt56-house-proof-ssh/service_state.txt"
+          "${SSH[@]}" "$SSH_USER@$SSH_HOST" "rm -rf '$REMOTE_PROOF'"
+
+      - name: Commit verified SSH VPS proof
+        shell: bash
+        env:
+          RUN_ID: ${{ github.run_id }}
+          RUN_ATTEMPT: ${{ github.run_attempt }}
+          TRIGGER_SHA: ${{ github.sha }}
+        run: |
+          set -euo pipefail
+          mkdir -p ops/proofs
+          python3 - <<'PY'
+          import json, os
+          from datetime import datetime, timezone
+          from pathlib import Path
+          tmp = Path(os.environ['RUNNER_TEMP']) / 'gpt56-house-proof-ssh'
+          install = json.loads((tmp / 'install_report.json').read_text(encoding='utf-8'))
+          verification = json.loads((tmp / 'verification.json').read_text(encoding='utf-8'))
+          host = (tmp / 'hostname.txt').read_text(encoding='utf-8').strip()
+          state = (tmp / 'service_state.txt').read_text(encoding='utf-8').strip()
+          proof = {
+              'status': 'VERIFIED_ON_VPS' if verification.get('ok') and state == 'active' else 'FAILED',
+              'method': 'github-hosted-runner-via-ssh',
+              'recorded_at': datetime.now(timezone.utc).isoformat(),
+              'host': host,
+              'house': '/root/werkraum/_gpt5.6-sol-high',
+              'service': {'active': state == 'active', 'state': state},
+              'github': {'run_id': os.environ['RUN_ID'], 'run_attempt': os.environ['RUN_ATTEMPT'], 'trigger_sha': os.environ['TRIGGER_SHA']},
+              'install_report': install,
+              'verification': verification,
+          }
+          if proof['status'] != 'VERIFIED_ON_VPS': raise SystemExit('SSH VPS proof was not verified')
+          Path('ops/proofs/gpt56-sol-high-house-vps-ssh.json').write_text(json.dumps(proof, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
+          PY
+          git config user.name 'gpt5.6-sol-high-vps-ssh'
+          git config user.email 'gpt56-sol-high@users.noreply.github.com'
+          git add ops/proofs/gpt56-sol-high-house-vps-ssh.json
+          git commit -m 'proof: gpt5.6-sol-high Haus via SSH auf VPS verifiziert'
           git pull --rebase origin main
           git push origin HEAD:main
