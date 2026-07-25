@@ -16,125 +16,85 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
-  accept-via-ssh:
-    name: Verify and complete Godot bridge through VPS SSH
-    runs-on: ubuntu-latest
+  accept-on-vps-runner:
+    name: Verify and complete Godot bridge directly on Werkraum VPS
+    runs-on: self-hosted
     timeout-minutes: 35
-    env:
-      SSH_HOST: ${{ secrets.VPS_HOST || secrets.SSH_HOST || secrets.DEPLOY_HOST || secrets.SERVER_HOST }}
-      SSH_USER: ${{ secrets.VPS_USER || secrets.SSH_USER || secrets.DEPLOY_USER || secrets.SERVER_USER || 'root' }}
-      SSH_PORT: ${{ secrets.VPS_PORT || secrets.SSH_PORT || '22' }}
-      SSH_KEY: ${{ secrets.VPS_SSH_KEY || secrets.SSH_PRIVATE_KEY || secrets.VPS_PRIVATE_KEY || secrets.DEPLOY_KEY }}
-      SSH_PASSWORD: ${{ secrets.VPS_PASSWORD || secrets.SSH_PASSWORD || secrets.SERVER_PASSWORD }}
     steps:
       - name: Checkout exact main state
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
 
-      - name: Run isolated acceptance on Werkraum VPS
-        id: vps
-        continue-on-error: true
+      - name: Confirm runner is the Werkraum VPS
         shell: bash
-        env:
-          TRIGGER_SHA: ${{ github.sha }}
         run: |
-          set -euo pipefail
-          test -n "$SSH_HOST" || { echo 'No configured VPS or SSH host secret'; exit 21; }
-          mkdir -p "$RUNNER_TEMP/godot-vps-proof"
-
-          if [ -n "$SSH_KEY" ]; then
-            KEY_FILE="$RUNNER_TEMP/vps_key"
-            printf '%s\n' "$SSH_KEY" > "$KEY_FILE"
-            chmod 600 "$KEY_FILE"
-            SSH=(ssh -i "$KEY_FILE" -p "$SSH_PORT" -o BatchMode=yes -o StrictHostKeyChecking=accept-new)
-            SCP=(scp -i "$KEY_FILE" -P "$SSH_PORT" -o BatchMode=yes -o StrictHostKeyChecking=accept-new)
-          elif [ -n "$SSH_PASSWORD" ]; then
-            sudo apt-get -qq update
-            sudo apt-get -qq install -y sshpass
-            export SSHPASS="$SSH_PASSWORD"
-            SSH=(sshpass -e ssh -p "$SSH_PORT" -o StrictHostKeyChecking=accept-new)
-            SCP=(sshpass -e scp -P "$SSH_PORT" -o StrictHostKeyChecking=accept-new)
-          else
-            echo 'No configured VPS SSH key or password secret'
-            exit 22
-          fi
-
-          "${SSH[@]}" "$SSH_USER@$SSH_HOST" "TRIGGER_SHA='$TRIGGER_SHA' GITHUB_RUN_ID='$GITHUB_RUN_ID' bash -s" <<'REMOTE'
           set -euo pipefail
           test -d /root/werkraum
           test -d /root/werkraum/engine
-          command -v git >/dev/null
-          TMP="$(mktemp -d /tmp/godot-vps-acceptance.XXXXXX)"
-          PROOF="/tmp/godot-vps-acceptance-${GITHUB_RUN_ID}.json"
-          trap 'rm -rf "$TMP"' EXIT
-          git clone --quiet https://github.com/RaDi0n92/flextrawurst-agent.git "$TMP/repo"
-          git -C "$TMP/repo" checkout --quiet "$TRIGGER_SHA"
-          cd "$TMP/repo"
+          test -f tools/godot_vps_acceptance/accept_and_complete.py
+          printf 'Runner host: '; hostname
+          printf 'Runner user: '; id
+          printf 'Werkraum engine: '; stat -c '%n %U:%G %a' /root/werkraum/engine
+
+      - name: Run isolated Godot acceptance directly on VPS
+        id: vps
+        continue-on-error: true
+        shell: bash
+        run: |
+          set -euo pipefail
           if [ "$(id -u)" -eq 0 ]; then
             python3 tools/godot_vps_acceptance/accept_and_complete.py
           else
             sudo -n python3 tools/godot_vps_acceptance/accept_and_complete.py
           fi
-          test -f ops/proofs/godot-vps-acceptance.json
-          if [ "$(id -u)" -eq 0 ]; then
-            cp ops/proofs/godot-vps-acceptance.json "$PROOF"
-            chmod 644 "$PROOF"
-          else
-            sudo -n cp ops/proofs/godot-vps-acceptance.json "$PROOF"
-            sudo -n chmod 644 "$PROOF"
-          fi
-          REMOTE
 
-          REMOTE_PROOF="/tmp/godot-vps-acceptance-${GITHUB_RUN_ID}.json"
-          "${SCP[@]}" "$SSH_USER@$SSH_HOST:$REMOTE_PROOF" "$RUNNER_TEMP/godot-vps-proof/godot-vps-acceptance.json"
-          "${SSH[@]}" "$SSH_USER@$SSH_HOST" "rm -f '$REMOTE_PROOF'"
-
-      - name: Commit VPS proof or transport diagnosis
+      - name: Commit VPS proof or runner diagnosis
         if: always()
         shell: bash
         env:
           VPS_STEP_OUTCOME: ${{ steps.vps.outcome }}
           TRIGGER_SHA: ${{ github.sha }}
           RUN_ID: ${{ github.run_id }}
+          RUN_ATTEMPT: ${{ github.run_attempt }}
         run: |
           set -euo pipefail
           mkdir -p ops/proofs
-          SOURCE="$RUNNER_TEMP/godot-vps-proof/godot-vps-acceptance.json"
-          TARGET="ops/proofs/godot-vps-acceptance.json"
-          if [ -f "$SOURCE" ]; then
-            cp "$SOURCE" "$TARGET"
-          else
+          TARGET='ops/proofs/godot-vps-acceptance.json'
+          if [ ! -f "$TARGET" ]; then
             python3 - <<'PY'
-          import json, os
+          import json
+          import os
+          import socket
           from datetime import datetime, timezone
           from pathlib import Path
+
           report = {
-              'status': 'TRANSPORT_FAILED',
+              'status': 'RUNNER_EXECUTION_FAILED',
               'recorded_at': datetime.now(timezone.utc).isoformat(),
+              'host': socket.gethostname(),
               'workflow_run_id': os.environ['RUN_ID'],
+              'workflow_run_attempt': os.environ['RUN_ATTEMPT'],
               'trigger_sha': os.environ['TRIGGER_SHA'],
               'vps_step_outcome': os.environ['VPS_STEP_OUTCOME'],
-              'meaning': 'Der GitHub-Workflow lief, konnte aber keinen VPS-Abnahmebericht zurückholen.',
-              'possible_stages': [
-                  'keine konfigurierte VPS-Host-Angabe',
-                  'kein SSH-Schlüssel oder Passwort konfiguriert',
-                  'SSH-Verbindung fehlgeschlagen',
-                  'VPS-Zielpfad oder Git fehlte',
-                  'Abnahmekörper oder Rücktransport fehlgeschlagen',
-              ],
+              'meaning': 'Der Self-Hosted-Runner erreichte den VPS-Arbeitskörper, aber der Abnahmekörper erzeugte keinen Bericht.',
           }
           Path('ops/proofs/godot-vps-acceptance.json').write_text(
-              json.dumps(report, ensure_ascii=False, indent=2) + '\n', encoding='utf-8'
+              json.dumps(report, ensure_ascii=False, indent=2) + '\n',
+              encoding='utf-8',
           )
           PY
           fi
           git config user.name 'gpt5.6-sol-high-godot-vps-runner'
           git config user.email 'gpt56-sol-high@users.noreply.github.com'
           git add "$TARGET"
-          git commit -m 'proof: Godot VPS acceptance report'
-          git pull --rebase origin main
-          git push origin HEAD:main
+          if git diff --cached --quiet; then
+            echo 'Godot VPS proof is unchanged; no commit required.'
+          else
+            git commit -m 'proof: Godot VPS acceptance report via self-hosted runner'
+            git pull --rebase origin main
+            git push origin HEAD:main
+          fi
 
       - name: Enforce completed acceptance
         if: always()
@@ -143,9 +103,11 @@ jobs:
           python3 - <<'PY'
           import json
           from pathlib import Path
+
           proof = json.loads(Path('ops/proofs/godot-vps-acceptance.json').read_text(encoding='utf-8'))
           print(json.dumps({
               'status': proof.get('status'),
+              'host': proof.get('host'),
               'critical_failures': proof.get('critical_failures', []),
               'missing': proof.get('missing', []),
               'meaning': proof.get('meaning'),
