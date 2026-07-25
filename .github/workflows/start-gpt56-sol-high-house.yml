@@ -1,0 +1,74 @@
+name: Start gpt5.6-sol-high Werkraum house
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/start-gpt56-sol-high-house.yml'
+      - 'tools/gpt56_sol_high_house/**'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: gpt56-sol-high-house-vps
+  cancel-in-progress: false
+
+jobs:
+  install-and-verify:
+    name: Install and verify on Werkraum VPS
+    runs-on: self-hosted
+    timeout-minutes: 20
+    steps:
+      - name: Checkout exact main state
+        uses: actions/checkout@v4
+
+      - name: Confirm this runner is the Werkraum VPS
+        shell: bash
+        run: |
+          set -euo pipefail
+          test -d /root/werkraum
+          test -d /root/werkraum/_claude
+          test -f tools/gpt56_sol_high_house/install.sh
+          printf 'Runner host: '; hostname
+          printf 'Werkraum source: '; stat -c '%n %U:%G %a' /root/werkraum/_claude
+
+      - name: Install gpt5.6-sol-high house
+        shell: bash
+        run: |
+          set -euo pipefail
+          if [ "$(id -u)" -eq 0 ]; then
+            ROOT=''
+          else
+            sudo -n true
+            ROOT='sudo -n'
+          fi
+          $ROOT bash tools/gpt56_sol_high_house/install.sh
+
+      - name: Run destructive-safe mirror acceptance probe
+        shell: bash
+        run: |
+          set -euo pipefail
+          if [ "$(id -u)" -eq 0 ]; then
+            ROOT=''
+          else
+            ROOT='sudo -n'
+          fi
+          $ROOT python3 tools/gpt56_sol_high_house/build_house.py verify
+
+      - name: Prove persistent house and service
+        shell: bash
+        run: |
+          set -euo pipefail
+          if [ "$(id -u)" -eq 0 ]; then
+            ROOT=''
+          else
+            ROOT='sudo -n'
+          fi
+          $ROOT test -d /root/werkraum/_gpt5.6-sol-high
+          $ROOT test -f /root/werkraum/_gpt5.6-sol-high/.house/install_report.json
+          $ROOT test -f /root/werkraum/_gpt5.6-sol-high/.house/verification.json
+          $ROOT systemctl is-active --quiet gpt56-sol-high-house-sync.service
+          $ROOT cat /root/werkraum/_gpt5.6-sol-high/.house/install_report.json
+          $ROOT cat /root/werkraum/_gpt5.6-sol-high/.house/verification.json
