@@ -1,0 +1,23 @@
+[Unit]
+Description=Flextrawurst Godot World Bridge (local append-only vertical slice)
+After=network.target
+
+[Service]
+Type=simple
+User=root
+WorkingDirectory=/root/werkraum/engine/godot-vertical-slice
+ExecStart=/usr/bin/python3 /root/werkraum/engine/godot-vertical-slice/deploy/world_bridge_server.py
+Environment=PYTHONUNBUFFERED=1
+Environment=FLEXTRAWURST_GODOT_BRIDGE_HOST=127.0.0.1
+Environment=FLEXTRAWURST_GODOT_BRIDGE_PORT=18092
+Environment=FLEXTRAWURST_GODOT_BRIDGE_DATA=/root/werkraum/engine_runtime/godot-vertical-slice
+Restart=on-failure
+RestartSec=2
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=read-only
+ReadWritePaths=/root/werkraum/engine_runtime/godot-vertical-slice
+
+[Install]
+WantedBy=multi-user.target

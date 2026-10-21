@@ -1,0 +1,27 @@
+{
+  "schema_version": "1.0.0",
+  "assets": [
+    {
+      "asset_id": "alleswisser.asset.3d.test-cube.001",
+      "name": "Testwürfel aus vorhandener Flextrawurst-3D-Pipeline",
+      "payload_path": "assets/test_cube.glb.b64",
+      "output_path": "assets/test_cube.glb",
+      "format": "glb",
+      "size_bytes": 1476,
+      "sha256": "ca481b86fb41d80f59af4b3714ea34c0798adf2acd9d871d4bf563861e17ca00",
+      "origin": {
+        "repository": "RaDi0n92/flextrawurst-agent",
+        "source_path": "tools/3d_pipeline/test_artifacts/test_cube.glb",
+        "source_commit": "c61f7d1d38e8a76e6dc5fce5b821d8303f6085cf",
+        "generator": "Blender 4.0.2 Headless pipeline",
+        "truth_status": "REAL_DATEI_AUS_VERIFIZIERTER_3D_PIPELINE"
+      },
+      "alleswisser": {
+        "stable_id": "alleswisser.asset.3d.test-cube.001",
+        "entry_status": "TECHNISCHER_BEWEISKOERPER",
+        "canon_status": "NICHT_WELTKANON",
+        "spawn_status": "NUR_ENGINE_VERTIKALSCHNITT"
+      }
+    }
+  ]
+}

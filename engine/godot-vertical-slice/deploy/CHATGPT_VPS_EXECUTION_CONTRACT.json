@@ -1,0 +1,90 @@
+{
+  "schema_version": "1.1.1",
+  "request_id": "flextrawurst.godot.vps.install.001",
+  "intent": "ChatGPT soll den geprüften Godot-Vertikalschnitt über die verbundene Flextrawurst-VPS-Werkzeug-App tatsächlich auf Daniels VPS übertragen, gegen die bestehende 3D-Pipeline prüfen und die Beweise in den Chat zurückholen.",
+  "repository": "RaDi0n92/flextrawurst-agent",
+  "branch": "engine/godot-vertical-slice-001",
+  "target_paths": {
+    "project": "/root/werkraum/engine/godot-vertical-slice",
+    "runtime": "/root/werkraum/engine_runtime/godot-vertical-slice",
+    "backups": "/root/werkraum/backups/godot-vertical-slice",
+    "root_shell_service": "/etc/systemd/system/flextrawurst-godot-world-bridge.service"
+  },
+  "ports": {
+    "existing_3d_mcp_reserved": 8090,
+    "existing_vps_mcp_reserved": 8091,
+    "godot_bridge_default": 18092,
+    "bind": "127.0.0.1",
+    "public": false
+  },
+  "execution_paths": {
+    "root_shell": {
+      "installer_path_in_repo": "engine/godot-vertical-slice/deploy/vps_install.sh",
+      "entry_command_file": "engine/godot-vertical-slice/deploy/VPS_INSTALL_COMMAND.txt",
+      "behavior": "snapshot_then_atomic_install_then_systemd_then_verify_or_automatic_rollback",
+      "required_final_marker": "FLEXTRAWURST_GODOT_VPS_INSTALL_PASS"
+    },
+    "chatgpt_vps_mcp": {
+      "manifest": "engine/godot-vertical-slice/deploy/MCP_DEPLOYMENT_PLAN.json",
+      "allowed_actions": [
+        "vps.read_file",
+        "vps.file_metadata",
+        "vps.write_file",
+        "vps.edit_file",
+        "assets.validate_3d_model",
+        "assets.extract_3d_metadata",
+        "assets.render_3d_preview",
+        "assets.get_file"
+      ],
+      "binary_strategy": "GLB bleibt als Base64-Textkörper übertragbar und wird in Godot 4.3 mit Marshalls.base64_to_raw plus GLTFDocument.append_from_buffer geladen.",
+      "forbidden_assumptions": [
+        "MCP darf nach /etc schreiben",
+        "MCP darf systemd-Dienste starten oder neu starten",
+        "MCP darf beliebige Shell-Befehle ausführen"
+      ],
+      "required_result": "Projektdateien bytegleich unter /root/werkraum, Text-only-GLB-Pfad geprüft, Godot-Import über vorhandene 3D-MCP-Schicht ausgeführt und Beweisdateien zurückgeführt"
+    }
+  },
+  "preconditions": [
+    "VPS-MCP-Werkzeugmount ist in der Chat-Sitzung tatsächlich als Tool-Namespace verfügbar",
+    "bestehendes Godot 4.3 ist erreichbar",
+    "/root/werkraum/tools/3d_pipeline/godot_pipeline.py existiert",
+    "/root/werkraum/tools/3d_pipeline/flextrawurst_3d_mcp.py existiert",
+    "Port 18092 ist frei oder gehört bereits dem Zielservice",
+    "Ports 8090 und 8091 bleiben unangetastet"
+  ],
+  "required_proofs": [
+    "installation.json",
+    "proof.json",
+    "SHA256SUMS.txt",
+    "bridge-health-before.json",
+    "bridge-events-after.json",
+    "godot-import.log",
+    "godot-smoke.log",
+    "godot-live.log",
+    "legacy-3d-pipeline.json",
+    "engine-proof.png"
+  ],
+  "prohibitions": [
+    "Nicht in RaDi0n92/Flextrawurst installieren",
+    "Single-HTML nicht verändern",
+    "bestehende flextrawurst-3d-mcp.service und Port 8090 nicht überschreiben",
+    "bestehende vps-mcp.service und Port 8091 nicht berühren",
+    "keine öffentliche Bridge-Route freischalten",
+    "keine Codewesen aktivieren",
+    "keinen Erfolg behaupten bevor die realen VPS-Dateien und Beweise gelesen wurden"
+  ],
+  "corrected_failure_history": {
+    "finding": "Die erste VPS-Fassung belegte Port 8091 für die Godot-Bridge, obwohl dort der produktive 95-Tool-VPS-MCP läuft.",
+    "cause": "CI nutzte einen isolierten Ersatzport und prüfte die reale VPS-Portkarte nicht.",
+    "correction": "Bridge auf 18092 verschoben; 8090 und 8091 in Installer, Verifikator, Unit, Server und CI ausdrücklich gesperrt.",
+    "regression_test": "Reserved MCP ports rejection PASS"
+  },
+  "ci_proof": {
+    "workflow_run": 30134100750,
+    "artifact_id": 8612169203,
+    "artifact_digest": "sha256:464ce3f27bfe4eea89e4c27c0e837e1b8d77c4e34317a9fd4a7b3bc1d283fa3b",
+    "head_sha": "3aa5a0d37490c383f198d1a95c589599c20a15a1",
+    "status": "PASS_AFTER_REAL_PORT_MAP_AND_MCP_TEXT_ONLY_FIX"
+  }
+}

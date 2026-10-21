@@ -1,0 +1,28 @@
+; Flextrawurst Godot vertical slice 001
+; Isolated engine organ inside the deliberate flextrawurst-agent work body.
+; It does not replace the existing Single-HTML game.
+; Compatibility target deliberately matches the verified VPS Godot 4.3 installation.
+config_version=5
+
+[application]
+config/name="Flextrawurst Engine Vertical Slice 001"
+run/main_scene="res://main.tscn"
+config/features=PackedStringArray("4.3", "GL Compatibility")
+
+[display]
+window/size/viewport_width=1280
+window/size/viewport_height=720
+window/size/window_width_override=1280
+window/size/window_height_override=720
+window/stretch/mode="canvas_items"
+
+[rendering]
+renderer/rendering_method="gl_compatibility"
+renderer/rendering_method.mobile="gl_compatibility"
+environment/defaults/default_clear_color=Color(0.025, 0.028, 0.035, 1)
+
+[physics]
+common/enable_pause_aware_picking=true
+
+[debug]
+settings/stdout/print_fps=false
